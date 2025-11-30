@@ -1,0 +1,15 @@
+Uiteindelijk: 
+selecteren op landschap en tuin
+
+
+
+cd C:\PlantWijs
+venv\Scripts\uvicorn api:app --reload --port 9000
+
+
+
+cd C:\PlantWijs
+git add api.py
+git commit -m "fix X"
+git push
+

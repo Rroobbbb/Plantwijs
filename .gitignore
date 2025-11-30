@@ -1,0 +1,79 @@
+########################################
+# Python / Virtual environments
+########################################
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.whl
+
+########################################
+# Environment variables (local only)
+########################################
+.env
+
+########################################
+# Output & local data
+# (we houden alleen de mappen + gitkeep)
+########################################
+out/*
+!out/.gitkeep
+
+data/*
+!data/.gitkeep
+
+########################################
+# Public data — alleen 2 CSV's toestaan
+########################################
+out/**
+!out/
+!out/plantwijs_full.csv
+!out/plantwijs_full_semicolon.csv
+
+########################################
+# Editor / OS files
+########################################
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+########################################
+# Log, temp & misc
+########################################
+*.log
+*.tmp
+*.bak
+*.old
+*.swp
+*.swx
+*~
+
+########################################
+# Project-specifieke historie uitsluiten
+########################################
+Api history/
+Build dataset history/
+Git repo/
+
+########################################
+# Accidental fragments (komen soms voor)
+########################################
+{*
+}*
+[]*
+()*
+Dict*
+List*
+Optional*
+None
+git
+python
+type
+where
+map.invalidateSize*
+head.count*
