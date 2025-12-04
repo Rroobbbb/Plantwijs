@@ -23,13 +23,6 @@ __pycache__/
 out/**
 !out/.gitkeep
 
-data/**
-!data/.gitkeep
-
-# EXCEPTIONS: NSN zip moet WEL mee naar GitHub
-!data/nsn_natuurlijk_systeem.geojson.zip
-!data/*.geojson.zip
-
 ########################################
 # Public data — alleen 2 CSV's toegestaan
 ########################################
