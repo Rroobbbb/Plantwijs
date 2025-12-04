@@ -40,7 +40,6 @@ NSN_GEOJSON_PATHS = [
 NSN_GEOJSON_ZIP_PATHS = [
     os.path.join(BASE_DIR, "data", "nsn_natuurlijk_systeem.geojson.zip"),
     os.path.join(BASE_DIR, "nsn_natuurlijk_systeem.geojson.zip"),
-    os.path.join(BASE_DIR, "data", "LBK_BKNSN_2023.zip"),
     os.path.join(BASE_DIR, "LBK_BKNSN_2023.zip"),
 ]
 _NSN_CACHE: Optional[dict] = None
@@ -670,20 +669,6 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 app = FastAPI(title="PlantWijs API v3.9.7")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
-@app.on_event("startup")
-def _startup_warm_nsn():
-    """Laad NSN-GeoJSON alvast in zodat de eerste klik sneller reageert en logging geeft of het gelukt is."""
-    try:
-        cache = _load_nsn_geojson()
-        if cache is None:
-            print("[NSN] startup: geen NSN-GeoJSON geladen")
-        else:
-            total = len((cache or {}).get("features") or [])
-            print(f"[NSN] startup: NSN-GeoJSON geladen met {total} features")
-    except Exception as e:
-        print("[NSN] fout bij startup-warmup:", e)
-
-
 def _clean(o: Any) -> Any:
     if isinstance(o, float):
         return o if math.isfinite(o) else None
@@ -723,7 +708,7 @@ def _load_nsn_geojson() -> Optional[dict]:
     """
     Laad het NSN-GeoJSON één keer en prepareer de features.
     Ondersteunt zowel een ongecomprimeerde GeoJSON als een gezipte variant
-    (nsn_natuurlijk_systeem.geojson.zip of LBK_BKNSN_2023.zip) in de hoofd- of data-map.
+    (nsn_natuurlijk_systeem.geojson.zip of LBK_BKNSN_2023.zip) in de hoofd‑ of data‑map.
     """
     global _NSN_CACHE, _NSN_FEATURES, _NSN_IS_RD
     if _NSN_CACHE is None:
@@ -736,8 +721,6 @@ def _load_nsn_geojson() -> Optional[dict]:
             if path is not None:
                 with open(path, "r", encoding="utf-8") as f:
                     _NSN_CACHE = json.load(f)
-                total = len((_NSN_CACHE or {}).get("features") or [])
-                print(f"[NSN] GeoJSON geladen vanaf {path} met {total} features")
             else:
                 zpath = None
                 for zp in NSN_GEOJSON_ZIP_PATHS:
@@ -759,8 +742,6 @@ def _load_nsn_geojson() -> Optional[dict]:
                         return None
                     with zf.open(name) as f:
                         _NSN_CACHE = json.load(f)
-                total = len((_NSN_CACHE or {}).get("features") or [])
-                print(f"[NSN] GeoJSON uit zip geladen vanaf {zpath} met {total} features")
         except Exception as e:
             print("[NSN] fout bij laden GeoJSON:", e)
             return None
@@ -769,7 +750,6 @@ def _load_nsn_geojson() -> Optional[dict]:
         _NSN_FEATURES = feats
         _NSN_IS_RD = bool(NSN_GEOJSON_IS_RD)
     return _NSN_CACHE
-
 
 
 def _point_in_polygon(px: float, py: float, ring) -> bool:
@@ -864,8 +844,6 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
         if label:
             break
 
-    if label is None:
-        print(f"[NSN] geen match voor klikpunt lat={lat}, lon={lon} (px={px:.1f}, py={py:.1f})")
     return label
 
 @app.get("/api/diag/featureinfo")
