@@ -32,8 +32,8 @@ from pyproj import Transformer
 HEADERS = {"User-Agent": "plantwijs/3.9.7"}
 FMT_JSON = "application/json;subtype=geojson"
 
-NSN_GEOJSON_PATH = os.path.join(os.path.dirname(__file__), "data", "nsn_natuurlijk_systeem.geojson")
-NSN_GEOJSON_ZIP_PATH = os.path.join(os.path.dirname(__file__), "data", "nsn_natuurlijk_systeem.geojson.zip")
+NSN_GEOJSON_PATH = os.path.join(os.path.dirname(__file__), "data", "LBK_BKNSN_2023")
+NSN_GEOJSON_ZIP_PATH = os.path.join(os.path.dirname(__file__), "data", "LBK_BKNSN_2023.zip")
 _NSN_CACHE: Optional[dict] = None
 NSN_GEOJSON_IS_RD: bool = True  # GeoJSON in RD New (EPSG:28992); op False zetten als je zelf naar WGS84 hebt geprojecteerd
 _NSN_FEATURES: Optional[list] = None
@@ -697,7 +697,7 @@ def _load_nsn_geojson() -> Optional[dict]:
     """
     Laad het NSN-GeoJSON één keer en prepareer de features.
     Ondersteunt zowel een ongecomprimeerde GeoJSON als een gezipte variant
-    (nsn_natuurlijk_systeem.geojson.zip) in de data-map.
+    (LBK_BKNSN_2023.zip) in de data-map.
     """
     global _NSN_CACHE, _NSN_FEATURES, _NSN_IS_RD
     if _NSN_CACHE is None:
@@ -707,7 +707,7 @@ def _load_nsn_geojson() -> Optional[dict]:
                 with open(NSN_GEOJSON_PATH, "r", encoding="utf-8") as f:
                     _NSN_CACHE = json.load(f)
             elif os.path.exists(NSN_GEOJSON_ZIP_PATH):
-                # Gecomprimeerde variant: nsn_natuurlijk_systeem.geojson.zip
+                # Gecomprimeerde variant: LBK_BKNSN_2023.zip
                 with zipfile.ZipFile(NSN_GEOJSON_ZIP_PATH, "r") as zf:
                     # Neem het eerste .geojson-bestand in het zip-archief
                     name = None
