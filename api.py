@@ -16,7 +16,7 @@ import re
 import time
 import urllib.parse
 import xml.etree.ElementTree as ET
-import tempfile, zipfile  # tempfile voor tmp-bestanden, zipfile voor gecomprimeerde datasets
+import tempfile  # ← toevoegen
 import json
 from functools import lru_cache
 from typing import Any, Dict, List, Optional, Tuple
@@ -32,8 +32,7 @@ from pyproj import Transformer
 HEADERS = {"User-Agent": "plantwijs/3.9.7"}
 FMT_JSON = "application/json;subtype=geojson"
 
-NSN_GEOJSON_PATH = os.path.join(os.path.dirname(__file__), "data", "LBK_BKNSN_2023")
-NSN_GEOJSON_ZIP_PATH = os.path.join(os.path.dirname(__file__), "data", "LBK_BKNSN_2023.zip")
+NSN_GEOJSON_PATH = os.path.join(os.path.dirname(__file__), "data", "nsn_natuurlijk_systeem.geojson")
 _NSN_CACHE: Optional[dict] = None
 NSN_GEOJSON_IS_RD: bool = True  # GeoJSON in RD New (EPSG:28992); op False zetten als je zelf naar WGS84 hebt geprojecteerd
 _NSN_FEATURES: Optional[list] = None
@@ -661,6 +660,20 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 app = FastAPI(title="PlantWijs API v3.9.7")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
+@app.on_event("startup")
+def _startup_warm_nsn():
+    """Laad NSN-GeoJSON alvast in zodat de eerste klik sneller reageert en logging geeft of het gelukt is."""
+    try:
+        cache = _load_nsn_geojson()
+        if cache is None:
+            print("[NSN] startup: geen NSN-GeoJSON geladen")
+        else:
+            total = len((cache or {}).get("features") or [])
+            print(f"[NSN] startup: NSN-GeoJSON geladen met {total} features")
+    except Exception as e:
+        print("[NSN] fout bij startup-warmup:", e)
+
+
 def _clean(o: Any) -> Any:
     if isinstance(o, float):
         return o if math.isfinite(o) else None
@@ -684,44 +697,29 @@ def api_wms_meta():
 def api_nsn():
     """
     Retourneer GeoJSON voor Natuurlijk Systeem Nederland (NSN) als vectorlaag.
-    Ondersteunt zowel een ongecomprimeerde GeoJSON als een gezipte variant
-    in de data-map.
+    Verwacht een bestand "data/nsn_natuurlijk_systeem.geojson" naast deze api.py.
     """
-    cache = _load_nsn_geojson()
-    if cache is None:
-        return JSONResponse({"error": "nsn_geojson_not_found"}, status_code=404)
-    return JSONResponse(_clean(cache))
+    global _NSN_CACHE
+    if _NSN_CACHE is None:
+        try:
+            with open(NSN_GEOJSON_PATH, "r", encoding="utf-8") as f:
+                _NSN_CACHE = json.load(f)
+        except FileNotFoundError:
+            return JSONResponse({"error": "nsn_geojson_not_found"}, status_code=404)
+    return JSONResponse(_clean(_NSN_CACHE))
 
 
 def _load_nsn_geojson() -> Optional[dict]:
     """
     Laad het NSN-GeoJSON één keer en prepareer de features.
-    Ondersteunt zowel een ongecomprimeerde GeoJSON als een gezipte variant
-    (LBK_BKNSN_2023.zip) in de data-map.
     """
     global _NSN_CACHE, _NSN_FEATURES, _NSN_IS_RD
     if _NSN_CACHE is None:
         try:
-            if os.path.exists(NSN_GEOJSON_PATH):
-                # Normaal ongecomprimeerd GeoJSON-bestand
-                with open(NSN_GEOJSON_PATH, "r", encoding="utf-8") as f:
-                    _NSN_CACHE = json.load(f)
-            elif os.path.exists(NSN_GEOJSON_ZIP_PATH):
-                # Gecomprimeerde variant: LBK_BKNSN_2023.zip
-                with zipfile.ZipFile(NSN_GEOJSON_ZIP_PATH, "r") as zf:
-                    # Neem het eerste .geojson-bestand in het zip-archief
-                    name = None
-                    for nm in zf.namelist():
-                        if nm.lower().endswith(".geojson"):
-                            name = nm
-                            break
-                    if name is None:
-                        raise FileNotFoundError("Geen *.geojson in NSN-zip gevonden")
-                    with zf.open(name) as f:
-                        _NSN_CACHE = json.load(f)
-            else:
-                print("[NSN] GeoJSON (ongecomprimeerd/zip) niet gevonden in data-map")
-                return None
+            with open(NSN_GEOJSON_PATH, "r", encoding="utf-8") as f:
+                _NSN_CACHE = json.load(f)
+            total = len((_NSN_CACHE or {}).get("features") or [])
+            print(f"[NSN] GeoJSON geladen vanaf {NSN_GEOJSON_PATH} met {total} features")
         except FileNotFoundError:
             print("[NSN] GeoJSON bestand niet gevonden:", NSN_GEOJSON_PATH)
             return None
@@ -733,6 +731,7 @@ def _load_nsn_geojson() -> Optional[dict]:
         _NSN_FEATURES = feats
         _NSN_IS_RD = bool(NSN_GEOJSON_IS_RD)
     return _NSN_CACHE
+
 
 
 def _point_in_polygon(px: float, py: float, ring) -> bool:
@@ -827,6 +826,8 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
         if label:
             break
 
+    if label is None:
+        print(f"[NSN] geen match voor klikpunt lat={lat}, lon={lon} (px={px:.1f}, py={py:.1f})")
     return label
 
 @app.get("/api/diag/featureinfo")
