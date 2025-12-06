@@ -32,7 +32,16 @@ from pyproj import Transformer
 HEADERS = {"User-Agent": "plantwijs/3.9.7"}
 FMT_JSON = "application/json;subtype=geojson"
 
-NSN_GEOJSON_PATH = os.path.join(os.path.dirname(__file__), "data", "nsn_natuurlijk_systeem.geojson")
+BASE_DIR = os.path.dirname(__file__)
+NSN_GEOJSON_PATHS = [
+    os.path.join(BASE_DIR, "data", "nsn_natuurlijk_systeem.geojson"),
+    os.path.join(BASE_DIR, "nsn_natuurlijk_systeem.geojson"),
+]
+NSN_GEOJSON_ZIP_PATHS = [
+    os.path.join(BASE_DIR, "data", "nsn_natuurlijk_systeem.geojson.zip"),
+    os.path.join(BASE_DIR, "nsn_natuurlijk_systeem.geojson.zip"),
+    os.path.join(BASE_DIR, "LBK_BKNSN_2023.zip"),
+]
 _NSN_CACHE: Optional[dict] = None
 NSN_GEOJSON_IS_RD: bool = True  # GeoJSON in RD New (EPSG:28992); op False zetten als je zelf naar WGS84 hebt geprojecteerd
 _NSN_FEATURES: Optional[list] = None
@@ -660,15 +669,6 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 app = FastAPI(title="PlantWijs API v3.9.7")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
-@app.on_event("startup")
-def _startup_warm_nsn():
-    """Laad NSN-GeoJSON alvast in zodat de eerste klik sneller reageert."""
-    try:
-        _load_nsn_geojson()
-    except Exception as e:
-        print("[NSN] fout bij startup-warmup:", e)
-
-
 def _clean(o: Any) -> Any:
     if isinstance(o, float):
         return o if math.isfinite(o) else None
@@ -707,15 +707,41 @@ def api_nsn():
 def _load_nsn_geojson() -> Optional[dict]:
     """
     Laad het NSN-GeoJSON één keer en prepareer de features.
+    Ondersteunt zowel een ongecomprimeerde GeoJSON als een gezipte variant
+    (nsn_natuurlijk_systeem.geojson.zip of LBK_BKNSN_2023.zip) in de hoofd‑ of data‑map.
     """
     global _NSN_CACHE, _NSN_FEATURES, _NSN_IS_RD
     if _NSN_CACHE is None:
         try:
-            with open(NSN_GEOJSON_PATH, "r", encoding="utf-8") as f:
-                _NSN_CACHE = json.load(f)
-        except FileNotFoundError:
-            print("[NSN] GeoJSON bestand niet gevonden:", NSN_GEOJSON_PATH)
-            return None
+            path = None
+            for p in NSN_GEOJSON_PATHS:
+                if os.path.exists(p):
+                    path = p
+                    break
+            if path is not None:
+                with open(path, "r", encoding="utf-8") as f:
+                    _NSN_CACHE = json.load(f)
+            else:
+                zpath = None
+                for zp in NSN_GEOJSON_ZIP_PATHS:
+                    if os.path.exists(zp):
+                        zpath = zp
+                        break
+                if zpath is None:
+                    print("[NSN] GeoJSON (ongecomprimeerd/zip) niet gevonden in PlantWijs-map")
+                    return None
+                import zipfile
+                with zipfile.ZipFile(zpath, "r") as zf:
+                    name = None
+                    for nm in zf.namelist():
+                        if nm.lower().endswith(".geojson"):
+                            name = nm
+                            break
+                    if name is None:
+                        print("[NSN] geen *.geojson in NSN-zip gevonden:", zpath)
+                        return None
+                    with zf.open(name) as f:
+                        _NSN_CACHE = json.load(f)
         except Exception as e:
             print("[NSN] fout bij laden GeoJSON:", e)
             return None
@@ -2003,9 +2029,6 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
       if(window._marker) window._marker.remove();
       window._marker = L.marker(e.latlng).addTo(map);
 
-      // toon direct een korte melding zodat het duidelijk is dat er geladen wordt
-      setClickInfo({ fgr:'(laden...)', bodem:null, bodem_bron:null, gt:null, vocht:null, ahn:null, gmm:null, nsn:null });
-
       const urlCtx = new URL(location.origin + '/advies/geo');
       urlCtx.searchParams.set('lat', e.latlng.lat);
       urlCtx.searchParams.set('lon', e.latlng.lng);
@@ -2014,20 +2037,14 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
       if(inh) urlCtx.searchParams.set('inheems_only', !!inh.checked);
       if(inv) urlCtx.searchParams.set('exclude_invasief', !!inv.checked);
 
-      try{
-        const resp = await fetch(urlCtx);
-        const j = await resp.json();
+      const j = await (await fetch(urlCtx)).json();
 
-        setClickInfo({ fgr:j.fgr, bodem:j.bodem, bodem_bron:j.bodem_bron, gt:j.gt_code, vocht:j.vocht, ahn:j.ahn, gmm:j.gmm, nsn:j.nsn });
+      setClickInfo({ fgr:j.fgr, bodem:j.bodem, bodem_bron:j.bodem_bron, gt:j.gt_code, vocht:j.vocht, ahn:j.ahn, gmm:j.gmm, nsn:j.nsn });
 
-        // bewaar context (gebruikt door refresh / filters)
-        ui.ctx = { vocht: j.vocht || null, bodem: j.bodem || null };
+      // bewaar context (gebruikt door refresh / filters)
+      ui.ctx = { vocht: j.vocht || null, bodem: j.bodem || null };
 
-        refresh();
-      } catch(err){
-        console?.error && console.error('Fout bij ophalen advies/geo', err);
-        setClickInfo({ fgr:'(kon gegevens niet laden)', bodem:null, bodem_bron:null, gt:null, vocht:null, ahn:null, gmm:null, nsn:null });
-      }
+      refresh();
     });
 
     // Bouw de kolomkoppen; de titels zelf zijn de filter-triggers
