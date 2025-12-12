@@ -19,10 +19,6 @@ import xml.etree.ElementTree as ET
 import tempfile  # ← toevoegen
 import json
 import zipfile
-import gzip
-import hashlib
-import pickle
-import threading
 from functools import lru_cache
 from contextlib import contextmanager
 from typing import Any, Dict, List, Optional, Tuple
@@ -710,11 +706,8 @@ app = FastAPI(title="PlantWijs API v3.9.7")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
 @app.on_event("startup")
-def _startup_nsn_cache():
-    """
-    NSN is groot. We bouwen (indien nodig) een compacte on-disk index in /tmp zodat lookups snel zijn
-    zonder het hele GeoJSON in RAM te laden. Dit gebeurt in een background thread zodat de app kan starten.
-    """
+def _startup_warm_nsn():
+    """NSN is groot; op Render laden we dit niet volledig in RAM. We checken alleen of de bron aanwezig is."""
     try:
         kind, path, member = _resolve_nsn_source()
         if kind == "zip":
@@ -723,13 +716,9 @@ def _startup_nsn_cache():
             print(f"[NSN] bron: {os.path.basename(path)}")
         else:
             print("[NSN] bron: niet gevonden (laag/klikinfo NSN uitgeschakeld)")
-            return
-        # Warm cache in background (non-blocking); eerste klik kan alsnog wachten als cache nog niet klaar is.
-        import threading
-        t = threading.Thread(target=_ensure_nsn_fast_cache, kwargs={"block": False}, daemon=True)
-        t.start()
     except Exception as e:
-        print("[NSN] startup fout:", e)
+        print("[NSN] bron check fout:", e)
+
 
 
 def _clean(o: Any) -> Any:
@@ -895,271 +884,13 @@ def _point_in_polygon(px: float, py: float, ring) -> bool:
     return inside
 
 
-# ───────────────────── NSN fast cache (Render-friendly)
-# We bouwen een on-disk index in /tmp:
-# - per feature een gecomprimeerd JSON bestandje (zodat we niet steeds het hele geojson hoeven te scannen)
-# - een grid-index (cel -> lijst feature_ids) + bbox per feature
-#
-# Resultaat: nsn_from_point is normaal < 100ms i.p.v. tientallen seconden.
-
-_NSN_FAST = {
-    "ready": False,
-    "building": False,
-    "dir": None,
-    "index_path": None,
-    "feat_dir": None,
-    "grid": None,      # dict[str, list[int]]
-    "bboxes": None,    # list[tuple[float,float,float,float]]
-    "cell": None,      # cell size (meters for RD, degrees for WGS84)
-    "is_rd": None,
-    "src_sig": None,   # signature of source for cache validation
-}
-_NSN_LOCK = threading.Lock()
-
-
-def _nsn_source_signature() -> Optional[str]:
-    kind, path, member = _resolve_nsn_source()
-    if kind == "missing":
-        return None
-    try:
-        st = os.stat(path)
-        base = f"{kind}|{os.path.basename(path)}|{st.st_size}|{int(st.st_mtime)}|{member or ''}"
-        return hashlib.sha1(base.encode("utf-8")).hexdigest()[:16]
-    except Exception:
-        return None
-
-
-def _nsn_cache_paths(sig: str):
-    base = os.path.join("/tmp", f"nsn_fast_{sig}")
-    return {
-        "base": base,
-        "index": os.path.join(base, "index.pkl"),
-        "feat_dir": os.path.join(base, "features"),
-    }
-
-
-def _geom_bbox(geom: dict) -> Optional[tuple[float,float,float,float]]:
-    if not geom or "coordinates" not in geom:
-        return None
-    coords = geom.get("coordinates")
-    minx = miny = float("inf")
-    maxx = maxy = float("-inf")
-
-    def walk(x):
-        nonlocal minx, miny, maxx, maxy
-        if isinstance(x, (list, tuple)) and x:
-            # coordinate pair?
-            if len(x) >= 2 and isinstance(x[0], (int, float)) and isinstance(x[1], (int, float)):
-                cx, cy = float(x[0]), float(x[1])
-                if cx < minx: minx = cx
-                if cy < miny: miny = cy
-                if cx > maxx: maxx = cx
-                if cy > maxy: maxy = cy
-            else:
-                for y in x:
-                    walk(y)
-
-    walk(coords)
-    if not math.isfinite(minx) or not math.isfinite(miny):
-        return None
-    return (minx, miny, maxx, maxy)
-
-
-def _grid_key(ix: int, iy: int) -> str:
-    return f"{ix}:{iy}"
-
-
-def _grid_coords(x: float, y: float, cell: float) -> tuple[int, int]:
-    # floor division but safe for negatives
-    ix = int(math.floor(x / cell))
-    iy = int(math.floor(y / cell))
-    return ix, iy
-
-
-def _bbox_to_cells(b: tuple[float,float,float,float], cell: float):
-    minx, miny, maxx, maxy = b
-    ix0, iy0 = _grid_coords(minx, miny, cell)
-    ix1, iy1 = _grid_coords(maxx, maxy, cell)
-    for ix in range(ix0, ix1 + 1):
-        for iy in range(iy0, iy1 + 1):
-            yield ix, iy
-
-
-def _build_nsn_fast_cache(sig: str) -> bool:
-    paths = _nsn_cache_paths(sig)
-    os.makedirs(paths["feat_dir"], exist_ok=True)
-
-    # cell size: RD in meters, WGS84 in degrees
-    cell = 2000.0 if NSN_GEOJSON_IS_RD else 0.03  # ~2km or ~3km-ish
-    grid: dict[str, list[int]] = {}
-    bboxes: list[tuple[float,float,float,float]] = []
-
-    t0 = time.time()
-    n = 0
-    for feat in _iter_nsn_features():
-        geom = feat.get("geometry") or {}
-        bb = _geom_bbox(geom)
-        if not bb:
-            # toch bewaren, maar zonder bbox valt hij buiten index
-            bboxes.append((float("inf"), float("inf"), float("-inf"), float("-inf")))
-        else:
-            bboxes.append(bb)
-            for ix, iy in _bbox_to_cells(bb, cell):
-                k = _grid_key(ix, iy)
-                grid.setdefault(k, []).append(n)
-
-        # schrijf feature compact gecomprimeerd weg (per feature)
-        fp = os.path.join(paths["feat_dir"], f"f{n}.json.gz")
-        with gzip.open(fp, "wt", encoding="utf-8") as gz:
-            json.dump(feat, gz, ensure_ascii=False, separators=(",", ":"))
-
-        n += 1
-        if n % 1000 == 0:
-            dt = time.time() - t0
-            print(f"[NSN] index build: {n} features… ({dt:.1f}s)")
-
-    payload = {
-        "sig": sig,
-        "cell": cell,
-        "is_rd": bool(NSN_GEOJSON_IS_RD),
-        "bboxes": bboxes,
-        "grid": grid,
-        "created_utc": time.time(),
-    }
-    with open(paths["index"], "wb") as f:
-        pickle.dump(payload, f, protocol=pickle.HIGHEST_PROTOCOL)
-
-    print(f"[NSN] index klaar: {n} features, {len(grid)} cellen, {(time.time()-t0):.1f}s")
-    return True
-
-
-def _ensure_nsn_fast_cache(block: bool = True) -> bool:
-    """
-    Zorg dat de NSN fast-cache klaar staat.
-    - block=True: bouw of laad nu (voor snelle eerste klik)
-    - block=False: alleen starten als het kan, maar niet wachten
-    """
-    sig = _nsn_source_signature()
-    if not sig:
-        return False
-
-    with _NSN_LOCK:
-        if _NSN_FAST.get("ready") and _NSN_FAST.get("src_sig") == sig:
-            return True
-        if _NSN_FAST.get("building"):
-            return False if not block else True  # we wachten hieronder buiten lock
-        _NSN_FAST["building"] = True
-        _NSN_FAST["src_sig"] = sig
-        paths = _nsn_cache_paths(sig)
-        _NSN_FAST["dir"] = paths["base"]
-        _NSN_FAST["index_path"] = paths["index"]
-        _NSN_FAST["feat_dir"] = paths["feat_dir"]
-
-    # Buiten lock: laden of bouwen
-    def load_or_build():
-        try:
-            paths = _nsn_cache_paths(sig)
-            if os.path.exists(paths["index"]) and os.path.isdir(paths["feat_dir"]):
-                with open(paths["index"], "rb") as f:
-                    payload = pickle.load(f)
-                if payload.get("sig") == sig:
-                    with _NSN_LOCK:
-                        _NSN_FAST["grid"] = payload["grid"]
-                        _NSN_FAST["bboxes"] = payload["bboxes"]
-                        _NSN_FAST["cell"] = payload["cell"]
-                        _NSN_FAST["is_rd"] = payload["is_rd"]
-                        _NSN_FAST["ready"] = True
-                        _NSN_FAST["building"] = False
-                    print("[NSN] fast-cache geladen")
-                    return True
-
-            # Bouwen
-            ok = _build_nsn_fast_cache(sig)
-            if ok:
-                with open(paths["index"], "rb") as f:
-                    payload = pickle.load(f)
-                with _NSN_LOCK:
-                    _NSN_FAST["grid"] = payload["grid"]
-                    _NSN_FAST["bboxes"] = payload["bboxes"]
-                    _NSN_FAST["cell"] = payload["cell"]
-                    _NSN_FAST["is_rd"] = payload["is_rd"]
-                    _NSN_FAST["ready"] = True
-                    _NSN_FAST["building"] = False
-                return True
-        except Exception as e:
-            print("[NSN] fast-cache fout:", e)
-        finally:
-            with _NSN_LOCK:
-                _NSN_FAST["building"] = False
-        return False
-
-    if not block:
-        # start async build if needed
-        import threading
-        threading.Thread(target=load_or_build, daemon=True).start()
-        return False
-
-    return load_or_build()
-
-
-def _geometry_contains_point(geom: dict, px: float, py: float) -> bool:
-    gtype = (geom or {}).get("type")
-    coords = (geom or {}).get("coordinates")
-    if not gtype or coords is None:
-        return False
-
-    if gtype == "Polygon":
-        # coords: [outer, hole1, hole2...]
-        outer = coords[0] if coords else []
-        if not _point_in_polygon(px, py, outer):
-            return False
-        # holes
-        for hole in coords[1:]:
-            if _point_in_polygon(px, py, hole):
-                return False
-        return True
-
-    if gtype == "MultiPolygon":
-        for poly in coords:
-            if not poly:
-                continue
-            outer = poly[0] if poly else []
-            if not _point_in_polygon(px, py, outer):
-                continue
-            in_hole = False
-            for hole in poly[1:]:
-                if _point_in_polygon(px, py, hole):
-                    in_hole = True
-                    break
-            if not in_hole:
-                return True
-        return False
-
-    # fallback: unsupported geometry
-    return False
-
-
 def nsn_from_point(lat: float, lon: float) -> Optional[str]:
     """
-    Snel NSN bepalen op basis van klikpunt.
-    Render-safe: geen grote RAM piek, want we gebruiken een on-disk index + gecomprimeerde per-feature cache.
+    Bepaal het Natuurlijk Systeem Nederland (NSN)-vak op basis van een klikpunt.
+    Zoekt streamend door de GeoJSON (zonder alles in RAM te laden).
     """
     kind, _, _ = _resolve_nsn_source()
     if kind == "missing":
-        return None
-
-    # zorg dat cache klaar is (blokkerend bij eerste gebruik)
-    _ensure_nsn_fast_cache(block=True)
-
-    with _NSN_LOCK:
-        ready = bool(_NSN_FAST.get("ready"))
-        grid = _NSN_FAST.get("grid") or {}
-        bboxes = _NSN_FAST.get("bboxes") or []
-        cell = float(_NSN_FAST.get("cell") or (2000.0 if NSN_GEOJSON_IS_RD else 0.03))
-        feat_dir = _NSN_FAST.get("feat_dir")
-
-    if not ready or not feat_dir:
-        # fallback: oude streaming lookup (langzaam, maar beter dan niks)
         return None
 
     # Transformeer klikpunt naar zelfde CRS als de GeoJSON
@@ -1187,47 +918,45 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
                 if s:
                     return s
         for v in props.values():
-            if v is None:
-                continue
-            s = str(v).strip()
-            if s:
-                return s
+            if isinstance(v, str) and v.strip():
+                return v.strip()
         return None
 
-    # candidates uit de grid + buren (9 cellen) om randgevallen op te vangen
-    ix, iy = _grid_coords(px, py, cell)
-    cand: list[int] = []
-    seen = set()
-    for dx in (-1, 0, 1):
-        for dy in (-1, 0, 1):
-            k = _grid_key(ix + dx, iy + dy)
-            for fid in grid.get(k, []):
-                if fid not in seen:
-                    seen.add(fid)
-                    cand.append(fid)
+    # Stream door features tot we de eerste polygon vinden die het punt bevat
+    try:
+        for ft in _iter_nsn_features():
+            g = (ft or {}).get("geometry") or {}
+            t = g.get("type")
+            coords = g.get("coordinates") or []
+            if not coords:
+                continue
 
-    # snelle bbox check + per-feature gzip laden
-    for fid in cand:
-        if fid < 0 or fid >= len(bboxes):
-            continue
-        minx, miny, maxx, maxy = bboxes[fid]
-        if not (minx <= px <= maxx and miny <= py <= maxy):
-            continue
+            def _test_polygon(poly_coords) -> Optional[str]:
+                if not poly_coords:
+                    return None
+                ring = poly_coords[0]
+                if _point_in_polygon(px, py, ring):
+                    return _label_from_props((ft or {}).get("properties") or {})
+                return None
 
-        fp = os.path.join(feat_dir, f"f{fid}.json.gz")
-        try:
-            with gzip.open(fp, "rt", encoding="utf-8") as gz:
-                feat = json.load(gz)
-        except Exception:
-            continue
+            label: Optional[str] = None
+            if t == "Polygon":
+                label = _test_polygon(coords)
+            elif t == "MultiPolygon":
+                for poly in coords:
+                    label = _test_polygon(poly)
+                    if label:
+                        break
 
-        geom = feat.get("geometry") or {}
-        if _geometry_contains_point(geom, px, py):
-            props = feat.get("properties") or {}
-            return _label_from_props(props)
+            if label:
+                return label
+    except Exception as e:
+        print("[NSN] fout bij stream-lookup:", e)
 
     return None
 
+
+@app.get("/api/diag/featureinfo")
 def api_diag(service: str = Query(..., pattern="^(bodem|gt|ghg|glg|fgr)$"), lat: float = Query(...), lon: float = Query(...)):
     if service == "fgr":
         return JSONResponse({"fgr": fgr_from_point(lat, lon)})
