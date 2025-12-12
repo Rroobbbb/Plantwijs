@@ -900,8 +900,52 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
         px, py = lon, lat
 
     def _label_from_props(props: dict) -> Optional[str]:
+        """Kies het beste label voor NSN.
+
+        We willen primair de subtype-naam (Subtype_na/subtype_na).
+        Sommige exports hebben andere hoofdletters of underscores, daarom doen we dit case-insensitive.
+        """
         if not props:
             return None
+
+        # case-insensitive lookup
+        pl = {str(k).strip().lower(): v for k, v in props.items()}
+
+        def _get(*keys: str) -> Optional[str]:
+            for k in keys:
+                v = pl.get(k.lower())
+                if v is None:
+                    continue
+                s = str(v).strip()
+                if s:
+                    return s
+            return None
+
+        # 1) exact wat jij wilt: subtype naam
+        v = _get("Subtype_na", "subtype_na", "subtype_na_")
+        if v:
+            return v
+
+        # 2) andere naamvelden (alleen als subtype ontbreekt)
+        v = _get("nsn_naam", "natuurlijk_systeem", "naam")
+        if v:
+            # 'water' is vaak te generiek; als we nog een code hebben, geef liever die
+            if v.strip().lower() == "water":
+                v2 = _get("BKNSN_code", "bknsn_code")
+                return v2 or v
+            return v
+
+        # 3) code fallback
+        v = _get("BKNSN_code", "bknsn_code")
+        if v:
+            return v
+
+        # 4) laatste redmiddel: eerste niet-lege stringwaarde
+        for raw in props.values():
+            if isinstance(raw, str) and raw.strip():
+                return raw.strip()
+        return None
+
         for key in (
             "Subtype_na", "SUBTYPE_NA",
             "nsn_naam", "NSN_NAAM",
