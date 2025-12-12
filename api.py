@@ -705,9 +705,14 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 app = FastAPI(title="PlantWijs API v3.9.7")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
+
 @app.on_event("startup")
 def _startup_warm_nsn():
-    """NSN is groot; op Render laden we dit niet volledig in RAM. We checken alleen of de bron aanwezig is."""
+    """NSN is groot; op Render laden we dit niet volledig in RAM.
+
+    We controleren de bron en proberen (indien nodig) een snelle on-disk index te bouwen,
+    zodat klik-lookups direct snel zijn.
+    """
     try:
         kind, path, member = _resolve_nsn_source()
         if kind == "zip":
@@ -716,9 +721,16 @@ def _startup_warm_nsn():
             print(f"[NSN] bron: {os.path.basename(path)}")
         else:
             print("[NSN] bron: niet gevonden (laag/klikinfo NSN uitgeschakeld)")
-    except Exception as e:
-        print("[NSN] bron check fout:", e)
+            return
 
+        # Bouw/valideer index (in /tmp). Kan bij eerste cold start even duren, daarna razendsnel.
+        ok = _ensure_nsn_index()
+        if ok:
+            print("[NSN] index klaar")
+        else:
+            print("[NSN] index niet beschikbaar; fallback = stream-scan (traag)")
+    except Exception as e:
+        print("[NSN] startup fout:", e)
 
 
 def _clean(o: Any) -> Any:
@@ -884,10 +896,247 @@ def _point_in_polygon(px: float, py: float, ring) -> bool:
     return inside
 
 
+
+# ───────────────────── NSN (Natuurlijk Systeem Nederland) — snelle on-disk index
+import sqlite3
+import zlib
+import hashlib
+import threading
+
+NSN_INDEX_DIR = os.path.join(tempfile.gettempdir(), "plantwijs_nsn")
+NSN_INDEX_DB = os.path.join(NSN_INDEX_DIR, "nsn_index.sqlite")
+_NSN_INDEX_LOCK = threading.Lock()
+
+def _nsn_source_signature() -> str:
+    """Unieke signature van de NSN-bron zodat we index kunnen hergebruiken."""
+    kind, path, member = _resolve_nsn_source()
+    if kind == "missing":
+        return "missing"
+    try:
+        st = os.stat(path) if path else None
+        mtime = int(st.st_mtime) if st else 0
+        size = int(st.st_size) if st else 0
+    except Exception:
+        mtime = 0
+        size = 0
+    raw = f"{kind}|{path}|{member or ''}|{mtime}|{size}|RD={int(bool(NSN_GEOJSON_IS_RD))}"
+    return hashlib.sha1(raw.encode("utf-8", errors="ignore")).hexdigest()
+
+def _db_connect(db_path: str) -> sqlite3.Connection:
+    con = sqlite3.connect(db_path, timeout=60)
+    con.execute("PRAGMA journal_mode=WAL;")
+    con.execute("PRAGMA synchronous=NORMAL;")
+    con.execute("PRAGMA temp_store=MEMORY;")
+    con.execute("PRAGMA cache_size=-20000;")  # ~20MB cache (negatief = KB)
+    return con
+
+def _ensure_nsn_index() -> bool:
+    """Zorg dat de NSN index bestaat en bij de huidige bron hoort."""
+    kind, _, _ = _resolve_nsn_source()
+    if kind == "missing":
+        return False
+
+    os.makedirs(NSN_INDEX_DIR, exist_ok=True)
+    sig = _nsn_source_signature()
+
+    with _NSN_INDEX_LOCK:
+        # snelle check: bestaat DB + meta signature match?
+        if os.path.exists(NSN_INDEX_DB):
+            try:
+                con = _db_connect(NSN_INDEX_DB)
+                try:
+                    con.execute("CREATE TABLE IF NOT EXISTS meta(key TEXT PRIMARY KEY, value TEXT);")
+                    row = con.execute("SELECT value FROM meta WHERE key='sig'").fetchone()
+                    if row and row[0] == sig:
+                        return True
+                finally:
+                    con.close()
+            except Exception:
+                pass  # rebuild
+
+        # rebuild
+        t0 = time.time()
+        try:
+            if os.path.exists(NSN_INDEX_DB):
+                try:
+                    os.remove(NSN_INDEX_DB)
+                except Exception:
+                    pass
+            con = _db_connect(NSN_INDEX_DB)
+            try:
+                con.execute("CREATE TABLE meta(key TEXT PRIMARY KEY, value TEXT);")
+                con.execute("CREATE TABLE feats(id INTEGER PRIMARY KEY, label TEXT, geom BLOB, bbox_area REAL);")
+                # RTree index op bbox
+                con.execute("CREATE VIRTUAL TABLE rtree USING rtree(id, minx, maxx, miny, maxy);")
+
+                def _bbox_of_coords(coords) -> tuple[float,float,float,float] | None:
+                    minx = miny = float("inf")
+                    maxx = maxy = float("-inf")
+                    def _acc(ring):
+                        nonlocal minx,miny,maxx,maxy
+                        for x,y in ring:
+                            if x < minx: minx = x
+                            if y < miny: miny = y
+                            if x > maxx: maxx = x
+                            if y > maxy: maxy = y
+                    # coords kan Polygon of MultiPolygon structuur hebben
+                    if not coords:
+                        return None
+                    # Polygon: [rings...]
+                    if isinstance(coords[0][0], (int,float)):
+                        # ring direct
+                        _acc(coords)
+                    else:
+                        # rings of polygons
+                        for part in coords:
+                            if not part:
+                                continue
+                            # part kan ring of polygon
+                            if part and isinstance(part[0][0], (int,float)):
+                                _acc(part)
+                            else:
+                                # polygon -> rings
+                                for ring in part:
+                                    if ring:
+                                        _acc(ring)
+                    if minx == float("inf"):
+                        return None
+                    return (minx, miny, maxx, maxy)
+
+                def _label_from_props(props: dict) -> str | None:
+                    if not props:
+                        return None
+                    # normaliseer keys
+                    norm = {}
+                    for k, v in props.items():
+                        if k is None:
+                            continue
+                        kk = str(k).strip().lower()
+                        if kk and kk not in norm:
+                            norm[kk] = v
+                    for k in ("subtype_na", "subtype", "subtype_naam"):
+                        v = norm.get(k)
+                        if v is not None:
+                            s = str(v).strip()
+                            if s:
+                                return s
+                    for k in ("nsn_naam","naam","natuurlijk_systeem"):
+                        v = norm.get(k)
+                        if v is not None:
+                            s = str(v).strip()
+                            if s:
+                                return s
+                    v = norm.get("bknsn_code")
+                    if v is not None:
+                        s = str(v).strip()
+                        if s:
+                            return s
+                    return None
+
+                cur = con.cursor()
+                n = 0
+                batch = 0
+                for ft in _iter_nsn_features():
+                    g = (ft or {}).get("geometry") or {}
+                    t = g.get("type")
+                    coords = g.get("coordinates") or []
+                    if not coords:
+                        continue
+                    bb = None
+                    if t == "Polygon":
+                        bb = _bbox_of_coords(coords)
+                    elif t == "MultiPolygon":
+                        bb = _bbox_of_coords(coords)
+                    if not bb:
+                        continue
+                    minx, miny, maxx, maxy = bb
+                    bbox_area = float(max(0.0, (maxx-minx)*(maxy-miny)))
+                    label = _label_from_props((ft or {}).get("properties") or {})
+                    if not label:
+                        continue
+                    payload = {"type": t, "coordinates": coords}
+                    blob = zlib.compress(json.dumps(payload, separators=(",",":")).encode("utf-8"))
+                    cur.execute("INSERT INTO feats(label, geom, bbox_area) VALUES (?,?,?)", (label, sqlite3.Binary(blob), bbox_area))
+                    fid = cur.lastrowid
+                    cur.execute("INSERT INTO rtree(id, minx, maxx, miny, maxy) VALUES (?,?,?,?,?)", (fid, float(minx), float(maxx), float(miny), float(maxy)))
+                    n += 1
+                    batch += 1
+                    if batch >= 500:
+                        con.commit()
+                        batch = 0
+                con.commit()
+                con.execute("INSERT OR REPLACE INTO meta(key,value) VALUES('sig',?)", (sig,))
+                con.execute("INSERT OR REPLACE INTO meta(key,value) VALUES('built_at',?)", (str(int(time.time())),))
+                con.commit()
+                dt = time.time() - t0
+                print(f"[NSN] index gebouwd: {n} features in {dt:.1f}s → {NSN_INDEX_DB}")
+                return True
+            finally:
+                con.close()
+        except Exception as e:
+            print("[NSN] index build fout:", e)
+            return False
+
+def _nsn_lookup_index(px: float, py: float) -> Optional[str]:
+    """Zoek NSN-label via on-disk RTree index."""
+    if not _ensure_nsn_index():
+        return None
+    try:
+        con = _db_connect(NSN_INDEX_DB)
+        try:
+            # Kandidaten op bbox (meest specifieke eerst: kleinste bbox_area)
+            rows = con.execute(
+                "SELECT r.id FROM rtree r JOIN feats f ON f.id=r.id "
+                "WHERE r.minx<=? AND r.maxx>=? AND r.miny<=? AND r.maxy>=? "
+                "ORDER BY f.bbox_area ASC LIMIT 80",
+                (px, px, py, py),
+            ).fetchall()
+            for (fid,) in rows:
+                row = con.execute("SELECT label, geom FROM feats WHERE id=?", (fid,)).fetchone()
+                if not row:
+                    continue
+                label, blob = row
+                try:
+                    payload = json.loads(zlib.decompress(blob).decode("utf-8", errors="ignore"))
+                except Exception:
+                    continue
+                gtype = payload.get("type")
+                coords = payload.get("coordinates") or []
+
+                def _in_poly(poly_coords) -> bool:
+                    if not poly_coords:
+                        return False
+                    outer = poly_coords[0]
+                    if not _point_in_polygon(px, py, outer):
+                        return False
+                    for hole in poly_coords[1:]:
+                        if hole and _point_in_polygon(px, py, hole):
+                            return False
+                    return True
+
+                ok = False
+                if gtype == "Polygon":
+                    ok = _in_poly(coords)
+                elif gtype == "MultiPolygon":
+                    for poly in coords:
+                        if _in_poly(poly):
+                            ok = True
+                            break
+                if ok:
+                    return str(label)
+        finally:
+            con.close()
+    except Exception as e:
+        print("[NSN] lookup index fout:", e)
+    return None
+
+
 def nsn_from_point(lat: float, lon: float) -> Optional[str]:
-    """
-    Bepaal het Natuurlijk Systeem Nederland (NSN)-vak op basis van een klikpunt.
-    Zoekt streamend door de GeoJSON (zonder alles in RAM te laden).
+    """Bepaal NSN (Natuurlijk Systeem Nederland) op basis van een klikpunt.
+
+    Snelheid:
+      - primair via on-disk RTree index (SQLite in /tmp) → snelle lookups
+      - fallback: stream-scan (alleen als index niet kan worden gebouwd)
     """
     kind, _, _ = _resolve_nsn_source()
     if kind == "missing":
@@ -899,52 +1148,12 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
     else:
         px, py = lon, lat
 
-    def _label_from_props(props: dict) -> Optional[str]:
-        """Kies de juiste NSN labelwaarde uit properties.
+    # 1) snelle index
+    label = _nsn_lookup_index(px, py)
+    if label:
+        return label
 
-        In de bron komen keys in verschillende schrijfwijzen voor (Subtype_na / subtype_na / SUBTYPE_NA),
-        soms zelfs met spaties. We normaliseren daarom keys naar lowercase en strippen whitespace.
-        """
-        if not props:
-            return None
-
-        # normaliseer keys -> lowercase + strip
-        norm = {}
-        for k, v in props.items():
-            if k is None:
-                continue
-            kk = str(k).strip().lower()
-            if kk and kk not in norm:
-                norm[kk] = v
-
-        def _get(*keys: str) -> Optional[str]:
-            for k in keys:
-                v = norm.get(k)
-                if v is None:
-                    continue
-                s = str(v).strip()
-                if s:
-                    return s
-            return None
-
-        # 1) De gewenste waarde: Subtype_na
-        s = _get("subtype_na")
-        if s:
-            return s
-
-        # 2) Alternatieve naamvelden (voor het geval subtype ontbreekt)
-        s = _get("nsn_naam", "naam", "natuurlijk_systeem")
-        if s:
-            return s
-
-        # 3) Anders een code als laatste redmiddel
-        s = _get("bknsn_code")
-        if s:
-            return s
-
-        return None
-
-    # Stream door features tot we de eerste polygon vinden die het punt bevat
+    # 2) fallback: stream door features (langzaam, maar werkt altijd)
     try:
         for ft in _iter_nsn_features():
             g = (ft or {}).get("geometry") or {}
@@ -953,32 +1162,60 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
             if not coords:
                 continue
 
+            props = (ft or {}).get("properties") or {}
+
+            # normaliseer keys
+            norm = {}
+            for k, v in props.items():
+                if k is None:
+                    continue
+                kk = str(k).strip().lower()
+                if kk and kk not in norm:
+                    norm[kk] = v
+
+            def _label_from_props() -> Optional[str]:
+                for k in ("subtype_na", "subtype", "subtype_naam"):
+                    v = norm.get(k)
+                    if v is not None:
+                        s = str(v).strip()
+                        if s:
+                            return s
+                for k in ("nsn_naam", "naam", "natuurlijk_systeem"):
+                    v = norm.get(k)
+                    if v is not None:
+                        s = str(v).strip()
+                        if s:
+                            return s
+                v = norm.get("bknsn_code")
+                if v is not None:
+                    s = str(v).strip()
+                    if s:
+                        return s
+                return None
+
             def _test_polygon(poly_coords) -> Optional[str]:
                 if not poly_coords:
                     return None
-                # poly_coords = [outer_ring, hole1, hole2, ...]
                 outer = poly_coords[0]
                 if not _point_in_polygon(px, py, outer):
                     return None
-                # Als het punt in een hole valt, dan is het NIET in de polygon
                 for hole in poly_coords[1:]:
                     if hole and _point_in_polygon(px, py, hole):
                         return None
-                return _label_from_props((ft or {}).get("properties") or {})
+                return _label_from_props()
 
-            label: Optional[str] = None
+            found: Optional[str] = None
             if t == "Polygon":
-                label = _test_polygon(coords)
+                found = _test_polygon(coords)
             elif t == "MultiPolygon":
                 for poly in coords:
-                    label = _test_polygon(poly)
-                    if label:
+                    found = _test_polygon(poly)
+                    if found:
                         break
-
-            if label:
-                return label
+            if found:
+                return found
     except Exception as e:
-        print("[NSN] fout bij stream-lookup:", e)
+        print("[NSN] fout bij fallback lookup:", e)
 
     return None
 
