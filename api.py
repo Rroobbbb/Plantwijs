@@ -21,12 +21,27 @@ import json
 import zipfile
 import sqlite3
 import zlib
+import concurrent.futures
 from functools import lru_cache
 from contextlib import contextmanager
 from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
 import requests
+# Re-use HTTP connections (sneller + minder overhead)
+_SESSION = requests.Session()
+try:
+    from requests.adapters import HTTPAdapter
+    _SESSION.mount("https://", HTTPAdapter(pool_connections=20, pool_maxsize=20, max_retries=1))
+    _SESSION.mount("http://",  HTTPAdapter(pool_connections=10, pool_maxsize=10, max_retries=1))
+except Exception:
+    pass
+
+# Korte timeouts: liever snel 'onbekend' dan 20s wachten
+HTTP_TIMEOUT = (3.0, 6.0)  # (connect, read) in seconds
+
+# Cache voor welke info_format werkt per WMS layer (scheelt veel retries)
+_PREF_INFOFMT: dict[tuple[str, str], str] = {}
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse
@@ -161,7 +176,7 @@ def _load_df(path: str) -> pd.DataFrame:
 
 def _fetch_csv_online(url: str) -> Optional[pd.DataFrame]:
     try:
-        r = requests.get(url, headers=HEADERS, timeout=15)
+        r = _SESSION.get(url, headers=HEADERS, timeout=HTTP_TIMEOUT)
         if r.status_code != 200:
             return None
         text = r.content.decode("utf-8", errors="ignore")
@@ -229,7 +244,7 @@ def get_df() -> pd.DataFrame:
 # ───────────────────── HTTP utils
 @lru_cache(maxsize=32)
 def _get(url: str) -> requests.Response:
-    return requests.get(url, headers=HEADERS, timeout=12)
+    return _SESSION.get(url, headers=HEADERS, timeout=HTTP_TIMEOUT)
 
 @lru_cache(maxsize=16)
 def _capabilities(url: str) -> Optional[ET.Element]:
@@ -297,7 +312,7 @@ _resolve_layers()
 # ───────────────────── WFS/WMS helpers
 def _wfs(url: str) -> List[dict]:
     try:
-        r = requests.get(url, headers=HEADERS, timeout=10)
+        r = _SESSION.get(url, headers=HEADERS, timeout=HTTP_TIMEOUT)
         if r.status_code != 200:
             return []
         if "json" not in r.headers.get("Content-Type", "").lower():
@@ -333,7 +348,7 @@ _DEF_INFO_FORMATS = [
 
 def _wms_getfeatureinfo(base_url: str, layer: str, lat: float, lon: float) -> dict | None:
     cx, cy = TX_WGS84_WEB.transform(lon, lat)
-    m = 200.0
+    m = 60.0
     bbox = f"{cx-m},{cy-m},{cx+m},{cy+m}"
     params_base = {
         "service": "WMS", "version": "1.3.0", "request": "GetFeatureInfo",
@@ -341,12 +356,21 @@ def _wms_getfeatureinfo(base_url: str, layer: str, lat: float, lon: float) -> di
         "crs": "EPSG:3857", "width": 101, "height": 101, "i": 50, "j": 50,
         "bbox": bbox,
     }
-    params_base["feature_count"] = 10
-    for fmt in _DEF_INFO_FORMATS:
+    params_base["feature_count"] = 1
+
+    # Probeer eerst het format dat eerder werkte voor deze WMS/layer (scheelt veel retries)
+    key = (base_url, layer)
+    fmts = []
+    pref = _PREF_INFOFMT.get(key)
+    if pref:
+        fmts.append(pref)
+    fmts.extend([f for f in _DEF_INFO_FORMATS if f != pref])
+
+    for fmt in fmts:
         params = dict(params_base)
         params["info_format"] = fmt
         try:
-            r = requests.get(base_url, params=params, headers=HEADERS, timeout=10)
+            r = _SESSION.get(base_url, params=params, headers=HEADERS, timeout=HTTP_TIMEOUT)
             if not r.ok:
                 continue
             ctype = r.headers.get("Content-Type", "").lower()
@@ -356,9 +380,11 @@ def _wms_getfeatureinfo(base_url: str, layer: str, lat: float, lon: float) -> di
                 if feats:
                     props = feats[0].get("properties") or {}
                     if props:
+                        _PREF_INFOFMT[key] = fmt
                         return props
             text = r.text
             if text and fmt in ("text/plain", "text/xml", "application/vnd.ogc.gml"):
+                _PREF_INFOFMT[key] = fmt
                 return {"_text": text}
         except Exception:
             continue
@@ -1302,12 +1328,43 @@ def advies_geo(
     limit: Optional[int] = Query(None),  # genegeerd
 ):
     t0 = time.time()
-    fgr = fgr_from_point(lat, lon) or "Onbekend"
-    nsn_val = nsn_from_point(lat, lon)
-    bodem_raw, _props_bodem = bodem_from_bodemkaart(lat, lon)
-    vocht_raw, _props_gwt, gt_code = vocht_from_gwt(lat, lon)
-    ahn_val, _props_ahn = ahn_from_wms(lat, lon)
-    gmm_val, _props_gmm = gmm_from_wms(lat, lon)
+
+    # Parallel ophalen (deze calls zijn onafhankelijk en vooral netwerk-bound).
+    # Dit is de grootste winst op Render (scheelt vaak 10–20s → ~2–5s).
+    ex = getattr(app.state, "_pw_executor", None)
+    if ex is None:
+        ex = concurrent.futures.ThreadPoolExecutor(max_workers=int(os.getenv("PW_MAX_WORKERS", "6")))
+        app.state._pw_executor = ex
+
+    fut_fgr   = ex.submit(fgr_from_point, lat, lon)
+    fut_nsn   = ex.submit(nsn_from_point, lat, lon)
+    fut_bodem = ex.submit(bodem_from_bodemkaart, lat, lon)
+    fut_gwt   = ex.submit(vocht_from_gwt, lat, lon)
+    fut_ahn   = ex.submit(ahn_from_wms, lat, lon)
+    fut_gmm   = ex.submit(gmm_from_wms, lat, lon)
+
+    def _safe(fut, timeout=7.0, default=None):
+        try:
+            return fut.result(timeout=timeout)
+        except Exception:
+            return default
+
+    fgr = (_safe(fut_fgr) or "Onbekend")
+    nsn_val = _safe(fut_nsn)
+    bodem_res = _safe(fut_bodem, default=(None, None))
+    bodem_raw, _props_bodem = bodem_res if isinstance(bodem_res, tuple) else (None, None)
+
+    gwt_res = _safe(fut_gwt, default=(None, None, None))
+    if isinstance(gwt_res, tuple) and len(gwt_res) == 3:
+        vocht_raw, _props_gwt, gt_code = gwt_res
+    else:
+        vocht_raw, _props_gwt, gt_code = None, None, None
+
+    ahn_res = _safe(fut_ahn, default=(None, None))
+    ahn_val, _props_ahn = ahn_res if isinstance(ahn_res, tuple) else (None, None)
+
+    gmm_res = _safe(fut_gmm, default=(None, None))
+    gmm_val, _props_gmm = gmm_res if isinstance(gmm_res, tuple) else (None, None)
 
     bodem_val = bodem_raw
     vocht_val = vocht_raw
@@ -1344,7 +1401,7 @@ def advies_geo(
     out = {
         "fgr": fgr,
         "bodem": bodem_val,
-        "bodem_bron": "BRO Bodemkaart WMS" if bodem_raw else "onbekend",
+        "bodem_bron": None,
         "gt_code": gt_code,
         "vocht": vocht_raw,
         "vocht_bron": "BRO Gt/GLG WMS" if vocht_raw else "onbekend",
@@ -2435,4 +2492,4 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
             "Pragma": "no-cache",
             "Expires": "0",
         },
-                              )
+    )
