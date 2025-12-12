@@ -842,8 +842,7 @@ def _iter_nsn_features():
             while True:
                 # skip whitespace/commas
                 n = len(buf)
-                while pos < n and buf[pos] in " 
-	,":
+                while pos < n and buf[pos] in " \r\n\t,":
                     pos += 1
                 if pos >= n:
                     break
