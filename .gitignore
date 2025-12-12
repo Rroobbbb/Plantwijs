@@ -20,17 +20,12 @@ __pycache__/
 # Output & local data
 # (we houden alleen de mappen + gitkeep)
 ########################################
-out/*
+out/**
 !out/.gitkeep
 
-data/*
-!data/.gitkeep
-
 ########################################
-# Public data — alleen 2 CSV's toestaan
+# Public data — alleen 2 CSV's toegestaan
 ########################################
-out/**
-!out/
 !out/plantwijs_full.csv
 !out/plantwijs_full_semicolon.csv
 
