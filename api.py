@@ -19,29 +19,12 @@ import xml.etree.ElementTree as ET
 import tempfile  # ← toevoegen
 import json
 import zipfile
-import sqlite3
-import zlib
-import concurrent.futures
 from functools import lru_cache
 from contextlib import contextmanager
 from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
 import requests
-# Re-use HTTP connections (sneller + minder overhead)
-_SESSION = requests.Session()
-try:
-    from requests.adapters import HTTPAdapter
-    _SESSION.mount("https://", HTTPAdapter(pool_connections=20, pool_maxsize=20, max_retries=1))
-    _SESSION.mount("http://",  HTTPAdapter(pool_connections=10, pool_maxsize=10, max_retries=1))
-except Exception:
-    pass
-
-# Korte timeouts: liever snel 'onbekend' dan 20s wachten
-HTTP_TIMEOUT = (3.0, 6.0)  # (connect, read) in seconds
-
-# Cache voor welke info_format werkt per WMS layer (scheelt veel retries)
-_PREF_INFOFMT: dict[tuple[str, str], str] = {}
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse
@@ -176,7 +159,7 @@ def _load_df(path: str) -> pd.DataFrame:
 
 def _fetch_csv_online(url: str) -> Optional[pd.DataFrame]:
     try:
-        r = _SESSION.get(url, headers=HEADERS, timeout=HTTP_TIMEOUT)
+        r = requests.get(url, headers=HEADERS, timeout=15)
         if r.status_code != 200:
             return None
         text = r.content.decode("utf-8", errors="ignore")
@@ -244,7 +227,7 @@ def get_df() -> pd.DataFrame:
 # ───────────────────── HTTP utils
 @lru_cache(maxsize=32)
 def _get(url: str) -> requests.Response:
-    return _SESSION.get(url, headers=HEADERS, timeout=HTTP_TIMEOUT)
+    return requests.get(url, headers=HEADERS, timeout=12)
 
 @lru_cache(maxsize=16)
 def _capabilities(url: str) -> Optional[ET.Element]:
@@ -312,7 +295,7 @@ _resolve_layers()
 # ───────────────────── WFS/WMS helpers
 def _wfs(url: str) -> List[dict]:
     try:
-        r = _SESSION.get(url, headers=HEADERS, timeout=HTTP_TIMEOUT)
+        r = requests.get(url, headers=HEADERS, timeout=10)
         if r.status_code != 200:
             return []
         if "json" not in r.headers.get("Content-Type", "").lower():
@@ -348,7 +331,7 @@ _DEF_INFO_FORMATS = [
 
 def _wms_getfeatureinfo(base_url: str, layer: str, lat: float, lon: float) -> dict | None:
     cx, cy = TX_WGS84_WEB.transform(lon, lat)
-    m = 60.0
+    m = 200.0
     bbox = f"{cx-m},{cy-m},{cx+m},{cy+m}"
     params_base = {
         "service": "WMS", "version": "1.3.0", "request": "GetFeatureInfo",
@@ -356,21 +339,12 @@ def _wms_getfeatureinfo(base_url: str, layer: str, lat: float, lon: float) -> di
         "crs": "EPSG:3857", "width": 101, "height": 101, "i": 50, "j": 50,
         "bbox": bbox,
     }
-    params_base["feature_count"] = 1
-
-    # Probeer eerst het format dat eerder werkte voor deze WMS/layer (scheelt veel retries)
-    key = (base_url, layer)
-    fmts = []
-    pref = _PREF_INFOFMT.get(key)
-    if pref:
-        fmts.append(pref)
-    fmts.extend([f for f in _DEF_INFO_FORMATS if f != pref])
-
-    for fmt in fmts:
+    params_base["feature_count"] = 10
+    for fmt in _DEF_INFO_FORMATS:
         params = dict(params_base)
         params["info_format"] = fmt
         try:
-            r = _SESSION.get(base_url, params=params, headers=HEADERS, timeout=HTTP_TIMEOUT)
+            r = requests.get(base_url, params=params, headers=HEADERS, timeout=10)
             if not r.ok:
                 continue
             ctype = r.headers.get("Content-Type", "").lower()
@@ -380,11 +354,9 @@ def _wms_getfeatureinfo(base_url: str, layer: str, lat: float, lon: float) -> di
                 if feats:
                     props = feats[0].get("properties") or {}
                     if props:
-                        _PREF_INFOFMT[key] = fmt
                         return props
             text = r.text
             if text and fmt in ("text/plain", "text/xml", "application/vnd.ogc.gml"):
-                _PREF_INFOFMT[key] = fmt
                 return {"_text": text}
         except Exception:
             continue
@@ -912,206 +884,13 @@ def _point_in_polygon(px: float, py: float, ring) -> bool:
     return inside
 
 
-def _nsn_signature() -> str:
-    """Maak een stabiele signature van de NSN-bron zodat we de /tmp index kunnen hergebruiken."""
-    kind, path, member = _resolve_nsn_source()
-    if kind == "missing":
-        return "missing"
-    try:
-        st = os.stat(path)
-        base = f"{kind}:{os.path.basename(path)}:{st.st_size}:{int(st.st_mtime)}:{member or ''}"
-    except Exception:
-        base = f"{kind}:{path}:{member or ''}"
-    # Neem ook CRS mee
-    return base + (":rd" if NSN_GEOJSON_IS_RD else ":wgs84")
-
-
-def _nsn_db_path() -> str:
-    return os.path.join(tempfile.gettempdir(), "plantwijs_nsn_index.sqlite")
-
-
-def _ensure_nsn_index() -> Optional[str]:
-    """
-    Bouw (of hergebruik) een snelle on-disk index voor NSN:
-    - SQLite RTree op bbox
-    - gecomprimeerde geometrie per feature in een tabel
-    Dit is vele malen sneller dan iedere klik de volledige GeoJSON scannen.
-    """
-    kind, _, _ = _resolve_nsn_source()
-    if kind == "missing":
-        return None
-
-    db_path = _nsn_db_path()
-    sig = _nsn_signature()
-
-    def _valid_existing() -> bool:
-        if not os.path.exists(db_path):
-            return False
-        try:
-            con = sqlite3.connect(db_path)
-            try:
-                row = con.execute("SELECT value FROM meta WHERE key='signature'").fetchone()
-                return bool(row and row[0] == sig)
-            finally:
-                con.close()
-        except Exception:
-            return False
-
-    if _valid_existing():
-        return db_path
-
-    # Rebuild
-    try:
-        if os.path.exists(db_path):
-            os.remove(db_path)
-    except Exception:
-        pass
-
-    t0 = time.time()
-    print("[NSN] index build → start")
-    con = sqlite3.connect(db_path)
-    try:
-        con.execute("PRAGMA journal_mode=OFF;")
-        con.execute("PRAGMA synchronous=OFF;")
-        con.execute("PRAGMA temp_store=MEMORY;")
-        con.execute("CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT);")
-        con.execute("CREATE VIRTUAL TABLE rtree_nsn USING rtree(id, minx, maxx, miny, maxy);")
-        con.execute("CREATE TABLE feat (id INTEGER PRIMARY KEY, label TEXT, geom BLOB);")
-
-        def _label_from_props(props: dict) -> Optional[str]:
-            if not props:
-                return None
-            norm: Dict[str, Any] = {}
-            for k, v in props.items():
-                if k is None:
-                    continue
-                kk = str(k).strip().lower()
-                if kk and kk not in norm:
-                    norm[kk] = v
-
-            def _get(*keys: str) -> Optional[str]:
-                for k in keys:
-                    v = norm.get(k)
-                    if v is None:
-                        continue
-                    s = str(v).strip()
-                    if s:
-                        return s
-                return None
-
-            # 1) gewenste waarde
-            s = _get("subtype_na")
-            if s:
-                return s
-            # 2) alternatieven
-            s = _get("nsn_naam", "naam", "natuurlijk_systeem")
-            if s:
-                return s
-            # 3) code
-            s = _get("bknsn_code")
-            if s:
-                return s
-            return None
-
-        def _bbox_of_coords(coords) -> Optional[Tuple[float, float, float, float]]:
-            minx = miny = float("inf")
-            maxx = maxy = float("-inf")
-
-            def walk(obj):
-                nonlocal minx, miny, maxx, maxy
-                if isinstance(obj, (list, tuple)):
-                    # punt?
-                    if len(obj) == 2 and isinstance(obj[0], (int, float)) and isinstance(obj[1], (int, float)):
-                        x, y = float(obj[0]), float(obj[1])
-                        if x < minx: minx = x
-                        if y < miny: miny = y
-                        if x > maxx: maxx = x
-                        if y > maxy: maxy = y
-                        return
-                    for it in obj:
-                        walk(it)
-
-            walk(coords)
-            if minx == float("inf"):
-                return None
-            return (minx, maxx, miny, maxy)
-
-        # Batch inserts
-        rtree_rows = []
-        feat_rows = []
-        batch = 500
-        fid = 0
-
-        for ft in _iter_nsn_features():
-            g = (ft or {}).get("geometry") or {}
-            t = g.get("type")
-            coords = g.get("coordinates")
-            if not coords or t not in ("Polygon", "MultiPolygon"):
-                continue
-
-            label = _label_from_props((ft or {}).get("properties") or {})
-            if not label:
-                # label is nodig voor UI; zonder label heeft feature weinig waarde
-                continue
-
-            bb = _bbox_of_coords(coords)
-            if not bb:
-                continue
-
-            fid += 1
-            # compress geometry
-            payload = json.dumps({"t": t, "c": coords}, separators=(",", ":")).encode("utf-8")
-            blob = sqlite3.Binary(zlib.compress(payload, level=6))
-
-            rtree_rows.append((fid, bb[0], bb[1], bb[2], bb[3]))
-            feat_rows.append((fid, label, blob))
-
-            if fid % batch == 0:
-                con.executemany("INSERT INTO rtree_nsn(id,minx,maxx,miny,maxy) VALUES (?,?,?,?,?)", rtree_rows)
-                con.executemany("INSERT INTO feat(id,label,geom) VALUES (?,?,?)", feat_rows)
-                con.commit()
-                rtree_rows.clear()
-                feat_rows.clear()
-
-        if rtree_rows:
-            con.executemany("INSERT INTO rtree_nsn(id,minx,maxx,miny,maxy) VALUES (?,?,?,?,?)", rtree_rows)
-            con.executemany("INSERT INTO feat(id,label,geom) VALUES (?,?,?)", feat_rows)
-            con.commit()
-
-        con.execute("INSERT INTO meta(key,value) VALUES ('signature',?)", (sig,))
-        con.commit()
-
-        print(f"[NSN] index build → klaar: {fid} features in {int((time.time()-t0)*1000)} ms")
-        return db_path
-    except Exception as e:
-        print("[NSN] index build fout:", e)
-        try:
-            con.close()
-        except Exception:
-            pass
-        try:
-            if os.path.exists(db_path):
-                os.remove(db_path)
-        except Exception:
-            pass
-        return None
-    finally:
-        try:
-            con.close()
-        except Exception:
-            pass
-
-
 def nsn_from_point(lat: float, lon: float) -> Optional[str]:
     """
     Bepaal het Natuurlijk Systeem Nederland (NSN)-vak op basis van een klikpunt.
-
-    Snelste pad:
-    - query SQLite RTree op bbox → kleine set kandidaten
-    - decode + point-in-polygon (met holes) op kandidaten
+    Zoekt streamend door de GeoJSON (zonder alles in RAM te laden).
     """
-    db_path = _ensure_nsn_index()
-    if not db_path:
+    kind, _, _ = _resolve_nsn_source()
+    if kind == "missing":
         return None
 
     # Transformeer klikpunt naar zelfde CRS als de GeoJSON
@@ -1120,61 +899,87 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
     else:
         px, py = lon, lat
 
+    def _label_from_props(props: dict) -> Optional[str]:
+        """Kies de juiste NSN labelwaarde uit properties.
+
+        In de bron komen keys in verschillende schrijfwijzen voor (Subtype_na / subtype_na / SUBTYPE_NA),
+        soms zelfs met spaties. We normaliseren daarom keys naar lowercase en strippen whitespace.
+        """
+        if not props:
+            return None
+
+        # normaliseer keys -> lowercase + strip
+        norm = {}
+        for k, v in props.items():
+            if k is None:
+                continue
+            kk = str(k).strip().lower()
+            if kk and kk not in norm:
+                norm[kk] = v
+
+        def _get(*keys: str) -> Optional[str]:
+            for k in keys:
+                v = norm.get(k)
+                if v is None:
+                    continue
+                s = str(v).strip()
+                if s:
+                    return s
+            return None
+
+        # 1) De gewenste waarde: Subtype_na
+        s = _get("subtype_na")
+        if s:
+            return s
+
+        # 2) Alternatieve naamvelden (voor het geval subtype ontbreekt)
+        s = _get("nsn_naam", "naam", "natuurlijk_systeem")
+        if s:
+            return s
+
+        # 3) Anders een code als laatste redmiddel
+        s = _get("bknsn_code")
+        if s:
+            return s
+
+        return None
+
+    # Stream door features tot we de eerste polygon vinden die het punt bevat
     try:
-        con = sqlite3.connect(db_path)
-        try:
-            # Kandidaten op bbox
-            cand = con.execute(
-                "SELECT id FROM rtree_nsn WHERE minx<=? AND maxx>=? AND miny<=? AND maxy>=? LIMIT 5000",
-                (px, px, py, py),
-            ).fetchall()
-            if not cand:
-                return None
+        for ft in _iter_nsn_features():
+            g = (ft or {}).get("geometry") or {}
+            t = g.get("type")
+            coords = g.get("coordinates") or []
+            if not coords:
+                continue
 
-            ids = [row[0] for row in cand]
-            # Fetch in chunks om SQL-limits te vermijden
-            for i in range(0, len(ids), 500):
-                chunk = ids[i:i+500]
-                qmarks = ",".join(["?"]*len(chunk))
-                rows = con.execute(f"SELECT id,label,geom FROM feat WHERE id IN ({qmarks})", chunk).fetchall()
+            def _test_polygon(poly_coords) -> Optional[str]:
+                if not poly_coords:
+                    return None
+                # poly_coords = [outer_ring, hole1, hole2, ...]
+                outer = poly_coords[0]
+                if not _point_in_polygon(px, py, outer):
+                    return None
+                # Als het punt in een hole valt, dan is het NIET in de polygon
+                for hole in poly_coords[1:]:
+                    if hole and _point_in_polygon(px, py, hole):
+                        return None
+                return _label_from_props((ft or {}).get("properties") or {})
 
-                for _id, label, blob in rows:
-                    try:
-                        data = json.loads(zlib.decompress(blob).decode("utf-8"))
-                        t = data.get("t")
-                        coords = data.get("c") or []
-                    except Exception:
-                        continue
+            label: Optional[str] = None
+            if t == "Polygon":
+                label = _test_polygon(coords)
+            elif t == "MultiPolygon":
+                for poly in coords:
+                    label = _test_polygon(poly)
+                    if label:
+                        break
 
-                    def _test_polygon(poly_coords) -> bool:
-                        if not poly_coords:
-                            return False
-                        outer = poly_coords[0]
-                        if not _point_in_polygon(px, py, outer):
-                            return False
-                        for hole in poly_coords[1:]:
-                            if hole and _point_in_polygon(px, py, hole):
-                                return False
-                        return True
-
-                    hit = False
-                    if t == "Polygon":
-                        hit = _test_polygon(coords)
-                    elif t == "MultiPolygon":
-                        for poly in coords:
-                            if _test_polygon(poly):
-                                hit = True
-                                break
-
-                    if hit:
-                        return str(label).strip() if label else None
-
-        finally:
-            con.close()
+            if label:
+                return label
     except Exception as e:
-        print("[NSN] index lookup fout:", e)
+        print("[NSN] fout bij stream-lookup:", e)
 
-    # Fallback: niets gevonden
     return None
 
 
@@ -1328,43 +1133,12 @@ def advies_geo(
     limit: Optional[int] = Query(None),  # genegeerd
 ):
     t0 = time.time()
-
-    # Parallel ophalen (deze calls zijn onafhankelijk en vooral netwerk-bound).
-    # Dit is de grootste winst op Render (scheelt vaak 10–20s → ~2–5s).
-    ex = getattr(app.state, "_pw_executor", None)
-    if ex is None:
-        ex = concurrent.futures.ThreadPoolExecutor(max_workers=int(os.getenv("PW_MAX_WORKERS", "6")))
-        app.state._pw_executor = ex
-
-    fut_fgr   = ex.submit(fgr_from_point, lat, lon)
-    fut_nsn   = ex.submit(nsn_from_point, lat, lon)
-    fut_bodem = ex.submit(bodem_from_bodemkaart, lat, lon)
-    fut_gwt   = ex.submit(vocht_from_gwt, lat, lon)
-    fut_ahn   = ex.submit(ahn_from_wms, lat, lon)
-    fut_gmm   = ex.submit(gmm_from_wms, lat, lon)
-
-    def _safe(fut, timeout=7.0, default=None):
-        try:
-            return fut.result(timeout=timeout)
-        except Exception:
-            return default
-
-    fgr = (_safe(fut_fgr) or "Onbekend")
-    nsn_val = _safe(fut_nsn)
-    bodem_res = _safe(fut_bodem, default=(None, None))
-    bodem_raw, _props_bodem = bodem_res if isinstance(bodem_res, tuple) else (None, None)
-
-    gwt_res = _safe(fut_gwt, default=(None, None, None))
-    if isinstance(gwt_res, tuple) and len(gwt_res) == 3:
-        vocht_raw, _props_gwt, gt_code = gwt_res
-    else:
-        vocht_raw, _props_gwt, gt_code = None, None, None
-
-    ahn_res = _safe(fut_ahn, default=(None, None))
-    ahn_val, _props_ahn = ahn_res if isinstance(ahn_res, tuple) else (None, None)
-
-    gmm_res = _safe(fut_gmm, default=(None, None))
-    gmm_val, _props_gmm = gmm_res if isinstance(gmm_res, tuple) else (None, None)
+    fgr = fgr_from_point(lat, lon) or "Onbekend"
+    nsn_val = nsn_from_point(lat, lon)
+    bodem_raw, _props_bodem = bodem_from_bodemkaart(lat, lon)
+    vocht_raw, _props_gwt, gt_code = vocht_from_gwt(lat, lon)
+    ahn_val, _props_ahn = ahn_from_wms(lat, lon)
+    gmm_val, _props_gmm = gmm_from_wms(lat, lon)
 
     bodem_val = bodem_raw
     vocht_val = vocht_raw
@@ -1401,7 +1175,7 @@ def advies_geo(
     out = {
         "fgr": fgr,
         "bodem": bodem_val,
-        "bodem_bron": None,
+        "bodem_bron": "BRO Bodemkaart WMS" if bodem_raw else "onbekend",
         "gt_code": gt_code,
         "vocht": vocht_raw,
         "vocht_bron": "BRO Gt/GLG WMS" if vocht_raw else "onbekend",
@@ -2034,7 +1808,7 @@ setTimeout(fixMapSize, 0);
 
   function setClickInfo({fgr, bodem, bodem_bron, gt, vocht, ahn, gmm, nsn}) {
   const tF = "Fysisch Geografische Regio's: " + (fgr || '—');
-  const tB = 'Bodem: ' + (bodem || '—');
+  const tB = 'Bodem: ' + ((bodem || '—') + (bodem_bron ? ` (${bodem_bron})` : ''));
   const tG = 'Gt: ' + (gt || '—') + (vocht ? ` → ${vocht}` : ' (onbekend)');
   const tH = 'AHN (m): ' + ((ahn !== null && ahn !== undefined && ahn !== '') ? ahn : '—');
   const tM = 'Geomorfologie (GMM): ' + ((gmm !== null && gmm !== undefined && gmm !== '') ? gmm : '—');
