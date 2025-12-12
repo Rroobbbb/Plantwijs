@@ -17,9 +17,10 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 import tempfile  # ← toevoegen
-import zipfile
 import json
+import zipfile
 from functools import lru_cache
+from contextlib import contextmanager
 from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
@@ -33,28 +34,54 @@ from pyproj import Transformer
 HEADERS = {"User-Agent": "plantwijs/3.9.7"}
 FMT_JSON = "application/json;subtype=geojson"
 
-# ───────────────────── NSN (Natuurlijk Systeem Nederland)
-# In productie (GitHub/Render) is de losse GeoJSON te groot voor Git.
-# Daarom ondersteunen we ook een ZIP in ./data (bijv. LBK_BKNSN_2023.zip) met daarin de GeoJSON.
-# We extracten die één keer naar /tmp (ephemeral) en gebruiken daarna dat bestand.
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
-NSN_GEOJSON_FILENAME = "nsn_natuurlijk_systeem.geojson"
+NSN_DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+# Groot bestand: liever niet in Git als losse .geojson. Daarom ondersteunen we ook een ZIP in /data.
+NSN_GEOJSON_PATH = os.path.join(NSN_DATA_DIR, "nsn_natuurlijk_systeem.geojson")
+NSN_ZIP_PATH = os.path.join(NSN_DATA_DIR, "LBK_BKNSN_2023.zip")  # default; er mag ook een andere .zip in /data staan
 
-# Voorkeursnaam: zet jouw ZIP in PlantWijs/data/ met één van deze namen (of laat de auto-detect z'n werk doen).
-NSN_ZIP_CANDIDATES = [
-    "LBK_BKNSN_2023.zip",
-    "BKNSN_2023.zip",
-    "nsn_natuurlijk_systeem.zip",
-]
+NSN_GEOJSON_IS_RD: bool = True  # GeoJSON in RD New (EPSG:28992); op False zetten als je zelf naar WGS84 hebt geprojecteerd
 
-# NB: GeoJSON in RD New (EPSG:28992). Op False zetten als je zelf naar WGS84 hebt geprojecteerd.
-NSN_GEOJSON_IS_RD: bool = True
+# NSN bron-resolutie (geen full in-memory cache; Render 512MB)
+_NSN_SOURCE: Optional[Tuple[str, str, Optional[str]]] = None  # ("geojson"|"zip"|"missing", path, membername)
 
-_NSN_CACHE: Optional[dict] = None
-_NSN_FEATURES: Optional[list] = None
-_NSN_IS_RD: Optional[bool] = None
-_NSN_BBOXES: Optional[list] = None  # [(minx,miny,maxx,maxy), ...] zelfde index als _NSN_FEATURES
-_NSN_SOURCE_PATH: Optional[str] = None  # pad naar (eventueel uitgepakte) GeoJSON
+def _resolve_nsn_source() -> Tuple[str, str, Optional[str]]:
+    """Bepaal waar NSN-data vandaan komt (losse geojson of zip). Cache alleen metadata."""
+    global _NSN_SOURCE
+    if _NSN_SOURCE is not None:
+        return _NSN_SOURCE
+
+    # 1) Losse geojson (dev)
+    if os.path.exists(NSN_GEOJSON_PATH):
+        _NSN_SOURCE = ("geojson", NSN_GEOJSON_PATH, None)
+        return _NSN_SOURCE
+
+    # 2) ZIP (prod): eerst default, dan elke .zip in data/
+    zips: List[str] = []
+    if os.path.exists(NSN_ZIP_PATH):
+        zips.append(NSN_ZIP_PATH)
+    try:
+        for fn in os.listdir(NSN_DATA_DIR):
+            if fn.lower().endswith(".zip"):
+                p = os.path.join(NSN_DATA_DIR, fn)
+                if p not in zips:
+                    zips.append(p)
+    except Exception:
+        pass
+
+    for zp in zips:
+        try:
+            with zipfile.ZipFile(zp, "r") as zf:
+                names = zf.namelist()
+                geo = [n for n in names if n.lower().endswith(".geojson") or n.lower().endswith(".json")]
+                if geo:
+                    _NSN_SOURCE = ("zip", zp, geo[0])
+                    return _NSN_SOURCE
+        except Exception:
+            continue
+
+    _NSN_SOURCE = ("missing", "", None)
+    return _NSN_SOURCE
+
 
 # WFS FGR
 PDOK_FGR_WFS = (
@@ -678,12 +705,27 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 app = FastAPI(title="PlantWijs API v3.9.7")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
+@app.on_event("startup")
+def _startup_warm_nsn():
+    """NSN is groot; op Render laden we dit niet volledig in RAM. We checken alleen of de bron aanwezig is."""
+    try:
+        kind, path, member = _resolve_nsn_source()
+        if kind == "zip":
+            print(f"[NSN] bron: ZIP {os.path.basename(path)} :: {member}")
+        elif kind == "geojson":
+            print(f"[NSN] bron: {os.path.basename(path)}")
+        else:
+            print("[NSN] bron: niet gevonden (laag/klikinfo NSN uitgeschakeld)")
+    except Exception as e:
+        print("[NSN] bron check fout:", e)
+
+
 
 def _clean(o: Any) -> Any:
     if isinstance(o, float):
         return o if math.isfinite(o) else None
     if isinstance(o, dict):
-        return {k: _clean(v) for k, v in o.items()}
+        return {k:_clean(v) for k,v in o.items()}
     if isinstance(o, list):
         return [_clean(v) for v in o]
     try:
@@ -693,213 +735,141 @@ def _clean(o: Any) -> Any:
         pass
     return o
 
+# ───────────────────── API: diagnose/meta
+@app.get("/api/wms_meta")
+def api_wms_meta():
+    return JSONResponse(_clean(_WMSMETA))
 
-# ───────────────────── NSN helpers (ZIP support + ultra-low-memory point lookup)
-#
-# IMPORTANT (Render 512MB): NEVER load the full GeoJSON into memory.
-# We stream features directly out of the (zipped) GeoJSON and stop as soon as we find a match.
-#
-# Put in ./data:
-#   - nsn_natuurlijk_systeem.geojson  (local/dev)  OR
-#   - LBK_BKNSN_2023.zip (or any other .zip) containing 1 .geojson
-
-
-def _resolve_nsn_container() -> Tuple[Optional[str], Optional[str], Optional[str]]:
-    """Return (kind, path, member):
-    - ("file", "/abs/path/to/file.geojson", None)
-    - ("zip",  "/abs/path/to/file.zip",    "inside.geojson")
-    - (None, None, None) if not found
+@app.get("/api/nsn")
+def api_nsn():
     """
-    # 1) Plain GeoJSON
-    plain_path = os.path.join(DATA_DIR, NSN_GEOJSON_FILENAME)
-    if os.path.exists(plain_path):
-        return ("file", plain_path, None)
+    Retourneer GeoJSON voor Natuurlijk Systeem Nederland (NSN) als vectorlaag.
 
-    # 2) ZIP candidates
-    zip_paths: List[str] = []
-    for name in NSN_ZIP_CANDIDATES:
-        zp = os.path.join(DATA_DIR, name)
-        if os.path.exists(zp):
-            zip_paths.append(zp)
-
-    # 3) Auto-detect: first .zip in data/
-    if not zip_paths and os.path.isdir(DATA_DIR):
-        for fn in os.listdir(DATA_DIR):
-            if fn.lower().endswith(".zip"):
-                zip_paths.append(os.path.join(DATA_DIR, fn))
-
-    if not zip_paths:
-        return (None, None, None)
-
-    zip_path = zip_paths[0]
-    try:
-        with zipfile.ZipFile(zip_path, "r") as z:
-            geo_members = [n for n in z.namelist() if n.lower().endswith(".geojson")]
-            if not geo_members:
-                return (None, None, None)
-            return ("zip", zip_path, geo_members[0])
-    except Exception as e:
-        print("[NSN] failed to open ZIP:", e)
-        return (None, None, None)
-
-
-def _open_nsn_text_stream() -> Tuple[Optional[io.TextIOBase], Optional[zipfile.ZipFile]]:
-    """Open a text stream to the NSN GeoJSON WITHOUT loading it all.
-    Returns (text_stream, zip_handle_or_None). If zip is used, the zip handle must stay open while reading.
+    Belangrijk: dit bestand is erg groot. Daarom streamen we de bytes (geen json.load in RAM).
+    Bron:
+      - data/nsn_natuurlijk_systeem.geojson (dev), of
+      - een .zip in data/ met een .geojson erin (prod), bijv. data/LBK_BKNSN_2023.zip
     """
-    kind, path, member = _resolve_nsn_container()
-    if not kind:
-        return (None, None)
+    kind, path, member = _resolve_nsn_source()
+    if kind == "missing":
+        return JSONResponse({"error": "nsn_source_not_found"}, status_code=404)
 
-    if kind == "file":
+    def _iter_bytes():
         try:
-            return (open(path, "r", encoding="utf-8", errors="ignore"), None)
+            with _open_nsn_bytes() as bf:
+                while True:
+                    chunk = bf.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    yield chunk
         except Exception as e:
-            print("[NSN] failed to open GeoJSON:", e)
-            return (None, None)
-
-    # kind == "zip"
-    z = None
-    try:
-        z = zipfile.ZipFile(path, "r")
-        raw = z.open(member, "r")
-        txt = io.TextIOWrapper(raw, encoding="utf-8", errors="ignore")
-        return (txt, z)
-    except Exception as e:
-        print("[NSN] failed to open GeoJSON from ZIP:", e)
-        try:
-            if z:
-                z.close()
-        except Exception:
-            pass
-        return (None, None)
-
-
-def _iter_feature_objects_from_geojson_text(fp: io.TextIOBase):
-    """Streaming parser for GeoJSON FeatureCollection without extra deps.
-    Finds the "features":[ ... ] array and yields each feature object (dict) one-by-one.
-    """
-    # Read chunks; first, find the start of the features array
-    buf = ""
-    found = False
-    while True:
-        chunk = fp.read(65536)
-        if not chunk:
+            # Stream errors zijn lastig aan client te melden; loggen is het best wat kan.
+            print("[NSN] stream fout:", e)
             return
-        buf += chunk
-        if not found:
-            idx = buf.find('"features"')
-            if idx == -1:
-                buf = buf[-200000:]
-                continue
-            lb = buf.find("[", idx)
-            if lb == -1:
-                buf = buf[idx:]
-                continue
-            buf = buf[lb + 1 :]
-            found = True
-            break
 
-    # Now we are inside the array. Parse objects with a small state machine.
-    in_str = False
-    esc = False
-    depth = 0
-    obj_started = False
-    obj_buf: List[str] = []
+    return StreamingResponse(_iter_bytes(), media_type=FMT_JSON)
 
-    def _flush_object():
-        nonlocal obj_buf
-        txt = "".join(obj_buf).strip()
-        obj_buf = []
-        if not txt:
-            return None
+
+
+@contextmanager
+def _open_nsn_bytes():
+    """Open de NSN-geojson als bytes-stream (los bestand of uit ZIP)."""
+    kind, path, member = _resolve_nsn_source()
+    if kind == "geojson":
+        f = open(path, "rb")
         try:
-            return json.loads(txt)
-        except Exception:
-            return None
+            yield f
+        finally:
+            try:
+                f.close()
+            except Exception:
+                pass
+        return
 
-    while True:
-        if not buf:
-            chunk = fp.read(65536)
-            if not chunk:
-                if obj_started and obj_buf:
-                    o = _flush_object()
-                    if o is not None:
-                        yield o
-                return
-            buf = chunk
+    if kind == "zip":
+        zf = zipfile.ZipFile(path, "r")
+        bf = zf.open(member, "r")
+        try:
+            yield bf
+        finally:
+            try:
+                bf.close()
+            except Exception:
+                pass
+            try:
+                zf.close()
+            except Exception:
+                pass
+        return
 
-        i = 0
-        L = len(buf)
-        while i < L:
-            ch = buf[i]
+    raise FileNotFoundError("NSN bron niet gevonden. Voeg een .zip met .geojson toe in PlantWijs/data/.")
 
-            if not obj_started:
-                if ch == "{":
-                    obj_started = True
-                    depth = 1
-                    obj_buf = ["{"]
-                    in_str = False
-                    esc = False
-                elif ch == "]":
-                    return
-                i += 1
-                continue
 
-            obj_buf.append(ch)
+def _iter_nsn_features():
+    """
+    Stream features uit een (grote) GeoJSON FeatureCollection zonder alles in RAM te laden.
 
-            if in_str:
-                if esc:
-                    esc = False
-                elif ch == "\\":
-                    esc = True
-                elif ch == '"':
-                    in_str = False
-            else:
-                if ch == '"':
-                    in_str = True
-                elif ch == "{":
-                    depth += 1
-                elif ch == "}":
-                    depth -= 1
-                    if depth == 0:
-                        o = _flush_object()
-                        obj_started = False
-                        if o is not None:
-                            yield o
-            i += 1
-
+    We zoeken de 'features' array en decoderen Feature-objecten één voor één met json.JSONDecoder.raw_decode().
+    """
+    decoder = json.JSONDecoder()
+    with _open_nsn_bytes() as bf:
+        tf = io.TextIOWrapper(bf, encoding="utf-8", errors="ignore")
         buf = ""
+        in_features = False
+        pos = 0
+
+        while True:
+            chunk = tf.read(1024 * 256)  # 256KB tekst
+            if not chunk:
+                break
+            buf += chunk
+
+            if not in_features:
+                idx = buf.find('"features"')
+                if idx == -1:
+                    # houd buffer beperkt
+                    if len(buf) > 2_000_000:
+                        buf = buf[-1_000_000:]
+                    continue
+                # vind de '[' na "features":
+                br = buf.find("[", idx)
+                if br == -1:
+                    continue
+                in_features = True
+                pos = br + 1
+
+            # decode features
+            while True:
+                # skip whitespace/commas
+                n = len(buf)
+                while pos < n and buf[pos] in " 
+	,":
+                    pos += 1
+                if pos >= n:
+                    break
+                if buf[pos] == "]":
+                    return  # einde array
+
+                try:
+                    obj, end = decoder.raw_decode(buf, pos)
+                    pos = end
+                    if isinstance(obj, dict) and obj.get("type") == "Feature":
+                        yield obj
+                except json.JSONDecodeError:
+                    # niet genoeg data in buffer → lees verder
+                    break
+
+            # trim buffer om geheugen laag te houden
+            if pos > 1_000_000:
+                buf = buf[pos:]
+                pos = 0
 
 
-def _ring_bbox(ring) -> Optional[Tuple[float, float, float, float]]:
-    if not ring:
-        return None
-    minx = miny = float("inf")
-    maxx = maxy = float("-inf")
-    for xy in ring:
-        try:
-            x, y = xy
-        except Exception:
-            continue
-        if x < minx:
-            minx = x
-        if y < miny:
-            miny = y
-        if x > maxx:
-            maxx = x
-        if y > maxy:
-            maxy = y
-    if not (math.isfinite(minx) and math.isfinite(miny) and math.isfinite(maxx) and math.isfinite(maxy)):
-        return None
-    return (minx, miny, maxx, maxy)
 
-
-def _bbox_contains(b: Tuple[float, float, float, float], x: float, y: float, pad: float = 0.0) -> bool:
-    return (b[0] - pad) <= x <= (b[2] + pad) and (b[1] - pad) <= y <= (b[3] + pad)
-
-
-def _point_in_ring(px: float, py: float, ring) -> bool:
+def _point_in_polygon(px: float, py: float, ring) -> bool:
+    """
+    Standaard ray‑casting point‑in‑polygon test op basis van de buitenring.
+    """
     inside = False
     n = len(ring)
     if n < 3:
@@ -907,142 +877,84 @@ def _point_in_ring(px: float, py: float, ring) -> bool:
     for i in range(n):
         x1, y1 = ring[i]
         x2, y2 = ring[(i + 1) % n]
-        if (y1 > py) != (y2 > py):
-            x_int = (x2 - x1) * (py - y1) / (y2 - y1 + 1e-12) + x1
-            if px < x_int:
+        # Kijk of de horizontale lijn door het segment gaat
+        if ((y1 > py) != (y2 > py)):
+            x_intersect = (x2 - x1) * (py - y1) / (y2 - y1 + 1e-9) + x1
+            if px < x_intersect:
                 inside = not inside
     return inside
 
 
-def _point_in_polygon_with_holes(px: float, py: float, poly_coords) -> bool:
-    """poly_coords: [outer_ring, hole1, hole2, ...]"""
-    if not poly_coords:
-        return False
-    outer = poly_coords[0]
-    if not _point_in_ring(px, py, outer):
-        return False
-    for hole in poly_coords[1:]:
-        if hole and _point_in_ring(px, py, hole):
-            return False
-    return True
-
-
-def _nsn_label_from_props(props: dict) -> Optional[str]:
-    if not props:
-        return None
-    for key in (
-        "Subtype_na",
-        "SUBTYPE_NA",
-        "nsn_naam",
-        "NSN_NAAM",
-        "natuurlijk_systeem",
-        "NATUURLIJK_SYSTEEM",
-        "naam",
-        "NAAM",
-    ):
-        if key in props and props[key]:
-            s = str(props[key]).strip()
-            if s:
-                return s
-    for key in ("BKNSN_code", "BKNSN_CODE"):
-        if key in props and props[key]:
-            s = str(props[key]).strip()
-            if s:
-                return s
-    for v in props.values():
-        if isinstance(v, str) and v.strip():
-            return v.strip()
-    return None
-
-
-def nsn_feature_from_point(lat: float, lon: float, pad_m: float = 0.0) -> Optional[dict]:
-    """Ultra-low-memory lookup: stream features and stop at first match."""
-    fp, z = _open_nsn_text_stream()
-    if fp is None:
-        return None
-
-    try:
-        if NSN_GEOJSON_IS_RD:
-            px, py = TX_WGS84_RD.transform(lon, lat)
-        else:
-            px, py = lon, lat
-
-        pad = float(pad_m or 0.0)
-
-        for ft in _iter_feature_objects_from_geojson_text(fp):
-            if not isinstance(ft, dict):
-                continue
-            geom = ft.get("geometry") or {}
-            gtype = geom.get("type")
-            coords = geom.get("coordinates") or []
-
-            try:
-                if gtype == "Polygon":
-                    if not coords:
-                        continue
-                    bb = _ring_bbox(coords[0])
-                    if bb and not _bbox_contains(bb, px, py, pad=pad):
-                        continue
-                    if _point_in_polygon_with_holes(px, py, coords):
-                        return ft
-
-                elif gtype == "MultiPolygon":
-                    for poly in coords:
-                        if not poly:
-                            continue
-                        bb = _ring_bbox(poly[0] if poly else None)
-                        if bb and not _bbox_contains(bb, px, py, pad=pad):
-                            continue
-                        if _point_in_polygon_with_holes(px, py, poly):
-                            return ft
-            except Exception:
-                continue
-
-        return None
-    finally:
-        try:
-            fp.close()
-        except Exception:
-            pass
-        try:
-            if z is not None:
-                z.close()
-        except Exception:
-            pass
-
-
 def nsn_from_point(lat: float, lon: float) -> Optional[str]:
-    ft = nsn_feature_from_point(lat=lat, lon=lon)
-    if not ft:
-        return None
-    props = ft.get("properties") or {}
-    return _nsn_label_from_props(props)
-
-
-@app.get("/api/nsn")
-def api_nsn(
-    lat: Optional[float] = Query(None, description="Klikpunt latitude (WGS84)"),
-    lon: Optional[float] = Query(None, description="Klikpunt longitude (WGS84)"),
-    pad_m: float = Query(0.0, description="Extra marge in meters voor bbox-filter (RD)"),
-    full: bool = Query(False, description="Debug: full dump (disabled on Render)"),
-):
-    """NSN endpoint.
-    Recommended: /api/nsn?lat=<..>&lon=<..> returns only the relevant NSN feature.
     """
-    if full:
-        return JSONResponse(
-            {"error": "full_disabled", "hint": "Use /api/nsn?lat=<..>&lon=<..> (streaming lookup)."},
-            status_code=400,
-        )
+    Bepaal het Natuurlijk Systeem Nederland (NSN)-vak op basis van een klikpunt.
+    Zoekt streamend door de GeoJSON (zonder alles in RAM te laden).
+    """
+    kind, _, _ = _resolve_nsn_source()
+    if kind == "missing":
+        return None
 
-    if lat is None or lon is None:
-        return JSONResponse({"hint": "Gebruik /api/nsn?lat=<..>&lon=<..> om NSN op te halen."})
+    # Transformeer klikpunt naar zelfde CRS als de GeoJSON
+    if NSN_GEOJSON_IS_RD:
+        px, py = TX_WGS84_RD.transform(lon, lat)
+    else:
+        px, py = lon, lat
 
-    ft = nsn_feature_from_point(lat=lat, lon=lon, pad_m=pad_m)
-    if not ft:
-        return JSONResponse(_clean({"nsn": None, "feature": None}))
-    props = ft.get("properties") or {}
-    return JSONResponse(_clean({"nsn": _nsn_label_from_props(props), "feature": ft}))
+    def _label_from_props(props: dict) -> Optional[str]:
+        if not props:
+            return None
+        for key in (
+            "Subtype_na", "SUBTYPE_NA",
+            "nsn_naam", "NSN_NAAM",
+            "natuurlijk_systeem", "NATUURLIJK_SYSTEEM",
+            "naam", "NAAM",
+        ):
+            if key in props and props[key]:
+                s = str(props[key]).strip()
+                if s:
+                    return s
+        for key in ("BKNSN_code", "BKNSN_CODE"):
+            if key in props and props[key]:
+                s = str(props[key]).strip()
+                if s:
+                    return s
+        for v in props.values():
+            if isinstance(v, str) and v.strip():
+                return v.strip()
+        return None
+
+    # Stream door features tot we de eerste polygon vinden die het punt bevat
+    try:
+        for ft in _iter_nsn_features():
+            g = (ft or {}).get("geometry") or {}
+            t = g.get("type")
+            coords = g.get("coordinates") or []
+            if not coords:
+                continue
+
+            def _test_polygon(poly_coords) -> Optional[str]:
+                if not poly_coords:
+                    return None
+                ring = poly_coords[0]
+                if _point_in_polygon(px, py, ring):
+                    return _label_from_props((ft or {}).get("properties") or {})
+                return None
+
+            label: Optional[str] = None
+            if t == "Polygon":
+                label = _test_polygon(coords)
+            elif t == "MultiPolygon":
+                for poly in coords:
+                    label = _test_polygon(poly)
+                    if label:
+                        break
+
+            if label:
+                return label
+    except Exception as e:
+        print("[NSN] fout bij stream-lookup:", e)
+
+    return None
 
 
 @app.get("/api/diag/featureinfo")
