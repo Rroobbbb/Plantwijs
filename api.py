@@ -1168,9 +1168,44 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
     else:
         px, py = lon, lat
 
-    def _label_from_props(props: dict) -> Optional[str]:
+    def _label_from_props(props: dict) -> tuple[Optional[str], int]:
+        """Return (label, priority). Higher priority = more specific/preferred."""
         if not props:
-            return None
+            return (None, 0)
+
+        # 4 = meest specifiek (subtype), 3 = naamvelden, 2 = natuurlijk systeem, 1 = code/anders
+        for key in ("subtype_na", "Subtype_na", "SUBTYPE_NA", "Subtype_Na"):
+            if key in props and props[key]:
+                s = str(props[key]).strip()
+                if s:
+                    return (s, 4)
+
+        for key in ("nsn_naam", "NSN_NAAM", "naam", "NAAM"):
+            if key in props and props[key]:
+                s = str(props[key]).strip()
+                if s:
+                    return (s, 3)
+
+        for key in ("natuurlijk_systeem", "NATUURLIJK_SYSTEEM", "nsn", "NSN"):
+            if key in props and props[key]:
+                s = str(props[key]).strip()
+                if s:
+                    return (s, 2)
+
+        for key in ("BKNSN_code", "BKNSN_CODE", "bknsn_code"):
+            if key in props and props[key]:
+                s = str(props[key]).strip()
+                if s:
+                    return (s, 1)
+
+        # laatste redmiddel: eerste niet-lege waarde
+        for v in props.values():
+            if v is None:
+                continue
+            s = str(v).strip()
+            if s:
+                return (s, 1)
+        return (None, 0)
         for key in (
             "Subtype_na", "SUBTYPE_NA",
             "nsn_naam", "NSN_NAAM",
@@ -1207,26 +1242,45 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
                     cand.append(fid)
 
     # snelle bbox check + per-feature gzip laden
-    for fid in cand:
-        if fid < 0 or fid >= len(bboxes):
-            continue
-        minx, miny, maxx, maxy = bboxes[fid]
-        if not (minx <= px <= maxx and miny <= py <= maxy):
-            continue
+        best_label: Optional[str] = None
+        best_prio: int = -1
+        best_area: float = float("inf")
 
-        fp = os.path.join(feat_dir, f"f{fid}.json.gz")
-        try:
-            with gzip.open(fp, "rt", encoding="utf-8") as gz:
-                feat = json.load(gz)
-        except Exception:
-            continue
+        for fid in cand:
+            if fid < 0 or fid >= len(bboxes):
+                continue
+            minx, miny, maxx, maxy = bboxes[fid]
+            if not (minx <= px <= maxx and miny <= py <= maxy):
+                continue
 
-        geom = feat.get("geometry") or {}
-        if _geometry_contains_point(geom, px, py):
+            fp = os.path.join(feat_dir, f"f{fid}.json.gz")
+            try:
+                with gzip.open(fp, "rt", encoding="utf-8") as gz:
+                    feat = json.load(gz)
+            except Exception:
+                continue
+
+            geom = feat.get("geometry") or {}
+            if not _geometry_contains_point(geom, px, py):
+                continue
+
             props = feat.get("properties") or {}
-            return _label_from_props(props)
+            label, prio = _label_from_props(props)
+            if not label:
+                continue
 
-    return None
+            # Kies het "beste" feature als er overlap is:
+            # - hogere prio (subtype > naam > systeem > code)
+            # - bij gelijke prio: kleinste bbox (meestal meest specifieke polygon)
+            try:
+                area = float(max(0.0, (maxx - minx))) * float(max(0.0, (maxy - miny)))
+            except Exception:
+                area = float("inf")
+
+            if (prio > best_prio) or (prio == best_prio and area < best_area):
+                best_label, best_prio, best_area = label, prio, area
+
+        return best_label
 
 def api_diag(service: str = Query(..., pattern="^(bodem|gt|ghg|glg|fgr)$"), lat: float = Query(...), lon: float = Query(...)):
     if service == "fgr":
