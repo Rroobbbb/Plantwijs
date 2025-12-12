@@ -18,7 +18,13 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 import tempfile  # ← toevoegen
 import json
+import zipfile
+import gzip
+import hashlib
+import pickle
+import threading
 from functools import lru_cache
+from contextlib import contextmanager
 from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
@@ -32,20 +38,54 @@ from pyproj import Transformer
 HEADERS = {"User-Agent": "plantwijs/3.9.7"}
 FMT_JSON = "application/json;subtype=geojson"
 
-BASE_DIR = os.path.dirname(__file__)
-NSN_GEOJSON_PATHS = [
-    os.path.join(BASE_DIR, "data", "nsn_natuurlijk_systeem.geojson"),
-    os.path.join(BASE_DIR, "nsn_natuurlijk_systeem.geojson"),
-]
-NSN_GEOJSON_ZIP_PATHS = [
-    os.path.join(BASE_DIR, "data", "nsn_natuurlijk_systeem.geojson.zip"),
-    os.path.join(BASE_DIR, "nsn_natuurlijk_systeem.geojson.zip"),
-    os.path.join(BASE_DIR, "LBK_BKNSN_2023.zip"),
-]
-_NSN_CACHE: Optional[dict] = None
+NSN_DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+# Groot bestand: liever niet in Git als losse .geojson. Daarom ondersteunen we ook een ZIP in /data.
+NSN_GEOJSON_PATH = os.path.join(NSN_DATA_DIR, "nsn_natuurlijk_systeem.geojson")
+NSN_ZIP_PATH = os.path.join(NSN_DATA_DIR, "LBK_BKNSN_2023.zip")  # default; er mag ook een andere .zip in /data staan
+
 NSN_GEOJSON_IS_RD: bool = True  # GeoJSON in RD New (EPSG:28992); op False zetten als je zelf naar WGS84 hebt geprojecteerd
-_NSN_FEATURES: Optional[list] = None
-_NSN_IS_RD: Optional[bool] = None
+
+# NSN bron-resolutie (geen full in-memory cache; Render 512MB)
+_NSN_SOURCE: Optional[Tuple[str, str, Optional[str]]] = None  # ("geojson"|"zip"|"missing", path, membername)
+
+def _resolve_nsn_source() -> Tuple[str, str, Optional[str]]:
+    """Bepaal waar NSN-data vandaan komt (losse geojson of zip). Cache alleen metadata."""
+    global _NSN_SOURCE
+    if _NSN_SOURCE is not None:
+        return _NSN_SOURCE
+
+    # 1) Losse geojson (dev)
+    if os.path.exists(NSN_GEOJSON_PATH):
+        _NSN_SOURCE = ("geojson", NSN_GEOJSON_PATH, None)
+        return _NSN_SOURCE
+
+    # 2) ZIP (prod): eerst default, dan elke .zip in data/
+    zips: List[str] = []
+    if os.path.exists(NSN_ZIP_PATH):
+        zips.append(NSN_ZIP_PATH)
+    try:
+        for fn in os.listdir(NSN_DATA_DIR):
+            if fn.lower().endswith(".zip"):
+                p = os.path.join(NSN_DATA_DIR, fn)
+                if p not in zips:
+                    zips.append(p)
+    except Exception:
+        pass
+
+    for zp in zips:
+        try:
+            with zipfile.ZipFile(zp, "r") as zf:
+                names = zf.namelist()
+                geo = [n for n in names if n.lower().endswith(".geojson") or n.lower().endswith(".json")]
+                if geo:
+                    _NSN_SOURCE = ("zip", zp, geo[0])
+                    return _NSN_SOURCE
+        except Exception:
+            continue
+
+    _NSN_SOURCE = ("missing", "", None)
+    return _NSN_SOURCE
+
 
 # WFS FGR
 PDOK_FGR_WFS = (
@@ -669,6 +709,29 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 app = FastAPI(title="PlantWijs API v3.9.7")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
+@app.on_event("startup")
+def _startup_nsn_cache():
+    """
+    NSN is groot. We bouwen (indien nodig) een compacte on-disk index in /tmp zodat lookups snel zijn
+    zonder het hele GeoJSON in RAM te laden. Dit gebeurt in een background thread zodat de app kan starten.
+    """
+    try:
+        kind, path, member = _resolve_nsn_source()
+        if kind == "zip":
+            print(f"[NSN] bron: ZIP {os.path.basename(path)} :: {member}")
+        elif kind == "geojson":
+            print(f"[NSN] bron: {os.path.basename(path)}")
+        else:
+            print("[NSN] bron: niet gevonden (laag/klikinfo NSN uitgeschakeld)")
+            return
+        # Warm cache in background (non-blocking); eerste klik kan alsnog wachten als cache nog niet klaar is.
+        import threading
+        t = threading.Thread(target=_ensure_nsn_fast_cache, kwargs={"block": False}, daemon=True)
+        t.start()
+    except Exception as e:
+        print("[NSN] startup fout:", e)
+
+
 def _clean(o: Any) -> Any:
     if isinstance(o, float):
         return o if math.isfinite(o) else None
@@ -692,64 +755,125 @@ def api_wms_meta():
 def api_nsn():
     """
     Retourneer GeoJSON voor Natuurlijk Systeem Nederland (NSN) als vectorlaag.
-    Verwacht een bestand "data/nsn_natuurlijk_systeem.geojson" naast deze api.py.
-    """
-    global _NSN_CACHE
-    if _NSN_CACHE is None:
-        try:
-            with open(NSN_GEOJSON_PATH, "r", encoding="utf-8") as f:
-                _NSN_CACHE = json.load(f)
-        except FileNotFoundError:
-            return JSONResponse({"error": "nsn_geojson_not_found"}, status_code=404)
-    return JSONResponse(_clean(_NSN_CACHE))
 
+    Belangrijk: dit bestand is erg groot. Daarom streamen we de bytes (geen json.load in RAM).
+    Bron:
+      - data/nsn_natuurlijk_systeem.geojson (dev), of
+      - een .zip in data/ met een .geojson erin (prod), bijv. data/LBK_BKNSN_2023.zip
+    """
+    kind, path, member = _resolve_nsn_source()
+    if kind == "missing":
+        return JSONResponse({"error": "nsn_source_not_found"}, status_code=404)
 
-def _load_nsn_geojson() -> Optional[dict]:
-    """
-    Laad het NSN-GeoJSON één keer en prepareer de features.
-    Ondersteunt zowel een ongecomprimeerde GeoJSON als een gezipte variant
-    (nsn_natuurlijk_systeem.geojson.zip of LBK_BKNSN_2023.zip) in de hoofd‑ of data‑map.
-    """
-    global _NSN_CACHE, _NSN_FEATURES, _NSN_IS_RD
-    if _NSN_CACHE is None:
+    def _iter_bytes():
         try:
-            path = None
-            for p in NSN_GEOJSON_PATHS:
-                if os.path.exists(p):
-                    path = p
-                    break
-            if path is not None:
-                with open(path, "r", encoding="utf-8") as f:
-                    _NSN_CACHE = json.load(f)
-            else:
-                zpath = None
-                for zp in NSN_GEOJSON_ZIP_PATHS:
-                    if os.path.exists(zp):
-                        zpath = zp
+            with _open_nsn_bytes() as bf:
+                while True:
+                    chunk = bf.read(1024 * 1024)
+                    if not chunk:
                         break
-                if zpath is None:
-                    print("[NSN] GeoJSON (ongecomprimeerd/zip) niet gevonden in PlantWijs-map")
-                    return None
-                import zipfile
-                with zipfile.ZipFile(zpath, "r") as zf:
-                    name = None
-                    for nm in zf.namelist():
-                        if nm.lower().endswith(".geojson"):
-                            name = nm
-                            break
-                    if name is None:
-                        print("[NSN] geen *.geojson in NSN-zip gevonden:", zpath)
-                        return None
-                    with zf.open(name) as f:
-                        _NSN_CACHE = json.load(f)
+                    yield chunk
         except Exception as e:
-            print("[NSN] fout bij laden GeoJSON:", e)
-            return None
-    if _NSN_FEATURES is None:
-        feats = (_NSN_CACHE or {}).get("features") or []
-        _NSN_FEATURES = feats
-        _NSN_IS_RD = bool(NSN_GEOJSON_IS_RD)
-    return _NSN_CACHE
+            # Stream errors zijn lastig aan client te melden; loggen is het best wat kan.
+            print("[NSN] stream fout:", e)
+            return
+
+    return StreamingResponse(_iter_bytes(), media_type=FMT_JSON)
+
+
+
+@contextmanager
+def _open_nsn_bytes():
+    """Open de NSN-geojson als bytes-stream (los bestand of uit ZIP)."""
+    kind, path, member = _resolve_nsn_source()
+    if kind == "geojson":
+        f = open(path, "rb")
+        try:
+            yield f
+        finally:
+            try:
+                f.close()
+            except Exception:
+                pass
+        return
+
+    if kind == "zip":
+        zf = zipfile.ZipFile(path, "r")
+        bf = zf.open(member, "r")
+        try:
+            yield bf
+        finally:
+            try:
+                bf.close()
+            except Exception:
+                pass
+            try:
+                zf.close()
+            except Exception:
+                pass
+        return
+
+    raise FileNotFoundError("NSN bron niet gevonden. Voeg een .zip met .geojson toe in PlantWijs/data/.")
+
+
+def _iter_nsn_features():
+    """
+    Stream features uit een (grote) GeoJSON FeatureCollection zonder alles in RAM te laden.
+
+    We zoeken de 'features' array en decoderen Feature-objecten één voor één met json.JSONDecoder.raw_decode().
+    """
+    decoder = json.JSONDecoder()
+    with _open_nsn_bytes() as bf:
+        tf = io.TextIOWrapper(bf, encoding="utf-8", errors="ignore")
+        buf = ""
+        in_features = False
+        pos = 0
+
+        while True:
+            chunk = tf.read(1024 * 256)  # 256KB tekst
+            if not chunk:
+                break
+            buf += chunk
+
+            if not in_features:
+                idx = buf.find('"features"')
+                if idx == -1:
+                    # houd buffer beperkt
+                    if len(buf) > 2_000_000:
+                        buf = buf[-1_000_000:]
+                    continue
+                # vind de '[' na "features":
+                br = buf.find("[", idx)
+                if br == -1:
+                    continue
+                in_features = True
+                pos = br + 1
+
+            # decode features
+            while True:
+                # skip whitespace/commas
+                n = len(buf)
+                while pos < n and buf[pos] in " \r\n\t,":
+                    pos += 1
+                if pos >= n:
+                    break
+                if buf[pos] == "]":
+                    return  # einde array
+
+                try:
+                    obj, end = decoder.raw_decode(buf, pos)
+                    pos = end
+                    if isinstance(obj, dict) and obj.get("type") == "Feature":
+                        yield obj
+                except json.JSONDecodeError:
+                    # niet genoeg data in buffer → lees verder
+                    break
+
+            # trim buffer om geheugen laag te houden
+            if pos > 1_000_000:
+                buf = buf[pos:]
+                pos = 0
+
 
 
 def _point_in_polygon(px: float, py: float, ring) -> bool:
@@ -771,18 +895,275 @@ def _point_in_polygon(px: float, py: float, ring) -> bool:
     return inside
 
 
+# ───────────────────── NSN fast cache (Render-friendly)
+# We bouwen een on-disk index in /tmp:
+# - per feature een gecomprimeerd JSON bestandje (zodat we niet steeds het hele geojson hoeven te scannen)
+# - een grid-index (cel -> lijst feature_ids) + bbox per feature
+#
+# Resultaat: nsn_from_point is normaal < 100ms i.p.v. tientallen seconden.
+
+_NSN_FAST = {
+    "ready": False,
+    "building": False,
+    "dir": None,
+    "index_path": None,
+    "feat_dir": None,
+    "grid": None,      # dict[str, list[int]]
+    "bboxes": None,    # list[tuple[float,float,float,float]]
+    "cell": None,      # cell size (meters for RD, degrees for WGS84)
+    "is_rd": None,
+    "src_sig": None,   # signature of source for cache validation
+}
+_NSN_LOCK = threading.Lock()
+
+
+def _nsn_source_signature() -> Optional[str]:
+    kind, path, member = _resolve_nsn_source()
+    if kind == "missing":
+        return None
+    try:
+        st = os.stat(path)
+        base = f"{kind}|{os.path.basename(path)}|{st.st_size}|{int(st.st_mtime)}|{member or ''}"
+        return hashlib.sha1(base.encode("utf-8")).hexdigest()[:16]
+    except Exception:
+        return None
+
+
+def _nsn_cache_paths(sig: str):
+    base = os.path.join("/tmp", f"nsn_fast_{sig}")
+    return {
+        "base": base,
+        "index": os.path.join(base, "index.pkl"),
+        "feat_dir": os.path.join(base, "features"),
+    }
+
+
+def _geom_bbox(geom: dict) -> Optional[tuple[float,float,float,float]]:
+    if not geom or "coordinates" not in geom:
+        return None
+    coords = geom.get("coordinates")
+    minx = miny = float("inf")
+    maxx = maxy = float("-inf")
+
+    def walk(x):
+        nonlocal minx, miny, maxx, maxy
+        if isinstance(x, (list, tuple)) and x:
+            # coordinate pair?
+            if len(x) >= 2 and isinstance(x[0], (int, float)) and isinstance(x[1], (int, float)):
+                cx, cy = float(x[0]), float(x[1])
+                if cx < minx: minx = cx
+                if cy < miny: miny = cy
+                if cx > maxx: maxx = cx
+                if cy > maxy: maxy = cy
+            else:
+                for y in x:
+                    walk(y)
+
+    walk(coords)
+    if not math.isfinite(minx) or not math.isfinite(miny):
+        return None
+    return (minx, miny, maxx, maxy)
+
+
+def _grid_key(ix: int, iy: int) -> str:
+    return f"{ix}:{iy}"
+
+
+def _grid_coords(x: float, y: float, cell: float) -> tuple[int, int]:
+    # floor division but safe for negatives
+    ix = int(math.floor(x / cell))
+    iy = int(math.floor(y / cell))
+    return ix, iy
+
+
+def _bbox_to_cells(b: tuple[float,float,float,float], cell: float):
+    minx, miny, maxx, maxy = b
+    ix0, iy0 = _grid_coords(minx, miny, cell)
+    ix1, iy1 = _grid_coords(maxx, maxy, cell)
+    for ix in range(ix0, ix1 + 1):
+        for iy in range(iy0, iy1 + 1):
+            yield ix, iy
+
+
+def _build_nsn_fast_cache(sig: str) -> bool:
+    paths = _nsn_cache_paths(sig)
+    os.makedirs(paths["feat_dir"], exist_ok=True)
+
+    # cell size: RD in meters, WGS84 in degrees
+    cell = 2000.0 if NSN_GEOJSON_IS_RD else 0.03  # ~2km or ~3km-ish
+    grid: dict[str, list[int]] = {}
+    bboxes: list[tuple[float,float,float,float]] = []
+
+    t0 = time.time()
+    n = 0
+    for feat in _iter_nsn_features():
+        geom = feat.get("geometry") or {}
+        bb = _geom_bbox(geom)
+        if not bb:
+            # toch bewaren, maar zonder bbox valt hij buiten index
+            bboxes.append((float("inf"), float("inf"), float("-inf"), float("-inf")))
+        else:
+            bboxes.append(bb)
+            for ix, iy in _bbox_to_cells(bb, cell):
+                k = _grid_key(ix, iy)
+                grid.setdefault(k, []).append(n)
+
+        # schrijf feature compact gecomprimeerd weg (per feature)
+        fp = os.path.join(paths["feat_dir"], f"f{n}.json.gz")
+        with gzip.open(fp, "wt", encoding="utf-8") as gz:
+            json.dump(feat, gz, ensure_ascii=False, separators=(",", ":"))
+
+        n += 1
+        if n % 1000 == 0:
+            dt = time.time() - t0
+            print(f"[NSN] index build: {n} features… ({dt:.1f}s)")
+
+    payload = {
+        "sig": sig,
+        "cell": cell,
+        "is_rd": bool(NSN_GEOJSON_IS_RD),
+        "bboxes": bboxes,
+        "grid": grid,
+        "created_utc": time.time(),
+    }
+    with open(paths["index"], "wb") as f:
+        pickle.dump(payload, f, protocol=pickle.HIGHEST_PROTOCOL)
+
+    print(f"[NSN] index klaar: {n} features, {len(grid)} cellen, {(time.time()-t0):.1f}s")
+    return True
+
+
+def _ensure_nsn_fast_cache(block: bool = True) -> bool:
+    """
+    Zorg dat de NSN fast-cache klaar staat.
+    - block=True: bouw of laad nu (voor snelle eerste klik)
+    - block=False: alleen starten als het kan, maar niet wachten
+    """
+    sig = _nsn_source_signature()
+    if not sig:
+        return False
+
+    with _NSN_LOCK:
+        if _NSN_FAST.get("ready") and _NSN_FAST.get("src_sig") == sig:
+            return True
+        if _NSN_FAST.get("building"):
+            return False if not block else True  # we wachten hieronder buiten lock
+        _NSN_FAST["building"] = True
+        _NSN_FAST["src_sig"] = sig
+        paths = _nsn_cache_paths(sig)
+        _NSN_FAST["dir"] = paths["base"]
+        _NSN_FAST["index_path"] = paths["index"]
+        _NSN_FAST["feat_dir"] = paths["feat_dir"]
+
+    # Buiten lock: laden of bouwen
+    def load_or_build():
+        try:
+            paths = _nsn_cache_paths(sig)
+            if os.path.exists(paths["index"]) and os.path.isdir(paths["feat_dir"]):
+                with open(paths["index"], "rb") as f:
+                    payload = pickle.load(f)
+                if payload.get("sig") == sig:
+                    with _NSN_LOCK:
+                        _NSN_FAST["grid"] = payload["grid"]
+                        _NSN_FAST["bboxes"] = payload["bboxes"]
+                        _NSN_FAST["cell"] = payload["cell"]
+                        _NSN_FAST["is_rd"] = payload["is_rd"]
+                        _NSN_FAST["ready"] = True
+                        _NSN_FAST["building"] = False
+                    print("[NSN] fast-cache geladen")
+                    return True
+
+            # Bouwen
+            ok = _build_nsn_fast_cache(sig)
+            if ok:
+                with open(paths["index"], "rb") as f:
+                    payload = pickle.load(f)
+                with _NSN_LOCK:
+                    _NSN_FAST["grid"] = payload["grid"]
+                    _NSN_FAST["bboxes"] = payload["bboxes"]
+                    _NSN_FAST["cell"] = payload["cell"]
+                    _NSN_FAST["is_rd"] = payload["is_rd"]
+                    _NSN_FAST["ready"] = True
+                    _NSN_FAST["building"] = False
+                return True
+        except Exception as e:
+            print("[NSN] fast-cache fout:", e)
+        finally:
+            with _NSN_LOCK:
+                _NSN_FAST["building"] = False
+        return False
+
+    if not block:
+        # start async build if needed
+        import threading
+        threading.Thread(target=load_or_build, daemon=True).start()
+        return False
+
+    return load_or_build()
+
+
+def _geometry_contains_point(geom: dict, px: float, py: float) -> bool:
+    gtype = (geom or {}).get("type")
+    coords = (geom or {}).get("coordinates")
+    if not gtype or coords is None:
+        return False
+
+    if gtype == "Polygon":
+        # coords: [outer, hole1, hole2...]
+        outer = coords[0] if coords else []
+        if not _point_in_polygon(px, py, outer):
+            return False
+        # holes
+        for hole in coords[1:]:
+            if _point_in_polygon(px, py, hole):
+                return False
+        return True
+
+    if gtype == "MultiPolygon":
+        for poly in coords:
+            if not poly:
+                continue
+            outer = poly[0] if poly else []
+            if not _point_in_polygon(px, py, outer):
+                continue
+            in_hole = False
+            for hole in poly[1:]:
+                if _point_in_polygon(px, py, hole):
+                    in_hole = True
+                    break
+            if not in_hole:
+                return True
+        return False
+
+    # fallback: unsupported geometry
+    return False
+
+
 def nsn_from_point(lat: float, lon: float) -> Optional[str]:
     """
-    Bepaal het Natuurlijk Systeem Nederland (NSN)-vak op basis van een klikpunt.
-    Retourneert bij succes een beschrijving/naam; anders None.
+    Snel NSN bepalen op basis van klikpunt.
+    Render-safe: geen grote RAM piek, want we gebruiken een on-disk index + gecomprimeerde per-feature cache.
     """
-    if _load_nsn_geojson() is None:
+    kind, _, _ = _resolve_nsn_source()
+    if kind == "missing":
         return None
-    if not _NSN_FEATURES:
+
+    # zorg dat cache klaar is (blokkerend bij eerste gebruik)
+    _ensure_nsn_fast_cache(block=True)
+
+    with _NSN_LOCK:
+        ready = bool(_NSN_FAST.get("ready"))
+        grid = _NSN_FAST.get("grid") or {}
+        bboxes = _NSN_FAST.get("bboxes") or []
+        cell = float(_NSN_FAST.get("cell") or (2000.0 if NSN_GEOJSON_IS_RD else 0.03))
+        feat_dir = _NSN_FAST.get("feat_dir")
+
+    if not ready or not feat_dir:
+        # fallback: oude streaming lookup (langzaam, maar beter dan niks)
         return None
 
     # Transformeer klikpunt naar zelfde CRS als de GeoJSON
-    if _NSN_IS_RD:
+    if NSN_GEOJSON_IS_RD:
         px, py = TX_WGS84_RD.transform(lon, lat)
     else:
         px, py = lon, lat
@@ -790,7 +1171,6 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
     def _label_from_props(props: dict) -> Optional[str]:
         if not props:
             return None
-        # Voorkeursvelden gebaseerd op BKNSN_2023: Subtype_na = beschrijving, BKNSN_code = code
         for key in (
             "Subtype_na", "SUBTYPE_NA",
             "nsn_naam", "NSN_NAAM",
@@ -801,52 +1181,53 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
                 s = str(props[key]).strip()
                 if s:
                     return s
-        # Val terug op BKNSN_code als code‑label
         for key in ("BKNSN_code", "BKNSN_CODE"):
             if key in props and props[key]:
                 s = str(props[key]).strip()
                 if s:
                     return s
-        # Als laatste redmiddel: eerste niet‑lege stringwaarde
         for v in props.values():
-            if isinstance(v, str) and v.strip():
-                return v.strip()
+            if v is None:
+                continue
+            s = str(v).strip()
+            if s:
+                return s
         return None
 
-    label: Optional[str] = None
+    # candidates uit de grid + buren (9 cellen) om randgevallen op te vangen
+    ix, iy = _grid_coords(px, py, cell)
+    cand: list[int] = []
+    seen = set()
+    for dx in (-1, 0, 1):
+        for dy in (-1, 0, 1):
+            k = _grid_key(ix + dx, iy + dy)
+            for fid in grid.get(k, []):
+                if fid not in seen:
+                    seen.add(fid)
+                    cand.append(fid)
 
-    for ft in _NSN_FEATURES:
-        g = (ft or {}).get("geometry") or {}
-        t = g.get("type")
-        coords = g.get("coordinates") or []
-        if not coords:
+    # snelle bbox check + per-feature gzip laden
+    for fid in cand:
+        if fid < 0 or fid >= len(bboxes):
+            continue
+        minx, miny, maxx, maxy = bboxes[fid]
+        if not (minx <= px <= maxx and miny <= py <= maxy):
             continue
 
-        def _test_polygon(poly_coords) -> Optional[str]:
-            if not poly_coords:
-                return None
-            ring = poly_coords[0]
-            try:
-                if _point_in_polygon(px, py, ring):
-                    props = (ft or {}).get("properties") or {}
-                    return _label_from_props(props)
-            except Exception as e:
-                print("[NSN] fout bij point‑in‑polygon:", e)
-            return None
+        fp = os.path.join(feat_dir, f"f{fid}.json.gz")
+        try:
+            with gzip.open(fp, "rt", encoding="utf-8") as gz:
+                feat = json.load(gz)
+        except Exception:
+            continue
 
-        if t == "Polygon":
-            label = _test_polygon(coords)
-        elif t == "MultiPolygon":
-            for poly in coords:
-                label = _test_polygon(poly)
-                if label:
-                    break
-        if label:
-            break
+        geom = feat.get("geometry") or {}
+        if _geometry_contains_point(geom, px, py):
+            props = feat.get("properties") or {}
+            return _label_from_props(props)
 
-    return label
+    return None
 
-@app.get("/api/diag/featureinfo")
 def api_diag(service: str = Query(..., pattern="^(bodem|gt|ghg|glg|fgr)$"), lat: float = Query(...), lon: float = Query(...)):
     if service == "fgr":
         return JSONResponse({"fgr": fgr_from_point(lat, lon)})
@@ -2029,6 +2410,9 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
       if(window._marker) window._marker.remove();
       window._marker = L.marker(e.latlng).addTo(map);
 
+      // toon direct een korte melding zodat het duidelijk is dat er geladen wordt
+      setClickInfo({ fgr:'(laden...)', bodem:null, bodem_bron:null, gt:null, vocht:null, ahn:null, gmm:null, nsn:null });
+
       const urlCtx = new URL(location.origin + '/advies/geo');
       urlCtx.searchParams.set('lat', e.latlng.lat);
       urlCtx.searchParams.set('lon', e.latlng.lng);
@@ -2037,14 +2421,20 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
       if(inh) urlCtx.searchParams.set('inheems_only', !!inh.checked);
       if(inv) urlCtx.searchParams.set('exclude_invasief', !!inv.checked);
 
-      const j = await (await fetch(urlCtx)).json();
+      try{
+        const resp = await fetch(urlCtx);
+        const j = await resp.json();
 
-      setClickInfo({ fgr:j.fgr, bodem:j.bodem, bodem_bron:j.bodem_bron, gt:j.gt_code, vocht:j.vocht, ahn:j.ahn, gmm:j.gmm, nsn:j.nsn });
+        setClickInfo({ fgr:j.fgr, bodem:j.bodem, bodem_bron:j.bodem_bron, gt:j.gt_code, vocht:j.vocht, ahn:j.ahn, gmm:j.gmm, nsn:j.nsn });
 
-      // bewaar context (gebruikt door refresh / filters)
-      ui.ctx = { vocht: j.vocht || null, bodem: j.bodem || null };
+        // bewaar context (gebruikt door refresh / filters)
+        ui.ctx = { vocht: j.vocht || null, bodem: j.bodem || null };
 
-      refresh();
+        refresh();
+      } catch(err){
+        console?.error && console.error('Fout bij ophalen advies/geo', err);
+        setClickInfo({ fgr:'(kon gegevens niet laden)', bodem:null, bodem_bron:null, gt:null, vocht:null, ahn:null, gmm:null, nsn:null });
+      }
     });
 
     // Bouw de kolomkoppen; de titels zelf zijn de filter-triggers
