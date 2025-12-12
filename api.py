@@ -900,20 +900,26 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
         px, py = lon, lat
 
     def _label_from_props(props: dict) -> Optional[str]:
-        """Kies het beste label voor NSN.
+        """Kies de juiste NSN labelwaarde uit properties.
 
-        We willen primair de subtype-naam (Subtype_na/subtype_na).
-        Sommige exports hebben andere hoofdletters of underscores, daarom doen we dit case-insensitive.
+        In de bron komen keys in verschillende schrijfwijzen voor (Subtype_na / subtype_na / SUBTYPE_NA),
+        soms zelfs met spaties. We normaliseren daarom keys naar lowercase en strippen whitespace.
         """
         if not props:
             return None
 
-        # case-insensitive lookup
-        pl = {str(k).strip().lower(): v for k, v in props.items()}
+        # normaliseer keys -> lowercase + strip
+        norm = {}
+        for k, v in props.items():
+            if k is None:
+                continue
+            kk = str(k).strip().lower()
+            if kk and kk not in norm:
+                norm[kk] = v
 
         def _get(*keys: str) -> Optional[str]:
             for k in keys:
-                v = pl.get(k.lower())
+                v = norm.get(k)
                 if v is None:
                     continue
                 s = str(v).strip()
@@ -921,49 +927,21 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
                     return s
             return None
 
-        # 1) exact wat jij wilt: subtype naam
-        v = _get("Subtype_na", "subtype_na", "subtype_na_")
-        if v:
-            return v
+        # 1) De gewenste waarde: Subtype_na
+        s = _get("subtype_na")
+        if s:
+            return s
 
-        # 2) andere naamvelden (alleen als subtype ontbreekt)
-        v = _get("nsn_naam", "natuurlijk_systeem", "naam")
-        if v:
-            # 'water' is vaak te generiek; als we nog een code hebben, geef liever die
-            if v.strip().lower() == "water":
-                v2 = _get("BKNSN_code", "bknsn_code")
-                return v2 or v
-            return v
+        # 2) Alternatieve naamvelden (voor het geval subtype ontbreekt)
+        s = _get("nsn_naam", "naam", "natuurlijk_systeem")
+        if s:
+            return s
 
-        # 3) code fallback
-        v = _get("BKNSN_code", "bknsn_code")
-        if v:
-            return v
+        # 3) Anders een code als laatste redmiddel
+        s = _get("bknsn_code")
+        if s:
+            return s
 
-        # 4) laatste redmiddel: eerste niet-lege stringwaarde
-        for raw in props.values():
-            if isinstance(raw, str) and raw.strip():
-                return raw.strip()
-        return None
-
-        for key in (
-            "Subtype_na", "SUBTYPE_NA",
-            "nsn_naam", "NSN_NAAM",
-            "natuurlijk_systeem", "NATUURLIJK_SYSTEEM",
-            "naam", "NAAM",
-        ):
-            if key in props and props[key]:
-                s = str(props[key]).strip()
-                if s:
-                    return s
-        for key in ("BKNSN_code", "BKNSN_CODE"):
-            if key in props and props[key]:
-                s = str(props[key]).strip()
-                if s:
-                    return s
-        for v in props.values():
-            if isinstance(v, str) and v.strip():
-                return v.strip()
         return None
 
     # Stream door features tot we de eerste polygon vinden die het punt bevat
@@ -978,10 +956,15 @@ def nsn_from_point(lat: float, lon: float) -> Optional[str]:
             def _test_polygon(poly_coords) -> Optional[str]:
                 if not poly_coords:
                     return None
-                ring = poly_coords[0]
-                if _point_in_polygon(px, py, ring):
-                    return _label_from_props((ft or {}).get("properties") or {})
-                return None
+                # poly_coords = [outer_ring, hole1, hole2, ...]
+                outer = poly_coords[0]
+                if not _point_in_polygon(px, py, outer):
+                    return None
+                # Als het punt in een hole valt, dan is het NIET in de polygon
+                for hole in poly_coords[1:]:
+                    if hole and _point_in_polygon(px, py, hole):
+                        return None
+                return _label_from_props((ft or {}).get("properties") or {})
 
             label: Optional[str] = None
             if t == "Polygon":
