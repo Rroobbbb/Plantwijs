@@ -108,13 +108,10 @@ TX_WGS84_WEB = Transformer.from_crs(4326, 3857, always_xy=True)
 
 # ───────────────────── Dataset cache
 DATA_PATHS = [
-    os.environ.get("PLANTWIJS_CSV", "").strip(),
-    r"C:\Rob\Beplantingswijzer\Plantwijs\data\treeebb_planten_allfields.csv",
-    "out/treeebb_planten_allfields.csv",
     "out/plantwijs_full_semicolon.csv",
     "out/plantwijs_full.csv",
 ]
-DATA_PATHS = [p for p in DATA_PATHS if p]
+
 # Online CSV (GitHub raw) fallback
 ONLINE_CSV_URLS = [
     "https://raw.githubusercontent.com/Rroobbbb/plantwijs/main/out/plantwijs_full_semicolon.csv",
@@ -136,14 +133,6 @@ ONLINE_CSV_URLS = [
     "https://raw.githubusercontent.com/Rroobbbb/plantwijs/main/out/plantwijs_full_semicolon.csv",
 ]
 
-
-def _norm_col(c: object) -> str:
-    """Normaliseer kolomnamen: lowercase + alle niet-letters/cijfers naar '_'"""
-    s = str(c or "").strip().lower()
-    s = re.sub(r"[^a-z0-9]+", "_", s)
-    s = re.sub(r"_+", "_", s).strip("_")
-    return s
-
 def _detect_sep(path: str) -> str:
     try:
         with open(path, "r", encoding="utf-8", errors="ignore") as f:
@@ -155,7 +144,7 @@ def _detect_sep(path: str) -> str:
 def _load_df(path: str) -> pd.DataFrame:
     sep = _detect_sep(path)
     df = pd.read_csv(path, sep=sep, dtype=str, encoding_errors="ignore")
-    df.columns = [_norm_col(c) for c in df.columns]
+    df.columns = [str(c).strip().lower().replace(" ", "_").replace("-", "_") for c in df.columns]
     if "naam" not in df.columns and "nederlandse_naam" in df.columns:
         df = df.rename(columns={"nederlandse_naam": "naam"})
     if "wetenschappelijke_naam" not in df.columns:
@@ -163,68 +152,7 @@ def _load_df(path: str) -> pd.DataFrame:
             if k in df.columns:
                 df = df.rename(columns={k: "wetenschappelijke_naam"})
                 break
-    
-    
-    # Als wetenschappelijke_naam ontbreekt maar er is wel een URL uit TreeEbb,
-    # probeer dan een nette soortnaam af te leiden uit de slug.
-    if "wetenschappelijke_naam" not in df.columns and "url" in df.columns:
-        def _slug_to_species(u: str) -> str:
-            try:
-                slug = str(u).rstrip("/").split("/")[-1]
-                parts = [p for p in slug.split("-") if p]
-                if not parts:
-                    return ""
-                # vaak: <code>-<genus>-<species>(-<subsp/cultivar...>)
-                if len(parts[0]) <= 10:
-                    parts = parts[1:] or parts
-                if len(parts) >= 2:
-                    genus = parts[0].capitalize()
-                    species = parts[1].lower()
-                    return f"{genus} {species}".strip()
-                return parts[0]
-            except Exception:
-                return ""
-        df["wetenschappelijke_naam"] = df["url"].map(_slug_to_species)
-
-# ── TreeEbb scraper kolommen → PlantWijs kolommen (zodat filters/analyses blijven werken)
-    treeebb_map = {
-        "standplaats_lichtbehoefte": "standplaats_licht",
-        "standplaats_bodemvochtigheid": "vocht",
-        "standplaats_grondsoort": "grondsoorten",
-        "eigenschappen_hoogte": "hoogte",
-        "eigenschappen_breedte": "breedte",
-        "eigenschappen_winterhardheidszone": "winterhardheidszone",
-        "toepassing_locatie": "locatie",
-        "toepassing_verharding": "verharding",
-        "standplaats_ph_waarde": "ph_waarde",
-        "standplaats_voedselrijkdom": "voedselrijkdom",
-        "standplaats_wind": "wind",
-        "standplaats_extreme_condities": "extreme_condities",
-        "standplaats_biodiversiteit": "biodiversiteit",
-        "eigenschappen_kroonvorm": "kroonvorm",
-        "eigenschappen_kroonstructuur": "kroonstructuur",
-    }
-    for src_col, dst_col in treeebb_map.items():
-        if dst_col not in df.columns and src_col in df.columns:
-            df[dst_col] = df[src_col]
-
-    # Variants fallback (als namen net anders zijn)
-    if "standplaats_licht" not in df.columns:
-        for c in df.columns:
-            if c.endswith("lichtbehoefte"):
-                df["standplaats_licht"] = df[c]
-                break
-    if "vocht" not in df.columns:
-        for c in df.columns:
-            if "bodemvochtigheid" in c:
-                df["vocht"] = df[c]
-                break
-    if "grondsoorten" not in df.columns:
-        for c in df.columns:
-            if c.endswith("grondsoort") or "grondsoort" in c:
-                df["grondsoorten"] = df[c]
-                break
-for must in ("standplaats_licht", "vocht", "inheems", "invasief"):
+    for must in ("standplaats_licht", "vocht", "inheems", "invasief"):
         if must not in df.columns:
             df[must] = ""
     return df
@@ -237,7 +165,7 @@ def _fetch_csv_online(url: str) -> Optional[pd.DataFrame]:
         text = r.content.decode("utf-8", errors="ignore")
         sep = ";" if text.count(";") >= text.count(",") else ","
         df = pd.read_csv(io.StringIO(text), sep=sep, dtype=str, encoding_errors="ignore")
-        df.columns = [_norm_col(c) for c in df.columns]
+        df.columns = [str(c).strip().lower().replace(" ", "_").replace("-", "_") for c in df.columns]
         if "naam" not in df.columns and "nederlandse_naam" in df.columns:
             df = df.rename(columns={"nederlandse_naam": "naam"})
         if "wetenschappelijke_naam" not in df.columns:
@@ -295,7 +223,7 @@ def get_df() -> pd.DataFrame:
     raise FileNotFoundError(
         "Geen dataset gevonden. Lokaal ontbreekt out/plantwijs_full.csv én online CSV kon niet worden opgehaald."
     )
-    
+
 # ───────────────────── HTTP utils
 @lru_cache(maxsize=32)
 def _get(url: str) -> requests.Response:
@@ -1352,7 +1280,7 @@ def _filter_plants_df(
 @app.get("/api/plants")
 def api_plants(
     q: str = Query(""),
-    inheems_only: bool = Query(False),
+    inheems_only: bool = Query(True),
     exclude_invasief: bool = Query(True),
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
@@ -1377,7 +1305,7 @@ def api_plants(
 @app.get("/export/csv")
 def export_csv(
     q: str = Query(""),
-    inheems_only: bool = Query(False),
+    inheems_only: bool = Query(True),
     exclude_invasief: bool = Query(True),
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
@@ -1397,7 +1325,7 @@ def export_csv(
 @app.get("/export/xlsx")
 def export_xlsx(
     q: str = Query(""),
-    inheems_only: bool = Query(False),
+    inheems_only: bool = Query(True),
     exclude_invasief: bool = Query(True),
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
@@ -1437,7 +1365,7 @@ def api_admin_reload(key: str = Query(...)):
 def advies_geo(
     lat: float = Query(...),
     lon: float = Query(...),
-    inheems_only: bool = Query(False),
+    inheems_only: bool = Query(True),
     exclude_invasief: bool = Query(True),
     limit: Optional[int] = Query(None),  # genegeerd
 ):
@@ -1672,7 +1600,7 @@ def index() -> HTMLResponse:
     body.light .btn:hover { background:#eaeef3; }
     body.light .btn-ghost { border-color:#e5e7eb; }
     body.light thead th { background:#ffffff; color:#475569; }
-    
+
     /* Leaflet controls theming (zoom + layers) */
 .leaflet-control-zoom,
 .leaflet-control-layers {
