@@ -296,7 +296,7 @@ def get_df() -> pd.DataFrame:
     raise FileNotFoundError(
         "Geen dataset gevonden. Lokaal ontbreekt out/plantwijs_full.csv én online CSV kon niet worden opgehaald."
     )
-    
+
 # ───────────────────── HTTP utils
 @lru_cache(maxsize=32)
 def _get(url: str) -> requests.Response:
@@ -1345,10 +1345,11 @@ def _filter_plants_df(
         )]
 
     if inheems_only and "inheems" in df.columns:
-        df = df[(df["inheems"].astype(str).str.lower() == "ja") | (df["inheems"].isna()) | (df["inheems"].astype(str).str.strip() == "")]
-if exclude_invasief and "invasief" in df.columns:
-        df = df[(df["invasief"].astype(str).str.lower() != "ja") | (df["invasief"].isna()) | (df["invasief"].astype(str).str.strip() == "")]
-if licht:
+        df = df[df["inheems"].astype(str).str.lower() == "ja"]
+    if exclude_invasief and "invasief" in df.columns:
+        df = df[(df["invasief"].astype(str).str.lower() != "ja") | (df["invasief"].isna())]
+
+    if licht:
         df = df[df["standplaats_licht"].apply(lambda v: _has_any(v, licht))]
     if vocht:
         df = df[df["vocht"].apply(lambda v: _has_any(v, vocht))]
@@ -1473,10 +1474,11 @@ def advies_geo(
 
     df = get_df()
     if inheems_only and "inheems" in df.columns:
-        df = df[(df["inheems"].astype(str).str.lower() == "ja") | (df["inheems"].isna()) | (df["inheems"].astype(str).str.strip() == "")]
-if exclude_invasief and "invasief" in df.columns:
-        df = df[(df["invasief"].astype(str).str.lower() != "ja") | (df["invasief"].isna()) | (df["invasief"].astype(str).str.strip() == "")]
-if vocht_val:
+        df = df[df["inheems"].astype(str).str.lower() == "ja"]
+    if exclude_invasief and "invasief" in df.columns:
+        df = df[(df["invasief"].astype(str).str.lower() != "ja") | (df["invasief"].isna())]
+
+    if vocht_val:
         df = df[df["vocht"].apply(lambda v: _has_any(v, [vocht_val]))]
     if bodem_val:
         df = df[df.apply(lambda r:
@@ -1683,7 +1685,7 @@ def index() -> HTMLResponse:
     body.light .btn:hover { background:#eaeef3; }
     body.light .btn-ghost { border-color:#e5e7eb; }
     body.light thead th { background:#ffffff; color:#475569; }
-    
+
     /* Leaflet controls theming (zoom + layers) */
 .leaflet-control-zoom,
 .leaflet-control-layers {
@@ -2587,4 +2589,3 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
             "Expires": "0",
         },
     )
-
