@@ -246,6 +246,35 @@ def _fetch_csv_online(url: str) -> Optional[pd.DataFrame]:
                 if k in df.columns:
                     df = df.rename(columns={k: "wetenschappelijke_naam"})
                     break
+
+        # TreeEbb → PlantWijs sleutelkolommen (online fallback)
+        treeebb_map = {
+            "standplaats_lichtbehoefte": "standplaats_licht",
+            "standplaats_bodemvochtigheid": "vocht",
+            "standplaats_grondsoort": "grondsoorten",
+            "eigenschappen_hoogte": "hoogte",
+            "eigenschappen_breedte": "breedte",
+            "eigenschappen_winterhardheidszone": "winterhardheidszone",
+        }
+        for src_col, dst_col in treeebb_map.items():
+            if dst_col not in df.columns and src_col in df.columns:
+                df[dst_col] = df[src_col]
+
+        if "standplaats_licht" not in df.columns:
+            for c in df.columns:
+                if c.endswith("lichtbehoefte") or c == "lichtbehoefte":
+                    df["standplaats_licht"] = df[c]
+                    break
+        if "vocht" not in df.columns:
+            for c in df.columns:
+                if "bodemvochtigheid" in c:
+                    df["vocht"] = df[c]
+                    break
+        if "grondsoorten" not in df.columns:
+            for c in df.columns:
+                if c.endswith("grondsoort") or "grondsoort" in c:
+                    df["grondsoorten"] = df[c]
+                    break
         for must in ("standplaats_licht", "vocht", "inheems", "invasief"):
             if must not in df.columns:
                 df[must] = ""
@@ -1481,10 +1510,8 @@ def advies_geo(
     if vocht_val:
         df = df[df["vocht"].apply(lambda v: _has_any(v, [vocht_val]))]
     if bodem_val:
-        df = df[df.apply(lambda r:
-                         _has_any(r.get("bodem", ""), [bodem_val]) or
-                         _has_any(r.get("grondsoorten", ""), [bodem_val]),
-                         axis=1)]
+        # Gebruik dezelfde bodem-logica als /api/plants (canonieke grondsoorten)
+        df = df[df.apply(lambda r: _match_bodem_row(r, [bodem_val]), axis=1)]
 
     cols = [c for c in (
         "naam","wetenschappelijke_naam","inheems","invasief",
