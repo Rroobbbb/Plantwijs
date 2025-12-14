@@ -24,61 +24,6 @@ from contextlib import contextmanager
 from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
-
-def _split_multi(cell: Any) -> List[str]:
-    """Split multi-valued cells like 'zon | halfschaduw' or 'zon / halfschaduw' to tokens."""
-    parts = [p.strip() for p in re.split(r"[;/|]+", str(cell or "")) if p.strip()]
-    # unique keep order
-    out: List[str] = []
-    seen = set()
-    for p in parts:
-        key = p.lower()
-        if key not in seen:
-            out.append(p)
-            seen.add(key)
-    return out
-
-def _display_multi(cell: Any) -> str:
-    """Normalize display of multi-valued cells to 'a / b / c'."""
-    toks = _split_multi(cell)
-    return " / ".join(toks)
-
-def _normalize_multi_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Normalize delimiters for known multi-valued columns so UI + filters stay consistent.
-    Keeps the same column names; only normalizes the *string format*.
-    """
-    multi_cols = [
-        "standplaats_licht",
-        "standplaats_lichtbehoefte",
-        "vocht",
-        "standplaats_bodemvochtigheid",
-        "grondsoorten",
-        "standplaats_grondsoort",
-        "bodem",
-        "locatie",
-        "toepassing_locatie",
-        "verharding",
-        "toepassing_verharding",
-        "biodiversiteit",
-        "standplaats_biodiversiteit",
-        "voedselrijkdom",
-        "standplaats_voedselrijkdom",
-        "wind",
-        "standplaats_wind",
-        "extreme_condities",
-        "standplaats_extreme_condities",
-        "kroonvorm",
-        "eigenschappen_kroonvorm",
-        "kroonstructuur",
-        "eigenschappen_kroonstructuur",
-        "beplantingstypes_boomtypen",
-    ]
-    for c in multi_cols:
-        if c in df.columns:
-            df[c] = df[c].apply(_display_multi)
-    return df
-
 import requests
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -1438,8 +1383,7 @@ def api_plants(
         "ellenberg_r_min","ellenberg_r_max","ellenberg_s_min","ellenberg_s_max",
         "hoogte","breedte","winterhardheidszone","grondsoorten","ecowaarde"
     ) if c in df.columns]
-    df = _normalize_multi_columns(df)
-items = df[cols].to_dict(orient="records")
+    items = df[cols].to_dict(orient="records")
     return JSONResponse(_clean({"count": int(len(df)), "items": items}))
 
 # ───────────────────── API: export
