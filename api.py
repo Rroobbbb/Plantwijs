@@ -1369,6 +1369,7 @@ def _filter_plants_df(
     licht: List[str],
     vocht: List[str],
     bodem: List[str],
+    beplantingstype: List[str],
     sort: str,
     desc: bool,
 ) -> pd.DataFrame:
@@ -1390,6 +1391,23 @@ def _filter_plants_df(
             lambda r: _contains_ci(r.get("naam"), q) or _contains_ci(r.get("wetenschappelijke_naam"), q),
             axis=1
         )]
+
+    # Afgeleid beplantingstype (boom/heester) + filter
+    def _derive_ptype_row(r: pd.Series) -> str:
+        boom_src = str(r.get("beplantingstypes_boomtypen") or "").strip()
+        overig_src = str(r.get("beplantingstypes_overige_beplanting") or "").strip()
+        types: List[str] = []
+        if boom_src:
+            types.append("boom")
+        if overig_src:
+            types.append("heester")
+        return " / ".join(types)
+
+    if beplantingstype:
+        df = df.copy()
+        if "beplantingstype" not in df.columns:
+            df["beplantingstype"] = df.apply(_derive_ptype_row, axis=1)
+        df = df[df["beplantingstype"].apply(lambda v: _has_any(v, beplantingstype))]
 
     df = _apply_status_nl_filter(df, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot)
     if exclude_invasief and "invasief" in df.columns:
@@ -1419,17 +1437,26 @@ def api_plants(
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
     bodem: List[str] = Query(default=[]),
+    beplantingstype: List[str] = Query(default=[]),
     limit: Optional[int] = Query(None),  # genegeerd → geen limiet
     sort: str = Query("naam"),
     desc: bool = Query(False),
 ):
-    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, sort, desc)
-    # Vul 'inheems' (ja/nee) afgeleid van status_nl voor weergave in de tabel
-    if "status_nl" in df.columns:
+    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, beplantingstype, sort, desc)
+    # Zorg dat beplantingstype kolom bestaat voor UI
+    if "beplantingstype" not in df.columns:
         df = df.copy()
-        df["inheems"] = df["status_nl"].astype(str).str.strip().str.lower().map(lambda v: "ja" if v == "inheems" else "")
+        def _pt(r):
+            boom_src = str(r.get("beplantingstypes_boomtypen") or "").strip()
+            overig_src = str(r.get("beplantingstypes_overige_beplanting") or "").strip()
+            types = []
+            if boom_src: types.append("boom")
+            if overig_src: types.append("heester")
+            return " / ".join(types)
+        df["beplantingstype"] = df.apply(_pt, axis=1)
     cols = [c for c in (
-        "naam","wetenschappelijke_naam","status_nl","inheems","invasief","standplaats_licht","vocht","bodem",
+        "naam","wetenschappelijke_naam","beplantingstype","status_nl","invasief",
+        "standplaats_licht","vocht","bodem",
         "ellenberg_l","ellenberg_f","ellenberg_t","ellenberg_n","ellenberg_r","ellenberg_s",
         "ellenberg_l_min","ellenberg_l_max","ellenberg_f_min","ellenberg_f_max",
         "ellenberg_t_min","ellenberg_t_max","ellenberg_n_min","ellenberg_n_max",
@@ -1451,10 +1478,11 @@ def export_csv(
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
     bodem: List[str] = Query(default=[]),
+    beplantingstype: List[str] = Query(default=[]),
     sort: str = Query("naam"),
     desc: bool = Query(False),
 ):
-    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, sort, desc)
+    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, beplantingstype, sort, desc)
     buf = io.StringIO()
     df.to_csv(buf, index=False)
     buf.seek(0)
@@ -1474,10 +1502,11 @@ def export_xlsx(
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
     bodem: List[str] = Query(default=[]),
+    beplantingstype: List[str] = Query(default=[]),
     sort: str = Query("naam"),
     desc: bool = Query(False),
 ):
-    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, sort, desc)
+    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, beplantingstype, sort, desc)
     buf = io.BytesIO()
     with pd.ExcelWriter(buf, engine="openpyxl") as xw:
         df.to_excel(xw, index=False, sheet_name="PlantWijs")
@@ -1915,9 +1944,25 @@ body.light .leaflet-control-layers {
           </div>
 
           <div class="group">
+            <span class="title">Status</span>
+            <div class="checks">
+              <label class="muted"><input id="stInh" type="checkbox" checked> inheems</label>
+              <label class="muted"><input id="stIng" type="checkbox" checked> ingeburgerd</label>
+              <label class="muted"><input id="stExo" type="checkbox"> exoot</label>
+            </div>
+          </div>
+
+          <div class="group">
+            <span class="title">Beplantingstype</span>
+            <div class="checks">
+              <label class="muted"><input type="checkbox" name="ptype" value="boom" checked> bomen</label>
+              <label class="muted"><input type="checkbox" name="ptype" value="heester" checked> heesters</label>
+            </div>
+          </div>
+
+          <div class="group">
             <span class="title">Opties</span>
             <div class="checks">
-              <label class="muted"><input id="inhOnly" type="checkbox" checked> alleen inheemse</label>
               <label class="muted"><input id="exInv" type="checkbox" checked> sluit invasieve uit</label>
             </div>
           </div>
@@ -1969,16 +2014,19 @@ setTimeout(fixMapSize, 0);
     window._lastQuery = new URLSearchParams();
     let _lastItems = [];
 
-    const COLS_KEY = 'pw_cols_visible_v2';
+    const COLS_KEY = 'pw_cols_visible_v3';
     const DEFAULT_COLS = [
       {key:'naam', label:'Naam', filterable:false, visible:true},
       {key:'wetenschappelijke_naam', label:'Wetenschappelijke naam', filterable:false, visible:true},
+      {key:'beplantingstype', label:'Beplantingstype', filterable:true, visible:true},
       {key:'standplaats_licht', label:'Licht', filterable:true, visible:true},
       {key:'vocht', label:'Vocht', filterable:true, visible:true},
       {key:'bodem', label:'Bodem', filterable:true, visible:true},
+      {key:'hoogte', label:'Hoogte', filterable:false, visible:true},
+      {key:'breedte', label:'Breedte', filterable:false, visible:true},
       {key:'winterhardheidszone', label:'WHZ', filterable:true, visible:true},
       {key:'grondsoorten', label:'Grondsoorten', filterable:true, visible:false},
-      {key:'inheems', label:'Inheems', filterable:true, visible:false},
+      {key:'status_nl', label:'Status', filterable:true, visible:true},
       {key:'invasief', label:'Invasief', filterable:true, visible:false},
     ];
     let COLS = JSON.parse(localStorage.getItem(COLS_KEY) || 'null') || DEFAULT_COLS;
@@ -2334,11 +2382,21 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
 
     async function fetchList(){
       const url = new URL(location.origin + '/api/plants');
-      const inh = document.getElementById('inhOnly');
-      const inv = document.getElementById('exInv');
-      if(inh && inh.checked) url.searchParams.set('inheems_only','true');
-      if(inv && inv.checked) url.searchParams.set('exclude_invasief','true');
 
+      // Status filters (standaard: inheems + ingeburgerd aan, exoot uit)
+      const stInh = document.getElementById('stInh');
+      const stIng = document.getElementById('stIng');
+      const stExo = document.getElementById('stExo');
+      if(stInh) url.searchParams.set('toon_inheems', stInh.checked ? 'true' : 'false');
+      if(stIng) url.searchParams.set('toon_ingeburgerd', stIng.checked ? 'true' : 'false');
+      if(stExo) url.searchParams.set('toon_exoot', stExo.checked ? 'true' : 'false');
+
+      // Beplantingstype
+      const chosenP = getChecked('ptype');
+      for (const v of chosenP) url.searchParams.append('beplantingstype', v);
+
+      const inv = document.getElementById('exInv');
+      if(inv && inv.checked) url.searchParams.set('exclude_invasief','true');
       const chosenL = getChecked('licht');
       const chosenV = getChecked('vocht');
       const chosenB = getChecked('bodem');
@@ -2555,9 +2613,13 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
       const urlCtx = new URL(location.origin + '/advies/geo');
       urlCtx.searchParams.set('lat', e.latlng.lat);
       urlCtx.searchParams.set('lon', e.latlng.lng);
-      const inh = document.getElementById('inhOnly');
+      const stInh = document.getElementById('stInh');
+      const stIng = document.getElementById('stIng');
+      const stExo = document.getElementById('stExo');
       const inv = document.getElementById('exInv');
-      if(inh) urlCtx.searchParams.set('inheems_only', !!inh.checked);
+      if(stInh) urlCtx.searchParams.set('toon_inheems', stInh.checked ? 'true' : 'false');
+      if(stIng) urlCtx.searchParams.set('toon_ingeburgerd', stIng.checked ? 'true' : 'false');
+      if(stExo) urlCtx.searchParams.set('toon_exoot', stExo.checked ? 'true' : 'false');
       if(inv) urlCtx.searchParams.set('exclude_invasief', !!inv.checked);
 
       try{
@@ -2616,7 +2678,7 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
     })();
 
     function bindFilterEvents(){
-      for(const sel of ['input[name="licht"]','input[name="vocht"]','input[name="bodem"]','#inhOnly','#exInv']){
+      for(const sel of ['input[name="licht"]','input[name="vocht"]','input[name="bodem"]','input[name="ptype"]','#stInh','#stIng','#stExo','#exInv']){
         document.querySelectorAll(sel).forEach(el=> el.addEventListener('change', refresh));
       }
     }
