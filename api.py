@@ -1354,7 +1354,12 @@ def _apply_status_nl_filter(
         allowed.add("exoot")
 
     if not allowed:
-        return df.iloc[0:0]
+        # niets aangevinkt -> geen statusfilter toepassen (toon alles)
+        return df
+
+    # alle drie aangevinkt -> toon alles (incl. onbekend/leeg)
+    if allowed == {"inheems", "ingeburgerd", "exoot"}:
+        return df
 
     s = df["status_nl"].astype(str).str.strip().str.lower()
     return df[s.isin({a.lower() for a in allowed})]
@@ -1394,13 +1399,29 @@ def _filter_plants_df(
 
     # Afgeleid beplantingstype (boom/heester) + filter
     def _derive_ptype_row(r: pd.Series) -> str:
-        boom_src = str(r.get("beplantingstypes_boomtypen") or "").strip()
-        overig_src = str(r.get("beplantingstypes_overige_beplanting") or "").strip()
+        def _clean(v: Any) -> str:
+            # NaN/None/lege strings als leeg behandelen
+            if v is None:
+                return ""
+            try:
+                if pd.isna(v):
+                    return ""
+            except Exception:
+                pass
+            s = str(v).strip()
+            if s.lower() in ("nan", "none", "null"):
+                return ""
+            return s
+
+        boom_src = _clean(r.get("beplantingstypes_boomtypen"))
+        overig_src = _clean(r.get("beplantingstypes_overige_beplanting"))
+
         types: List[str] = []
         if boom_src:
             types.append("boom")
         if overig_src:
             types.append("heester")
+
         return " / ".join(types)
 
     if beplantingstype:
