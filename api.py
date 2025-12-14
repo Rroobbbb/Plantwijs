@@ -1923,7 +1923,9 @@ body.light .leaflet-control-layers {
           <div class="group">
             <span class="title">Opties</span>
             <div class="checks">
-              <label class="muted"><input id="inhOnly" type="checkbox" checked> alleen inheemse</label>
+              <label class="muted"><input id="showInh" type="checkbox" checked> inheems</label>
+              <label class="muted"><input id="showIng" type="checkbox" checked> ingeburgerd</label>
+              <label class="muted"><input id="showExo" type="checkbox"> exoot</label>
               <label class="muted"><input id="exInv" type="checkbox" checked> sluit invasieve uit</label>
             </div>
           </div>
@@ -2340,9 +2342,15 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
 
     async function fetchList(){
       const url = new URL(location.origin + '/api/plants');
-      const inh = document.getElementById('inhOnly');
+      const showInh = document.getElementById('showInh');
+      const showIng = document.getElementById('showIng');
+      const showExo = document.getElementById('showExo');
       const inv = document.getElementById('exInv');
-      if(inh && inh.checked) url.searchParams.set('inheems_only','true');
+      if(showInh) url.searchParams.set('toon_inheems', !!showInh.checked);
+      if(showIng) url.searchParams.set('toon_ingeburgerd', !!showIng.checked);
+      if(showExo) url.searchParams.set('toon_exoot', !!showExo.checked);
+      // legacy compat: if only inheems is selected
+      if(showInh && showIng && !showIng.checked && showInh.checked) url.searchParams.set('inheems_only','true');
       if(inv && inv.checked) url.searchParams.set('exclude_invasief','true');
 
       const chosenL = getChecked('licht');
@@ -2561,9 +2569,14 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
       const urlCtx = new URL(location.origin + '/advies/geo');
       urlCtx.searchParams.set('lat', e.latlng.lat);
       urlCtx.searchParams.set('lon', e.latlng.lng);
-      const inh = document.getElementById('inhOnly');
+      const showInh = document.getElementById('showInh');
+      const showIng = document.getElementById('showIng');
+      const showExo = document.getElementById('showExo');
       const inv = document.getElementById('exInv');
-      if(inh) urlCtx.searchParams.set('inheems_only', !!inh.checked);
+      if(showInh) urlCtx.searchParams.set('toon_inheems', !!showInh.checked);
+      if(showIng) urlCtx.searchParams.set('toon_ingeburgerd', !!showIng.checked);
+      if(showExo) urlCtx.searchParams.set('toon_exoot', !!showExo.checked);
+      if(showInh && showIng && !showIng.checked && showInh.checked) urlCtx.searchParams.set('inheems_only', true);
       if(inv) urlCtx.searchParams.set('exclude_invasief', !!inv.checked);
 
       try{
@@ -2622,7 +2635,7 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
     })();
 
     function bindFilterEvents(){
-      for(const sel of ['input[name="licht"]','input[name="vocht"]','input[name="bodem"]','#inhOnly','#exInv']){
+      for(const sel of ['input[name="licht"]','input[name="vocht"]','input[name="bodem"]','#showInh','#showIng','#showExo','#exInv']){
         document.querySelectorAll(sel).forEach(el=> el.addEventListener('change', refresh));
       }
     }
