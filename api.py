@@ -1315,18 +1315,62 @@ def api_diag(service: str = Query(..., pattern="^(bodem|gt|ghg|glg|fgr)$"), lat:
     return JSONResponse(_clean({"base": base, "layer": layer, "props": props}))
 
 # ───────────────────── filtering core
+def _apply_status_nl_filter(
+    df: pd.DataFrame,
+    inheems_only: bool,
+    toon_inheems: Optional[bool],
+    toon_ingeburgerd: Optional[bool],
+    toon_exoot: Optional[bool],
+) -> pd.DataFrame:
+    """Filter op status_nl (inheems/ingeburgerd/exoot).
+
+    Belangrijk:
+    - Als de UI nog géén status-checkboxes meestuurt (toon_* zijn allemaal None),
+      dan filteren we NIET en laten we alles zien (backwards compatible).
+    - inheems_only=True forceert altijd alleen 'inheems'.
+    - Fallback: als 'status_nl' ontbreekt, gebruiken we legacy kolom 'inheems' (ja/nee).
+    """
+    # legacy fallback
+    if "status_nl" not in df.columns:
+        if inheems_only and "inheems" in df.columns:
+            return df[df["inheems"].astype(str).str.strip().str.lower() == "ja"]
+        return df
+
+    # forceer strikt inheems
+    if inheems_only:
+        s = df["status_nl"].astype(str).str.strip().str.lower()
+        return df[s == "inheems"]
+
+    # Als de UI nog niets meestuurt: niet filteren (toon alles)
+    if toon_inheems is None and toon_ingeburgerd is None and toon_exoot is None:
+        return df
+
+    allowed = set()
+    if toon_inheems:
+        allowed.add("inheems")
+    if toon_ingeburgerd:
+        allowed.add("ingeburgerd")
+    if toon_exoot:
+        allowed.add("exoot")
+
+    if not allowed:
+        return df.iloc[0:0]
+
+    s = df["status_nl"].astype(str).str.strip().str.lower()
+    return df[s.isin({a.lower() for a in allowed})]
+
 def _filter_plants_df(
     q: str,
     inheems_only: bool,
+    toon_inheems: Optional[bool],
+    toon_ingeburgerd: Optional[bool],
+    toon_exoot: Optional[bool],
     exclude_invasief: bool,
     licht: List[str],
     vocht: List[str],
     bodem: List[str],
     sort: str,
     desc: bool,
-    toon_inheems: bool = True,
-    toon_ingeburgerd: bool = True,
-    toon_exoot: bool = False,
 ) -> pd.DataFrame:
     df = get_df()
 
@@ -1347,32 +1391,7 @@ def _filter_plants_df(
             axis=1
         )]
 
-    # ── Statusfilter (inheems / ingeburgerd / exoot)
-    # Standaard: toon_inheems + toon_ingeburgerd (exoot uit)
-    # Backward compatibility: inheems_only forceert alleen "inheems"
-    if inheems_only:
-        toon_inheems = True
-        toon_ingeburgerd = False
-        toon_exoot = False
-
-    if "status_nl" in df.columns:
-        allowed = []
-        if toon_inheems:
-            allowed.append("inheems")
-        if toon_ingeburgerd:
-            allowed.append("ingeburgerd")
-        if toon_exoot:
-            allowed.append("exoot")
-
-        # Als alles uit staat: geen resultaten
-        if not allowed:
-            return df.iloc[0:0]
-
-        df = df[df["status_nl"].astype(str).str.lower().isin(allowed)]
-    else:
-        # Fallback naar oude kolom (alleen als status_nl ontbreekt)
-        if inheems_only and "inheems" in df.columns:
-            df = df[df["inheems"].astype(str).str.lower() == "ja"]
+    df = _apply_status_nl_filter(df, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot)
     if exclude_invasief and "invasief" in df.columns:
         df = df[(df["invasief"].astype(str).str.lower() != "ja") | (df["invasief"].isna())]
 
@@ -1393,11 +1412,10 @@ def _filter_plants_df(
 def api_plants(
     q: str = Query(""),
     inheems_only: bool = Query(False),
+    toon_inheems: Optional[bool] = Query(None),
+    toon_ingeburgerd: Optional[bool] = Query(None),
+    toon_exoot: Optional[bool] = Query(None),
     exclude_invasief: bool = Query(True),
-    toon_inheems: bool = Query(True),
-    toon_ingeburgerd: bool = Query(True),
-    toon_exoot: bool = Query(False),
-
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
     bodem: List[str] = Query(default=[]),
@@ -1405,9 +1423,13 @@ def api_plants(
     sort: str = Query("naam"),
     desc: bool = Query(False),
 ):
-    df = _filter_plants_df(q, inheems_only, exclude_invasief, licht, vocht, bodem, sort, desc, toon_inheems, toon_ingeburgerd, toon_exoot)
+    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, sort, desc)
+    # Vul 'inheems' (ja/nee) afgeleid van status_nl voor weergave in de tabel
+    if "status_nl" in df.columns:
+        df = df.copy()
+        df["inheems"] = df["status_nl"].astype(str).str.strip().str.lower().map(lambda v: "ja" if v == "inheems" else "")
     cols = [c for c in (
-        "naam","wetenschappelijke_naam","inheems","invasief","standplaats_licht","vocht","bodem",
+        "naam","wetenschappelijke_naam","status_nl","inheems","invasief","standplaats_licht","vocht","bodem",
         "ellenberg_l","ellenberg_f","ellenberg_t","ellenberg_n","ellenberg_r","ellenberg_s",
         "ellenberg_l_min","ellenberg_l_max","ellenberg_f_min","ellenberg_f_max",
         "ellenberg_t_min","ellenberg_t_max","ellenberg_n_min","ellenberg_n_max",
@@ -1422,18 +1444,17 @@ def api_plants(
 def export_csv(
     q: str = Query(""),
     inheems_only: bool = Query(False),
+    toon_inheems: Optional[bool] = Query(None),
+    toon_ingeburgerd: Optional[bool] = Query(None),
+    toon_exoot: Optional[bool] = Query(None),
     exclude_invasief: bool = Query(True),
-    toon_inheems: bool = Query(True),
-    toon_ingeburgerd: bool = Query(True),
-    toon_exoot: bool = Query(False),
-
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
     bodem: List[str] = Query(default=[]),
     sort: str = Query("naam"),
     desc: bool = Query(False),
 ):
-    df = _filter_plants_df(q, inheems_only, exclude_invasief, licht, vocht, bodem, sort, desc, toon_inheems, toon_ingeburgerd, toon_exoot)
+    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, sort, desc)
     buf = io.StringIO()
     df.to_csv(buf, index=False)
     buf.seek(0)
@@ -1446,18 +1467,17 @@ def export_csv(
 def export_xlsx(
     q: str = Query(""),
     inheems_only: bool = Query(False),
+    toon_inheems: Optional[bool] = Query(None),
+    toon_ingeburgerd: Optional[bool] = Query(None),
+    toon_exoot: Optional[bool] = Query(None),
     exclude_invasief: bool = Query(True),
-    toon_inheems: bool = Query(True),
-    toon_ingeburgerd: bool = Query(True),
-    toon_exoot: bool = Query(False),
-
     licht: List[str] = Query(default=[]),
     vocht: List[str] = Query(default=[]),
     bodem: List[str] = Query(default=[]),
     sort: str = Query("naam"),
     desc: bool = Query(False),
 ):
-    df = _filter_plants_df(q, inheems_only, exclude_invasief, licht, vocht, bodem, sort, desc, toon_inheems, toon_ingeburgerd, toon_exoot)
+    df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, sort, desc)
     buf = io.BytesIO()
     with pd.ExcelWriter(buf, engine="openpyxl") as xw:
         df.to_excel(xw, index=False, sheet_name="PlantWijs")
@@ -1490,11 +1510,10 @@ def advies_geo(
     lat: float = Query(...),
     lon: float = Query(...),
     inheems_only: bool = Query(False),
+    toon_inheems: Optional[bool] = Query(None),
+    toon_ingeburgerd: Optional[bool] = Query(None),
+    toon_exoot: Optional[bool] = Query(None),
     exclude_invasief: bool = Query(True),
-    toon_inheems: bool = Query(True),
-    toon_ingeburgerd: bool = Query(True),
-    toon_exoot: bool = Query(False),
-
     limit: Optional[int] = Query(None),  # genegeerd
 ):
     t0 = time.time()
@@ -1516,32 +1535,7 @@ def advies_geo(
         return bool(tokens & want)
 
     df = get_df()
-    # ── Statusfilter (inheems / ingeburgerd / exoot)
-    # Standaard: toon_inheems + toon_ingeburgerd (exoot uit)
-    # Backward compatibility: inheems_only forceert alleen "inheems"
-    if inheems_only:
-        toon_inheems = True
-        toon_ingeburgerd = False
-        toon_exoot = False
-
-    if "status_nl" in df.columns:
-        allowed = []
-        if toon_inheems:
-            allowed.append("inheems")
-        if toon_ingeburgerd:
-            allowed.append("ingeburgerd")
-        if toon_exoot:
-            allowed.append("exoot")
-
-        # Als alles uit staat: geen resultaten
-        if not allowed:
-            return df.iloc[0:0]
-
-        df = df[df["status_nl"].astype(str).str.lower().isin(allowed)]
-    else:
-        # Fallback naar oude kolom (alleen als status_nl ontbreekt)
-        if inheems_only and "inheems" in df.columns:
-            df = df[df["inheems"].astype(str).str.lower() == "ja"]
+    df = _apply_status_nl_filter(df, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot)
     if exclude_invasief and "invasief" in df.columns:
         df = df[(df["invasief"].astype(str).str.lower() != "ja") | (df["invasief"].isna())]
 
@@ -1923,9 +1917,7 @@ body.light .leaflet-control-layers {
           <div class="group">
             <span class="title">Opties</span>
             <div class="checks">
-              <label class="muted"><input id="showInh" type="checkbox" checked> inheems</label>
-              <label class="muted"><input id="showIng" type="checkbox" checked> ingeburgerd</label>
-              <label class="muted"><input id="showExo" type="checkbox"> exoot</label>
+              <label class="muted"><input id="inhOnly" type="checkbox" checked> alleen inheemse</label>
               <label class="muted"><input id="exInv" type="checkbox" checked> sluit invasieve uit</label>
             </div>
           </div>
@@ -2342,15 +2334,9 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
 
     async function fetchList(){
       const url = new URL(location.origin + '/api/plants');
-      const showInh = document.getElementById('showInh');
-      const showIng = document.getElementById('showIng');
-      const showExo = document.getElementById('showExo');
+      const inh = document.getElementById('inhOnly');
       const inv = document.getElementById('exInv');
-      if(showInh) url.searchParams.set('toon_inheems', !!showInh.checked);
-      if(showIng) url.searchParams.set('toon_ingeburgerd', !!showIng.checked);
-      if(showExo) url.searchParams.set('toon_exoot', !!showExo.checked);
-      // legacy compat: if only inheems is selected
-      if(showInh && showIng && !showIng.checked && showInh.checked) url.searchParams.set('inheems_only','true');
+      if(inh && inh.checked) url.searchParams.set('inheems_only','true');
       if(inv && inv.checked) url.searchParams.set('exclude_invasief','true');
 
       const chosenL = getChecked('licht');
@@ -2569,14 +2555,9 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
       const urlCtx = new URL(location.origin + '/advies/geo');
       urlCtx.searchParams.set('lat', e.latlng.lat);
       urlCtx.searchParams.set('lon', e.latlng.lng);
-      const showInh = document.getElementById('showInh');
-      const showIng = document.getElementById('showIng');
-      const showExo = document.getElementById('showExo');
+      const inh = document.getElementById('inhOnly');
       const inv = document.getElementById('exInv');
-      if(showInh) urlCtx.searchParams.set('toon_inheems', !!showInh.checked);
-      if(showIng) urlCtx.searchParams.set('toon_ingeburgerd', !!showIng.checked);
-      if(showExo) urlCtx.searchParams.set('toon_exoot', !!showExo.checked);
-      if(showInh && showIng && !showIng.checked && showInh.checked) urlCtx.searchParams.set('inheems_only', true);
+      if(inh) urlCtx.searchParams.set('inheems_only', !!inh.checked);
       if(inv) urlCtx.searchParams.set('exclude_invasief', !!inv.checked);
 
       try{
@@ -2635,7 +2616,7 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
     })();
 
     function bindFilterEvents(){
-      for(const sel of ['input[name="licht"]','input[name="vocht"]','input[name="bodem"]','#showInh','#showIng','#showExo','#exInv']){
+      for(const sel of ['input[name="licht"]','input[name="vocht"]','input[name="bodem"]','#inhOnly','#exInv']){
         document.querySelectorAll(sel).forEach(el=> el.addEventListener('change', refresh));
       }
     }
