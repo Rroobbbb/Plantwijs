@@ -14,6 +14,7 @@ import math
 import os
 import re
 import time
+import unicodedata
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime
@@ -56,6 +57,14 @@ NSN_GEOJSON_PATH = os.path.join(NSN_DATA_DIR, "nsn_natuurlijk_systeem.geojson")
 NSN_ZIP_PATH = os.path.join(NSN_DATA_DIR, "LBK_BKNSN_2023.zip")  # default; er mag ook een andere .zip in /data staan
 
 NSN_GEOJSON_IS_RD: bool = True  # GeoJSON in RD New (EPSG:28992); op False zetten als je zelf naar WGS84 hebt geprojecteerd
+
+# Contextbeschrijvingen (JSON-in-YAML) — extern kennisbestand voor rapport-teksten
+CONTEXT_DESC_PATH = os.getenv(
+    "CONTEXT_DESC_PATH",
+    os.path.join(os.path.dirname(__file__), "context_descriptions.yaml"),
+)
+_CONTEXT_DESC_CACHE: dict | None = None
+
 
 # NSN bron-resolutie (geen full in-memory cache; Render 512MB)
 _NSN_SOURCE: Optional[Tuple[str, str, Optional[str]]] = None  # ("geojson"|"zip"|"missing", path, membername)
@@ -155,6 +164,57 @@ def _norm_col(c: object) -> str:
     s = re.sub(r"[^a-z0-9]+", "_", s)
     s = re.sub(r"_+", "_", s).strip("_")
     return s
+
+
+
+def _slug(s: str) -> str:
+    if s is None:
+        return ""
+    s = str(s).strip()
+    if not s:
+        return ""
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(ch for ch in s if not unicodedata.combining(ch))
+    s = s.lower()
+    s = re.sub(r"[^a-z0-9]+", "_", s)
+    s = re.sub(r"_+", "_", s).strip("_")
+    return s
+
+def _load_context_descriptions() -> dict:
+    """Laad context_descriptions.yaml (JSON-structuur; YAML-superset) één keer."""
+    global _CONTEXT_DESC_CACHE
+    if _CONTEXT_DESC_CACHE is not None:
+        return _CONTEXT_DESC_CACHE
+    path = CONTEXT_DESC_PATH
+    try:
+        if path and os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                _CONTEXT_DESC_CACHE = json.load(f) or {}
+        else:
+            _CONTEXT_DESC_CACHE = {}
+    except Exception:
+        _CONTEXT_DESC_CACHE = {}
+    return _CONTEXT_DESC_CACHE
+
+def context_description(category: str, value: str | None) -> dict | None:
+    """Zoek een uitgebreide beschrijving voor een (kaartlaag)waarde."""
+    if not category or not value:
+        return None
+    data = _load_context_descriptions() or {}
+    cat = str(category).strip().lower()
+    bucket = data.get(cat) or {}
+    if not isinstance(bucket, dict):
+        return None
+    key = _slug(value)
+    if key in bucket:
+        return bucket.get(key)
+    v = str(value).strip()
+    if v in bucket:
+        return bucket.get(v)
+    vl = v.lower()
+    if vl in bucket:
+        return bucket.get(vl)
+    return None
 
 def _detect_sep(path: str) -> str:
     try:
@@ -1951,6 +2011,39 @@ def advies_pdf(
             story.append(ctx_table)
 
         story.append(Spacer(1, 6 * mm))
+        # Toelichting op locatiecontext (uit extern kennisbestand)
+        story.append(Paragraph("Toelichting op locatiecontext", style_h))
+        for cat, val in (
+            ("fgr", fgr_val),
+            ("geomorfologie", gmm_val),
+            ("nsn", nsn_val),
+            ("bodem", bodem_val),
+            ("gt", gt_pretty),
+        ):
+            d = context_description(cat, val)
+            if not d:
+                continue
+            title = d.get("titel") or str(val)
+            story.append(Paragraph(f"<b>{title}</b>", style_p))
+            parts = []
+            for k in (
+                "beschrijving",
+                "kenmerken",
+                "bodem_en_water",
+                "landgebruik_en_beplanting",
+                "beplanting_en_landgebruik",
+                "beheerimplicaties",
+                "geschikte_beplanting",
+                "betekenis_voor_erfbeplanting",
+                "betekenis",
+            ):
+                t = d.get(k)
+                if t:
+                    parts.append(str(t).strip())
+            if parts:
+                story.append(Paragraph(" ".join(parts), style_small))
+                story.append(Spacer(1, 3 * mm))
+
 
         # Filters
         story.append(Paragraph("Gekozen filters", style_h))

@@ -1,0 +1,268 @@
+{
+  "fgr": {
+    "rivierengebied": {
+      "titel": "Rivierengebied",
+      "beschrijving": "Dynamisch landschap van grote rivieren met oeverwallen, stroomruggen en komgronden. Afwisseling tussen hogere, beter ontwaterde gronden langs (oude) rivierlopen en lage, natte komgebieden verder van de rivier.",
+      "kenmerken": "Relatief vlak reliëf met lokale hoogteverschillen. Veel dijken, weteringen, strangen en restgeulen; verkaveling vaak rationeel met sloten en kades.",
+      "bodem_en_water": "Overwegend klei- en zavelgronden; in kommen zware, natte klei. Grondwater kan hoog staan; waterbeheer (peil, drainage) is bepalend.",
+      "beplanting_en_landgebruik": "Veel grasland, akkerbouw op hogere delen, boomgaarden lokaal. Typisch zijn wilg, populier, els, meidoorn/hagen, knotbomen langs sloten en dijken.",
+      "betekenis_voor_erfbeplanting": "Kies soorten die tegen klei en (periodiek) nat kunnen. Lijnvormige beplanting langs erf/weg/slot past goed; vermijd grote bosmassa’s in open kommen."
+    },
+    "hogere_zandgronden": {
+      "titel": "Hogere zandgronden",
+      "beschrijving": "Oude dekzand- en stuwwallandschappen met overwegend zandige bodems. Van nature droger en voedselarmer dan klei- en veengebieden.",
+      "kenmerken": "Afwisseling van dekzandruggen en -laagtes; lokaal stuwwallen. Historisch esdorpen, heide- en bosontginningen; verkaveling kan kleinschalig zijn met houtwallen.",
+      "bodem_en_water": "Zand tot lemig zand; infiltratie is groot, grondwater dieper. In laagtes kan het juist nat zijn (beekdalen).",
+      "beplanting_en_landgebruik": "Naaldbos/loofbos, heide-restanten, akkers en grasland. Typisch: eik, berk, grove den, lijsterbes; in beekdalen els en wilg.",
+      "betekenis_voor_erfbeplanting": "Werk met droge toleranties en beschutting (wind). Houtwal- en erfbeplanting met streekeigen soorten sluit aan; voorkom verdroging met juiste standplaatskeuze."
+    },
+    "laagveengebied": {
+      "titel": "Laagveengebied",
+      "beschrijving": "Waterrijk landschap gevormd door veenvorming in laaggelegen gebieden, vaak met plassen, petgaten, rietlanden en ontginningssloten.",
+      "kenmerken": "Zeer vlak, open tot halfopen. Lineaire verkaveling met lange kavels en veel watergangen; waterpeilbeheer is essentieel.",
+      "bodem_en_water": "Veen en venige klei; hoge grondwaterstand. Bodemdaling en oxidatie spelen bij ontwatering.",
+      "beplanting_en_landgebruik": "Grasland, riet, moerasvegetaties. Typisch: elzenbroek, wilgenstruweel, rietkragen.",
+      "betekenis_voor_erfbeplanting": "Kies natte toleranties en houd rekening met slappe bodem (wortelverankering). Beplanting in lijnen en groepen langs watergangen werkt het best."
+    },
+    "zeekleigebied": {
+      "titel": "Zeekleigebied",
+      "beschrijving": "Kust- en zeekleilandschappen ontstaan door afzetting van klei in getijdegebieden (kwelders, polders). Vaak grootschalig en open.",
+      "kenmerken": "Zeer vlak, rationele verkaveling, rechte wegen en sloten. Dijken en kreekruggen bepalen soms lokale structuur.",
+      "bodem_en_water": "Klei tot zavel; vaak vruchtbaar. Grondwater en verzilting kunnen lokaal spelen; drainage en peilbeheer belangrijk.",
+      "beplanting_en_landgebruik": "Intensieve akkerbouw en grasland. Beplanting vooral als erfbeplanting, singels en windschermen.",
+      "betekenis_voor_erfbeplanting": "In open polders is windreductie belangrijk. Kies soorten die wind en (soms) zoute invloed verdragen; beplanting bij erven en langs wegen past het landschap."
+    },
+    "duinen": {
+      "titel": "Duinen",
+      "beschrijving": "Zandige kustduinen met reliëf, dynamiek door wind en zee en grote variatie van droog naar nat (duinvalleien).",
+      "kenmerken": "Sterk reliëf met duintoppen en valleien; kalkrijk tot kalkarm afhankelijk van ligging. Kwetsbare natuurwaarden.",
+      "bodem_en_water": "Zand, zeer doorlatend; zoetwaterlenzen kunnen voorkomen. Voedselarm tot matig voedselrijk.",
+      "beplanting_en_landgebruik": "Duingraslanden, struweel (duindoorn) en duinbos (den, eik).",
+      "betekenis_voor_erfbeplanting": "Kies soorten voor zand, wind en zout. Beperk bodemverstoring en werk met struweel/laag bos als windfilter."
+    },
+    "lossgebied": {
+      "titel": "Lössgebied",
+      "beschrijving": "Golvend landschap met lössafzettingen (zeer vruchtbaar, leemrijk), vooral in Zuid-Limburg.",
+      "kenmerken": "Hellingprocessen en holle wegen; kleinschalige mozaïekstructuur met graften en hagen.",
+      "bodem_en_water": "Leem/löss: goede vochtvasthouding maar erosiegevoelig op hellingen.",
+      "beplanting_en_landgebruik": "Akkerbouw, boomgaarden, hagen en hellingbossen.",
+      "betekenis_voor_erfbeplanting": "Erosieremmende beplanting (hagen/graften) is waardevol; kies soorten die passen bij leem en (soms) kalkrijk."
+    }
+  },
+  "bodem": {
+    "zand": {
+      "titel": "Zand",
+      "beschrijving": "Zandige bodems zijn goed doorlatend en drogen relatief snel uit. Ze zijn vaak voedselarmer dan klei en vragen om standplaatsgeschikte soorten.",
+      "beheerimplicaties": "Let op droogte in zomer, windgevoeligheid en snelle uitspoeling van nutriënten; mulch en organische stof helpen.",
+      "geschikte_beplanting": "Eik, berk, lijsterbes, grove den; op rijker zand ook beuk, esdoorn en diverse struiken."
+    },
+    "lemig_zand": {
+      "titel": "Lemig zand",
+      "beschrijving": "Zand met een leemfractie: betere vocht- en nutriëntenbuffer dan puur zand, maar nog steeds redelijk doorlatend.",
+      "beheerimplicaties": "Meestal breed inzetbaar; voorkom verslemping bij intensieve betreding als het nat is.",
+      "geschikte_beplanting": "Veel inheemse loofbomen en struweel doen het hier goed; zowel drogere als matig vochtige soorten mogelijk."
+    },
+    "leem": {
+      "titel": "Leem / löss",
+      "beschrijving": "Leemrijke bodems houden water en voedingsstoffen goed vast. Ze zijn vruchtbaar maar kunnen gevoelig zijn voor verslemping en erosie (op hellingen).",
+      "beheerimplicaties": "Werk met bodembedekking en wortelnetwerk om structuur te behouden; vermijd zware belasting als de bodem nat is.",
+      "geschikte_beplanting": "Eik, haagbeuk, es, linde, fruitbomen; hagen en struweel ontwikkelen vaak snel."
+    },
+    "zavel": {
+      "titel": "Zavel",
+      "beschrijving": "Mengsel van zand en klei: relatief vruchtbaar, met goede bewerkbaarheid en een gematigde waterhuishouding.",
+      "beheerimplicaties": "Breed toepasbaar; bij langdurige natte perioden kan toch tijdelijke waterverzadiging optreden.",
+      "geschikte_beplanting": "Veel soorten mogelijk: eik, iep, es, linde, populier, wilg (op nattere plekken), meidoorn, sleedoorn."
+    },
+    "lichte_klei": {
+      "titel": "Lichte klei",
+      "beschrijving": "Kleigrond met nog redelijk wat zand/silt. Vruchtbaar en vochtvasthoudend, maar minder zwaar dan komklei.",
+      "beheerimplicaties": "Bij nat weer gevoelig voor structuurverlies; drainage en organische stof helpen.",
+      "geschikte_beplanting": "Iep, linde, es, esdoorn, wilg en populier; struiken zoals meidoorn, Gelderse roos en kornoelje."
+    },
+    "zware_klei": {
+      "titel": "Zware klei (komklei)",
+      "beschrijving": "Fijnkorrelige, zware klei die water lang vasthoudt en langzaam opwarmt. Vaak natte standplaats, vooral in komgebieden.",
+      "beheerimplicaties": "Vermijd zware machines bij nat weer; kies soorten met tolerantie voor natte voeten en wisselende zuurstofcondities.",
+      "geschikte_beplanting": "Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier, Gelderse roos."
+    },
+    "veen": {
+      "titel": "Veen / venige bodem",
+      "beschrijving": "Organische bodem met hoge waterstand van oorsprong. Slap draagvermogen en gevoelig voor inklinking bij ontwatering.",
+      "beheerimplicaties": "Houd rekening met bodemdaling en instabiele verankering; kies soorten die nat kunnen en niet extreem windgevoelig zijn.",
+      "geschikte_beplanting": "Zwarte els, wilg, berken; riet- en moerasstruweel op natte delen."
+    }
+  },
+  "gt": {
+    "ia": {
+      "titel": "Gt Ia (zeer nat)",
+      "beschrijving": "Zeer natte grondwatertrap: grondwater staat vrijwel jaarrond zeer hoog; vaak langdurig natte voeten in het profiel.",
+      "betekenis": "Kies moeras- en natte oeversoorten; vermijd droogteminnende soorten."
+    },
+    "ib": {
+      "titel": "Gt Ib (zeer nat)",
+      "beschrijving": "Zeer hoge grondwaterstand, maar iets minder extreem dan Ia. Periodiek water aan maaiveld komt voor.",
+      "betekenis": "Natte toleranties zijn belangrijk; let op draagkracht en zuurstofarm wortelmilieu."
+    },
+    "iia": {
+      "titel": "Gt IIa (nat)",
+      "beschrijving": "Hoge grondwaterstand; in winter zeer hoog, in zomer zakt beperkt.",
+      "betekenis": "Geschikt voor vochtminnende bomen/struiken; drainage bepaalt veel."
+    },
+    "iib": {
+      "titel": "Gt IIb (nat)",
+      "beschrijving": "Nat profiel met duidelijke seizoensfluctuatie; nog steeds hoge winterstand.",
+      "betekenis": "Veel soorten kunnen mits niet te droog; kies standplaats op microreliëf."
+    },
+    "iic": {
+      "titel": "Gt IIc (matig nat)",
+      "beschrijving": "Matig nat, met iets grotere zomerdaling.",
+      "betekenis": "Breed toepasbaar; zowel vochtminnend als iets droger kan."
+    },
+    "iiia": {
+      "titel": "Gt IIIa (matig vochtig)",
+      "beschrijving": "Gemiddeld vochtig: winter hoog, zomer duidelijk lager.",
+      "betekenis": "Grote soortenkeuze; let op droogtestress in warme zomers."
+    },
+    "iiib": {
+      "titel": "Gt IIIb (matig vochtig)",
+      "beschrijving": "Vochtig maar met grotere fluctuatie dan IIIa.",
+      "betekenis": "Kies robuuste soorten; bodembeheer kan droogte beperken."
+    },
+    "ivu": {
+      "titel": "Gt IVu (matig droog)",
+      "beschrijving": "Relatief droge trap met lagere grondwaterstand; ‘u’ duidt vaak op een bepaalde seizoensdynamiek.",
+      "betekenis": "Droogtetolerantie belangrijker; voeg organische stof toe."
+    },
+    "ivc": {
+      "titel": "Gt IVc (matig droog)",
+      "beschrijving": "Matig droge grondwatertrap met verdere zomerdaling.",
+      "betekenis": "Kies droogtetolerante soorten, vooral op zandige bodems."
+    },
+    "vao": {
+      "titel": "Gt Vao (droog)",
+      "beschrijving": "Droge trap; grondwater doorgaans diep, zomer zeer diep.",
+      "betekenis": "Sterk droogtegevoelig; plant in vochtiger microplekken of kies xerofiele soorten."
+    },
+    "vad": {
+      "titel": "Gt Vad (droog)",
+      "beschrijving": "Droog met duidelijke zomerdaling.",
+      "betekenis": "Focus op droogtetolerantie en bodembedekking."
+    },
+    "vbo": {
+      "titel": "Gt Vbo (droog)",
+      "beschrijving": "Droog profiel; grondwater zelden in wortelzone.",
+      "betekenis": "Alleen droogteminnende soorten zonder aanvullende watermaatregelen."
+    },
+    "vbd": {
+      "titel": "Gt Vbd (droog)",
+      "beschrijving": "Nog droger, met grote fluctuatie.",
+      "betekenis": "Droogte- en hittebestendige soorten; wateropvang/infiltratie helpt."
+    },
+    "vio": {
+      "titel": "Gt VIo (zeer droog)",
+      "beschrijving": "Zeer diep grondwater; wortelzone is structureel droog.",
+      "betekenis": "Beplanting is beperkt; kies pioniers en droogtespecialisten."
+    },
+    "vid": {
+      "titel": "Gt VId (zeer droog)",
+      "beschrijving": "Zeer droog met sterke seizoensfluctuatie.",
+      "betekenis": "Alleen zeer droogtebestendige soorten; bescherm jonge aanplant."
+    },
+    "viio": {
+      "titel": "Gt VIIo (uiterst droog)",
+      "beschrijving": "Uiterst diep grondwater, extreme droogte.",
+      "betekenis": "Beplanting moeilijk; kies alleen zeer geschikte soorten en verbeter microklimaat."
+    },
+    "viid": {
+      "titel": "Gt VIId (uiterst droog)",
+      "beschrijving": "Uiterst droog met grote fluctuatie.",
+      "betekenis": "Zeer beperkt soortenpalet; investeer in waterbergende maatregelen."
+    },
+    "viiio": {
+      "titel": "Gt VIIIo (extreem droog)",
+      "beschrijving": "Extreem droge omstandigheden, grondwater vrijwel nooit bereikbaar.",
+      "betekenis": "Beplanting alleen met extremen-specialisten of met irrigatie/wateropvang."
+    },
+    "viiid": {
+      "titel": "Gt VIIId (extreem droog)",
+      "beschrijving": "Extreem droog met sterke fluctuatie.",
+      "betekenis": "Beplanting vraagt maatwerk; focus op klimaatadaptieve soorten en bodemverbetering."
+    }
+  },
+  "geomorfologie": {
+    "open_kommenlandschap": {
+      "titel": "Open kommenlandschap",
+      "beschrijving": "In de komgebieden, ver van de rivierloop, kwam het water tot rust en kon slib bezinken. Dit leidde tot plaatselijk dikke, zware komkleilagen.",
+      "kenmerken": "Open karakter met schaarse bebouwing. Kavels vaak onregelmatig; waterlopen en sloten zijn vaak recht door ontginning en waterbeheer.",
+      "bodem_en_water": "Zware, natte klei met hoge grondwaterstanden; langzaam afvoerend en in natte perioden slecht begaanbaar.",
+      "landgebruik_en_beplanting": "Veel grasland. Waar landbouw minder mogelijk was, werden grienden aangelegd. Beplanting vooral als weg- en erfbeplanting, met verspreide populierenbosjes en grienden.",
+      "betekenis_voor_erfbeplanting": "Houd het open karakter overeind: plant vooral lijnvormig bij erf/weg/slot. Kies soorten die natte klei verdragen (wilg, els, populier, iep) en voorkom grote dichte bosvakken in het open veld."
+    },
+    "oeverwal": {
+      "titel": "Oeverwal",
+      "beschrijving": "Relatief hoger gelegen zandrug langs (oude) rivierlopen, opgebouwd uit grover materiaal dat bij overstromingen dicht bij de rivier werd afgezet.",
+      "kenmerken": "Iets hoger en droger dan de omgeving, vaak met lintbebouwing en erven op de hogere delen.",
+      "bodem_en_water": "Zavelig tot zandig, beter ontwaterd; grondwater dieper dan in komgronden.",
+      "landgebruik_en_beplanting": "Geschikt voor akkerbouw en fruitteelt; erven en dijken hebben vaak rijke beplanting.",
+      "betekenis_voor_erfbeplanting": "Veel soorten mogelijk. Erfbeplanting kan voller zijn dan in komgebied; boomgaarden, hagen en laanstructuren passen goed."
+    },
+    "stroomrug": {
+      "titel": "Stroomrug / stroomgordel",
+      "beschrijving": "Zandrug van een voormalige rivierloop met bijbehorende afzettingen. Vaak als langgerekte verhoging herkenbaar in het landschap.",
+      "kenmerken": "Langgerekt patroon, vaak bepalend voor wegen en bebouwing; relatief droog in vergelijking met komgebied.",
+      "bodem_en_water": "Zandig/zavelig; goede ontwatering.",
+      "landgebruik_en_beplanting": "Akkerbouw, erven, boomgaarden; beplanting langs wegen en erven.",
+      "betekenis_voor_erfbeplanting": "Gunstige groeiplaats: brede soortenkeuze. Combineer lijnvormige structuren met erfbeplanting passend bij open rivierlandschap."
+    },
+    "rivierduin": {
+      "titel": "Rivierduin / donk",
+      "beschrijving": "Lokale zandige verhoging in het rivierengebied, ontstaan door wind (duinvorming) of als hogere zandkop in een natte omgeving.",
+      "kenmerken": "Kleine hoogteaccenten, vaak met bebouwing of bosjes; ecologisch waardevol door droog-nat gradiënt.",
+      "bodem_en_water": "Droger, zandiger dan omgeving; in de voet kunnen natte zones voorkomen.",
+      "landgebruik_en_beplanting": "Bosjes, erven, akkers op de hogere delen; natte vegetaties in de laagtes.",
+      "betekenis_voor_erfbeplanting": "Gebruik de hoogteverschillen: droogtetolerante soorten op de top, vochtminnende soorten lager. Dit geeft een natuurlijk, robuust ontwerp."
+    },
+    "dekzandrug": {
+      "titel": "Dekzandrug",
+      "beschrijving": "Verhoging van door wind afgezet dekzand uit de laatste ijstijd. Meestal relatief droog en voedselarm.",
+      "kenmerken": "Subtiel reliëf; historisch vaak bewoning op ruggen met ontginningen eromheen.",
+      "bodem_en_water": "Zand tot lemig zand; snelle infiltratie.",
+      "landgebruik_en_beplanting": "Heide- en bosrestanten, akkers en grasland; houtwallen komen lokaal voor.",
+      "betekenis_voor_erfbeplanting": "Kies soorten voor drogere standplaatsen; werk met struweel en houtwallen voor beschutting en biodiversiteit."
+    },
+    "dekzandlaagte": {
+      "titel": "Dekzandlaagte / laagte",
+      "beschrijving": "Laaggelegen deel tussen dekzandruggen waar water langer blijft staan.",
+      "kenmerken": "Natter en soms veen/venige lagen; kan beekdalachtig aanvoelen.",
+      "bodem_en_water": "Zand met hogere grondwaterstand; lokaal venig.",
+      "landgebruik_en_beplanting": "Grasland, elzenbroekjes, vochtige hooilanden.",
+      "betekenis_voor_erfbeplanting": "Kies vochtminnende soorten en benut waterberging; maak natte zones ecologisch rijk i.p.v. droog te willen maken."
+    },
+    "beekdal": {
+      "titel": "Beekdal",
+      "beschrijving": "Dalvormig laagland langs beken en kleine waterlopen, met natte bodems en periodieke inundatie.",
+      "kenmerken": "Slingerend water, natte graslanden, elzenbroek en houtwallen; belangrijk als ecologische verbinding.",
+      "bodem_en_water": "Vochtig tot nat, vaak lemig/zandig met kwel.",
+      "landgebruik_en_beplanting": "Hooiland, begrazing, elzen en wilgen langs water.",
+      "betekenis_voor_erfbeplanting": "Beplanting langs waterlopen (els, wilg) en behoud van open natte graslanden levert veel biodiversiteit op."
+    }
+  },
+  "nsn": {
+    "oeverwal_en_stroomrug": {
+      "titel": "Natuurlijk systeem: oeverwal/stroomrug",
+      "beschrijving": "Relatief hogere, beter ontwaterde delen in een rivierlandschap. Hier is de groeiplaats vaak warmer en droger dan in de kommen.",
+      "betekenis": "Brede soortenkeuze; combineer erfbeplanting met hagen, boomgaarden en laanstructuren."
+    },
+    "komgebied": {
+      "titel": "Natuurlijk systeem: komgebied",
+      "beschrijving": "Laaggelegen, natte delen met zware klei en hoge grondwaterstanden. Van nature geschikt voor natte graslanden, moerasranden en grienden.",
+      "betekenis": "Kies natte toleranties en houd het landschap open; lijnvormige beplanting is vaak passender dan grote bosvakken."
+    },
+    "dekzandlandschap": {
+      "titel": "Natuurlijk systeem: dekzandlandschap",
+      "beschrijving": "Zandige bodems met droog-nat gradiënten tussen ruggen en laagtes, vaak met beken en kwelzones.",
+      "betekenis": "Werk met variatie: droogtetolerante soorten op ruggen, vochtminnende soorten in laagtes; houtwallen en struweel passen goed."
+    }
+  }
+}
