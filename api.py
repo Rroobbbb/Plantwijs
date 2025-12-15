@@ -16,6 +16,7 @@ import re
 import time
 import urllib.parse
 import xml.etree.ElementTree as ET
+from datetime import datetime
 
 # PDF generatie (locatierapport)
 # Let op: Render installeert alleen packages uit requirements.txt.
