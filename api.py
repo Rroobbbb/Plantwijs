@@ -1696,7 +1696,7 @@ def advies_geo(
 # ───────────────────── UI
 
 # ───────────────────── API: advies/pdf (download 1 PDF per klik)
-@app.get("/advies/pdf")
+@app.get("/advies/pdf", response_class=Response)
 def advies_pdf(
     lat: float = Query(...),
     lon: float = Query(...),
@@ -2061,14 +2061,22 @@ def advies_pdf(
         "Dit rapport is automatisch gegenereerd met de <b>Beplantingswijzer</b> en bedoeld als richtinggevend advies. "
         "Het combineert landschappelijke data met ecologische kennis om passende beplanting voor deze locatie te selecteren.",
         body
-    ))
-    
-        doc.build(story, onFirstPage=_hdr_footer, onLaterPages=_hdr_footer)
-        buf.seek(0)
-    
-        filename = f"beplantingswijzer_locatierapport_{lat:.5f}_{lon:.5f}.pdf".replace('.', '_')
-        headers = {"Content-Disposition": f'attachment; filename="{filename}"'}
-        return StreamingResponse(buf, media_type="application/pdf", headers=headers)
+        ))
+
+    # --- PDF bouwen + teruggeven ---
+    doc.build(story, onFirstPage=_hdr_footer, onLaterPages=_hdr_footer)
+    pdf_bytes = buf.getvalue()
+    buf.close()
+
+    if not pdf_bytes:
+        raise HTTPException(status_code=500, detail="PDF generatie mislukte (leeg document).")
+
+    filename = f"beplantingswijzer_locatierapport_{lat:.5f}_{lon:.5f}.pdf".replace('.', '_')
+    headers = {
+        "Content-Disposition": f'attachment; filename="{filename}"',
+        "Cache-Control": "no-store",
+    }
+    return StreamingResponse(BytesIO(pdf_bytes), media_type="application/pdf", headers=headers)
 
 @app.get("/", response_class=HTMLResponse)
 def index() -> HTMLResponse:
