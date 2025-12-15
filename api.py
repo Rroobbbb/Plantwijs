@@ -2018,7 +2018,7 @@ def advies_pdf(
             ("geomorfologie", gmm_val),
             ("nsn", nsn_val),
             ("bodem", bodem_val),
-            ("gt", gt_pretty),
+            ("gt", gt_code),
         ):
             d = context_description(cat, val)
             if not d:
