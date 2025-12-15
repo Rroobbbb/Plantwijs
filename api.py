@@ -16,6 +16,15 @@ import re
 import time
 import urllib.parse
 import xml.etree.ElementTree as ET
+
+# PDF generatie (locatierapport)
+from io import BytesIO
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.units import mm
+from reportlab.lib.utils import ImageReader
+from PIL import Image
+
 import tempfile  # ← toevoegen
 import json
 import zipfile
@@ -296,6 +305,64 @@ def get_df() -> pd.DataFrame:
     raise FileNotFoundError(
         "Geen dataset gevonden. Lokaal ontbreekt out/plantwijs_full.csv én online CSV kon niet worden opgehaald."
     )
+
+# ──────────────────────────────────────────────────────────────
+# PDF/kaart helpers (Beplantingswijzer locatierapport)
+def _webmercator_tile_xy(lat: float, lon: float, z: int) -> tuple[int,int]:
+    lat_rad = math.radians(max(min(lat, 85.05112878), -85.05112878))
+    n = 2 ** z
+    x = int((lon + 180.0) / 360.0 * n)
+    y = int((1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * n)
+    return x, y
+
+def _static_map_image(lat: float, lon: float, z: int = 17, tiles: int = 2) -> BytesIO | None:
+    """
+    Rendert een klein kaartje via OSM tiles (server-side).
+    - tiles=2 → 2x2 tiles (512x512px)
+    Geeft BytesIO terug met PNG of None als ophalen faalt.
+    """
+    try:
+        cx, cy = _webmercator_tile_xy(lat, lon, z)
+        half = tiles // 2
+        img = Image.new("RGB", (256*tiles, 256*tiles))
+        # Respecteer OSM tile usage: low volume (1 PDF per klik)
+        headers = {"User-Agent": "Beplantingswijzer/1.0 (Render; locatierapport)"}
+        for dx in range(-half, -half+tiles):
+            for dy in range(-half, -half+tiles):
+                x = cx + dx
+                y = cy + dy
+                url = f"https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+                r = requests.get(url, timeout=10, headers=headers)
+                if r.status_code != 200:
+                    return None
+                tile = Image.open(BytesIO(r.content)).convert("RGB")
+                px = (dx + half) * 256
+                py = (dy + half) * 256
+                img.paste(tile, (px, py))
+        out = BytesIO()
+        img.save(out, format="PNG", optimize=True)
+        out.seek(0)
+        return out
+    except Exception:
+        return None
+
+def _wrap_lines(text: str, max_chars: int = 95) -> list[str]:
+    """Simpele wrap op woordgrenzen voor canvas.drawString."""
+    if not text:
+        return []
+    words = str(text).split()
+    lines, cur = [], ""
+    for w in words:
+        if len(cur) + (1 if cur else 0) + len(w) <= max_chars:
+            cur = (cur + " " + w).strip()
+        else:
+            if cur:
+                lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    return lines
+
 
 # ───────────────────── HTTP utils
 @lru_cache(maxsize=32)
@@ -1623,6 +1690,195 @@ def advies_geo(
     return JSONResponse(_clean(out))
 
 # ───────────────────── UI
+
+# ───────────────────── API: advies/pdf (download 1 PDF per klik)
+@app.get("/advies/pdf")
+def advies_pdf(
+    lat: float = Query(...),
+    lon: float = Query(...),
+    # optionele overrides vanuit UI (checkboxes)
+    licht: List[str] = Query(default=[]),
+    vocht: List[str] = Query(default=[]),
+    bodem: List[str] = Query(default=[]),
+    exclude_invasief: bool = Query(True),
+):
+    """
+    Genereert een locatierapport als PDF.
+    - Plantlijst: ALLE geschikte 'inheems' + 'ingeburgerd' (exoot niet).
+    - Filters (licht/vocht/bodem) komen uit UI; als leeg, vallen we terug op kaartwaarden.
+    """
+    # Context uit kaarten
+    fgr = fgr_from_point(lat, lon) or "Onbekend"
+    nsn_val = nsn_from_point(lat, lon) or ""
+    bodem_raw, _props_bodem = bodem_from_bodemkaart(lat, lon)
+    vocht_raw, _props_gwt, gt_code = vocht_from_gwt(lat, lon)
+    ahn_val, _props_ahn = ahn_from_wms(lat, lon)
+    gmm_val, _props_gmm = gmm_from_wms(lat, lon)
+
+    bodem_val = (bodem[0] if bodem else bodem_raw) or ""
+    vocht_val = (vocht[0] if vocht else vocht_raw) or ""
+    licht_vals = licht[:] if licht else []  # kan leeg zijn
+
+    def _has_any(cell: Any, choices: List[str]) -> bool:
+        if not choices:
+            return True
+        tokens = {t.strip().lower() for t in re.split(r"[;/|]+", str(cell or "")) if t.strip()}
+        want = {w.strip().lower() for w in choices if str(w).strip()}
+        return bool(tokens & want)
+
+    # Plantselectie
+    df = get_df()
+
+    # Alleen inheems + ingeburgerd
+    if "status_nl" in df.columns:
+        s = df["status_nl"].astype(str).str.lower().str.strip()
+        df = df[s.isin(["inheems", "ingeburgerd"])]
+    else:
+        # Fallback (oude kolom): inheems==ja
+        if "inheems" in df.columns:
+            df = df[df["inheems"].astype(str).str.lower().str.strip() == "ja"]
+
+    if exclude_invasief and "invasief" in df.columns:
+        inv = df["invasief"].astype(str).str.lower().str.strip()
+        df = df[(inv != "ja") | (df["invasief"].isna())]
+
+    # Filters op standplaats
+    if licht_vals and "standplaats_licht" in df.columns:
+        df = df[df["standplaats_licht"].apply(lambda v: _has_any(v, licht_vals))]
+    if vocht_val and "vocht" in df.columns:
+        df = df[df["vocht"].apply(lambda v: _has_any(v, [vocht_val]))]
+    if bodem_val:
+        df = df[df.apply(lambda r:
+                         _has_any(r.get("bodem", ""), [bodem_val]) or
+                         _has_any(r.get("grondsoorten", ""), [bodem_val]),
+                         axis=1)]
+
+    # Sorteer: inheems eerst, dan alfabetisch
+    if "status_nl" in df.columns:
+        order = {"inheems": 0, "ingeburgerd": 1, "exoot": 2, "": 9}
+        df = df.assign(_ord=df["status_nl"].astype(str).str.lower().map(lambda x: order.get(x, 9)))
+        df = df.sort_values(by=["_ord", "naam"], kind="stable").drop(columns=["_ord"], errors="ignore")
+    else:
+        df = df.sort_values(by=["naam"], kind="stable")
+
+    total = int(len(df))
+
+    # ── PDF bouwen (ReportLab)
+    buf = BytesIO()
+    c = canvas.Canvas(buf, pagesize=A4)
+    W, H = A4
+    margin = 16 * mm
+    y = H - margin
+
+    def line(txt: str, size: int = 11, leading: float = 14):
+        nonlocal y
+        if y < margin + leading:
+            c.showPage()
+            y = H - margin
+        c.setFont("Helvetica", size)
+        c.drawString(margin, y, txt)
+        y -= leading
+
+    def para(txt: str, size: int = 11, max_chars: int = 95, leading: float = 14):
+        for ln in _wrap_lines(txt, max_chars=max_chars):
+            line(ln, size=size, leading=leading)
+
+    # Titel
+    c.setTitle("Beplantingswijzer – locatierapport")
+    line("Beplantingswijzer – locatierapport", size=16, leading=20)
+    line(f"Locatie: {lat:.6f}, {lon:.6f}", size=10, leading=14)
+    line(f"Datum: {datetime.now().strftime('%Y-%m-%d %H:%M')}", size=10, leading=16)
+
+    # Kaartje
+    map_img = _static_map_image(lat, lon, z=17, tiles=2)
+    if map_img:
+        try:
+            img = ImageReader(map_img)
+            # plaats rechtsboven (onder titel)
+            iw, ih = 90*mm, 90*mm
+            c.drawImage(img, W - margin - iw, H - margin - ih - 30, width=iw, height=ih, preserveAspectRatio=True, mask='auto')
+        except Exception:
+            pass
+
+    y -= 6
+    line("Locatiecontext (kaarten)", size=12, leading=18)
+    para(f"Fysisch Geografische Regio (FGR): {fgr}. Deze regio zegt iets over de ontstaansgeschiedenis en het landschapstype in de omgeving.", size=10)
+    if gmm_val:
+        para(f"Geomorfologie (GMM): {gmm_val}. Dit geeft een indicatie van reliëf/landvormen (zoals rivierduinen, oeverwallen, kommen).", size=10)
+    if nsn_val:
+        para(f"Natuurlijk Systeem (NSN): {nsn_val}. Dit is een aanvullende indeling van natuurlijke processen/landschap.", size=10)
+    if bodem_raw:
+        para(f"Bodem (kaart): {bodem_raw}.", size=10)
+    if vocht_raw:
+        para(f"Vochttoestand (kaart): {vocht_raw} (Gt: {gt_code or '—'}).", size=10)
+    if ahn_val not in (None, "", "—"):
+        para(f"Hoogteligging (AHN): {ahn_val}.", size=10)
+
+    y -= 6
+    line("Gekozen filters (gebruikt voor dit rapport)", size=12, leading=18)
+    para(f"Licht: {(' / '.join(licht_vals) if licht_vals else 'geen selectie (dus geen lichtfilter)')}", size=10)
+    para(f"Vocht: {(vocht_val or 'onbekend')}", size=10)
+    para(f"Bodem/grond: {(bodem_val or 'onbekend')}", size=10)
+    para(f"Invasieve soorten uitsluiten: {'ja' if exclude_invasief else 'nee'}", size=10)
+    para("Plantselectie in dit PDF: alle geschikte inheemse én ingeburgerde soorten (exoten niet).", size=10)
+
+    y -= 6
+    line(f"Geschikte planten (totaal: {total})", size=12, leading=18)
+
+    # Lijst (beperken voor PDF-grootte)
+    max_rows = 350
+    show_df = df.head(max_rows)
+
+    def fmt_range(val: Any) -> str:
+        s = str(val or "").strip()
+        return s
+
+    cols = []
+    for ccol in ["naam","wetenschappelijke_naam","status_nl","standplaats_licht","vocht","bodem","hoogte","breedte","beplantingstype"]:
+        if ccol in show_df.columns:
+            cols.append(ccol)
+
+    # fallback: voeg velden toe als kolommen anders heten
+    if "beplantingstype" not in cols and "planttype" in show_df.columns:
+        cols.append("planttype")
+
+    # print header hint
+    para("Weergave: Naam — (wetenschappelijke naam) — status — licht — vocht — bodem — maatvoering", size=9)
+
+    for _, r in show_df.iterrows():
+        naam = str(r.get("naam","") or "").strip()
+        wn = str(r.get("wetenschappelijke_naam","") or "").strip()
+        status = str(r.get("status_nl","") or r.get("inheems","") or "").strip()
+        licht_s = str(r.get("standplaats_licht","") or "").strip()
+        vocht_s = str(r.get("vocht","") or "").strip()
+        bodem_s = str(r.get("bodem","") or "").strip()
+        h_s = fmt_range(r.get("hoogte",""))
+        b_s = fmt_range(r.get("breedte",""))
+        # compacte regel
+        rule = f"- {naam} ({wn})"
+        if status:
+            rule += f" — {status}"
+        bits = []
+        if licht_s: bits.append(f"licht: {licht_s}")
+        if vocht_s: bits.append(f"vocht: {vocht_s}")
+        if bodem_s: bits.append(f"bodem: {bodem_s}")
+        if h_s or b_s: bits.append(f"maat: {h_s} / {b_s}".strip(" /"))
+        if bits:
+            rule += " | " + " | ".join(bits)
+        para(rule, size=9, max_chars=110, leading=12)
+
+    if total > max_rows:
+        y -= 4
+        para(f"Let op: in dit PDF zijn de eerste {max_rows} soorten weergegeven (van totaal {total}). Gebruik de tabel in de webapp voor de volledige lijst.", size=9)
+
+    c.showPage()
+    c.save()
+    buf.seek(0)
+
+    filename = f"beplantingswijzer_locatierapport_{lat:.5f}_{lon:.5f}.pdf".replace('.', '_')
+    headers = {"Content-Disposition": f'attachment; filename="{filename}"'}
+    return StreamingResponse(buf, media_type="application/pdf", headers=headers)
+
 @app.get("/", response_class=HTMLResponse)
 def index() -> HTMLResponse:
     html = '''
@@ -2251,12 +2507,48 @@ setTimeout(fixMapSize, 0);
             <div id="uiM" class="muted">Geomorfologie (GMM): —</div>
             <div id="uiN" class="muted">Natuurlijk Systeem (NSN): —</div>
           </div>
+          <div class="sec">
+            <button id="btnPdf" class="btn" style="width:100%; margin-top:6px;">📄 Locatierapport</button>
+            <div class="hint" style="margin-top:6px;">Download een PDF met locatie-uitleg + alle geschikte inheemse/ingeburgerde soorten.</div>
+          </div>
+
         `;
         L.DomEvent.disableClickPropagation(div);
         return div;
       }
     });
     const infoCtl = new InfoCtl({ position: IS_MOBILE ? 'bottomright' : 'topright' }).addTo(map);
+
+    // PDF-knop (onder legenda): download locatierapport
+    setTimeout(()=>{
+      const btnPdf = document.getElementById('btnPdf');
+      if(btnPdf){
+        btnPdf.addEventListener('click', (ev)=>{
+          ev.preventDefault();
+          ev.stopPropagation();
+          const ll = window._lastLatLng || (window._marker ? window._marker.getLatLng() : null);
+          if(!ll){
+            alert('Klik eerst op de kaart om een locatie te kiezen.');
+            return;
+          }
+          const u = new URL(location.origin + '/advies/pdf');
+          u.searchParams.set('lat', ll.lat);
+          u.searchParams.set('lon', ll.lng);
+
+          // Neem huidige UI-filters mee (als je niets kiest, gebruikt de server kaartwaarden)
+          getChecked('licht').forEach(v=>u.searchParams.append('licht', v));
+          const vlist = getChecked('vocht');
+          if(vlist.length){ u.searchParams.append('vocht', vlist[0]); }
+          const blist = getChecked('bodem');
+          if(blist.length){ u.searchParams.append('bodem', blist[0]); }
+
+          const inv = document.querySelector('input[name="exclude_invasief"]');
+          if(inv){ u.searchParams.set('exclude_invasief', inv.checked ? 'true' : 'false'); }
+
+          window.open(u.toString(), '_blank');
+        });
+      }
+    }, 0);
 
   function setClickInfo({fgr, bodem, bodem_bron, gt, vocht, ahn, gmm, nsn}) {
   const tF = "Fysisch Geografische Regio's: " + (fgr || '—');
@@ -2627,6 +2919,7 @@ const ctlLayers = L.control.layers({}, overlays, { collapsed:true, position:'bot
     map.on('click', async (e)=>{
       if(window._marker) window._marker.remove();
       window._marker = L.marker(e.latlng).addTo(map);
+      window._lastLatLng = e.latlng;
 
       // toon direct een korte melding zodat het duidelijk is dat er geladen wordt
       setClickInfo({ fgr:'(laden...)', bodem:null, bodem_bron:null, gt:null, vocht:null, ahn:null, gmm:null, nsn:null });
