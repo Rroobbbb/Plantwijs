@@ -30,7 +30,7 @@ from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak,
     Image as RLImage, KeepTogether, LongTable
 )
-from PIL import Image
+from PIL import Image, ImageDraw
 
 import tempfile  # ← toevoegen
 import json
@@ -346,7 +346,20 @@ def _static_map_image(lat: float, lon: float, z: int = 17, tiles: int = 2) -> By
                 px = (dx + half) * 256
                 py = (dy + half) * 256
                 img.paste(tile, (px, py))
-        out = BytesIO()
+        
+# Marker (centrum van kaart)
+try:
+    draw = ImageDraw.Draw(img, "RGBA")
+    cxp = int((256 * tiles) / 2)
+    cyp = int((256 * tiles) / 2)
+    # schaduw
+    draw.ellipse((cxp-9, cyp-9, cxp+9, cyp+9), fill=(0, 0, 0, 70))
+    # rode marker
+    draw.ellipse((cxp-7, cyp-7, cxp+7, cyp+7), fill=(220, 38, 38, 230), outline=(255,255,255,220), width=2)
+except Exception:
+    pass
+
+out = BytesIO()
         img.save(out, format="PNG", optimize=True)
         out.seek(0)
         return out
@@ -1722,43 +1735,47 @@ def advies_pdf(
     ahn_val, _props_ahn = ahn_from_wms(lat, lon)
     gmm_val, _props_gmm = gmm_from_wms(lat, lon)
 
-    bodem_val = (bodem[0] if bodem else bodem_raw) or ""
-    vocht_val = (vocht[0] if vocht else vocht_raw) or ""
-    licht_vals = licht[:] if licht else []  # kan leeg zijn
+# Waarden voor weergave in PDF (toon 1 waarde, maar filter kan meerdere bevatten)
+bodem_val = (bodem[0] if bodem else bodem_raw) or ""
+vocht_val = (vocht[0] if vocht else vocht_raw) or ""
 
-    def _has_any(cell: Any, choices: List[str]) -> bool:
-        if not choices:
-            return True
-        tokens = {t.strip().lower() for t in re.split(r"[;/|]+", str(cell or "")) if t.strip()}
-        want = {w.strip().lower() for w in choices if str(w).strip()}
-        return bool(tokens & want)
+# Bepaal welke filters we toepassen:
+# - Als de UI iets meestuurt (lijst niet leeg), gebruik dat.
+# - Anders vallen we terug op kaartwaarden.
+bodem_keuzes = bodem[:] if bodem else ([bodem_raw] if bodem_raw else [])
+vocht_keuzes = vocht[:] if vocht else ([vocht_raw] if vocht_raw else [])
+licht_vals = licht[:] if licht else []  # kan leeg zijn → dan geen lichtfilter
 
-    # Plantselectie
-    df = get_df()
+def _has_any(cell: Any, choices: List[str]) -> bool:
+    if not choices:
+        return True
+    tokens = {t.strip().lower() for t in re.split(r"[;/|]+", str(cell or "")) if t.strip()}
+    want = {str(w).strip().lower() for w in choices if str(w).strip()}
+    return bool(tokens & want)
 
-    # Alleen inheems + ingeburgerd
-    if "status_nl" in df.columns:
-        s = df["status_nl"].astype(str).str.lower().str.strip()
-        df = df[s.isin(["inheems", "ingeburgerd"])]
-    else:
-        # Fallback (oude kolom): inheems==ja
-        if "inheems" in df.columns:
-            df = df[df["inheems"].astype(str).str.lower().str.strip() == "ja"]
+# Plantselectie
+df = get_df()
 
-    if exclude_invasief and "invasief" in df.columns:
-        inv = df["invasief"].astype(str).str.lower().str.strip()
-        df = df[(inv != "ja") | (df["invasief"].isna())]
+# Alleen inheems + ingeburgerd
+if "status_nl" in df.columns:
+    s = df["status_nl"].astype(str).str.lower().str.strip()
+    df = df[s.isin(["inheems", "ingeburgerd"])]
+else:
+    # Fallback (oude kolom): inheems==ja
+    if "inheems" in df.columns:
+        df = df[df["inheems"].astype(str).str.lower().str.strip() == "ja"]
 
-    # Filters op standplaats
-    if licht_vals and "standplaats_licht" in df.columns:
-        df = df[df["standplaats_licht"].apply(lambda v: _has_any(v, licht_vals))]
-    if vocht_val and "vocht" in df.columns:
-        df = df[df["vocht"].apply(lambda v: _has_any(v, [vocht_val]))]
-    if bodem_val:
-        df = df[df.apply(lambda r:
-                         _has_any(r.get("bodem", ""), [bodem_val]) or
-                         _has_any(r.get("grondsoorten", ""), [bodem_val]),
-                         axis=1)]
+if exclude_invasief and "invasief" in df.columns:
+    inv = df["invasief"].astype(str).str.lower().str.strip()
+    df = df[(inv != "ja") | (df["invasief"].isna())]
+
+# Filters op standplaats (zelfde bodem-logica als de UI)
+if licht_vals and "standplaats_licht" in df.columns:
+    df = df[df["standplaats_licht"].apply(lambda v: _has_any(v, licht_vals))]
+if vocht_keuzes and "vocht" in df.columns:
+    df = df[df["vocht"].apply(lambda v: _has_any(v, vocht_keuzes))]
+if bodem_keuzes:
+    df = df[df.apply(lambda r: _match_bodem_row(r, bodem_keuzes), axis=1)]
 
     # Sorteer: inheems eerst, dan alfabetisch
     if "status_nl" in df.columns:
