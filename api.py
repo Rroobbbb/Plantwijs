@@ -2012,7 +2012,30 @@ def advies_pdf(
 
         story.append(Spacer(1, 6 * mm))
         # Toelichting op locatiecontext (uit extern kennisbestand)
+        
         story.append(Paragraph("Toelichting op locatiecontext", style_h))
+
+        _CTX_FIELDS = [
+            ("ontstaansgeschiedenis", "Ontstaansgeschiedenis"),
+            ("reliëf_en_ruimtelijke_opbouw", "Reliëf & ruimtelijke opbouw"),
+            ("reliëf_en_vorm", "Reliëf & landvorm"),
+            ("systeemwerking", "Systeemwerking"),
+            ("bodem_en_hydrologie", "Bodem & hydrologie"),
+            ("bodem_en_water", "Bodem & water"),
+            ("standplaats_en_water", "Standplaats & water"),
+            ("landgebruik_en_beplanting", "Landgebruik & beplanting"),
+            ("beplanting_en_landgebruik", "Beplanting & landgebruik"),
+            ("vegetatiepotentie", "Vegetatiepotentie"),
+            ("beheerimplicaties", "Beheerimplicaties"),
+            ("geschikte_beplanting", "Geschikte beplanting (indicatief)"),
+            ("betekenis_voor_erfbeplanting", "Betekenis voor erfbeplanting"),
+            ("aanbevelingen", "Aanbevelingen"),
+            ("uitleg", "Uitleg"),
+            ("betekenis", "Betekenis"),
+            ("kenmerken", "Kenmerken"),
+            ("beschrijving", "Samenvatting"),
+        ]
+
         for cat, val in (
             ("fgr", fgr),
             ("geomorfologie", gmm_val),
@@ -2023,27 +2046,37 @@ def advies_pdf(
             d = context_description(cat, val)
             if not d:
                 continue
+
             title = d.get("titel") or str(val)
             story.append(Paragraph(f"<b>{title}</b>", style_p))
-            parts = []
-            for k in (
-                "beschrijving",
-                "kenmerken",
-                "bodem_en_water",
-                "landgebruik_en_beplanting",
-                "beplanting_en_landgebruik",
-                "beheerimplicaties",
-                "geschikte_beplanting",
-                "betekenis_voor_erfbeplanting",
-                "betekenis",
-            ):
-                t = d.get(k)
-                if t:
-                    parts.append(str(t).strip())
-            if parts:
-                story.append(Paragraph(" ".join(parts), style_small))
-                story.append(Spacer(1, 3 * mm))
 
+            # Toon secties met labels (in vaste volgorde)
+            any_text = False
+            for key, label in _CTX_FIELDS:
+                t = d.get(key)
+                if not t:
+                    continue
+                t = str(t).strip()
+                if not t:
+                    continue
+                any_text = True
+                story.append(Paragraph(f"<b>{label}:</b> {t}", style_small))
+                story.append(Spacer(1, 1.5 * mm))
+
+            # Bronnen (selectie)
+            bronnen = d.get("bronnen")
+            if isinstance(bronnen, list) and bronnen:
+                any_text = True
+                story.append(Spacer(1, 1 * mm))
+                story.append(Paragraph("<b>Bronnen (selectie):</b>", style_small_muted))
+                for b in bronnen[:10]:
+                    bb = str(b).strip()
+                    if bb:
+                        story.append(Paragraph(f"• {bb}", style_small))
+                story.append(Spacer(1, 1.5 * mm))
+
+            if any_text:
+                story.append(Spacer(1, 3 * mm))
 
         # Filters
         story.append(Paragraph("Gekozen filters", style_h))
@@ -2070,74 +2103,28 @@ def advies_pdf(
         )
         story.append(filt_table)
 
-
-        # Context-uitleg (uitgebreid, bron-gebaseerd via context_descriptions.yaml)
+        # Context-uitleg (kort, leesbaar)
         story.append(Paragraph("Locatiecontext (kaarten)", style_h))
         story.append(Paragraph(
-            "Onderstaande toelichting koppelt de gevonden kaartwaarden aan landschapsprocessen, bodem- en waterhuishouding en ontwerpkeuzes voor erfbeplanting. "
-            "De teksten zijn landelijk en generiek: lokale omstandigheden (peilbeheer, microreliëf, bodemopbouw) kunnen afwijken.",
-            style_sub,
+            f"<b>Fysisch Geografische Regio (FGR):</b> {_short(fgr, 220) or '—'}. Deze regio zegt iets over de ontstaansgeschiedenis en het landschapstype in de omgeving.",
+            style_p,
         ))
-
-        def _render_context_item(label: str, category: str, value: str | None) -> None:
-            # Altijd de gevonden waarde tonen
-            shown = _short(value, 240) if value else "—"
-            story.append(Spacer(1, 1.5 * mm))
-            story.append(Paragraph(f"<b>{label}:</b> {shown}", style_p))
-
-            desc = context_description(category, value)
-            if not desc or not isinstance(desc, dict):
-                return
-
-            # Inhoud in vaste (leesbare) volgorde tonen, maar ook toekomstbestendig blijven.
-            order = [
-                ("beschrijving", "Beschrijving"),
-                ("ontstaan_en_dynamiek", "Ontstaan & dynamiek"),
-                ("reliëf_en_vorm", "Reliëf & vorm"),
-                ("proces_en_gradiënten", "Proces & gradiënten"),
-                ("kenmerken", "Kenmerken"),
-                ("bodem_en_water", "Bodem & water"),
-                ("waterhuishouding", "Waterhuishouding"),
-                ("standplaats", "Standplaats"),
-                ("landschap_en_structuur", "Landschap & structuur"),
-                ("landgebruik_en_beplanting", "Landgebruik & beplanting"),
-                ("beplanting_en_landgebruik", "Beplanting & landgebruik"),
-                ("beheerimplicaties", "Beheerimplicaties"),
-                ("typische_ecotopen", "Typische ecotopen"),
-                ("geschikte_beplanting", "Geschikte beplanting"),
-                ("betekenis_voor_erfbeplanting", "Betekenis voor erfbeplanting"),
-                ("betekenis", "Betekenis"),
-                ("uitleg_ghg_glg", "Uitleg (GHG/GLG)"),
-            ]
-            for k, title in order:
-                v = desc.get(k)
-                if v:
-                    story.append(Paragraph(f"<font color='{C_MUTED.hexval()}'><b>{title}:</b></font> {_short(v, 1200)}", style_p))
-
-            # Bronnen, als aanwezig
-            bronnen = desc.get("bronnen")
-            if isinstance(bronnen, list) and bronnen:
-                story.append(Paragraph(f"<font color='{C_MUTED.hexval()}'><b>Bronnen (selectie):</b></font>", style_p))
-                for b in bronnen[:8]:
-                    if not b:
-                        continue
-                    story.append(Paragraph(f"• {_short(b, 260)}", style_small))
-
-        _render_context_item("Fysisch Geografische Regio (FGR)", "fgr", fgr)
-        _render_context_item("Geomorfologie (GMM)", "geomorfologie", gmm_val)
-        _render_context_item("Natuurlijk systeem (NSN)", "nsn", nsn_val)
-        _render_context_item("Bodem", "bodem", bodem_raw)
-        # Gt-code is het meest robuuste haakje voor uitgebreide uitleg; daarnaast tonen we ook de 'vocht' labeltekst.
+        if gmm_val:
+            story.append(Paragraph(
+                f"<b>Geomorfologie (GMM):</b> {_short(gmm_val, 220)}. Dit geeft een indicatie van reliëf/landvormen (zoals rivierduinen, oeverwallen, kommen).",
+                style_p,
+            ))
+        if nsn_val:
+            story.append(Paragraph(
+                f"<b>Natuurlijk systeem (NSN):</b> {_short(nsn_val, 220)}. Aanvullende indeling van natuurlijke processen/landschap.",
+                style_p,
+            ))
+        if bodem_raw:
+            story.append(Paragraph(f"<b>Bodem:</b> {_short(bodem_raw, 220)}.", style_p))
         if vocht_raw:
-            story.append(Spacer(1, 1.5 * mm))
-            story.append(Paragraph(f"<b>Vochttoestand:</b> {_short(vocht_raw, 240)} (Gt: {gt_code or '—'}).", style_p))
-        if gt_code:
-            _render_context_item("Grondwatertrap (Gt)", "gt", gt_code)
+            story.append(Paragraph(f"<b>Vochttoestand:</b> {_short(vocht_raw, 220)} (Gt: {gt_code or '—'}).", style_p))
         if ahn_val not in (None, "", "—"):
-            story.append(Spacer(1, 1.5 * mm))
-            story.append(Paragraph(f"<b>Hoogteligging (AHN):</b> {_short(ahn_val, 240)} m t.o.v. NAP.", style_p))
-
-
+            story.append(Paragraph(f"<b>Hoogteligging (AHN):</b> {_short(ahn_val, 220)}.", style_p))
 
         story.append(Spacer(1, 5 * mm))
 
