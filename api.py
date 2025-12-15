@@ -14,6 +14,7 @@ import math
 import os
 from pathlib import Path
 import re
+import difflib
 import time
 import unicodedata
 import urllib.parse
@@ -1082,6 +1083,70 @@ def _first_sentence(text: str) -> str:
     parts = re.split(r"(?<=[.!?])\s+", s, maxsplit=1)
     return parts[0].strip()
 
+
+def _norm_text_for_dedupe(s: str) -> str:
+    s = str(s or "")
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(ch for ch in s if not unicodedata.combining(ch))
+    s = s.lower()
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+def _is_near_duplicate(text: str, seen: list[str], threshold: float = 0.86) -> bool:
+    n = _norm_text_for_dedupe(text)
+    if not n or len(n) < 60:
+        return False
+    for s in seen:
+        # snelle guard
+        if abs(len(s) - len(n)) > max(80, int(0.35 * max(len(s), len(n)))):
+            continue
+        if difflib.SequenceMatcher(None, n, s).ratio() >= threshold:
+            return True
+    return False
+
+def _push_seen(text: str, seen: list[str]) -> None:
+    n = _norm_text_for_dedupe(text)
+    if n:
+        seen.append(n)
+
+def _build_kernsamenvatting(
+    fgr: str,
+    gmm: str,
+    nsn: str,
+    bodem: str,
+    vocht: str,
+    gt_code: str,
+    ahn_val: Any,
+    advies_snip: str,
+) -> str:
+    # Compact, leesbaar en minder "houterig"
+    parts = []
+    core = []
+    if fgr and fgr != "Onbekend":
+        core.append(f"<b>{fgr}</b>")
+    if gmm:
+        core.append(f"GMM: <b>{gmm}</b>")
+    if nsn:
+        core.append(f"NSN: <b>{nsn}</b>")
+    if core:
+        parts.append("Locatie in " + ", ".join(core) + ".")
+    if bodem:
+        parts.append(f"Bodem: <b>{bodem}</b>.")
+    if vocht or gt_code:
+        vv = (vocht or "—").strip()
+        gt = (gt_code or "—").strip()
+        parts.append(f"Vocht: <b>{vv}</b> (Gt: <b>{gt}</b>).")
+    if ahn_val not in (None, "", "—"):
+        parts.append(f"Hoogteligging (AHN): <b>{ahn_val}</b> m.")
+    # Ontwerpimplicatie (1 zin max) — alleen als we echt iets hebben
+    adv = _first_sentence(advies_snip or "")
+    if adv:
+        # zorg dat hij eindigt op punt
+        if not re.search(r"[.!?]\s*$", adv):
+            adv = adv.strip() + "."
+        # kleine stijlcorrectie: liever "Ontwerpimplicatie:" dan "Ontwerp met ..."
+        parts.append(f"<b>Ontwerpimplicatie:</b> {adv}")
+    return " ".join(parts).strip()
 app = FastAPI(title="PlantWijs API v3.9.7")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
@@ -2009,28 +2074,24 @@ def advies_pdf(
     # ------------------------
     # 4) Kernsamenvatting (scanbaar)
     # ------------------------
-    kern_zinnen = []
-    if fgr and fgr != "Onbekend":
-        kern_zinnen.append(f"Deze locatie ligt in het <b>{fgr}</b>.")
-    if gmm_val:
-        kern_zinnen.append(f"De geomorfologie is <b>{gmm_val}</b>.")
-    if nsn_val:
-        kern_zinnen.append(f"Het natuurlijke systeem is <b>{nsn_val}</b>.")
-    if bodem_val or bodem_raw:
-        kern_zinnen.append(f"De bodem is <b>{(bodem_val or bodem_raw)}</b>.")
-    if vocht_raw or gt_code:
-        kern_zinnen.append(f"De vochttoestand is <b>{(vocht_raw or '—')}</b> (Gt: <b>{(gt_code or '—')}</b>).")
-    if ahn_val not in (None, "", "—"):
-        kern_zinnen.append(f"De hoogteligging (AHN) is circa <b>{ahn_val}</b> m.")
     advies_snip = _first_sentence(
         (gmm_info or {}).get("betekenis_voor_erfbeplanting", "")
         or (nsn_info or {}).get("betekenis_voor_erfbeplanting", "")
         or (bodem_info or {}).get("beheerimplicaties", "")
         or (bodem_info or {}).get("betekenis_voor_erfbeplanting", "")
+        or (gt_info or {}).get("betekenis", "")
     )
-    if advies_snip:
-        kern_zinnen.append(advies_snip)
-    kernsamenvatting = " ".join(kern_zinnen)
+
+    kernsamenvatting = _build_kernsamenvatting(
+        fgr=fgr,
+        gmm=str(gmm_val or "").strip(),
+        nsn=str(nsn_val or "").strip(),
+        bodem=str((bodem_val or bodem_raw) or "").strip(),
+        vocht=str(vocht_raw or "").strip(),
+        gt_code=str(gt_code or "").strip(),
+        ahn_val=ahn_val,
+        advies_snip=advies_snip,
+    )
 
     # ------------------------
     # 5) PDF opbouw (modern + encyclopedisch)
@@ -2145,6 +2206,8 @@ def advies_pdf(
     story.append(Paragraph("Toelichting op locatiecontext", style_h1))
     story.append(Paragraph("Onderstaande toelichting geeft de betekenis van de gevonden kaartwaarden en de implicaties voor erf- en landschapsbeplanting.", style_p))
 
+    seen_paragraphs: list[str] = []
+
     def _render_section(title: str, info: dict | None, fallback_label: str | None = None):
         story.append(Paragraph(title, style_h2))
         if not info:
@@ -2157,8 +2220,16 @@ def advies_pdf(
 
         def add(label: str, key: str):
             val = info.get(key)
-            if val:
-                story.append(Paragraph(f"<b>{label}.</b> {val}", style_p))
+            if not val:
+                return
+            txt = str(val).strip()
+            if not txt:
+                return
+            # voorkom dubbelingen tussen overlappende lagen (bijv. GMM vs NSN)
+            if _is_near_duplicate(txt, seen_paragraphs):
+                return
+            story.append(Paragraph(f"<b>{label}.</b> {txt}", style_p))
+            _push_seen(txt, seen_paragraphs)
 
         # Support meerdere schema's
         add("Kern", "kernsamenenvatting")
