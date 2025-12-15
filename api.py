@@ -14,6 +14,7 @@ import math
 import os
 import re
 import time
+import unicodedata
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime
