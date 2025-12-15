@@ -2009,79 +2009,28 @@ def advies_pdf(
     # ------------------------
     # 4) Kernsamenvatting (scanbaar)
     # ------------------------
-    # --- Kernsamenvatting (narratief, geen label-opsomming) ---
-    def _tune_advice_snip(sn: str, bodem: str | None, gt: str | None, vocht: str | None) -> str:
-        if not sn:
-            return ""
-        s = str(sn).strip()
-        b = (bodem or "").lower()
-        g = (gt or "").upper()
-        v = (vocht or "").lower()
-        # voorkom tegenstrijdigheid: "natte klei" terwijl Gt/vocht droog aangeeft
-        if "natte klei" in s.lower() and ("droog" in v or g.startswith("VI") or g.startswith("VII")):
-            s = re.sub(r"(?i)natte\s+klei", "klei (’s winters vaak nat, ’s zomers soms droog)", s)
-        # voorkom tegenstrijdigheid: alleen droogte benadrukken terwijl zeer nat is
-        if ("zeer nat" in v or g.startswith("I") or g.startswith("II")) and "droog" in s.lower():
-            s = re.sub(r"(?i)droog(te)?", "wisselende vochtcondities", s)
-        return s
-
-    def _summary_sentence_1(fgr: str | None, gmm: str | None, nsn: str | None) -> str:
-        if not fgr or fgr == "Onbekend":
-            base = "Deze locatie ligt in Nederland"
-        else:
-            base = f"Deze locatie ligt in het <b>{fgr}</b>"
-        parts = []
-        if nsn:
-            parts.append(f"een <b>{nsn.lower()}</b>")
-        if gmm:
-            gmm_txt = gmm.lower()
-            if "landvorm" not in gmm_txt:
-                gmm_txt = f"{gmm_txt}-landvorm"
-            parts.append(f"met een <b>{gmm_txt}</b>")
-        if parts:
-            return base + " in " + " ".join(parts) + "."
-        return base + "."
-
-    def _summary_sentence_2(bodem: str | None, vocht: str | None, gt: str | None, ahn: str | None) -> str:
-        bits = []
-        if bodem:
-            bits.append(f"De bodem bestaat uit <b>{bodem}</b>")
-        if vocht or gt:
-            vv = vocht or "—"
-            gg = gt or "—"
-            bits.append(f"met een vochttoestand <b>{vv}</b> (Gt: <b>{gg}</b>)")
-        if ahn not in (None, "", "—"):
-            bits.append(f"en een hoogteligging rond <b>{ahn}</b> m (AHN)")
-        if not bits:
-            return ""
-        s = " ".join(bits).rstrip(".") + "."
-        return s[0].upper() + s[1:]
-
-    def _summary_sentence_3(advice: str) -> str:
-        if not advice:
-            return ""
-        adv = _first_sentence(advice).strip()
-        if not adv:
-            return ""
-        if not adv.lower().startswith("ontwerp"):
-            return "Ontwerpimplicatie: " + adv.rstrip(".") + "."
-        return adv.rstrip(".") + "."
-
-    bodem_for_sum = (bodem_val or bodem_raw) if (bodem_val or bodem_raw) else None
-    s1 = _summary_sentence_1(fgr, gmm_val, nsn_val)
-    s2 = _summary_sentence_2(bodem_for_sum, vocht_raw, gt_code, ahn_val)
-    advice_raw = (
-        (nsn_info or {}).get("betekenis_voor_erfbeplanting", "")
-        or (nsn_info or {}).get("beheerimplicaties", "")
-        or (gmm_info or {}).get("betekenis_voor_erfbeplanting", "")
-        or (bodem_info or {}).get("betekenis_voor_erfbeplanting", "")
+    kern_zinnen = []
+    if fgr and fgr != "Onbekend":
+        kern_zinnen.append(f"Deze locatie ligt in het <b>{fgr}</b>.")
+    if gmm_val:
+        kern_zinnen.append(f"De geomorfologie is <b>{gmm_val}</b>.")
+    if nsn_val:
+        kern_zinnen.append(f"Het natuurlijke systeem is <b>{nsn_val}</b>.")
+    if bodem_val or bodem_raw:
+        kern_zinnen.append(f"De bodem is <b>{(bodem_val or bodem_raw)}</b>.")
+    if vocht_raw or gt_code:
+        kern_zinnen.append(f"De vochttoestand is <b>{(vocht_raw or '—')}</b> (Gt: <b>{(gt_code or '—')}</b>).")
+    if ahn_val not in (None, "", "—"):
+        kern_zinnen.append(f"De hoogteligging (AHN) is circa <b>{ahn_val}</b> m.")
+    advies_snip = _first_sentence(
+        (gmm_info or {}).get("betekenis_voor_erfbeplanting", "")
+        or (nsn_info or {}).get("betekenis_voor_erfbeplanting", "")
         or (bodem_info or {}).get("beheerimplicaties", "")
+        or (bodem_info or {}).get("betekenis_voor_erfbeplanting", "")
     )
-    advice_snip = _tune_advice_snip(advice_raw, bodem_for_sum, gt_code, vocht_raw)
-    s3 = _summary_sentence_3(advice_snip)
-
-    kernsamenvatting = " ".join([p for p in (s1, s2, s3) if p]).strip()
-
+    if advies_snip:
+        kern_zinnen.append(advies_snip)
+    kernsamenvatting = " ".join(kern_zinnen)
 
     # ------------------------
     # 5) PDF opbouw (modern + encyclopedisch)
@@ -2151,19 +2100,18 @@ def advies_pdf(
 
     # Kernsamenvatting (nieuw)
     story.append(Paragraph("Kernsamenvatting locatie", style_h1))
-    story.append(Paragraph(kernsamenvatting or "—", style_p))
-
-    # Overzicht blok: kernwaarden + kaart
+    story.append(Paragraph(kernsamenvatting or "—", style_p))    # Overzicht blok: kaart + kernwaarden (onder elkaar)
     map_img = _static_map_image(lat, lon, z=17, tiles=2)
     rl_map = None
     if map_img:
         try:
-            rl_map = RLImage(map_img, width=78 * mm, height=78 * mm)
+            # Grote kaart op pagina 1
+            rl_map = RLImage(map_img, width=180 * mm, height=110 * mm)
         except Exception:
             rl_map = None
 
     ctx_rows = [
-        [Paragraph("<b>FGR</b>", style_small_muted), Paragraph(_short(fgr, 120) or "—", style_small)],
+[Paragraph("<b>FGR</b>", style_small_muted), Paragraph(_short(fgr, 120) or "—", style_small)],
         [Paragraph("<b>Geomorfologie (GMM)</b>", style_small_muted), Paragraph(_short(gmm_val, 120) or "—", style_small)],
         [Paragraph("<b>Natuurlijk systeem (NSN)</b>", style_small_muted), Paragraph(_short(nsn_val, 120) or "—", style_small)],
         [Paragraph("<b>Bodem</b>", style_small_muted), Paragraph(_short(bodem_val or bodem_raw, 120) or "—", style_small)],
@@ -2183,20 +2131,23 @@ def advies_pdf(
             ]
         )
     )
-
+    # Kaart bovenaan, tabel eronder (pagina 1)
     if rl_map:
-        top_tbl = Table([[ctx_table, rl_map]], colWidths=[120 * mm, 78 * mm])
-    else:
-        top_tbl = Table([[ctx_table]], colWidths=[198 * mm])
-    top_tbl.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP")]))
-    story.append(top_tbl)
-    story.append(Spacer(1, 8))
+        story.append(rl_map)
+        story.append(Spacer(1, 6))
+
+    story.append(ctx_table)
+    story.append(Spacer(1, 10))
+
+    # Start de encyclopedische toelichting op een nieuwe pagina
+    story.append(PageBreak())
 
     # Encyclopedische toelichting
     story.append(Paragraph("Toelichting op locatiecontext", style_h1))
     story.append(Paragraph("Onderstaande toelichting geeft de betekenis van de gevonden kaartwaarden en de implicaties voor erf- en landschapsbeplanting.", style_p))
+    story.append(Paragraph('De onderstaande toelichting beschrijft dezelfde locatie vanuit verschillende invalshoeken (landschap, vorm, systeem en standplaats). Hierdoor kunnen sommige kenmerken op meerdere plekken terugkomen, telkens met een andere betekenis en schaal.', style_p))
 
-    def _render_section(section: str, title: str, info: dict | None, fallback_label: str | None = None):
+    def _render_section(title: str, info: dict | None, fallback_label: str | None = None):
         story.append(Paragraph(title, style_h2))
         if not info:
             if fallback_label:
@@ -2207,27 +2158,13 @@ def advies_pdf(
             return
 
         def add(label: str, key: str):
-            if allowed and key not in allowed:
-                return
             val = info.get(key)
             if val:
                 story.append(Paragraph(f"<b>{label}.</b> {val}", style_p))
 
-        
-        # Welke velden tonen we per sectie? (altijd vaste rolverdeling)
-        ALLOWED_KEYS: dict[str, list[str]] = {
-            "fgr": ["kernsamenvatting", "kernsamenvatting_kort", "beschrijving", "ontstaansgeschiedenis", "kenmerken", "bodem_en_water", "betekenis_voor_erfbeplanting", "beheerimplicaties", "geschikte_beplanting", "betekenis"],
-            "gmm": ["kernsamenvatting", "kernsamenvatting_kort", "beschrijving", "ontstaansgeschiedenis", "reliëf_en_vorm", "kenmerken"],
-            "nsn": ["kernsamenvatting", "kernsamenvatting_kort", "beschrijving", "systeemwerking", "water_en_dynamiek", "bodemontwikkeling", "beheerimplicaties", "betekenis_voor_erfbeplanting", "vegetatiestructuur_en_beplanting"],
-            "bodem": ["kernsamenvatting", "kernsamenvatting_kort", "beschrijving", "bodem_en_hydrologie", "bodem_en_water", "landgebruik_en_beplanting", "vegetatiestructuur_en_beplanting", "betekenis_voor_erfbeplanting", "beheerimplicaties"],
-            "gt": ["kernsamenvatting", "kernsamenvatting_kort", "beschrijving", "betekenis", "beheerimplicaties", "betekenis_voor_erfbeplanting"],
-        }
-        allowed = set(ALLOWED_KEYS.get(section, []))
-# Support meerdere schema's
-        add("Kern", "kernsamenvatting")
-        add("Kern", "kernsamenenvatting")  # backward-compat typo
-        add("Kern", "kernsamenvatting_kort")
-        add("Kern", "kernsamenenvatting_kort")  # backward-compat typo
+        # Support meerdere schema's
+        add("Kern", "kernsamenenvatting")
+        add("Kern", "kernsamenenvatting_kort")
         add("Beschrijving", "beschrijving")
         add("Ontstaansgeschiedenis", "ontstaansgeschiedenis")
         add("Kenmerken", "kenmerken")
@@ -2250,11 +2187,11 @@ def advies_pdf(
 
         story.append(Spacer(1, 6))
 
-    _render_section("fgr", f"Fysisch Geografische Regio (FGR): {_safe(fgr)}", fgr_info, fgr)
-    _render_section("gmm", f"Geomorfologie (GMM): {_safe(gmm_val)}", gmm_info, gmm_val)
-    _render_section("nsn", f"Natuurlijk systeem (NSN): {_safe(nsn_val)}", nsn_info, nsn_val)
-    _render_section("bodem", f"Bodem: {_safe(bodem_val or bodem_raw)}", bodem_info, (bodem_val or bodem_raw))
-    _render_section("gt", f"Vochttoestand (Gt): {_safe(gt_code or '—')}", gt_info, (gt_code or "—"))
+    _render_section(f"Fysisch Geografische Regio (FGR): {_safe(fgr)}", fgr_info, fgr)
+    _render_section(f"Geomorfologie (GMM): {_safe(gmm_val)}", gmm_info, gmm_val)
+    _render_section(f"Natuurlijk systeem (NSN): {_safe(nsn_val)}", nsn_info, nsn_val)
+    _render_section(f"Bodem: {_safe(bodem_val or bodem_raw)}", bodem_info, (bodem_val or bodem_raw))
+    _render_section(f"Vochttoestand (Gt): {_safe(gt_code or '—')}", gt_info, (gt_code or "—"))
 
     # Planttabel
     story.append(PageBreak())
