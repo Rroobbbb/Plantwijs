@@ -331,11 +331,13 @@ def _static_map_image(lat: float, lon: float, z: int = 17, tiles: int = 2) -> By
     try:
         cx, cy = _webmercator_tile_xy(lat, lon, z)
         half = tiles // 2
-        img = Image.new("RGB", (256*tiles, 256*tiles))
+        img = Image.new("RGB", (256 * tiles, 256 * tiles))
+
         # Respecteer OSM tile usage: low volume (1 PDF per klik)
         headers = {"User-Agent": "Beplantingswijzer/1.0 (Render; locatierapport)"}
-        for dx in range(-half, -half+tiles):
-            for dy in range(-half, -half+tiles):
+
+        for dx in range(-half, -half + tiles):
+            for dy in range(-half, -half + tiles):
                 x = cx + dx
                 y = cy + dy
                 url = f"https://tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -346,20 +348,25 @@ def _static_map_image(lat: float, lon: float, z: int = 17, tiles: int = 2) -> By
                 px = (dx + half) * 256
                 py = (dy + half) * 256
                 img.paste(tile, (px, py))
-        
-# Marker (centrum van kaart)
-try:
-    draw = ImageDraw.Draw(img, "RGBA")
-    cxp = int((256 * tiles) / 2)
-    cyp = int((256 * tiles) / 2)
-    # schaduw
-    draw.ellipse((cxp-9, cyp-9, cxp+9, cyp+9), fill=(0, 0, 0, 70))
-    # rode marker
-    draw.ellipse((cxp-7, cyp-7, cxp+7, cyp+7), fill=(220, 38, 38, 230), outline=(255,255,255,220), width=2)
-except Exception:
-    pass
 
-out = BytesIO()
+        # Marker (centrum van kaart) – optioneel: bij fouten gewoon zonder marker
+        try:
+            draw = ImageDraw.Draw(img, "RGBA")
+            cxp = int((256 * tiles) / 2)
+            cyp = int((256 * tiles) / 2)
+            # schaduw
+            draw.ellipse((cxp - 9, cyp - 9, cxp + 9, cyp + 9), fill=(0, 0, 0, 70))
+            # rode marker
+            draw.ellipse(
+                (cxp - 7, cyp - 7, cxp + 7, cyp + 7),
+                fill=(220, 38, 38, 230),
+                outline=(255, 255, 255, 220),
+                width=2,
+            )
+        except Exception:
+            pass
+
+        out = BytesIO()
         img.save(out, format="PNG", optimize=True)
         out.seek(0)
         return out
