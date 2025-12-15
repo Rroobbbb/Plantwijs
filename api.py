@@ -18,12 +18,20 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 
 # PDF generatie (locatierapport)
+# Let op: Render installeert alleen packages uit requirements.txt.
+# Daarom importeren we ReportLab/Pillow 'veilig'. Als ze ontbreken start de API wel,
+# maar geeft het PDF-endpoint een duidelijke foutmelding.
 from io import BytesIO
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.units import mm
-from reportlab.lib.utils import ImageReader
-from PIL import Image
+
+REPORT_PDF_AVAILABLE = True
+try:
+    from reportlab.pdfgen import canvas
+    from reportlab.lib.pagesizes import A4
+    from reportlab.lib.units import mm
+    from reportlab.lib.utils import ImageReader
+    from PIL import Image
+except Exception:
+    REPORT_PDF_AVAILABLE = False
 
 import tempfile  # ← toevoegen
 import json
@@ -1707,6 +1715,12 @@ def advies_pdf(
     - Plantlijst: ALLE geschikte 'inheems' + 'ingeburgerd' (exoot niet).
     - Filters (licht/vocht/bodem) komen uit UI; als leeg, vallen we terug op kaartwaarden.
     """
+
+    if not REPORT_PDF_AVAILABLE:
+        return JSONResponse({
+            "error": "PDF-generatie is niet beschikbaar: dependency ontbreekt (reportlab/Pillow). Voeg reportlab en Pillow toe aan requirements.txt en deploy opnieuw."
+        }, status_code=500)
+
     # Context uit kaarten
     fgr = fgr_from_point(lat, lon) or "Onbekend"
     nsn_val = nsn_from_point(lat, lon) or ""
