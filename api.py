@@ -1745,8 +1745,25 @@ def advies_pdf(
         tokens = _split_tokens(cell)
         return any(c in t for t in tokens)
 
-    def _status_allowed(status: str) -> bool:
-        s = (status or "").strip().lower()
+    def _status_allowed(status) -> bool:
+        """Robuuste status-check.
+
+        status_nl kan leeg zijn -> pandas leest dit als NaN (float).
+        Dan bestaat .strip() niet en crasht de PDF-route.
+        """
+        if status is None:
+            s = ""
+        else:
+            # pandas leest lege cellen vaak als NaN (float)
+            try:
+                if pd.isna(status):
+                    s = ""
+                else:
+                    s = str(status)
+            except Exception:
+                s = str(status)
+
+        s = s.strip().lower()
         if s == "inheems":
             return toon_inheems
         if s == "ingeburgerd":
