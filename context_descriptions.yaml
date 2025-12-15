@@ -1,134 +1,113 @@
 
-geomorfologie:
-  stroomrug:
-    titel: Stroomrug (stroomgordel)
+nsn:
+  rivierkom:
+    titel: Rivierkom (natuurlijk systeem)
     kernsamenvatting: >
-      Relatief hooggelegen deel van het rivierenlandschap, gevormd door herhaalde
-      rivierverleggingen. Beter ontwaterd dan omliggende kommen en historisch
-      geschikt voor bewoning en erfbeplanting.
-    ontstaansgeschiedenis: >
-      Stroomruggen ontstaan door opeenvolgende afzettingen van zand en zavel
-      tijdens actieve rivierfasen. Door verplaatsing van de rivierloop stapelden
-      deze afzettingen zich op tot langgerekte, licht verhoogde ruggen.
-    reliëf_en_vorm: >
-      Langgerekt, licht verhoogd reliëf (meestal 0,5–2 m hoger dan de omgeving),
-      vaak parallel aan voormalige rivierlopen.
-    bodem_en_hydrologie: >
-      Overwegend zandige tot zavelige afzettingen met betere drainage en lagere
-      grondwaterstanden dan in komgebieden.
-    landgebruik_en_beplanting: >
-      Historisch bebouwing, erven, boomgaarden en akkerbouw. Laan- en erfbeplanting
-      komt hier traditioneel voor.
+      Laaggelegen en nat systeem met geringe dynamiek, gedomineerd door hoge
+      grondwaterstanden en zware kleigronden.
+    systeemwerking: >
+      De rivierkom functioneert als opvanggebied voor water en fijn sediment.
+      Door geringe afstroming en lage ligging blijft water hier lang aanwezig.
+    water_en_dynamiek: >
+      Hoge en langdurige grondwaterstanden, beperkte stroming en weinig
+      morfologische dynamiek.
+    bodemontwikkeling: >
+      Ontwikkeling van dikke komkleilagen met slechte beluchting en hoge
+      voedselrijkdom.
+    historisch_landgebruik: >
+      Overwegend grasland en grienden; weinig bebouwing door natte omstandigheden.
+    vegetatiestructuur_en_beplanting: >
+      Open graslanden, rietlanden en grienden; beperkte opgaande beplanting.
     betekenis_voor_erfbeplanting: >
-      Goede standplaats voor bomen en struiken. Keuze mogelijk uit een breed
-      sortiment soorten, mits rekening gehouden wordt met droogtestress en wind.
+      Erfbeplanting beperken tot hogere delen en randen; nat-tolerante soorten
+      toepassen en open karakter behouden.
     bronnen:
       - Berendsen, H.J.A. – Fysische geografie van Nederland
-      - Wageningen UR – Geomorfologische kaart Nederland
-      - TNO – Geologie van Nederland
+      - STOWA – Watersystemen rivierengebied
 
-  oeverwal:
-    titel: Oeverwal
+  oeverwal_systeem:
+    titel: Oeverwal-systeem
     kernsamenvatting: >
-      Smalle, verhoogde zone direct langs voormalige rivierlopen, ontstaan door
-      overstromingen waarbij grover sediment dicht bij de rivier werd afgezet.
-    ontstaansgeschiedenis: >
-      Oeverwallen zijn gevormd door herhaalde overstromingen waarbij zand en zavel
-      direct langs de rivier bezonken. Fijner slib werd verder landinwaarts
-      afgezet in de kommen.
-    reliëf_en_vorm: >
-      Smal en verhoogd lint, vaak iets hoger dan de stroomrug, met duidelijke
-      lineaire structuur.
-    bodem_en_hydrologie: >
-      Relatief lichte bodems met goede ontwatering en lagere grondwaterstanden.
-    landgebruik_en_beplanting: >
-      Historisch lintbebouwing, erven, boomgaarden en laanbeplanting langs wegen
-      en dijken.
+      Relatief hoog en droog systeem langs rivierlopen met gunstige condities
+      voor bewoning en beplanting.
+    systeemwerking: >
+      Oeverwallen voeren water snel af en fungeren als overgang tussen rivier en
+      komgebied.
+    water_en_dynamiek: >
+      Snelle drainage en lagere grondwaterstanden dan omliggende systemen.
+    bodemontwikkeling: >
+      Lichte zavel- en zandige bodems met goede draagkracht.
+    historisch_landgebruik: >
+      Lintbebouwing, erven, boomgaarden en akkerbouw.
+    vegetatiestructuur_en_beplanting: >
+      Laanbeplanting, erfbeplanting en boomgaarden zijn kenmerkend.
     betekenis_voor_erfbeplanting: >
-      Zeer geschikt voor erf- en laanbeplanting; open karakter behouden en
-      beplanting vooral lijnvormig toepassen.
+      Veel mogelijkheden voor opgaande beplanting; open en lineair karakter
+      respecteren.
     bronnen:
       - Berendsen, H.J.A. – Fysische geografie van Nederland
-      - WUR – Geomorfologische legenda
+      - WUR – Natuurlijk systeem Nederland
 
-  rivierkomvlakte:
-    titel: Rivierkomvlakte (komgebied)
+  stroomrug_systeem:
+    titel: Stroomrug-systeem
     kernsamenvatting: >
-      Laaggelegen en nat deel van het rivierenlandschap waar fijne klei is
-      afgezet; beperkt geschikt voor opgaande beplanting.
-    ontstaansgeschiedenis: >
-      In komgebieden kwam overstromingswater tot rust, waardoor fijne kleideeltjes
-      bezonken en dikke komkleilagen ontstonden.
-    reliëf_en_vorm: >
-      Zeer vlak, laaggelegen landschap met weinig reliëf.
-    bodem_en_hydrologie: >
-      Zware kleigronden met hoge grondwaterstanden en slechte natuurlijke drainage.
-    landgebruik_en_beplanting: >
-      Overwegend grasland; historisch grienden en populierenbosjes op natte delen.
+      Hooggelegen en relatief droog systeem, historisch aantrekkelijk voor
+      bewoning en landbouw.
+    systeemwerking: >
+      Stroomruggen functioneren als afwaterende elementen binnen het
+      rivierenlandschap.
+    water_en_dynamiek: >
+      Lage grondwaterstanden en snelle infiltratie.
+    bodemontwikkeling: >
+      Zandige tot zavelige bodems met goede structuur.
+    historisch_landgebruik: >
+      Bebouwing, erven, boomgaarden en akkerbouw.
+    vegetatiestructuur_en_beplanting: >
+      Afwisselende beplanting met bomen, hagen en laanstructuren.
     betekenis_voor_erfbeplanting: >
-      Beplanting beperkt en vooral functioneel; nat-tolerante soorten en
-      lijnvormige structuren langs erven en wegen.
+      Geschikt voor divers en structuurrijk beplantingsontwerp.
     bronnen:
       - Berendsen, H.J.A. – Fysische geografie van Nederland
-      - TNO – Geologie van Nederland
 
-  gesloten_kom:
-    titel: Gesloten kom
+  restgeul_systeem:
+    titel: Restgeul- en strangensysteem
     kernsamenvatting: >
-      Extreem natte, slecht ontwaterde delen van het rivierengebied met zeer
-      beperkte mogelijkheden voor beplanting.
-    ontstaansgeschiedenis: >
-      Gesloten kommen ontstonden waar natuurlijke afwatering ontbrak en water
-      langdurig bleef staan.
-    reliëf_en_vorm: >
-      Zeer laag en vlak, vaak omgeven door hogere stroomruggen of oeverwallen.
-    bodem_en_hydrologie: >
-      Zware, natte klei met langdurig hoge grondwaterstanden.
-    landgebruik_en_beplanting: >
-      Historisch grienden, rietlanden en extensief grasland.
+      Natte, laaggelegen zones met hoge ecologische waarde.
+    systeemwerking: >
+      Restgeulen fungeren als waterbuffer en ecologische verbinding.
+    water_en_dynamiek: >
+      Permanent of periodiek nat met beperkte afvoer.
+    bodemontwikkeling: >
+      Klei- en veenachtige afzettingen.
+    historisch_landgebruik: >
+      Beperkt agrarisch gebruik; natuur en extensief beheer.
+    vegetatiestructuur_en_beplanting: >
+      Riet, struweel en nat bos.
     betekenis_voor_erfbeplanting: >
-      Alleen zeer nat-tolerante soorten toepassen; open landschap behouden.
-    bronnen:
-      - STOWA – Grondwater en komgebieden
-      - TNO – Geologie van Nederland
-
-  restgeul:
-    titel: Restgeul / oude rivierloop
-    kernsamenvatting: >
-      Overblijfsel van een voormalige rivierloop, vaak nat en ecologisch
-      waardevol.
-    ontstaansgeschiedenis: >
-      Restgeulen zijn ontstaan na rivierverleggingen waarbij oude meanders
-      achterbleven.
-    reliëf_en_vorm: >
-      Slingerend, laaggelegen en vaak duidelijk herkenbaar in het landschap.
-    bodem_en_hydrologie: >
-      Nat tot zeer nat, met lokaal veen- of kleivorming.
-    landgebruik_en_beplanting: >
-      Rietlanden, struweel en nat bos; vaak hoge natuurwaarden.
-    betekenis_voor_erfbeplanting: >
-      Geschikt voor ecologische beplanting; geen intensieve erfbeplanting.
+      Niet geschikt voor intensieve erfbeplanting; ecologische inrichting
+      stimuleren.
     bronnen:
       - Atlas Natuurlijk Kapitaal
-      - WUR – Rivierlandschappen
+      - STOWA – Riviersystemen
 
-  rivierduin:
-    titel: Rivierduin / donk
+  uiterwaard:
+    titel: Uiterwaard (overstromingsvlakte)
     kernsamenvatting: >
-      Lokaal hooggelegen zandige opduiking in het rivierengebied met afwijkende
-      ecologische omstandigheden.
-    ontstaansgeschiedenis: >
-      Rivierduinen ontstonden door windwerking op zandige afzettingen tijdens
-      drogere perioden.
-    reliëf_en_vorm: >
-      Duidelijk hoger dan omgeving, vaak geïsoleerd.
-    bodem_en_hydrologie: >
-      Zandige bodems met goede drainage en lage grondwaterstanden.
-    landgebruik_en_beplanting: >
-      Historisch bewoning en akkerbouw; bijzondere flora door droge omstandigheden.
+      Dynamisch systeem dat regelmatig overstroomt en voortdurend in verandering
+      is.
+    systeemwerking: >
+      Uiterwaarden voeren hoogwater af en slaan sediment op.
+    water_en_dynamiek: >
+      Regelmatige overstroming en hoge dynamiek.
+    bodemontwikkeling: >
+      Afwisseling van zandige en kleiige afzettingen.
+    historisch_landgebruik: >
+      Grasland, grienden en extensieve begrazing.
+    vegetatiestructuur_en_beplanting: >
+      Open graslanden met verspreide bomen en struweel.
     betekenis_voor_erfbeplanting: >
-      Geschikt voor droogteminnende soorten; contrast met omliggende natte
-      gebieden respecteren.
+      Beplanting ondergeschikt aan waterveiligheid; alleen extensieve en
+      flexibele structuren toepassen.
     bronnen:
-      - Berendsen, H.J.A. – Fysische geografie van Nederland
-      - TNO – Geologie van Nederland
+      - Rijkswaterstaat – Uiterwaardenbeheer
+      - STOWA – Rivierdynamiek
