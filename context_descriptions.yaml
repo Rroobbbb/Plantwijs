@@ -2,11 +2,18 @@
   "fgr": {
     "rivierengebied": {
       "titel": "Rivierengebied",
-      "beschrijving": "Dynamisch landschap van grote rivieren met oeverwallen, stroomruggen en komgronden. Afwisseling tussen hogere, beter ontwaterde gronden langs (oude) rivierlopen en lage, natte komgebieden verder van de rivier.",
-      "kenmerken": "Relatief vlak reliëf met lokale hoogteverschillen. Veel dijken, weteringen, strangen en restgeulen; verkaveling vaak rationeel met sloten en kades.",
+      "beschrijving": "Het Rivierengebied is het Nederlandse landschap dat gevormd is door de Rijn, Maas en hun zijrivieren. Het bestaat uit een mozaïek van hoger gelegen oeverwallen en stroomruggen (grovere afzettingen dicht bij de rivier) en lagere komgebieden (fijne kleiafzettingen). Historisch werden deze gebieden regelmatig overstroomd; sinds bedijking en kanalisatie is de overstromingsdynamiek binnendijks sterk verminderd, maar waterbeheer blijft sturend.",
+      "kenmerken": "Relatief vlak reliëf met lokale hoogteverschillen op schaal van decimeters tot meters. Lintbebouwing en erven liggen vaak op de hogere delen (oeverwallen/stroomruggen), terwijl de kommen opener en natter zijn. Waterlopen (weteringen, sloten) en kades/dijken structureren het landschap.",
       "bodem_en_water": "Overwegend klei- en zavelgronden; in kommen zware, natte klei. Grondwater kan hoog staan; waterbeheer (peil, drainage) is bepalend.",
-      "beplanting_en_landgebruik": "Veel grasland, akkerbouw op hogere delen, boomgaarden lokaal. Typisch zijn wilg, populier, els, meidoorn/hagen, knotbomen langs sloten en dijken.",
-      "betekenis_voor_erfbeplanting": "Kies soorten die tegen klei en (periodiek) nat kunnen. Lijnvormige beplanting langs erf/weg/slot past goed; vermijd grote bosmassa’s in open kommen."
+      "beplanting_en_landgebruik": "Landgebruik is vaak productief: grasland in nattere kommen, akkerbouw en boomgaarden op hogere delen. Streekeigen beplanting bestaat vaak uit lijnvormige structuren (knotwilgen, hagen, singels), dijkbeplanting en erfbeplanting; op natte delen wilgenstruweel, elzenbroek en (historisch) grienden.",
+      "betekenis_voor_erfbeplanting": "Sluit aan op de schaal en openheid van het deelgebied (kom vs oeverwal). In open kommen: beperkt, lijnvormig en winddoorlatend; op hogere delen kan het erf ‘groener’ en rijker worden vormgegeven. Kies soorten die passen bij klei/zavel en bij de lokale grondwaterstand (Gt) en houd rekening met waterpeilbeheer.",
+      "ontstaan_en_dynamiek": "Bij hoge afvoeren traden (historisch) overstromingen op, waarbij sediment werd afgezet. Dicht bij de rivier bezonk grover materiaal, verder weg vooral fijne klei. Dit leidde tot karakteristieke landschapselementen: uiterwaarden, dijken, strangen/restgeulen, oeverwallen, stroomruggen en kommen.",
+      "bronnen": [
+        "Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen (WUR Groenekennis): https://library.wur.nl/WebQuery/groenekennis/1784548",
+        "PDOK – Dataset Fysisch-Geografische Regio’s (FGR) (omschrijving en herkomst): https://www.pdok.nl/introductie/-/article/fysisch-geografische-regio-s",
+        "Atlas Natuurlijk Kapitaal – Fysisch-Geografische Regio’s (achtergrond bij kaart): https://www.atlasnatuurlijkkapitaal.nl/fysisch-geografische-regios",
+        "CLO – Rivierengebied (landschapskenmerken): https://www.clo.nl/indicatoren/nl100902-rivierengebied"
+      ]
     },
     "hogere_zandgronden": {
       "titel": "Hogere zandgronden",
@@ -91,6 +98,19 @@
       "beschrijving": "Organische bodem met hoge waterstand van oorsprong. Slap draagvermogen en gevoelig voor inklinking bij ontwatering.",
       "beheerimplicaties": "Houd rekening met bodemdaling en instabiele verankering; kies soorten die nat kunnen en niet extreem windgevoelig zijn.",
       "geschikte_beplanting": "Zwarte els, wilg, berken; riet- en moerasstruweel op natte delen."
+    },
+    "klei": {
+      "titel": "Klei (algemeen, inclusief rivierklei)",
+      "beschrijving": "Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).",
+      "standplaats": "Klei warmt in het voorjaar langzamer op dan zand en is bij nat weer gevoelig voor structuurschade (verdichting/versmering). De zuurstofvoorziening in de wortelzone kan in natte perioden beperkend zijn, vooral bij zware klei/komklei.",
+      "waterhuishouding": "De ontwatering en het peilbeheer (slotensysteem, drains, stuwen) bepalen sterk of de standplaats 'vochtig' of 'nat' aanvoelt. Op microreliëf (oeverwal vs kom) kunnen in korte afstand grote verschillen voorkomen.",
+      "landgebruik_en_beplanting": "Kleigronden zijn vaak productief en worden intensief gebruikt (grasland/akkerbouw). Streekeigen beplanting in rivierklei is vaak lijnvormig (knotwilgen, hagen, singels) en op nattere delen elzen- en wilgenstruweel of griend.",
+      "betekenis_voor_erfbeplanting": "Kies soorten op basis van (1) draagkracht en waterverzadiging in de winter, (2) zomerse droogtestress bij lange droge perioden (ook klei kan in de zomer hard uitdrogen), en (3) beheerbaarheid. Voor natte klei: wilg, zwarte els, populier, iep; voor beter ontwaterde klei/zavel: linde, esdoorn, eik, meidoornhagen.",
+      "bronnen": [
+        "Geologie van Nederland – Komgrond/komklei (TNO): https://www.geologievannederland.nl/publicaties/115.html",
+        "Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen (WUR Groenekennis).",
+        "Jongmans, A.G. e.a. (2013). Landschappen van Nederland: Geologie, Bodem en Landgebruik. Wageningen Academic Publishers."
+      ]
     }
   },
   "gt": {
@@ -131,8 +151,15 @@
     },
     "ivu": {
       "titel": "Gt IVu (matig droog)",
-      "beschrijving": "Relatief droge trap met lagere grondwaterstand; ‘u’ duidt vaak op een bepaalde seizoensdynamiek.",
-      "betekenis": "Droogtetolerantie belangrijker; voeg organische stof toe."
+      "beschrijving": "Grondwatertrap IVu is een relatief droge tot matig droge grondwatertrap, gedefinieerd via klassen van de gemiddeld hoogste grondwaterstand (GHG) en gemiddeld laagste grondwaterstand (GLG). De lettercombinaties in Gt geven zowel een absolute diepteklasse als de seizoensfluctuatie weer; de exacte grenzen zijn in de bodemkartering vastgelegd.",
+      "betekenis": "Bij Gt IVu staat het grondwater doorgaans dieper dan bij natte trappen, waardoor droogtestress in warme zomers kan optreden, zeker op zandige bodems. Op klei kan de wortelzone toch tijdelijk nat zijn door slechte infiltratie of hoge peilen; combineer de Gt daarom altijd met bodemtype en waterbeheer.",
+      "uitleg_ghg_glg": "Grondwatertrappen worden afgeleid uit langjarige gemiddelden: GHG (winter) en GLG (zomer). Samen vatten ze de jaarlijkse fluctuatie samen en zijn ze een belangrijke indicator voor vegetatie, draagkracht en gebruiksmogelijkheden.",
+      "bronnen": [
+        "STOWA (2010). Grondwaterregime op basis van karteerbare kenmerken (achtergrond Gt): https://www.stowa.nl/sites/default/files/assets/PUBLICATIES/Publicaties%202010/STOWA%202010-41.pdf",
+        "WUR eDepot (2018). Landsdekkende, actuele informatie over grondwatertrappen (Gt): https://edepot.wur.nl/465988",
+        "Wikipedia – Grondwatertrap (begrippen GHG/GLG): https://nl.wikipedia.org/wiki/Grondwatertrap",
+        "WUR Landschapsleutel – Legenda’s bodemkaarten / Gt-systeem: https://landschapsleutel.wur.nl/documentatie/htm/Legendas%20Bodemkaarten.htm"
+      ]
     },
     "ivc": {
       "titel": "Gt IVc (matig droog)",
@@ -246,6 +273,19 @@
       "bodem_en_water": "Vochtig tot nat, vaak lemig/zandig met kwel.",
       "landgebruik_en_beplanting": "Hooiland, begrazing, elzen en wilgen langs water.",
       "betekenis_voor_erfbeplanting": "Beplanting langs waterlopen (els, wilg) en behoud van open natte graslanden levert veel biodiversiteit op."
+    },
+    "rivierkomvlakte": {
+      "titel": "Rivierkomvlakte (GMM)",
+      "beschrijving": "Een rivierkomvlakte is een laaggelegen deel van het rivierenlandschap waar tijdens overstromingen vooral fijne kleideeltjes (slib) worden afgezet. Omdat de stroomsnelheid hier lager is dan nabij de rivier, bezinkt vooral het fijnste materiaal. Dit kan door de eeuwen heen leiden tot dikke pakketten komklei.",
+      "reliëf_en_vorm": "Het reliëf is meestal zeer vlak tot zwak golvend. De overgang naar hogere oeverwallen of stroomruggen kan subtiel zijn (decimeters), maar is ecologisch en voor waterhuishouding vaak groot.",
+      "bodem_en_water": "De bodem is vaak zware klei met hoge grondwaterstanden en periodiek waterverzadigde lagen. Ontwatering is bepalend voor draagkracht en begaanbaarheid.",
+      "landschap_en_structuur": "Historisch is het landschap relatief open; beplanting concentreert zich rond erven, dijken en langs watergangen. In natte of marginale zones kwamen grienden voor.",
+      "betekenis_voor_erfbeplanting": "Ontwerp met het open karakter als uitgangspunt: zet beplanting vooral als erf- en lijnstructuren (langs sloten/wegen) en kies soorten die natte klei verdragen. Voorkom grootschalige dichte bosvakken midden in open kommen, tenzij er een expliciete landschappelijke of ecologische reden is.",
+      "bronnen": [
+        "Wageningen Environmental Research – Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50 000 (Maas e.a., 2021): https://legendageomorfologie.wur.nl/",
+        "Basisregistratie Ondergrond (BRO) – Geomorfologische kaart (GMM): https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/modellen/geomorfologische-kaart-gmm/",
+        "Geologie van Nederland – Komgrond/komklei (TNO): https://www.geologievannederland.nl/publicaties/115.html"
+      ]
     }
   },
   "nsn": {
@@ -263,6 +303,23 @@
       "titel": "Natuurlijk systeem: dekzandlandschap",
       "beschrijving": "Zandige bodems met droog-nat gradiënten tussen ruggen en laagtes, vaak met beken en kwelzones.",
       "betekenis": "Werk met variatie: droogtetolerante soorten op ruggen, vochtminnende soorten in laagtes; houtwallen en struweel passen goed."
+    },
+    "rivierkom": {
+      "titel": "Natuurlijk systeem: Rivierkom (NSN)",
+      "beschrijving": "Rivierkommen zijn de laaggelegen delen binnen een rivierdelta- of stroomgordellandschap waar water en fijne sedimenten zich ophopen. Het systeem wordt sterk beïnvloed door overstromingsdynamiek (historisch), kleiafzetting en huidig waterbeheer (peilen, bemaling, drainage).",
+      "proces_en_gradiënten": "Kenmerkend zijn gradiënten van nat naar droger op korte afstand (kom → oeverwal/stroomrug), en van zuurstofarm naar beter doorlucht op microreliëf. Deze gradiënten sturen vegetatiepatronen en soortenkeuze.",
+      "typische_ecotopen": "Natte graslanden, riet- en ruigtevegetaties, sloten en weteringen met oeverzones, wilgenstruweel en elzenbroekbos op natte plekken, en grienden waar historisch wilgenteelt plaatsvond.",
+      "betekenis_voor_erfbeplanting": "Kies beplanting die robuust is bij natte winters én warmere, drogere zomers. Werk met water- en oeverzones (plas-dras, flauwe taluds), en plaats hogere/drogere soorten op microverhogingen of nabij oeverwallen.",
+      "bronnen": [
+        "Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen (WUR Groenekennis).",
+        "CLO – Rivierengebied (achtergrond en landschapskenmerken): https://www.clo.nl/indicatoren/nl100902-rivierengebied"
+      ]
     }
+  },
+  "_meta": {
+    "naam": "Beplantingswijzer kennisdocument – locatiecontext",
+    "versie": "2025-12-15",
+    "doel": "Uitgebreide, bron-gebaseerde toelichting op kaartlagen (FGR, GMM, NSN, bodem, Gt) voor opname in Beplantingswijzer-rapporten.",
+    "opmerking": "Dit document bevat algemene beschrijvingen op basis van landelijke literatuur en landelijke datasets. Lokale variatie kan groot zijn; raadpleeg voor ontwerp en uitvoering ook veldwaarnemingen, bodemprofiel en peilbeheer."
   }
 }
