@@ -2014,7 +2014,7 @@ def advies_pdf(
         # Toelichting op locatiecontext (uit extern kennisbestand)
         story.append(Paragraph("Toelichting op locatiecontext", style_h))
         for cat, val in (
-            ("fgr", fgr_val),
+            ("fgr", fgr),
             ("geomorfologie", gmm_val),
             ("nsn", nsn_val),
             ("bodem", bodem_val),
