@@ -20,10 +20,11 @@ from datetime import datetime
 
 # PDF generatie (locatierapport)
 from io import BytesIO
-from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
-from reportlab.lib.units import mm
-from reportlab.lib.utils import ImageReader
+from reportlab.lib.units import cm
+from reportlab.lib import colors
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Image as RLImage
 from PIL import Image
 
 import tempfile  # ← toevoegen
@@ -1764,117 +1765,292 @@ def advies_pdf(
 
     total = int(len(df))
 
-    # ── PDF bouwen (ReportLab)
-    buf = BytesIO()
-    c = canvas.Canvas(buf, pagesize=A4)
-    W, H = A4
-    margin = 16 * mm
-    y = H - margin
+    # ── PDF bouwen (ReportLab Platypus) ───────────────────────────────────────
+buf = BytesIO()
 
-    def line(txt: str, size: int = 11, leading: float = 14):
-        nonlocal y
-        if y < margin + leading:
-            c.showPage()
-            y = H - margin
-        c.setFont("Helvetica", size)
-        c.drawString(margin, y, txt)
-        y -= leading
+# Stijlen (rustig, modern, veel witruimte)
+styles = getSampleStyleSheet()
 
-    def para(txt: str, size: int = 11, max_chars: int = 95, leading: float = 14):
-        for ln in _wrap_lines(txt, max_chars=max_chars):
-            line(ln, size=size, leading=leading)
+ACCENT = colors.HexColor("#1f4d3a")  # donkergroen
+GREY = colors.HexColor("#6b7280")    # zacht grijs
+LIGHT = colors.HexColor("#f3f4f6")   # lichte achtergrond
 
-    # Titel
-    c.setTitle("Beplantingswijzer – locatierapport")
-    line("Beplantingswijzer – locatierapport", size=16, leading=20)
-    line(f"Locatie: {lat:.6f}, {lon:.6f}", size=10, leading=14)
-    line(f"Datum: {datetime.now().strftime('%Y-%m-%d %H:%M')}", size=10, leading=16)
+title = ParagraphStyle(
+    "BW_Title",
+    parent=styles["Title"],
+    fontName="Helvetica-Bold",
+    fontSize=22,
+    leading=26,
+    textColor=ACCENT,
+    spaceAfter=10,
+)
+subtitle = ParagraphStyle(
+    "BW_Subtitle",
+    parent=styles["Normal"],
+    fontName="Helvetica",
+    fontSize=11,
+    leading=14,
+    textColor=GREY,
+    spaceAfter=14,
+)
+h2 = ParagraphStyle(
+    "BW_H2",
+    parent=styles["Heading2"],
+    fontName="Helvetica-Bold",
+    fontSize=14,
+    leading=18,
+    textColor=ACCENT,
+    spaceBefore=10,
+    spaceAfter=6,
+)
+body = ParagraphStyle(
+    "BW_Body",
+    parent=styles["Normal"],
+    fontName="Helvetica",
+    fontSize=10.5,
+    leading=15,
+    textColor=colors.black,
+)
+small = ParagraphStyle(
+    "BW_Small",
+    parent=styles["Normal"],
+    fontName="Helvetica",
+    fontSize=9,
+    leading=12,
+    textColor=GREY,
+)
 
-    # Kaartje
-    map_img = _static_map_image(lat, lon, z=17, tiles=2)
-    if map_img:
-        try:
-            img = ImageReader(map_img)
-            # plaats rechtsboven (onder titel)
-            iw, ih = 90*mm, 90*mm
-            c.drawImage(img, W - margin - iw, H - margin - ih - 30, width=iw, height=ih, preserveAspectRatio=True, mask='auto')
-        except Exception:
-            pass
+def _hdr_footer(canv, doc):
+    canv.saveState()
+    canv.setFont("Helvetica", 9)
+    canv.setFillColor(GREY)
+    canv.drawString(doc.leftMargin, A4[1] - 1.2*cm, "Beplantingswijzer – Locatierapport")
+    canv.drawRightString(A4[0] - doc.rightMargin, A4[1] - 1.2*cm, datetime.now().strftime("%d-%m-%Y"))
+    canv.drawString(doc.leftMargin, 0.9*cm, f"Pagina {doc.page}")
+    canv.restoreState()
 
-    y -= 6
-    line("Locatiecontext (kaarten)", size=12, leading=18)
-    para(f"Fysisch Geografische Regio (FGR): {fgr}. Deze regio zegt iets over de ontstaansgeschiedenis en het landschapstype in de omgeving.", size=10)
-    if gmm_val:
-        para(f"Geomorfologie (GMM): {gmm_val}. Dit geeft een indicatie van reliëf/landvormen (zoals rivierduinen, oeverwallen, kommen).", size=10)
-    if nsn_val:
-        para(f"Natuurlijk Systeem (NSN): {nsn_val}. Dit is een aanvullende indeling van natuurlijke processen/landschap.", size=10)
-    if bodem_raw:
-        para(f"Bodem (kaart): {bodem_raw}.", size=10)
-    if vocht_raw:
-        para(f"Vochttoestand (kaart): {vocht_raw} (Gt: {gt_code or '—'}).", size=10)
-    if ahn_val not in (None, "", "—"):
-        para(f"Hoogteligging (AHN): {ahn_val}.", size=10)
+doc = SimpleDocTemplate(
+    buf,
+    pagesize=A4,
+    leftMargin=2.0*cm,
+    rightMargin=2.0*cm,
+    topMargin=2.0*cm,
+    bottomMargin=1.6*cm,
+    title="Beplantingswijzer – locatierapport",
+    author="Beplantingswijzer",
+)
 
-    y -= 6
-    line("Gekozen filters (gebruikt voor dit rapport)", size=12, leading=18)
-    para(f"Licht: {(' / '.join(licht_vals) if licht_vals else 'geen selectie (dus geen lichtfilter)')}", size=10)
-    para(f"Vocht: {(vocht_val or 'onbekend')}", size=10)
-    para(f"Bodem/grond: {(bodem_val or 'onbekend')}", size=10)
-    para(f"Invasieve soorten uitsluiten: {'ja' if exclude_invasief else 'nee'}", size=10)
-    para("Plantselectie in dit PDF: alle geschikte inheemse én ingeburgerde soorten (exoten niet).", size=10)
+story = []
+story.append(Paragraph("Beplantingswijzer – Locatierapport", title))
+story.append(Paragraph("Ecologisch en landschappelijk advies op maat", subtitle))
 
-    y -= 6
-    line(f"Geschikte planten (totaal: {total})", size=12, leading=18)
+# Kaartje + kerninfo naast elkaar
+map_bio = _static_map_image(lat, lon, z=17, tiles=2)
+map_flowable = ""
+if map_bio is not None:
+    map_bio.seek(0)
+    map_flowable = RLImage(map_bio, width=7.2*cm, height=7.2*cm)
 
-    # Lijst (beperken voor PDF-grootte)
-    max_rows = 350
-    show_df = df.head(max_rows)
+info_lines = [
+    f"<b>Locatie:</b> {lat:.6f}, {lon:.6f}",
+    f"<b>Datum:</b> {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+    f"<b>FGR:</b> {fgr}",
+]
+if nsn_val:
+    info_lines.append(f"<b>Natuurlijk systeem:</b> {nsn_val}")
+if gmm_val:
+    info_lines.append(f"<b>Geomorfologie:</b> {gmm_val}")
+if ahn_val:
+    info_lines.append(f"<b>Hoogteligging (AHN):</b> {ahn_val}")
+if gt_code:
+    info_lines.append(f"<b>Grondwater (Gt):</b> {gt_code}")
 
-    def fmt_range(val: Any) -> str:
-        s = str(val or "").strip()
-        return s
+left = Paragraph("<br/>".join(info_lines), body)
+right = map_flowable if map_flowable else Paragraph("", body)
 
-    cols = []
-    for ccol in ["naam","wetenschappelijke_naam","status_nl","standplaats_licht","vocht","bodem","hoogte","breedte","beplantingstype"]:
-        if ccol in show_df.columns:
-            cols.append(ccol)
+top_tbl = Table([[left, right]], colWidths=[10.8*cm, 7.2*cm])
+top_tbl.setStyle(TableStyle([
+    ("VALIGN", (0,0), (-1,-1), "TOP"),
+    ("LEFTPADDING", (0,0), (-1,-1), 0),
+    ("RIGHTPADDING", (0,0), (-1,-1), 0),
+    ("TOPPADDING", (0,0), (-1,-1), 0),
+    ("BOTTOMPADDING", (0,0), (-1,-1), 0),
+]))
+story.append(top_tbl)
+story.append(Spacer(1, 10))
 
-    # fallback: voeg velden toe als kolommen anders heten
-    if "beplantingstype" not in cols and "planttype" in show_df.columns:
-        cols.append("planttype")
+# Samenvatting (compact, mensentaal)
+story.append(Paragraph("Samenvatting", h2))
+summary = (
+    "Dit rapport is automatisch gegenereerd op basis van kaartdata en de geselecteerde filters. "
+    "Het beschrijft de landschappelijke context en geeft een overzicht van geschikte <b>inheemse</b> "
+    "en <b>ingeburgerde</b> soorten voor deze locatie."
+)
+story.append(Paragraph(summary, body))
+story.append(Spacer(1, 8))
 
-    # print header hint
-    para("Weergave: Naam — (wetenschappelijke naam) — status — licht — vocht — bodem — maatvoering", size=9)
+# Landschappelijke context
+story.append(Paragraph("Landschappelijke context", h2))
+ctx_parts = []
+if fgr and fgr.lower() != "onbekend":
+    ctx_parts.append(f"<b>Fysisch-geografische regio:</b> {fgr}.")
+if gmm_val:
+    ctx_parts.append(f"<b>Geomorfologie:</b> {gmm_val}.")
+if nsn_val:
+    ctx_parts.append(f"<b>Natuurlijk systeem:</b> {nsn_val}.")
+story.append(Paragraph(" ".join(ctx_parts) if ctx_parts else "Geen context gevonden voor deze locatie.", body))
+story.append(Spacer(1, 8))
 
-    for _, r in show_df.iterrows():
-        naam = str(r.get("naam","") or "").strip()
-        wn = str(r.get("wetenschappelijke_naam","") or "").strip()
-        status = str(r.get("status_nl","") or r.get("inheems","") or "").strip()
-        licht_s = str(r.get("standplaats_licht","") or "").strip()
-        vocht_s = str(r.get("vocht","") or "").strip()
-        bodem_s = str(r.get("bodem","") or "").strip()
-        h_s = fmt_range(r.get("hoogte",""))
-        b_s = fmt_range(r.get("breedte",""))
-        # compacte regel
-        rule = f"- {naam} ({wn})"
-        if status:
-            rule += f" — {status}"
-        bits = []
-        if licht_s: bits.append(f"licht: {licht_s}")
-        if vocht_s: bits.append(f"vocht: {vocht_s}")
-        if bodem_s: bits.append(f"bodem: {bodem_s}")
-        if h_s or b_s: bits.append(f"maat: {h_s} / {b_s}".strip(" /"))
-        if bits:
-            rule += " | " + " | ".join(bits)
-        para(rule, size=9, max_chars=110, leading=12)
+# Bodem & water
+story.append(Paragraph("Bodem & water", h2))
+bw_lines = []
+if bodem_raw:
+    bw_lines.append(f"<b>Bodem (kaart):</b> {bodem_raw}")
+if vocht_raw:
+    bw_lines.append(f"<b>Bodemvocht:</b> {vocht_raw}")
+if bodem_val and bodem_val != bodem_raw:
+    bw_lines.append(f"<b>Filter bodem:</b> {bodem_val}")
+if vocht_val and vocht_val != vocht_raw:
+    bw_lines.append(f"<b>Filter vocht:</b> {vocht_val}")
+if licht_vals:
+    bw_lines.append(f"<b>Filter licht:</b> {', '.join(licht_vals)}")
+story.append(Paragraph("<br/>".join(bw_lines) if bw_lines else "Geen bodem- of waterinformatie gevonden.", body))
 
-    if total > max_rows:
-        y -= 4
-        para(f"Let op: in dit PDF zijn de eerste {max_rows} soorten weergegeven (van totaal {total}). Gebruik de tabel in de webapp voor de volledige lijst.", size=9)
+# Filters transparant opnemen
+story.append(Spacer(1, 10))
+story.append(Paragraph("Geselecteerde uitgangspunten", h2))
+fl = [
+    "<b>Inheems:</b> ja",
+    "<b>Ingeburgerd:</b> ja",
+    "<b>Exoot:</b> nee",
+    f"<b>Invasief uitgesloten:</b> {'ja' if exclude_invasief else 'nee'}",
+]
+if licht_vals:
+    fl.append(f"<b>Licht:</b> {', '.join(licht_vals)}")
+if vocht_val:
+    fl.append(f"<b>Vocht:</b> {vocht_val}")
+if bodem_val:
+    fl.append(f"<b>Bodem:</b> {bodem_val}")
+story.append(Paragraph("<br/>".join(fl), body))
 
-    c.showPage()
-    c.save()
-    buf.seek(0)
+story.append(PageBreak())
+
+# Plantadvies
+story.append(Paragraph("Geschikte planten", h2))
+story.append(Paragraph(
+    f"In totaal zijn er <b>{total}</b> geschikte soorten gevonden (inheems + ingeburgerd).",
+    body
+))
+story.append(Spacer(1, 8))
+
+if total == 0:
+    story.append(Paragraph(
+        "Er zijn geen geschikte soorten gevonden met de huidige filters. Probeer filters te verruimen.",
+        body
+    ))
+else:
+    # Groeperen: bomen / heesters / overig
+    def _bt(v):
+        s = str(v or "").strip().lower()
+        if "boom" in s:
+            return "Bomen"
+        if "heester" in s:
+            return "Heesters"
+        return "Overig"
+
+    bt_col = "beplantingstype" if "beplantingstype" in df.columns else None
+    if bt_col is None:
+        # probeer boomtypen/heesters uit treeebb-kolommen
+        if "beplantingstypes_boomtypen" in df.columns or "beplantingstypes_overige_beplanting" in df.columns:
+            def _derive(row):
+                if str(row.get("beplantingstypes_boomtypen","") or "").strip():
+                    return "Bomen"
+                if str(row.get("beplantingstypes_overige_beplanting","") or "").strip():
+                    return "Heesters"
+                return "Overig"
+            groups = df.apply(_derive, axis=1)
+        else:
+            groups = pd.Series(["Overig"]*len(df), index=df.index)
+    else:
+        groups = df[bt_col].apply(_bt)
+
+    df2 = df.copy()
+    df2["_groep"] = groups
+
+    show_cols = [
+        ("Naam", "naam"),
+        ("Wetenschappelijke naam", "wetenschappelijke_naam"),
+        ("Status", "status_nl"),
+        ("Licht", "standplaats_licht"),
+        ("Vocht", "vocht"),
+        ("Bodem", "grondsoorten"),
+        ("Hoogte", "hoogte"),
+        ("Breedte", "breedte"),
+    ]
+    # fallbacks naar oude treeebb-kolommen
+    fallback_map = {
+        "standplaats_licht": "standplaats_lichtbehoefte",
+        "grondsoorten": "standplaats_grondsoort",
+        "hoogte": "eigenschappen_hoogte",
+        "breedte": "eigenschappen_breedte",
+    }
+
+    for grp in ["Bomen", "Heesters", "Overig"]:
+        part = df2[df2["_groep"] == grp]
+        if part.empty:
+            continue
+
+        story.append(Paragraph(grp, h2))
+
+        header = [c[0] for c in show_cols]
+        rows = [header]
+
+        for _, r in part.iterrows():
+            row_vals = []
+            for _, key in show_cols:
+                val = r.get(key, "")
+                if (val is None or (isinstance(val, float) and pd.isna(val)) or str(val).strip() in ["", "nan", "None"]):
+                    fb = fallback_map.get(key)
+                    if fb:
+                        val = r.get(fb, "")
+                if isinstance(val, float) and pd.isna(val):
+                    val = ""
+                row_vals.append(str(val).strip())
+            rows.append(row_vals)
+
+        tbl = Table(
+            rows,
+            repeatRows=1,
+            colWidths=[3.0*cm, 3.6*cm, 2.0*cm, 2.6*cm, 2.3*cm, 3.0*cm, 2.1*cm, 2.1*cm],
+        )
+        tbl.setStyle(TableStyle([
+            ("BACKGROUND", (0,0), (-1,0), LIGHT),
+            ("TEXTCOLOR", (0,0), (-1,0), colors.black),
+            ("FONTNAME", (0,0), (-1,0), "Helvetica-Bold"),
+            ("FONTSIZE", (0,0), (-1,0), 9),
+            ("FONTSIZE", (0,1), (-1,-1), 8.5),
+            ("VALIGN", (0,0), (-1,-1), "TOP"),
+            ("GRID", (0,0), (-1,-1), 0.25, colors.HexColor("#e5e7eb")),
+            ("ROWBACKGROUNDS", (0,1), (-1,-1), [colors.white, colors.HexColor("#fbfbfb")]),
+            ("LEFTPADDING", (0,0), (-1,-1), 3),
+            ("RIGHTPADDING", (0,0), (-1,-1), 3),
+            ("TOPPADDING", (0,0), (-1,-1), 3),
+            ("BOTTOMPADDING", (0,0), (-1,-1), 3),
+        ]))
+        story.append(tbl)
+        story.append(Spacer(1, 10))
+
+# Afsluiting
+story.append(Spacer(1, 6))
+story.append(Paragraph("Over dit rapport", h2))
+story.append(Paragraph(
+    "Dit rapport is automatisch gegenereerd met de <b>Beplantingswijzer</b> en bedoeld als richtinggevend advies. "
+    "Het combineert landschappelijke data met ecologische kennis om passende beplanting voor deze locatie te selecteren.",
+    body
+))
+
+doc.build(story, onFirstPage=_hdr_footer, onLaterPages=_hdr_footer)
+buf.seek(0)
 
     filename = f"beplantingswijzer_locatierapport_{lat:.5f}_{lon:.5f}.pdf".replace('.', '_')
     headers = {"Content-Disposition": f'attachment; filename="{filename}"'}
