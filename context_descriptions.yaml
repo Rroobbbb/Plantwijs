@@ -1,9 +1,134 @@
-fgr:
-  rivierengebied:
-    titel: Rivierengebied
+
+geomorfologie:
+  stroomrug:
+    titel: Stroomrug (stroomgordel)
     kernsamenvatting: >
-      Dynamisch landschap gevormd door grote rivieren, met afwisseling van hogere
-      stroomruggen en lagere kommen. Water- en bodemdynamiek bepalen het landgebruik
-      en de mogelijkheden voor erfbeplanting.
+      Relatief hooggelegen deel van het rivierenlandschap, gevormd door herhaalde
+      rivierverleggingen. Beter ontwaterd dan omliggende kommen en historisch
+      geschikt voor bewoning en erfbeplanting.
     ontstaansgeschiedenis: >
-      Het Rivierengebied is gevormd door Rijn, Waal, IJssel en Maas...
+      Stroomruggen ontstaan door opeenvolgende afzettingen van zand en zavel
+      tijdens actieve rivierfasen. Door verplaatsing van de rivierloop stapelden
+      deze afzettingen zich op tot langgerekte, licht verhoogde ruggen.
+    reliëf_en_vorm: >
+      Langgerekt, licht verhoogd reliëf (meestal 0,5–2 m hoger dan de omgeving),
+      vaak parallel aan voormalige rivierlopen.
+    bodem_en_hydrologie: >
+      Overwegend zandige tot zavelige afzettingen met betere drainage en lagere
+      grondwaterstanden dan in komgebieden.
+    landgebruik_en_beplanting: >
+      Historisch bebouwing, erven, boomgaarden en akkerbouw. Laan- en erfbeplanting
+      komt hier traditioneel voor.
+    betekenis_voor_erfbeplanting: >
+      Goede standplaats voor bomen en struiken. Keuze mogelijk uit een breed
+      sortiment soorten, mits rekening gehouden wordt met droogtestress en wind.
+    bronnen:
+      - Berendsen, H.J.A. – Fysische geografie van Nederland
+      - Wageningen UR – Geomorfologische kaart Nederland
+      - TNO – Geologie van Nederland
+
+  oeverwal:
+    titel: Oeverwal
+    kernsamenvatting: >
+      Smalle, verhoogde zone direct langs voormalige rivierlopen, ontstaan door
+      overstromingen waarbij grover sediment dicht bij de rivier werd afgezet.
+    ontstaansgeschiedenis: >
+      Oeverwallen zijn gevormd door herhaalde overstromingen waarbij zand en zavel
+      direct langs de rivier bezonken. Fijner slib werd verder landinwaarts
+      afgezet in de kommen.
+    reliëf_en_vorm: >
+      Smal en verhoogd lint, vaak iets hoger dan de stroomrug, met duidelijke
+      lineaire structuur.
+    bodem_en_hydrologie: >
+      Relatief lichte bodems met goede ontwatering en lagere grondwaterstanden.
+    landgebruik_en_beplanting: >
+      Historisch lintbebouwing, erven, boomgaarden en laanbeplanting langs wegen
+      en dijken.
+    betekenis_voor_erfbeplanting: >
+      Zeer geschikt voor erf- en laanbeplanting; open karakter behouden en
+      beplanting vooral lijnvormig toepassen.
+    bronnen:
+      - Berendsen, H.J.A. – Fysische geografie van Nederland
+      - WUR – Geomorfologische legenda
+
+  rivierkomvlakte:
+    titel: Rivierkomvlakte (komgebied)
+    kernsamenvatting: >
+      Laaggelegen en nat deel van het rivierenlandschap waar fijne klei is
+      afgezet; beperkt geschikt voor opgaande beplanting.
+    ontstaansgeschiedenis: >
+      In komgebieden kwam overstromingswater tot rust, waardoor fijne kleideeltjes
+      bezonken en dikke komkleilagen ontstonden.
+    reliëf_en_vorm: >
+      Zeer vlak, laaggelegen landschap met weinig reliëf.
+    bodem_en_hydrologie: >
+      Zware kleigronden met hoge grondwaterstanden en slechte natuurlijke drainage.
+    landgebruik_en_beplanting: >
+      Overwegend grasland; historisch grienden en populierenbosjes op natte delen.
+    betekenis_voor_erfbeplanting: >
+      Beplanting beperkt en vooral functioneel; nat-tolerante soorten en
+      lijnvormige structuren langs erven en wegen.
+    bronnen:
+      - Berendsen, H.J.A. – Fysische geografie van Nederland
+      - TNO – Geologie van Nederland
+
+  gesloten_kom:
+    titel: Gesloten kom
+    kernsamenvatting: >
+      Extreem natte, slecht ontwaterde delen van het rivierengebied met zeer
+      beperkte mogelijkheden voor beplanting.
+    ontstaansgeschiedenis: >
+      Gesloten kommen ontstonden waar natuurlijke afwatering ontbrak en water
+      langdurig bleef staan.
+    reliëf_en_vorm: >
+      Zeer laag en vlak, vaak omgeven door hogere stroomruggen of oeverwallen.
+    bodem_en_hydrologie: >
+      Zware, natte klei met langdurig hoge grondwaterstanden.
+    landgebruik_en_beplanting: >
+      Historisch grienden, rietlanden en extensief grasland.
+    betekenis_voor_erfbeplanting: >
+      Alleen zeer nat-tolerante soorten toepassen; open landschap behouden.
+    bronnen:
+      - STOWA – Grondwater en komgebieden
+      - TNO – Geologie van Nederland
+
+  restgeul:
+    titel: Restgeul / oude rivierloop
+    kernsamenvatting: >
+      Overblijfsel van een voormalige rivierloop, vaak nat en ecologisch
+      waardevol.
+    ontstaansgeschiedenis: >
+      Restgeulen zijn ontstaan na rivierverleggingen waarbij oude meanders
+      achterbleven.
+    reliëf_en_vorm: >
+      Slingerend, laaggelegen en vaak duidelijk herkenbaar in het landschap.
+    bodem_en_hydrologie: >
+      Nat tot zeer nat, met lokaal veen- of kleivorming.
+    landgebruik_en_beplanting: >
+      Rietlanden, struweel en nat bos; vaak hoge natuurwaarden.
+    betekenis_voor_erfbeplanting: >
+      Geschikt voor ecologische beplanting; geen intensieve erfbeplanting.
+    bronnen:
+      - Atlas Natuurlijk Kapitaal
+      - WUR – Rivierlandschappen
+
+  rivierduin:
+    titel: Rivierduin / donk
+    kernsamenvatting: >
+      Lokaal hooggelegen zandige opduiking in het rivierengebied met afwijkende
+      ecologische omstandigheden.
+    ontstaansgeschiedenis: >
+      Rivierduinen ontstonden door windwerking op zandige afzettingen tijdens
+      drogere perioden.
+    reliëf_en_vorm: >
+      Duidelijk hoger dan omgeving, vaak geïsoleerd.
+    bodem_en_hydrologie: >
+      Zandige bodems met goede drainage en lage grondwaterstanden.
+    landgebruik_en_beplanting: >
+      Historisch bewoning en akkerbouw; bijzondere flora door droge omstandigheden.
+    betekenis_voor_erfbeplanting: >
+      Geschikt voor droogteminnende soorten; contrast met omliggende natte
+      gebieden respecteren.
+    bronnen:
+      - Berendsen, H.J.A. – Fysische geografie van Nederland
+      - TNO – Geologie van Nederland
