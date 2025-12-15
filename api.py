@@ -12,6 +12,7 @@ from __future__ import annotations
 import io
 import math
 import os
+from pathlib import Path
 import re
 import time
 import unicodedata
@@ -852,6 +853,24 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 # --- Kennisdocument: locatiecontext (YAML/JSON) ---
 _CONTEXT_PATH = os.environ.get("CONTEXT_DESCRIPTIONS_PATH", "context_descriptions.yaml")
 
+def _resolve_context_path(path: str) -> str:
+    """Zoek context_descriptions.yaml robuust (cwd, map van api.py, en optioneel submap Plantwijs)."""
+    p = str(path or "").strip() or "context_descriptions.yaml"
+    cand = [
+        Path(p),
+        Path.cwd() / p,
+        Path(__file__).resolve().parent / p,
+        Path(__file__).resolve().parent / "Plantwijs" / p,
+    ]
+    for c in cand:
+        try:
+            if c.exists() and c.is_file():
+                return str(c)
+        except Exception:
+            continue
+    return str(cand[0])
+
+
 def _normalize_key(value: str) -> str:
     s = str(value or "").strip().lower()
     if not s:
@@ -1004,7 +1023,7 @@ def _load_context_db() -> dict:
     - JSON (wat ook geldige YAML is)
     Faalt nooit hard: bij problemen wordt {} teruggegeven.
     """
-    path = _CONTEXT_PATH
+    path = _resolve_context_path(_CONTEXT_PATH)
     try:
         if not os.path.exists(path):
             return {}
@@ -1028,6 +1047,12 @@ def _load_context_db() -> dict:
         return {}
 
 CONTEXT_DB = _load_context_db()
+try:
+    _secs = ', '.join([f"{k}({len(v)})" for k,v in (CONTEXT_DB or {}).items() if isinstance(v, dict)])
+    print(f"[CONTEXT] geladen: {_secs} uit {_resolve_context_path(_CONTEXT_PATH)}")
+except Exception:
+    pass
+
 
 def _context_lookup(section: str, label: str) -> dict | None:
     sec = (CONTEXT_DB or {}).get(section, {})
@@ -1037,6 +1062,13 @@ def _context_lookup(section: str, label: str) -> dict | None:
     if key and key in sec and isinstance(sec[key], dict):
         return sec[key]
     want = str(label or "").strip().lower()
+    # fallback: splits zoals 'stroomrug of stroomgordel' / 'stroomrug, oeverwal'
+    if want:
+        parts = re.split(r"\s*(?:,|/|\bor\b|\bof\b|\ben\b)\s*", want)
+        for p in parts:
+            pk = _normalize_key(p)
+            if pk and pk in sec and isinstance(sec[pk], dict):
+                return sec[pk]
     if want:
         for _k, v in sec.items():
             if isinstance(v, dict) and str(v.get("titel", "")).strip().lower() == want:
@@ -2164,22 +2196,51 @@ def advies_pdf(
     story.append(Paragraph("Geschikte soorten (selectie)", style_h1))
     story.append(Paragraph("Overzicht van geschikte bomen/heesters op basis van de gekozen filters en kaartwaarden.", style_p))
 
+    # Kolommen (vaste, begrijpelijke set) — kies de eerste beschikbare bronkolom.
+    def _first_col(cands):
+        for c in cands:
+            if c in df_pdf.columns:
+                return c
+        return None
+
+    col_wet = _first_col(["wetenschappelijke_naam", "latin_name", "naam"])
+    col_nl = _first_col(["naam_nl", "nederlandse_naam"])
+    col_status = _first_col(["status_nl", "nsr_status", "status"])
+    col_licht = _first_col(["standplaats_licht", "licht"])
+    col_vocht = _first_col(["vocht", "standplaats_bodemvochtigheid"])
+    col_bodem = _first_col(["grondsoorten", "bodem", "standplaats_grondsoort"])
+    col_hoogte = _first_col(["hoogte", "eigenschappen_hoogte"])
+    col_breedte = _first_col(["breedte", "eigenschappen_breedte"])
+
     cols = []
-    if "latin_name" in df_pdf.columns:
-        cols.append(("Wetenschappelijke naam", "latin_name", 55 * mm))
-    if "naam_nl" in df_pdf.columns:
-        cols.append(("Nederlandse naam", "naam_nl", 55 * mm))
-    if "beplantingstype" in df_pdf.columns:
-        cols.append(("Type", "beplantingstype", 26 * mm))
-    if "status_nl" in df_pdf.columns:
-        cols.append(("Status", "status_nl", 22 * mm))
-    if "standplaats_licht" in df_pdf.columns:
-        cols.append(("Licht", "standplaats_licht", 30 * mm))
+    if col_nl:
+        cols.append(("Naam", col_nl, 40 * mm))
+    if col_wet:
+        cols.append(("Wetenschappelijke naam", col_wet, 48 * mm))
+    if col_status:
+        cols.append(("Status", col_status, 20 * mm))
+    if col_licht:
+        cols.append(("Licht", col_licht, 28 * mm))
+    if col_vocht:
+        cols.append(("Vocht", col_vocht, 26 * mm))
+    if col_bodem:
+        cols.append(("Bodem", col_bodem, 32 * mm))
+    if col_hoogte or col_breedte:
+        cols.append(("Maat", "__maat__", 34 * mm))
 
     header = [Paragraph(f"<b>{h}</b>", style_small) for h, _, _w in cols]
     data = [header]
     for _, row in df_pdf.iterrows():
-        data.append([Paragraph(_short(row.get(k, ""), 60) or "—", style_small) for _h, k, _w in cols])
+        row_cells = []
+        for _h, k, _w in cols:
+            if k == "__maat__":
+                h = (str(row.get(col_hoogte, "")) if col_hoogte else "").strip()
+                b = (str(row.get(col_breedte, "")) if col_breedte else "").strip()
+                maat = " / ".join([x for x in [h, b] if x]) or "—"
+                row_cells.append(Paragraph(_short(maat, 60), style_small))
+            else:
+                row_cells.append(Paragraph(_short(row.get(k, ""), 60) or "—", style_small))
+        data.append(row_cells)
 
     col_widths = [w for _h, _k, w in cols] if cols else [180 * mm]
     tbl = Table(data, colWidths=col_widths, repeatRows=1)
