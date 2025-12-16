@@ -2134,10 +2134,10 @@ def advies_pdf(
     exclude_invasief: bool = Query(True),
 ):
     """
-    Genereert een locatierapport als PDF (encyclopedische stijl):
+    Genereert een locatierapport als PDF (leesbaar voor bewoners, met technische bijlage):
     - Kernsamenvatting bovenaan (scanbaar)
     - Locatiecontext (kaarten) kort
-    - Toelichting (encyclopedisch) per kaartlaag met bronnen (indien aanwezig in context_descriptions.yaml)
+    - Technische toelichting (bijlage) per kaartlaag met bronnen (indien aanwezig in context_descriptions.yaml)
     - Soortentabel (geschikte soorten)
     """
     # ------------------------
@@ -2258,7 +2258,7 @@ def advies_pdf(
     ontwerp_bullets = ontwerp_bullets[:7]
 
     # ------------------------
-    # 4) Kernsamenvatting (scanbaar)
+    # 4) In het kort (voor bewoners)
     # ------------------------
     kern_zinnen = []
     if fgr and fgr != "Onbekend":
