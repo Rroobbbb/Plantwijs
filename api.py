@@ -1174,33 +1174,96 @@ def _context_lookup(section: str, label: str) -> dict | None:
         return None
 
     def _post(info: dict) -> dict:
-        # maak copy zodat we de bronlijst kunnen resolven zonder de DB te muteren
         out = dict(info)
-        # resolve bronnen-velden (bronnen, bronnen_aanvullend, etc.)
         for k in list(out.keys()):
             if k == "bronnen" or k.startswith("bronnen_"):
                 out[k] = _resolve_bronnen(out.get(k))
         return out
 
-    key = _normalize_key(label)
+    want_raw = str(label or "").strip()
+    if not want_raw:
+        return None
+
+    key = _normalize_key(want_raw)
+
+    # 1) Snelle directe match op top-level key (oude situatie)
     if key and key in sec and isinstance(sec[key], dict):
         return _post(sec[key])
 
-    want = str(label or "").strip().lower()
-    # fallback: splits zoals 'stroomrug of stroomgordel' / 'stroomrug, oeverwal'
-    if want:
-        parts = re.split(r"\s*(?:,|/|\bor\b|\bof\b|\ben\b)\s*", want)
-        for p in parts:
-            pk = _normalize_key(p)
-            if pk and pk in sec and isinstance(sec[pk], dict):
-                return _post(sec[pk])
+    # 2) Fallback: probeer splits ("stroomrug of stroomgordel", "a, b", etc.)
+    parts = []
+    if want_raw:
+        parts = [p.strip() for p in re.split(r"\s*(?:,|/|\bor\b|\bof\b|\ben\b)\s*", want_raw.lower()) if p.strip()]
 
-    if want:
-        for _k, v in sec.items():
-            if isinstance(v, dict) and str(v.get("titel", "")).strip().lower() == want:
-                return _post(v)
+    # 3) Diepe zoekactie door nested dicts:
+    #    - match op (genormaliseerde) key
+    #    - match op titel (exact of substring, zodat "Rivierkom" ook "Rg2 | Rivierkom" vindt)
+    candidates: list[tuple[int, dict]] = []
 
-    return None
+    def _score_title(title: str, target_norm: str) -> int | None:
+        nt = _normalize_key(title)
+        if not nt:
+            return None
+        if nt == target_norm:
+            return 1
+        if target_norm and (target_norm in nt or nt in target_norm):
+            # hoe dichter bij elkaar qua lengte, hoe beter
+            return 10 + abs(len(nt) - len(target_norm))
+        return None
+
+    def _dfs(node: Any) -> None:
+        if isinstance(node, dict):
+            for k, v in node.items():
+                nk = _normalize_key(k)
+
+                # key-match
+                if nk == key and isinstance(v, dict):
+                    candidates.append((0, v))
+
+                # titel-match
+                if isinstance(v, dict):
+                    t = str(v.get("titel", "") or "").strip()
+                    sc = _score_title(t, key)
+                    if sc is not None:
+                        candidates.append((sc, v))
+
+                _dfs(v)
+
+        elif isinstance(node, list):
+            for it in node:
+                _dfs(it)
+
+    # zoek op hoofdlabel
+    _dfs(sec)
+
+    # zoek ook op parts (als die er zijn)
+    for p in parts:
+        pk = _normalize_key(p)
+        if pk and pk != key:
+            key2 = pk
+            # hergebruik DFS met "tijdelijke" key door score-functie rechtstreeks te gebruiken op title
+            def _dfs_part(node: Any) -> None:
+                if isinstance(node, dict):
+                    for k, v in node.items():
+                        nk = _normalize_key(k)
+                        if nk == key2 and isinstance(v, dict):
+                            candidates.append((2, v))
+                        if isinstance(v, dict):
+                            t = str(v.get("titel", "") or "").strip()
+                            sc = _score_title(t, key2)
+                            if sc is not None:
+                                candidates.append((20 + sc, v))
+                        _dfs_part(v)
+                elif isinstance(node, list):
+                    for it in node:
+                        _dfs_part(it)
+            _dfs_part(sec)
+
+    if not candidates:
+        return None
+
+    candidates.sort(key=lambda x: x[0])
+    return _post(candidates[0][1])
 
 
 def _first_sentence(text: str) -> str:
