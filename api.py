@@ -2147,7 +2147,12 @@ def advies_pdf(
     story.append(Paragraph("Onderstaande toelichting geeft de betekenis van de gevonden kaartwaarden en de implicaties voor erf- en landschapsbeplanting.", style_p))
     story.append(Paragraph('De onderstaande toelichting beschrijft dezelfde locatie vanuit verschillende invalshoeken (landschap, vorm, systeem en standplaats). Hierdoor kunnen sommige kenmerken op meerdere plekken terugkomen, telkens met een andere betekenis en schaal.', style_p))
 
-    def _render_section(title: str, info: dict | None, fallback_label: str | None = None):
+    def _render_section(
+        title: str,
+        info: dict | None,
+        fallback_label: str | None = None,
+        category_key: str | None = None,
+    ):
         story.append(Paragraph(title, style_h2))
         if not info:
             if fallback_label:
@@ -2161,6 +2166,17 @@ def advies_pdf(
             val = info.get(key)
             if val:
                 story.append(Paragraph(f"<b>{label}.</b> {val}", style_p))
+
+        def _split_paragraphs(text: Any) -> List[str]:
+            """Splits een tekst in alinea's (YAML folded blocks of HTML-achtige breaks)."""
+            s = str(text or "").strip()
+            if not s:
+                return []
+            # normaliseer HTML breaks naar newlines
+            s = re.sub(r"<br\s*/?>", "\n", s, flags=re.I)
+            # split op dubbele newlines
+            parts = [p.strip() for p in re.split(r"\n\s*\n+", s) if p.strip()]
+            return parts
 
         # Support meerdere schema's
         add("Kern", "kernsamenenvatting")
@@ -2181,17 +2197,29 @@ def advies_pdf(
         add("Betekenis", "betekenis")
         add("Geschikte beplanting", "geschikte_beplanting")
 
+        # Speciaal: na de Gt-toelichting een compacte samenvatting van de 3 alinea's
+        # uit 'betekenis_voor_erfbeplanting' (elk gericht op een ander aspect).
+        if category_key == "gt":
+            betekenis = info.get("betekenis_voor_erfbeplanting")
+            paras = _split_paragraphs(betekenis)
+            if paras:
+                bullets = [_first_sentence(p) for p in paras[:3] if _first_sentence(p)]
+                if bullets:
+                    story.append(Paragraph("<b>Korte samenvatting (erfbeplanting).</b>", style_p))
+                    for i, b in enumerate(bullets, 1):
+                        story.append(Paragraph(f"<b>{i}.</b> {b}", style_p))
+
         bronnen = info.get("bronnen")
         if isinstance(bronnen, list) and bronnen:
             story.append(Paragraph("<b>Bronnen (selectie).</b> " + "; ".join(str(b) for b in bronnen), style_small_muted))
 
         story.append(Spacer(1, 6))
 
-    _render_section(f"Fysisch Geografische Regio (FGR): {_safe(fgr)}", fgr_info, fgr)
-    _render_section(f"Geomorfologie (GMM): {_safe(gmm_val)}", gmm_info, gmm_val)
-    _render_section(f"Natuurlijk systeem (NSN): {_safe(nsn_val)}", nsn_info, nsn_val)
-    _render_section(f"Bodem: {_safe(bodem_val or bodem_raw)}", bodem_info, (bodem_val or bodem_raw))
-    _render_section(f"Vochttoestand (Gt): {_safe(gt_code or '—')}", gt_info, (gt_code or "—"))
+    _render_section(f"Fysisch Geografische Regio (FGR): {_safe(fgr)}", fgr_info, fgr, category_key="fgr")
+    _render_section(f"Geomorfologie (GMM): {_safe(gmm_val)}", gmm_info, gmm_val, category_key="geomorfologie")
+    _render_section(f"Natuurlijk systeem (NSN): {_safe(nsn_val)}", nsn_info, nsn_val, category_key="nsn")
+    _render_section(f"Bodem: {_safe(bodem_val or bodem_raw)}", bodem_info, (bodem_val or bodem_raw), category_key="bodem")
+    _render_section(f"Vochttoestand (Gt): {_safe(gt_code or '—')}", gt_info, (gt_code or "—"), category_key="gt")
 
     # Planttabel
     story.append(PageBreak())
