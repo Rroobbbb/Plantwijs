@@ -1,12 +1,24 @@
 fgr:
   rivierengebied:
     titel: Rivierengebied
-    beschrijving: Het Rivierengebied is het Nederlandse landschap dat gevormd is door de Rijn, Maas en hun zijrivieren. Het bestaat uit een mozaïek van hoger gelegen oeverwallen en stroomruggen (grovere afzettingen dicht bij de rivier) en lagere komgebieden (fijne kleiafzettingen). Historisch werden deze gebieden regelmatig overstroomd; sinds bedijking en kanalisatie is de overstromingsdynamiek binnendijks sterk verminderd, maar waterbeheer blijft sturend.
-    kenmerken: Relatief vlak reliëf met lokale hoogteverschillen op schaal van decimeters tot meters. Lintbebouwing en erven liggen vaak op de hogere delen (oeverwallen/stroomruggen), terwijl de kommen opener en natter zijn. Waterlopen (weteringen, sloten) en kades/dijken structureren het landschap.
-    bodem_en_water: Overwegend klei- en zavelgronden; in kommen zware, natte klei. Grondwater kan hoog staan; waterbeheer (peil, drainage) is bepalend.
-    beplanting_en_landgebruik: 'Landgebruik is vaak productief: grasland in nattere kommen, akkerbouw en boomgaarden op hogere delen. Streekeigen beplanting bestaat vaak uit lijnvormige structuren (knotwilgen, hagen, singels), dijkbeplanting en erfbeplanting; op natte delen wilgenstruweel, elzenbroek en (historisch) grienden.'
-    betekenis_voor_erfbeplanting: 'Sluit aan op de schaal en openheid van het deelgebied (kom vs oeverwal). In open kommen: beperkt, lijnvormig en winddoorlatend; op hogere delen kan het erf ‘groener’ en rijker worden vormgegeven. Kies soorten die passen bij klei/zavel en bij de lokale grondwaterstand (Gt) en houd rekening met waterpeilbeheer.'
-    ontstaan_en_dynamiek: 'Bij hoge afvoeren traden (historisch) overstromingen op, waarbij sediment werd afgezet. Dicht bij de rivier bezonk grover materiaal, verder weg vooral fijne klei. Dit leidde tot karakteristieke landschapselementen: uiterwaarden, dijken, strangen/restgeulen, oeverwallen, stroomruggen en kommen.'
+    beschrijving: Het Rivierengebied is het Nederlandse landschap dat gevormd is door de Rijn, Maas en hun zijrivieren. Het
+      bestaat uit een mozaïek van hoger gelegen oeverwallen en stroomruggen (grovere afzettingen dicht bij de rivier) en lagere
+      komgebieden (fijne kleiafzettingen). Historisch werden deze gebieden regelmatig overstroomd; sinds bedijking en kanalisatie
+      is de overstromingsdynamiek binnendijks sterk verminderd, maar waterbeheer blijft sturend.
+    kenmerken: Relatief vlak reliëf met lokale hoogteverschillen op schaal van decimeters tot meters. Lintbebouwing en erven
+      liggen vaak op de hogere delen (oeverwallen/stroomruggen), terwijl de kommen opener en natter zijn. Waterlopen (weteringen,
+      sloten) en kades/dijken structureren het landschap.
+    bodem_en_water: Overwegend klei- en zavelgronden; in kommen zware, natte klei. Grondwater kan hoog staan; waterbeheer
+      (peil, drainage) is bepalend.
+    beplanting_en_landgebruik: 'Landgebruik is vaak productief: grasland in nattere kommen, akkerbouw en boomgaarden op hogere
+      delen. Streekeigen beplanting bestaat vaak uit lijnvormige structuren (knotwilgen, hagen, singels), dijkbeplanting en
+      erfbeplanting; op natte delen wilgenstruweel, elzenbroek en (historisch) grienden.'
+    betekenis_voor_erfbeplanting: 'Sluit aan op de schaal en openheid van het deelgebied (kom vs oeverwal). In open kommen:
+      beperkt, lijnvormig en winddoorlatend; op hogere delen kan het erf ‘groener’ en rijker worden vormgegeven. Kies soorten
+      die passen bij klei/zavel en bij de lokale grondwaterstand (Gt) en houd rekening met waterpeilbeheer.'
+    ontstaan_en_dynamiek: 'Bij hoge afvoeren traden (historisch) overstromingen op, waarbij sediment werd afgezet. Dicht bij
+      de rivier bezonk grover materiaal, verder weg vooral fijne klei. Dit leidde tot karakteristieke landschapselementen:
+      uiterwaarden, dijken, strangen/restgeulen, oeverwallen, stroomruggen en kommen.'
     bronnen:
     - 'Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen (WUR Groenekennis): https://library.wur.nl/WebQuery/groenekennis/1784548'
     - 'PDOK – Dataset Fysisch-Geografische Regio’s (FGR) (omschrijving en herkomst): https://www.pdok.nl/introductie/-/article/fysisch-geografische-regio-s'
@@ -14,56 +26,74 @@ fgr:
     - 'CLO – Rivierengebied (landschapskenmerken): https://www.clo.nl/indicatoren/nl100902-rivierengebied'
   hogere_zandgronden:
     titel: Hogere zandgronden
-    beschrijving: Oude dekzand- en stuwwallandschappen met overwegend zandige bodems. Van nature droger en voedselarmer dan klei- en veengebieden.
-    kenmerken: Afwisseling van dekzandruggen en -laagtes; lokaal stuwwallen. Historisch esdorpen, heide- en bosontginningen; verkaveling kan kleinschalig zijn met houtwallen.
+    beschrijving: Oude dekzand- en stuwwallandschappen met overwegend zandige bodems. Van nature droger en voedselarmer dan
+      klei- en veengebieden.
+    kenmerken: Afwisseling van dekzandruggen en -laagtes; lokaal stuwwallen. Historisch esdorpen, heide- en bosontginningen;
+      verkaveling kan kleinschalig zijn met houtwallen.
     bodem_en_water: Zand tot lemig zand; infiltratie is groot, grondwater dieper. In laagtes kan het juist nat zijn (beekdalen).
-    beplanting_en_landgebruik: 'Naaldbos/loofbos, heide-restanten, akkers en grasland. Typisch: eik, berk, grove den, lijsterbes; in beekdalen els en wilg.'
-    betekenis_voor_erfbeplanting: Werk met droge toleranties en beschutting (wind). Houtwal- en erfbeplanting met streekeigen soorten sluit aan; voorkom verdroging met juiste standplaatskeuze.
+    beplanting_en_landgebruik: 'Naaldbos/loofbos, heide-restanten, akkers en grasland. Typisch: eik, berk, grove den, lijsterbes;
+      in beekdalen els en wilg.'
+    betekenis_voor_erfbeplanting: Werk met droge toleranties en beschutting (wind). Houtwal- en erfbeplanting met streekeigen
+      soorten sluit aan; voorkom verdroging met juiste standplaatskeuze.
   laagveengebied:
     titel: Laagveengebied
-    beschrijving: Waterrijk landschap gevormd door veenvorming in laaggelegen gebieden, vaak met plassen, petgaten, rietlanden en ontginningssloten.
-    kenmerken: Zeer vlak, open tot halfopen. Lineaire verkaveling met lange kavels en veel watergangen; waterpeilbeheer is essentieel.
+    beschrijving: Waterrijk landschap gevormd door veenvorming in laaggelegen gebieden, vaak met plassen, petgaten, rietlanden
+      en ontginningssloten.
+    kenmerken: Zeer vlak, open tot halfopen. Lineaire verkaveling met lange kavels en veel watergangen; waterpeilbeheer is
+      essentieel.
     bodem_en_water: Veen en venige klei; hoge grondwaterstand. Bodemdaling en oxidatie spelen bij ontwatering.
     beplanting_en_landgebruik: 'Grasland, riet, moerasvegetaties. Typisch: elzenbroek, wilgenstruweel, rietkragen.'
-    betekenis_voor_erfbeplanting: Kies natte toleranties en houd rekening met slappe bodem (wortelverankering). Beplanting in lijnen en groepen langs watergangen werkt het best.
+    betekenis_voor_erfbeplanting: Kies natte toleranties en houd rekening met slappe bodem (wortelverankering). Beplanting
+      in lijnen en groepen langs watergangen werkt het best.
   zeekleigebied:
     titel: Zeekleigebied
-    beschrijving: Kust- en zeekleilandschappen ontstaan door afzetting van klei in getijdegebieden (kwelders, polders). Vaak grootschalig en open.
+    beschrijving: Kust- en zeekleilandschappen ontstaan door afzetting van klei in getijdegebieden (kwelders, polders). Vaak
+      grootschalig en open.
     kenmerken: Zeer vlak, rationele verkaveling, rechte wegen en sloten. Dijken en kreekruggen bepalen soms lokale structuur.
-    bodem_en_water: Klei tot zavel; vaak vruchtbaar. Grondwater en verzilting kunnen lokaal spelen; drainage en peilbeheer belangrijk.
+    bodem_en_water: Klei tot zavel; vaak vruchtbaar. Grondwater en verzilting kunnen lokaal spelen; drainage en peilbeheer
+      belangrijk.
     beplanting_en_landgebruik: Intensieve akkerbouw en grasland. Beplanting vooral als erfbeplanting, singels en windschermen.
-    betekenis_voor_erfbeplanting: In open polders is windreductie belangrijk. Kies soorten die wind en (soms) zoute invloed verdragen; beplanting bij erven en langs wegen past het landschap.
+    betekenis_voor_erfbeplanting: In open polders is windreductie belangrijk. Kies soorten die wind en (soms) zoute invloed
+      verdragen; beplanting bij erven en langs wegen past het landschap.
   duinen:
     titel: Duinen
     beschrijving: Zandige kustduinen met reliëf, dynamiek door wind en zee en grote variatie van droog naar nat (duinvalleien).
     kenmerken: Sterk reliëf met duintoppen en valleien; kalkrijk tot kalkarm afhankelijk van ligging. Kwetsbare natuurwaarden.
     bodem_en_water: Zand, zeer doorlatend; zoetwaterlenzen kunnen voorkomen. Voedselarm tot matig voedselrijk.
     beplanting_en_landgebruik: Duingraslanden, struweel (duindoorn) en duinbos (den, eik).
-    betekenis_voor_erfbeplanting: Kies soorten voor zand, wind en zout. Beperk bodemverstoring en werk met struweel/laag bos als windfilter.
+    betekenis_voor_erfbeplanting: Kies soorten voor zand, wind en zout. Beperk bodemverstoring en werk met struweel/laag bos
+      als windfilter.
   lossgebied:
     titel: Lössgebied
     beschrijving: Golvend landschap met lössafzettingen (zeer vruchtbaar, leemrijk), vooral in Zuid-Limburg.
     kenmerken: Hellingprocessen en holle wegen; kleinschalige mozaïekstructuur met graften en hagen.
     bodem_en_water: 'Leem/löss: goede vochtvasthouding maar erosiegevoelig op hellingen.'
     beplanting_en_landgebruik: Akkerbouw, boomgaarden, hagen en hellingbossen.
-    betekenis_voor_erfbeplanting: Erosieremmende beplanting (hagen/graften) is waardevol; kies soorten die passen bij leem en (soms) kalkrijk.
+    betekenis_voor_erfbeplanting: Erosieremmende beplanting (hagen/graften) is waardevol; kies soorten die passen bij leem
+      en (soms) kalkrijk.
 bodem:
   zand:
     titel: Zand
-    beschrijving: Zandige bodems zijn goed doorlatend en drogen relatief snel uit. Ze zijn vaak voedselarmer dan klei en vragen om standplaatsgeschikte soorten.
-    beheerimplicaties: Let op droogte in zomer, windgevoeligheid en snelle uitspoeling van nutriënten; mulch en organische stof helpen.
+    beschrijving: Zandige bodems zijn goed doorlatend en drogen relatief snel uit. Ze zijn vaak voedselarmer dan klei en vragen
+      om standplaatsgeschikte soorten.
+    beheerimplicaties: Let op droogte in zomer, windgevoeligheid en snelle uitspoeling van nutriënten; mulch en organische
+      stof helpen.
     geschikte_beplanting: Eik, berk, lijsterbes, grove den; op rijker zand ook beuk, esdoorn en diverse struiken.
   lemig_zand:
     titel: Lemig zand
     beschrijving: 'Zand met een leemfractie: betere vocht- en nutriëntenbuffer dan puur zand, maar nog steeds redelijk doorlatend.'
     beheerimplicaties: Meestal breed inzetbaar; voorkom verslemping bij intensieve betreding als het nat is.
-    geschikte_beplanting: Veel inheemse loofbomen en struweel doen het hier goed; zowel drogere als matig vochtige soorten mogelijk.
+    geschikte_beplanting: Veel inheemse loofbomen en struweel doen het hier goed; zowel drogere als matig vochtige soorten
+      mogelijk.
   leem:
     titel: Leem / löss
-    beschrijving: Leemrijke bodems houden water en voedingsstoffen goed vast. Ze zijn vruchtbaar maar kunnen gevoelig zijn voor verslemping en erosie (op hellingen).
-    beheerimplicaties: Werk met bodembedekking en wortelnetwerk om structuur te behouden; vermijd zware belasting als de bodem nat is.
+    beschrijving: Leemrijke bodems houden water en voedingsstoffen goed vast. Ze zijn vruchtbaar maar kunnen gevoelig zijn
+      voor verslemping en erosie (op hellingen).
+    beheerimplicaties: Werk met bodembedekking en wortelnetwerk om structuur te behouden; vermijd zware belasting als de bodem
+      nat is.
     geschikte_beplanting: Eik, haagbeuk, es, linde, fruitbomen; hagen en struweel ontwikkelen vaak snel.
-    samenvatting: '**Leem** is een fijne minerale fractie (silt + klei) die water goed vasthoudt en vaak vruchtbaar is; in het rivierengebied komt leem vaak als bijmenging of dek voor.'
+    samenvatting: '**Leem** is een fijne minerale fractie (silt + klei) die water goed vasthoudt en vaak vruchtbaar is; in
+      het rivierengebied komt leem vaak als bijmenging of dek voor.'
     bronnen_aanvullend: &id001
     - Berendsen, H.J.A. (1993). De ontwikkeling van het Nederlandse rivierengebied. GEA.
     - Everts, F.H. e.a. (Natura 2000 herstelstrategieën, deel III) – Rivierenlandschap.
@@ -75,7 +105,8 @@ bodem:
     beschrijving: 'Mengsel van zand en klei: relatief vruchtbaar, met goede bewerkbaarheid en een gematigde waterhuishouding.'
     beheerimplicaties: Breed toepasbaar; bij langdurige natte perioden kan toch tijdelijke waterverzadiging optreden.
     geschikte_beplanting: 'Veel soorten mogelijk: eik, iep, es, linde, populier, wilg (op nattere plekken), meidoorn, sleedoorn.'
-    samenvatting: '**Zavel** vormt een overgang tussen zand en klei: meer lutum dan zand, maar duidelijk beter doorlatend dan zware klei.'
+    samenvatting: '**Zavel** vormt een overgang tussen zand en klei: meer lutum dan zand, maar duidelijk beter doorlatend
+      dan zware klei.'
     bronnen_aanvullend: *id001
   lichte_klei:
     titel: Lichte klei
@@ -84,26 +115,39 @@ bodem:
     geschikte_beplanting: Iep, linde, es, esdoorn, wilg en populier; struiken zoals meidoorn, Gelderse roos en kornoelje.
   zware_klei:
     titel: Zware klei (komklei)
-    beschrijving: Fijnkorrelige, zware klei die water lang vasthoudt en langzaam opwarmt. Vaak natte standplaats, vooral in komgebieden.
+    beschrijving: Fijnkorrelige, zware klei die water lang vasthoudt en langzaam opwarmt. Vaak natte standplaats, vooral in
+      komgebieden.
     beheerimplicaties: Vermijd zware machines bij nat weer; kies soorten met tolerantie voor natte voeten en wisselende zuurstofcondities.
     geschikte_beplanting: Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier, Gelderse roos.
   veen:
     titel: Veen / venige bodem
     beschrijving: Organische bodem met hoge waterstand van oorsprong. Slap draagvermogen en gevoelig voor inklinking bij ontwatering.
-    beheerimplicaties: Houd rekening met bodemdaling en instabiele verankering; kies soorten die nat kunnen en niet extreem windgevoelig zijn.
+    beheerimplicaties: Houd rekening met bodemdaling en instabiele verankering; kies soorten die nat kunnen en niet extreem
+      windgevoelig zijn.
     geschikte_beplanting: Zwarte els, wilg, berken; riet- en moerasstruweel op natte delen.
   klei:
     titel: Klei (algemeen, inclusief rivierklei)
-    beschrijving: 'Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).'
-    standplaats: Klei warmt in het voorjaar langzamer op dan zand en is bij nat weer gevoelig voor structuurschade (verdichting/versmering). De zuurstofvoorziening in de wortelzone kan in natte perioden beperkend zijn, vooral bij zware klei/komklei.
-    waterhuishouding: De ontwatering en het peilbeheer (slotensysteem, drains, stuwen) bepalen sterk of de standplaats 'vochtig' of 'nat' aanvoelt. Op microreliëf (oeverwal vs kom) kunnen in korte afstand grote verschillen voorkomen.
-    landgebruik_en_beplanting: Kleigronden zijn vaak productief en worden intensief gebruikt (grasland/akkerbouw). Streekeigen beplanting in rivierklei is vaak lijnvormig (knotwilgen, hagen, singels) en op nattere delen elzen- en wilgenstruweel of griend.
-    betekenis_voor_erfbeplanting: 'Kies soorten op basis van (1) draagkracht en waterverzadiging in de winter, (2) zomerse droogtestress bij lange droge perioden (ook klei kan in de zomer hard uitdrogen), en (3) beheerbaarheid. Voor natte klei: wilg, zwarte els, populier, iep; voor beter ontwaterde klei/zavel: linde, esdoorn, eik, meidoornhagen.'
+    beschrijving: 'Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer.
+      In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij
+      (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).'
+    standplaats: Klei warmt in het voorjaar langzamer op dan zand en is bij nat weer gevoelig voor structuurschade (verdichting/versmering).
+      De zuurstofvoorziening in de wortelzone kan in natte perioden beperkend zijn, vooral bij zware klei/komklei.
+    waterhuishouding: De ontwatering en het peilbeheer (slotensysteem, drains, stuwen) bepalen sterk of de standplaats 'vochtig'
+      of 'nat' aanvoelt. Op microreliëf (oeverwal vs kom) kunnen in korte afstand grote verschillen voorkomen.
+    landgebruik_en_beplanting: Kleigronden zijn vaak productief en worden intensief gebruikt (grasland/akkerbouw). Streekeigen
+      beplanting in rivierklei is vaak lijnvormig (knotwilgen, hagen, singels) en op nattere delen elzen- en wilgenstruweel
+      of griend.
+    betekenis_voor_erfbeplanting: 'Kies soorten op basis van (1) draagkracht en waterverzadiging in de winter, (2) zomerse
+      droogtestress bij lange droge perioden (ook klei kan in de zomer hard uitdrogen), en (3) beheerbaarheid. Voor natte
+      klei: wilg, zwarte els, populier, iep; voor beter ontwaterde klei/zavel: linde, esdoorn, eik, meidoornhagen.'
     bronnen:
     - 'Geologie van Nederland – Komgrond/komklei (TNO): https://www.geologievannederland.nl/publicaties/115.html'
     - Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen (WUR Groenekennis).
     - 'Jongmans, A.G. e.a. (2013). Landschappen van Nederland: Geologie, Bodem en Landgebruik. Wageningen Academic Publishers.'
-    samenvatting: '**Klei** is mineraal materiaal met relatief veel lutum (<2 µm). In het rivierengebied bestaat klei meestal uit **rivierklei**: fijn sediment dat tijdens overstromingen en in rustig water is afgezet. Belangrijk onderscheid: **oeverwal-/stroomrugklei** (vaak lichter, meer zavelig, beter doorlatend) versus **komklei** (vaak zwaarder, natter, slechter doorlatend).'
+    samenvatting: '**Klei** is mineraal materiaal met relatief veel lutum (<2 µm). In het rivierengebied bestaat klei meestal
+      uit **rivierklei**: fijn sediment dat tijdens overstromingen en in rustig water is afgezet. Belangrijk onderscheid:
+      **oeverwal-/stroomrugklei** (vaak lichter, meer zavelig, beter doorlatend) versus **komklei** (vaak zwaarder, natter,
+      slechter doorlatend).'
     rivierengebied_nuance:
       oeverwal_en_stroomrug:
         kenmerk: Relatief hoger gelegen delen langs (oude) rivierlopen; sedimentatie bij hogere stroomsnelheden.
@@ -120,14 +164,17 @@ bodem:
         water: Sterk wisselende vochtcondities; van droog (hoge zandige ruggen) tot nat (laagtes/kolken).
         beplanting: Pioniers en soorten passend bij dynamiek (wilg/populier, struweel) en beheer (overstroming/erosie).
     praktische_gevolgen_voor_erf:
-    - 'Op **komklei**: focus op lucht in de bodem (organische stof, niet verdichten), waterafvoer/berging en soortenkeuze met nat-tolerantie.'
-    - 'Op **oeverwal-/stroomrugklei (lichte klei/zavel)**: vaak meer droogte- en windstress → soorten met diep wortelgestel of droogtetolerantie.'
+    - 'Op **komklei**: focus op lucht in de bodem (organische stof, niet verdichten), waterafvoer/berging en soortenkeuze
+      met nat-tolerantie.'
+    - 'Op **oeverwal-/stroomrugklei (lichte klei/zavel)**: vaak meer droogte- en windstress → soorten met diep wortelgestel
+      of droogtetolerantie.'
     - Vermijd werken in natte klei (structuurbederf); plan grondwerk bij voldoende draagkracht.
     bronnen_aanvullend: *id001
 gt:
   ia:
     titel: Gt Ia (zeer nat)
-    beschrijving: 'Zeer natte grondwatertrap: grondwater staat vrijwel jaarrond zeer hoog; vaak langdurig natte voeten in het profiel.'
+    beschrijving: 'Zeer natte grondwatertrap: grondwater staat vrijwel jaarrond zeer hoog; vaak langdurig natte voeten in
+      het profiel.'
     betekenis: Kies moeras- en natte oeversoorten; vermijd droogteminnende soorten.
   ib:
     titel: Gt Ib (zeer nat)
@@ -155,9 +202,14 @@ gt:
     betekenis: Kies robuuste soorten; bodembeheer kan droogte beperken.
   ivu:
     titel: Gt IVu (matig droog)
-    beschrijving: Grondwatertrap IVu is een relatief droge tot matig droge grondwatertrap, gedefinieerd via klassen van de gemiddeld hoogste grondwaterstand (GHG) en gemiddeld laagste grondwaterstand (GLG). De lettercombinaties in Gt geven zowel een absolute diepteklasse als de seizoensfluctuatie weer; de exacte grenzen zijn in de bodemkartering vastgelegd.
-    betekenis: Bij Gt IVu staat het grondwater doorgaans dieper dan bij natte trappen, waardoor droogtestress in warme zomers kan optreden, zeker op zandige bodems. Op klei kan de wortelzone toch tijdelijk nat zijn door slechte infiltratie of hoge peilen; combineer de Gt daarom altijd met bodemtype en waterbeheer.
-    uitleg_ghg_glg: 'Grondwatertrappen worden afgeleid uit langjarige gemiddelden: GHG (winter) en GLG (zomer). Samen vatten ze de jaarlijkse fluctuatie samen en zijn ze een belangrijke indicator voor vegetatie, draagkracht en gebruiksmogelijkheden.'
+    beschrijving: Grondwatertrap IVu is een relatief droge tot matig droge grondwatertrap, gedefinieerd via klassen van de
+      gemiddeld hoogste grondwaterstand (GHG) en gemiddeld laagste grondwaterstand (GLG). De lettercombinaties in Gt geven
+      zowel een absolute diepteklasse als de seizoensfluctuatie weer; de exacte grenzen zijn in de bodemkartering vastgelegd.
+    betekenis: Bij Gt IVu staat het grondwater doorgaans dieper dan bij natte trappen, waardoor droogtestress in warme zomers
+      kan optreden, zeker op zandige bodems. Op klei kan de wortelzone toch tijdelijk nat zijn door slechte infiltratie of
+      hoge peilen; combineer de Gt daarom altijd met bodemtype en waterbeheer.
+    uitleg_ghg_glg: 'Grondwatertrappen worden afgeleid uit langjarige gemiddelden: GHG (winter) en GLG (zomer). Samen vatten
+      ze de jaarlijkse fluctuatie samen en zijn ze een belangrijke indicator voor vegetatie, draagkracht en gebruiksmogelijkheden.'
     bronnen:
     - 'STOWA (2010). Grondwaterregime op basis van karteerbare kenmerken (achtergrond Gt): https://www.stowa.nl/sites/default/files/assets/PUBLICATIES/Publicaties%202010/STOWA%202010-41.pdf'
     - 'WUR eDepot (2018). Landsdekkende, actuele informatie over grondwatertrappen (Gt): https://edepot.wur.nl/465988'
@@ -210,68 +262,689 @@ gt:
 geomorfologie:
   open_kommenlandschap:
     titel: Open kommenlandschap
-    beschrijving: In de komgebieden, ver van de rivierloop, kwam het water tot rust en kon slib bezinken. Dit leidde tot plaatselijk dikke, zware komkleilagen.
-    kenmerken: Open karakter met schaarse bebouwing. Kavels vaak onregelmatig; waterlopen en sloten zijn vaak recht door ontginning en waterbeheer.
+    beschrijving: In de komgebieden, ver van de rivierloop, kwam het water tot rust en kon slib bezinken. Dit leidde tot plaatselijk
+      dikke, zware komkleilagen.
+    kenmerken: Open karakter met schaarse bebouwing. Kavels vaak onregelmatig; waterlopen en sloten zijn vaak recht door ontginning
+      en waterbeheer.
     bodem_en_water: Zware, natte klei met hoge grondwaterstanden; langzaam afvoerend en in natte perioden slecht begaanbaar.
-    landgebruik_en_beplanting: Veel grasland. Waar landbouw minder mogelijk was, werden grienden aangelegd. Beplanting vooral als weg- en erfbeplanting, met verspreide populierenbosjes en grienden.
-    betekenis_voor_erfbeplanting: 'Houd het open karakter overeind: plant vooral lijnvormig bij erf/weg/slot. Kies soorten die natte klei verdragen (wilg, els, populier, iep) en voorkom grote dichte bosvakken in het open veld.'
+    landgebruik_en_beplanting: Veel grasland. Waar landbouw minder mogelijk was, werden grienden aangelegd. Beplanting vooral
+      als weg- en erfbeplanting, met verspreide populierenbosjes en grienden.
+    betekenis_voor_erfbeplanting: 'Houd het open karakter overeind: plant vooral lijnvormig bij erf/weg/slot. Kies soorten
+      die natte klei verdragen (wilg, els, populier, iep) en voorkom grote dichte bosvakken in het open veld.'
   oeverwal:
     titel: Oeverwal
-    beschrijving: Relatief hoger gelegen zandrug langs (oude) rivierlopen, opgebouwd uit grover materiaal dat bij overstromingen dicht bij de rivier werd afgezet.
+    beschrijving: Relatief hoger gelegen zandrug langs (oude) rivierlopen, opgebouwd uit grover materiaal dat bij overstromingen
+      dicht bij de rivier werd afgezet.
     kenmerken: Iets hoger en droger dan de omgeving, vaak met lintbebouwing en erven op de hogere delen.
     bodem_en_water: Zavelig tot zandig, beter ontwaterd; grondwater dieper dan in komgronden.
     landgebruik_en_beplanting: Geschikt voor akkerbouw en fruitteelt; erven en dijken hebben vaak rijke beplanting.
-    betekenis_voor_erfbeplanting: Veel soorten mogelijk. Erfbeplanting kan voller zijn dan in komgebied; boomgaarden, hagen en laanstructuren passen goed.
+    betekenis_voor_erfbeplanting: Veel soorten mogelijk. Erfbeplanting kan voller zijn dan in komgebied; boomgaarden, hagen
+      en laanstructuren passen goed.
   stroomrug:
     titel: Stroomrug / stroomgordel
-    beschrijving: Zandrug van een voormalige rivierloop met bijbehorende afzettingen. Vaak als langgerekte verhoging herkenbaar in het landschap.
+    beschrijving: Zandrug van een voormalige rivierloop met bijbehorende afzettingen. Vaak als langgerekte verhoging herkenbaar
+      in het landschap.
     kenmerken: Langgerekt patroon, vaak bepalend voor wegen en bebouwing; relatief droog in vergelijking met komgebied.
     bodem_en_water: Zandig/zavelig; goede ontwatering.
     landgebruik_en_beplanting: Akkerbouw, erven, boomgaarden; beplanting langs wegen en erven.
-    betekenis_voor_erfbeplanting: 'Gunstige groeiplaats: brede soortenkeuze. Combineer lijnvormige structuren met erfbeplanting passend bij open rivierlandschap.'
+    betekenis_voor_erfbeplanting: 'Gunstige groeiplaats: brede soortenkeuze. Combineer lijnvormige structuren met erfbeplanting
+      passend bij open rivierlandschap.'
   rivierduin:
     titel: Rivierduin / donk
-    beschrijving: Lokale zandige verhoging in het rivierengebied, ontstaan door wind (duinvorming) of als hogere zandkop in een natte omgeving.
+    beschrijving: Lokale zandige verhoging in het rivierengebied, ontstaan door wind (duinvorming) of als hogere zandkop in
+      een natte omgeving.
     kenmerken: Kleine hoogteaccenten, vaak met bebouwing of bosjes; ecologisch waardevol door droog-nat gradiënt.
     bodem_en_water: Droger, zandiger dan omgeving; in de voet kunnen natte zones voorkomen.
     landgebruik_en_beplanting: Bosjes, erven, akkers op de hogere delen; natte vegetaties in de laagtes.
-    betekenis_voor_erfbeplanting: 'Gebruik de hoogteverschillen: droogtetolerante soorten op de top, vochtminnende soorten lager. Dit geeft een natuurlijk, robuust ontwerp.'
+    betekenis_voor_erfbeplanting: 'Gebruik de hoogteverschillen: droogtetolerante soorten op de top, vochtminnende soorten
+      lager. Dit geeft een natuurlijk, robuust ontwerp.'
   dekzandrug:
     titel: Dekzandrug
     beschrijving: Verhoging van door wind afgezet dekzand uit de laatste ijstijd. Meestal relatief droog en voedselarm.
     kenmerken: Subtiel reliëf; historisch vaak bewoning op ruggen met ontginningen eromheen.
     bodem_en_water: Zand tot lemig zand; snelle infiltratie.
     landgebruik_en_beplanting: Heide- en bosrestanten, akkers en grasland; houtwallen komen lokaal voor.
-    betekenis_voor_erfbeplanting: Kies soorten voor drogere standplaatsen; werk met struweel en houtwallen voor beschutting en biodiversiteit.
+    betekenis_voor_erfbeplanting: Kies soorten voor drogere standplaatsen; werk met struweel en houtwallen voor beschutting
+      en biodiversiteit.
   dekzandlaagte:
     titel: Dekzandlaagte / laagte
     beschrijving: Laaggelegen deel tussen dekzandruggen waar water langer blijft staan.
     kenmerken: Natter en soms veen/venige lagen; kan beekdalachtig aanvoelen.
     bodem_en_water: Zand met hogere grondwaterstand; lokaal venig.
     landgebruik_en_beplanting: Grasland, elzenbroekjes, vochtige hooilanden.
-    betekenis_voor_erfbeplanting: Kies vochtminnende soorten en benut waterberging; maak natte zones ecologisch rijk i.p.v. droog te willen maken.
+    betekenis_voor_erfbeplanting: Kies vochtminnende soorten en benut waterberging; maak natte zones ecologisch rijk i.p.v.
+      droog te willen maken.
   beekdal:
     titel: Beekdal
     beschrijving: Dalvormig laagland langs beken en kleine waterlopen, met natte bodems en periodieke inundatie.
     kenmerken: Slingerend water, natte graslanden, elzenbroek en houtwallen; belangrijk als ecologische verbinding.
     bodem_en_water: Vochtig tot nat, vaak lemig/zandig met kwel.
     landgebruik_en_beplanting: Hooiland, begrazing, elzen en wilgen langs water.
-    betekenis_voor_erfbeplanting: Beplanting langs waterlopen (els, wilg) en behoud van open natte graslanden levert veel biodiversiteit op.
+    betekenis_voor_erfbeplanting: Beplanting langs waterlopen (els, wilg) en behoud van open natte graslanden levert veel
+      biodiversiteit op.
   rivierkomvlakte:
     titel: Rivierkomvlakte (GMM)
-    beschrijving: Een rivierkomvlakte is een laaggelegen deel van het rivierenlandschap waar tijdens overstromingen vooral fijne kleideeltjes (slib) worden afgezet. Omdat de stroomsnelheid hier lager is dan nabij de rivier, bezinkt vooral het fijnste materiaal. Dit kan door de eeuwen heen leiden tot dikke pakketten komklei.
-    reliëf_en_vorm: Het reliëf is meestal zeer vlak tot zwak golvend. De overgang naar hogere oeverwallen of stroomruggen kan subtiel zijn (decimeters), maar is ecologisch en voor waterhuishouding vaak groot.
-    bodem_en_water: De bodem is vaak zware klei met hoge grondwaterstanden en periodiek waterverzadigde lagen. Ontwatering is bepalend voor draagkracht en begaanbaarheid.
-    landschap_en_structuur: Historisch is het landschap relatief open; beplanting concentreert zich rond erven, dijken en langs watergangen. In natte of marginale zones kwamen grienden voor.
-    betekenis_voor_erfbeplanting: 'Ontwerp met het open karakter als uitgangspunt: zet beplanting vooral als erf- en lijnstructuren (langs sloten/wegen) en kies soorten die natte klei verdragen. Voorkom grootschalige dichte bosvakken midden in open kommen, tenzij er een expliciete landschappelijke of ecologische reden is.'
+    beschrijving: Een rivierkomvlakte is een laaggelegen deel van het rivierenlandschap waar tijdens overstromingen vooral
+      fijne kleideeltjes (slib) worden afgezet. Omdat de stroomsnelheid hier lager is dan nabij de rivier, bezinkt vooral
+      het fijnste materiaal. Dit kan door de eeuwen heen leiden tot dikke pakketten komklei.
+    reliëf_en_vorm: Het reliëf is meestal zeer vlak tot zwak golvend. De overgang naar hogere oeverwallen of stroomruggen
+      kan subtiel zijn (decimeters), maar is ecologisch en voor waterhuishouding vaak groot.
+    bodem_en_water: De bodem is vaak zware klei met hoge grondwaterstanden en periodiek waterverzadigde lagen. Ontwatering
+      is bepalend voor draagkracht en begaanbaarheid.
+    landschap_en_structuur: Historisch is het landschap relatief open; beplanting concentreert zich rond erven, dijken en
+      langs watergangen. In natte of marginale zones kwamen grienden voor.
+    betekenis_voor_erfbeplanting: 'Ontwerp met het open karakter als uitgangspunt: zet beplanting vooral als erf- en lijnstructuren
+      (langs sloten/wegen) en kies soorten die natte klei verdragen. Voorkom grootschalige dichte bosvakken midden in open
+      kommen, tenzij er een expliciete landschappelijke of ecologische reden is.'
     bronnen:
-    - 'Wageningen Environmental Research – Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50 000 (Maas e.a., 2021): https://legendageomorfologie.wur.nl/'
+    - 'Wageningen Environmental Research – Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50 000 (Maas
+      e.a., 2021): https://legendageomorfologie.wur.nl/'
     - 'Basisregistratie Ondergrond (BRO) – Geomorfologische kaart (GMM): https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/modellen/geomorfologische-kaart-gmm/'
     - 'Geologie van Nederland – Komgrond/komklei (TNO): https://www.geologievannederland.nl/publicaties/115.html'
+  antropogeen_element:
+    titel: 'Geomorfologie: Antropogeen Element'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  beekdal_veen:
+    titel: 'Geomorfologie: Beekdal veen'
+    kernsamenenvatting: Veenlandvormen ontstaan door ophoping van organisch materiaal onder natte omstandigheden; vaak slap
+      en nat.
+    ontstaansgeschiedenis: Langdurig hoge waterstanden remmen afbraak, waardoor veenpakketten groeien; ontginning verandert
+      het systeem sterk.
+    reliëf_en_vorm: Overwegend vlak; microreliëf door petgaten, ribben en inklinking.
+    bodem_en_hydrologie: Organisch, zuurstofarm; bij ontwatering oxidatie en bodemdaling.
+    landgebruik_en_beplanting: Veenweiden, rietlanden, petgatengebieden en ontginningslandschappen.
+    betekenis_voor_erfbeplanting: Beperk bodembelasting, werk met verhoogde plantplaatsen en nat-tolerante soorten; waterbeheer
+      is cruciaal.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  beekdal_zand_leem:
+    titel: 'Geomorfologie: Beekdal zand/leem'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  daluitspoelingswaaier:
+    titel: 'Geomorfologie: Daluitspoelingswaaier'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  dekzandvlakte:
+    titel: 'Geomorfologie: Dekzandvlakte'
+    kernsamenenvatting: Door wind afgezet zand uit de laatste ijstijd, met ruggen en laagtes die sterk verschillen in vocht.
+    ontstaansgeschiedenis: Tijdens koude, droge perioden werd zand verstoven en als deken afgezet; later vormden zich podzolen
+      en lokale stuifzanden.
+    reliëf_en_vorm: Golvende ruggen (droger) en laagtes (natter), vaak subtiel reliëf.
+    bodem_en_hydrologie: Arm zand, gevoelig voor uitspoeling en droogte; in laagtes meer humus en soms kwel.
+    landgebruik_en_beplanting: Heide- en boslandschappen, kampen- en essenlandschap met houtwallen.
+    betekenis_voor_erfbeplanting: Zorg voor organische stof, mulch en windluwte; differentieer soorten tussen rug en laagte.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  depressie:
+    titel: 'Geomorfologie: Depressie'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  depressie_veen:
+    titel: 'Geomorfologie: Depressie veen'
+    kernsamenenvatting: Veenlandvormen ontstaan door ophoping van organisch materiaal onder natte omstandigheden; vaak slap
+      en nat.
+    ontstaansgeschiedenis: Langdurig hoge waterstanden remmen afbraak, waardoor veenpakketten groeien; ontginning verandert
+      het systeem sterk.
+    reliëf_en_vorm: Overwegend vlak; microreliëf door petgaten, ribben en inklinking.
+    bodem_en_hydrologie: Organisch, zuurstofarm; bij ontwatering oxidatie en bodemdaling.
+    landgebruik_en_beplanting: Veenweiden, rietlanden, petgatengebieden en ontginningslandschappen.
+    betekenis_voor_erfbeplanting: Beperk bodembelasting, werk met verhoogde plantplaatsen en nat-tolerante soorten; waterbeheer
+      is cruciaal.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  depressie_zand:
+    titel: 'Geomorfologie: Depressie zand'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  droogdal:
+    titel: 'Geomorfologie: Droogdal'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  droogdal_met_keileem:
+    titel: 'Geomorfologie: Droogdal met keileem'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  droogdal_met_veen:
+    titel: 'Geomorfologie: Droogdal met veen'
+    kernsamenenvatting: Veenlandvormen ontstaan door ophoping van organisch materiaal onder natte omstandigheden; vaak slap
+      en nat.
+    ontstaansgeschiedenis: Langdurig hoge waterstanden remmen afbraak, waardoor veenpakketten groeien; ontginning verandert
+      het systeem sterk.
+    reliëf_en_vorm: Overwegend vlak; microreliëf door petgaten, ribben en inklinking.
+    bodem_en_hydrologie: Organisch, zuurstofarm; bij ontwatering oxidatie en bodemdaling.
+    landgebruik_en_beplanting: Veenweiden, rietlanden, petgatengebieden en ontginningslandschappen.
+    betekenis_voor_erfbeplanting: Beperk bodembelasting, werk met verhoogde plantplaatsen en nat-tolerante soorten; waterbeheer
+      is cruciaal.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  es:
+    titel: 'Geomorfologie: Es'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  grondmorene_plateau_vlakte:
+    titel: 'Geomorfologie: Grondmorene plateau, -vlakte'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  grondmorenerug:
+    titel: 'Geomorfologie: Grondmorenerug'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  hoogveen:
+    titel: 'Geomorfologie: Hoogveen'
+    kernsamenenvatting: Veenlandvormen ontstaan door ophoping van organisch materiaal onder natte omstandigheden; vaak slap
+      en nat.
+    ontstaansgeschiedenis: Langdurig hoge waterstanden remmen afbraak, waardoor veenpakketten groeien; ontginning verandert
+      het systeem sterk.
+    reliëf_en_vorm: Overwegend vlak; microreliëf door petgaten, ribben en inklinking.
+    bodem_en_hydrologie: Organisch, zuurstofarm; bij ontwatering oxidatie en bodemdaling.
+    landgebruik_en_beplanting: Veenweiden, rietlanden, petgatengebieden en ontginningslandschappen.
+    betekenis_voor_erfbeplanting: Beperk bodembelasting, werk met verhoogde plantplaatsen en nat-tolerante soorten; waterbeheer
+      is cruciaal.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  ingoruines_en_periglaciale_laagten:
+    titel: 'Geomorfologie: :ingoruines en periglaciale laagten'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  kalkhelling:
+    titel: 'Geomorfologie: Kalkhelling'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  kreekbedding:
+    titel: 'Geomorfologie: Kreekbedding'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  kreekrug:
+    titel: 'Geomorfologie: Kreekrug'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  kustduinen:
+    titel: 'Geomorfologie: Kustduinen'
+    kernsamenenvatting: Door wind gevormde zandheuvels langs de kust met dynamisch reliëf en snelle drainage.
+    ontstaansgeschiedenis: Zandtransport door wind bouwde duinruggen op; fixatie door vegetatie en menselijk beheer bepaalt
+      stabiliteit.
+    reliëf_en_vorm: Sterk golvend reliëf met toppen, hellingen en valleien.
+    bodem_en_hydrologie: Zandig, vaak kalkrijker dicht bij zee; snel uitdrogend op hoge delen, nat in valleien.
+    landgebruik_en_beplanting: Duingraslanden, struweel en duinbos; recreatie en natuurbeheer dominant.
+    betekenis_voor_erfbeplanting: Scherm wind en zout, kies duintolerante soorten en voorkom verstuiving rond jonge aanplant.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  laagveenvlakte:
+    titel: 'Geomorfologie: Laagveenvlakte'
+    kernsamenenvatting: Veenlandvormen ontstaan door ophoping van organisch materiaal onder natte omstandigheden; vaak slap
+      en nat.
+    ontstaansgeschiedenis: Langdurig hoge waterstanden remmen afbraak, waardoor veenpakketten groeien; ontginning verandert
+      het systeem sterk.
+    reliëf_en_vorm: Overwegend vlak; microreliëf door petgaten, ribben en inklinking.
+    bodem_en_hydrologie: Organisch, zuurstofarm; bij ontwatering oxidatie en bodemdaling.
+    landgebruik_en_beplanting: Veenweiden, rietlanden, petgatengebieden en ontginningslandschappen.
+    betekenis_voor_erfbeplanting: Beperk bodembelasting, werk met verhoogde plantplaatsen en nat-tolerante soorten; waterbeheer
+      is cruciaal.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  losshelling:
+    titel: 'Geomorfologie: Losshelling'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  lossplateau:
+    titel: 'Geomorfologie: Lossplateau'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  meerbodem:
+    titel: 'Geomorfologie: Meerbodem'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  ontgonnen_hoogveen:
+    titel: 'Geomorfologie: Ontgonnen hoogveen'
+    kernsamenenvatting: Veenlandvormen ontstaan door ophoping van organisch materiaal onder natte omstandigheden; vaak slap
+      en nat.
+    ontstaansgeschiedenis: Langdurig hoge waterstanden remmen afbraak, waardoor veenpakketten groeien; ontginning verandert
+      het systeem sterk.
+    reliëf_en_vorm: Overwegend vlak; microreliëf door petgaten, ribben en inklinking.
+    bodem_en_hydrologie: Organisch, zuurstofarm; bij ontwatering oxidatie en bodemdaling.
+    landgebruik_en_beplanting: Veenweiden, rietlanden, petgatengebieden en ontginningslandschappen.
+    betekenis_voor_erfbeplanting: Beperk bodembelasting, werk met verhoogde plantplaatsen en nat-tolerante soorten; waterbeheer
+      is cruciaal.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  overige_afzettingen:
+    titel: 'Geomorfologie: Overige afzettingen'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  overslaggronden:
+    titel: 'Geomorfologie: Overslaggronden'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  petgaten:
+    titel: 'Geomorfologie: Petgaten'
+    kernsamenenvatting: Veenlandvormen ontstaan door ophoping van organisch materiaal onder natte omstandigheden; vaak slap
+      en nat.
+    ontstaansgeschiedenis: Langdurig hoge waterstanden remmen afbraak, waardoor veenpakketten groeien; ontginning verandert
+      het systeem sterk.
+    reliëf_en_vorm: Overwegend vlak; microreliëf door petgaten, ribben en inklinking.
+    bodem_en_hydrologie: Organisch, zuurstofarm; bij ontwatering oxidatie en bodemdaling.
+    landgebruik_en_beplanting: Veenweiden, rietlanden, petgatengebieden en ontginningslandschappen.
+    betekenis_voor_erfbeplanting: Beperk bodembelasting, werk met verhoogde plantplaatsen en nat-tolerante soorten; waterbeheer
+      is cruciaal.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  restgeul:
+    titel: 'Geomorfologie: Restgeul'
+    kernsamenenvatting: Riviergebonden laagte binnen het winterbed, gevormd door afzetting en erosie bij hoogwater.
+    ontstaansgeschiedenis: Afwisseling van afzetting (zand/klei) en uitschuring door rivierstroming; restgeulen zijn oude
+      stroomarmen.
+    reliëf_en_vorm: Complex microreliëf met geulen, ruggen en platen; periodiek overstroomd (afhankelijk van kering/maatregelen).
+    bodem_en_hydrologie: Sterk wisselend, vaak jong en gelaagd; lokaal nat en voedselrijk.
+    landgebruik_en_beplanting: Natuurgraslanden, grienden en ooibos; extensieve begrazing en waterveiligheidsbeheer.
+    betekenis_voor_erfbeplanting: Reken op dynamiek en natte perioden; kies robuuste soorten en ontwerp met overstromingsbestendige
+      zones.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  rivierkom:
+    titel: 'Geomorfologie: Rivierkom'
+    kernsamenenvatting: Laaggelegen komvlakte waar fijne klei en organisch materiaal zich ophopen; vaak nat en traag drainerend.
+    ontstaansgeschiedenis: In rustige overstromingszones bezonk fijne klei. Door ontwatering en inklinking kan het maaiveld
+      dalen.
+    reliëf_en_vorm: Vlak tot zwak golvend, meestal lager dan oeverwallen/stroomruggen.
+    bodem_en_hydrologie: Zware klei, soms veenresten; hoge grondwaterstanden en risico op zuurstoftekort/verdichting.
+    landgebruik_en_beplanting: Veelal grasland, natte landbouw, slotenrijke verkaveling; beperkte draagkracht in natte perioden.
+    betekenis_voor_erfbeplanting: Plant op verhoging, voorkom bodemverdichting, kies nat-tolerante soorten en maak ruimte
+      voor water.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  rivierterras:
+    titel: 'Geomorfologie: Rivierterras'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  rivierterras_klei:
+    titel: 'Geomorfologie: Rivierterras klei'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  rivierterras_zand:
+    titel: 'Geomorfologie: Rivierterras zand'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  smeltwaterafzettingen_sandr:
+    titel: 'Geomorfologie: Smeltwaterafzettingen, sandr'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  strandvlakte:
+    titel: 'Geomorfologie: Strandvlakte'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  strandwal:
+    titel: 'Geomorfologie: Strandwal'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  stroomrug_oeverwal:
+    titel: 'Geomorfologie: Stroomrug, oeverwal'
+    kernsamenenvatting: Hogere, zandige/zavelige rug langs een voormalige of huidige rivierloop, gevormd door afzetting bij
+      overstromingen.
+    ontstaansgeschiedenis: Tijdens hoogwater zette de rivier grover materiaal (zand/zavel) dicht bij de geul af. Zo ontstond
+      een verhoogde rug in het komgebied.
+    reliëf_en_vorm: Licht verhoogd reliëf (decimeters tot meters) met flauwe hellingen naar lagere kommen of uiterwaarden.
+    bodem_en_hydrologie: Relatief goed doorlatend; vaak zavelig tot licht kleiig met betere draagkracht en diepere beworteling
+      dan komklei.
+    landgebruik_en_beplanting: Historisch geschikt voor bewoning, erven, boomgaarden en akkerbouw; hagen en laanbeplanting
+      komen veel voor.
+    betekenis_voor_erfbeplanting: Gebruik de hogere delen voor bomen en droge functies; benut lagere randen voor waterberging
+      en natte beplanting.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  stuifzandduin:
+    titel: 'Geomorfologie: Stuifzandduin (en bijbehorende vlaktes)'
+    kernsamenenvatting: Door wind gevormde zandheuvels langs de kust met dynamisch reliëf en snelle drainage.
+    ontstaansgeschiedenis: Zandtransport door wind bouwde duinruggen op; fixatie door vegetatie en menselijk beheer bepaalt
+      stabiliteit.
+    reliëf_en_vorm: Sterk golvend reliëf met toppen, hellingen en valleien.
+    bodem_en_hydrologie: Zandig, vaak kalkrijker dicht bij zee; snel uitdrogend op hoge delen, nat in valleien.
+    landgebruik_en_beplanting: Duingraslanden, struweel en duinbos; recreatie en natuurbeheer dominant.
+    betekenis_voor_erfbeplanting: Scherm wind en zout, kies duintolerante soorten en voorkom verstuiving rond jonge aanplant.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  stuwwal:
+    titel: 'Geomorfologie: Stuwwal'
+    kernsamenenvatting: Opgestuwde heuvelrug uit het Saalien (ijstijd), met sterk reliëf en variatie in zand/leem/keileem.
+    ontstaansgeschiedenis: Gletsjers schoven zand en grind op tot ruggen; later doorsneden door smeltwater en bewerkt door
+      erosie.
+    reliëf_en_vorm: Steile hellingen en hoogteverschillen; droogte op toppen, kwel aan de voet.
+    bodem_en_hydrologie: Zandig met lokale leem/keileemlagen; infiltratie hoog, maar keileem kan water stuwen.
+    landgebruik_en_beplanting: Bosrijke gebieden met heide en landgoederen; akkers op plateaus, beken aan de voet.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten op toppen; benut kwelzones voor natte beplanting en wateropvang.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  terp:
+    titel: 'Geomorfologie: Terp'
+    kernsamenenvatting: Vlakke tot zwak golvende kleivlakte opgebouwd door (historische) getijde- en zeewaterafzettingen.
+    ontstaansgeschiedenis: Klei en slib bezonken in kwelders en geulen; na bedijking volgden ontwatering en landbouwkundig
+      gebruik.
+    reliëf_en_vorm: Weinig reliëf; lokaal microhoogtes (terpen, oude kreekruggen).
+    bodem_en_hydrologie: Zware tot zavelige klei, hoog nutriënten; risico op verdichting en natte periodes.
+    landgebruik_en_beplanting: Intensieve akkerbouw en grasland; erven vaak op terpen of ophogingen, met windsingels.
+    betekenis_voor_erfbeplanting: Plant op ophoging, verbeter structuur (organische stof), kies soorten die natte winters
+      verdragen.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  uiterwaard:
+    titel: 'Geomorfologie: Uiterwaard'
+    kernsamenenvatting: Riviergebonden laagte binnen het winterbed, gevormd door afzetting en erosie bij hoogwater.
+    ontstaansgeschiedenis: Afwisseling van afzetting (zand/klei) en uitschuring door rivierstroming; restgeulen zijn oude
+      stroomarmen.
+    reliëf_en_vorm: Complex microreliëf met geulen, ruggen en platen; periodiek overstroomd (afhankelijk van kering/maatregelen).
+    bodem_en_hydrologie: Sterk wisselend, vaak jong en gelaagd; lokaal nat en voedselrijk.
+    landgebruik_en_beplanting: Natuurgraslanden, grienden en ooibos; extensieve begrazing en waterveiligheidsbeheer.
+    betekenis_voor_erfbeplanting: Reken op dynamiek en natte perioden; kies robuuste soorten en ontwerp met overstromingsbestendige
+      zones.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  veenrest:
+    titel: 'Geomorfologie: Veenrest'
+    kernsamenenvatting: Veenlandvormen ontstaan door ophoping van organisch materiaal onder natte omstandigheden; vaak slap
+      en nat.
+    ontstaansgeschiedenis: Langdurig hoge waterstanden remmen afbraak, waardoor veenpakketten groeien; ontginning verandert
+      het systeem sterk.
+    reliëf_en_vorm: Overwegend vlak; microreliëf door petgaten, ribben en inklinking.
+    bodem_en_hydrologie: Organisch, zuurstofarm; bij ontwatering oxidatie en bodemdaling.
+    landgebruik_en_beplanting: Veenweiden, rietlanden, petgatengebieden en ontginningslandschappen.
+    betekenis_voor_erfbeplanting: Beperk bodembelasting, werk met verhoogde plantplaatsen en nat-tolerante soorten; waterbeheer
+      is cruciaal.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  water:
+    titel: 'Geomorfologie: Water'
+    kernsamenenvatting: Landvorm die het reliëf en de afzettingsgeschiedenis van de standplaats bepaalt.
+    ontstaansgeschiedenis: Ontstaan door combinatie van afzetting, erosie en (soms) menselijk ingrijpen.
+    reliëf_en_vorm: Vorm en hoogteverschillen sturen waterafvoer en nat–droog gradiënten.
+    bodem_en_hydrologie: Bodemtextuur en gelaagdheid volgen de afzetting; dit bepaalt doorlatendheid en beworteling.
+    landgebruik_en_beplanting: Landgebruik en beplanting sluiten aan bij draagkracht en waterhuishouding.
+    betekenis_voor_erfbeplanting: Stem soortenkeuze en ontwerp af op reliëf, bodem en water; benut microreliëf in het plan.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  zeekleivlakte:
+    titel: 'Geomorfologie: Zeekleivlakte'
+    kernsamenenvatting: Vlakke tot zwak golvende kleivlakte opgebouwd door (historische) getijde- en zeewaterafzettingen.
+    ontstaansgeschiedenis: Klei en slib bezonken in kwelders en geulen; na bedijking volgden ontwatering en landbouwkundig
+      gebruik.
+    reliëf_en_vorm: Weinig reliëf; lokaal microhoogtes (terpen, oude kreekruggen).
+    bodem_en_hydrologie: Zware tot zavelige klei, hoog nutriënten; risico op verdichting en natte periodes.
+    landgebruik_en_beplanting: Intensieve akkerbouw en grasland; erven vaak op terpen of ophogingen, met windsingels.
+    betekenis_voor_erfbeplanting: Plant op ophoging, verbeter structuur (organische stof), kies soorten die natte winters
+      verdragen.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  zoetwatergetijdenafzetting:
+    titel: 'Geomorfologie: Zoetwatergetijdenafzetting'
+    kernsamenenvatting: Vlakke tot zwak golvende kleivlakte opgebouwd door (historische) getijde- en zeewaterafzettingen.
+    ontstaansgeschiedenis: Klei en slib bezonken in kwelders en geulen; na bedijking volgden ontwatering en landbouwkundig
+      gebruik.
+    reliëf_en_vorm: Weinig reliëf; lokaal microhoogtes (terpen, oude kreekruggen).
+    bodem_en_hydrologie: Zware tot zavelige klei, hoog nutriënten; risico op verdichting en natte periodes.
+    landgebruik_en_beplanting: Intensieve akkerbouw en grasland; erven vaak op terpen of ophogingen, met windsingels.
+    betekenis_voor_erfbeplanting: Plant op ophoging, verbeter structuur (organische stof), kies soorten die natte winters
+      verdragen.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
+  zoutwatergetijdenafzetting:
+    titel: 'Geomorfologie: Zoutwatergetijdenafzetting'
+    kernsamenenvatting: Vlakke tot zwak golvende kleivlakte opgebouwd door (historische) getijde- en zeewaterafzettingen.
+    ontstaansgeschiedenis: Klei en slib bezonken in kwelders en geulen; na bedijking volgden ontwatering en landbouwkundig
+      gebruik.
+    reliëf_en_vorm: Weinig reliëf; lokaal microhoogtes (terpen, oude kreekruggen).
+    bodem_en_hydrologie: Zware tot zavelige klei, hoog nutriënten; risico op verdichting en natte periodes.
+    landgebruik_en_beplanting: Intensieve akkerbouw en grasland; erven vaak op terpen of ophogingen, met windsingels.
+    betekenis_voor_erfbeplanting: Plant op ophoging, verbeter structuur (organische stof), kies soorten die natte winters
+      verdragen.
+    bronnen:
+    - BRO / PDOK – Geomorfologische kaart (GMM) en toelichtingen.
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - Geologie van Nederland – achtergrond over afzettingen en landvormen.
 nsn:
   oeverwal_en_stroomrug:
     titel: 'Natuurlijk systeem: oeverwal/stroomrug'
-    beschrijving: Relatief hogere, beter ontwaterde delen in een rivierlandschap. Hier is de groeiplaats vaak warmer en droger dan in de kommen.
+    beschrijving: Relatief hogere, beter ontwaterde delen in een rivierlandschap. Hier is de groeiplaats vaak warmer en droger
+      dan in de kommen.
     betekenis: Brede soortenkeuze; combineer erfbeplanting met hagen, boomgaarden en laanstructuren.
     typische_bodemtypes:
     - zavel
@@ -281,7 +954,8 @@ nsn:
     bronnen_aanvullend: *id001
   komgebied:
     titel: 'Natuurlijk systeem: komgebied'
-    beschrijving: Laaggelegen, natte delen met zware klei en hoge grondwaterstanden. Van nature geschikt voor natte graslanden, moerasranden en grienden.
+    beschrijving: Laaggelegen, natte delen met zware klei en hoge grondwaterstanden. Van nature geschikt voor natte graslanden,
+      moerasranden en grienden.
     betekenis: Kies natte toleranties en houd het landschap open; lijnvormige beplanting is vaak passender dan grote bosvakken.
     typische_bodemtypes:
     - klei
@@ -292,7 +966,8 @@ nsn:
   dekzandlandschap:
     titel: 'Natuurlijk systeem: dekzandlandschap'
     beschrijving: Zandige bodems met droog-nat gradiënten tussen ruggen en laagtes, vaak met beken en kwelzones.
-    betekenis: 'Werk met variatie: droogtetolerante soorten op ruggen, vochtminnende soorten in laagtes; houtwallen en struweel passen goed.'
+    betekenis: 'Werk met variatie: droogtetolerante soorten op ruggen, vochtminnende soorten in laagtes; houtwallen en struweel
+      passen goed.'
     typische_bodemtypes:
     - zand
     - lemig_zand
@@ -300,10 +975,15 @@ nsn:
     bronnen_aanvullend: *id001
   rivierkom:
     titel: 'Natuurlijk systeem: Rivierkom (NSN)'
-    beschrijving: Rivierkommen zijn de laaggelegen delen binnen een rivierdelta- of stroomgordellandschap waar water en fijne sedimenten zich ophopen. Het systeem wordt sterk beïnvloed door overstromingsdynamiek (historisch), kleiafzetting en huidig waterbeheer (peilen, bemaling, drainage).
-    proces_en_gradiënten: Kenmerkend zijn gradiënten van nat naar droger op korte afstand (kom → oeverwal/stroomrug), en van zuurstofarm naar beter doorlucht op microreliëf. Deze gradiënten sturen vegetatiepatronen en soortenkeuze.
-    typische_ecotopen: Natte graslanden, riet- en ruigtevegetaties, sloten en weteringen met oeverzones, wilgenstruweel en elzenbroekbos op natte plekken, en grienden waar historisch wilgenteelt plaatsvond.
-    betekenis_voor_erfbeplanting: Kies beplanting die robuust is bij natte winters én warmere, drogere zomers. Werk met water- en oeverzones (plas-dras, flauwe taluds), en plaats hogere/drogere soorten op microverhogingen of nabij oeverwallen.
+    beschrijving: Rivierkommen zijn de laaggelegen delen binnen een rivierdelta- of stroomgordellandschap waar water en fijne
+      sedimenten zich ophopen. Het systeem wordt sterk beïnvloed door overstromingsdynamiek (historisch), kleiafzetting en
+      huidig waterbeheer (peilen, bemaling, drainage).
+    proces_en_gradiënten: Kenmerkend zijn gradiënten van nat naar droger op korte afstand (kom → oeverwal/stroomrug), en van
+      zuurstofarm naar beter doorlucht op microreliëf. Deze gradiënten sturen vegetatiepatronen en soortenkeuze.
+    typische_ecotopen: Natte graslanden, riet- en ruigtevegetaties, sloten en weteringen met oeverzones, wilgenstruweel en
+      elzenbroekbos op natte plekken, en grienden waar historisch wilgenteelt plaatsvond.
+    betekenis_voor_erfbeplanting: Kies beplanting die robuust is bij natte winters én warmere, drogere zomers. Werk met water-
+      en oeverzones (plas-dras, flauwe taluds), en plaats hogere/drogere soorten op microverhogingen of nabij oeverwallen.
     bronnen:
     - Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen (WUR Groenekennis).
     - 'CLO – Rivierengebied (achtergrond en landschapskenmerken): https://www.clo.nl/indicatoren/nl100902-rivierengebied'
@@ -313,11 +993,758 @@ nsn:
     - veen
     koppeling_met_bodem: Komgebieden zijn lager en waterhoudend; vaak (zware) rivierklei/komklei met hogere grondwaterstanden.
     bronnen_aanvullend: *id001
+  antropogeen_element:
+    titel: 'Natuurlijk systeem: Antropogeen Element'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  beekdal:
+    titel: 'Natuurlijk systeem: Beekdal'
+    kernsamenenvatting: Dal- en beekdalsystemen met kwel/inzijging en sterke nat–droog gradiënten langs de beek of dalbodem.
+    systeemwerking: Water en sediment worden geconcentreerd in het dal; afwisseling van natte dalbodem en drogere flanken.
+    water_en_dynamiek: Periodiek nat door overstroming of kwel; in droogdalen vooral afvoer bij piekbuien en erosieprocessen.
+    bodemontwikkeling: Van natte organische of kleiige dalbodems tot zand/leem op flanken; lokaal ijzerrijke kwel.
+    vegetatiestructuur_en_beplanting: Elzenbroek en wilgenstruweel in natte zones; kruidenrijk grasland en houtwallen op flanken.
+    beheerimplicaties: Beekherstel, maaibeheer en bufferstroken zijn bepalend; let op nutriënten en erosie.
+    betekenis_voor_erfbeplanting: Gebruik natte zones voor waterberging en natuur; plaats gebouwen/boomgaarden op hogere flanken.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  beekdal_veen:
+    titel: 'Natuurlijk systeem: Beekdal veen'
+    kernsamenenvatting: Veen- en veenweidesystemen met hoge grondwaterstanden, slappe bodem en sterke invloed van ontwatering
+      en inklinking.
+    systeemwerking: Opbouw van veen onder natte omstandigheden; bij ontwatering volgt oxidatie en maaivelddaling.
+    water_en_dynamiek: 'Peilen sturen alles: te laag geeft bodemdaling/droogteschade, te hoog geeft draagkrachtproblemen.'
+    bodemontwikkeling: Organisch, zuurstofarm en vaak voedingsrijker bij bemesting; lage draagkracht en gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Riet, zeggen, elzenbroek in natte delen; graslanden en slotenrijke structuren in ontgonnen
+      veen.
+    beheerimplicaties: Waterbeheer en extensivering zijn sleutel; beperk zware machines en stimuleer organische stofbalans.
+    betekenis_voor_erfbeplanting: Werk met nat-tolerante soorten, lichte constructies en verhoogde plantplaatsen; voorkom
+      bodembelasting.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  beekdal_zand_leem:
+    titel: 'Natuurlijk systeem: Beekdal zand/leem'
+    kernsamenenvatting: Dal- en beekdalsystemen met kwel/inzijging en sterke nat–droog gradiënten langs de beek of dalbodem.
+    systeemwerking: Water en sediment worden geconcentreerd in het dal; afwisseling van natte dalbodem en drogere flanken.
+    water_en_dynamiek: Periodiek nat door overstroming of kwel; in droogdalen vooral afvoer bij piekbuien en erosieprocessen.
+    bodemontwikkeling: Van natte organische of kleiige dalbodems tot zand/leem op flanken; lokaal ijzerrijke kwel.
+    vegetatiestructuur_en_beplanting: Elzenbroek en wilgenstruweel in natte zones; kruidenrijk grasland en houtwallen op flanken.
+    beheerimplicaties: Beekherstel, maaibeheer en bufferstroken zijn bepalend; let op nutriënten en erosie.
+    betekenis_voor_erfbeplanting: Gebruik natte zones voor waterberging en natuur; plaats gebouwen/boomgaarden op hogere flanken.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  daluitspoelingswaaier:
+    titel: 'Natuurlijk systeem: Daluitspoelingswaaier'
+    kernsamenenvatting: Dal- en beekdalsystemen met kwel/inzijging en sterke nat–droog gradiënten langs de beek of dalbodem.
+    systeemwerking: Water en sediment worden geconcentreerd in het dal; afwisseling van natte dalbodem en drogere flanken.
+    water_en_dynamiek: Periodiek nat door overstroming of kwel; in droogdalen vooral afvoer bij piekbuien en erosieprocessen.
+    bodemontwikkeling: Van natte organische of kleiige dalbodems tot zand/leem op flanken; lokaal ijzerrijke kwel.
+    vegetatiestructuur_en_beplanting: Elzenbroek en wilgenstruweel in natte zones; kruidenrijk grasland en houtwallen op flanken.
+    beheerimplicaties: Beekherstel, maaibeheer en bufferstroken zijn bepalend; let op nutriënten en erosie.
+    betekenis_voor_erfbeplanting: Gebruik natte zones voor waterberging en natuur; plaats gebouwen/boomgaarden op hogere flanken.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  dekzandrug:
+    titel: 'Natuurlijk systeem: Dekzandrug'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  dekzandvlakte:
+    titel: 'Natuurlijk systeem: Dekzandvlakte'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  depressie:
+    titel: 'Natuurlijk systeem: Depressie'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  depressie_veen:
+    titel: 'Natuurlijk systeem: Depressie veen'
+    kernsamenenvatting: Veen- en veenweidesystemen met hoge grondwaterstanden, slappe bodem en sterke invloed van ontwatering
+      en inklinking.
+    systeemwerking: Opbouw van veen onder natte omstandigheden; bij ontwatering volgt oxidatie en maaivelddaling.
+    water_en_dynamiek: 'Peilen sturen alles: te laag geeft bodemdaling/droogteschade, te hoog geeft draagkrachtproblemen.'
+    bodemontwikkeling: Organisch, zuurstofarm en vaak voedingsrijker bij bemesting; lage draagkracht en gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Riet, zeggen, elzenbroek in natte delen; graslanden en slotenrijke structuren in ontgonnen
+      veen.
+    beheerimplicaties: Waterbeheer en extensivering zijn sleutel; beperk zware machines en stimuleer organische stofbalans.
+    betekenis_voor_erfbeplanting: Werk met nat-tolerante soorten, lichte constructies en verhoogde plantplaatsen; voorkom
+      bodembelasting.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  depressie_zand:
+    titel: 'Natuurlijk systeem: Depressie zand'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  droogdal:
+    titel: 'Natuurlijk systeem: Droogdal'
+    kernsamenenvatting: Dal- en beekdalsystemen met kwel/inzijging en sterke nat–droog gradiënten langs de beek of dalbodem.
+    systeemwerking: Water en sediment worden geconcentreerd in het dal; afwisseling van natte dalbodem en drogere flanken.
+    water_en_dynamiek: Periodiek nat door overstroming of kwel; in droogdalen vooral afvoer bij piekbuien en erosieprocessen.
+    bodemontwikkeling: Van natte organische of kleiige dalbodems tot zand/leem op flanken; lokaal ijzerrijke kwel.
+    vegetatiestructuur_en_beplanting: Elzenbroek en wilgenstruweel in natte zones; kruidenrijk grasland en houtwallen op flanken.
+    beheerimplicaties: Beekherstel, maaibeheer en bufferstroken zijn bepalend; let op nutriënten en erosie.
+    betekenis_voor_erfbeplanting: Gebruik natte zones voor waterberging en natuur; plaats gebouwen/boomgaarden op hogere flanken.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  droogdal_met_keileem:
+    titel: 'Natuurlijk systeem: Droogdal met keileem'
+    kernsamenenvatting: Dal- en beekdalsystemen met kwel/inzijging en sterke nat–droog gradiënten langs de beek of dalbodem.
+    systeemwerking: Water en sediment worden geconcentreerd in het dal; afwisseling van natte dalbodem en drogere flanken.
+    water_en_dynamiek: Periodiek nat door overstroming of kwel; in droogdalen vooral afvoer bij piekbuien en erosieprocessen.
+    bodemontwikkeling: Van natte organische of kleiige dalbodems tot zand/leem op flanken; lokaal ijzerrijke kwel.
+    vegetatiestructuur_en_beplanting: Elzenbroek en wilgenstruweel in natte zones; kruidenrijk grasland en houtwallen op flanken.
+    beheerimplicaties: Beekherstel, maaibeheer en bufferstroken zijn bepalend; let op nutriënten en erosie.
+    betekenis_voor_erfbeplanting: Gebruik natte zones voor waterberging en natuur; plaats gebouwen/boomgaarden op hogere flanken.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  droogdal_met_veen:
+    titel: 'Natuurlijk systeem: Droogdal met veen'
+    kernsamenenvatting: Veen- en veenweidesystemen met hoge grondwaterstanden, slappe bodem en sterke invloed van ontwatering
+      en inklinking.
+    systeemwerking: Opbouw van veen onder natte omstandigheden; bij ontwatering volgt oxidatie en maaivelddaling.
+    water_en_dynamiek: 'Peilen sturen alles: te laag geeft bodemdaling/droogteschade, te hoog geeft draagkrachtproblemen.'
+    bodemontwikkeling: Organisch, zuurstofarm en vaak voedingsrijker bij bemesting; lage draagkracht en gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Riet, zeggen, elzenbroek in natte delen; graslanden en slotenrijke structuren in ontgonnen
+      veen.
+    beheerimplicaties: Waterbeheer en extensivering zijn sleutel; beperk zware machines en stimuleer organische stofbalans.
+    betekenis_voor_erfbeplanting: Werk met nat-tolerante soorten, lichte constructies en verhoogde plantplaatsen; voorkom
+      bodembelasting.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  es:
+    titel: 'Natuurlijk systeem: Es'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  grondmorene_plateau_vlakte:
+    titel: 'Natuurlijk systeem: Grondmorene plateau, -vlakte'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  grondmorenerug:
+    titel: 'Natuurlijk systeem: Grondmorenerug'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  hoogveen:
+    titel: 'Natuurlijk systeem: Hoogveen'
+    kernsamenenvatting: Veen- en veenweidesystemen met hoge grondwaterstanden, slappe bodem en sterke invloed van ontwatering
+      en inklinking.
+    systeemwerking: Opbouw van veen onder natte omstandigheden; bij ontwatering volgt oxidatie en maaivelddaling.
+    water_en_dynamiek: 'Peilen sturen alles: te laag geeft bodemdaling/droogteschade, te hoog geeft draagkrachtproblemen.'
+    bodemontwikkeling: Organisch, zuurstofarm en vaak voedingsrijker bij bemesting; lage draagkracht en gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Riet, zeggen, elzenbroek in natte delen; graslanden en slotenrijke structuren in ontgonnen
+      veen.
+    beheerimplicaties: Waterbeheer en extensivering zijn sleutel; beperk zware machines en stimuleer organische stofbalans.
+    betekenis_voor_erfbeplanting: Werk met nat-tolerante soorten, lichte constructies en verhoogde plantplaatsen; voorkom
+      bodembelasting.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  ingoruines_en_periglaciale_laagten:
+    titel: 'Natuurlijk systeem: :ingoruines en periglaciale laagten'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  kalkhelling:
+    titel: 'Natuurlijk systeem: Kalkhelling'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  kreekbedding:
+    titel: 'Natuurlijk systeem: Kreekbedding'
+    kernsamenenvatting: Riviersystemen met microreliëf en afwisseling van natte laagtes en hogere ruggen, gevormd door waterstroming
+      en sedimentatie.
+    systeemwerking: Afzetting van zand/zavel op ruggen en klei in laagtes; (historisch) overstroming en huidige waterkering/peilbeheer.
+    water_en_dynamiek: Natte winters, tijdelijk hoge waterstanden; laagtes houden langer water vast, hogere ruggen drogen
+      sneller uit.
+    bodemontwikkeling: Variatie van zavel/klei tot zandige ruggen; vaak vruchtbaar maar gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Ooibossen, struweel en graslanden; op hogere delen boomgaarden en erven met hagen en
+      knotbomen.
+    beheerimplicaties: Ruimte voor water, beheer van sloten/kribben en bodemstructuur zijn bepalend.
+    betekenis_voor_erfbeplanting: 'Werk met hoogteverschil: natte zones voor water en biodiversiteit, hogere plekken voor
+      bomen en moestuin.'
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  kreekrug:
+    titel: 'Natuurlijk systeem: Kreekrug'
+    kernsamenenvatting: Riviersystemen met microreliëf en afwisseling van natte laagtes en hogere ruggen, gevormd door waterstroming
+      en sedimentatie.
+    systeemwerking: Afzetting van zand/zavel op ruggen en klei in laagtes; (historisch) overstroming en huidige waterkering/peilbeheer.
+    water_en_dynamiek: Natte winters, tijdelijk hoge waterstanden; laagtes houden langer water vast, hogere ruggen drogen
+      sneller uit.
+    bodemontwikkeling: Variatie van zavel/klei tot zandige ruggen; vaak vruchtbaar maar gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Ooibossen, struweel en graslanden; op hogere delen boomgaarden en erven met hagen en
+      knotbomen.
+    beheerimplicaties: Ruimte voor water, beheer van sloten/kribben en bodemstructuur zijn bepalend.
+    betekenis_voor_erfbeplanting: 'Werk met hoogteverschil: natte zones voor water en biodiversiteit, hogere plekken voor
+      bomen en moestuin.'
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  kustduinen:
+    titel: 'Natuurlijk systeem: Kustduinen'
+    kernsamenenvatting: Zandig kustsysteem met winddynamiek, grondwaterlenzen en sterke gradiënten van nat naar droog.
+    systeemwerking: Vorming en verplaatsing van zand door wind; afwisseling van duintoppen, valleien en oudere duinruggen.
+    water_en_dynamiek: Neerslag infiltreert snel; lokaal natte duinvalleien door kwel/grondwater. Zoutinvloed vooral aan zeezijde.
+    bodemontwikkeling: Arm, kalkrijk tot kalkarm zand; snelle uitdroging op hoge delen, organische opbouw in valleien.
+    vegetatiestructuur_en_beplanting: Duingraslanden, struweel (duindoorn/liguster), duinbos (den/berk/eik) afhankelijk van
+      beheer en kalkgehalte.
+    beheerimplicaties: Sturing via begrazing/maaien of dynamisch kustbeheer; let op verstuiving en recreatiedruk.
+    betekenis_voor_erfbeplanting: Gebruik wind- en zouttolerante soorten; creëer luwtes met struweel/houtwal en voorkom verdroging
+      met mulch.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  laagveenvlakte:
+    titel: 'Natuurlijk systeem: Laagveenvlakte'
+    kernsamenenvatting: Veen- en veenweidesystemen met hoge grondwaterstanden, slappe bodem en sterke invloed van ontwatering
+      en inklinking.
+    systeemwerking: Opbouw van veen onder natte omstandigheden; bij ontwatering volgt oxidatie en maaivelddaling.
+    water_en_dynamiek: 'Peilen sturen alles: te laag geeft bodemdaling/droogteschade, te hoog geeft draagkrachtproblemen.'
+    bodemontwikkeling: Organisch, zuurstofarm en vaak voedingsrijker bij bemesting; lage draagkracht en gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Riet, zeggen, elzenbroek in natte delen; graslanden en slotenrijke structuren in ontgonnen
+      veen.
+    beheerimplicaties: Waterbeheer en extensivering zijn sleutel; beperk zware machines en stimuleer organische stofbalans.
+    betekenis_voor_erfbeplanting: Werk met nat-tolerante soorten, lichte constructies en verhoogde plantplaatsen; voorkom
+      bodembelasting.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  losshelling:
+    titel: 'Natuurlijk systeem: Losshelling'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  lossplateau:
+    titel: 'Natuurlijk systeem: Lossplateau'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  meerbodem:
+    titel: 'Natuurlijk systeem: Meerbodem'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  ontgonnen_hoogveen:
+    titel: 'Natuurlijk systeem: Ontgonnen hoogveen'
+    kernsamenenvatting: Veen- en veenweidesystemen met hoge grondwaterstanden, slappe bodem en sterke invloed van ontwatering
+      en inklinking.
+    systeemwerking: Opbouw van veen onder natte omstandigheden; bij ontwatering volgt oxidatie en maaivelddaling.
+    water_en_dynamiek: 'Peilen sturen alles: te laag geeft bodemdaling/droogteschade, te hoog geeft draagkrachtproblemen.'
+    bodemontwikkeling: Organisch, zuurstofarm en vaak voedingsrijker bij bemesting; lage draagkracht en gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Riet, zeggen, elzenbroek in natte delen; graslanden en slotenrijke structuren in ontgonnen
+      veen.
+    beheerimplicaties: Waterbeheer en extensivering zijn sleutel; beperk zware machines en stimuleer organische stofbalans.
+    betekenis_voor_erfbeplanting: Werk met nat-tolerante soorten, lichte constructies en verhoogde plantplaatsen; voorkom
+      bodembelasting.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  overige_afzettingen:
+    titel: 'Natuurlijk systeem: Overige afzettingen'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  overslaggronden:
+    titel: 'Natuurlijk systeem: Overslaggronden'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  petgaten:
+    titel: 'Natuurlijk systeem: Petgaten'
+    kernsamenenvatting: Veen- en veenweidesystemen met hoge grondwaterstanden, slappe bodem en sterke invloed van ontwatering
+      en inklinking.
+    systeemwerking: Opbouw van veen onder natte omstandigheden; bij ontwatering volgt oxidatie en maaivelddaling.
+    water_en_dynamiek: 'Peilen sturen alles: te laag geeft bodemdaling/droogteschade, te hoog geeft draagkrachtproblemen.'
+    bodemontwikkeling: Organisch, zuurstofarm en vaak voedingsrijker bij bemesting; lage draagkracht en gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Riet, zeggen, elzenbroek in natte delen; graslanden en slotenrijke structuren in ontgonnen
+      veen.
+    beheerimplicaties: Waterbeheer en extensivering zijn sleutel; beperk zware machines en stimuleer organische stofbalans.
+    betekenis_voor_erfbeplanting: Werk met nat-tolerante soorten, lichte constructies en verhoogde plantplaatsen; voorkom
+      bodembelasting.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  restgeul:
+    titel: 'Natuurlijk systeem: Restgeul'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  rivierduin:
+    titel: 'Natuurlijk systeem: Rivierduin'
+    kernsamenenvatting: Zandig kustsysteem met winddynamiek, grondwaterlenzen en sterke gradiënten van nat naar droog.
+    systeemwerking: Vorming en verplaatsing van zand door wind; afwisseling van duintoppen, valleien en oudere duinruggen.
+    water_en_dynamiek: Neerslag infiltreert snel; lokaal natte duinvalleien door kwel/grondwater. Zoutinvloed vooral aan zeezijde.
+    bodemontwikkeling: Arm, kalkrijk tot kalkarm zand; snelle uitdroging op hoge delen, organische opbouw in valleien.
+    vegetatiestructuur_en_beplanting: Duingraslanden, struweel (duindoorn/liguster), duinbos (den/berk/eik) afhankelijk van
+      beheer en kalkgehalte.
+    beheerimplicaties: Sturing via begrazing/maaien of dynamisch kustbeheer; let op verstuiving en recreatiedruk.
+    betekenis_voor_erfbeplanting: Gebruik wind- en zouttolerante soorten; creëer luwtes met struweel/houtwal en voorkom verdroging
+      met mulch.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  rivierterras:
+    titel: 'Natuurlijk systeem: Rivierterras'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  rivierterras_klei:
+    titel: 'Natuurlijk systeem: Rivierterras klei'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  rivierterras_zand:
+    titel: 'Natuurlijk systeem: Rivierterras zand'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  smeltwaterafzettingen_sandr:
+    titel: 'Natuurlijk systeem: Smeltwaterafzettingen, sandr'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  strandvlakte:
+    titel: 'Natuurlijk systeem: Strandvlakte'
+    kernsamenenvatting: Kust- en zeekleigebieden worden bepaald door (historische) getijdenwerking, kleiafzetting en vaak
+      kunstmatig peilbeheer.
+    systeemwerking: Sedimentatie van klei/zand in ondiepe kustsystemen; later vaak bedijkt en ontwaterd.
+    water_en_dynamiek: Hoge grondwaterstanden en beperkte infiltratie; risico op verzilting en wateroverlast bij piekbuien.
+    bodemontwikkeling: Zware tot zavelige klei met hoge voedingsrijkdom; structuur en draagkracht zijn aandachtspunten.
+    vegetatiestructuur_en_beplanting: Riet/ruigte langs sloten, natte graslanden; op hogere delen vruchtbare akkers en erven
+      met windsingels.
+    beheerimplicaties: Peilbeheer, drainage en bodembewerking bepalen zuurstof en berijdbaarheid; voorkom verdichting.
+    betekenis_voor_erfbeplanting: Kies soorten die natte winters verdragen; plant op ophoging/terp en werk met flauwe taluds
+      en waterberging.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  strandwal:
+    titel: 'Natuurlijk systeem: Strandwal'
+    kernsamenenvatting: Kust- en zeekleigebieden worden bepaald door (historische) getijdenwerking, kleiafzetting en vaak
+      kunstmatig peilbeheer.
+    systeemwerking: Sedimentatie van klei/zand in ondiepe kustsystemen; later vaak bedijkt en ontwaterd.
+    water_en_dynamiek: Hoge grondwaterstanden en beperkte infiltratie; risico op verzilting en wateroverlast bij piekbuien.
+    bodemontwikkeling: Zware tot zavelige klei met hoge voedingsrijkdom; structuur en draagkracht zijn aandachtspunten.
+    vegetatiestructuur_en_beplanting: Riet/ruigte langs sloten, natte graslanden; op hogere delen vruchtbare akkers en erven
+      met windsingels.
+    beheerimplicaties: Peilbeheer, drainage en bodembewerking bepalen zuurstof en berijdbaarheid; voorkom verdichting.
+    betekenis_voor_erfbeplanting: Kies soorten die natte winters verdragen; plant op ophoging/terp en werk met flauwe taluds
+      en waterberging.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  stroomrug_oeverwal:
+    titel: 'Natuurlijk systeem: Stroomrug, oeverwal'
+    kernsamenenvatting: Riviersystemen met microreliëf en afwisseling van natte laagtes en hogere ruggen, gevormd door waterstroming
+      en sedimentatie.
+    systeemwerking: Afzetting van zand/zavel op ruggen en klei in laagtes; (historisch) overstroming en huidige waterkering/peilbeheer.
+    water_en_dynamiek: Natte winters, tijdelijk hoge waterstanden; laagtes houden langer water vast, hogere ruggen drogen
+      sneller uit.
+    bodemontwikkeling: Variatie van zavel/klei tot zandige ruggen; vaak vruchtbaar maar gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Ooibossen, struweel en graslanden; op hogere delen boomgaarden en erven met hagen en
+      knotbomen.
+    beheerimplicaties: Ruimte voor water, beheer van sloten/kribben en bodemstructuur zijn bepalend.
+    betekenis_voor_erfbeplanting: 'Werk met hoogteverschil: natte zones voor water en biodiversiteit, hogere plekken voor
+      bomen en moestuin.'
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  stuifzandduin:
+    titel: 'Natuurlijk systeem: Stuifzandduin (en bijbehorende vlaktes)'
+    kernsamenenvatting: Zandig kustsysteem met winddynamiek, grondwaterlenzen en sterke gradiënten van nat naar droog.
+    systeemwerking: Vorming en verplaatsing van zand door wind; afwisseling van duintoppen, valleien en oudere duinruggen.
+    water_en_dynamiek: Neerslag infiltreert snel; lokaal natte duinvalleien door kwel/grondwater. Zoutinvloed vooral aan zeezijde.
+    bodemontwikkeling: Arm, kalkrijk tot kalkarm zand; snelle uitdroging op hoge delen, organische opbouw in valleien.
+    vegetatiestructuur_en_beplanting: Duingraslanden, struweel (duindoorn/liguster), duinbos (den/berk/eik) afhankelijk van
+      beheer en kalkgehalte.
+    beheerimplicaties: Sturing via begrazing/maaien of dynamisch kustbeheer; let op verstuiving en recreatiedruk.
+    betekenis_voor_erfbeplanting: Gebruik wind- en zouttolerante soorten; creëer luwtes met struweel/houtwal en voorkom verdroging
+      met mulch.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  stuwwal:
+    titel: 'Natuurlijk systeem: Stuwwal'
+    kernsamenenvatting: Zandige (en lokaal leem-/keileemrijke) systemen met veel reliëfverschil, snelle afvoer en droogterisico
+      op hoge delen.
+    systeemwerking: Afzettingen uit ijstijden en smeltwater, of wind (dekzand/stuifzand); terrassen en hellingen sturen afvoer.
+    water_en_dynamiek: Infiltratie domineert; kwel kan optreden aan voet van hellingen of waar keileem water remt.
+    bodemontwikkeling: Arm tot matig voedselrijk zand; lokaal leem/keileem geeft hogere vochtbeschikbaarheid en slechtere
+      drainage.
+    vegetatiestructuur_en_beplanting: Heide en schraalgrasland, eiken-berkenbos; op rijkere plekken eiken-haagbeukbos en landbouw-essenlandschap.
+    beheerimplicaties: Bodemverbetering via organische stof en mulch; voorkom uitspoeling, wind- en watererosie.
+    betekenis_voor_erfbeplanting: Kies droogtetolerante soorten voor hoge delen; benut lagere delen voor wadi/poel en leg
+      luwtehagen aan.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  terp:
+    titel: 'Natuurlijk systeem: Terp'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  uiterwaard:
+    titel: 'Natuurlijk systeem: Uiterwaard'
+    kernsamenenvatting: Riviersystemen met microreliëf en afwisseling van natte laagtes en hogere ruggen, gevormd door waterstroming
+      en sedimentatie.
+    systeemwerking: Afzetting van zand/zavel op ruggen en klei in laagtes; (historisch) overstroming en huidige waterkering/peilbeheer.
+    water_en_dynamiek: Natte winters, tijdelijk hoge waterstanden; laagtes houden langer water vast, hogere ruggen drogen
+      sneller uit.
+    bodemontwikkeling: Variatie van zavel/klei tot zandige ruggen; vaak vruchtbaar maar gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Ooibossen, struweel en graslanden; op hogere delen boomgaarden en erven met hagen en
+      knotbomen.
+    beheerimplicaties: Ruimte voor water, beheer van sloten/kribben en bodemstructuur zijn bepalend.
+    betekenis_voor_erfbeplanting: 'Werk met hoogteverschil: natte zones voor water en biodiversiteit, hogere plekken voor
+      bomen en moestuin.'
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  veenrest:
+    titel: 'Natuurlijk systeem: Veenrest'
+    kernsamenenvatting: Veen- en veenweidesystemen met hoge grondwaterstanden, slappe bodem en sterke invloed van ontwatering
+      en inklinking.
+    systeemwerking: Opbouw van veen onder natte omstandigheden; bij ontwatering volgt oxidatie en maaivelddaling.
+    water_en_dynamiek: 'Peilen sturen alles: te laag geeft bodemdaling/droogteschade, te hoog geeft draagkrachtproblemen.'
+    bodemontwikkeling: Organisch, zuurstofarm en vaak voedingsrijker bij bemesting; lage draagkracht en gevoelig voor verdichting.
+    vegetatiestructuur_en_beplanting: Riet, zeggen, elzenbroek in natte delen; graslanden en slotenrijke structuren in ontgonnen
+      veen.
+    beheerimplicaties: Waterbeheer en extensivering zijn sleutel; beperk zware machines en stimuleer organische stofbalans.
+    betekenis_voor_erfbeplanting: Werk met nat-tolerante soorten, lichte constructies en verhoogde plantplaatsen; voorkom
+      bodembelasting.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  water:
+    titel: 'Natuurlijk systeem: Water'
+    kernsamenenvatting: Landschapssysteem met kenmerkende combinatie van reliëf, bodem en waterhuishouding die de standplaats
+      bepaalt.
+    systeemwerking: De landvorm en (historische) processen sturen waar water en sediment terechtkomen.
+    water_en_dynamiek: Grondwater en afwatering bepalen de nat–droog gradiënten en daarmee de beplantingsmogelijkheden.
+    bodemontwikkeling: Bodemopbouw en textuur bepalen draagkracht, voeding en bewortelbaarheid.
+    vegetatiestructuur_en_beplanting: 'Vegetatiestructuur volgt de gradiënten: natte zones met ruigte/struweel, drogere zones
+      met bos/grasland.'
+    beheerimplicaties: Beheer richt zich op water, bodemstructuur en het behouden van gradiënten.
+    betekenis_voor_erfbeplanting: Kies soorten passend bij nat/droog en werk met microreliëf, waterberging en luwte.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  zeekleivlakte:
+    titel: 'Natuurlijk systeem: Zeekleivlakte'
+    kernsamenenvatting: Kust- en zeekleigebieden worden bepaald door (historische) getijdenwerking, kleiafzetting en vaak
+      kunstmatig peilbeheer.
+    systeemwerking: Sedimentatie van klei/zand in ondiepe kustsystemen; later vaak bedijkt en ontwaterd.
+    water_en_dynamiek: Hoge grondwaterstanden en beperkte infiltratie; risico op verzilting en wateroverlast bij piekbuien.
+    bodemontwikkeling: Zware tot zavelige klei met hoge voedingsrijkdom; structuur en draagkracht zijn aandachtspunten.
+    vegetatiestructuur_en_beplanting: Riet/ruigte langs sloten, natte graslanden; op hogere delen vruchtbare akkers en erven
+      met windsingels.
+    beheerimplicaties: Peilbeheer, drainage en bodembewerking bepalen zuurstof en berijdbaarheid; voorkom verdichting.
+    betekenis_voor_erfbeplanting: Kies soorten die natte winters verdragen; plant op ophoging/terp en werk met flauwe taluds
+      en waterberging.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  zoetwatergetijdenafzetting:
+    titel: 'Natuurlijk systeem: Zoetwatergetijdenafzetting'
+    kernsamenenvatting: Kust- en zeekleigebieden worden bepaald door (historische) getijdenwerking, kleiafzetting en vaak
+      kunstmatig peilbeheer.
+    systeemwerking: Sedimentatie van klei/zand in ondiepe kustsystemen; later vaak bedijkt en ontwaterd.
+    water_en_dynamiek: Hoge grondwaterstanden en beperkte infiltratie; risico op verzilting en wateroverlast bij piekbuien.
+    bodemontwikkeling: Zware tot zavelige klei met hoge voedingsrijkdom; structuur en draagkracht zijn aandachtspunten.
+    vegetatiestructuur_en_beplanting: Riet/ruigte langs sloten, natte graslanden; op hogere delen vruchtbare akkers en erven
+      met windsingels.
+    beheerimplicaties: Peilbeheer, drainage en bodembewerking bepalen zuurstof en berijdbaarheid; voorkom verdichting.
+    betekenis_voor_erfbeplanting: Kies soorten die natte winters verdragen; plant op ophoging/terp en werk met flauwe taluds
+      en waterberging.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
+  zoutwatergetijdenafzetting:
+    titel: 'Natuurlijk systeem: Zoutwatergetijdenafzetting'
+    kernsamenenvatting: Kust- en zeekleigebieden worden bepaald door (historische) getijdenwerking, kleiafzetting en vaak
+      kunstmatig peilbeheer.
+    systeemwerking: Sedimentatie van klei/zand in ondiepe kustsystemen; later vaak bedijkt en ontwaterd.
+    water_en_dynamiek: Hoge grondwaterstanden en beperkte infiltratie; risico op verzilting en wateroverlast bij piekbuien.
+    bodemontwikkeling: Zware tot zavelige klei met hoge voedingsrijkdom; structuur en draagkracht zijn aandachtspunten.
+    vegetatiestructuur_en_beplanting: Riet/ruigte langs sloten, natte graslanden; op hogere delen vruchtbare akkers en erven
+      met windsingels.
+    beheerimplicaties: Peilbeheer, drainage en bodembewerking bepalen zuurstof en berijdbaarheid; voorkom verdichting.
+    betekenis_voor_erfbeplanting: Kies soorten die natte winters verdragen; plant op ophoging/terp en werk met flauwe taluds
+      en waterberging.
+    bronnen:
+    - Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR).
+    - 'BRO / PDOK – kaartlagen: NSN, Bodemkaart, Geomorfologie, Gt.'
+    - Atlas Leefomgeving – uitleg bodem en water (toelichtingen).
 _meta:
   naam: Beplantingswijzer kennisdocument – locatiecontext
-  versie: '2025-12-15'
+  versie: '2025-12-16'
   doel: Uitgebreide, bron-gebaseerde toelichting op kaartlagen (FGR, GMM, NSN, bodem, Gt) voor opname in Beplantingswijzer-rapporten.
-  opmerking: Dit document bevat algemene beschrijvingen op basis van landelijke literatuur en landelijke datasets. Lokale variatie kan groot zijn; raadpleeg voor ontwerp en uitvoering ook veldwaarnemingen, bodemprofiel en peilbeheer.
+  opmerking: Dit document bevat algemene beschrijvingen op basis van landelijke literatuur en landelijke datasets. Lokale
+    variatie kan groot zijn; raadpleeg voor ontwerp en uitvoering ook veldwaarnemingen, bodemprofiel en peilbeheer. (Automatisch
+    aangevuld met ontbrekende NSN- en GMM-items op 2025-12-16.)
   koppelingen:
     nsn_bodem:
       doel: Maak de vertaalslag van landschapssysteem (NSN) naar verwacht bodemtype/vocht en daardoor plant- en beheerkeuzes.
