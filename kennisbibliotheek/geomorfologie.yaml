@@ -3,7 +3,8 @@ geomorfologie:
     titel: Open kommenlandschap
     beschrijving: 'In de komgebieden, ver van de rivierloop, kwam het water tot rust en kon slib bezinken. Dit leidde tot plaatselijk dikke, zware komkleilagen.
 
-      '
+
+      Komgronden liggen doorgaans verder van de actieve (oude) rivierloop dan oeverwallen en stroomruggen. Het zijn traag drainerende vlakken met beperkte microreliëfverschillen, maar met grote gevolgen voor draagkracht, bewortelbaarheid en het type beplanting dat duurzaam kan groeien.'
     kenmerken: 'Open karakter met schaarse bebouwing. Kavels vaak onregelmatig; waterlopen en sloten zijn vaak recht door ontginning en waterbeheer.
 
       '
@@ -12,64 +13,171 @@ geomorfologie:
       '
     landgebruik_en_beplanting: 'Veel grasland. Waar landbouw minder mogelijk was, werden grienden aangelegd. Beplanting vooral als weg- en erfbeplanting, met verspreide populierenbosjes en grienden.
 
-      '
-    betekenis_voor_erfbeplanting: 'Houd het open karakter overeind: plant vooral lijnvormig bij erf/weg/slot. Kies soorten die natte klei verdragen (wilg, els, populier, iep) en voorkom grote dichte bosvakken in het open veld.'
+
+      Traditioneel domineert grasland (veeweiden) door de natte standplaats. Grienden en wilgenhoutcultuur kwamen voor op marginale, natte delen. Houtige elementen concentreren zich bij erven, langs dijken, wegen en watergangen.'
+    betekenis_voor_erfbeplanting: 'Houd het open karakter overeind: plant vooral lijnvormig bij erf/weg/slot. Kies soorten die natte klei verdragen (wilg, els, populier, iep) en voorkom grote dichte bosvakken in het open veld.
+
+
+      Werk met een duidelijke zonering: (1) droge dragers (dijk, kade, erfophoog) voor meer soorten; (2) natte zone richting sloten/laagtes met nat-tolerante soorten. Vermijd grootschalige bosvorming in het open veld tenzij dat landschappelijk wordt gedragen. Beperk bodemverdichting en kies beheer dat de waterafvoer niet ‘forceert’ ten koste van bodeminfiltratie en ecologie.'
+    kernsamenenvatting: Laaggelegen, vlak komgebied binnen het rivierenlandschap waar bij overstromingen vooral fijne klei (slib) bezinkt. Hierdoor ontstaan zware, natte komkleigronden met een open ruimtelijk beeld en een hoge gevoeligheid voor waterbeheer.
+    ontstaansgeschiedenis: Tijdens herhaalde hoogwaters trad de rivier buiten haar bedding. Dicht bij de rivier bezonk grover materiaal; verder weg in de kom kwam het water tot rust en bezonk vooral fijne klei. Over lange perioden bouwden zich zo dikke pakketten komklei op. Ontwatering, kades, dijken en peilbeheer hebben daarna de hydrologie en bodemstructuur sterk beïnvloed.
+    reliëf_en_vorm: Zeer vlak tot zwak golvend reliëf. Hoogteverschillen zijn vaak slechts decimeters, maar sturen wel waterafvoer en de ligging van erven (op kades, dijken of lokale ruggen). Overgangen naar oeverwal/stroomrug zijn meestal geleidelijk.
+    bodem_en_hydrologie: Zware klei met hoge grondwaterstanden en periodiek waterverzadigde lagen. Afvoer is traag; in natte perioden is de draagkracht laag en treedt snel verdichting op. In droge zomers kan klei sterk krimpen en scheuren, wat de wortelzone en de waterhuishouding beïnvloedt.
+    bronnen:
+    - bro_pdok_geomorfologische_kaart_gmm_en_toelichting
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_3
+    - wageningen_environmental_research_toelichting_bij_
+    - geologie_van_nederland_komgrond_komklei_tno
   oeverwal:
     titel: Oeverwal
     beschrijving: 'Relatief hoger gelegen zandrug langs (oude) rivierlopen, opgebouwd uit grover materiaal dat bij overstromingen dicht bij de rivier werd afgezet.
 
-      '
+
+      Oeverwallen liggen als natuurlijke ‘dijken’ langs rivierlopen en oude stroomgordels. Ze zijn een klassieke vestigingsplaats voor erven, boomgaarden en infrastructuur in het rivierengebied.'
     kenmerken: Iets hoger en droger dan de omgeving, vaak met lintbebouwing en erven op de hogere delen.
     bodem_en_water: Zavelig tot zandig, beter ontwaterd; grondwater dieper dan in komgronden.
-    landgebruik_en_beplanting: Geschikt voor akkerbouw en fruitteelt; erven en dijken hebben vaak rijke beplanting.
+    landgebruik_en_beplanting: 'Geschikt voor akkerbouw en fruitteelt; erven en dijken hebben vaak rijke beplanting.
+
+
+      Geschikt voor akkerbouw, erven en (hoogstam)fruitteelt. Beplanting is vaak rijk: hagen, boomgaarden, laanbeplanting en erfbeplanting sluiten aan bij de relatief droge, vruchtbare standplaats.'
     betekenis_voor_erfbeplanting: 'Veel soorten mogelijk. Erfbeplanting kan voller zijn dan in komgebied; boomgaarden, hagen en laanstructuren passen goed.
 
-      '
+
+      Gebruik de oeverwal als ‘droge drager’ voor structuur: boomgaard, hagen en laanstructuren werken hier goed. Let op windbelasting op open dijklichamen en op de overgang naar komgebied (waar nattere soorten beter passen).'
+    kernsamenenvatting: Relatief hooggelegen zandrug langs (oude) rivierlopen, ontstaan door afzetting van grover sediment dicht bij de rivier. Oeverwallen zijn doorgaans droger en beter draagkrachtig dan de omliggende komgronden en vormen vaak de drager voor lintbebouwing.
+    ontstaansgeschiedenis: Bij overstromingen verliest water direct naast de bedding snel energie, waardoor zand en zavel bezinken. Door herhaling ontstaan langgerekte ruggen (oeverwallen) die hoger liggen dan de kom. Later zijn oeverwallen vaak benut en versterkt door dijken, wegen en ophogingen.
+    reliëf_en_vorm: Langgerekte, licht verhoogde rug met flauwe overgangen naar lagere kom. Het microreliëf is vaak beperkt, maar de relatieve hoogte bepaalt sterk de ontwatering en de ligging van bebouwing.
+    bodem_en_hydrologie: Zavelig tot zandig (plaatselijk met kleidek), doorgaans beter ontwaterd dan komgronden. Grondwater ligt dieper; wateroverlast is minder dominant, maar droogtestress kan optreden op zandiger delen, vooral bij warme zomers.
+    bronnen:
+    - bro_pdok_geomorfologische_kaart_gmm_en_toelichting
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_3
+    - wageningen_environmental_research_toelichting_bij_
+    - geologie_van_nederland_achtergrond_over_afzettinge
   stroomrug:
     titel: Stroomrug / stroomgordel
     beschrijving: 'Zandrug van een voormalige rivierloop met bijbehorende afzettingen. Vaak als langgerekte verhoging herkenbaar in het landschap.
 
-      '
+
+      Stroomruggen zijn oude rivierbanen met bijbehorende afzettingen. Ze vormen ‘lijnen’ in het landschap die als droge routes en vestigingsplekken zijn benut.'
     kenmerken: Langgerekt patroon, vaak bepalend voor wegen en bebouwing; relatief droog in vergelijking met komgebied.
     bodem_en_water: Zandig/zavelig; goede ontwatering.
-    landgebruik_en_beplanting: Akkerbouw, erven, boomgaarden; beplanting langs wegen en erven.
-    betekenis_voor_erfbeplanting: 'Gunstige groeiplaats: brede soortenkeuze. Combineer lijnvormige structuren met erfbeplanting passend bij open rivierlandschap.'
+    landgebruik_en_beplanting: 'Akkerbouw, erven, boomgaarden; beplanting langs wegen en erven.
+
+
+      Akkerbouw, erven en boomgaarden komen veel voor. Beplanting concentreert zich rond erven en langs wegen, met laanstructuren en singels als landschappelijke dragers.'
+    betekenis_voor_erfbeplanting: 'Gunstige groeiplaats: brede soortenkeuze. Combineer lijnvormige structuren met erfbeplanting passend bij open rivierlandschap.
+
+
+      Breed soortenpalet mogelijk; combineer erfbeplanting met lijnstructuren die aansluiten op het lineaire patroon van stroomgordels. Gebruik overgangszones naar komgebied voor nat-droog gradiënten in beplanting.'
+    kernsamenenvatting: Langgerekte zandrug behorend bij een voormalige rivierloop (stroomgordel). Stroomruggen liggen relatief hoog en droog ten opzichte van komgronden en sturen vaak verkaveling, wegen en bewoning.
+    ontstaansgeschiedenis: Een rivier verlegt in de tijd haar loop. Oude bedding- en oeverafzettingen blijven achter als zandruggen wanneer de rivier migreert of insnijdt. Hierdoor ontstaat een mozaïek van hogere stroomruggen en lagere kommen.
+    reliëf_en_vorm: Langgerekte verhoging met soms subtiel microreliëf (oude geulresten, laagtes). De rug is doorgaans beter herkenbaar op hoogtekaarten en in verkavelingspatronen dan in het veld.
+    bodem_en_hydrologie: Zandig/zavelig met relatief goede drainage. Grondwater staat dieper dan in de kom, waardoor beworteling eenvoudiger is. Op zandige delen kan droogte optreden; in oude geulrestanten kan water juist langer blijven staan.
+    bronnen:
+    - bro_pdok_geomorfologische_kaart_gmm_en_toelichting
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_3
+    - wageningen_environmental_research_toelichting_bij_
+    - geologie_van_nederland_achtergrond_over_afzettinge
   rivierduin:
     titel: Rivierduin / donk
     beschrijving: 'Lokale zandige verhoging in het rivierengebied, ontstaan door wind (duinvorming) of als hogere zandkop in een natte omgeving.
 
-      '
+
+      Rivierduinen kunnen door wind zijn opgebouwd uit rivier- en dekzand, of bestaan uit oudere zandkoppen die als hoogte-eiland in een natte omgeving blijven liggen.'
     kenmerken: Kleine hoogteaccenten, vaak met bebouwing of bosjes; ecologisch waardevol door droog-nat gradiënt.
     bodem_en_water: Droger, zandiger dan omgeving; in de voet kunnen natte zones voorkomen.
-    landgebruik_en_beplanting: Bosjes, erven, akkers op de hogere delen; natte vegetaties in de laagtes.
-    betekenis_voor_erfbeplanting: 'Gebruik de hoogteverschillen: droogtetolerante soorten op de top, vochtminnende soorten lager. Dit geeft een natuurlijk, robuust ontwerp.'
+    landgebruik_en_beplanting: 'Bosjes, erven, akkers op de hogere delen; natte vegetaties in de laagtes.
+
+
+      Toppen en flanken werden gebruikt voor erven, akkers of bosjes; natte randen voor grasland of natte vegetaties. Het contrast tussen droge bosjes/struweel en natte randen is landschappelijk karakteristiek.'
+    betekenis_voor_erfbeplanting: 'Gebruik de hoogteverschillen: droogtetolerante soorten op de top, vochtminnende soorten lager. Dit geeft een natuurlijk, robuust ontwerp.
+
+
+      Maak zonering expliciet: droogtetolerante soorten en structuur op de hogere delen; vochtminnende soorten en waterberging lager. Houd rekening met wind op de top en met brand-/droogterisico in zeer zandige situaties.'
+    kernsamenenvatting: Lokale zandige verhoging (donk/rivierduin) in een verder nat rivieren- of veenlandschap. Door de hoogte ontstaat een sterke droog–nat gradiënt met hoge ecologische potentie en vaak historische bewoningslocaties.
+    ontstaansgeschiedenis: In koude, open perioden kon zand door wind worden verplaatst en lokaal opgeblazen tot duinvormen. Daarnaast kunnen zandige opduikingen of restanten van hogere afzettingen als ‘donk’ herkenbaar zijn gebleven. De omgeving (kom/veen) is vaak later natter geworden door sedimentatie en peilbeheer.
+    reliëf_en_vorm: Kleine tot middelgrote verheffing met duidelijke randen. De top is droger en warmer; aan de voet treedt vaker kwel of stagnatie op. Microreliëf biedt kansen voor zonering in ontwerp.
+    bodem_en_hydrologie: Zandig, relatief goed doorlatend en vaak droger dan de omgeving. De watervoorraad kan beperkt zijn; aan de voet zijn natte zones mogelijk door capillaire opstijging, kwel of afstroming.
+    bronnen:
+    - bro_pdok_geomorfologische_kaart_gmm_en_toelichting
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_3
+    - wageningen_environmental_research_toelichting_bij_
+    - geologie_van_nederland_achtergrond_over_afzettinge
   dekzandrug:
     titel: Dekzandrug
-    beschrijving: Verhoging van door wind afgezet dekzand uit de laatste ijstijd. Meestal relatief droog en voedselarm.
+    beschrijving: 'Verhoging van door wind afgezet dekzand uit de laatste ijstijd. Meestal relatief droog en voedselarm.
+
+
+      Dekzandruggen vormen subtiele ‘droge dragers’ in zandlandschappen. Ze zijn belangrijk voor standplaatsverschillen tussen rug (droger) en laagte (natter) en verklaren houtwallen/kampenpatronen.'
     kenmerken: Subtiel reliëf; historisch vaak bewoning op ruggen met ontginningen eromheen.
     bodem_en_water: Zand tot lemig zand; snelle infiltratie.
-    landgebruik_en_beplanting: Heide- en bosrestanten, akkers en grasland; houtwallen komen lokaal voor.
+    landgebruik_en_beplanting: 'Heide- en bosrestanten, akkers en grasland; houtwallen komen lokaal voor.
+
+
+      Historisch heide- en stuifzandsystemen, later bosaanplant en kampen/akkers. Houtwallen en singels komen voor als windkering en perceelsbegrenzing, vooral waar de verkaveling kleinschalig is.'
     betekenis_voor_erfbeplanting: 'Kies soorten voor drogere standplaatsen; werk met struweel en houtwallen voor beschutting en biodiversiteit.
 
-      '
+
+      Ontwerp droogtebestendig: verhoog organische stof, voorkom open zand en bouw windluwte met houtwallen/singels. Differentieer soorten tussen rug (droger) en lagere delen (vochtiger) voor robuustheid.'
+    kernsamenenvatting: Lichte verhoging van door wind afgezet dekzand (laatste ijstijd). Vaak relatief droog, snel drainerend en voedselarm, met een duidelijke relatie tot bewoningsgeschiedenis en ontginningen.
+    ontstaansgeschiedenis: Tijdens koude, droge fasen werd zand verstoven en als deken afgezet. Door windwerking ontstonden ruggen, waarop later bodemvorming (podzolering) optrad. Menselijke ontginning en bosaanplant hebben de dekzandvormen vaak gefixeerd.
+    reliëf_en_vorm: Subtiel golvend reliëf met ruggen en zijdelingse overgangen naar laagtes. Hoogteverschillen zijn vaak klein maar bepalen infiltratie, droogtegevoeligheid en vegetatie sterk.
+    bodem_en_hydrologie: Zand tot lemig zand met snelle infiltratie en lage watervoorraad. Uitspoeling van voedingsstoffen is mogelijk; organische-stofopbouw is cruciaal. Waar leem/keileem ondiep zit kan lokaal stagnatie of perched water optreden.
+    bronnen:
+    - bro_pdok_geomorfologische_kaart_gmm_en_toelichting
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_3
+    - wageningen_environmental_research_toelichting_bij_
+    - geologie_van_nederland_achtergrond_over_afzettinge
   dekzandlaagte:
     titel: Dekzandlaagte / laagte
-    beschrijving: Laaggelegen deel tussen dekzandruggen waar water langer blijft staan.
+    beschrijving: 'Laaggelegen deel tussen dekzandruggen waar water langer blijft staan.
+
+
+      Dekzandlaagtes kunnen venig aanvoelen, zeker waar organische stof zich ophoopt of waar keileem/leem de infiltratie remt. Ze zijn belangrijk voor waterberging en voor het behoud van natte graslanden, elzenbroekjes en mozaïekstructuren.'
     kenmerken: Natter en soms veen/venige lagen; kan beekdalachtig aanvoelen.
     bodem_en_water: Zand met hogere grondwaterstand; lokaal venig.
-    landgebruik_en_beplanting: Grasland, elzenbroekjes, vochtige hooilanden.
+    landgebruik_en_beplanting: 'Grasland, elzenbroekjes, vochtige hooilanden.
+
+
+      Veelal grasland, natte hooilanden, elzenbroekjes en ruigten. Als de laagte is gedraineerd kan landbouw domineren, maar draagkracht en natte plekken blijven vaak beperkend.'
     betekenis_voor_erfbeplanting: 'Kies vochtminnende soorten en benut waterberging; maak natte zones ecologisch rijk i.p.v. droog te willen maken.
 
-      '
+
+      Ontwerp de laagte als water- en biodiversiteitszone: natte struiken/bomen aan randen, open nat grasland of plas-dras waar passend. Plaats gebouwen/waardevollere beplanting op hogere ruggen of ophogingen en voorkom zware bodembelasting in natte kern.'
+    kernsamenenvatting: Laaggelegen deel tussen dekzandruggen waar water langer blijft staan door hogere grondwaterstanden of lokale slecht doorlatende lagen. Vaak vochtiger, koeler en ecologisch rijker dan de omliggende ruggen.
+    ontstaansgeschiedenis: Ontstaan als lage delen in het dekzandreliëf. Door langdurig natte omstandigheden kan humus en lokaal veen ontstaan. Ontwatering (greppels, sloten) heeft veel laagtes droger gemaakt, maar de hydrologische ‘handtekening’ blijft vaak aanwezig.
+    reliëf_en_vorm: Vlakke tot komvormige laagte met geleidelijke overgangen naar ruggen. Microreliëf (oude greppels, veenrestanten) stuurt waar water stagneert en waar het nog net droog genoeg is voor beworteling.
+    bodem_en_hydrologie: Zand met hogere GHG; lokaal venig of met humusrijke bovengrond. Zuurstoftekort in de wortelzone kan optreden in natte perioden. Afhankelijk van ondergrond kan kwel of stagnatie voorkomen.
+    bronnen:
+    - bro_pdok_geomorfologische_kaart_gmm_en_toelichting
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_3
+    - wageningen_environmental_research_toelichting_bij_
+    - geologie_van_nederland_achtergrond_over_afzettinge
   beekdal:
     titel: Beekdal
-    beschrijving: Dalvormig laagland langs beken en kleine waterlopen, met natte bodems en periodieke inundatie.
+    beschrijving: 'Dalvormig laagland langs beken en kleine waterlopen, met natte bodems en periodieke inundatie.
+
+
+      Beekdalen vormen overgangszones tussen hogere zandgronden en lagere vlakken. Ze kennen vaak een mozaïek van natte graslanden, beekbegeleidende begroeiing en (historisch) houtwallen. Hydrologie (kwel, piekafvoer) is bepalend voor standplaats en beheer.'
     kenmerken: Slingerend water, natte graslanden, elzenbroek en houtwallen; belangrijk als ecologische verbinding.
     bodem_en_water: Vochtig tot nat, vaak lemig/zandig met kwel.
-    landgebruik_en_beplanting: Hooiland, begrazing, elzen en wilgen langs water.
+    landgebruik_en_beplanting: 'Hooiland, begrazing, elzen en wilgen langs water.
+
+
+      Historisch hooilanden en extensieve begrazing, met elzen en wilgen langs water. Beekbegeleidende bossen/struwelen en houtwallen versterken de ecologische verbindingsfunctie.'
     betekenis_voor_erfbeplanting: 'Beplanting langs waterlopen (els, wilg) en behoud van open natte graslanden levert veel biodiversiteit op.
 
-      '
+
+      Behandel het beekdal als ‘natte ruggengraat’: beplant langs water met els/wilg, houd ruimte voor water en behoud open natte graslanden waar passend. Werk met flauwe taluds en vermijd diepe drainage; zet kwetsbare of droogtegevoelige soorten op hogere randen.'
+    kernsamenenvatting: Dalvormige laagte langs beken met periodiek hoge waterstanden, kwel en vochtige bodems. Beekdalen zijn ecologische corridors en werken als natuurlijke waterbergings- en afvoerstructuren.
+    ontstaansgeschiedenis: Beekdalen ontstonden door insnijding en meandering van beken, met afzetting van beeksedimenten in de vlakte. In de 20e eeuw zijn veel beken rechtgetrokken en gedraineerd; herstelprojecten brengen weer meanders, flauwe oevers en waterbergingsruimte terug.
+    reliëf_en_vorm: Vlakke dalbodem met subtiele geulen, oeverwallen en oude meanders. Flanken vormen overgang naar hogere gronden. Microreliëf (kades, oude loopjes) bepaalt nat–droog gradiënten op korte afstand.
+    bodem_en_hydrologie: Vochtig tot nat; bodems variëren van zandig/lemig tot venig, met vaak kwelinvloed. Periodieke inundatie en hoge GHG kunnen zuurstofarme wortelzones geven. Draagkracht is seizoensafhankelijk.
+    bronnen:
+    - bro_pdok_geomorfologische_kaart_gmm_en_toelichting
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_3
+    - wageningen_environmental_research_toelichting_bij_
+    - geologie_van_nederland_achtergrond_over_afzettinge
   rivierkomvlakte:
     titel: Rivierkomvlakte (GMM)
     beschrijving: 'Een rivierkomvlakte is een laaggelegen deel van het rivierenlandschap waar tijdens overstromingen vooral fijne kleideeltjes (slib) worden afgezet. Omdat de stroomsnelheid hier lager is dan nabij de rivier, bezinkt vooral het fijnste materiaal. Dit kan door de eeuwen heen leiden tot dikke pakketten komklei.
