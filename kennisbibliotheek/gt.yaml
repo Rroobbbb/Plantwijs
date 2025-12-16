@@ -1,0 +1,329 @@
+gt:
+  ia:
+    titel: Gt Ia (zeer nat)
+    beschrijving: 'Zeer natte grondwatertrap: grondwater staat vrijwel jaarrond zeer hoog; vaak langdurig natte voeten in het profiel.'
+    betekenis: Kies moeras- en natte oeversoorten; vermijd droogteminnende soorten.
+  ib:
+    titel: Gt Ib (zeer nat)
+    beschrijving: 'Zeer hoge grondwaterstand, maar iets minder extreem dan Ia. Periodiek water aan maaiveld komt voor.
+
+      '
+    betekenis: Natte toleranties zijn belangrijk; let op draagkracht en zuurstofarm wortelmilieu.
+  iia:
+    titel: Gt IIa (nat)
+    beschrijving: Hoge grondwaterstand; in winter zeer hoog, in zomer zakt beperkt.
+    betekenis: Geschikt voor vochtminnende bomen/struiken; drainage bepaalt veel.
+  iib:
+    titel: Gt IIb (nat)
+    beschrijving: Nat profiel met duidelijke seizoensfluctuatie; nog steeds hoge winterstand.
+    betekenis: Veel soorten kunnen mits niet te droog; kies standplaats op microreliëf.
+  iic:
+    titel: Gt IIc (matig nat)
+    beschrijving: Matig nat, met iets grotere zomerdaling.
+    betekenis: Breed toepasbaar; zowel vochtminnend als iets droger kan.
+  iiia:
+    titel: Gt IIIa (matig vochtig)
+    beschrijving: 'Gemiddeld vochtig: winter hoog, zomer duidelijk lager.'
+    betekenis: Grote soortenkeuze; let op droogtestress in warme zomers.
+  iiib:
+    titel: Gt IIIb (matig vochtig)
+    beschrijving: Vochtig maar met grotere fluctuatie dan IIIa.
+    betekenis: Kies robuuste soorten; bodembeheer kan droogte beperken.
+  ivu:
+    titel: Gt IVu (matig droog)
+    beschrijving: 'Grondwatertrap IVu is een relatief droge tot matig droge grondwatertrap, gedefinieerd via klassen van de gemiddeld hoogste grondwaterstand (GHG) en gemiddeld laagste grondwaterstand (GLG). De lettercombinaties in Gt geven zowel een absolute diepteklasse als de seizoensfluctuatie weer; de exacte grenzen zijn in de bodemkartering vastgelegd.
+
+      '
+    betekenis: 'Bij Gt IVu staat het grondwater doorgaans dieper dan bij natte trappen, waardoor droogtestress in warme zomers kan optreden, zeker op zandige bodems. Op klei kan de wortelzone toch tijdelijk nat zijn door slechte infiltratie of hoge peilen; combineer de Gt daarom altijd met bodemtype en waterbeheer.
+
+      '
+    uitleg_ghg_glg: 'Grondwatertrappen worden afgeleid uit langjarige gemiddelden: GHG (winter) en GLG (zomer). Samen vatten ze de jaarlijkse fluctuatie samen en zijn ze een belangrijke indicator voor vegetatie, draagkracht en gebruiksmogelijkheden.'
+    bronnen:
+    - stowa_2010_grondwaterregime_op_basis_van_karteerba
+    - wur_edepot_2018_landsdekkende_actuele_informatie_o
+    - wikipedia_grondwatertrap_begrippen_ghg_glg
+    - wur_landschapsleutel_legenda_s_bodemkaarten_gt_sys
+  ivc:
+    titel: Gt IVc (matig droog)
+    beschrijving: Matig droge grondwatertrap met verdere zomerdaling.
+    betekenis: Kies droogtetolerante soorten, vooral op zandige bodems.
+  vao:
+    titel: Gt Vao (droog)
+    beschrijving: Droge trap; grondwater doorgaans diep, zomer zeer diep.
+    betekenis: Sterk droogtegevoelig; plant in vochtiger microplekken of kies xerofiele soorten.
+  vad:
+    titel: Gt Vad (droog)
+    beschrijving: Droog met duidelijke zomerdaling.
+    betekenis: Focus op droogtetolerantie en bodembedekking.
+  vbo:
+    titel: Gt Vbo (droog)
+    beschrijving: Droog profiel; grondwater zelden in wortelzone.
+    betekenis: Alleen droogteminnende soorten zonder aanvullende watermaatregelen.
+  vbd:
+    titel: Gt Vbd (droog)
+    beschrijving: Nog droger, met grote fluctuatie.
+    betekenis: Droogte- en hittebestendige soorten; wateropvang/infiltratie helpt.
+  vio:
+    titel: Gt VIo (zeer droog)
+    beschrijving: Zeer diep grondwater; wortelzone is structureel droog.
+    betekenis: Beplanting is beperkt; kies pioniers en droogtespecialisten.
+  vid:
+    titel: Gt VId (zeer droog)
+    beschrijving: Zeer droog met sterke seizoensfluctuatie.
+    betekenis: Alleen zeer droogtebestendige soorten; bescherm jonge aanplant.
+  viio:
+    titel: Gt VIIo (uiterst droog)
+    beschrijving: Uiterst diep grondwater, extreme droogte.
+    betekenis: Beplanting moeilijk; kies alleen zeer geschikte soorten en verbeter microklimaat.
+  viid:
+    titel: Gt VIId (uiterst droog)
+    beschrijving: Uiterst droog met grote fluctuatie.
+    betekenis: Zeer beperkt soortenpalet; investeer in waterbergende maatregelen.
+  viiio:
+    titel: Gt VIIIo (extreem droog)
+    beschrijving: Extreem droge omstandigheden, grondwater vrijwel nooit bereikbaar.
+    betekenis: Beplanting alleen met extremen-specialisten of met irrigatie/wateropvang.
+  viiid:
+    titel: Gt VIIId (extreem droog)
+    beschrijving: Extreem droog met sterke fluctuatie.
+    betekenis: Beplanting vraagt maatwerk; focus op klimaatadaptieve soorten en bodemverbetering.
+  toelichting_algemeen:
+    titel: Grondwatertrappen (Gt) – algemene uitleg
+    kernsamenvatting: 'Grondwatertrappen (Gt) geven een gestandaardiseerde indicatie van hoe hoog en hoe sterk fluctuerend het
+
+      grondwater staat. Ze zijn gebaseerd op langjarige gemiddelden en vormen een cruciale schakel tussen bodem,
+
+      hydrologie en beplantingsmogelijkheden.
+
+      '
+    uitleg_ghg_glg: 'Gt-klassen zijn afgeleid van twee parameters:
+
+      - GHG (Gemiddeld Hoogste Grondwaterstand): maatgevend voor winter- en natte perioden.
+
+      - GLG (Gemiddeld Laagste Grondwaterstand): maatgevend voor zomerdroogte.
+
+      De combinatie bepaalt zowel natstress als droogtestress voor wortels.
+
+      '
+    interpretatie: 'De Gt is geen exacte meting op perceelsniveau, maar een regionale indicatie. Lokale factoren zoals drainage,
+
+      peilbeheer, microreliëf (AHN), bodemtextuur en verdichting kunnen de feitelijke situatie sterk beïnvloeden.
+
+      '
+    betekenis_voor_erfbeplanting: 'Gebruik Gt altijd in combinatie met bodemtype en geomorfologie. Een ''natte'' Gt op zand kan heel anders
+
+      uitpakken dan dezelfde Gt op klei of veen.
+
+      '
+    bronnen:
+    - stowa_2010_grondwaterregime_op_basis_van_karteerba_2
+    - wur_bodemkaart_van_nederland_toelichting_gt_system
+  droogtestress_indicator:
+    titel: Droogtestress en bewortelbaarheid (Gt-context)
+    kernsamenvatting: 'Gt-waarden geven een eerste indicatie van droogterisico en bewortelbare diepte voor bomen en struiken,
+
+      vooral in het groeiseizoen.
+
+      '
+    relatie_met_wortels: 'Bij diep wegzakkend grondwater (Gt V–VIII) zijn planten volledig afhankelijk van bodemvocht en neerslag.
+
+      Bij hoge Gt (I–II) kan zuurstofgebrek de beworteling beperken.
+
+      '
+    praktijknuance: 'Op klei kan ondanks een droge Gt toch tijdelijk natstress optreden door slechte infiltratie.
+
+      Op zand kan een natte Gt toch snel droog aanvoelen door lage vochtbuffer.
+
+      '
+    betekenis_voor_erfbeplanting: 'Combineer Gt met maatregelen zoals mulchen, microreliëf, waterberging en soortenkeuze om
+
+      klimaatbestendige beplanting te realiseren.
+
+      '
+    bronnen:
+    - wur_water_en_bomen_achtergrond_beworteling
+    - atlas_leefomgeving_droogte_en_grondwater
+  combinatieregels_bodem_gt:
+    titel: Combinatieregels Bodem × Grondwatertrap (Gt)
+    kernsamenvatting: 'De combinatie van bodemtype en grondwatertrap (Gt) bepaalt de feitelijke standplaatscondities.
+
+      Dezelfde Gt-klasse kan op verschillende bodems tot andere risico’s en kansen leiden.
+
+      '
+    regels:
+      zand:
+        natte_gt:
+          uitleg: 'Op zandbodems met natte Gt (I–II) is er ondanks infiltratie kans op zuurstofgebrek in de wortelzone,
+
+            vooral in laagtes en bij stagnatie. Tegelijk kan het profiel in droge zomers snel uitdrogen.
+
+            '
+          aandachtspunten:
+          - zuurstofgebrek
+          - instabiele beworteling
+          - zomerdroogte
+        droge_gt:
+          uitleg: 'Droge Gt (IV–VIII) op zand betekent sterke afhankelijkheid van neerslag en bodemvocht.
+
+            Zonder humusopbouw ontstaat snel droogtestress.
+
+            '
+          aandachtspunten:
+          - droogtestress
+          - uitspoeling
+          - hitte
+      klei:
+        natte_gt:
+          uitleg: 'Natte Gt op klei (vooral zware klei/komklei) geeft langdurig natte wortelzones en beperkte beluchting.
+
+            Structuurschade door betreding is een groot risico.
+
+            '
+          aandachtspunten:
+          - wortelverstikking
+          - slechte draagkracht
+          - structuurschade
+        droge_gt:
+          uitleg: 'Ook bij drogere Gt kan klei tijdelijk nat blijven door slechte infiltratie.
+
+            In zomers kan oppervlakkige uitdroging optreden met scheurvorming.
+
+            '
+          aandachtspunten:
+          - wisselende nat-droogstress
+          - scheurvorming
+      veen:
+        natte_gt:
+          uitleg: 'Natte Gt is essentieel om veenafbraak te beperken. Wortelruimte is beperkt door hoge waterstand
+
+            en lage draagkracht.
+
+            '
+          aandachtspunten:
+          - bodemdaling
+          - beperkte verankering
+          - windworp
+        droge_gt:
+          uitleg: 'Droge Gt op veen leidt tot oxidatie, bodemdaling en verlies aan draagkracht.
+
+            Standplaats wordt instabiel voor bomen.
+
+            '
+          aandachtspunten:
+          - veenoxidatie
+          - bodemdaling
+          - instabiliteit
+      leem_en_zavel:
+        natte_gt:
+          uitleg: 'Natte Gt op leem/zavel kan leiden tot verslemping en tijdelijke natstress,
+
+            maar de vochtbuffer is gunstig voor veel soorten.
+
+            '
+          aandachtspunten:
+          - verslemping
+          - tijdelijke natstress
+        droge_gt:
+          uitleg: 'Droge Gt op leem/zavel is vaak goed hanteerbaar dankzij de vochtbuffer,
+
+            mits bodemstructuur intact blijft.
+
+            '
+          aandachtspunten:
+          - erosie op hellingen
+          - oppervlakkige uitdroging
+    betekenis_voor_erfbeplanting: 'Gebruik deze combinatieregels om soortenkeuze, standplaats en beheermaatregelen te bepalen.
+
+      Combineer ze altijd met geomorfologie (GMM) en microreliëf (AHN) voor een compleet beeld.
+
+      '
+    bronnen:
+    - stowa_grondwater_en_bodeminteractie
+    - wur_bodemfysica_en_beworteling_achtergrond
+  kernzinnen_samenvatting:
+    titel: Kernzinnen per grondwatertrap (rapport-samenvatting)
+    toelichting: 'Deze kernzinnen zijn bedoeld voor de samenvatting van het rapport. Ze vertalen de technische
+
+      grondwatertrap (Gt) naar een begrijpelijke, standplaatsgerichte duiding voor bewoners.
+
+      '
+    zinnen:
+      gt_i_ii:
+        label: Zeer nat tot nat (Gt I–II)
+        kernzin: 'Het grondwater staat hier hoog, waardoor de bodem vaak nat is en wortels snel last kunnen krijgen
+
+          van zuurstofgebrek; beplanting moet goed tegen natte voeten kunnen.
+
+          '
+      gt_iic_iii:
+        label: Matig nat tot vochtig (Gt IIc–III)
+        kernzin: 'Dit is een relatief gunstige vochttoestand met veel mogelijkheden voor beplanting, al kan in
+
+          droge zomers tijdelijk droogtestress optreden.
+
+          '
+      gt_iv:
+        label: Matig droog (Gt IV)
+        kernzin: 'Het grondwater zakt in de zomer dieper weg, waardoor beplanting afhankelijker wordt van regen en
+
+          bodemvocht; vooral op zand is droogte een aandachtspunt.
+
+          '
+      gt_v_vi:
+        label: Droog tot zeer droog (Gt V–VI)
+        kernzin: 'De bodem is in het groeiseizoen vaak droog; zonder vochtvasthoudende bodem en beschutting ontstaat
+
+          snel droogtestress voor bomen en struiken.
+
+          '
+      gt_vii_viii:
+        label: Uiterst droog (Gt VII–VIII)
+        kernzin: 'Het grondwater is structureel diep; alleen zeer droogtetolerante beplanting is hier kansrijk,
+
+          tenzij aanvullende water- of bodemmaatregelen worden genomen.
+
+          '
+    gebruik_in_rapport: 'Combineer deze kernzin altijd met bodemtype, geomorfologie en microreliëf (AHN) voor een correcte
+
+      en locatie-specifieke uitleg.
+
+      '
+    bronnen:
+    - stowa_grondwatertrappen_en_hydrologische_interpret
+    - wur_bodem_en_water_in_relatie_tot_vegetatie
+  validatie_en_waarschuwingen:
+    titel: Interpretatiebeperkingen en waarschuwingen (Gt)
+    kernsamenvatting: 'Grondwatertrappen zijn kaartwaarden op basis van regionale, langjarige gemiddelden.
+
+      Ze geven richting, maar zijn geen exacte meting op perceelsniveau.
+
+      '
+    aandachtspunten:
+    - kaartwaarde_vs_werkelijkheid: 'Lokale omstandigheden zoals drainage, peilbeheer, ophoging, verdichting en microreliëf
+
+        kunnen sterk afwijken van de kaartwaarde.
+
+        '
+    - seizoens- en klimaatvariatie: 'Extreem natte of droge jaren kunnen tijdelijk leiden tot andere omstandigheden dan
+
+        de Gt suggereert. Klimaatverandering vergroot deze afwijkingen.
+
+        '
+    - schaalniveau: 'Gt is gekarteerd op landschappelijke schaal; binnen één erf kunnen meerdere vochtcondities
+
+        voorkomen.
+
+        '
+    - interpretatie_in_combinatie: 'Gebruik Gt nooit los, maar altijd samen met bodemtype, geomorfologie (GMM),
+
+        natuurlijk systeem (NSN) en hoogte (AHN).
+
+        '
+    gebruik_in_rapport: 'Deze waarschuwingen worden automatisch toegevoegd als nuancerende tekst bij het advies,
+
+      om te voorkomen dat kaartwaarden als absolute waarheid worden geïnterpreteerd.
+
+      '
+    bronnen:
+    - stowa_grondwatertrappen_en_onzekerheden
+    - wur_toelichting_bodem_en_grondwaterkartering

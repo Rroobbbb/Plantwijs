@@ -1,0 +1,87 @@
+fgr:
+  rivierengebied:
+    titel: Rivierengebied
+    beschrijving: 'Het Rivierengebied is het Nederlandse landschap dat gevormd is door de Rijn, Maas en hun zijrivieren. Het bestaat uit een mozaïek van hoger gelegen oeverwallen en stroomruggen (grovere afzettingen dicht bij de rivier) en lagere komgebieden (fijne kleiafzettingen). Historisch werden deze gebieden regelmatig overstroomd; sinds bedijking en kanalisatie is de overstromingsdynamiek binnendijks sterk verminderd, maar waterbeheer blijft sturend.
+
+      '
+    kenmerken: 'Relatief vlak reliëf met lokale hoogteverschillen op schaal van decimeters tot meters. Lintbebouwing en erven liggen vaak op de hogere delen (oeverwallen/stroomruggen), terwijl de kommen opener en natter zijn. Waterlopen (weteringen, sloten) en kades/dijken structureren het landschap.
+
+      '
+    bodem_en_water: 'Overwegend klei- en zavelgronden; in kommen zware, natte klei. Grondwater kan hoog staan; waterbeheer (peil, drainage) is bepalend.
+
+      '
+    beplanting_en_landgebruik: 'Landgebruik is vaak productief: grasland in nattere kommen, akkerbouw en boomgaarden op hogere delen. Streekeigen beplanting bestaat vaak uit lijnvormige structuren (knotwilgen, hagen, singels), dijkbeplanting en erfbeplanting; op natte delen wilgenstruweel, elzenbroek en (historisch) grienden.'
+    betekenis_voor_erfbeplanting: 'Sluit aan op de schaal en openheid van het deelgebied (kom vs oeverwal). In open kommen: beperkt, lijnvormig en winddoorlatend; op hogere delen kan het erf ‘groener’ en rijker worden vormgegeven. Kies soorten die passen bij klei/zavel en bij de lokale grondwaterstand (Gt) en houd rekening met waterpeilbeheer.'
+    ontstaan_en_dynamiek: 'Bij hoge afvoeren traden (historisch) overstromingen op, waarbij sediment werd afgezet. Dicht bij de rivier bezonk grover materiaal, verder weg vooral fijne klei. Dit leidde tot karakteristieke landschapselementen: uiterwaarden, dijken, strangen/restgeulen, oeverwallen, stroomruggen en kommen.'
+    bronnen:
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl
+    - pdok_dataset_fysisch_geografische_regio_s_fgr_omsc
+    - atlas_natuurlijk_kapitaal_fysisch_geografische_reg
+    - clo_rivierengebied_landschapskenmerken
+  hogere_zandgronden:
+    titel: Hogere zandgronden
+    beschrijving: 'Oude dekzand- en stuwwallandschappen met overwegend zandige bodems. Van nature droger en voedselarmer dan klei- en veengebieden.
+
+      '
+    kenmerken: 'Afwisseling van dekzandruggen en -laagtes; lokaal stuwwallen. Historisch esdorpen, heide- en bosontginningen; verkaveling kan kleinschalig zijn met houtwallen.
+
+      '
+    bodem_en_water: 'Zand tot lemig zand; infiltratie is groot, grondwater dieper. In laagtes kan het juist nat zijn (beekdalen).
+
+      '
+    beplanting_en_landgebruik: 'Naaldbos/loofbos, heide-restanten, akkers en grasland. Typisch: eik, berk, grove den, lijsterbes; in beekdalen els en wilg.'
+    betekenis_voor_erfbeplanting: 'Werk met droge toleranties en beschutting (wind). Houtwal- en erfbeplanting met streekeigen soorten sluit aan; voorkom verdroging met juiste standplaatskeuze.
+
+      '
+  laagveengebied:
+    titel: Laagveengebied
+    beschrijving: 'Waterrijk landschap gevormd door veenvorming in laaggelegen gebieden, vaak met plassen, petgaten, rietlanden en ontginningssloten.
+
+      '
+    kenmerken: 'Zeer vlak, open tot halfopen. Lineaire verkaveling met lange kavels en veel watergangen; waterpeilbeheer is essentieel.
+
+      '
+    bodem_en_water: Veen en venige klei; hoge grondwaterstand. Bodemdaling en oxidatie spelen bij ontwatering.
+    beplanting_en_landgebruik: 'Grasland, riet, moerasvegetaties. Typisch: elzenbroek, wilgenstruweel, rietkragen.'
+    betekenis_voor_erfbeplanting: 'Kies natte toleranties en houd rekening met slappe bodem (wortelverankering). Beplanting in lijnen en groepen langs watergangen werkt het best.
+
+      '
+  zeekleigebied:
+    titel: Zeekleigebied
+    beschrijving: 'Kust- en zeekleilandschappen ontstaan door afzetting van klei in getijdegebieden (kwelders, polders). Vaak grootschalig en open.
+
+      '
+    kenmerken: 'Zeer vlak, rationele verkaveling, rechte wegen en sloten. Dijken en kreekruggen bepalen soms lokale structuur.
+
+      '
+    bodem_en_water: 'Klei tot zavel; vaak vruchtbaar. Grondwater en verzilting kunnen lokaal spelen; drainage en peilbeheer belangrijk.
+
+      '
+    beplanting_en_landgebruik: 'Intensieve akkerbouw en grasland. Beplanting vooral als erfbeplanting, singels en windschermen.
+
+      '
+    betekenis_voor_erfbeplanting: 'In open polders is windreductie belangrijk. Kies soorten die wind en (soms) zoute invloed verdragen; beplanting bij erven en langs wegen past het landschap.
+
+      '
+  duinen:
+    titel: Duinen
+    beschrijving: 'Zandige kustduinen met reliëf, dynamiek door wind en zee en grote variatie van droog naar nat (duinvalleien).
+
+      '
+    kenmerken: 'Sterk reliëf met duintoppen en valleien; kalkrijk tot kalkarm afhankelijk van ligging. Kwetsbare natuurwaarden.
+
+      '
+    bodem_en_water: Zand, zeer doorlatend; zoetwaterlenzen kunnen voorkomen. Voedselarm tot matig voedselrijk.
+    beplanting_en_landgebruik: Duingraslanden, struweel (duindoorn) en duinbos (den, eik).
+    betekenis_voor_erfbeplanting: 'Kies soorten voor zand, wind en zout. Beperk bodemverstoring en werk met struweel/laag bos als windfilter.
+
+      '
+  lossgebied:
+    titel: Lössgebied
+    beschrijving: Golvend landschap met lössafzettingen (zeer vruchtbaar, leemrijk), vooral in Zuid-Limburg.
+    kenmerken: Hellingprocessen en holle wegen; kleinschalige mozaïekstructuur met graften en hagen.
+    bodem_en_water: 'Leem/löss: goede vochtvasthouding maar erosiegevoelig op hellingen.'
+    beplanting_en_landgebruik: Akkerbouw, boomgaarden, hagen en hellingbossen.
+    betekenis_voor_erfbeplanting: 'Erosieremmende beplanting (hagen/graften) is waardevol; kies soorten die passen bij leem en (soms) kalkrijk.
+
+      '

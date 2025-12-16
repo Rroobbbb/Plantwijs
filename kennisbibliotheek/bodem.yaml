@@ -1,0 +1,115 @@
+bodem:
+  zand:
+    titel: Zand
+    beschrijving: 'Zandige bodems zijn goed doorlatend en drogen relatief snel uit. Ze zijn vaak voedselarmer dan klei en vragen om standplaatsgeschikte soorten.
+
+      '
+    beheerimplicaties: 'Let op droogte in zomer, windgevoeligheid en snelle uitspoeling van nutriënten; mulch en organische stof helpen.
+
+      '
+    geschikte_beplanting: Eik, berk, lijsterbes, grove den; op rijker zand ook beuk, esdoorn en diverse struiken.
+  lemig_zand:
+    titel: Lemig zand
+    beschrijving: 'Zand met een leemfractie: betere vocht- en nutriëntenbuffer dan puur zand, maar nog steeds redelijk doorlatend.'
+    beheerimplicaties: Meestal breed inzetbaar; voorkom verslemping bij intensieve betreding als het nat is.
+    geschikte_beplanting: 'Veel inheemse loofbomen en struweel doen het hier goed; zowel drogere als matig vochtige soorten mogelijk.
+
+      '
+  leem:
+    titel: Leem / löss
+    beschrijving: 'Leemrijke bodems houden water en voedingsstoffen goed vast. Ze zijn vruchtbaar maar kunnen gevoelig zijn voor verslemping en erosie (op hellingen).
+
+      '
+    beheerimplicaties: 'Werk met bodembedekking en wortelnetwerk om structuur te behouden; vermijd zware belasting als de bodem nat is.
+
+      '
+    geschikte_beplanting: Eik, haagbeuk, es, linde, fruitbomen; hagen en struweel ontwikkelen vaak snel.
+    samenvatting: '**Leem** is een fijne minerale fractie (silt + klei) die water goed vasthoudt en vaak vruchtbaar is; in het rivierengebied komt leem vaak als bijmenging of dek voor.'
+    bronnen_aanvullend:
+    - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
+    - everts_f_h_e_a_natura_2000_herstelstrategie_n_deel
+    - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+    - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
+    - geologie_van_nederland_komgrond_komklei_en_uitleg_
+  zavel:
+    titel: Zavel
+    beschrijving: 'Mengsel van zand en klei: relatief vruchtbaar, met goede bewerkbaarheid en een gematigde waterhuishouding.'
+    beheerimplicaties: Breed toepasbaar; bij langdurige natte perioden kan toch tijdelijke waterverzadiging optreden.
+    geschikte_beplanting: 'Veel soorten mogelijk: eik, iep, es, linde, populier, wilg (op nattere plekken), meidoorn, sleedoorn.'
+    samenvatting: '**Zavel** vormt een overgang tussen zand en klei: meer lutum dan zand, maar duidelijk beter doorlatend dan zware klei.'
+    bronnen_aanvullend:
+    - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
+    - everts_f_h_e_a_natura_2000_herstelstrategie_n_deel
+    - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+    - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
+    - geologie_van_nederland_komgrond_komklei_en_uitleg_
+  lichte_klei:
+    titel: Lichte klei
+    beschrijving: 'Kleigrond met nog redelijk wat zand/silt. Vruchtbaar en vochtvasthoudend, maar minder zwaar dan komklei.
+
+      '
+    beheerimplicaties: Bij nat weer gevoelig voor structuurverlies; drainage en organische stof helpen.
+    geschikte_beplanting: Iep, linde, es, esdoorn, wilg en populier; struiken zoals meidoorn, Gelderse roos en kornoelje.
+  zware_klei:
+    titel: Zware klei (komklei)
+    beschrijving: 'Fijnkorrelige, zware klei die water lang vasthoudt en langzaam opwarmt. Vaak natte standplaats, vooral in komgebieden.
+
+      '
+    beheerimplicaties: 'Vermijd zware machines bij nat weer; kies soorten met tolerantie voor natte voeten en wisselende zuurstofcondities.
+
+      '
+    geschikte_beplanting: Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier, Gelderse roos.
+  veen:
+    titel: Veen / venige bodem
+    beschrijving: 'Organische bodem met hoge waterstand van oorsprong. Slap draagvermogen en gevoelig voor inklinking bij ontwatering.
+
+      '
+    beheerimplicaties: 'Houd rekening met bodemdaling en instabiele verankering; kies soorten die nat kunnen en niet extreem windgevoelig zijn.
+
+      '
+    geschikte_beplanting: Zwarte els, wilg, berken; riet- en moerasstruweel op natte delen.
+  klei:
+    titel: Klei (algemeen, inclusief rivierklei)
+    beschrijving: 'Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).'
+    standplaats: 'Klei warmt in het voorjaar langzamer op dan zand en is bij nat weer gevoelig voor structuurschade (verdichting/versmering). De zuurstofvoorziening in de wortelzone kan in natte perioden beperkend zijn, vooral bij zware klei/komklei.
+
+      '
+    waterhuishouding: 'De ontwatering en het peilbeheer (slotensysteem, drains, stuwen) bepalen sterk of de standplaats ''vochtig'' of ''nat'' aanvoelt. Op microreliëf (oeverwal vs kom) kunnen in korte afstand grote verschillen voorkomen.
+
+      '
+    landgebruik_en_beplanting: 'Kleigronden zijn vaak productief en worden intensief gebruikt (grasland/akkerbouw). Streekeigen beplanting in rivierklei is vaak lijnvormig (knotwilgen, hagen, singels) en op nattere delen elzen- en wilgenstruweel of griend.
+
+      '
+    betekenis_voor_erfbeplanting: 'Kies soorten op basis van (1) draagkracht en waterverzadiging in de winter, (2) zomerse droogtestress bij lange droge perioden (ook klei kan in de zomer hard uitdrogen), en (3) beheerbaarheid. Voor natte klei: wilg, zwarte els, populier, iep; voor beter ontwaterde klei/zavel: linde, esdoorn, eik, meidoornhagen.'
+    bronnen:
+    - geologie_van_nederland_komgrond_komklei_tno
+    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_2
+    - jongmans_a_g_e_a_2013_landschappen_van_nederland_g
+    samenvatting: '**Klei** is mineraal materiaal met relatief veel lutum (<2 µm). In het rivierengebied bestaat klei meestal uit **rivierklei**: fijn sediment dat tijdens overstromingen en in rustig water is afgezet. Belangrijk onderscheid: **oeverwal-/stroomrugklei** (vaak lichter, meer zavelig, beter doorlatend) versus **komklei** (vaak zwaarder, natter, slechter doorlatend).'
+    rivierengebied_nuance:
+      oeverwal_en_stroomrug:
+        kenmerk: Relatief hoger gelegen delen langs (oude) rivierlopen; sedimentatie bij hogere stroomsnelheden.
+        textuur: Vaak **zavel tot lichte klei** met meer zandbijmenging; beter belucht en sneller opwarmend.
+        water: Grondwater meestal dieper; periodiek droogtestress mogelijk in zomers op hogere stroomruggen.
+        beplanting: Breed assortiment mogelijk (bomen/heesters) mits rekening met wind/zon en droogtegevoeligheid.
+      komgebied:
+        kenmerk: Lager gelegen kommen ‘achter’ de oeverwal; afzetting in stilstaand/traag water.
+        textuur: Vaak **zware klei/komklei** (hoog lutum), structuurgevoelig, traag opwarmend.
+        water: Hogere (schijn)grondwaterstanden; kans op langdurig natte perioden en zuurstoftekort.
+        beplanting: Kies soorten die **natte voeten** verdragen; vermijd soorten die gevoelig zijn voor wortelverstikking.
+      uiterwaard:
+        kenmerk: 'Dynamische zone met afwisseling van klei, zavel en zand (jong sediment), afhankelijk van hoogte en overstromingsfrequentie.
+
+          '
+        water: Sterk wisselende vochtcondities; van droog (hoge zandige ruggen) tot nat (laagtes/kolken).
+        beplanting: Pioniers en soorten passend bij dynamiek (wilg/populier, struweel) en beheer (overstroming/erosie).
+    praktische_gevolgen_voor_erf:
+    - 'Op **komklei**: focus op lucht in de bodem (organische stof, niet verdichten), waterafvoer/berging en soortenkeuze met nat-tolerantie.'
+    - 'Op **oeverwal-/stroomrugklei (lichte klei/zavel)**: vaak meer droogte- en windstress → soorten met diep wortelgestel of droogtetolerantie.'
+    - Vermijd werken in natte klei (structuurbederf); plan grondwerk bij voldoende draagkracht.
+    bronnen_aanvullend:
+    - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
+    - everts_f_h_e_a_natura_2000_herstelstrategie_n_deel
+    - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+    - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
+    - geologie_van_nederland_komgrond_komklei_en_uitleg_

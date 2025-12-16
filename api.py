@@ -851,25 +851,69 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 # ───────────────────── app + cleaners
 
 # --- Kennisdocument: locatiecontext (YAML/JSON) ---
-_CONTEXT_PATH = os.environ.get("CONTEXT_DESCRIPTIONS_PATH", "context_descriptions.yaml")
+_CONTEXT_PATH = os.environ.get("CONTEXT_DESCRIPTIONS_PATH", "").strip()
+if not _CONTEXT_PATH:
+    # Prefer split-knowledge dir if present, else fallback to monolithic file
+    _CONTEXT_PATH = "kennisbibliotheek" if os.path.isdir(os.path.join(os.path.dirname(__file__), "kennisbibliotheek")) else "context_descriptions.yaml"
 
-def _resolve_context_path(path: str) -> str:
-    """Zoek context_descriptions.yaml robuust (cwd, map van api.py, en optioneel submap Plantwijs)."""
+def _resolve_context_sources(path: str) -> list[str]:
+    """Vind kennisbronnen: óf één context_descriptions.yaml, óf een map met losse YAML's.
+
+    Backwards compatible:
+    - Als 'path' een bestaand bestand is → [path]
+    - Als 'path' een bestaande map is → alle *.yaml/*.yml/*.json in die map
+    - Als 'path' niet bestaat:
+        * zoek context_descriptions.yaml op bekende plekken
+        * zoek map 'kennisbibliotheek' op bekende plekken (split-variant)
+    """
     p = str(path or "").strip() or "context_descriptions.yaml"
-    cand = [
+    candidates = [
         Path(p),
         Path.cwd() / p,
         Path(__file__).resolve().parent / p,
         Path(__file__).resolve().parent / "Plantwijs" / p,
     ]
-    for c in cand:
+
+    # 1) Direct: bestand
+    for c in candidates:
         try:
             if c.exists() and c.is_file():
-                return str(c)
+                return [str(c)]
         except Exception:
             continue
-    return str(cand[0])
 
+    # 2) Direct: directory
+    for c in candidates:
+        try:
+            if c.exists() and c.is_dir():
+                files = sorted([str(x) for x in c.iterdir() if x.is_file() and x.suffix.lower() in (".yaml", ".yml", ".json")])
+                return files
+        except Exception:
+            continue
+
+    # 3) Fallback: standaard split-map 'kennisbibliotheek'
+    kb = "kennisbibliotheek"
+    kb_candidates = [
+        Path.cwd() / kb,
+        Path(__file__).resolve().parent / kb,
+        Path(__file__).resolve().parent / "Plantwijs" / kb,
+    ]
+    for c in kb_candidates:
+        try:
+            if c.exists() and c.is_dir():
+                files = sorted([str(x) for x in c.iterdir() if x.is_file() and x.suffix.lower() in (".yaml", ".yml", ".json")])
+                if files:
+                    return files
+        except Exception:
+            continue
+
+    # 4) Laatste fallback: return het 'meest logische' pad zodat debug duidelijk blijft
+    return [str(candidates[0])]
+
+def _resolve_context_path(path: str) -> str:
+    """Legacy helper: behoudt oude interface (één pad)."""
+    srcs = _resolve_context_sources(path)
+    return srcs[0] if srcs else str(path or "context_descriptions.yaml")
 
 def _normalize_key(value: str) -> str:
     s = str(value or "").strip().lower()
@@ -1018,33 +1062,58 @@ def _parse_simple_yaml(raw: str) -> dict:
         return {}
 
 def _load_context_db() -> dict:
-    """Laadt context_descriptions.yaml. Ondersteunt:
-    - echte YAML (als PyYAML beschikbaar is)
-    - JSON (wat ook geldige YAML is)
-    Faalt nooit hard: bij problemen wordt {} teruggegeven.
+    """Laad kennisbibliotheek.
+
+    Ondersteunt:
+    - monolithisch context_descriptions.yaml (oude situatie)
+    - split-map 'kennisbibliotheek/' met meerdere YAML's (nieuwe situatie)
+
+    Merge-regel:
+    - top-level dicts worden samengevoegd
+    - bij key-conflict en beide waarden zijn dicts → deep-merge
+    - anders: laatste bron wint (maar we proberen overlappen te vermijden door split)
     """
-    path = _resolve_context_path(_CONTEXT_PATH)
-    try:
-        if not os.path.exists(path):
-            return {}
-        raw = Path(path).read_text(encoding="utf-8", errors="ignore").strip()
-        if not raw:
-            return {}
+    def _deep_merge(a: dict, b: dict) -> dict:
+        out = dict(a)
+        for k, v in (b or {}).items():
+            if k in out and isinstance(out[k], dict) and isinstance(v, dict):
+                out[k] = _deep_merge(out[k], v)
+            else:
+                out[k] = v
+        return out
+
+    def _load_one(path: str) -> dict:
         try:
-            import yaml  # type: ignore
-            data = yaml.safe_load(raw)
-            return data if isinstance(data, dict) else {}
+            if not path or not os.path.exists(path):
+                return {}
+            raw = Path(path).read_text(encoding="utf-8", errors="ignore").strip()
+            if not raw:
+                return {}
+            # 1) PyYAML (indien beschikbaar)
+            try:
+                import yaml  # type: ignore
+                data = yaml.safe_load(raw)
+                return data if isinstance(data, dict) else {}
+            except Exception:
+                pass
+            # 2) JSON
+            try:
+                data = json.loads(raw)
+                return data if isinstance(data, dict) else {}
+            except Exception:
+                # 3) minimal YAML subset
+                data = _parse_simple_yaml(raw)
+                return data if isinstance(data, dict) else {}
         except Exception:
-            pass
-        try:
-            data = json.loads(raw)
-            return data if isinstance(data, dict) else {}
-        except Exception:
-            # Laatste fallback: parse beperkte YAML-subset zonder extra dependencies
-            data = _parse_simple_yaml(raw)
-            return data if isinstance(data, dict) else {}
-    except Exception:
-        return {}
+            return {}
+
+    sources = _resolve_context_sources(_CONTEXT_PATH)
+    merged: dict = {}
+    for p in sources:
+        d = _load_one(p)
+        if isinstance(d, dict) and d:
+            merged = _deep_merge(merged, d)
+    return merged
 
 CONTEXT_DB = _load_context_db()
 try:
@@ -1054,13 +1123,69 @@ except Exception:
     pass
 
 
+
+
+# Centrale bronregistratie (hybride model): bron-id → volledig record
+BRONNEN_DB: dict = (CONTEXT_DB or {}).get("bronnen", {}) if isinstance((CONTEXT_DB or {}).get("bronnen", {}), dict) else {}
+
+def _format_bron(rec: Any) -> str:
+    """Maak een compacte, leesbare bron-string (voor UI/PDF)."""
+    if rec is None:
+        return ""
+    if isinstance(rec, str):
+        return rec.strip()
+    if isinstance(rec, dict):
+        auteur = str(rec.get("auteur") or rec.get("auteurs") or "").strip()
+        jaar = str(rec.get("jaar") or "").strip()
+        titel = str(rec.get("titel") or rec.get("name") or "").strip()
+        url = str(rec.get("url") or rec.get("link") or "").strip()
+        parts = []
+        head = " ".join([p for p in [auteur, f"({jaar})" if jaar else ""] if p]).strip()
+        if head:
+            parts.append(head)
+        if titel:
+            parts.append(titel)
+        if url:
+            parts.append(url)
+        return ". ".join([p for p in parts if p]).strip()
+    return str(rec).strip()
+
+def _resolve_bronnen(items: Any) -> Any:
+    """Vervang bron-id's door volledige bronstrings. Laat URLs/tekst ongemoeid."""
+    if not items:
+        return items
+    if isinstance(items, list):
+        out = []
+        for it in items:
+            s = str(it).strip() if isinstance(it, str) else None
+            if s and s in BRONNEN_DB:
+                out.append(_format_bron(BRONNEN_DB.get(s)))
+            else:
+                out.append(_format_bron(it) if isinstance(it, dict) else (str(it).strip() if it is not None else ""))
+        # verwijder lege items
+        return [x for x in out if str(x).strip()]
+    # enkelvoud
+    if isinstance(items, str) and items.strip() in BRONNEN_DB:
+        return _format_bron(BRONNEN_DB.get(items.strip()))
+    return items
 def _context_lookup(section: str, label: str) -> dict | None:
     sec = (CONTEXT_DB or {}).get(section, {})
     if not isinstance(sec, dict):
         return None
+
+    def _post(info: dict) -> dict:
+        # maak copy zodat we de bronlijst kunnen resolven zonder de DB te muteren
+        out = dict(info)
+        # resolve bronnen-velden (bronnen, bronnen_aanvullend, etc.)
+        for k in list(out.keys()):
+            if k == "bronnen" or k.startswith("bronnen_"):
+                out[k] = _resolve_bronnen(out.get(k))
+        return out
+
     key = _normalize_key(label)
     if key and key in sec and isinstance(sec[key], dict):
-        return sec[key]
+        return _post(sec[key])
+
     want = str(label or "").strip().lower()
     # fallback: splits zoals 'stroomrug of stroomgordel' / 'stroomrug, oeverwal'
     if want:
@@ -1068,12 +1193,15 @@ def _context_lookup(section: str, label: str) -> dict | None:
         for p in parts:
             pk = _normalize_key(p)
             if pk and pk in sec and isinstance(sec[pk], dict):
-                return sec[pk]
+                return _post(sec[pk])
+
     if want:
         for _k, v in sec.items():
             if isinstance(v, dict) and str(v.get("titel", "")).strip().lower() == want:
-                return v
+                return _post(v)
+
     return None
+
 
 def _first_sentence(text: str) -> str:
     s = str(text or "").strip()
