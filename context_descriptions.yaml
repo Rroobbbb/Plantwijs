@@ -2727,3 +2727,79 @@ nsn:
     bronnen:
       - Berendsen, H.J.A. (2005). Fysische geografie van Nederland. WUR.
       - Atlas Natuurlijk Kapitaal – Beekdalsystemen.
+
+ontwerpprincipes:
+  titel: Ontwerpprincipes (vertaling van analyse naar ontwerp)
+  uitleg: |
+    Deze sectie vertaalt de gevonden kaartwaarden (FGR, geomorfologie, NSN, bodem en vochttoestand)
+    naar concrete ontwerpuitgangspunten voor erf- en landschapsbeplanting. Het doel is om de stap
+    van analyse naar ruimtelijke keuzes expliciet en herhaalbaar te maken.
+  algemeen:
+    - Werk met bodem en water als drager van het ontwerp: ontwerp volgt standplaats.
+    - Start met zonering (hoog/laag, nat/droog, open/besloten) en kies daarna pas soorten.
+    - Benut microreliëf: kleine hoogteverschillen sturen nat–droog en bepalen plantkans.
+    - Plaats ‘zware’ beplanting (bomen/boomgroepen) op draagkrachtige, drogere delen; benut laagtes voor water en natuur.
+    - Behoud landschappelijke openheid waar die hoort; concentreer beplanting rond erf en langs lijnen.
+    - Ontwerp beheerbaar: kies structuren die passen bij beheerfrequentie en beschikbare tijd/middelen.
+  vochtklasse:
+    zeer_nat:
+      principes:
+        - Ontwerp natte zones bewust (plas-dras, flauwe oevers, moeras/ruigte) en kies nat-tolerante soorten.
+        - Voorkom verdichting en structuurbederf: beperk berijding en grondwerk in natte perioden.
+        - Plant gevoelige soorten alleen op microverhogingen/ophogingen of op drogere randen.
+    nat:
+      principes:
+        - Kies robuuste, vochtminnende soorten en werk met gradiënten (natte kern → drogere randen).
+        - Borg draagkracht: plan werkzaamheden bij voldoende droge bodem en voorkom kapotslaan van structuur.
+    vochtig:
+      principes:
+        - Breed inzetbaar: combineer schaduw, open plekken en infiltratie (wadi/greppel) om extremen te dempen.
+        - Maak variatie in structuur (haag/struweel/bomen) maar voorkom overconcentratie op één plek.
+    droog:
+      principes:
+        - Ontwerp met wateropvang en schaduw (mulch, bodembedekking, luwtehagen) om droogtestress te beperken.
+        - Kies droogtetolerante soorten; beperk verdamping door bodem te bedekken en grasconcurrentie te verminderen.
+    zeer_droog:
+      principes:
+        - Alleen zeer droogtetolerante beplanting is kansrijk zonder aanvullende maatregelen.
+        - Combineer bodemverbetering (organische stof) met luwte en waterinfiltratie om vestiging mogelijk te maken.
+  bodem:
+    zand:
+      principes:
+        - Focus op vochtvasthoudend bodembeheer (organische stof, mulch) en wind-/zonbeschutting.
+        - Benut laagtes voor waterberging en vochtminnende beplanting; hoge ruggen vragen droogtetolerantie.
+    klei:
+      principes:
+        - Voorkom verdichting: werk alleen bij draagkracht en minimaliseer zware bewerking.
+        - Plaats bomen bij voorkeur op drogere ruggen/ophogingen; benut natte delen voor wilg/els/populier-structuren.
+    veen:
+      principes:
+        - Beperk zware bomen en bodembelasting; lage draagkracht en stabiliteit vragen lichte structuren.
+        - Houd waterpeil hoog waar mogelijk; droge omstandigheden versnellen veenafbraak en bodemdaling.
+    leem:
+      principes:
+        - Bewaak bodemstructuur: verslemping en erosie kunnen spelen op hellingen en kale grond.
+        - Combineer bufferende leem/zavel met contourbeplanting en bodembedekking voor stabiele vochtvoorziening.
+  geomorfologie:
+    open_kommenlandschap:
+      principes:
+        - Behoud openheid; beplanting vooral lijnvormig bij erf/weg/slot en op randen.
+        - Kies nat-tolerante soorten of werk met microverhogingen voor drogere soorten.
+    oeverwal:
+      principes:
+        - Gebruik oeverwal als drager voor erfbeplanting, boomgaarden en laanstructuren.
+        - Houd rekening met wind en zomerse droogte op hogere delen.
+    stroomrug:
+      principes:
+        - Plaats hoofdbomen en struweel op de rug (drogere, draagkrachtige zone).
+        - Benut aangrenzende laagtes voor waterberging en vochtminnende beplanting.
+  nsn:
+    rivierkom_systeem:
+      principes:
+        - Ontwerp met water als drager: flauwe oevers, plas-dras en natte toleranties.
+        - Concentreer beplanting rond erf en langs watergangen; vermijd grote dichte bosvakken in open veld.
+    rivier_oeverwal_systeem:
+      principes:
+        - Groot soortenpalet mogelijk; ontwerp met luwte en droogtebuffering (bodem en schaduw).
+        - Boomgaarden, hagen en ervenstructuren passen goed op hogere, drogere delen.
+

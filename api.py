@@ -2007,6 +2007,66 @@ def advies_pdf(
     gt_info = _context_lookup("gt", (gt_code or "").lower())
 
     # ------------------------
+    # 3b) Ontwerpprincipes (samenvatting) — optioneel, uit context_descriptions.yaml
+    # ------------------------
+    def _as_list(v: Any) -> list[str]:
+        if v is None:
+            return []
+        if isinstance(v, list):
+            return [str(x).strip() for x in v if str(x).strip()]
+        if isinstance(v, str):
+            s = v.strip()
+            return [s] if s else []
+        return []
+
+    def _principes_from_node(node: Any) -> list[str]:
+        # Ondersteun schema's:
+        # - list[str]
+        # - {principes: list[str]}
+        # - {regels: list[str]}
+        if isinstance(node, dict):
+            return _as_list(node.get("principes")) or _as_list(node.get("regels"))
+        return _as_list(node)
+
+    ontwerp_bullets: list[str] = []
+    try:
+        op = (CONTEXT_DB or {}).get("ontwerpprincipes", {})
+        if isinstance(op, dict):
+            # 1) Algemeen
+            ontwerp_bullets += _principes_from_node(op.get("algemeen"))
+
+            # 2) Vochtklasse (op basis van 'vocht_raw' uit BRO/Gt)
+            vk = (str(vocht_raw or "").strip().lower() or "")
+            vk_map = op.get("vochtklasse", {}) if isinstance(op.get("vochtklasse", {}), dict) else {}
+            if vk and isinstance(vk_map, dict):
+                ontwerp_bullets += _principes_from_node(vk_map.get(_normalize_key(vk)) or vk_map.get(vk))
+
+            # 3) Bodem (canoniek waar mogelijk)
+            bodem_key = (bodem_val or bodem_raw or "").strip()
+            bodem_node = op.get("bodem", {}) if isinstance(op.get("bodem", {}), dict) else {}
+            if bodem_key and isinstance(bodem_node, dict):
+                # probeer eerst canonieke categorie (zand/klei/veen/leem), anders label
+                canon = _canon_soil_token(bodem_key) or _canon_soil_token(_normalize_key(bodem_key)) or ""
+                if canon and canon in bodem_node:
+                    ontwerp_bullets += _principes_from_node(bodem_node.get(canon))
+                else:
+                    ontwerp_bullets += _principes_from_node(bodem_node.get(_normalize_key(bodem_key)) or bodem_node.get(bodem_key))
+
+            # 4) FGR / Geomorfologie / NSN
+            for sec, label in [("fgr", fgr), ("geomorfologie", gmm_val), ("nsn", nsn_val)]:
+                sec_node = op.get(sec, {}) if isinstance(op.get(sec, {}), dict) else {}
+                if label and isinstance(sec_node, dict):
+                    ontwerp_bullets += _principes_from_node(sec_node.get(_normalize_key(label)) or sec_node.get(label))
+
+    except Exception:
+        ontwerp_bullets = []
+
+    # Deduplicate, behoud volgorde; en cap voor rapportscanbaarheid
+    _seen = set()
+    ontwerp_bullets = [b for b in ontwerp_bullets if not (b in _seen or _seen.add(b))]
+    ontwerp_bullets = ontwerp_bullets[:7]
+
+    # ------------------------
     # 4) Kernsamenvatting (scanbaar)
     # ------------------------
     kern_zinnen = []
@@ -2138,6 +2198,13 @@ def advies_pdf(
 
     story.append(ctx_table)
     story.append(Spacer(1, 10))
+
+    # Ontwerpuitgangspunten (scanbaar) — komt uit context_descriptions.yaml > ontwerpprincipes
+    if ontwerp_bullets:
+        story.append(Paragraph("Ontwerpuitgangspunten (samenvatting)", style_h1))
+        for i, b in enumerate(ontwerp_bullets, 1):
+            story.append(Paragraph(f"<b>{i}.</b> {b}", style_p))
+        story.append(Spacer(1, 6))
 
     # Start de encyclopedische toelichting op een nieuwe pagina
     story.append(PageBreak())
