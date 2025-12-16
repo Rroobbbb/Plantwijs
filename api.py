@@ -12,7 +12,6 @@ from __future__ import annotations
 import io
 import math
 import os
-from pathlib import Path
 import re
 import time
 import unicodedata
@@ -853,24 +852,6 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 # --- Kennisdocument: locatiecontext (YAML/JSON) ---
 _CONTEXT_PATH = os.environ.get("CONTEXT_DESCRIPTIONS_PATH", "context_descriptions.yaml")
 
-def _resolve_context_path(path: str) -> str:
-    """Zoek context_descriptions.yaml robuust (cwd, map van api.py, en optioneel submap Plantwijs)."""
-    p = str(path or "").strip() or "context_descriptions.yaml"
-    cand = [
-        Path(p),
-        Path.cwd() / p,
-        Path(__file__).resolve().parent / p,
-        Path(__file__).resolve().parent / "Plantwijs" / p,
-    ]
-    for c in cand:
-        try:
-            if c.exists() and c.is_file():
-                return str(c)
-        except Exception:
-            continue
-    return str(cand[0])
-
-
 def _normalize_key(value: str) -> str:
     s = str(value or "").strip().lower()
     if not s:
@@ -1023,7 +1004,7 @@ def _load_context_db() -> dict:
     - JSON (wat ook geldige YAML is)
     Faalt nooit hard: bij problemen wordt {} teruggegeven.
     """
-    path = _resolve_context_path(_CONTEXT_PATH)
+    path = _CONTEXT_PATH
     try:
         if not os.path.exists(path):
             return {}
@@ -1047,12 +1028,6 @@ def _load_context_db() -> dict:
         return {}
 
 CONTEXT_DB = _load_context_db()
-try:
-    _secs = ', '.join([f"{k}({len(v)})" for k,v in (CONTEXT_DB or {}).items() if isinstance(v, dict)])
-    print(f"[CONTEXT] geladen: {_secs} uit {_resolve_context_path(_CONTEXT_PATH)}")
-except Exception:
-    pass
-
 
 def _context_lookup(section: str, label: str) -> dict | None:
     sec = (CONTEXT_DB or {}).get(section, {})
@@ -1062,17 +1037,36 @@ def _context_lookup(section: str, label: str) -> dict | None:
     if key and key in sec and isinstance(sec[key], dict):
         return sec[key]
     want = str(label or "").strip().lower()
-    # fallback: splits zoals 'stroomrug of stroomgordel' / 'stroomrug, oeverwal'
-    if want:
-        parts = re.split(r"\s*(?:,|/|\bor\b|\bof\b|\ben\b)\s*", want)
-        for p in parts:
-            pk = _normalize_key(p)
-            if pk and pk in sec and isinstance(sec[pk], dict):
-                return sec[pk]
     if want:
         for _k, v in sec.items():
             if isinstance(v, dict) and str(v.get("titel", "")).strip().lower() == want:
                 return v
+    return None
+
+
+def _classify_overlap(gmm_label: str | None, nsn_label: str | None) -> str | None:
+    """Classificeer grof of GMM en NSN inhoudelijk overlappen.
+
+    Dit is puur bedoeld om doublures in het rapport te beperken: bij duidelijke verwantschap
+    tonen we GMM meer als "vorm/afzetting" en NSN meer als "proces/dynamiek".
+    """
+    g = _normalize_key(gmm_label or "")
+    n = _normalize_key(nsn_label or "")
+    if not g or not n:
+        return None
+
+    # Rivierengebied: kom-varianten
+    if ("kom" in g or "komvlakte" in g or "komgebied" in g or "open_kommen" in g) and ("kom" in n):
+        return "kom"
+
+    # Rivierengebied: oeverwal / stroomrug
+    if ("oeverwal" in g or "stroomrug" in g or "stroomgordel" in g) and ("oeverwal" in n or "stroomrug" in n):
+        return "oeverwal_stroomrug"
+
+    # Dekzand: rug/laagte ↔ dekzandlandschap
+    if ("dekzand" in g) and ("dekzand" in n):
+        return "dekzand"
+
     return None
 
 def _first_sentence(text: str) -> str:
@@ -2009,28 +2003,44 @@ def advies_pdf(
     # ------------------------
     # 4) Kernsamenvatting (scanbaar)
     # ------------------------
-    kern_zinnen = []
+    overlap = _classify_overlap(gmm_val, nsn_val)
+
+    # 1) Landschap in mensentaal (zonder label-opsomming)
     if fgr and fgr != "Onbekend":
-        kern_zinnen.append(f"Deze locatie ligt in het <b>{fgr}</b>.")
-    if gmm_val:
-        kern_zinnen.append(f"De geomorfologie is <b>{gmm_val}</b>.")
-    if nsn_val:
-        kern_zinnen.append(f"Het natuurlijke systeem is <b>{nsn_val}</b>.")
-    if bodem_val or bodem_raw:
-        kern_zinnen.append(f"De bodem is <b>{(bodem_val or bodem_raw)}</b>.")
-    if vocht_raw or gt_code:
-        kern_zinnen.append(f"De vochttoestand is <b>{(vocht_raw or '—')}</b> (Gt: <b>{(gt_code or '—')}</b>).")
+        if overlap == "kom" and "rivier" in _normalize_key(fgr):
+            zin1 = f"Deze locatie ligt in een <b>open rivierkom</b> binnen het <b>{fgr}</b>."
+        elif overlap == "oeverwal_stroomrug" and "rivier" in _normalize_key(fgr):
+            zin1 = f"Deze locatie ligt op een relatief hoger gelegen <b>oeverwal/stroomrug</b> binnen het <b>{fgr}</b>."
+        elif overlap == "dekzand" and "zand" in _normalize_key(fgr):
+            zin1 = f"Deze locatie ligt in de <b>{fgr}</b> op een dekzandlandschap (subtiel reliëf met ruggen en laagtes)."
+        else:
+            # generiek: noem FGR en (optioneel) 1 kaartlaag
+            extra = ""
+            if gmm_val:
+                extra = f" (landvorm: <b>{gmm_val}</b>)"
+            zin1 = f"Deze locatie ligt in het <b>{fgr}</b>{extra}."
+    else:
+        zin1 = "Deze locatie ligt in een gebied waarvan de regionale context niet eenduidig is bepaald."
+
+    # 2) Bodem + water in één zin
+    bodem_txt = (bodem_val or bodem_raw or "—")
+    vocht_txt = (vocht_raw or "—")
+    gt_txt = (gt_code or "—")
+    zin2 = f"De ondergrond bestaat uit <b>{bodem_txt}</b> met een overwegend <b>{vocht_txt}</b> grondwaterstand (Gt <b>{gt_txt}</b>)."
+
+    # 3) Hoogte kort en scanbaar
+    zin3 = ""
     if ahn_val not in (None, "", "—"):
-        kern_zinnen.append(f"De hoogteligging (AHN) is circa <b>{ahn_val}</b> m.")
+        zin3 = f"De hoogteligging (AHN) is circa <b>{ahn_val}</b> m."
+
+    # 4) 1 concrete ontwerpzin (eerste zin uit relevant kennisitem)
     advies_snip = _first_sentence(
-        (gmm_info or {}).get("betekenis_voor_erfbeplanting", "")
-        or (nsn_info or {}).get("betekenis_voor_erfbeplanting", "")
-        or (bodem_info or {}).get("beheerimplicaties", "")
+        (nsn_info or {}).get("betekenis_voor_erfbeplanting", "")
+        or (gmm_info or {}).get("betekenis_voor_erfbeplanting", "")
         or (bodem_info or {}).get("betekenis_voor_erfbeplanting", "")
+        or (bodem_info or {}).get("beheerimplicaties", "")
     )
-    if advies_snip:
-        kern_zinnen.append(advies_snip)
-    kernsamenvatting = " ".join(kern_zinnen)
+    kernsamenvatting = " ".join(x for x in [zin1, zin2, zin3, advies_snip] if x)
 
     # ------------------------
     # 5) PDF opbouw (modern + encyclopedisch)
@@ -2100,18 +2110,19 @@ def advies_pdf(
 
     # Kernsamenvatting (nieuw)
     story.append(Paragraph("Kernsamenvatting locatie", style_h1))
-    story.append(Paragraph(kernsamenvatting or "—", style_p))    # Overzicht blok: kaart + kernwaarden (onder elkaar)
+    story.append(Paragraph(kernsamenvatting or "—", style_p))
+
+    # Overzicht blok: kernwaarden + kaart
     map_img = _static_map_image(lat, lon, z=17, tiles=2)
     rl_map = None
     if map_img:
         try:
-            # Grote kaart op pagina 1
-            rl_map = RLImage(map_img, width=180 * mm, height=110 * mm)
+            rl_map = RLImage(map_img, width=78 * mm, height=78 * mm)
         except Exception:
             rl_map = None
 
     ctx_rows = [
-[Paragraph("<b>FGR</b>", style_small_muted), Paragraph(_short(fgr, 120) or "—", style_small)],
+        [Paragraph("<b>FGR</b>", style_small_muted), Paragraph(_short(fgr, 120) or "—", style_small)],
         [Paragraph("<b>Geomorfologie (GMM)</b>", style_small_muted), Paragraph(_short(gmm_val, 120) or "—", style_small)],
         [Paragraph("<b>Natuurlijk systeem (NSN)</b>", style_small_muted), Paragraph(_short(nsn_val, 120) or "—", style_small)],
         [Paragraph("<b>Bodem</b>", style_small_muted), Paragraph(_short(bodem_val or bodem_raw, 120) or "—", style_small)],
@@ -2131,23 +2142,27 @@ def advies_pdf(
             ]
         )
     )
-    # Kaart bovenaan, tabel eronder (pagina 1)
+
     if rl_map:
-        story.append(rl_map)
-        story.append(Spacer(1, 6))
-
-    story.append(ctx_table)
-    story.append(Spacer(1, 10))
-
-    # Start de encyclopedische toelichting op een nieuwe pagina
-    story.append(PageBreak())
+        top_tbl = Table([[ctx_table, rl_map]], colWidths=[120 * mm, 78 * mm])
+    else:
+        top_tbl = Table([[ctx_table]], colWidths=[198 * mm])
+    top_tbl.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP")]))
+    story.append(top_tbl)
+    story.append(Spacer(1, 8))
 
     # Encyclopedische toelichting
     story.append(Paragraph("Toelichting op locatiecontext", style_h1))
     story.append(Paragraph("Onderstaande toelichting geeft de betekenis van de gevonden kaartwaarden en de implicaties voor erf- en landschapsbeplanting.", style_p))
-    story.append(Paragraph('De onderstaande toelichting beschrijft dezelfde locatie vanuit verschillende invalshoeken (landschap, vorm, systeem en standplaats). Hierdoor kunnen sommige kenmerken op meerdere plekken terugkomen, telkens met een andere betekenis en schaal.', style_p))
 
-    def _render_section(title: str, info: dict | None, fallback_label: str | None = None):
+    def _render_section(
+        title: str,
+        info: dict | None,
+        fallback_label: str | None = None,
+        *,
+        omit_keys: set[str] | None = None,
+        only_keys: set[str] | None = None,
+    ):
         story.append(Paragraph(title, style_h2))
         if not info:
             if fallback_label:
@@ -2157,22 +2172,45 @@ def advies_pdf(
             story.append(Spacer(1, 4))
             return
 
-        def add(label: str, key: str):
-            val = info.get(key)
-            if val:
-                story.append(Paragraph(f"<b>{label}.</b> {val}", style_p))
+        omit_keys = omit_keys or set()
 
-        # Support meerdere schema's
+        def add(label: str, key: str):
+            if only_keys is not None and key not in only_keys:
+                return
+            if key in omit_keys:
+                return
+            val = info.get(key)
+            if not val:
+                return
+            if isinstance(val, (list, tuple)):
+                flat = ", ".join(str(x) for x in val if str(x).strip())
+                if flat:
+                    story.append(Paragraph(f"<b>{label}.</b> {flat}", style_p))
+                return
+            if isinstance(val, dict):
+                # compacte dict-weergave (sleutel: waarde)
+                flat = "; ".join(f"{k}: {v}" for k, v in val.items() if v not in (None, "", "—"))
+                if flat:
+                    story.append(Paragraph(f"<b>{label}.</b> {flat}", style_p))
+                return
+            story.append(Paragraph(f"<b>{label}.</b> {val}", style_p))
+
+        # Support meerdere schema's + aanvullende velden uit het kennisdocument
+        add("Kern", "samenvatting")
         add("Kern", "kernsamenenvatting")
         add("Kern", "kernsamenenvatting_kort")
         add("Beschrijving", "beschrijving")
         add("Ontstaansgeschiedenis", "ontstaansgeschiedenis")
         add("Kenmerken", "kenmerken")
         add("Reliëf en vorm", "reliëf_en_vorm")
+        add("Landschap en structuur", "landschap_en_structuur")
         add("Systeemwerking", "systeemwerking")
         add("Water en dynamiek", "water_en_dynamiek")
+        add("Proces en gradiënten", "proces_en_gradiënten")
+        add("Typische ecotopen", "typische_ecotopen")
         add("Bodem en water", "bodem_en_water")
         add("Bodem en hydrologie", "bodem_en_hydrologie")
+        add("Waterhuishouding", "waterhuishouding")
         add("Bodemontwikkeling", "bodemontwikkeling")
         add("Landgebruik en beplanting", "landgebruik_en_beplanting")
         add("Vegetatiestructuur en beplanting", "vegetatiestructuur_en_beplanting")
@@ -2180,6 +2218,15 @@ def advies_pdf(
         add("Betekenis voor erfbeplanting", "betekenis_voor_erfbeplanting")
         add("Betekenis", "betekenis")
         add("Geschikte beplanting", "geschikte_beplanting")
+        add("Typische bodemtypes", "typische_bodemtypes")
+        add("Koppeling met bodem", "koppeling_met_bodem")
+        add("Praktische gevolgen", "praktische_gevolgen_voor_erf")
+
+        # Lijsten (indien aanwezig)
+        if "praktische_gevolgen_voor_erf" in info and "praktische_gevolgen_voor_erf" not in omit_keys and only_keys is None:
+            lst = info.get("praktische_gevolgen_voor_erf")
+            if isinstance(lst, list) and lst:
+                story.append(Paragraph("<b>Praktische gevolgen voor erf.</b> " + " ".join(str(x) for x in lst), style_p))
 
         bronnen = info.get("bronnen")
         if isinstance(bronnen, list) and bronnen:
@@ -2187,9 +2234,39 @@ def advies_pdf(
 
         story.append(Spacer(1, 6))
 
+    # Doublure-reductie: bij duidelijke verwantschap tonen we GMM vooral als "vorm/afzetting"
+    # en NSN vooral als "proces/dynamiek".
+    gmm_omit: set[str] = set()
+    nsn_omit: set[str] = set()
+    if overlap == "kom":
+        # Komvlakte (vorm) + Rivierkom (systeem): in NSN minder herhaling over ontstaans-/bodemtekst
+        nsn_omit.update({
+            "beschrijving",
+            "ontstaansgeschiedenis",
+            "bodem_en_water",
+            "bodem_en_hydrologie",
+            "bodem_en_hydrologie",
+            "landgebruik_en_beplanting",
+            "vegetatiestructuur_en_beplanting",
+        })
+    elif overlap == "oeverwal_stroomrug":
+        nsn_omit.update({
+            "beschrijving",
+            "ontstaansgeschiedenis",
+            "reliëf_en_vorm",
+            "landschap_en_structuur",
+            "bodem_en_water",
+        })
+    elif overlap == "dekzand":
+        nsn_omit.update({
+            "beschrijving",
+            "ontstaansgeschiedenis",
+            "reliëf_en_vorm",
+        })
+
     _render_section(f"Fysisch Geografische Regio (FGR): {_safe(fgr)}", fgr_info, fgr)
-    _render_section(f"Geomorfologie (GMM): {_safe(gmm_val)}", gmm_info, gmm_val)
-    _render_section(f"Natuurlijk systeem (NSN): {_safe(nsn_val)}", nsn_info, nsn_val)
+    _render_section(f"Geomorfologie (GMM): {_safe(gmm_val)}", gmm_info, gmm_val, omit_keys=gmm_omit)
+    _render_section(f"Natuurlijk systeem (NSN): {_safe(nsn_val)}", nsn_info, nsn_val, omit_keys=nsn_omit)
     _render_section(f"Bodem: {_safe(bodem_val or bodem_raw)}", bodem_info, (bodem_val or bodem_raw))
     _render_section(f"Vochttoestand (Gt): {_safe(gt_code or '—')}", gt_info, (gt_code or "—"))
 
@@ -2198,51 +2275,22 @@ def advies_pdf(
     story.append(Paragraph("Geschikte soorten (selectie)", style_h1))
     story.append(Paragraph("Overzicht van geschikte bomen/heesters op basis van de gekozen filters en kaartwaarden.", style_p))
 
-    # Kolommen (vaste, begrijpelijke set) — kies de eerste beschikbare bronkolom.
-    def _first_col(cands):
-        for c in cands:
-            if c in df_pdf.columns:
-                return c
-        return None
-
-    col_wet = _first_col(["wetenschappelijke_naam", "latin_name", "naam"])
-    col_nl = _first_col(["naam_nl", "nederlandse_naam"])
-    col_status = _first_col(["status_nl", "nsr_status", "status"])
-    col_licht = _first_col(["standplaats_licht", "licht"])
-    col_vocht = _first_col(["vocht", "standplaats_bodemvochtigheid"])
-    col_bodem = _first_col(["grondsoorten", "bodem", "standplaats_grondsoort"])
-    col_hoogte = _first_col(["hoogte", "eigenschappen_hoogte"])
-    col_breedte = _first_col(["breedte", "eigenschappen_breedte"])
-
     cols = []
-    if col_nl:
-        cols.append(("Naam", col_nl, 40 * mm))
-    if col_wet:
-        cols.append(("Wetenschappelijke naam", col_wet, 48 * mm))
-    if col_status:
-        cols.append(("Status", col_status, 20 * mm))
-    if col_licht:
-        cols.append(("Licht", col_licht, 28 * mm))
-    if col_vocht:
-        cols.append(("Vocht", col_vocht, 26 * mm))
-    if col_bodem:
-        cols.append(("Bodem", col_bodem, 32 * mm))
-    if col_hoogte or col_breedte:
-        cols.append(("Maat", "__maat__", 34 * mm))
+    if "latin_name" in df_pdf.columns:
+        cols.append(("Wetenschappelijke naam", "latin_name", 55 * mm))
+    if "naam_nl" in df_pdf.columns:
+        cols.append(("Nederlandse naam", "naam_nl", 55 * mm))
+    if "beplantingstype" in df_pdf.columns:
+        cols.append(("Type", "beplantingstype", 26 * mm))
+    if "status_nl" in df_pdf.columns:
+        cols.append(("Status", "status_nl", 22 * mm))
+    if "standplaats_licht" in df_pdf.columns:
+        cols.append(("Licht", "standplaats_licht", 30 * mm))
 
     header = [Paragraph(f"<b>{h}</b>", style_small) for h, _, _w in cols]
     data = [header]
     for _, row in df_pdf.iterrows():
-        row_cells = []
-        for _h, k, _w in cols:
-            if k == "__maat__":
-                h = (str(row.get(col_hoogte, "")) if col_hoogte else "").strip()
-                b = (str(row.get(col_breedte, "")) if col_breedte else "").strip()
-                maat = " / ".join([x for x in [h, b] if x]) or "—"
-                row_cells.append(Paragraph(_short(maat, 60), style_small))
-            else:
-                row_cells.append(Paragraph(_short(row.get(k, ""), 60) or "—", style_small))
-        data.append(row_cells)
+        data.append([Paragraph(_short(row.get(k, ""), 60) or "—", style_small) for _h, k, _w in cols])
 
     col_widths = [w for _h, _k, w in cols] if cols else [180 * mm]
     tbl = Table(data, colWidths=col_widths, repeatRows=1)
