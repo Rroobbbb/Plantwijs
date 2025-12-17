@@ -1,4 +1,36 @@
 
+def build_locatieprofiel(bodem_label, gt_label, ahn_val, fgr_label, nsn_label):
+    """Combineert kernconclusies uit bodem, Gt, hoogte en landschap tot één leesbaar profiel."""
+    profiel = {}
+    # Waterregime
+    if gt_label:
+        if any(k in gt_label.lower() for k in ["nat", "zeer nat"]):
+            profiel["water"] = "overwegend nat"
+        elif any(k in gt_label.lower() for k in ["droog", "zeer droog"]):
+            profiel["water"] = "overwegend droog"
+        else:
+            profiel["water"] = "licht vochtig"
+    else:
+        profiel["water"] = "onbekend"
+    # Reliëf
+    try:
+        h = float(str(ahn_val).replace(",", "."))
+        profiel["reliëf"] = "lage ligging met geringe hoogteverschillen" if h < 10 else "hogere ligging"
+    except Exception:
+        profiel["reliëf"] = "lichte hoogteverschillen"
+    # Landschap
+    landschap = "open landschap"
+    if fgr_label and any(k in fgr_label.lower() for k in ["bos", "zand", "heuvelland"]):
+        landschap = "meer besloten landschap"
+    profiel["landschap"] = landschap
+    # Kernzin
+    profiel["samenvatting"] = (
+        f"Deze locatie ligt in een {profiel['landschap']} met {profiel['reliëf']} en een {profiel['water']} waterhuishouding."
+    )
+    return profiel
+
+
+
 # PlantWijs API — v3.9.7
 # - FIX: PDOK Locatieserver → nieuwe endpoint (api.pdok.nl … /search/v3_1) met CORS
 # - UI: Kolomtitel opent filter; kolommen tonen/verbergen; sticky header; thema toggle; CSV/XLSX export
