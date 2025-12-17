@@ -1,85 +1,3 @@
-from __future__ import annotations
-
-
-def build_locatieprofiel(bodem_label, gt_label, ahn_val, fgr_label, nsn_label):
-    """Combineert kernconclusies uit bodem, Gt, hoogte en landschap tot één leesbaar profiel."""
-    profiel = {}
-    # Waterregime
-    if gt_label:
-        if any(k in gt_label.lower() for k in ["nat", "zeer nat"]):
-            profiel["water"] = "overwegend nat"
-        elif any(k in gt_label.lower() for k in ["droog", "zeer droog"]):
-            profiel["water"] = "overwegend droog"
-        else:
-            profiel["water"] = "licht vochtig"
-    else:
-        profiel["water"] = "onbekend"
-    # Reliëf
-    try:
-        h = float(str(ahn_val).replace(",", "."))
-        profiel["reliëf"] = "lage ligging met geringe hoogteverschillen" if h < 10 else "hogere ligging"
-    except Exception:
-        profiel["reliëf"] = "lichte hoogteverschillen"
-    # Landschap
-    landschap = "open landschap"
-    if fgr_label and any(k in fgr_label.lower() for k in ["bos", "zand", "heuvelland"]):
-        landschap = "meer besloten landschap"
-    profiel["landschap"] = landschap
-    # Kernzin
-    profiel["samenvatting"] = (
-        f"Deze locatie ligt in een {profiel['landschap']} met {profiel['reliëf']} en een {profiel['water']} waterhuishouding."
-    )
-    return profiel
-
-
-import re as _re  # local alias for sentence splitting
-
-def _profile_emphasis(profiel: dict) -> dict:
-    """Bepaalt accenten voor tekstlengte en prioriteiten o.b.v. het locatieprofiel."""
-    water = (profiel.get("water") or "").lower()
-    landschap = (profiel.get("landschap") or "").lower()
-    reliëf = (profiel.get("reliëf") or "").lower()
-
-    return {
-        "water_first": "nat" in water,
-        "drought_first": "droog" in water,
-        "open_landscape": "open" in landschap,
-        "relief_low": ("lage" in reliëf) or ("geringe" in reliëf),
-    }
-
-def _prioritize_principles(principles: list, emph: dict) -> list:
-    """Herordent ontwerpuitgangspunten zonder ze te beperken in aantal."""
-    def score(item):
-        title, body = item
-        t = (str(title) + " " + str(body)).lower()
-        s = 0
-        if emph.get("water_first"):
-            if any(k in t for k in ["water", "natte", "poel", "wadi", "berging", "laagte", "kwel"]):
-                s += 30
-            if any(k in t for k in ["draagkracht", "boom", "boomgroep", "zware"]):
-                s += 10
-        if emph.get("drought_first"):
-            if any(k in t for k in ["droogte", "schaduw", "mulch", "bodembedekking", "luwte", "wind", "vasthouden"]):
-                s += 30
-        if emph.get("open_landscape"):
-            if any(k in t for k in ["openheid", "zicht", "lijnen", "kavel", "dijk", "rand", "concentreer"]):
-                s += 20
-        if any(k in t for k in ["zonering", "microreliëf", "hoog/laag", "nat/droog", "standplaats"]):
-            s += 25
-        return s
-    return sorted(principles, key=score, reverse=True)
-
-def _shorten_if_needed(txt: str, max_sentences: int = 3) -> str:
-    """Maakt toelichting compacter door te knippen op zinnen (voor leesbaarheid)."""
-    if not txt:
-        return txt
-    parts = _re.split(r'(?<=[.!?])\s+', str(txt).strip())
-    if len(parts) <= max_sentences:
-        return str(txt).strip()
-    return " ".join(parts[:max_sentences]).strip()
-
-
-
 
 # PlantWijs API — v3.9.7
 # - FIX: PDOK Locatieserver → nieuwe endpoint (api.pdok.nl … /search/v3_1) met CORS
@@ -88,6 +6,8 @@ def _shorten_if_needed(txt: str, max_sentences: int = 3) -> str:
 # Starten:
 #   cd C:/PlantWijs
 #   venv/Scripts/uvicorn api:app --reload --port 9000
+
+from __future__ import annotations
 
 import io
 import math
