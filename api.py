@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 
 def build_locatieprofiel(bodem_label, gt_label, ahn_val, fgr_label, nsn_label):
     """Combineert kernconclusies uit bodem, Gt, hoogte en landschap tot één leesbaar profiel."""
@@ -86,8 +88,6 @@ def _shorten_if_needed(txt: str, max_sentences: int = 3) -> str:
 # Starten:
 #   cd C:/PlantWijs
 #   venv/Scripts/uvicorn api:app --reload --port 9000
-
-from __future__ import annotations
 
 import io
 import math
