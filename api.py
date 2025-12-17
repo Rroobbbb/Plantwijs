@@ -2538,6 +2538,20 @@ def advies_pdf(
     story.append(Paragraph("Beplantingswijzer – locatierapport", style_title))
     story.append(Paragraph(f"Locatie: <b>{lat:.6f}, {lon:.6f}</b>", style_sub))
 
+    story.append(Spacer(1, 8))
+    story.append(Paragraph("Inhoudsopgave", style_h1))
+    toc_entries = [
+        "Kernsamenvatting locatie",
+        "Toelichting op locatiecontext (landschap, vorm, systeem, standplaats)",
+        "Ontwerp- en beplantingsadvies (wat te doen op het erf)",
+        "Geschikte soorten (selectie en tabel)",
+        "Ontwerpuitgangspunten (samenvatting)",
+    ]
+    for i, t in enumerate(toc_entries, start=1):
+        story.append(Paragraph(f"{i}. {t}", style_p))
+    story.append(Spacer(1, 10))
+
+
     # Kernsamenvatting (nieuw)
     story.append(Paragraph("Kernsamenvatting locatie", style_h1))
     story.append(Paragraph(kernsamenvatting or "—", style_p))    # Overzicht blok: kaart + kernwaarden (onder elkaar)
@@ -2592,45 +2606,6 @@ def advies_pdf(
         fallback_label: str | None = None,
         category_key: str | None = None,
     ):
-
-        # GENERIEK: als er een mensgerichte rapporttekst is, gebruik die 1-op-1 in het rapport.
-
-        # Dit voorkomt opsommingen én voorkomt dat we rapporttekst onbedoeld inkorten/samenvatten.
-
-        if isinstance(info, dict):
-
-            duiding = info.get('duiding') if isinstance(info.get('duiding'), dict) else {}
-
-            rpt = (duiding.get('rapporttekst') or duiding.get('tekst') or info.get('rapporttekst') or '').strip()
-
-            if rpt:
-
-                # splits op lege regels → nette alinea's
-
-                for para in [p.strip() for p in rpt.split('\n\n') if p.strip()]:
-
-                    story.append(Paragraph(para, style_p))
-
-                bronnen = info.get('bronnen') or duiding.get('bronnen')
-
-                if bronnen:
-
-                    if isinstance(bronnen, (list, tuple)):
-
-                        bronnen_txt = '; '.join([str(b) for b in bronnen if str(b).strip()])
-
-                    else:
-
-                        bronnen_txt = str(bronnen)
-
-                    if bronnen_txt.strip():
-
-                        story.append(Paragraph('<i>Bronnen:</i> ' + bronnen_txt, style_small_muted))
-
-                story.append(Spacer(1, 6))
-
-                return
-
         story.append(Paragraph(title, style_h2))
         if not info:
             if fallback_label:
@@ -2672,6 +2647,7 @@ def advies_pdf(
 
             if rpt:
 
+                story.append(Paragraph(title, style_h2))
                 for p in _split_paragraphs(rpt):
 
                     story.append(Paragraph(p, style_p))
