@@ -2464,6 +2464,7 @@ def advies_pdf(
         kern_zinnen.append(f"De hoogteligging (AHN) is circa <b>{ahn_val}</b> m.")
     advies_snip = _first_sentence(
         (gmm_info or {}).get("betekenis_voor_erfbeplanting", "")
+        or (((nsn_info or {}).get("duiding", {}) if isinstance((nsn_info or {}).get("duiding", {}), dict) else {}).get("rapporttekst", ""))
         or (nsn_info or {}).get("betekenis_voor_erfbeplanting", "")
         or (bodem_info or {}).get("beheerimplicaties", "")
         or (bodem_info or {}).get("betekenis_voor_erfbeplanting", "")
@@ -2601,23 +2602,7 @@ def advies_pdf(
             story.append(Spacer(1, 4))
             return
 
-        
-        # Als de kennisbibliotheek een 'rapporttekst' aanbiedt (dubbele laag: technisch + leesbaar),
-        # gebruik die dan als hoofdtekst in het rapport om opsommingen te vermijden.
-        rt = None
-        if isinstance(info, dict):
-            rt = info.get("rapporttekst") or info.get("rapport_tekst")
-            if not rt and isinstance(info.get("duiding"), dict):
-                rt = info["duiding"].get("rapporttekst") or info["duiding"].get("rapport_tekst")
-        if rt:
-            story.append(Paragraph(str(rt), style_p))
-            bronnen = info.get("bronnen") if isinstance(info, dict) else None
-            if isinstance(bronnen, list) and bronnen:
-                story.append(Paragraph("<b>Bronnen (selectie).</b> " + "; ".join(str(b) for b in bronnen), style_small_muted))
-            story.append(Spacer(1, 6))
-            return
-
-def add(label: str, key: str):
+        def add(label: str, key: str):
             val = info.get(key)
             if val:
                 story.append(Paragraph(f"<b>{label}.</b> {val}", style_p))
@@ -2633,6 +2618,41 @@ def add(label: str, key: str):
             parts = [p.strip() for p in re.split(r"\n\s*\n+", s) if p.strip()]
             return parts
 
+
+
+        # NSN: gebruik voorkeurstekst uit de kennisbibliotheek (duiding.rapporttekst) voor leesbaarheid
+
+        if category_key == "nsn" and isinstance(info, dict):
+
+            duiding = info.get("duiding") if isinstance(info.get("duiding"), dict) else {}
+
+            rpt = (duiding.get("rapporttekst") or duiding.get("tekst") or info.get("rapporttekst") or "").strip()
+
+            if rpt:
+
+                for p in _split_paragraphs(rpt):
+
+                    story.append(Paragraph(p, style_p))
+
+                bronnen = info.get("bronnen") or duiding.get("bronnen")
+
+                if bronnen:
+
+                    if isinstance(bronnen, (list, tuple)):
+
+                        bronnen_txt = "; ".join([str(b) for b in bronnen if str(b).strip()])
+
+                    else:
+
+                        bronnen_txt = str(bronnen)
+
+                    if bronnen_txt.strip():
+
+                        story.append(Paragraph("<i>Bronnen:</i> " + bronnen_txt, style_small_muted))
+
+                story.append(Spacer(1, 6))
+
+                return
         # Support meerdere schema's
         add("Kern", "kernsamenenvatting")
         add("Kern", "kernsamenenvatting_kort")
