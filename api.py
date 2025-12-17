@@ -2361,6 +2361,8 @@ def advies_pdf(
     story.append(Paragraph("Beplantingswijzer – locatierapport", style_title))
     story.append(Paragraph(f"Locatie: <b>{lat:.6f}, {lon:.6f}</b>", style_sub))
 
+    story.append(Paragraph("Leeswijzer: eerst de kern (kaart + waarden), daarna praktische aanbevelingen, daarna de technische toelichting en soortentabel.", style_small_muted))
+
     # Kernsamenvatting (nieuw)
     story.append(Paragraph("Kernsamenvatting locatie", style_h1))
     story.append(Paragraph(kernsamenvatting or "—", style_p))    # Overzicht blok: kaart + kernwaarden (onder elkaar)
@@ -2401,6 +2403,10 @@ def advies_pdf(
 
     story.append(ctx_table)
     story.append(Spacer(1, 10))
+
+    # Overzicht (kaart + kernwaarden) staat bewust op pagina 1.
+    # Zet het praktische advies op een nieuwe pagina zodat bullets niet half afbreken.
+    story.append(PageBreak())
 
     # ------------------------
     # 5) Praktisch beplantingsadvies (locatiespecifiek, voorzichtig aanbevelend)
