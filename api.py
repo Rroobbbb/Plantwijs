@@ -2464,7 +2464,6 @@ def advies_pdf(
         kern_zinnen.append(f"De hoogteligging (AHN) is circa <b>{ahn_val}</b> m.")
     advies_snip = _first_sentence(
         (gmm_info or {}).get("betekenis_voor_erfbeplanting", "")
-        or (((nsn_info or {}).get("duiding", {}) if isinstance((nsn_info or {}).get("duiding", {}), dict) else {}).get("rapporttekst", ""))
         or (nsn_info or {}).get("betekenis_voor_erfbeplanting", "")
         or (bodem_info or {}).get("beheerimplicaties", "")
         or (bodem_info or {}).get("betekenis_voor_erfbeplanting", "")
@@ -2620,9 +2619,13 @@ def advies_pdf(
 
 
 
-        # NSN: gebruik voorkeurstekst uit de kennisbibliotheek (duiding.rapporttekst) voor leesbaarheid
+        # GENERIEK: gebruik rapporttekst/duiding.rapporttekst uit kennisbibliotheek
 
-        if category_key == "nsn" and isinstance(info, dict):
+        # Als een bibliotheek-item een mensgerichte tekst bevat, render die dan als primaire bron.
+
+        # Werkt voor alle categorieën (FGR, NSN, geomorfologie, bodem, Gt, etc.).
+
+        if isinstance(info, dict):
 
             duiding = info.get("duiding") if isinstance(info.get("duiding"), dict) else {}
 

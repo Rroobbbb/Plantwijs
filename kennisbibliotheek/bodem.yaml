@@ -4,18 +4,34 @@ bodem:
     doel: Landelijk dekkende en systematische beschrijving van bodems als standplaats voor erf- en landschapsbeplanting.
     opmerking: Bodemtypen zijn gebaseerd op Bodemkaart van Nederland 1:50.000 (WUR/Stichting voor Bodemkartering).
     laatst_bijgewerkt: '2025-12-17'
-    bewerking: Teksten herschreven naar leesbare, menselijke stijl; inhoud en indeling ongewijzigd.
+    bewerking: 'Teksten herschreven naar leesbare, menselijke stijl; inhoud en indeling ongewijzigd. | Dubbele laag toegevoegd: duiding.rapporttekst per onderdeel (textuur, bodemtypen, eigenschappen) voor rapportgebruik; originele velden behouden.'
   textuur:
     zand:
       titel: Zand
       beschrijving: Zandige bodems zijn goed doorlatend en drogen relatief snel uit. Ze zijn vaak voedselarmer dan klei en vragen om standplaatsgeschikte soorten.
       beheerimplicaties: Let op droogte in zomer, windgevoeligheid en snelle uitspoeling van nutriënten; mulch en organische stof helpen.
       geschikte_beplanting: Eik, berk, lijsterbes, grove den; op rijker zand ook beuk, esdoorn en diverse struiken.
+      duiding:
+        rapporttekst: 'Zand komt hier vaak voor als standplaats. Zandige bodems zijn goed doorlatend en drogen relatief snel uit. Ze zijn vaak voedselarmer dan klei en vragen om standplaatsgeschikte soorten.
+
+
+          Beheer en inrichting: Let op droogte in zomer, windgevoeligheid en snelle uitspoeling van nutriënten; mulch en organische stof helpen.
+
+
+          Beplantingsrichting (voorzichtig): Eik, berk, lijsterbes, grove den; op rijker zand ook beuk, esdoorn en diverse struiken.'
     lemig_zand:
       titel: Lemig zand
       beschrijving: 'Zand met een leemfractie: betere vocht- en nutriëntenbuffer dan puur zand, maar nog steeds redelijk doorlatend.'
       beheerimplicaties: Meestal breed inzetbaar; voorkom verslemping bij intensieve betreding als het nat is.
       geschikte_beplanting: Veel inheemse loofbomen en struweel doen het hier goed; zowel drogere als matig vochtige soorten mogelijk.
+      duiding:
+        rapporttekst: 'Lemig zand komt hier vaak voor als standplaats. Zand met een leemfractie: betere vocht- en nutriëntenbuffer dan puur zand, maar nog steeds redelijk doorlatend.
+
+
+          Beheer en inrichting: Meestal breed inzetbaar; voorkom verslemping bij intensieve betreding als het nat is.
+
+
+          Beplantingsrichting (voorzichtig): Veel inheemse loofbomen en struweel doen het hier goed; zowel drogere als matig vochtige soorten mogelijk.'
     leem:
       titel: Leem / löss
       beschrijving: Leemrijke bodems houden water en voedingsstoffen goed vast. Ze zijn vruchtbaar maar kunnen gevoelig zijn voor verslemping en erosie (op hellingen).
@@ -28,6 +44,17 @@ bodem:
       - wur_stichting_voor_bodemkartering_bodemkaart_van_n
       - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
       - geologie_van_nederland_komgrond_komklei_en_uitleg_
+      duiding:
+        rapporttekst: 'Leem / löss komt hier vaak voor als standplaats. Leemrijke bodems houden water en voedingsstoffen goed vast. Ze zijn vruchtbaar maar kunnen gevoelig zijn voor verslemping en erosie (op hellingen).
+
+
+          **Leem** is een fijne minerale fractie (silt + klei) die water goed vasthoudt en vaak vruchtbaar is; in het rivierengebied komt leem vaak als bijmenging of dek voor.
+
+
+          Beheer en inrichting: Werk met bodembedekking en wortelnetwerk om structuur te behouden; vermijd zware belasting als de bodem nat is.
+
+
+          Beplantingsrichting (voorzichtig): Eik, haagbeuk, es, linde, fruitbomen; hagen en struweel ontwikkelen vaak snel.'
     zavel:
       titel: Zavel
       beschrijving: 'Mengsel van zand en klei: relatief vruchtbaar, met goede bewerkbaarheid en een gematigde waterhuishouding.'
@@ -40,28 +67,63 @@ bodem:
       - wur_stichting_voor_bodemkartering_bodemkaart_van_n
       - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
       - geologie_van_nederland_komgrond_komklei_en_uitleg_
+      duiding:
+        rapporttekst: 'Zavel komt hier vaak voor als standplaats. Mengsel van zand en klei: relatief vruchtbaar, met goede bewerkbaarheid en een gematigde waterhuishouding.
+
+
+          **Zavel** vormt een overgang tussen zand en klei: meer lutum dan zand, maar duidelijk beter doorlatend dan zware klei.
+
+
+          Beheer en inrichting: Breed toepasbaar; bij langdurige natte perioden kan toch tijdelijke waterverzadiging optreden.
+
+
+          Beplantingsrichting (voorzichtig): Veel soorten mogelijk: eik, iep, es, linde, populier, wilg (op nattere plekken), meidoorn, sleedoorn.'
     lichte_klei:
       titel: Lichte klei
       beschrijving: Kleigrond met nog redelijk wat zand/silt. Vruchtbaar en vochtvasthoudend, maar minder zwaar dan komklei.
       beheerimplicaties: Bij nat weer gevoelig voor structuurverlies; drainage en organische stof helpen.
       geschikte_beplanting: Iep, linde, es, esdoorn, wilg en populier; struiken zoals meidoorn, Gelderse roos en kornoelje.
+      duiding:
+        rapporttekst: 'Lichte klei komt hier vaak voor als standplaats. Kleigrond met nog redelijk wat zand/silt. Vruchtbaar en vochtvasthoudend, maar minder zwaar dan komklei.
+
+
+          Beheer en inrichting: Bij nat weer gevoelig voor structuurverlies; drainage en organische stof helpen.
+
+
+          Beplantingsrichting (voorzichtig): Iep, linde, es, esdoorn, wilg en populier; struiken zoals meidoorn, Gelderse roos en kornoelje.'
     zware_klei:
       titel: Zware klei (komklei)
       beschrijving: Fijnkorrelige, zware klei die water lang vasthoudt en langzaam opwarmt. Vaak natte standplaats, vooral in komgebieden.
       beheerimplicaties: Vermijd zware machines bij nat weer; kies soorten met tolerantie voor natte voeten en wisselende zuurstofcondities.
       geschikte_beplanting: Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier, Gelderse roos.
+      duiding:
+        rapporttekst: 'Zware klei (komklei) komt hier vaak voor als standplaats. Fijnkorrelige, zware klei die water lang vasthoudt en langzaam opwarmt. Vaak natte standplaats, vooral in komgebieden.
+
+
+          Beheer en inrichting: Vermijd zware machines bij nat weer; kies soorten met tolerantie voor natte voeten en wisselende zuurstofcondities.
+
+
+          Beplantingsrichting (voorzichtig): Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier, Gelderse roos.'
     veen:
       titel: Veen / venige bodem
       beschrijving: Organische bodem met hoge waterstand van oorsprong. Slap draagvermogen en gevoelig voor inklinking bij ontwatering.
       beheerimplicaties: Houd rekening met bodemdaling en instabiele verankering; kies soorten die nat kunnen en niet extreem windgevoelig zijn.
       geschikte_beplanting: Zwarte els, wilg, berken; riet- en moerasstruweel op natte delen.
+      duiding:
+        rapporttekst: 'Veen / venige bodem komt hier vaak voor als standplaats. Organische bodem met hoge waterstand van oorsprong. Slap draagvermogen en gevoelig voor inklinking bij ontwatering.
+
+
+          Beheer en inrichting: Houd rekening met bodemdaling en instabiele verankering; kies soorten die nat kunnen en niet extreem windgevoelig zijn.
+
+
+          Beplantingsrichting (voorzichtig): Zwarte els, wilg, berken; riet- en moerasstruweel op natte delen.'
     klei:
       titel: Klei (algemeen, inclusief rivierklei)
       beschrijving: 'Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).'
       beheerimplicaties: ''
       geschikte_beplanting: ''
       samenvatting: '**Klei** is mineraal materiaal met relatief veel lutum (<2 µm). In het rivierengebied bestaat klei meestal uit **rivierklei**: fijn sediment dat tijdens overstromingen en in rustig water is afgezet. Belangrijk onderscheid: **oeverwal-/stroomrugklei** (vaak lichter, meer zavelig, beter doorlatend) versus **komklei** (vaak zwaarder, natter, slechter doorlatend).'
-      bronnen:
+      bronnen: &id001
       - geologie_van_nederland_komgrond_komklei_tno
       - berendsen_h_j_a_2005_fysische_geografie_van_nederl_2
       - jongmans_a_g_e_a_2013_landschappen_van_nederland_g
@@ -71,59 +133,139 @@ bodem:
       - wur_stichting_voor_bodemkartering_bodemkaart_van_n
       - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
       - geologie_van_nederland_komgrond_komklei_en_uitleg_
+      duiding:
+        rapporttekst: 'Klei (algemeen, inclusief rivierklei) komt hier vaak voor als standplaats. Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).
+
+
+          **Klei** is mineraal materiaal met relatief veel lutum (<2 µm). In het rivierengebied bestaat klei meestal uit **rivierklei**: fijn sediment dat tijdens overstromingen en in rustig water is afgezet. Belangrijk onderscheid: **oeverwal-/stroomrugklei** (vaak lichter, meer zavelig, beter doorlatend) versus **komklei** (vaak zwaarder, natter, slechter doorlatend).'
+        bronnen: *id001
   bodemtypen:
     podzolgrond:
       titel: Podzolgrond
       beschrijving: Uitspoelingsbodem op zand, gekenmerkt door arme bovengrond en inspoelingslaag die worteling kan beperken.
       water_en_beworteling: Vaak droog tot matig droog; beperkte nutriëntenbeschikbaarheid.
       betekenis_voor_erfbeplanting: Kies soorten die tegen armoede en droogte kunnen; organische-stofopbouw essentieel.
-      bronnen:
+      bronnen: &id002
       - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+      duiding:
+        rapporttekst: 'Podzolgrond. Uitspoelingsbodem op zand, gekenmerkt door arme bovengrond en inspoelingslaag die worteling kan beperken.
+
+
+          Water en beworteling: Vaak droog tot matig droog; beperkte nutriëntenbeschikbaarheid.
+
+
+          Betekenis voor erfbeplanting: Kies soorten die tegen armoede en droogte kunnen; organische-stofopbouw essentieel.'
+        bronnen: *id002
     enkeerdgrond:
       titel: Enkeerdgrond (esdek)
       beschrijving: Door eeuwenlange bemesting opgehoogde akkerbodem met dikke humusrijke bovengrond.
       water_en_beworteling: Goede beworteling; ondergrond vaak zandiger en droger.
       betekenis_voor_erfbeplanting: Zeer geschikt voor boomgaarden, erven en hagen; let op droogte onderin profiel.
-      bronnen:
+      bronnen: &id003
       - jongmans_a_g_e_a_2013_landschappen_van_nederland_g
+      duiding:
+        rapporttekst: 'Enkeerdgrond (esdek). Door eeuwenlange bemesting opgehoogde akkerbodem met dikke humusrijke bovengrond.
+
+
+          Water en beworteling: Goede beworteling; ondergrond vaak zandiger en droger.
+
+
+          Betekenis voor erfbeplanting: Zeer geschikt voor boomgaarden, erven en hagen; let op droogte onderin profiel.'
+        bronnen: *id003
     beekeerdgrond:
       titel: Beekeerdgrond
       beschrijving: Natte bodem in beekdalen met periodieke overstroming en afzetting.
       water_en_beworteling: Hoge Gt; natte tot zeer natte wortelzone.
       betekenis_voor_erfbeplanting: Gebruik vocht- en overstromingstolerante soorten.
-      bronnen:
+      bronnen: &id004
       - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
+      duiding:
+        rapporttekst: 'Beekeerdgrond. Natte bodem in beekdalen met periodieke overstroming en afzetting.
+
+
+          Water en beworteling: Hoge Gt; natte tot zeer natte wortelzone.
+
+
+          Betekenis voor erfbeplanting: Gebruik vocht- en overstromingstolerante soorten.'
+        bronnen: *id004
     moerige_grond:
       titel: Moerige grond
       beschrijving: Overgangsbodem tussen mineraal en veen; dunne veenlaag op zand of klei.
       water_en_beworteling: Vaak nat, lage draagkracht.
       betekenis_voor_erfbeplanting: Lichte structuren; vermijd zware bomen.
-      bronnen:
+      bronnen: &id005
       - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
+      duiding:
+        rapporttekst: 'Moerige grond. Overgangsbodem tussen mineraal en veen; dunne veenlaag op zand of klei.
+
+
+          Water en beworteling: Vaak nat, lage draagkracht.
+
+
+          Betekenis voor erfbeplanting: Lichte structuren; vermijd zware bomen.'
+        bronnen: *id005
     vaaggrond:
       titel: Vaaggrond (vlakvaag-/holtpodzolachtig)
       beschrijving: Jonge of zwak ontwikkelde bodems zonder duidelijke profielvorming.
       water_en_beworteling: Sterk afhankelijk van textuur en Gt.
       betekenis_voor_erfbeplanting: Altijd combineren met bodemtextuur en Gt voor advies.
-      bronnen:
+      bronnen: &id006
       - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+      duiding:
+        rapporttekst: 'Vaaggrond (vlakvaag-/holtpodzolachtig). Jonge of zwak ontwikkelde bodems zonder duidelijke profielvorming.
+
+
+          Water en beworteling: Sterk afhankelijk van textuur en Gt.
+
+
+          Betekenis voor erfbeplanting: Altijd combineren met bodemtextuur en Gt voor advies.'
+        bronnen: *id006
     antropogene_bodem:
       titel: Antropogene bodem (vergraven/opgebracht)
       beschrijving: Door mens sterk gewijzigde bodem; profiel en waterhuishouding verstoord.
       water_en_beworteling: Onvoorspelbaar; vaak storende lagen.
       betekenis_voor_erfbeplanting: Altijd maatwerk; profielinspectie aanbevolen.
-      bronnen:
+      bronnen: &id007
       - wur_toelichting_bodem_en_grondwaterkartering
+      duiding:
+        rapporttekst: 'Antropogene bodem (vergraven/opgebracht). Door mens sterk gewijzigde bodem; profiel en waterhuishouding verstoord.
+
+
+          Water en beworteling: Onvoorspelbaar; vaak storende lagen.
+
+
+          Betekenis voor erfbeplanting: Altijd maatwerk; profielinspectie aanbevolen.'
+        bronnen: *id007
   eigenschappen:
     kalkrijk:
       uitleg: Aanwezigheid van calciumcarbonaat; beïnvloedt pH en soortenkeuze.
       implicatie: Geschikt voor kalkminnende soorten; minder risico op verzuring.
+      duiding:
+        rapporttekst: 'Kalkrijk: Aanwezigheid van calciumcarbonaat; beïnvloedt pH en soortenkeuze.
+
+
+          Wat betekent dit voor beplanting en beheer? Geschikt voor kalkminnende soorten; minder risico op verzuring.'
     kalkarm:
       uitleg: Weinig tot geen calciumcarbonaat; pH vaak lager.
       implicatie: Kies zuurminnende of tolerante soorten.
+      duiding:
+        rapporttekst: 'Kalkarm: Weinig tot geen calciumcarbonaat; pH vaak lager.
+
+
+          Wat betekent dit voor beplanting en beheer? Kies zuurminnende of tolerante soorten.'
     verdicht:
       uitleg: Door berijding of belasting samengedrukte bodemstructuur.
       implicatie: Beperkte beworteling en waterafvoer; herstelmaatregelen nodig.
+      duiding:
+        rapporttekst: 'Verdicht: Door berijding of belasting samengedrukte bodemstructuur.
+
+
+          Wat betekent dit voor beplanting en beheer? Beperkte beworteling en waterafvoer; herstelmaatregelen nodig.'
     gley_stagnatie:
       uitleg: Langdurige natte omstandigheden door stagnatie of kwel.
       implicatie: Alleen nat-tolerante beplanting kansrijk.
+      duiding:
+        rapporttekst: 'Gley stagnatie: Langdurige natte omstandigheden door stagnatie of kwel.
+
+
+          Wat betekent dit voor beplanting en beheer? Alleen nat-tolerante beplanting kansrijk.'

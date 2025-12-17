@@ -33,11 +33,26 @@ fgr:
       materiaal, verder weg vooral fijne klei. Zo ontstonden karakteristieke elementen zoals uiterwaarden, dijken, strangen en
 
       restgeulen, oeverwallen, stroomruggen en komgronden.'
-    bronnen:
+    bronnen: &id001
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
     - pdok_dataset_fysisch_geografische_regio_s_fgr_omsc
     - atlas_natuurlijk_kapitaal_fysisch_geografische_reg
     - clo_rivierengebied_landschapskenmerken
+    duiding:
+      rapporttekst: 'Het Rivierengebied is het landschap dat is gevormd door Rijn, Maas en hun zijrivieren. Het bestaat uit een mozaïek van hogere oeverwallen en stroomruggen (grovere afzettingen dichter bij de rivier) en lagere komgebieden (fijnere klei verder van de rivier). Historisch hoorde periodieke overstroming bij dit systeem; door bedijking en kanalisatie is de dynamiek binnendijks sterk getemperd, maar waterbeheer blijft tot op vandaag sturend.
+
+
+        Het landschap wordt gekenmerkt door Relatief vlak reliëf met lokale hoogteverschillen op schaal van decimeters tot enkele meters. Bebouwing en erven liggen vaak op de hogere delen (oeverwal/stroomrug), terwijl de kommen opener en natter zijn. Watergangen (weteringen, sloten), kades en dijken structureren het landschap en bepalen zichtlijnen en windwerking. De bodem- en waterhuishouding spelen hierbij een sturende rol: Overwegend klei- en zavelgronden; in de komgebieden vaak zware, natte klei met beperkte draagkracht. Grondwater kan hoog staan en peilbeheer, drainage en afwatering bepalen sterk hoe nat of droog het perceel in de praktijk is.
+
+
+        Ontstaansgeschiedenis en dynamiek: Bij hoge afvoeren traden (historisch) overstromingen op waarbij sediment werd afgezet. Dicht bij de rivier bezonk grover materiaal, verder weg vooral fijne klei. Zo ontstonden karakteristieke elementen zoals uiterwaarden, dijken, strangen en restgeulen, oeverwallen, stroomruggen en komgronden.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. Sluit aan op de schaal en openheid van het deelgebied (kom versus oeverwal/stroomrug). In open komgebieden is een compacte, lijnvormige en winddoorlatende inrichting vaak het meest passend; op hogere delen kan het erf ‘groener’ en rijker worden opgebouwd. Stem soortenkeuze af op klei/zavel én op de lokale grondwaterstand (Gt) en houd rekening met peilbeheer: dat kan het verschil maken tussen ‘net vochtig’ en structureel nat.
+
+
+        In landgebruik en beplanting sluiten de volgende richtingen goed aan bij dit landschap. Landgebruik is vaak productief: grasland in nattere kommen en akkerbouw/boomgaarden op hogere delen. Streekeigen beplanting is veelal lijnvormig en gekoppeld aan erven, dijken en kavelranden: knotwilgen, hagen, singels en laanbeplanting. Op natte delen passen wilgenstruweel, elzenbroek-achtige vegetaties en (historisch) grienden.'
+      bronnen: *id001
   hogere_zandgronden:
     titel: Hogere zandgronden
     beschrijving: 'De hogere zandgronden omvatten dekzand-, stuwwal- en (lokaal) smeltwaterlandschappen van Oost-, Midden- en Zuid‑Nederland.
@@ -86,12 +101,27 @@ fgr:
       sterk. Hydrologisch zijn de hogere zandgronden gevoelig voor neerslagtekort: bij langdurige droogte dalen grondwaterstanden en
 
       vallen beekdalen periodiek droog.'
-    bronnen:
+    bronnen: &id002
     - pdok_dataset_fysisch_geografische_regio_s_fgr_omsc
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
     - clo_zandgebied_landschapskenmerken
     - deltaprogramma_hoge_zandgronden_droogte
     - rws_basiskaart_hoge_zandgronden_en_heuvelland
+    duiding:
+      rapporttekst: 'De hogere zandgronden omvatten dekzand-, stuwwal- en (lokaal) smeltwaterlandschappen van Oost-, Midden- en Zuid‑Nederland. De ondergrond bestaat vooral uit zand (soms met leem/keileem‑invloed). Infiltratie is groot en het watersysteem leunt sterk op neerslagaanvulling. Vergeleken met klei- en veengebieden zijn deze gronden van nature droger en voedselarmer, met grote lokale contrasten tussen droge ruggen en nattere laagtes (beekdalen en dekzandlaagtes).
+
+
+        Het landschap wordt gekenmerkt door Licht golvend reliëf met een mozaïek van dekzandruggen en -laagtes, lokaal afgewisseld met duidelijker hoogteverschillen door stuwwallen. Het cultuurlandschap is historisch gegroeid (esdorpen, kampenlandschap, heide‑ontginningen, bosaanplantingen). Kenmerkend zijn perceelsgebonden elementen zoals houtwallen, singels, hagen en laanbeplanting: ze geven structuur, vangen wind en zorgen voor luwte en microklimaat. De bodem- en waterhuishouding spelen hierbij een sturende rol: Overwegend zand tot lemig zand met goede doorlatendheid. Grondwaterstanden liggen gemiddeld dieper; zomerdroogte en verdroging zijn terugkerende thema’s. In laagtes en langs beken kan het juist natter zijn door kwel, slecht doorlatende lagen (leem/keileem) of opstuwing. Standplaatscondities kunnen op korte afstand sterk verschillen; kijk daarom niet alleen naar ‘regio’, maar ook naar micropositie (rug/laagte/beekdal) en de lokale Gt.
+
+
+        Ontstaansgeschiedenis en dynamiek: De zandgronden zijn gevormd tijdens en na de laatste ijstijd: wind zette dekzanden af, terwijl landijs en smeltwater (ouder) reliëf en ondergrond beïnvloedden (stuwwallen, smeltwaterafzettingen, leem/keileem). Daarna ontwikkelden bodems met uitspoeling (o.a. podzolen) en heide‑ en boslandschappen. Menselijk landgebruik (plaggenbemesting, ontginning, bebossing) stuurde het systeem sterk. Hydrologisch zijn de hogere zandgronden gevoelig voor neerslagtekort: bij langdurige droogte dalen grondwaterstanden en vallen beekdalen periodiek droog.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. Werk zonering uit op basis van microreliëf: drogere ruggen/essen lenen zich voor een breder soortenpalet (ook hogere bomen), terwijl laagtes vragen om vochtminnende beplanting of ruimte voor water. Op zand is bodemverbetering (organische stof, mulchen, bodembedekkers) belangrijk tegen uitspoeling en zomerdroogte. Ontwerp met wind: een gefilterde windbreker met struweel/houtwal werkt vaak beter dan één dichte bomenrij. Probeer water zo veel mogelijk vast te houden (infiltratie, kleine buffers) in plaats van snel af te voeren.
+
+
+        In landgebruik en beplanting sluiten de volgende richtingen goed aan bij dit landschap. Landgebruik varieert van bos (naald en loof), heide‑restanten en natuurterreinen tot akkers en graslanden. Streekeigen soorten sluiten aan op het zandige, vaak voedselarmere karakter: zomereik, berk, lijsterbes en grove den, en op rijkere standplaatsen ook beuk, haagbeuk en esdoorn. In nattere laagtes en beekdalen horen zwarte els, wilg en vochtminnend struweel thuis. Houtwallen en singels dragen biodiversiteit én maken microklimaat (schaduw, windreductie, vochtiger bodem).'
+      bronnen: *id002
   laagveengebied:
     titel: Laagveengebied
     beschrijving: 'Het laagveengebied is een waterrijk, laaggelegen landschap waar veen kon ontstaan door langdurig hoge waterstanden en weinig
@@ -138,12 +168,27 @@ fgr:
       vergroten stabiliteit maar verschuiven gebruiksmogelijkheden. Klimaatverandering (droge zomers, natte piekbuien) vergroot de druk
 
       op dit systeem.'
-    bronnen:
+    bronnen: &id003
     - pdok_dataset_fysisch_geografische_regio_s_fgr_omsc
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
     - cultureelerfgoed_veenweidelandschap_vernatting_gewenst
     - landschap_noord_holland_omhoog_met_het_veen_eindrapport
     - natuurkennis_landschappen_laagveen_en_zeeklei
+    duiding:
+      rapporttekst: 'Het laagveengebied is een waterrijk, laaggelegen landschap waar veen kon ontstaan door langdurig hoge waterstanden en weinig zuurstof in de bodem. Het landschap is sterk beïnvloed door ontginning en waterbeheer: sloten, kades, boezems en (historisch) verveningen hebben een fijnmazig netwerk van water en percelen opgeleverd. Het huidige functioneren draait om waterpeilbeheer, bodemdaling en het spanningsveld tussen landbouw, natuur, wonen en klimaatdoelen.
+
+
+        Het landschap wordt gekenmerkt door Zeer vlak reliëf met openheid en lange zichtlijnen, vaak versterkt door lineaire verkaveling en veel watergangen. Typische elementen zijn sloten, weteringen, vaarten en kades, rietkragen en plaatselijk petgaten en plassen. Door bodemdaling en peilbeheer kunnen hoogteverschillen tussen percelen, wegen en bebouwing toenemen, wat de inrichting van erven en infrastructuur beïnvloedt. De bodem- en waterhuishouding spelen hierbij een sturende rol: Veen en venige klei met veel organische stof en beperkt draagvermogen. Ontwatering brengt zuurstof in het veen en leidt tot oxidatie en bodemdaling; dit beïnvloedt funderingen, leidingen, wegen en beheerbaarheid. Hogere grondwaterstanden beperken veenafbraak en CO₂‑emissies, maar vragen om nat‑tolerante soorten en een doordachte standplaatskeuze. Lokale verschillen kunnen groot zijn door peilvakken, bemaling, zand/klei‑lenzen en de mate van ontwatering.
+
+
+        Ontstaansgeschiedenis en dynamiek: Laagveen ontstaat waar water langdurig hoog staat en plantresten zich ophopen tot veen. Ontginning, bemaling en ontwatering vormden het systeem om tot veenweide‑ en polderlandschap. De huidige dynamiek wordt bepaald door de balans tussen waterpeil, bodemsamenstelling en landgebruik. Lage peilen versnellen veenafbraak (oxidatie), bodemdaling en CO₂‑emissie; hogere peilen vergroten stabiliteit maar verschuiven gebruiksmogelijkheden. Klimaatverandering (droge zomers, natte piekbuien) vergroot de druk op dit systeem.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. Ontwerp met het waterregime als vertrekpunt: accepteer natte zones en benut ze voor biodiversiteit en waterberging in plaats van alles te willen ‘droogmaken’. Kies soorten die natte voeten verdragen en let op wortelverankering en windworp op slappe bodem. Werk waar nodig met verhoogde plantstroken of lichte ophoging, zonder structureel extra te ontwateren. Maak vaste paden/rijlijnen, beperk zware machines en kies onderhoudsvriendelijke structuren. Respecteer openheid en weidevogelwaarden door hogere beplanting vooral rond erven en infrastructurele lijnen te concentreren.
+
+
+        In landgebruik en beplanting sluiten de volgende richtingen goed aan bij dit landschap. Veel grasland (veenweide), rietlanden en moerasvegetaties; plaatselijk plassen en natuurgebieden. Streekeigen beplanting is vaak geconcentreerd langs erven, wegen en watergangen: rietkragen, moerasruigte en natte struwelen (wilg, zwarte els) en elzenbroek‑achtige vegetaties op natte plekken. Te veel ‘bosvorming’ kan openheid en weidevogelwaarden aantasten.'
+      bronnen: *id003
   zeekleigebied:
     titel: Zeekleigebied
     beschrijving: 'Het zeekleigebied omvat de kust‑ en zeekleilandschappen die zijn ontstaan door afzetting van klei (en plaatselijk zand) in
@@ -186,12 +231,27 @@ fgr:
       wordt bepaald door peilbeheer, plaatselijke bodemdaling, zeespiegelstijging en verzilting: factoren die samen sturen waar landbouw,
 
       natuur en bebouwing het meest robuust zijn.'
-    bronnen:
+    bronnen: &id004
     - pdok_dataset_fysisch_geografische_regio_s_fgr_omsc
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
     - clo_zeekleigebied_landschapskenmerken
     - geologie_van_nederland_zeekleilandschap_tno
     - geologie_van_nederland_zeekleiafzettingen_en_kwelders
+    duiding:
+      rapporttekst: 'Het zeekleigebied omvat de kust‑ en zeekleilandschappen die zijn ontstaan door afzetting van klei (en plaatselijk zand) in getijde‑ en kweldergebieden, en later door bedijking en inpoldering. Het landschap is in veel regio’s grootschalig en open, met duidelijke menselijke sturing via dijken, gemalen, slotenpatronen en rationele verkaveling. Lokale variatie ontstaat door oude geulen en kreekruggen/kreekbeddingen en door verschillen tussen ‘oud land’ en jongere polders.
+
+
+        Het landschap wordt gekenmerkt door Zeer vlak reliëf met grote openheid en lange zichtlijnen. In jonge polders domineren rechte wegen en sloten; in oudere gebieden komen vaker kronkeliger patronen en microreliëf voor door kreken en oude kwelderstructuren. Dijken, boezemwateren en gemalen zijn beeldbepalend. Beplanting is schaars en vooral gekoppeld aan erven, wegen en dijken; daardoor hebben lijnvormige elementen (singels/rijen) veel landschappelijk gewicht. De bodem- en waterhuishouding spelen hierbij een sturende rol: Klei tot zavel, doorgaans vruchtbaar en waterhoudend. Waterhuishouding hangt sterk samen met ontwatering, peilbeheer en (regionaal) verziltingsdruk. Zware klei is bij natte omstandigheden gevoelig voor structuurschade; bij droogte kan uitdroging en scheurvorming optreden. Standplaatscondities verschillen lokaal: op kreekruggen is de bodem vaak zaveliger en beter doorlatend dan in laagtes, waardoor kreekruggen vaak geschikter zijn voor zwaardere erfbeplanting.
+
+
+        Ontstaansgeschiedenis en dynamiek: Zeeklei werd afgezet in dynamische getijde‑omgevingen (wad/kwelder): bij vloed werd sediment aangevoerd en bij eb bezonk het. Door bedijking werd de getijdewerking buitengesloten en ontstonden polders met een kunstmatige waterhuishouding. De actuele dynamiek wordt bepaald door peilbeheer, plaatselijke bodemdaling, zeespiegelstijging en verzilting: factoren die samen sturen waar landbouw, natuur en bebouwing het meest robuust zijn.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. In open polders is windreductie vaak de primaire functie. Kies bij voorkeur gefilterde windbrekers (struweelgordel/singel) die wind breken zonder extra turbulentie te veroorzaken. Respecteer openheid: concentreer beplanting rond erven en langs infrastructuur en voorkom verspreide bosvakken in het open veld. Stem soorten af op (1) klei/zavel, (2) peilbeheer en (3) eventuele zoutinvloed. Gebruik kreekruggen als ‘droge ruggengraat’ voor zwaardere beplanting en benut nattere laagtes als water‑ en natuurzone.
+
+
+        In landgebruik en beplanting sluiten de volgende richtingen goed aan bij dit landschap. Veel intensieve akkerbouw en grasland. Streekeigen beplanting is vaak functioneel: erfbeplanting, singels, knotbomen en windschermen. Langs dijken en wegen komen laanstructuren voor; in nattere of extensievere zones rietkragen en ruigte. Soortenkeuze moet passen bij windbelasting en soms zoute invloed. Op zavelige/drogere delen is het soortenpalet breder dan op zware, natte klei.'
+      bronnen: *id004
   duinen:
     titel: Duinen
     beschrijving: 'De duinen vormen de zandige kuststrook die is opgebouwd door het samenspel van zee, wind en zandtransport. Het duinlandschap kent
@@ -224,11 +284,26 @@ fgr:
       duinkammen op; in natte laagtes ontstonden duinvalleien. Historisch zijn duinen lokaal gefixeerd met helm en aanplant om verstuiving
 
       te beheersen; tegenwoordig wordt op sommige plekken weer meer dynamiek toegelaten.'
-    bronnen:
+    bronnen: &id005
     - pdok_dataset_fysisch_geografische_regio_s_fgr_omsc
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
     - atlas_natuurlijk_kapitaal_kustbescherming
     - atlas_natuurlijk_kapitaal_fysisch_geografische_reg
+    duiding:
+      rapporttekst: 'De duinen vormen de zandige kuststrook die is opgebouwd door het samenspel van zee, wind en zandtransport. Het duinlandschap kent grote variatie in hoogte en vocht: van droge duintoppen en zeereep tot natte duinvalleien. Duinen zijn tegelijk natuurgebied, drinkwaterwingebied en een cruciale schakel in kustbescherming. Daardoor is het systeem ecologisch rijk, maar ook kwetsbaar.
+
+
+        Het landschap wordt gekenmerkt door Sterk reliëf met duinkammen, stuifkuilen en valleien. Op korte afstand wisselen gradiënten van zout → zoet, kalkrijk → kalkarm en droog → nat; die bepalen vegetatie en beheerkeuzes. Recreatie en infrastructuur kunnen lokaal druk leggen op bodem en natuur. De bodem- en waterhuishouding spelen hierbij een sturende rol: Zandige bodem met zeer hoge doorlatendheid. Zoetwater kan zich als zoetwaterlens in de duinen vormen; in valleien staat grondwater vaak dicht onder maaiveld. Voedselrijkdom varieert: jonge kalkrijke duinen zijn basischer en vaak soortenrijk, oudere/uitgeloogde duinen zuurder en voedselarmer. Waterwinning, drainage en klimaat (droogte) beïnvloeden valleien en natte habitats sterk.
+
+
+        Ontstaansgeschiedenis en dynamiek: Na de ijstijd groeide de kust door zandaanvoer en vormden zich strandwallen en duinen. Wind verplaatste zand landinwaarts en bouwde duinkammen op; in natte laagtes ontstonden duinvalleien. Historisch zijn duinen lokaal gefixeerd met helm en aanplant om verstuiving te beheersen; tegenwoordig wordt op sommige plekken weer meer dynamiek toegelaten.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. Kies soorten en inrichting die passen bij wind, zoutneerslag, zand en droogte. Werk met lage, gefilterde beplanting (struweel/laag bos) als windfilter en microklimaatmaker, en behoud ruimte voor duindynamiek waar dat gewenst is. In natte valleien: kies vochtminnende beplanting en voorkom verdroging door ophoging of extra afwatering. Soortenkeuze is sterk locatie‑afhankelijk (kalkrijk/kalkarm; droog/nat).
+
+
+        In landgebruik en beplanting sluiten de volgende richtingen goed aan bij dit landschap. Typische vegetaties zijn duingraslanden, helm‑ en strandvegetaties, struweel (o.a. duindoorn) en plaatselijk duinbos (vaak den/eik, soms aangeplant). Beheer richt zich vaak op het behouden van open zand/grasland en het tegengaan van verruiging/verstruweling waar dat natuurdoelen schaadt. In delen wordt juist ruimte gegeven aan zanddynamiek om kustveiligheid en natuurwaarden te combineren.'
+      bronnen: *id005
   lossgebied:
     titel: Lössgebied
     beschrijving: 'Het lössgebied (Zuid‑Limburg) is een golvend heuvelland met dikke pakketten löss (leemrijk windafzettingsmateriaal) die zeer
@@ -267,11 +342,26 @@ fgr:
       (graften, hagen, terrassen, holle wegen) elkaar beïnvloedden. Door intensivering en klimaatverandering (hevige buien) neemt het
 
       erosierisico toe; waterremmende landschapselementen zijn daardoor ook klimaatadaptief essentieel.'
-    bronnen:
+    bronnen: &id006
     - pdok_dataset_fysisch_geografische_regio_s_fgr_omsc
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
     - panorama_landschap_zuid_limburg
     - wur_edepot_graften_in_zuid_limburg
+    duiding:
+      rapporttekst: 'Het lössgebied (Zuid‑Limburg) is een golvend heuvelland met dikke pakketten löss (leemrijk windafzettingsmateriaal) die zeer vruchtbaar zijn. Het landschap kent uitgesproken reliëf met plateaus, hellingen en beekdalen. Door de combinatie van helling en leem is het gebied erosiegevoelig. Dat zie je terug in karakteristieke elementen zoals graften, holle wegen en hagen.
+
+
+        Het landschap wordt gekenmerkt door Afwisseling van open plateaus (vaak akkerland) met besloten dalen en hellingen met veel lineaire elementen. Kenmerkend zijn holle wegen, graften/terrassen, hagen, boomgaarden en hellingbossen. Microklimaat varieert sterk tussen zuidhellingen (warmer/droger) en noordhellingen (koeler/vochtiger). De bodem- en waterhuishouding spelen hierbij een sturende rol: Löss/leem heeft een hoge vocht- en nutriëntenbuffer. Tegelijk is de bodem op hellingen gevoelig voor afspoeling, slemp en erosie bij piekbuien, vooral wanneer de bodem onbedekt is. Water stroomt relatief snel af over hellingen en concentreert in dalen en holle wegen; inrichting vraagt daarom om waterremmende structuren en een permanent wortelnetwerk.
+
+
+        Ontstaansgeschiedenis en dynamiek: Tijdens koude, droge perioden werd löss als windafzetting afgezet. Daarna is het reliëf verder uitgesneden door beken en hellingprocessen. Het huidige landschap is cultuurhistorisch gevormd door eeuwen landbouw, waarbij erosie en beheersmaatregelen (graften, hagen, terrassen, holle wegen) elkaar beïnvloedden. Door intensivering en klimaatverandering (hevige buien) neemt het erosierisico toe; waterremmende landschapselementen zijn daardoor ook klimaatadaptief essentieel.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. Erosiebestrijding is een kernprincipe: zet hagen en graften dwars op de helling, werk met bodembedekking en voorkom grote aaneengesloten kale bodem. Gebruik beplanting om water te vertragen en te laten infiltreren (stroken, hagen, struweelranden). Stem soorten af op leem en (plaatselijk) kalkrijkdom; benut microklimaat: drogetolerante soorten op warme zuidhellingen en vochtminnende soorten op koelere noordhellingen en in dalen. Houd zichtlijnen en de typische openheid van plateaus in stand door beplanting te concentreren in randen, graften en erven.
+
+
+        In landgebruik en beplanting sluiten de volgende richtingen goed aan bij dit landschap. Veel akkerbouw en boomgaarden, afgewisseld met hagen, graften en hellingbossen. Streekeigen structuren zijn vooral lijn- en randbeplanting die erosie remt en biodiversiteit draagt: meidoorn-/haagbeuk‑hagen, struweelranden, hoogstamfruit en kleine bosjes op steilere delen.'
+      bronnen: *id006
   heuvelland:
     titel: Heuvelland
     beschrijving: 'Het Heuvelland (Zuid‑Limburg) is een fysisch‑geografische regio met uitgesproken reliëf: plateaus, dalen en hellingen wisselen elkaar
@@ -292,9 +382,18 @@ fgr:
       struweelranden en bodembedekking om afstromend water te remmen. Op warme, drogere hellingen passen drogetolerante soorten; op koelere,
 
       vochtigere hellingen en in dalen zijn vochtminnende soorten logischer. Houd openheid en zichtlijnen op plateaus in stand.'
-    bronnen:
+    bronnen: &id007
     - pdok_fysisch_geografische_regios
     - berendsen_2005_landschappelijk_systeem_nederland
+    duiding:
+      rapporttekst: 'Het Heuvelland (Zuid‑Limburg) is een fysisch‑geografische regio met uitgesproken reliëf: plateaus, dalen en hellingen wisselen elkaar snel af. De regio is gevormd door tektoniek, riviererosie en periglaciale processen en is op veel plekken bedekt met löss. Daardoor is het gebied vruchtbaar, maar ook gevoelig voor erosie en afspoeling bij piekbuien.
+
+
+        Het landschap wordt gekenmerkt door Sterk reliëf (uniek in Nederland) met open plateaus en ingesneden dalen. Lössbedekking op grote schaal. Veel cultuurhistorische structuren zoals holle wegen, graften/terrassen, hagen en boomgaarden. Microklimaatverschillen tussen hellingen zijn groot (zuidhelling warmer/droger; noordhelling koeler/vochtiger). De bodem- en waterhuishouding spelen hierbij een sturende rol: Overwegend löss- en leembodems met lokaal kalkrijke varianten. Door het reliëf variëren grondwaterstanden sterk; kwel kan voorkomen in dalen. Op hellingen kan water snel afstromen en erosie versterken; in dalen kan juist water concentreren.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. Houd bij inrichting rekening met reliëf en erosiegevoeligheid. Concentreer beplanting in randen, graften en erven en gebruik hagen, struweelranden en bodembedekking om afstromend water te remmen. Op warme, drogere hellingen passen drogetolerante soorten; op koelere, vochtigere hellingen en in dalen zijn vochtminnende soorten logischer. Houd openheid en zichtlijnen op plateaus in stand.'
+      bronnen: *id007
   waddengebied:
     titel: Waddengebied
     beschrijving: 'Het Waddengebied is een dynamisch kustlandschap met getijden, slikken, platen en kwelders, verbonden met eilanden en het aangrenzende
@@ -302,7 +401,7 @@ fgr:
       zeeklei‑ en duinlandschap. Zoutinvloed, wind en zand/klei‑dynamiek bepalen het systeem. Het gebied is ecologisch zeer rijk maar ook
 
       gevoelig voor verstoring.'
-    bronnen:
+    bronnen: &id008
     - pdok_fysisch_geografische_regios
     - berendsen_2005_landschappelijk_systeem_nederland
     kenmerken: 'Grote openheid, sterke windwerking en zoute invloed. Overgangen tussen wad, kwelder, dijk en binnendijks polderland geven scherpe
@@ -326,6 +425,21 @@ fgr:
       groeien aan en eroderen, en duinen ontwikkelen zich op de eilanden. Dijken en inpolderingen hebben buitendijks en binnendijks tot twee
 
       verschillende dynamieken geleid: natuurlijke getijdendynamiek tegenover kunstmatig peilbeheer.'
+    duiding:
+      rapporttekst: 'Het Waddengebied is een dynamisch kustlandschap met getijden, slikken, platen en kwelders, verbonden met eilanden en het aangrenzende zeeklei‑ en duinlandschap. Zoutinvloed, wind en zand/klei‑dynamiek bepalen het systeem. Het gebied is ecologisch zeer rijk maar ook gevoelig voor verstoring.
+
+
+        Het landschap wordt gekenmerkt door Grote openheid, sterke windwerking en zoute invloed. Overgangen tussen wad, kwelder, dijk en binnendijks polderland geven scherpe gradiënten in zout, vocht en voedselrijkdom. Lijnvormige elementen (dijken, wegen) domineren de ruimtelijke structuur. De bodem- en waterhuishouding spelen hierbij een sturende rol: Bodem varieert van zandig (platen/duinen) tot kleiig (kwelders/zeeklei) met zoute beïnvloeding. Waterhuishouding is sterk gestuurd door getij buitendijks en peilbeheer binnendijks. Zout- en windstress zijn belangrijke standplaatsfactoren.
+
+
+        Ontstaansgeschiedenis en dynamiek: Het waddensysteem ontstaat door het samenspel van getij, stroming en sedimenttransport. Platen en geulen verplaatsen zich, kwelders groeien aan en eroderen, en duinen ontwikkelen zich op de eilanden. Dijken en inpolderingen hebben buitendijks en binnendijks tot twee verschillende dynamieken geleid: natuurlijke getijdendynamiek tegenover kunstmatig peilbeheer.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. Ontwerp met wind en zout als vertrekpunt. Kies lage, gefilterde windbrekers (struweelgordel/singel) en voorkom massieve, dichte schermen die turbulentie kunnen vergroten. Respecteer openheid en zichtlijnen; bundel beplanting rond het erf en langs infrastructuur. Stem soorten af op zout- en windbelasting en op lokale nat/droog‑verschillen door microreliëf en peilbeheer.
+
+
+        In landgebruik en beplanting sluiten de volgende richtingen goed aan bij dit landschap. Buitendijks domineren zouttolerante kweldervegetaties en pionierbegroeiingen; binnendijks vooral grasland en akkerbouw op zeeklei. Beplanting is landschappelijk spaarzaam en vooral gekoppeld aan erven en dijken; hierdoor hebben erfbeplanting en windschermen veel beeldbepalend gewicht.'
+      bronnen: *id008
   ijsselmeergebied:
     titel: IJsselmeergebied
     beschrijving: 'Het IJsselmeergebied omvat de grote meren en polders die zijn ontstaan na afsluiting van de Zuiderzee en grootschalige inpoldering.
@@ -333,7 +447,7 @@ fgr:
       Het landschap is sterk gepland en grootschalig, met lange lijnen, openheid en een kunstmatige waterhuishouding. De overgang tussen
 
       dijken, vaarten, polders en oevers bepaalt de ruimtelijke structuur.'
-    bronnen:
+    bronnen: &id009
     - pdok_fysisch_geografische_regios
     - berendsen_2005_landschappelijk_systeem_nederland
     kenmerken: 'Grote openheid en schaal, met lange rechte infrastructuurlijnen, vaarten en rationele verkaveling. Windbelasting kan hoog zijn,
@@ -359,6 +473,22 @@ fgr:
       De dynamiek wordt vooral bepaald door peilbeheer, bodemdaling (plaatselijk), windbelasting en klimaat (droogte/natte pieken),
 
       waardoor water vasthouden en robuuste randen steeds belangrijker worden.'
+    duiding:
+      rapporttekst: 'Het IJsselmeergebied omvat de grote meren en polders die zijn ontstaan na afsluiting van de Zuiderzee en grootschalige inpoldering. Het landschap is sterk gepland en grootschalig, met lange lijnen, openheid en een kunstmatige waterhuishouding. De overgang tussen dijken, vaarten, polders en oevers bepaalt de ruimtelijke structuur.
+
+
+        Het landschap wordt gekenmerkt door Grote openheid en schaal, met lange rechte infrastructuurlijnen, vaarten en rationele verkaveling. Windbelasting kan hoog zijn, zeker in open polders en langs waterkanten. Beplanting is vaak geconcentreerd bij erven en langs hoofdstructuren. De bodem- en waterhuishouding spelen hierbij een sturende rol: Bodemopbouw varieert per polder (klei/zavel, lokaal zandig) en is gekoppeld aan de ontstaansgeschiedenis van de droogmakerijen. Waterhuishouding is volledig kunstmatig via peilbeheer, gemalen en sloten. Lokale nat/droog‑verschillen worden vaak bepaald door peilvak, ontwatering en microreliëf.
+
+
+        Ontstaansgeschiedenis en dynamiek: Na de afsluiting van de Zuiderzee zijn grote delen ingepolderd en ingericht met een strak water- en verkavelingssysteem. De dynamiek wordt vooral bepaald door peilbeheer, bodemdaling (plaatselijk), windbelasting en klimaat (droogte/natte pieken), waardoor water vasthouden en robuuste randen steeds belangrijker worden.
+
+
+        Voor erf- en landschapsbeplanting betekent dit het volgende. In de open polders is windreductie vaak het belangrijkste doel. Kies gefilterde windbrekers (struweelgordel/singel) en voorkom verspreide boomgroepen in het open veld. Bundel beplanting rond het erf en langs hoofdstructuren (wegen, vaarten, dijken) en stem soorten af op bodemtype (klei/zavel) en peilbeheer. Gebruik lagere, nattere zones waar mogelijk voor water en kruidenrijke randen.
+
+
+        In landgebruik en beplanting sluiten de volgende richtingen goed aan bij dit landschap. Veel intensieve landbouw op grootschalige kavels, met erfbeplanting en windschermen als belangrijke functionele elementen. Langs dijken en wegen komen laanstructuren voor; langs oevers kunnen rietkragen en ruigtes voorkomen. Door de open schaal bepaalt elke beplantingslijn sterk het landschapbeeld.'
+      bronnen: *id009
 meta:
   laatst_bijgewerkt: '2025-12-17'
   pdok_conform: true
+  bewerking: 'Dubbele laag toegevoegd: per FGR-eenheid is duiding.rapporttekst toegevoegd voor rapportgebruik; originele velden behouden.'
