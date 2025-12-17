@@ -2257,6 +2257,18 @@ def advies_pdf(
     ontwerp_bullets = [b for b in ontwerp_bullets if not (b in _seen or _seen.add(b))]
     ontwerp_bullets = ontwerp_bullets[:7]
 
+    # Vervang (of verbeter) ontwerpuitgangspunten: maak ze praktisch en goed leesbaar (altijd waardevol, locatiegericht toepasbaar).
+    ontwerp_bullets = [
+        "Ontwerp volgt standplaats: begin bij bodem, water en reliëf; die bepalen waar beplanting kansrijk is.",
+        "Start met zonering (hoog/laag, nat/droog, open/besloten) en kies daarna pas soorten per zone.",
+        "Benut microreliëf: kleine hoogteverschillen sturen nat–droog en vergroten de variatie in plantkansen.",
+        "Plaats ‘zware’ beplanting (bomen/boomgroepen) op draagkrachtige, drogere delen; benut laagtes voor water en natuur.",
+        "Behoud landschappelijke openheid waar die hoort; concentreer beplanting rond erf en langs lijnen (wegen, sloten, randen).",
+        "Ontwerp beheerbaar: kies structuren die passen bij beheerfrequentie en beschikbare tijd/middelen.",
+        "Ontwerp met wateropvang en schaduw (bodembedekking, mulch, luwtehagen) om droogtestress te beperken.",
+    ]
+
+
     # ------------------------
     # 4) In het kort (voor bewoners)
     # ------------------------
@@ -2390,20 +2402,12 @@ def advies_pdf(
     story.append(ctx_table)
     story.append(Spacer(1, 10))
 
-    # Ontwerpuitgangspunten (scanbaar) — komt uit context_descriptions.yaml > ontwerpprincipes
-    if ontwerp_bullets:
-        story.append(Paragraph("Ontwerpuitgangspunten (samenvatting)", style_h1))
-        for i, b in enumerate(ontwerp_bullets, 1):
-            story.append(Paragraph(f"<b>{i}.</b> {b}", style_p))
-        story.append(Spacer(1, 6))
-
     # Start de encyclopedische toelichting op een nieuwe pagina
     story.append(PageBreak())
 
     # Encyclopedische toelichting
     story.append(Paragraph("Toelichting op locatiecontext", style_h1))
-    story.append(Paragraph("Onderstaande toelichting geeft de betekenis van de gevonden kaartwaarden en de implicaties voor erf- en landschapsbeplanting.", style_p))
-    story.append(Paragraph('De onderstaande toelichting beschrijft dezelfde locatie vanuit verschillende invalshoeken (landschap, vorm, systeem en standplaats). Hierdoor kunnen sommige kenmerken op meerdere plekken terugkomen, telkens met een andere betekenis en schaal.', style_p))
+    story.append(Paragraph("Onderstaande toelichting geeft de betekenis van de gevonden kaartwaarden en de implicaties voor erf en landschapsbeplanting. Dezelfde locatie wordt vanuit verschillende invalshoeken (landschap, vorm, systeem en standplaats) beschreven; daardoor kunnen sommige kenmerken op meerdere plekken terugkomen, telkens met een andere betekenis en schaal.", style_p))
 
     def _render_section(
         title: str,
@@ -2480,6 +2484,16 @@ def advies_pdf(
     _render_section(f"Vochttoestand (Gt): {_safe(gt_code or '—')}", gt_info, (gt_code or "—"), category_key="gt")
 
     # Planttabel
+
+    # Ontwerpuitgangspunten (samenvatting) — verplaatst naar het einde (vóór de soortentabel)
+    # Ontwerpuitgangspunten (scanbaar) — komt uit context_descriptions.yaml > ontwerpprincipes
+    if ontwerp_bullets:
+        story.append(Paragraph("Ontwerpuitgangspunten (samenvatting)", style_h1))
+        for i, b in enumerate(ontwerp_bullets, 1):
+            story.append(Paragraph(f"<b>{i}.</b> {b}", style_p))
+        story.append(Spacer(1, 6))
+
+
     story.append(PageBreak())
     story.append(Paragraph("Geschikte soorten (selectie)", style_h1))
     story.append(Paragraph("Overzicht van geschikte bomen/heesters op basis van de gekozen filters en kaartwaarden.", style_p))
