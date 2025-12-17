@@ -2601,7 +2601,23 @@ def advies_pdf(
             story.append(Spacer(1, 4))
             return
 
-        def add(label: str, key: str):
+        
+        # Als de kennisbibliotheek een 'rapporttekst' aanbiedt (dubbele laag: technisch + leesbaar),
+        # gebruik die dan als hoofdtekst in het rapport om opsommingen te vermijden.
+        rt = None
+        if isinstance(info, dict):
+            rt = info.get("rapporttekst") or info.get("rapport_tekst")
+            if not rt and isinstance(info.get("duiding"), dict):
+                rt = info["duiding"].get("rapporttekst") or info["duiding"].get("rapport_tekst")
+        if rt:
+            story.append(Paragraph(str(rt), style_p))
+            bronnen = info.get("bronnen") if isinstance(info, dict) else None
+            if isinstance(bronnen, list) and bronnen:
+                story.append(Paragraph("<b>Bronnen (selectie).</b> " + "; ".join(str(b) for b in bronnen), style_small_muted))
+            story.append(Spacer(1, 6))
+            return
+
+def add(label: str, key: str):
             val = info.get(key)
             if val:
                 story.append(Paragraph(f"<b>{label}.</b> {val}", style_p))
