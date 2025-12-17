@@ -2592,6 +2592,45 @@ def advies_pdf(
         fallback_label: str | None = None,
         category_key: str | None = None,
     ):
+
+        # GENERIEK: als er een mensgerichte rapporttekst is, gebruik die 1-op-1 in het rapport.
+
+        # Dit voorkomt opsommingen én voorkomt dat we rapporttekst onbedoeld inkorten/samenvatten.
+
+        if isinstance(info, dict):
+
+            duiding = info.get('duiding') if isinstance(info.get('duiding'), dict) else {}
+
+            rpt = (duiding.get('rapporttekst') or duiding.get('tekst') or info.get('rapporttekst') or '').strip()
+
+            if rpt:
+
+                # splits op lege regels → nette alinea's
+
+                for para in [p.strip() for p in rpt.split('\n\n') if p.strip()]:
+
+                    story.append(Paragraph(para, style_p))
+
+                bronnen = info.get('bronnen') or duiding.get('bronnen')
+
+                if bronnen:
+
+                    if isinstance(bronnen, (list, tuple)):
+
+                        bronnen_txt = '; '.join([str(b) for b in bronnen if str(b).strip()])
+
+                    else:
+
+                        bronnen_txt = str(bronnen)
+
+                    if bronnen_txt.strip():
+
+                        story.append(Paragraph('<i>Bronnen:</i> ' + bronnen_txt, style_small_muted))
+
+                story.append(Spacer(1, 6))
+
+                return
+
         story.append(Paragraph(title, style_h2))
         if not info:
             if fallback_label:
