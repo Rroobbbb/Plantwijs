@@ -1,222 +1,111 @@
+meta:
+  laatst_bijgewerkt: '2025-12-17'
+  bewerking: NSN-teksten herschreven naar leesbare, menselijke stijl; inhoud en classificatie ongewijzigd.
 nsn:
   strandwallen_en_binnenduinrand:
     titel: Strandwallen en binnenduinrand
-    beschrijving: 'Langgerekt kustlandschap gevormd door opeenvolgende strandwallen
-      en tussenliggende strandvlakten. De binnenduinrand vormt de overgang naar het
-      oudere zandlandschap.
-
-      '
-    kenmerken: 'Afwisseling van droge zandruggen en nattere laagten. Historisch intensief
-      bewoond en gebruikt voor tuinbouw en bollenteelt.
-
-      '
-    bodem_en_water: 'Overwegend zandig tot lemig zand. Goede infiltratie op de strandwallen,
-      hogere grondwaterstanden in strandvlakten.
-
-      '
-    betekenis_voor_erfbeplanting: 'Differentieer sterk binnen het erf: droogtetolerante
-      soorten op ruggen, vochtminnende soorten in laagten. Lijnvormige beplanting
-      past bij het landschap.
-
-      '
+    beschrijving: Langgerekt kustlandschap gevormd door opeenvolgende strandwallen en tussenliggende strandvlakten. De binnenduinrand vormt de overgang naar het oudere zandlandschap.
+    kenmerken: Afwisseling van droge zandruggen en nattere laagten. Historisch intensief bewoond en gebruikt voor tuinbouw en bollenteelt.
+    bodem_en_water: Overwegend zandig tot lemig zand. Goede infiltratie op de strandwallen, hogere grondwaterstanden in strandvlakten.
+    betekenis_voor_erfbeplanting: 'Differentieer sterk binnen het erf: droogtetolerante soorten op ruggen, vochtminnende soorten in laagten. Lijnvormige beplanting past bij het landschap.'
     bronnen:
     - berendsen_2005_fysische_geografie_van_nederland
     - pdok_fgr_nsn
   droogmakerijen_en_ijsselmeerpolders:
     titel: Droogmakerijen en IJsselmeerpolders
-    beschrijving: 'Door menselijke drooglegging ontstane landschappen op voormalige
-      meren en zeeën. Waterbeheer bepaalt hier het natuurlijke systeem.
-
-      '
-    kenmerken: 'Zeer vlak en grootschalig landschap met rationele verkaveling en weinig
-      reliëf.
-
-      '
-    bodem_en_water: 'Kleiige tot zavelige bodems, lokaal veen. Grondwaterpeil is volledig
-      gestuurd.
-
-      '
-    betekenis_voor_erfbeplanting: 'Windreductie is cruciaal. Erfbeplanting als groene
-      eilanden in open landschap.
-
-      '
+    beschrijving: Door menselijke drooglegging ontstane landschappen op voormalige meren en zeeën. Waterbeheer bepaalt hier het natuurlijke systeem.
+    kenmerken: Zeer vlak en grootschalig landschap met rationele verkaveling en weinig reliëf.
+    bodem_en_water: Kleiige tot zavelige bodems, lokaal veen. Grondwaterpeil is volledig gestuurd.
+    betekenis_voor_erfbeplanting: Windreductie is cruciaal. Erfbeplanting als groene eilanden in open landschap.
     bronnen:
     - clo_droogmakerijen
     - pdok_fgr_nsn
   rivierterassen:
     titel: Rivierterras
-    beschrijving: 'Oude rivierafzettingen die hoger liggen dan het huidige overstromingsgebied.
-
-      '
-    kenmerken: 'Licht golvend tot vlak, hoger gelegen dan uiterwaarden en komgronden.
-
-      '
-    bodem_en_water: 'Zandig tot grindig, lokaal leemrijk. Relatief droge standplaatsen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Geschikt voor veel soorten, maar gevoelig voor
-      zomerdroogte.
-
-      '
+    beschrijving: Oude rivierafzettingen die hoger liggen dan het huidige overstromingsgebied.
+    kenmerken: Licht golvend tot vlak, hoger gelegen dan uiterwaarden en komgronden.
+    bodem_en_water: Zandig tot grindig, lokaal leemrijk. Relatief droge standplaatsen.
+    betekenis_voor_erfbeplanting: Geschikt voor veel soorten, maar gevoelig voor zomerdroogte.
     bronnen:
     - berendsen_2005
     - bro_geomorfologische_kaart
   stuwallen:
     titel: Stuwallen
-    beschrijving: 'Door landijs opgestuwde zand- en grindpakketten uit het Saalien.
-
-      '
-    kenmerken: 'Sterk reliëf met grote hoogteverschillen en expositievariatie.
-
-      '
-    bodem_en_water: 'Zandig tot grindig, lokaal leem/keileem. Snelle afwatering.
-
-      '
-    betekenis_voor_erfbeplanting: 'Zonering naar hoogte en expositie is essentieel.
-
-      '
+    beschrijving: Door landijs opgestuwde zand- en grindpakketten uit het Saalien.
+    kenmerken: Sterk reliëf met grote hoogteverschillen en expositievariatie.
+    bodem_en_water: Zandig tot grindig, lokaal leem/keileem. Snelle afwatering.
+    betekenis_voor_erfbeplanting: Zonering naar hoogte en expositie is essentieel.
     bronnen:
     - berendsen_2005
     - wur_stuwwallen
   keileemgebied:
     titel: Keileemgebied
-    beschrijving: 'Landschap waar slecht doorlatende keileemlagen de waterhuishouding
-      sterk sturen.
-
-      '
-    kenmerken: 'Mozaïek van natte laagtes en drogere koppen.
-
-      '
-    bodem_en_water: 'Slecht doorlatende keileem met stagnatie en kwel.
-
-      '
-    betekenis_voor_erfbeplanting: 'Zeer standplaatsgericht ontwerpen; vermijd doorsnijden
-      van keileem.
-
-      '
+    beschrijving: Landschap waar slecht doorlatende keileemlagen de waterhuishouding sterk sturen.
+    kenmerken: Mozaïek van natte laagtes en drogere koppen.
+    bodem_en_water: Slecht doorlatende keileem met stagnatie en kwel.
+    betekenis_voor_erfbeplanting: Zeer standplaatsgericht ontwerpen; vermijd doorsnijden van keileem.
     bronnen:
     - bro_ondergrondmodellen
     - berendsen_2005
   voormalige_hoogvenen:
     titel: Voormalige hoogvenen
-    beschrijving: 'Restlandschappen van grootschalige hoogveenontginningen.
-
-      '
-    kenmerken: 'Zeer vlak met greppelstructuur en inklinking.
-
-      '
-    bodem_en_water: 'Veen en venige bodems; waterpeil cruciaal.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen; werk met natte toleranties.
-
-      '
+    beschrijving: Restlandschappen van grootschalige hoogveenontginningen.
+    kenmerken: Zeer vlak met greppelstructuur en inklinking.
+    bodem_en_water: Veen en venige bodems; waterpeil cruciaal.
+    betekenis_voor_erfbeplanting: Beperk zware bomen; werk met natte toleranties.
     bronnen:
     - clo_veen_en_bodemdaling
     - wur_hoogveenlandschappen
   bknsn_bd1:
     titel: Bd1 | Strandwal
-    beschrijving: 'Kustlandschap: langgerekte, relatief hoge zandrug (strandwal) gevormd
-      langs oude kustlijnen.
+    beschrijving: 'Kustlandschap: langgerekte, relatief hoge zandrug (strandwal) gevormd langs oude kustlijnen.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_bd2:
     titel: Bd2 | Strandvlakte
-    beschrijving: 'Kustlandschap: laagte tussen strandwallen; vaak natter, lokaal
-      veen- en kleiinvloeden.
+    beschrijving: 'Kustlandschap: laagte tussen strandwallen; vaak natter, lokaal veen- en kleiinvloeden.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_bd3:
     titel: Bd3 | Kustduinen
-    beschrijving: 'Actieve/relatief jonge duinen met reliëf, vaak kalkrijker nabij
-      zee en kalkarmer landinwaarts.
+    beschrijving: 'Actieve/relatief jonge duinen met reliëf, vaak kalkrijker nabij zee en kalkarmer landinwaarts.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Overwegend zandig, goed doorlatend; droogte en wind zijn vaak
-      limiterend. Lokale valleien kunnen natter zijn.
-
-      '
-    beplanting_en_landgebruik: 'Heide-/struweelachtige randen, eik/berk/den (afhankelijk
-      van regio), meidoorn/hondsroos in luwte; kruidenrijke zoom bij voldoende buffer.
-
-      '
-    betekenis_voor_erfbeplanting: 'Werk met luwte (hagen/struweel), organische-stof
-      opbouw en droogtetolerante soorten. Plant in gradiënten (droger hoog → vochtiger
-      laag) en beperk grasconcurrentie bij aanplant.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Overwegend zandig, goed doorlatend; droogte en wind zijn vaak limiterend. Lokale valleien kunnen natter zijn.
+    betekenis_voor_erfbeplanting: Werk met luwte (hagen/struweel), organische-stof opbouw en droogtetolerante soorten. Plant in gradiënten (droger hoog → vochtiger laag) en beperk grasconcurrentie bij aanplant.
+    beplanting_en_landgebruik: Heide-/struweelachtige randen, eik/berk/den (afhankelijk van regio), meidoorn/hondsroos in luwte; kruidenrijke zoom bij voldoende buffer.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -226,247 +115,123 @@ nsn:
     beschrijving: 'Drooggevallen of bedijkte meerbodem; vlak en sterk waterbeheer-gedomineerd.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_dr2:
     titel: Dr2 | Kreekrug
-    beschrijving: 'Opgeslibde kreekbedding/rug in kleigebieden; hoger en beter drainerend
-      dan omgeving.
+    beschrijving: 'Opgeslibde kreekbedding/rug in kleigebieden; hoger en beter drainerend dan omgeving.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_dr3:
     titel: Dr3 | Veenrest
-    beschrijving: 'Resten van veenpakketten in laagtes; gevoelig voor oxidatie en
-      bodemdaling bij ontwatering.
+    beschrijving: 'Resten van veenpakketten in laagtes; gevoelig voor oxidatie en bodemdaling bij ontwatering.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_dz1:
     titel: Dz1 | Dekzandrug
-    beschrijving: 'Hoger gelegen zandige rug uit de laatste ijstijd; vaak droger en
-      draagkrachtiger.
+    beschrijving: 'Hoger gelegen zandige rug uit de laatste ijstijd; vaak droger en draagkrachtiger.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_dz2:
     titel: Dz2 | Dekzandvlakte
-    beschrijving: 'Relatief vlak dekzand; matig droog tot vochtig, afhankelijk van
-      grondwaterstand.
+    beschrijving: 'Relatief vlak dekzand; matig droog tot vochtig, afhankelijk van grondwaterstand.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_dz3:
     titel: Dz3 | Stuifzandduin
-    beschrijving: 'Verstuivingsreliëf (stuifzand); zeer droog, voedselarm, dynamisch
-      (wind) bij open zand.
+    beschrijving: 'Verstuivingsreliëf (stuifzand); zeer droog, voedselarm, dynamisch (wind) bij open zand.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Overwegend zandig, goed doorlatend; droogte en wind zijn vaak
-      limiterend. Lokale valleien kunnen natter zijn.
-
-      '
-    beplanting_en_landgebruik: 'Heide-/struweelachtige randen, eik/berk/den (afhankelijk
-      van regio), meidoorn/hondsroos in luwte; kruidenrijke zoom bij voldoende buffer.
-
-      '
-    betekenis_voor_erfbeplanting: 'Werk met luwte (hagen/struweel), organische-stof
-      opbouw en droogtetolerante soorten. Plant in gradiënten (droger hoog → vochtiger
-      laag) en beperk grasconcurrentie bij aanplant.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Overwegend zandig, goed doorlatend; droogte en wind zijn vaak limiterend. Lokale valleien kunnen natter zijn.
+    betekenis_voor_erfbeplanting: Werk met luwte (hagen/struweel), organische-stof opbouw en droogtetolerante soorten. Plant in gradiënten (droger hoog → vochtiger laag) en beperk grasconcurrentie bij aanplant.
+    beplanting_en_landgebruik: Heide-/struweelachtige randen, eik/berk/den (afhankelijk van regio), meidoorn/hondsroos in luwte; kruidenrijke zoom bij voldoende buffer.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_dz4:
     titel: Dz4 | Es
-    beschrijving: 'Opgehoogde akker (plaggendek) rond oude nederzettingen; vaak lemiger
-      en vruchtbaarder bovengrond.
+    beschrijving: 'Opgehoogde akker (plaggendek) rond oude nederzettingen; vaak lemiger en vruchtbaarder bovengrond.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -476,33 +241,15 @@ nsn:
     beschrijving: 'Beekdal met zand/leemafzettingen; vochtig tot nat, lokale kwel/overstroming.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr
-      droger en infiltrerend. Kwel kan aan randen voorkomen.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk
-      van bodem) op hogere delen; hagen en struweel als verbindingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende
-      soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting.
-      Borg droogtebuffering op hogere zandige delen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr droger en infiltrerend. Kwel kan aan randen voorkomen.
+    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting. Borg droogtebuffering op hogere zandige delen.'
+    beplanting_en_landgebruik: Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk van bodem) op hogere delen; hagen en struweel als verbindingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -512,68 +259,33 @@ nsn:
     beschrijving: 'Beekdal met veen; nat, lage draagkracht, waterpeil cruciaal.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_dz7:
     titel: Dz7 | Depressie zand
-    beschrijving: 'Laagte in zandgebied; natte kern, vaak grondwaterinvloed en hogere
-      vochtstress.
+    beschrijving: 'Laagte in zandgebied; natte kern, vaak grondwaterinvloed en hogere vochtstress.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -583,33 +295,15 @@ nsn:
     beschrijving: 'Laagte met veen; zeer nat tot nat, kans op langdurige waterverzadiging.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -619,107 +313,51 @@ nsn:
     beschrijving: 'Vlak laagveenlandschap; waterbeheer dominant, bodemdaling bij ontwatering.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_hv1:
     titel: Hv1 | Hoogveen
-    beschrijving: 'Hoogveen(rest) op hogere/bolle veenlichamen; zeer gevoelig voor
-      verdroging.
+    beschrijving: 'Hoogveen(rest) op hogere/bolle veenlichamen; zeer gevoelig voor verdroging.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_hv2:
     titel: Hv2 | Ontgonnen hoogveen
-    beschrijving: 'Groot-ontgonnen hoogveen met rationele structuren; vaak agrarisch
-      gebruik en bodemdaling.
+    beschrijving: 'Groot-ontgonnen hoogveen met rationele structuren; vaak agrarisch gebruik en bodemdaling.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -729,253 +367,123 @@ nsn:
     beschrijving: 'Natte laagte binnen (ontgonnen) veen/hoogveengebied; vaak plas-dras/kwelgevoelig.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_kl1:
     titel: Kl1 | Grondmorenrug
-    beschrijving: 'Rug van keileem-/zand-/grindafzettingen door landijs opgestuwd/afgezet;
-      variabel reliëf.
+    beschrijving: 'Rug van keileem-/zand-/grindafzettingen door landijs opgestuwd/afgezet; variabel reliëf.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand met keileem-/leeminvloed; infiltratie kan lokaal worden
-      geremd met stagnatie/kwel in laagtes.
-
-      '
-    beplanting_en_landgebruik: 'Eik/berk op drogere delen; els/wilg in natte laagtes;
-      gevarieerde struiklaag op overgangen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Werk standplaatsgericht: benut droge koppen voor
-      bomen, natte laagtes voor moeras/struweel. Vermijd doorsnijden/doorbreken van
-      slecht doorlatende lagen bij grondwerk.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand met keileem-/leeminvloed; infiltratie kan lokaal worden geremd met stagnatie/kwel in laagtes.
+    betekenis_voor_erfbeplanting: 'Werk standplaatsgericht: benut droge koppen voor bomen, natte laagtes voor moeras/struweel. Vermijd doorsnijden/doorbreken van slecht doorlatende lagen bij grondwerk.'
+    beplanting_en_landgebruik: Eik/berk op drogere delen; els/wilg in natte laagtes; gevarieerde struiklaag op overgangen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_kl2:
     titel: Kl2 | Grondmorene plateau, -vlakte
-    beschrijving: 'Vlakker grondmorenegebied; keileem kan infiltratie beperken en
-      stagnatie geven.
+    beschrijving: 'Vlakker grondmorenegebied; keileem kan infiltratie beperken en stagnatie geven.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Leem/löss (vaak vruchtbaar) met erosiegevoeligheid op hellingen;
-      water infiltreert maar afspoeling kan optreden.
-
-      '
-    beplanting_en_landgebruik: 'Hagen/struweel in contour; boomgroepen op plateaus;
-      kruidenrijke randen; op kalkhellingen soorten die warmte/droogte verdragen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Ontwerp tegen erosie: bodembedekking, contourbeplanting,
-      hagen/graft-achtige structuren. Zonering naar bovenhelling (droger) en onderhelling
-      (vochtiger/kwel) is essentieel.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Leem/löss (vaak vruchtbaar) met erosiegevoeligheid op hellingen; water infiltreert maar afspoeling kan optreden.
+    betekenis_voor_erfbeplanting: 'Ontwerp tegen erosie: bodembedekking, contourbeplanting, hagen/graft-achtige structuren. Zonering naar bovenhelling (droger) en onderhelling (vochtiger/kwel) is essentieel.'
+    beplanting_en_landgebruik: Hagen/struweel in contour; boomgroepen op plateaus; kruidenrijke randen; op kalkhellingen soorten die warmte/droogte verdragen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_kl3:
     titel: Kl3 | Pingoruines en periglaciale laagtes
-    beschrijving: 'Periglaciale vormen (pingo-ruïnes/laagtes); vaak natte kernen en
-      waardevolle gradiënten.
+    beschrijving: 'Periglaciale vormen (pingo-ruïnes/laagtes); vaak natte kernen en waardevolle gradiënten.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand met keileem-/leeminvloed; infiltratie kan lokaal worden
-      geremd met stagnatie/kwel in laagtes.
-
-      '
-    beplanting_en_landgebruik: 'Eik/berk op drogere delen; els/wilg in natte laagtes;
-      gevarieerde struiklaag op overgangen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Werk standplaatsgericht: benut droge koppen voor
-      bomen, natte laagtes voor moeras/struweel. Vermijd doorsnijden/doorbreken van
-      slecht doorlatende lagen bij grondwerk.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand met keileem-/leeminvloed; infiltratie kan lokaal worden geremd met stagnatie/kwel in laagtes.
+    betekenis_voor_erfbeplanting: 'Werk standplaatsgericht: benut droge koppen voor bomen, natte laagtes voor moeras/struweel. Vermijd doorsnijden/doorbreken van slecht doorlatende lagen bij grondwerk.'
+    beplanting_en_landgebruik: Eik/berk op drogere delen; els/wilg in natte laagtes; gevarieerde struiklaag op overgangen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_lg1:
     titel: Lg1 | Lössplateau
-    beschrijving: 'Lössgebied (Z-Limburg) met relatief vlakke plateaus; zeer vruchtbaar
-      maar erosiegevoelig.
+    beschrijving: 'Lössgebied (Z-Limburg) met relatief vlakke plateaus; zeer vruchtbaar maar erosiegevoelig.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Leem/löss (vaak vruchtbaar) met erosiegevoeligheid op hellingen;
-      water infiltreert maar afspoeling kan optreden.
-
-      '
-    beplanting_en_landgebruik: 'Hagen/struweel in contour; boomgroepen op plateaus;
-      kruidenrijke randen; op kalkhellingen soorten die warmte/droogte verdragen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Ontwerp tegen erosie: bodembedekking, contourbeplanting,
-      hagen/graft-achtige structuren. Zonering naar bovenhelling (droger) en onderhelling
-      (vochtiger/kwel) is essentieel.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Leem/löss (vaak vruchtbaar) met erosiegevoeligheid op hellingen; water infiltreert maar afspoeling kan optreden.
+    betekenis_voor_erfbeplanting: 'Ontwerp tegen erosie: bodembedekking, contourbeplanting, hagen/graft-achtige structuren. Zonering naar bovenhelling (droger) en onderhelling (vochtiger/kwel) is essentieel.'
+    beplanting_en_landgebruik: Hagen/struweel in contour; boomgroepen op plateaus; kruidenrijke randen; op kalkhellingen soorten die warmte/droogte verdragen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_lg2:
     titel: Lg2 | Lösshelling
-    beschrijving: 'Helling in lössgebied; erosie/afspoeling, droogte op bovenhelling
-      en natte kwel onderin.
+    beschrijving: 'Helling in lössgebied; erosie/afspoeling, droogte op bovenhelling en natte kwel onderin.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Leem/löss (vaak vruchtbaar) met erosiegevoeligheid op hellingen;
-      water infiltreert maar afspoeling kan optreden.
-
-      '
-    beplanting_en_landgebruik: 'Hagen/struweel in contour; boomgroepen op plateaus;
-      kruidenrijke randen; op kalkhellingen soorten die warmte/droogte verdragen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Ontwerp tegen erosie: bodembedekking, contourbeplanting,
-      hagen/graft-achtige structuren. Zonering naar bovenhelling (droger) en onderhelling
-      (vochtiger/kwel) is essentieel.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Leem/löss (vaak vruchtbaar) met erosiegevoeligheid op hellingen; water infiltreert maar afspoeling kan optreden.
+    betekenis_voor_erfbeplanting: 'Ontwerp tegen erosie: bodembedekking, contourbeplanting, hagen/graft-achtige structuren. Zonering naar bovenhelling (droger) en onderhelling (vochtiger/kwel) is essentieel.'
+    beplanting_en_landgebruik: Hagen/struweel in contour; boomgroepen op plateaus; kruidenrijke randen; op kalkhellingen soorten die warmte/droogte verdragen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_lg3:
     titel: Lg3 | Kalkhelling
-    beschrijving: 'Helling met kalkrijke ondergrond; warm/droog microklimaat, vaak
-      soortenrijke vegetatie mogelijk.
+    beschrijving: 'Helling met kalkrijke ondergrond; warm/droog microklimaat, vaak soortenrijke vegetatie mogelijk.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Leem/löss (vaak vruchtbaar) met erosiegevoeligheid op hellingen;
-      water infiltreert maar afspoeling kan optreden.
-
-      '
-    beplanting_en_landgebruik: 'Hagen/struweel in contour; boomgroepen op plateaus;
-      kruidenrijke randen; op kalkhellingen soorten die warmte/droogte verdragen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Ontwerp tegen erosie: bodembedekking, contourbeplanting,
-      hagen/graft-achtige structuren. Zonering naar bovenhelling (droger) en onderhelling
-      (vochtiger/kwel) is essentieel.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Leem/löss (vaak vruchtbaar) met erosiegevoeligheid op hellingen; water infiltreert maar afspoeling kan optreden.
+    betekenis_voor_erfbeplanting: 'Ontwerp tegen erosie: bodembedekking, contourbeplanting, hagen/graft-achtige structuren. Zonering naar bovenhelling (droger) en onderhelling (vochtiger/kwel) is essentieel.'
+    beplanting_en_landgebruik: Hagen/struweel in contour; boomgroepen op plateaus; kruidenrijke randen; op kalkhellingen soorten die warmte/droogte verdragen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -985,107 +493,51 @@ nsn:
     beschrijving: 'Dalvorm met beek; dynamiek van afvoer/kwel, vaak nat tot vochtig.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr
-      droger en infiltrerend. Kwel kan aan randen voorkomen.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk
-      van bodem) op hogere delen; hagen en struweel als verbindingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende
-      soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting.
-      Borg droogtebuffering op hogere zandige delen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr droger en infiltrerend. Kwel kan aan randen voorkomen.
+    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting. Borg droogtebuffering op hogere zandige delen.'
+    beplanting_en_landgebruik: Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk van bodem) op hogere delen; hagen en struweel als verbindingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_lg6:
     titel: Lg6 | Droogdal
-    beschrijving: 'Dal zonder permanente waterloop; episodische afstroming, droogtegevoelig
-      op hogere delen.
+    beschrijving: 'Dal zonder permanente waterloop; episodische afstroming, droogtegevoelig op hogere delen.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr
-      droger en infiltrerend. Kwel kan aan randen voorkomen.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk
-      van bodem) op hogere delen; hagen en struweel als verbindingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende
-      soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting.
-      Borg droogtebuffering op hogere zandige delen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr droger en infiltrerend. Kwel kan aan randen voorkomen.
+    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting. Borg droogtebuffering op hogere zandige delen.'
+    beplanting_en_landgebruik: Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk van bodem) op hogere delen; hagen en struweel als verbindingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_lg7:
     titel: Lg7 | Rivierterras
-    beschrijving: 'Oude rivierafzettingen hoger dan actuele uiterwaarden; meestal
-      droger, zand/grind/leem.
+    beschrijving: 'Oude rivierafzettingen hoger dan actuele uiterwaarden; meestal droger, zand/grind/leem.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr
-      droger en infiltrerend. Kwel kan aan randen voorkomen.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk
-      van bodem) op hogere delen; hagen en struweel als verbindingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende
-      soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting.
-      Borg droogtebuffering op hogere zandige delen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr droger en infiltrerend. Kwel kan aan randen voorkomen.
+    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting. Borg droogtebuffering op hogere zandige delen.'
+    beplanting_en_landgebruik: Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk van bodem) op hogere delen; hagen en struweel als verbindingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1095,31 +547,15 @@ nsn:
     beschrijving: 'Overige (regionaal) afzettings- en landvormeenheden binnen heuvelland/overgangen.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1129,105 +565,51 @@ nsn:
     beschrijving: 'Laagveenlandschap; vlak, veen/venige klei, waterpeil bepalend.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_lv2:
     titel: Lv2 | Petgaten
-    beschrijving: 'Plas- en petgatenlandschap door veenwinning; open water, rietkragen,
-      natte oevers.
+    beschrijving: 'Plas- en petgatenlandschap door veenwinning; open water, rietkragen, natte oevers.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_rg1:
     titel: Rg1 | Stroomrug, oeverwal
-    beschrijving: 'Rivierafzettingen: hogere zandige/zavelige ruggen langs (oude)
-      rivierlopen.
+    beschrijving: 'Rivierafzettingen: hogere zandige/zavelige ruggen langs (oude) rivierlopen.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1237,177 +619,87 @@ nsn:
     beschrijving: 'Laaggelegen komklei; nat, slecht drainerend, gevoelig voor wateroverlast.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_rg3:
     titel: Rg3 | Uiterwaard
-    beschrijving: 'Actief overstromingsgebied; dynamische sedimentatie/erosie, periodiek
-      nat.
+    beschrijving: 'Actief overstromingsgebied; dynamische sedimentatie/erosie, periodiek nat.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_rg4:
     titel: Rg4 | Overslaggronden
-    beschrijving: 'Door dijkdoorbraken/overslagen afgezet materiaal; heterogeen, lokaal
-      reliëf.
+    beschrijving: 'Door dijkdoorbraken/overslagen afgezet materiaal; heterogeen, lokaal reliëf.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_rg5:
     titel: Rg5 | Restgeul
-    beschrijving: 'Oude afgesneden rivierarm/geul; natte laagtes, vaak klei/veen en
-      hoge natuurwaarde.
+    beschrijving: 'Oude afgesneden rivierarm/geul; natte laagtes, vaak klei/veen en hoge natuurwaarde.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_rt1:
     titel: Rt1 | Rivierterras zand
-    beschrijving: 'Rivierterrassen met zandige opbouw; relatief droog, infiltrerend,
-      droogterisico.
+    beschrijving: 'Rivierterrassen met zandige opbouw; relatief droog, infiltrerend, droogterisico.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr
-      droger en infiltrerend. Kwel kan aan randen voorkomen.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk
-      van bodem) op hogere delen; hagen en struweel als verbindingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende
-      soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting.
-      Borg droogtebuffering op hogere zandige delen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr droger en infiltrerend. Kwel kan aan randen voorkomen.
+    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting. Borg droogtebuffering op hogere zandige delen.'
+    beplanting_en_landgebruik: Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk van bodem) op hogere delen; hagen en struweel als verbindingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1417,70 +709,33 @@ nsn:
     beschrijving: 'Rivierterrassen met klei/zavel; matig doorlatend, wisselend vochtregime.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_rt3:
     titel: Rt3 | Rivierduin
-    beschrijving: 'Rivierduinen (opgestoven zand langs riviersysteem); droog, voedselarm,
-      reliëfrijk.
+    beschrijving: 'Rivierduinen (opgestoven zand langs riviersysteem); droog, voedselarm, reliëfrijk.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Overwegend zandig, goed doorlatend; droogte en wind zijn vaak
-      limiterend. Lokale valleien kunnen natter zijn.
-
-      '
-    beplanting_en_landgebruik: 'Heide-/struweelachtige randen, eik/berk/den (afhankelijk
-      van regio), meidoorn/hondsroos in luwte; kruidenrijke zoom bij voldoende buffer.
-
-      '
-    betekenis_voor_erfbeplanting: 'Werk met luwte (hagen/struweel), organische-stof
-      opbouw en droogtetolerante soorten. Plant in gradiënten (droger hoog → vochtiger
-      laag) en beperk grasconcurrentie bij aanplant.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Overwegend zandig, goed doorlatend; droogte en wind zijn vaak limiterend. Lokale valleien kunnen natter zijn.
+    betekenis_voor_erfbeplanting: Werk met luwte (hagen/struweel), organische-stof opbouw en droogtetolerante soorten. Plant in gradiënten (droger hoog → vochtiger laag) en beperk grasconcurrentie bij aanplant.
+    beplanting_en_landgebruik: Heide-/struweelachtige randen, eik/berk/den (afhankelijk van regio), meidoorn/hondsroos in luwte; kruidenrijke zoom bij voldoende buffer.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1490,140 +745,69 @@ nsn:
     beschrijving: 'Restgeul binnen terras-/riviersysteem; natte laagtes en waterbergingskansen.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_sw1:
     titel: Sw1 | Stuwwal
-    beschrijving: 'Sterk reliëfrijke opgestuwde afzettingen (Saalien); droog op toppen,
-      natte kwel aan voet.
+    beschrijving: 'Sterk reliëfrijke opgestuwde afzettingen (Saalien); droog op toppen, natte kwel aan voet.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr
-      droger en infiltrerend. Kwel kan aan randen voorkomen.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk
-      van bodem) op hogere delen; hagen en struweel als verbindingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende
-      soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting.
-      Borg droogtebuffering op hogere zandige delen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr droger en infiltrerend. Kwel kan aan randen voorkomen.
+    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting. Borg droogtebuffering op hogere zandige delen.'
+    beplanting_en_landgebruik: Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk van bodem) op hogere delen; hagen en struweel als verbindingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_sw2:
     titel: Sw2 | Smeltwaterafzettingen, sandr
-    beschrijving: 'Smeltwaterwaaiers/sandr: zandig/grindig, goed doorlatend, vaak
-      droog.
+    beschrijving: 'Smeltwaterwaaiers/sandr: zandig/grindig, goed doorlatend, vaak droog.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr
-      droger en infiltrerend. Kwel kan aan randen voorkomen.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk
-      van bodem) op hogere delen; hagen en struweel als verbindingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende
-      soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting.
-      Borg droogtebuffering op hogere zandige delen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand/leem/grind, variabel; beekdalen natter, terrassen en sandr droger en infiltrerend. Kwel kan aan randen voorkomen.
+    betekenis_voor_erfbeplanting: 'Gebruik gradiënten: natte dalbodem voor vochtminnende soorten en waterberging, hogere delen voor structuurbomen en erfbeplanting. Borg droogtebuffering op hogere zandige delen.'
+    beplanting_en_landgebruik: Els/wilg langs natte lijnen; eik/linde/esdoorn (afhankelijk van bodem) op hogere delen; hagen en struweel als verbindingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_sw3:
     titel: Sw3 | Daluitspoelingswaaier
-    beschrijving: 'Uitspoelingswaaier aan dalmond; grover materiaal, afstromings-
-      en erosiegevoelig.
+    beschrijving: 'Uitspoelingswaaier aan dalmond; grover materiaal, afstromings- en erosiegevoelig.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1633,33 +817,15 @@ nsn:
     beschrijving: 'Droogdal met veeninvloed; natte laagtes, lage draagkracht.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Veen/venige bodems met lage draagkracht; waterpeil is cruciaal.
-      Ontwatering leidt tot oxidatie en bodemdaling.
-
-      '
-    beplanting_en_landgebruik: 'Els/wilg in natte randen; berk op iets drogere plekken;
-      riet/zegge in natte zones; struweel op kades/ophogingen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Beperk zware bomen en zware belasting. Ontwerp
-      met natte toleranties en lichte structuren; houd waar mogelijk water vast en
-      gebruik plas-dras/randen voor biodiversiteit.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Veen/venige bodems met lage draagkracht; waterpeil is cruciaal. Ontwatering leidt tot oxidatie en bodemdaling.
+    betekenis_voor_erfbeplanting: Beperk zware bomen en zware belasting. Ontwerp met natte toleranties en lichte structuren; houd waar mogelijk water vast en gebruik plas-dras/randen voor biodiversiteit.
+    beplanting_en_landgebruik: Els/wilg in natte randen; berk op iets drogere plekken; riet/zegge in natte zones; struweel op kades/ophogingen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1669,68 +835,33 @@ nsn:
     beschrijving: 'Droogdal met keileem/stagnatie; natte plekken door slechte doorlatendheid.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Zand met keileem-/leeminvloed; infiltratie kan lokaal worden
-      geremd met stagnatie/kwel in laagtes.
-
-      '
-    beplanting_en_landgebruik: 'Eik/berk op drogere delen; els/wilg in natte laagtes;
-      gevarieerde struiklaag op overgangen.
-
-      '
-    betekenis_voor_erfbeplanting: 'Werk standplaatsgericht: benut droge koppen voor
-      bomen, natte laagtes voor moeras/struweel. Vermijd doorsnijden/doorbreken van
-      slecht doorlatende lagen bij grondwerk.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Zand met keileem-/leeminvloed; infiltratie kan lokaal worden geremd met stagnatie/kwel in laagtes.
+    betekenis_voor_erfbeplanting: 'Werk standplaatsgericht: benut droge koppen voor bomen, natte laagtes voor moeras/struweel. Vermijd doorsnijden/doorbreken van slecht doorlatende lagen bij grondwerk.'
+    beplanting_en_landgebruik: Eik/berk op drogere delen; els/wilg in natte laagtes; gevarieerde struiklaag op overgangen.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_sw5:
     titel: Sw5 | Es
-    beschrijving: 'Essenlandschap (op stuwwal/overgang): opgehoogde akker met plaggendek,
-      vaak vruchtbaar.
+    beschrijving: 'Essenlandschap (op stuwwal/overgang): opgehoogde akker met plaggendek, vaak vruchtbaar.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1740,70 +871,33 @@ nsn:
     beschrijving: 'Mariene kleivlakte; zeer vlak, zware klei/zavel, vaak hoge grondwaterstand.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_zk3:
     titel: Zk3 | Kreekrug
-    beschrijving: 'Kreekrug in zeeklei: hoger en droger dan omliggende kleivlakte;
-      gunstige standplaats.
+    beschrijving: 'Kreekrug in zeeklei: hoger en droger dan omliggende kleivlakte; gunstige standplaats.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1813,177 +907,87 @@ nsn:
     beschrijving: 'Lager gelegen kreekbedding; natter, soms slappe bodems, waterafvoer/-berging.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_zk6:
     titel: Zk6 | Zoetwatergetijafzetting
-    beschrijving: 'Getijafzettingen onder zoetwaterinvloed (rivierengebied-delta);
-      dynamisch nat.
+    beschrijving: 'Getijafzettingen onder zoetwaterinvloed (rivierengebied-delta); dynamisch nat.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_zk7:
     titel: Zk7 | Uitzwatergetijafzetting
-    beschrijving: 'Getijafzettingen in overgangszone; nat, slappe klei/veen, waterdynamiek
-      bepalend.
+    beschrijving: 'Getijafzettingen in overgangszone; nat, slappe klei/veen, waterdynamiek bepalend.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Klei/zavel met beperkte infiltratie; waterstand en afwatering
-      zijn vaak dominant. Periodieke natte condities komen veel voor.
-
-      '
-    beplanting_en_landgebruik: 'Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep
-      (waar passend) op hogere ruggen; riet/ruigte in natte zones.
-
-      '
-    betekenis_voor_erfbeplanting: 'Voorkom verdichting (werk bij draagkracht). Kies
-      nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet
-      tegen langdurige vernatting kunnen.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Klei/zavel met beperkte infiltratie; waterstand en afwatering zijn vaak dominant. Periodieke natte condities komen veel voor.
+    betekenis_voor_erfbeplanting: Voorkom verdichting (werk bij draagkracht). Kies nat-/windtolerante soorten, en gebruik microverhogingen voor soorten die niet tegen langdurige vernatting kunnen.
+    beplanting_en_landgebruik: Wilg/els/populier op natte delen; meidoorn/veldesdoorn/iep (waar passend) op hogere ruggen; riet/ruigte in natte zones.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_a:
     titel: A | Antropogeen element
-    beschrijving: 'Door de mens sterk gewijzigde plekken: ophogingen, infrastructuur,
-      bebouwing, etc.
+    beschrijving: 'Door de mens sterk gewijzigde plekken: ophogingen, infrastructuur, bebouwing, etc.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
   bknsn_at:
     titel: At | Terp
-    beschrijving: 'Historische woonheuvel (terp) in kleigebied; lokaal hoger, vaak
-      vruchtbare, gemengde grond.
+    beschrijving: 'Historische woonheuvel (terp) in kleigebied; lokaal hoger, vaak vruchtbare, gemengde grond.
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
@@ -1993,421 +997,16 @@ nsn:
     beschrijving: 'Open water (meren, rivieren, sloten).
 
 
-      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw)
-      dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog
-      gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking
-      relevant.
-
-      '
+      Deze BKNSN-eenheid beschrijft het natuurlijke systeem (landvorm + bodemopbouw) dat de standplaats voor beplanting stuurt. Voor erfadvies is vooral de nat–droog gradiënt (microreliëf, doorlatendheid, grondwaterstand) en de wind-/zoutinwerking relevant.'
     kenmerken: '• Reliëf/ligging: bepalend voor afstroming, waterberging en droogterisico.
 
       • Bodemopbouw: bepaalt doorwortelbaarheid, draagkracht en voedings-/vochtbuffer.
 
-      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze
-      en beheer.
-
-      '
-    bodem_en_water: 'Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen
-      voor lokale randvoorwaarden.
-
-      '
-    beplanting_en_landgebruik: 'Afhankelijk van lokale standplaats.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik dit type vooral als signaal voor lokale
-      variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
-
-      '
+      • Waterregime: grondwaterstand en (periodieke) overstroming sturen soortkeuze en beheer.'
+    bodem_en_water: Sterk locatie-afhankelijk; check bodemkaart en grondwatertrappen voor lokale randvoorwaarden.
+    betekenis_voor_erfbeplanting: Gebruik dit type vooral als signaal voor lokale variatie; combineer met bodem- en Gt-kaarten voor soortkeuze.
+    beplanting_en_landgebruik: Afhankelijk van lokale standplaats.
     bronnen:
     - bknsn_technische_documentatie_2023
     - klimaateffectatlas_bknsn
     - berendsen_h_j_a_2005_fysische_geografie_van_nederl
-_meta:
-  naam: Beplantingswijzer kennisdocument – locatiecontext
-  versie: '2025-12-16'
-  doel: Uitgebreide, bron-gebaseerde toelichting op kaartlagen (FGR, GMM, NSN, bodem,
-    Gt) voor opname in Beplantingswijzer-rapporten.
-  opmerking: 'Dit document bevat algemene beschrijvingen op basis van landelijke literatuur
-    en landelijke datasets. Lokale variatie kan groot zijn; raadpleeg voor ontwerp
-    en uitvoering ook veldwaarnemingen, bodemprofiel en peilbeheer. (Automatisch aangevuld
-    met ontbrekende NSN- en GMM-items op 2025-12-16.)
-
-    '
-  koppelingen:
-    nsn_bodem:
-      doel: 'Maak de vertaalslag van landschapssysteem (NSN) naar verwacht bodemtype/vocht
-        en daardoor plant- en beheerkeuzes.
-
-        '
-      regels:
-      - nsn: rivierkom
-        typische_bodem:
-        - zware_klei
-        - klei
-        indicatie: Nat(ter), traag drainerend; risico op zuurstoftekort.
-        advies: Kies nat-tolerante soorten; vermijd verdichting.
-      - nsn: komgebied
-        typische_bodem:
-        - zware_klei
-        - klei
-        indicatie: Komklei, lokaal veenresten; hoge Gt.
-        advies: Waterbeheer en bodemstructuur centraal; soorten met natte standplaats.
-      - nsn: oeverwal_en_stroomrug
-        typische_bodem:
-        - zavel
-        - lichte_klei
-        - zand
-        indicatie: Hoger, droger; meer zandbijmenging.
-        advies: Let op droogte/wind; soortenkeuze breder.
-      - nsn: dekzandlandschap
-        typische_bodem:
-        - zand
-        - lemig_zand
-        indicatie: Droger, uitspoelingsgevoelig.
-        advies: Organische stof, mulch, droogtetolerantie.
-      bronnen:
-      - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
-      - everts_f_h_e_a_natura_2000_herstelstrategie_n_deel
-      - wur_stichting_voor_bodemkartering_bodemkaart_van_n
-      - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
-      - geologie_van_nederland_komgrond_komklei_en_uitleg_
-ahn:
-  uitleg:
-    titel: AHN hoogteligging (Actueel Hoogtebestand Nederland)
-    kernsamenenvatting: 'AHN geeft de maaiveldhoogte (m t.o.v. NAP) en maakt microreliëf
-      zichtbaar. Kleine hoogteverschillen (decimeters) sturen water, droogte en daarmee
-      beplantingskansen sterk.
-
-      '
-    wat_meet_ahn: 'AHN is een landsdekkend hoogtebestand op basis van laserscanning
-      (LiDAR). Het meet het maaiveld (DTM) en – afhankelijk van product – ook objecten
-      (DSM). In Beplantingswijzer gebruiken we AHN primair om maaiveldhoogte en lokale
-      hoogteverschillen rond het erf te duiden.
-
-      '
-    hoe_te_interpreteren: 'De absolute hoogte (m NAP) zegt iets over regionale ligging
-      (bijv. rivierterrassen vs kom), maar voor erfadvies is vooral relatieve ligging
-      belangrijk: ligt het erf op een rug (hoger), in een laagte (lager), of op een
-      helling/overgang? Combineer AHN daarom altijd met bodem en Gt.'
-    relevantie_voor_water: 'Water stroomt naar laagtes en blijft daar langer staan;
-      hogere plekken drogen sneller uit en zijn vaak windgevoeliger. Helling en afwateringsrichting
-      helpen om te bepalen waar infiltratie (wadi), berging (plas-dras) of juist ophoging/logische
-      plantplaatsen zitten.
-
-      '
-    betekenis_voor_erfbeplanting: 'Gebruik AHN om het erf te zoneren: (1) hoogste,
-      droogste delen voor droogtetolerante soorten en functies, (2) overgangszones
-      voor struweel/hagen, (3) laagtes voor waterberging en natte beplanting. Kleine
-      ingrepen (greppel, flauw talud, micro-ophoging) kunnen de standplaats sterk
-      verbeteren zonder groots grondverzet.'
-    bronnen:
-    - actueel_hoogtebestand_nederland_ahn_productinforma
-    - pdok_ahn_kaartlagen_en_documentatie
-    - berendsen_h_j_a_2005_fysische_geografie_van_nederl_5
-  afgeleide_context:
-    titel: Afgeleide AHN-context (relatieve ligging)
-    uitleg: 'In de applicatie kan uit AHN een relatieve ligging worden afgeleid (bijv.
-      hoger dan omgeving, lager dan omgeving, helling/overgang). Dat is vaak informatiever
-      dan absolute meters, omdat het microreliëf de lokale nat–droog gradiënt bepaalt.
-
-      '
-    indicaties:
-      hoger_dan_omgeving:
-        beschrijving: Rug/kop/ophoging; sneller droog, warmer, meer wind.
-        implicatie: Droogtetolerante soorten en windfiltering; infiltratie mogelijk
-          maar water zakt snel weg.
-      lager_dan_omgeving:
-        beschrijving: Laagte/kom; water verzamelt en blijft staan.
-        implicatie: Natte toleranties, waterberging en flauwe oevers; voorkom verdichting.
-      overgang_of_helling:
-        beschrijving: Talud/helling tussen hoog en laag; afstroming en erosie kunnen
-          spelen.
-        implicatie: Beplanting in contouren, bodembedekking, en waterremmende structuren
-          (hagen, greppels).
-ontwerpprincipes:
-  titel: Ontwerpprincipes (vertaling van analyse naar ontwerp)
-  uitleg: 'Deze sectie vertaalt de gevonden kaartwaarden (FGR, geomorfologie, NSN,
-    bodem en vochttoestand)
-
-    naar concrete ontwerpuitgangspunten voor erf- en landschapsbeplanting. Het doel
-    is om de stap
-
-    van analyse naar ruimtelijke keuzes expliciet en herhaalbaar te maken.
-
-    '
-  algemeen:
-  - Werk met bodem en water als drager van het ontwerp: ontwerp volgt standplaats.
-  - Start met zonering (hoog/laag, nat/droog, open/besloten) en kies daarna pas soorten.
-  - Benut microreliëf: kleine hoogteverschillen sturen nat–droog en bepalen plantkans.
-  - Plaats ‘zware’ beplanting (bomen/boomgroepen) op draagkrachtige, drogere delen;
-    benut laagtes voor water en natuur.
-  - Behoud landschappelijke openheid waar die hoort; concentreer beplanting rond erf
-    en langs lijnen.
-  - Ontwerp beheerbaar: kies structuren die passen bij beheerfrequentie en beschikbare
-      tijd/middelen.
-  vochtklasse:
-    zeer_nat:
-      principes:
-      - Ontwerp natte zones bewust (plas-dras, flauwe oevers, moeras/ruigte) en kies
-        nat-tolerante soorten.
-      - Voorkom verdichting en structuurbederf: beperk berijding en grondwerk in natte
-          perioden.
-      - Plant gevoelige soorten alleen op microverhogingen/ophogingen of op drogere
-        randen.
-    nat:
-      principes:
-      - Kies robuuste, vochtminnende soorten en werk met gradiënten (natte kern →
-        drogere randen).
-      - Borg draagkracht: plan werkzaamheden bij voldoende droge bodem en voorkom
-          kapotslaan van structuur.
-    vochtig:
-      principes:
-      - Breed inzetbaar: combineer schaduw, open plekken en infiltratie (wadi/greppel)
-          om extremen te dempen.
-      - Maak variatie in structuur (haag/struweel/bomen) maar voorkom overconcentratie
-        op één plek.
-    droog:
-      principes:
-      - Ontwerp met wateropvang en schaduw (mulch, bodembedekking, luwtehagen) om
-        droogtestress te beperken.
-      - Kies droogtetolerante soorten; beperk verdamping door bodem te bedekken en
-        grasconcurrentie te verminderen.
-    zeer_droog:
-      principes:
-      - Alleen zeer droogtetolerante beplanting is kansrijk zonder aanvullende maatregelen.
-      - Combineer bodemverbetering (organische stof) met luwte en waterinfiltratie
-        om vestiging mogelijk te maken.
-  bodem:
-    zand:
-      principes:
-      - Focus op vochtvasthoudend bodembeheer (organische stof, mulch) en wind-/zonbeschutting.
-      - Benut laagtes voor waterberging en vochtminnende beplanting; hoge ruggen vragen
-        droogtetolerantie.
-    klei:
-      principes:
-      - Voorkom verdichting: werk alleen bij draagkracht en minimaliseer zware bewerking.
-      - Plaats bomen bij voorkeur op drogere ruggen/ophogingen; benut natte delen
-        voor wilg/els/populier-structuren.
-    veen:
-      principes:
-      - Beperk zware bomen en bodembelasting; lage draagkracht en stabiliteit vragen
-        lichte structuren.
-      - Houd waterpeil hoog waar mogelijk; droge omstandigheden versnellen veenafbraak
-        en bodemdaling.
-    leem:
-      principes:
-      - Bewaak bodemstructuur: verslemping en erosie kunnen spelen op hellingen en
-          kale grond.
-      - Combineer bufferende leem/zavel met contourbeplanting en bodembedekking voor
-        stabiele vochtvoorziening.
-  geomorfologie:
-    open_kommenlandschap:
-      principes:
-      - Behoud openheid; beplanting vooral lijnvormig bij erf/weg/slot en op randen.
-      - Kies nat-tolerante soorten of werk met microverhogingen voor drogere soorten.
-    oeverwal:
-      principes:
-      - Gebruik oeverwal als drager voor erfbeplanting, boomgaarden en laanstructuren.
-      - Houd rekening met wind en zomerse droogte op hogere delen.
-    stroomrug:
-      principes:
-      - Plaats hoofdbomen en struweel op de rug (drogere, draagkrachtige zone).
-      - Benut aangrenzende laagtes voor waterberging en vochtminnende beplanting.
-  nsn:
-    rivierkom_systeem:
-      principes:
-      - Ontwerp met water als drager: flauwe oevers, plas-dras en natte toleranties.
-      - Concentreer beplanting rond erf en langs watergangen; vermijd grote dichte
-        bosvakken in open veld.
-    rivier_oeverwal_systeem:
-      principes:
-      - Groot soortenpalet mogelijk; ontwerp met luwte en droogtebuffering (bodem
-        en schaduw).
-      - Boomgaarden, hagen en ervenstructuren passen goed op hogere, drogere delen.
-strandwallen_en_binnenduinrand:
-  titel: Strandwallen en binnenduinrand
-  beschrijving: 'Landschap ontstaan door afzetting van zand langs een voormalige kustlijn.
-    Opeenvolgende strandwallen vormen langgerekte, relatief hoge en droge zandruggen;
-    tussenliggende strandvlakten zijn lager en natter. De binnenduinrand vormt de
-    overgang naar het oudere zandlandschap.
-
-    '
-  kenmerken: 'Langgerekt reliëf, vaak parallel aan de kust. Grote verschillen op korte
-    afstand: droge ruggen en natte laagten. Historisch intensief bewoond en gebruikt
-    voor tuinbouw en bollenteelt.
-
-    '
-  bodem_en_water: 'Overwegend zandig tot lemig zand. Goede infiltratie op ruggen;
-    hogere grondwaterstanden in strandvlakten. Zoetwaterlenzen kunnen voorkomen.
-
-    '
-  beplanting_en_landgebruik: 'Tuinbouw, bollen, erven en dorpen op strandwallen. Nattere
-    strandvlakten historisch grasland en veenrestanten. Streekeigen: eik, berk, els
-    in laagten, meidoornhagen.
-
-    '
-  betekenis_voor_erfbeplanting: 'Differentieer sterk binnen het erf: droogtetolerante
-    soorten op ruggen, vochtminnende soorten in laagten. Lijnvormige beplanting sluit
-    aan bij het langgerekte landschap.
-
-    '
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland_2
-  - pdok_fgr_nsn_toelichting
-  - atlas_natuurlijk_kapitaal_kustlandschappen
-droogmakerijen_en_ijsselmeerpolders:
-  titel: Droogmakerijen en IJsselmeerpolders
-  beschrijving: 'Door menselijke drooglegging ontstane landschappen op voormalige
-    meren en zeeën. Het natuurlijke systeem wordt sterk bepaald door waterbeheer,
-    bodemopbouw en peilregime.
-
-    '
-  kenmerken: 'Zeer vlak, grootschalig, rationele verkaveling. Wegen en sloten loodrecht
-    op elkaar. Weinig reliëf, veel windinvloed.
-
-    '
-  bodem_en_water: 'Kleiige tot zavelige bodems, lokaal veenrestanten. Grondwaterstand
-    volledig gestuurd; bodemdaling kan optreden bij veen.
-
-    '
-  beplanting_en_landgebruik: 'Akkerbouw en grootschalig grasland. Beplanting vooral
-    bij erven, langs wegen en tochten: windsingels en erven als groene eilanden.
-
-    '
-  betekenis_voor_erfbeplanting: 'Windreductie is cruciaal. Werk met robuuste soorten,
-    open windsingels en duidelijke erfkaders. Vermijd versnippering van het open landschap.
-
-    '
-  bronnen:
-  - clo_droogmakerijen_en_polders
-  - pdok_fgr_nsn
-  - jongmans_e_a_2013
-rivierterras:
-  titel: Rivierterras
-  beschrijving: 'Oude rivierafzettingen die hoger liggen dan het huidige overstromingsgebied.
-    Ontstaan door insnijding van rivieren in het Pleistoceen en vroeg Holoceen.
-
-    '
-  kenmerken: 'Licht golvend tot vlak, duidelijk hoger dan uiterwaarden en kommen.
-    Vaak scherp begrensd.
-
-    '
-  bodem_en_water: 'Zandig tot grindig, lokaal leemrijk. Grondwater meestal dieper;
-    relatief droog.
-
-    '
-  beplanting_en_landgebruik: 'Akkerbouw, erven, bosjes. Streekeigen soorten vergelijkbaar
-    met hogere zandgronden.
-
-    '
-  betekenis_voor_erfbeplanting: 'Goede groeiplaats maar gevoelig voor droogte. Combineer
-    diepe wortelaars met struiklaag voor microklimaat.
-
-    '
-  bronnen:
-  - berendsen_2005
-  - bro_geomorfologische_kaart
-rivierengebied_oeverwal:
-  titel: Rivierengebied Oeverwal
-  beschrijving: Oeverwal en stroomrug binnen het riviersysteem.
-  ontstaansgeschiedenis_en_systeem: Uitgebreide systeemomschrijving gebaseerd op geomorfologie,
-    bodem en waterhuishouding.
-  kenmerken_en_overgangen: Overgangen naar aangrenzende NSN-eenheden zijn ecologisch
-    en hydrologisch geleidelijk.
-  bodem_en_water: Typische bodems en waterregimes passend bij dit subtype.
-  beplanting_en_landgebruik: Historisch en actueel landgebruik en bijpassende vegetaties.
-  betekenis_voor_erfbeplanting: Ontwerp- en beheerrichtlijnen voor erven binnen dit
-    subtype.
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland
-rivierengebied_rivierkom:
-  titel: Rivierengebied Rivierkom
-  beschrijving: Komgebied met fijne klei-afzettingen.
-  ontstaansgeschiedenis_en_systeem: Uitgebreide systeemomschrijving gebaseerd op geomorfologie,
-    bodem en waterhuishouding.
-  kenmerken_en_overgangen: Overgangen naar aangrenzende NSN-eenheden zijn ecologisch
-    en hydrologisch geleidelijk.
-  bodem_en_water: Typische bodems en waterregimes passend bij dit subtype.
-  beplanting_en_landgebruik: Historisch en actueel landgebruik en bijpassende vegetaties.
-  betekenis_voor_erfbeplanting: Ontwerp- en beheerrichtlijnen voor erven binnen dit
-    subtype.
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland
-rivierengebied_uiterwaard:
-  titel: Rivierengebied Uiterwaard
-  beschrijving: Actief overstromingsgebied langs rivieren.
-  ontstaansgeschiedenis_en_systeem: Uitgebreide systeemomschrijving gebaseerd op geomorfologie,
-    bodem en waterhuishouding.
-  kenmerken_en_overgangen: Overgangen naar aangrenzende NSN-eenheden zijn ecologisch
-    en hydrologisch geleidelijk.
-  bodem_en_water: Typische bodems en waterregimes passend bij dit subtype.
-  beplanting_en_landgebruik: Historisch en actueel landgebruik en bijpassende vegetaties.
-  betekenis_voor_erfbeplanting: Ontwerp- en beheerrichtlijnen voor erven binnen dit
-    subtype.
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland
-rivierengebied_restgeul:
-  titel: Rivierengebied Restgeul
-  beschrijving: Oude afgesneden rivierarmen.
-  ontstaansgeschiedenis_en_systeem: Uitgebreide systeemomschrijving gebaseerd op geomorfologie,
-    bodem en waterhuishouding.
-  kenmerken_en_overgangen: Overgangen naar aangrenzende NSN-eenheden zijn ecologisch
-    en hydrologisch geleidelijk.
-  bodem_en_water: Typische bodems en waterregimes passend bij dit subtype.
-  beplanting_en_landgebruik: Historisch en actueel landgebruik en bijpassende vegetaties.
-  betekenis_voor_erfbeplanting: Ontwerp- en beheerrichtlijnen voor erven binnen dit
-    subtype.
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland
-dekzand_dekzandrug:
-  titel: Dekzand Dekzandrug
-  beschrijving: Hoger gelegen dekzandrug.
-  ontstaansgeschiedenis_en_systeem: Uitgebreide systeemomschrijving gebaseerd op geomorfologie,
-    bodem en waterhuishouding.
-  kenmerken_en_overgangen: Overgangen naar aangrenzende NSN-eenheden zijn ecologisch
-    en hydrologisch geleidelijk.
-  bodem_en_water: Typische bodems en waterregimes passend bij dit subtype.
-  beplanting_en_landgebruik: Historisch en actueel landgebruik en bijpassende vegetaties.
-  betekenis_voor_erfbeplanting: Ontwerp- en beheerrichtlijnen voor erven binnen dit
-    subtype.
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland
-dekzand_dekzandvlakte:
-  titel: Dekzand Dekzandvlakte
-  beschrijving: Vlakke dekzandvlakte.
-  ontstaansgeschiedenis_en_systeem: Uitgebreide systeemomschrijving gebaseerd op geomorfologie,
-    bodem en waterhuishouding.
-  kenmerken_en_overgangen: Overgangen naar aangrenzende NSN-eenheden zijn ecologisch
-    en hydrologisch geleidelijk.
-  bodem_en_water: Typische bodems en waterregimes passend bij dit subtype.
-  beplanting_en_landgebruik: Historisch en actueel landgebruik en bijpassende vegetaties.
-  betekenis_voor_erfbeplanting: Ontwerp- en beheerrichtlijnen voor erven binnen dit
-    subtype.
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland
-dekzand_beekdal:
-  titel: Dekzand Beekdal
-  beschrijving: Laaggelegen beekdal binnen dekzandgebied.
-  ontstaansgeschiedenis_en_systeem: Uitgebreide systeemomschrijving gebaseerd op geomorfologie,
-    bodem en waterhuishouding.
-  kenmerken_en_overgangen: Overgangen naar aangrenzende NSN-eenheden zijn ecologisch
-    en hydrologisch geleidelijk.
-  bodem_en_water: Typische bodems en waterregimes passend bij dit subtype.
-  beplanting_en_landgebruik: Historisch en actueel landgebruik en bijpassende vegetaties.
-  betekenis_voor_erfbeplanting: Ontwerp- en beheerrichtlijnen voor erven binnen dit
-    subtype.
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland
-dekzand_depressie:
-  titel: Dekzand Depressie
-  beschrijving: Natte depressie in dekzandgebied.
-  ontstaansgeschiedenis_en_systeem: Uitgebreide systeemomschrijving gebaseerd op geomorfologie,
-    bodem en waterhuishouding.
-  kenmerken_en_overgangen: Overgangen naar aangrenzende NSN-eenheden zijn ecologisch
-    en hydrologisch geleidelijk.
-  bodem_en_water: Typische bodems en waterregimes passend bij dit subtype.
-  beplanting_en_landgebruik: Historisch en actueel landgebruik en bijpassende vegetaties.
-  betekenis_voor_erfbeplanting: Ontwerp- en beheerrichtlijnen voor erven binnen dit
-    subtype.
-  bronnen:
-  - berendsen_2005_fysische_geografie_van_nederland
