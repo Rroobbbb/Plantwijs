@@ -2402,6 +2402,65 @@ def advies_pdf(
     story.append(ctx_table)
     story.append(Spacer(1, 10))
 
+    # Praktisch beplantingsadvies (locatiespecifiek, scanbaar) — hybride en voorzichtig aanbevolen
+    def _kw(s: str) -> str:
+        return (str(s or "").lower().strip())
+
+    def _contains_any(s: str, words: list[str]) -> bool:
+        ss = _kw(s)
+        return any(w in ss for w in words)
+
+    def _practical_advice() -> list[str]:
+        adv: list[str] = []
+
+        # 0) Kleine disclaimer / hybride aanpak
+        adv.append("Kaartwaarden zijn richtinggevend. Controleer op locatie met een spade (bodemopbouw/compactie) en kijk na een natte én droge periode waar water blijft staan. Begin ‘hybride’: zet eerst de hoofdlijnen/structuur, evalueer 1 seizoen, vul daarna bij.")
+
+        # 1) Zonering op basis van hoogte + vocht
+        if ahn_val not in (None, "", "—"):
+            adv.append(f"Maak eerst een eenvoudige zoneringsschets: koppel <b>hoog/laag</b> (AHN ≈ {ahn_val} m) aan <b>nat/droog</b> (Gt: {gt_code or '—'}). Zet de ‘droge’ zone als drager voor bomen/struweel; gebruik laagtes voor wateropvang en vochtminnende vegetatie.")
+        else:
+            adv.append("Maak eerst een eenvoudige zoneringsschets: zoek hoogteverschillen (hoog/laag) en koppel die aan nat/droog. Zet de ‘droge’ zone als drager voor bomen/struweel; gebruik laagtes voor wateropvang en vochtminnende vegetatie.")
+
+        # 2) Waterstrategie (droog vs nat)
+        if _contains_any(vocht_raw, ["droog", "zeer droog"]) or _contains_any(gt_code, ["i", "ii"]) :
+            adv.append("Omdat de standplaats (relatief) droog kan zijn: werk met <b>water vasthouden</b> (mulch, bodembedekking, organische stof, luwte) en geef jonge aanplant 1–2 groeiseizoenen gericht water. Overweeg kleine wadi’s/greppels langs contouren om regen te vertragen.")
+        elif _contains_any(vocht_raw, ["nat", "zeer nat", "vochtig"]) or _contains_any(gt_code, ["v", "vi", "vii"]):
+            adv.append("Omdat de standplaats (relatief) nat/vochtig kan zijn: voorkom ‘verzuipen’ van bomen. Plant bomen/struweel bij voorkeur op <b>ophoogjes/ruggen</b> en benut laagtes als water- of moeraszone. Kies soorten die tegen periodiek nat kunnen (en voorkom diepe grondbewerking die water vasthoudt).")
+        else:
+            adv.append("Werk met water als ontwerpdrager: maak plekken waar water kort mag blijven (laagtes) én plekken die sneller drogen (ruggen/ophoogjes). Dat vergroot de kans dat verschillende plantgroepen slagen.")
+
+        # 3) Bodemgericht (heel globaal, voorzichtig)
+        b = _kw(bodem_val or bodem_raw)
+        if "klei" in b:
+            adv.append("Bij klei/kleihoudende bodem: focus op <b>structuur</b> (niet werken als het nat is), voorkom verdichting, en verbeter het plantgat met compost/organische stof in de bovenlaag. Overweeg plant op ruggen voor betere lucht/afwatering.")
+        elif "zand" in b:
+            adv.append("Bij zandige bodem: focus op <b>vocht vasthouden</b> (mulch, bladcompost, schaduw), en plant liever in het najaar. Bodembedekkers en een kruidlaag helpen uitdroging en onkruiddruk beperken.")
+        elif "veen" in b:
+            adv.append("Bij veen(achtig): voorkom sterke ontwatering (inklinking). Kies soorten die tegen vocht kunnen en zet zware beplanting niet in de natste delen.")
+        else:
+            adv.append("Stem bodemverbetering af op wat je aantreft: kruimelig = vaak oké; plakkerig/compact = lucht/structuur verbeteren; heel los = organische stof en bodembedekking toevoegen.")
+
+        # 4) Beplantingsstructuur (landschap + erf)
+        adv.append("Zet beplanting in <b>lijnen en clusters</b> (erfrand, slootkant, kavelgrens) en houd zicht/openheid waar dat past bij het landschap. Een luwtehaag aan de windzijde kan groeikansen sterk verhogen.")
+
+        # 5) Soortenkeuze: eerst functies, dan soorten
+        adv.append("Kies eerst functies per zone (schaduw, luwte, erfafscheiding, nectar/bessen, waterbuffer) en pas daarna soorten. Mix in elke zone: 1–3 boom/kleine boom, struweel, en een kruid-/bodembedekkingslaag voor veerkracht.")
+
+        # 6) Beheerbaar ontwerp
+        adv.append("Ontwerp beheerbaar: maak ‘maaivakken’ en ‘struweelvakken’ herkenbaar, kies een beheerfrequentie (bijv. 1×/jaar kruidenstrook, 1×/3–5 jaar struweel dunnen), en houd randen strak waar je dat wilt (pad/erf).")
+
+        return adv[:7]
+
+    praktische_adviezen = _practical_advice()
+
+    story.append(Paragraph("Praktisch beplantingsadvies (voor deze locatie)", style_h1))
+    story.append(Paragraph("Deze tips zijn bedoeld als toepasbare stappen. Ze zijn bewust voorzichtig geformuleerd: check ter plekke en stuur bij.", style_p))
+    for i, b in enumerate(praktische_adviezen, 1):
+        story.append(Paragraph(f"<b>{i}.</b> {b}", style_p))
+    story.append(Spacer(1, 6))
+
+
     # Start de encyclopedische toelichting op een nieuwe pagina
     story.append(PageBreak())
 
