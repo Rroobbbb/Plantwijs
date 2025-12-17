@@ -2296,76 +2296,6 @@ def advies_pdf(
     kernsamenvatting = " ".join(kern_zinnen)
 
     # ------------------------
-    # 4b) Praktisch beplantingsadvies (hybride, voorzichtig aanbevelend)
-    # ------------------------
-    advies_bullets: list[str] = []
-
-    # Basis: werk altijd met zonering (hoog/laag, nat/droog, open/besloten)
-    advies_bullets.append(
-        "Begin met een eenvoudige zonering: onderscheid hogere/drogere delen en lagere/nattere delen, en bepaal waar openheid gewenst is. "
-        "Kies pas daarna soorten en beplantingstypen."
-    )
-
-    # Vocht (Gt) → waar bomen wel/niet logisch zijn
-    vocht_lc = str(vocht_val or vocht_raw or "").strip().lower()
-    if vocht_lc in ("zeer nat", "nat"):
-        advies_bullets.append(
-            "In lagere, nattere delen is het vaak aan te bevelen om geen zware boomgroepen te plaatsen. "
-            "Gebruik deze zones liever voor wateropvang, natte ruigte en een geleidelijke moeras-/oeverrand. "
-            "Bomen en struweel komen het best tot hun recht op hogere, draagkrachtige plekken of op (kleine) ophogingen."
-        )
-    elif vocht_lc in ("vochtig",):
-        advies_bullets.append(
-            "Bij vochtigere omstandigheden is het aan te bevelen om beplanting te concentreren op de draagkrachtiger delen en "
-            "in laagtes ruimte te houden voor tijdelijke waterberging. Een overgangszone met ruigte/struweel werkt hier vaak goed."
-        )
-    elif vocht_lc in ("droog", "zeer droog"):
-        advies_bullets.append(
-            "Bij drogere omstandigheden is het aan te bevelen om te ontwerpen met water vasthouden en verkoeling: "
-            "meer schaduw, bodembedekking/mulch en luwte (hagen) helpen om droogtestress te beperken."
-        )
-
-    # Bodem → bewerkbaarheid / draagkracht / inrichting
-    bodem_lc = str(bodem_val or bodem_raw or "").strip().lower()
-    if any(k in bodem_lc for k in ("klei", "zware klei", "lichte klei")):
-        advies_bullets.append(
-            "Op kleigrond is het aan te bevelen om verdichting te voorkomen (zeker bij nat weer). "
-            "Werk met paden/rijlijnen, en kies voor bomen/boomgroepen vooral de drogere delen. "
-            "In laagtes kan water langer blijven staan; benut dat liever als ecologische waarde dan als probleem."
-        )
-    elif "zand" in bodem_lc or "dekzand" in bodem_lc:
-        advies_bullets.append(
-            "Op zandige bodem is het aan te bevelen om organische stof op te bouwen (bladmulch, compost, bodembedekkers) en "
-            "structuur te brengen met hagen/struweel tegen wind en uitdroging. Kies beplanting die tegen droogte kan."
-        )
-    elif "veen" in bodem_lc:
-        advies_bullets.append(
-            "Bij veen/venige bodem is het aan te bevelen om waterbeheer leidend te maken en zware belasting te beperken. "
-            "Beplanting werkt hier vaak het best in lichte, gefaseerde structuren en met soorten die natte voeten verdragen."
-        )
-
-    # Landschap/openheid → clustering
-    fgr_lc = str(fgr or "").lower()
-    nsn_lc = str(nsn_val or "").lower()
-    gmm_lc = str(gmm_val or "").lower()
-    if any(k in (fgr_lc + " " + nsn_lc + " " + gmm_lc) for k in ("kom", "rivier", "rivierkom", "uiterwaard")):
-        advies_bullets.append(
-            "In rivier- en komlandschappen is het vaak aan te bevelen om landschappelijke openheid te respecteren. "
-            "Concentreer beplanting rond het erf en langs lijnen (kavelranden, sloten, toegangsweg) en voorkom een dicht 'bosbeeld' in het open veld."
-        )
-    else:
-        advies_bullets.append(
-            "Het is vaak aan te bevelen om beplanting te clusteren rond het erf en bestaande lijnen (wegen, sloten, kavelranden). "
-            "Zo blijft het landschap leesbaar en blijft beheer overzichtelijk."
-        )
-
-    # Beheerbaarheid (altijd)
-    advies_bullets.append(
-        "Ontwerp beheerbaar: kies structuren die passen bij de beschikbare tijd en middelen. "
-        "Een duidelijke zoom (gras/kruiden) met struweel erachter is vaak beheerbaar én biodivers."
-    )
-
-    # ------------------------
     # 5) PDF opbouw (modern + encyclopedisch)
     # ------------------------
     buf = BytesIO()
@@ -2472,15 +2402,160 @@ def advies_pdf(
     story.append(ctx_table)
     story.append(Spacer(1, 10))
 
-    # Praktisch beplantingsadvies (locatiespecifiek)
+    # ------------------------
+    # 5) Praktisch beplantingsadvies (locatiespecifiek, voorzichtig aanbevelend)
+    #    Let op: we leiden dit af uit bestaande kaartwaarden (bodem/GT/AHN/NSN/FGR/GMM).
+    # ------------------------
+    def _safe_s(x: object) -> str:
+        return str(x or "").strip()
+
+    def _parse_float(x: object) -> float | None:
+        try:
+            s = str(x).strip().replace(",", ".")
+            if not s:
+                return None
+            return float(s)
+        except Exception:
+            return None
+
+    bodem_label = _safe_s(bodem_val or bodem_raw)
+    bodem_canon = _canon_soil_token(bodem_label) or ""
+    vocht_label = _safe_s(vocht_raw or vocht_val)
+    vk = (vocht_label or "").lower()
+    gt_s = _safe_s(gt_code).upper()
+
+    # Ruime interpretatie vochtklasse (zodat het altijd iets zinnigs zegt)
+    vochtklasse = ""
+    if any(w in vk for w in ["zeer nat", "nat", "vochtig", "droog", "zeer droog"]):
+        if "zeer nat" in vk: vochtklasse = "zeer nat"
+        elif "zeer droog" in vk: vochtklasse = "zeer droog"
+        elif "nat" in vk: vochtklasse = "nat"
+        elif "droog" in vk: vochtklasse = "droog"
+        elif "vochtig" in vk: vochtklasse = "vochtig"
+    else:
+        # Fallback: afleiden uit Gt-code (alleen globaal)
+        try:
+            base = re.match(r"^(I{1,3}|IV|V|VI|VII|VIII)", gt_s).group(1) if gt_s else ""
+        except Exception:
+            base = ""
+        if base in ("I", "II"): vochtklasse = "zeer nat"
+        elif base == "III": vochtklasse = "nat"
+        elif base in ("IV", "V"): vochtklasse = "vochtig"
+        elif base == "VI": vochtklasse = "droog"
+        elif base in ("VII", "VIII"): vochtklasse = "zeer droog"
+
+    ahn_num = _parse_float(ahn_val)
+    nsn_txt = _safe_s(nsn_val).lower()
+    fgr_txt = _safe_s(fgr).lower()
+    gmm_txt = _safe_s(gmm_val).lower()
+
+    def _zone_kern() -> list[str]:
+        tips: list[str] = []
+        # Hoog/laag (AHN is absoluut; we adviseren microreliëf-check i.p.v. “hoogte is x”)
+        if ahn_num is not None:
+            tips.append("Gebruik kleine hoogteverschillen (microreliëf) als leidraad: hoger = droger/draagkrachtiger, lager = natter. Loop het perceel na (na regen) en teken hoog/laag in.")
+        else:
+            tips.append("Teken eerst een eenvoudige zonering: hoger/droger vs. lager/natter en open vs. beschut. Dit voorkomt ‘soorten kiezen zonder standplaats’." )
+        # Bodem
+        if bodem_canon == "klei":
+            tips.append("Bij klei is draagkracht en waterafvoer vaak bepalend. Het is aan te bevelen zware beplanting (boomgroepen) te concentreren op de stevigste, iets hogere delen en natte laagtes te reserveren voor water en ruigte.")
+        elif bodem_canon == "veen":
+            tips.append("Bij veen is inklinking en natte ondergrond vaak een thema. Het is aan te bevelen boomaanplant in de laagste, natte delen te beperken en te kiezen voor lichte structuren en natte vegetaties.")
+        elif bodem_canon == "zand":
+            tips.append("Bij zand speelt droogte en voedselarmte vaker mee. Het is aan te bevelen te werken met windluwe randen, bodembedekking (mulch) en een open, gevarieerde structuur in plaats van een dichte bosaanplant.")
+        elif bodem_canon == "leem":
+            tips.append("Bij leem/zavel is de standplaats vaak productief maar gevoelig voor verdichting. Het is aan te bevelen vaste paden/rijlijnen te kiezen en beplanting te bundelen op plekken waar bodemstructuur goed blijft.")
+        else:
+            if bodem_label:
+                tips.append(f"De bodem is geregistreerd als <b>{bodem_label}</b>. Gebruik dit als indicatie; lokale verschillen (opgebrachte grond, puin, verdichting) kunnen groot zijn.")
+        # Vocht
+        if vochtklasse in ("zeer nat", "nat"):
+            tips.append("Omdat de vochttoestand (Gt) wijst op natte omstandigheden, is het aan te bevelen bomen te vermijden in de laagste delen. Kies daar liever voor natte ruigte, riet-/zeggeranden of wilg/elzen-achtige structuren langs waterlijnen.")
+            tips.append("Overweeg water ‘te accepteren’: maak een duidelijke natte zone (wadi/poel/laagte) en leg beplanting op de randen (overgang nat→droger).")
+        elif vochtklasse in ("droog", "zeer droog"):
+            tips.append("Omdat de locatie eerder droog is, is het aan te bevelen te sturen op water vasthouden: bodembedekking/mulch, schaduwwerking en windremming (lage hagen/struweelranden) helpen tegen droogtestress.")
+            tips.append("Vermijd grote, aaneengesloten dichte aanplant; een mozaïek van open plekken en randen is vaak robuuster bij droogte.")
+        elif vochtklasse == "vochtig":
+            tips.append("Bij een vochtig regime is variatie vaak de sleutel: benut hogere ruggen voor bomen/struweel en lagere delen voor kruidenrijk grasland of natte randen.")
+        # Landschap/NSN hints
+        if any(k in nsn_txt for k in ["rivier", "kom", "oever", "uiterwaard"]):
+            tips.append("Het natuurlijke systeem wijst op een rivier-invloed. Het is aan te bevelen beplanting te concentreren langs bestaande lijnen (kavelranden, watergangen) en openheid in het landschap te respecteren.")
+        if any(k in fgr_txt for k in ["kom", "rivier", "delta", "uiterwaard"]):
+            tips.append("Binnen een kom-/rivierlandschap is ‘openheid met beplante randen’ vaak passend: bundel beplanting rond erf en langs sloten/wegen en voorkom versnipperde boomgroepjes in het open veld.")
+        if any(k in gmm_txt for k in ["rug", "stroom", "oeverwal", "donk", "dekzand"]):
+            tips.append("De geomorfologie suggereert hoogteverschillen in de ondergrond. Het is aan te bevelen boom-/struweelstructuren vooral op de hogere vormen te plaatsen en de lagere delen als water- of kruidenzone te benutten.")
+        return tips
+
+    def _beplanting_richting() -> dict[str, list[str]]:
+        bomen: list[str] = []
+        struweel: list[str] = []
+        openkruiden: list[str] = []
+
+        # Bomen
+        if vochtklasse in ("zeer nat", "nat"):
+            bomen.append("Bomen passen vooral op de hogere, beter draagkrachtige delen of op randen; de laagste natte zones zijn hiervoor minder geschikt.")
+            bomen.append("Kies bij natte randen eerder voor ‘lichte’ boom- en struweelstructuren langs watergangen dan voor zware, gesloten aanplant.")
+        elif vochtklasse in ("droog", "zeer droog"):
+            bomen.append("Bomen zijn vooral kansrijk waar je water kunt vasthouden en schaduw kunt opbouwen (mulch, bodembedekking, luwte). Overweeg kleinere boomgroepen i.p.v. grote gesloten vakken.")
+            bomen.append("Plaats bomen bij voorkeur zó dat ze de erfzone beschutten, maar voorkom dat ze alle open ruimte wegnemen.")
+        else:
+            bomen.append("Bomen zijn het meest kansrijk op hogere/drogere zones en als clustervorm rond het erf of langs lijnen (sloten, wegen, randen).")
+
+        # Struweel/hagen
+        struweel.append("Struweel- en haagstructuren werken goed als ‘randen’: ze vangen wind, geven schaduw, vergroten biodiversiteit en maken beheer overzichtelijk.")
+        if bodem_canon == "zand" and vochtklasse in ("droog", "zeer droog"):
+            struweel.append("Op drogere zandgronden is een gefaseerde rand (laag → middel → hoog) vaak robuuster dan één harde haag, omdat die droogte en wind beter opvangt.")
+        if bodem_canon == "klei" and vochtklasse in ("nat", "zeer nat"):
+            struweel.append("Op natte klei is het aan te bevelen struweel te concentreren op iets hogere ruggen en langs watergangen, zodat verdichting en uitval in natte laagtes wordt beperkt.")
+
+        # Open zones / kruiden / gras
+        if vochtklasse in ("zeer nat", "nat"):
+            openkruiden.append("Reserveer de natste delen voor natte ruigte, kruidenrijke randen en water; dit voorkomt uitval van aanplant en levert juist natuurwaarde op.")
+        elif vochtklasse in ("droog", "zeer droog"):
+            openkruiden.append("Houd open zones (kruidenrijk grasland) waar het landschap dat vraagt en voorkom dat alles ‘dichtgroeit’. Werk met maai-/beheerafspraken die passen bij je tijd.")
+        else:
+            openkruiden.append("Kruidenrijke open zones werken goed als tegenhanger van randen/struweel: ze houden zicht, zijn beheerbaar en verhogen biodiversiteit.")
+
+        return {"bomen": bomen, "struweel": struweel, "open": openkruiden}
+
+    # Render sectie (scanbaar; hybride doelgroep)
     story.append(Paragraph("Praktisch beplantingsadvies (voor deze locatie)", style_h1))
-    for i, b in enumerate(advies_bullets, 1):
-        story.append(Paragraph(f"<b>{i}.</b> {b}", style_p))
-    story.append(Spacer(1, 6))
+
+    # Korte, locatiespecifieke opener
+    opener_parts = []
+    if bodem_label:
+        opener_parts.append(f"bodem <b>{bodem_label}</b>")
+    if vocht_label or gt_s:
+        opener_parts.append(f"vocht <b>{(vocht_label or '—')}</b> (Gt: <b>{(gt_s or '—')}</b>)")
+    if nsn_val:
+        opener_parts.append(f"natuurlijk systeem <b>{_safe_s(nsn_val)}</b>")
+    opener = "Op basis van de kaartwaarden (" + ", ".join(opener_parts) + ") zijn onderstaande keuzes het meest voor de hand liggend. Zie dit als vertrekpunt; lokale details (verdichting, opgebrachte grond, greppels) kunnen de zonering bijstellen."
+    story.append(Paragraph(opener, style_p))
+    story.append(Spacer(1, 4))
+
+    # Zonering & ontwerpkeuzes
+    story.append(Paragraph("Zonering en inrichting", style_h2))
+    for t in _zone_kern()[:6]:
+        story.append(Paragraph("• " + t, style_p))
+    story.append(Spacer(1, 4))
+
+    # Beplantingsrichting
+    story.append(Paragraph("Beplantingsrichting (bomen – struweel – open zones)", style_h2))
+    richt = _beplanting_richting()
+    story.append(Paragraph("<b>Bomen.</b>", style_p))
+    for t in richt["bomen"]:
+        story.append(Paragraph("• " + t, style_p))
+    story.append(Paragraph("<b>Struweel en hagen.</b>", style_p))
+    for t in richt["struweel"]:
+        story.append(Paragraph("• " + t, style_p))
+    story.append(Paragraph("<b>Open zones / kruiden / gras.</b>", style_p))
+    for t in richt["open"]:
+        story.append(Paragraph("• " + t, style_p))
+
+    story.append(Spacer(1, 8))
 
     # Start de encyclopedische toelichting op een nieuwe pagina
     story.append(PageBreak())
-
 
     # Encyclopedische toelichting
     story.append(Paragraph("Toelichting op locatiecontext", style_h1))
