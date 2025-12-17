@@ -712,41 +712,85 @@ def fgr_from_point(lat: float, lon: float) -> str | None:
     return None
 
 _SOIL_TOKENS = {
+    # basis-categorieën (voor filtering / UI)
     "veen": {"veen"},
-    "klei": {"klei", "zware klei", "lichte klei"},
+    "klei": {"klei"},
     "leem": {"leem", "loess", "löss", "zavel"},
     "zand": {"zand", "dekzand"},
 }
 
+# Detailniveau voor kennisbibliotheek (bodem.textuur.*)
+# Belangrijk: eerst specifieke termen, pas daarna generiek "klei".
+_SOIL_DETAIL_ORDER = [
+    ("zware_klei", {"zware klei", "komklei", "kom klei", "komklei/kom", "komgebied", "komklei (", "komklei:"}),
+    ("lichte_klei", {"lichte klei", "zavelige klei", "oeverwal", "stroomrugklei", "stroomrug", "oeverwal-/stroomrugklei"}),
+    ("klei", {"klei", "rivierklei"}),
+    ("veen", {"veen", "venig", "moerig"}),
+    ("leem", {"leem", "loess", "löss", "zavel"}),
+    ("zand", {"zand", "dekzand"}),
+]
+
+def _soil_detail_from_text(text: str) -> Optional[str]:
+    t = (text or "").lower()
+    for soil, keys in _SOIL_DETAIL_ORDER:
+        for k in keys:
+            if k and k in t:
+                return soil
+    return None
+
+def _soil_base_from_detail(detail: Optional[str]) -> Optional[str]:
+    if not detail:
+        return None
+    if detail in ("zware_klei", "lichte_klei"):
+        return "klei"
+    return detail
+
 def _soil_from_text(text: str) -> Optional[str]:
+    # Basislabel (zand/klei/leem/veen) — gebruikt voor filtering
+    detail = _soil_detail_from_text(text)
+    base = _soil_base_from_detail(detail)
+    if base in _SOIL_TOKENS:
+        return base
+    # fallback: oude token-set
     t = (text or "").lower()
     for soil, keys in _SOIL_TOKENS.items():
         for k in keys:
             if k in t:
                 return soil
     return None
-
 def bodem_from_bodemkaart(lat: float, lon: float) -> Tuple[Optional[str], dict]:
     layer = _WMSMETA.get("bodem", {}).get("layer") or "Bodemvlakken"
     props = _wms_getfeatureinfo(BODEM_WMS, layer, lat, lon) or {}
+
+    def _handle_value(val: str) -> Tuple[Optional[str], dict]:
+        # 1) probeer detail (lichte_klei / zware_klei) voor kennisbibliotheek
+        detail = _soil_detail_from_text(val)
+        base = _soil_base_from_detail(detail) or _soil_from_text(val)
+        if detail and detail != base:
+            # bewaar detail voor rapport/kennislookup
+            props["_bodem_detail"] = detail
+        props["_bodem_raw_label"] = val
+        return (base or val), props
 
     for k in (
         "grondsoort", "bodem", "BODEM", "BODEMTYPE", "soil", "bodemtype", "SOILAREA_NAME", "NAAM",
         "first_soilname", "normal_soilprofile_name",
     ):
         if k in props and props[k]:
-            val = str(props[k])
-            return _soil_from_text(val) or val, props
+            return _handle_value(str(props[k]))
 
     if "_text" in props:
         kv = _parse_kv_text(props["_text"]) or {}
         for k in ("grondsoort", "BODEM", "bodemtype", "BODEMNAAM", "NAAM", "omschrijving",
                   "first_soilname", "normal_soilprofile_name"):
             if k in kv and kv[k]:
-                val = kv[k]
-                return _soil_from_text(val) or val, props
-        so = _soil_from_text(props["_text"]) or None
-        return so, props
+                return _handle_value(str(kv[k]))
+        # geen expliciete key → scan tekstblob
+        so_detail = _soil_detail_from_text(props["_text"])
+        so_base = _soil_base_from_detail(so_detail) or _soil_from_text(props["_text"])
+        if so_detail and so_detail != so_base:
+            props["_bodem_detail"] = so_detail
+        return so_base, props
 
     return None, props
 
@@ -2371,7 +2415,10 @@ def advies_pdf(
     fgr_info = _context_lookup("fgr", fgr)
     gmm_info = _context_lookup("geomorfologie", gmm_val)
     nsn_info = _context_lookup("nsn", nsn_val)
-    bodem_info = _context_lookup("bodem", bodem_val or bodem_raw)
+    bodem_detail = (_props_bodem or {}).get("_bodem_detail") or ""
+    bodem_lookup = (bodem_val if (bodem and len(bodem)>0) else (bodem_detail or bodem_raw))
+    bodem_display = (str(bodem_lookup or "").strip())
+    bodem_info = _context_lookup("bodem", bodem_lookup or bodem_raw)
     gt_info = _context_lookup("gt", (gt_code or "").lower())
 
     # ------------------------
@@ -2568,7 +2615,7 @@ def advies_pdf(
 [Paragraph("<b>FGR</b>", style_small_muted), Paragraph(_short(fgr, 120) or "—", style_small)],
         [Paragraph("<b>Geomorfologie (GMM)</b>", style_small_muted), Paragraph(_short(gmm_val, 120) or "—", style_small)],
         [Paragraph("<b>Natuurlijk systeem (NSN)</b>", style_small_muted), Paragraph(_short(nsn_val, 120) or "—", style_small)],
-        [Paragraph("<b>Bodem</b>", style_small_muted), Paragraph(_short(bodem_val or bodem_raw, 120) or "—", style_small)],
+        [Paragraph("<b>Bodem</b>", style_small_muted), Paragraph(_short((bodem_display or bodem_val or bodem_raw).replace("_"," "), 120) or "—", style_small)],
         [Paragraph("<b>Vochttoestand</b>", style_small_muted), Paragraph(_short(f"{vocht_raw} (Gt: {gt_code or '—'})", 120) if vocht_raw else "—", style_small)],
         [Paragraph("<b>Hoogteligging (AHN)</b>", style_small_muted), Paragraph(_short(ahn_val, 120) if ahn_val not in (None, "", "—") else "—", style_small)],
     ]
@@ -2720,7 +2767,7 @@ def advies_pdf(
     _render_section(f"Fysisch Geografische Regio (FGR): {_safe(fgr)}", fgr_info, fgr, category_key="fgr")
     _render_section(f"Geomorfologie (GMM): {_safe(gmm_val)}", gmm_info, gmm_val, category_key="geomorfologie")
     _render_section(f"Natuurlijk systeem (NSN): {_safe(nsn_val)}", nsn_info, nsn_val, category_key="nsn")
-    _render_section(f"Bodem: {_safe(bodem_val or bodem_raw)}", bodem_info, (bodem_val or bodem_raw), category_key="bodem")
+    _render_section(f"Bodem: {_safe((bodem_display or bodem_val or bodem_raw).replace('_',' '))}", bodem_info, (bodem_lookup or bodem_val or bodem_raw), category_key="bodem")
     _render_section(f"Vochttoestand (Gt): {_safe(gt_code or '—')}", gt_info, (gt_code or "—"), category_key="gt")
 
     # Planttabel

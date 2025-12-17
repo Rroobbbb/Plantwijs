@@ -1,7 +1,7 @@
 bodem:
   meta:
     laatst_bijgewerkt: '2025-12-17'
-    bewerking: 'Rapporttekst opgeschoond naar vloeiende proza-stijl: geen markdown-koppen (**Beplanting**), advies verwerkt als zinnen (''Geschikte soorten...'' en ''Qua beheer...''); opener zonder ''standplaats''-formulering.'
+    bewerking: 'Rapporttekst opgeschoond naar vloeiende proza-stijl: geen markdown-koppen (**Beplanting**), advies verwerkt als zinnen (''Geschikte soorten...'' en ''Qua beheer...''); opener zonder ''standplaats''-formulering. | Klei (algemeen) aangevuld als robuuste fallback: duidelijke rapporttekst met beplantingsrichting en beheer, gebaseerd op lichte_klei/zware_klei waar beschikbaar; overige onderdelen ongewijzigd.'
   textuur:
     zand:
       titel: Zand
@@ -111,8 +111,8 @@ bodem:
     klei:
       titel: Klei (algemeen, inclusief rivierklei)
       beschrijving: 'Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).'
-      beheerimplicaties: ''
-      geschikte_beplanting: ''
+      beheerimplicaties: Werk bij voldoende draagkracht; voorkom verdichting; benut microverhogingen en verbeter structuur met organische stof waar passend.
+      geschikte_beplanting: 'Natte delen: els, wilg, populier. Hogere ruggen: meidoorn, veldesdoorn (en andere soorten passend bij de lokale situatie).'
       samenvatting: '**Klei** is mineraal materiaal met relatief veel lutum (<2 µm). In het rivierengebied bestaat klei meestal uit **rivierklei**: fijn sediment dat tijdens overstromingen en in rustig water is afgezet. Belangrijk onderscheid: **oeverwal-/stroomrugklei** (vaak lichter, meer zavelig, beter doorlatend) versus **komklei** (vaak zwaarder, natter, slechter doorlatend).'
       bronnen:
       - geologie_van_nederland_komgrond_komklei_tno
@@ -125,7 +125,16 @@ bodem:
       - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
       - geologie_van_nederland_komgrond_komklei_en_uitleg_
       duiding:
-        rapporttekst: 'De bodem is hier overwegend klei (algemeen, inclusief rivierklei). Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).'
+        rapporttekst: 'De bodem bestaat hier uit kleigrond. Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder weg in komgebieden (komklei).
+
+
+          Binnen kleigronden is het onderscheid tussen hogere, beter doorlatende kleiruggen (oeverwal/stroomrug) en lagere, nattere komgronden belangrijk. Op ruggen is de bodem vaak draagkrachtiger en iets droger; in kommen blijft water langer staan en is de kans op langdurige vernatting groter.
+
+
+          Geschikte beplantingsrichting (voorzichtig): Op de laagste en natste delen passen soorten die natte omstandigheden verdragen, zoals Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier, Gelderse roos. Op iets hogere delen (ruggen/oeverwallen) is vaak meer mogelijk, zoals Iep, linde, es, esdoorn, wilg en populier; struiken zoals meidoorn, Gelderse roos en kornoelje. Plaats soorten die gevoelig zijn voor natte voeten bij voorkeur op microverhogingen of de meest draagkrachtige delen van het erf.
+
+
+          Qua beheer en inrichting: Voor nattere/zwaardere klei geldt: Vermijd zware machines bij nat weer; kies soorten met tolerantie voor natte voeten en wisselende zuurstofcondities; Voor lichtere klei geldt: Bij nat weer gevoelig voor structuurverlies; drainage en organische stof helpen; Algemeen: voer grondwerk en aanplant uit bij voldoende draagkracht om verdichting te voorkomen; werk waar nodig met organische stof (mulch/compost) voor een betere bodemstructuur en doorworteling..'
   bodemtypen:
     podzolgrond:
       titel: Podzolgrond
