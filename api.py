@@ -2560,7 +2560,7 @@ def advies_pdf(
     if map_img:
         try:
             # Grote kaart op pagina 1
-            rl_map = RLImage(map_img, width=180 * mm, height=110 * mm)
+            rl_map = RLImage(map_img, width=180 * mm, height=95 * mm)
         except Exception:
             rl_map = None
 
@@ -2588,10 +2588,10 @@ def advies_pdf(
     # Kaart bovenaan, tabel eronder (pagina 1)
     if rl_map:
         story.append(rl_map)
-        story.append(Spacer(1, 6))
+        story.append(Spacer(1, 4))
 
     story.append(ctx_table)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 8))
 
     # Start de encyclopedische toelichting op een nieuwe pagina
     story.append(PageBreak())
@@ -2645,10 +2645,19 @@ def advies_pdf(
 
             rpt = (duiding.get("rapporttekst") or duiding.get("tekst") or info.get("rapporttekst") or "").strip()
 
+
             if rpt:
 
-                story.append(Paragraph(title, style_h2))
-                for p in _split_paragraphs(rpt):
+                # Voorkom dubbele titel (soms stond de titel óók in de rapporttekst)
+                _paras = _split_paragraphs(rpt)
+
+                def _norm(s: str) -> str:
+                    return re.sub(r"\s+", " ", re.sub(r"[\W_]+", " ", (s or "").strip().casefold())).strip()
+
+                if _paras and _norm(_paras[0]) == _norm(title):
+                    _paras = _paras[1:]
+
+                for p in _paras:
 
                     story.append(Paragraph(p, style_p))
 
