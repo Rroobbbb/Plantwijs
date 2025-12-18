@@ -91,23 +91,38 @@ bronnen:
   berendsen_h_j_a_2005_fysische_geografie_van_nederl_4:
     verwijzing: Berendsen, H.J.A. (2005). Fysische geografie van Nederland.
   berendsen_2005_fysische_geografie_van_nederland:
-    verwijzing: Berendsen (2005) – Fysische geografie van Nederland
+    verwijzing: 'Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen
+      (WUR Groenekennis): https://library.wur.nl/WebQuery/groenekennis/1784548'
+    url: https://library.wur.nl/WebQuery/groenekennis/1784548
   pdok_fgr_nsn:
-    verwijzing: PDOK – FGR / NSN
+    verwijzing: 'PDOK – Dataset Fysisch-Geografische Regio’s (FGR) (omschrijving en
+      herkomst): https://www.pdok.nl/introductie/-/article/fysisch-geografische-regio-s'
+    url: https://www.pdok.nl/introductie/-/article/fysisch-geografische-regio-s
   clo_droogmakerijen:
-    verwijzing: CLO – Droogmakerijen
+    verwijzing: 'CLO – Droogmakerijen (landschapskenmerken): https://www.clo.nl/indicatoren/nl101202-droogmakerijen'
+    url: https://www.clo.nl/indicatoren/nl101202-droogmakerijen
   berendsen_2005:
-    verwijzing: Berendsen (2005)
+    verwijzing: 'Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen
+      (WUR Groenekennis): https://library.wur.nl/WebQuery/groenekennis/1784548'
+    url: https://library.wur.nl/WebQuery/groenekennis/1784548
   bro_geomorfologische_kaart:
-    verwijzing: BRO – Geomorfologische kaart
+    verwijzing: 'BRO – Geomorfologische kaart (GMM) (registratieobject en toelichting):
+      https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/modellen/geomorfologische-kaart-gmm/'
+    url: https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/modellen/geomorfologische-kaart-gmm/
   wur_stuwwallen:
-    verwijzing: WUR – Stuwwallen
+    verwijzing: 'Geologie van Nederland (TNO) – Stuwwal (ontstaan en kenmerken): https://www.geologievannederland.nl/landschap/landschapsvormen/stuwwal'
+    url: https://www.geologievannederland.nl/landschap/landschapsvormen/stuwwal
   bro_ondergrondmodellen:
-    verwijzing: BRO – Ondergrondmodellen
+    verwijzing: 'BRO – Ondergrondmodellen (overzicht registratieobjecten en modellen):
+      https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/'
+    url: https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/
   clo_veen_en_bodemdaling:
-    verwijzing: CLO – Veen en bodemdaling
+    verwijzing: 'RCE – Bodemdaling in veenweidelandschappen (ontwatering/oxidatie):
+      https://www.cultureelerfgoed.nl/onderwerpen/b/bodemdaling-in-veenweidelandschappen/veenweidelandschap-vernatting-gewenst'
+    url: https://www.cultureelerfgoed.nl/onderwerpen/b/bodemdaling-in-veenweidelandschappen/veenweidelandschap-vernatting-gewenst
   wur_hoogveenlandschappen:
-    verwijzing: WUR – Hoogveenlandschappen
+    verwijzing: 'Geologie van Nederland (TNO) – Hoogveen (vorming en kenmerken): https://www.geologievannederland.nl/landschap/landschapsvormen/hoogveen'
+    url: https://www.geologievannederland.nl/landschap/landschapsvormen/hoogveen
   actueel_hoogtebestand_nederland_ahn_productinforma:
     verwijzing: Actueel Hoogtebestand Nederland (AHN) – productinformatie en downloads
       (Rijkswaterstaat / Waterschappen).
@@ -117,7 +132,9 @@ bronnen:
     verwijzing: Berendsen, H.J.A. (2005). Fysische geografie van Nederland (WUR) –
       relatie reliëf en hydrologie.
   berendsen_2005_fysische_geografie_van_nederland_2:
-    verwijzing: Berendsen (2005) – *Fysische geografie van Nederland*
+    verwijzing: 'Berendsen, H.J.A. (2005). Fysische geografie van Nederland. Wageningen
+      (WUR Groenekennis): https://library.wur.nl/WebQuery/groenekennis/1784548'
+    url: https://library.wur.nl/WebQuery/groenekennis/1784548
   pdok_fgr_nsn_toelichting:
     verwijzing: PDOK – FGR / NSN toelichting
   atlas_natuurlijk_kapitaal_kustlandschappen:
