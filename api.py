@@ -178,10 +178,15 @@ def _top_recommendations(df: "pd.DataFrame", profiel: dict, n: int = 5) -> dict:
 
 
 
-# PlantWijs API — v3.9.7
-# - FIX: PDOK Locatieserver → nieuwe endpoint (api.pdok.nl … /search/v3_1) met CORS
-# - UI: Kolomtitel opent filter; kolommen tonen/verbergen; sticky header; thema toggle; CSV/XLSX export
-# - HTML triple-quoted string correct afgesloten
+# PlantWijs API — v3.10.0
+# VERBETERINGEN:
+# - FIX: PDF filtert nu correct op vocht EN bodem geschiktheid
+# - FIX: Plantentabel toont correct beplantingstype (Boom/Heester/Bodembedekker)
+# - FIX: Vocht/licht kolommen compact weergegeven
+# - FIX: Markdown sterretjes worden gestript uit tekst
+# - FIX: Dubbele tekst in FGR sectie voorkomen
+# - NIEUW: Ondersteunt inheemse_soorten.csv (gegenereerd uit YAML kennisbibliotheek)
+# - NIEUW: Sortering op relevantie (beste matches eerst)
 # Starten:
 #   cd C:/PlantWijs
 #   venv/Scripts/uvicorn api:app --reload --port 9000
@@ -307,6 +312,8 @@ TX_WGS84_WEB = Transformer.from_crs(4326, 3857, always_xy=True)
 # 4) legacy fallbacks (oude plantwijs_full bestanden)
 DATA_PATHS = [
     os.environ.get("PLANTWIJS_CSV", "").strip(),
+    # NIEUW: Inheemse soorten CSV (gegenereerd uit kennisbibliotheek_v2 YAML bestanden)
+    os.path.join(os.path.dirname(__file__), "data", "inheemse_soorten.csv"),
     os.path.join(os.path.dirname(__file__), "data", "treeebb_planten_allfields.csv"),
     os.path.join(os.path.dirname(__file__), "out", "treeebb_planten_allfields.csv"),
     os.path.join(os.path.dirname(__file__), "out", "plantwijs_full_semicolon.csv"),
@@ -1818,7 +1825,7 @@ def _first_sentence(text: str) -> str:
     parts = re.split(r"(?<=[.!?])\s+", s, maxsplit=1)
     return parts[0].strip()
 
-app = FastAPI(title="PlantWijs API v3.9.7")
+app = FastAPI(title="PlantWijs API v3.10.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET","POST"], allow_headers=["*"])
 
 
@@ -2195,59 +2202,49 @@ def generate_locatierapport_v2(
     story.append(Paragraph(f"Regio: {fgr_label}", style_h2))
     
     if fgr_data:
-        # Probeer alle mogelijke velden
+        # Helper om markdown te strippen
+        def strip_markdown(text):
+            if not text:
+                return text
+            # Verwijder **bold** en *italic* markers
+            text = re.sub(r'\*\*([^*]+)\*\*', r'\1', str(text))
+            text = re.sub(r'\*([^*]+)\*', r'\1', text)
+            return text.strip()
         
-        # 1. Geografie
+        # Houd bij welke tekst al getoond is (voorkom duplicatie)
+        getoonde_teksten = set()
+        
+        # 1. Geografie - karakteristiek
         geografie = fgr_data.get('geografie', {})
-        if geografie:
-            karakteristiek = geografie.get('karakteristiek', '')
-            if karakteristiek:
+        if geografie and isinstance(geografie, dict):
+            karakteristiek = strip_markdown(geografie.get('karakteristiek', ''))
+            if karakteristiek and karakteristiek not in getoonde_teksten:
                 story.append(Paragraph(f"<b>Karakteristiek:</b> {karakteristiek}", style_body))
+                getoonde_teksten.add(karakteristiek)
         
-        # 2. Klimaat
-        klimaat = fgr_data.get('klimaat', {})
-        if klimaat:
-            klimaat_delen = []
-            if klimaat.get('type'):
-                klimaat_delen.append(f"Type: {klimaat.get('type')}")
-            if klimaat.get('neerslag'):
-                klimaat_delen.append(f"Neerslag: {klimaat.get('neerslag')}")
-            if klimaat.get('bijzonderheden'):
-                klimaat_delen.append(klimaat.get('bijzonderheden'))
-            
-            if klimaat_delen:
-                story.append(Paragraph(f"<b>Klimaat:</b> {'. '.join(klimaat_delen)}", style_body))
-        
-        # 3. Bodem (van FGR)
-        bodem_fgr = fgr_data.get('bodem', {})
-        if bodem_fgr and isinstance(bodem_fgr, dict):
-            bodem_tekst = bodem_fgr.get('karakteristiek', '') or bodem_fgr.get('typisch', '')
-            if bodem_tekst:
-                story.append(Paragraph(f"<b>Typische bodems:</b> {bodem_tekst}", style_body))
-        
-        # 4. Landschappelijke context
+        # 2. Landschappelijke context
         landschap = fgr_data.get('landschappelijke_context', {})
         if landschap and isinstance(landschap, dict):
-            context = landschap.get('beschrijving', '') or landschap.get('algemeen', '')
-            if context:
+            context = strip_markdown(landschap.get('beschrijving', '') or landschap.get('algemeen', ''))
+            if context and context not in getoonde_teksten:
                 story.append(Paragraph(f"<b>Landschap:</b> {context}", style_body))
+                getoonde_teksten.add(context)
         
-        # 5. Duiding / rapporttekst
-        duiding = fgr_data.get('duiding', {})
-        if duiding and isinstance(duiding, dict):
-            rapporttekst = duiding.get('rapporttekst', '') or duiding.get('beschrijving', '')
-            if rapporttekst:
-                # Split op paragrafen, toon eerste 2
-                paragrafen = [p.strip() for p in rapporttekst.split('\n\n') if p.strip()]
-                for p in paragrafen[:2]:
-                    story.append(Paragraph(p, style_body))
+        # 3. Typische bodems (van FGR, niet van bodemkaart)
+        bodem_fgr = fgr_data.get('bodem', {})
+        if bodem_fgr and isinstance(bodem_fgr, dict):
+            bodem_tekst = strip_markdown(bodem_fgr.get('karakteristiek', '') or bodem_fgr.get('typisch', ''))
+            if bodem_tekst and bodem_tekst not in getoonde_teksten:
+                story.append(Paragraph(f"<b>Typische bodems:</b> {bodem_tekst}", style_body))
+                getoonde_teksten.add(bodem_tekst)
         
-        # 6. Betekenis voor erfbeplanting
+        # 4. Betekenis voor erfbeplanting
         beplanting = fgr_data.get('betekenis_voor_erfbeplanting', {})
         if beplanting and isinstance(beplanting, dict):
-            algemeen = beplanting.get('algemeen', '') or beplanting.get('beschrijving', '')
-            if algemeen:
+            algemeen = strip_markdown(beplanting.get('algemeen', '') or beplanting.get('beschrijving', ''))
+            if algemeen and algemeen not in getoonde_teksten:
                 story.append(Paragraph(f"<b>Voor erfbeplanting:</b> {algemeen}", style_body))
+                getoonde_teksten.add(algemeen)
     else:
         story.append(Paragraph("Geen specifieke informatie beschikbaar voor deze regio.", style_caption))
     
@@ -2594,86 +2591,111 @@ def generate_locatierapport_v2(
         ))
         story.append(Spacer(1, 4))
         
-        # Bepaal welke kolommen beschikbaar zijn
-        has_vocht = 'vocht' in plant_df.columns or 'standplaats_bodemvochtigheid' in plant_df.columns
-        has_licht = 'standplaats_licht' in plant_df.columns or 'licht' in plant_df.columns
-        has_hoogte = 'hoogte_cm' in plant_df.columns or 'hoogte' in plant_df.columns
-        has_bloei = 'bloeiperiode' in plant_df.columns or 'bloei' in plant_df.columns
-        has_eco = 'ecologische_waarde' in plant_df.columns
+        # ============================================================
+        # VERBETERDE KOLOM DETECTIE
+        # ============================================================
         
-        # Maak tabel header op basis van beschikbare data
-        if has_vocht and has_licht:
-            # Uitgebreide tabel
-            tabel_data = [[
-                Paragraph("<b>Naam</b>", style_small),
-                Paragraph("<b>Type</b>", style_small),
-                Paragraph("<b>Vocht</b>", style_small),
-                Paragraph("<b>Licht</b>", style_small),
-                Paragraph("<b>Bloei</b>", style_small)
-            ]]
+        def get_col(df, *options):
+            """Vind eerste bestaande kolom uit opties."""
+            for opt in options:
+                if opt in df.columns:
+                    return opt
+            return None
+        
+        col_naam = get_col(plant_df, 'naam', 'nederlandse_naam')
+        col_type = get_col(plant_df, 'beplantingstype', 'type')
+        col_vocht = get_col(plant_df, 'vocht', 'standplaats_bodemvochtigheid')
+        col_licht = get_col(plant_df, 'standplaats_licht', 'licht')
+        
+        # Maak tabel header
+        tabel_data = [[
+            Paragraph("<b>Naam</b>", style_small),
+            Paragraph("<b>Type</b>", style_small),
+            Paragraph("<b>Vocht</b>", style_small),
+            Paragraph("<b>Licht</b>", style_small),
+            Paragraph("<b>Hoogte</b>", style_small)
+        ]]
+        
+        col_widths = [55*mm, 25*mm, 35*mm, 35*mm, 20*mm]
+        
+        for idx, row in plant_df.head(20).iterrows():
+            # ============================================================
+            # VERBETERDE DATA EXTRACTIE
+            # ============================================================
             
-            col_widths = [50*mm, 28*mm, 28*mm, 28*mm, 36*mm]
+            # Naam
+            naam = str(row.get(col_naam, '') if col_naam else '').strip()
+            if not naam:
+                naam = str(row.get('wetenschappelijke_naam', '?')).strip()
             
-            for idx, row in plant_df.head(20).iterrows():
-                # Extract data met fallbacks
-                naam = row.get('naam', row.get('nederlandse_naam', '?'))
-                soort_type = row.get('beplantingstype', row.get('type', 'Boom'))
-                
-                vocht = row.get('vocht', row.get('standplaats_bodemvochtigheid', ''))
-                if isinstance(vocht, str):
-                    vocht = vocht.split(',')[0].strip() if vocht else '-'
-                else:
-                    vocht = '-'
-                
-                licht = row.get('standplaats_licht', row.get('licht', ''))
-                if isinstance(licht, str):
-                    licht = licht.split(',')[0].strip() if licht else '-'
-                else:
-                    licht = '-'
-                
-                bloei = row.get('bloeiperiode', row.get('bloei', ''))
-                if isinstance(bloei, str):
-                    bloei = bloei[:15] if bloei else '-'  # Max 15 chars
-                else:
-                    bloei = '-'
-                
-                tabel_data.append([
-                    naam,
-                    soort_type,
-                    vocht,
-                    licht,
-                    bloei
-                ])
-        else:
-            # Simpele tabel (als vocht/licht niet beschikbaar)
-            tabel_data = [[
-                Paragraph("<b>Nederlandse naam</b>", style_small),
-                Paragraph("<b>Type</b>", style_small),
-                Paragraph("<b>Hoogte</b>", style_small)
-            ]]
+            # Type - gebruik de al afgeleide beplantingstype kolom
+            if col_type and col_type in row.index:
+                soort_type = str(row.get(col_type, '')).strip()
+                if not soort_type or soort_type.lower() in ('nan', 'none', ''):
+                    soort_type = 'Boom'
+            else:
+                soort_type = 'Boom'
             
-            col_widths = [80*mm, 50*mm, 40*mm]
-            
-            for idx, row in plant_df.head(20).iterrows():
-                naam = row.get('naam', row.get('nederlandse_naam', ''))
-                soort_type = row.get('beplantingstype', row.get('type', 'Boom'))
-                hoogte = row.get('hoogte_cm', row.get('hoogte', ''))
-                
-                # Format hoogte
-                if hoogte and str(hoogte).replace('.','').isdigit():
-                    try:
-                        h_cm = float(hoogte)
-                        if h_cm > 100:
-                            hoogte_str = f"{h_cm/100:.1f}m"
+            # Vocht - compact maken
+            vocht = '-'
+            if col_vocht:
+                vocht_raw = str(row.get(col_vocht, '') or '').strip()
+                if vocht_raw and vocht_raw.lower() not in ('nan', 'none', ''):
+                    # Verkort lange waarden
+                    vocht_parts = [v.strip() for v in re.split(r'[;/|]+', vocht_raw) if v.strip()]
+                    vocht_short = []
+                    for v in vocht_parts[:3]:
+                        v_lower = v.lower()
+                        if 'zeer droog' in v_lower:
+                            vocht_short.append('z.droog')
+                        elif 'zeer nat' in v_lower:
+                            vocht_short.append('z.nat')
+                        elif 'droog' in v_lower:
+                            vocht_short.append('droog')
+                        elif 'nat' in v_lower:
+                            vocht_short.append('nat')
+                        elif 'vochtig' in v_lower:
+                            vocht_short.append('vochtig')
                         else:
-                            hoogte_str = f"{h_cm:.0f}cm"
-                    except:
-                        hoogte_str = str(hoogte)
-                else:
-                    hoogte_str = '-'
-                
-                tabel_data.append([naam, soort_type, hoogte_str])
+                            vocht_short.append(v[:8])
+                    vocht = ' / '.join(vocht_short) if vocht_short else '-'
+            
+            # Licht - compact maken
+            licht = '-'
+            if col_licht:
+                licht_raw = str(row.get(col_licht, '') or '').strip()
+                if licht_raw and licht_raw.lower() not in ('nan', 'none', ''):
+                    licht_parts = [l.strip() for l in re.split(r'[;/|]+', licht_raw) if l.strip()]
+                    licht_short = []
+                    for l in licht_parts[:3]:
+                        l_lower = l.lower()
+                        if 'halfschaduw' in l_lower or 'half' in l_lower:
+                            licht_short.append('½schaduw')
+                        elif 'schaduw' in l_lower:
+                            licht_short.append('schaduw')
+                        elif 'zon' in l_lower:
+                            licht_short.append('zon')
+                        else:
+                            licht_short.append(l[:8])
+                    licht = ' / '.join(licht_short) if licht_short else '-'
+            
+            # Hoogte
+            hoogte = str(row.get('hoogte', '') or row.get('eigenschappen_hoogte', '') or '').strip()
+            if not hoogte or hoogte.lower() in ('nan', 'none', ''):
+                hoogte = '-'
+            elif len(hoogte) > 12:
+                hoogte = hoogte[:12]
+            
+            # Voeg rij toe
+            tabel_data.append([
+                naam,
+                soort_type,
+                vocht,
+                licht,
+                hoogte
+            ])
         
+        # Maak tabel
         soorten_tabel = Table(tabel_data, colWidths=col_widths)
         soorten_tabel.setStyle(TableStyle([
             ('BACKGROUND', (0, 0), (-1, 0), C_SECONDARY),
@@ -2683,23 +2705,30 @@ def generate_locatierapport_v2(
             ('BOTTOMPADDING', (0, 0), (-1, 0), 6),
             ('TOPPADDING', (0, 0), (-1, 0), 6),
             ('GRID', (0, 0), (-1, -1), 0.5, C_LINE),
-            ('FONTSIZE', (0, 1), (-1, -1), 8.5),
-            ('LEFTPADDING', (0, 0), (-1, -1), 5),
-            ('RIGHTPADDING', (0, 0), (-1, -1), 5),
-            ('TOPPADDING', (0, 1), (-1, -1), 4),
-            ('BOTTOMPADDING', (0, 1), (-1, -1), 4),
+            ('FONTSIZE', (0, 1), (-1, -1), 8),
+            ('LEFTPADDING', (0, 0), (-1, -1), 4),
+            ('RIGHTPADDING', (0, 0), (-1, -1), 4),
+            ('TOPPADDING', (0, 1), (-1, -1), 3),
+            ('BOTTOMPADDING', (0, 1), (-1, -1), 3),
             ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, C_BG]),
             ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
         ]))
         
         story.append(soorten_tabel)
         
-        # Legenda
+        # Legenda en info
         story.append(Spacer(1, 4))
         story.append(Paragraph(
-            "<i>Vocht: droog/vochtig/nat · Licht: zon/halfschaduw/schaduw · Bloei: maanden</i>",
+            "<i>Vocht: z.droog=zeer droog, z.nat=zeer nat · Licht: ½schaduw=halfschaduw</i>",
             style_caption
         ))
+        
+        # Toon hoeveel planten er zijn
+        if len(plant_df) > 20:
+            story.append(Paragraph(
+                f"<i>Getoond: 20 van {len(plant_df)} geschikte soorten voor deze locatie</i>",
+                style_caption
+            ))
     
     story.append(Spacer(1, 10))
     
@@ -3534,6 +3563,7 @@ def advies_geo(
 # ───────────────────── UI
 
 # ───────────────────── API: advies/pdf (download 1 PDF per klik)
+# VERBETERDE VERSIE met correcte filtering op vocht/bodem geschiktheid
 @app.get("/advies/pdf")
 def advies_pdf(
     lat: float = Query(...),
@@ -3545,17 +3575,18 @@ def advies_pdf(
     exclude_invasief: bool = Query(True),
 ):
     """
-    Genereert een locatierapport als PDF (leesbaar voor bewoners, met technische bijlage):
-    - Kernsamenvatting bovenaan (scanbaar)
-    - Locatiecontext (kaarten) kort
-    - Technische toelichting (bijlage) per kaartlaag met bronnen (indien aanwezig in context_descriptions.yaml)
-    - Soortentabel (geschikte soorten)
+    Genereert een locatierapport als PDF met CORRECTE filtering op geschiktheid.
+    
+    Verbeteringen t.o.v. oude versie:
+    - Filtert planten op vocht-compatibiliteit (natte grond → alleen nat-tolerante planten)
+    - Filtert planten op bodem-compatibiliteit (klei → alleen klei-tolerante planten)
+    - Correcte beplantingstype afleiding (Boom/Heester/Bodembedekker)
+    - Sortering op relevantie (beste matches eerst)
     """
     # ========================================================================
-    # V2: Moderne PDF rapport met kennisbibliotheek v2 ondersteuning
+    # 1) HAAL KAARTDATA OP
     # ========================================================================
     
-    # 1) Haal kaartdata op
     fgr = fgr_from_point(lat, lon) or "Onbekend"
     nsn_val = nsn_from_point(lat, lon) or ""
     bodem_raw, _props_bodem = bodem_from_bodemkaart(lat, lon)
@@ -3563,60 +3594,236 @@ def advies_pdf(
     ahn_val, _props_ahn = ahn_from_wms(lat, lon)
     gmm_val, _props_gmm = gmm_from_wms(lat, lon)
     
-    # DEBUG (alleen als PLANTWIJS_DEBUG=true in environment)
+    # Bepaal filter waarden (UI override of kaartdata)
+    filter_bodem = bodem[0] if bodem else bodem_raw
+    filter_vocht = vocht[0] if vocht else vocht_raw
+    
+    # DEBUG logging
     if os.getenv("PLANTWIJS_DEBUG", "").lower() == "true":
-        print(f"[DEBUG PDF] FGR: {fgr}")
-        print(f"[DEBUG PDF] NSN: {nsn_val}")
-        print(f"[DEBUG PDF] Bodem: {bodem_raw}")
-        print(f"[DEBUG PDF] GT code: {gt_code} (type: {type(gt_code)})")
-        print(f"[DEBUG PDF] Vocht: {vocht_raw}")
+        print(f"[PDF] Locatie: {lat}, {lon}")
+        print(f"[PDF] FGR: {fgr}, NSN: {nsn_val}")
+        print(f"[PDF] Bodem: {bodem_raw} → filter: {filter_bodem}")
+        print(f"[PDF] Vocht: {vocht_raw} → filter: {filter_vocht}")
+        print(f"[PDF] GT: {gt_code}")
     
-    # Normalize labels
-    bodem_display = (bodem[0] if bodem else bodem_raw) or ""
-    
-    # 2) Haal context data op uit kennisbibliotheek
-    # DEBUG (alleen als PLANTWIJS_DEBUG=true)
-    if os.getenv("PLANTWIJS_DEBUG", "").lower() == "true" and gt_code:
-        normalized_gt = _normalize_key(gt_code)
-        print(f"[DEBUG PDF] GT normalized: '{gt_code}' → '{normalized_gt}'")
-        gt_lookup = _context_lookup('gt', normalized_gt)
-        print(f"[DEBUG PDF] GT lookup result: {type(gt_lookup)} with {len(gt_lookup) if gt_lookup else 0} keys")
-        if gt_lookup:
-            print(f"[DEBUG PDF] GT titel: {gt_lookup.get('titel', 'N/A')}")
+    # ========================================================================
+    # 2) HAAL CONTEXT DATA OP UIT KENNISBIBLIOTHEEK
+    # ========================================================================
     
     context_data = {
         'fgr': _context_lookup('fgr', _normalize_key(fgr)) or {} if fgr and fgr != "Onbekend" else {},
         'nsn': _context_lookup('nsn', _normalize_key(nsn_val)) or {} if nsn_val else {},
-        'bodem': _context_lookup('bodem', _normalize_key(bodem_display or bodem_raw)) or {} if (bodem_display or bodem_raw) else {},
+        'bodem': _context_lookup('bodem', _normalize_key(filter_bodem or bodem_raw)) or {} if (filter_bodem or bodem_raw) else {},
         'gt': _context_lookup('gt', _normalize_key(gt_code)) or {} if gt_code else {},
     }
     
-    # 3) Plant selectie (simplified - gebruik bestaande logica of maak nieuwe)
-    df = get_df()
+    # ========================================================================
+    # 3) PLANT SELECTIE MET CORRECTE FILTERING
+    # ========================================================================
     
-    # Filter inheems + ingeburgerd
+    df = get_df()
+    original_count = len(df)
+    
+    # Helper functie voor multi-value matching
+    def _has_any_value(cell, choices):
+        if not choices:
+            return True
+        tokens = {t.strip().lower() for t in re.split(r"[;/|]+", str(cell or "")) if t.strip()}
+        want = {w.strip().lower() for w in choices if str(w).strip()}
+        return bool(tokens & want)
+    
+    # Filter op status (inheems + ingeburgerd)
     if "status_nl" in df.columns:
         s = df["status_nl"].astype(str).str.lower().str.strip()
         df = df[s.isin(["inheems", "ingeburgerd"])]
     
-    # Filter invasief (optioneel)
+    # Filter invasief
     if exclude_invasief and "invasief" in df.columns:
         inv = df["invasief"].astype(str).str.lower().str.strip()
         df = df[~inv.isin(["ja", "invasief", "invasieve exoot"])]
     
-    # Basis filtering op vocht/licht/bodem (simplified)
-    # In productie zou je hier de volledige filter logica toevoegen
+    # ============================================================
+    # KRITIEKE FIX: Filter op VOCHT geschiktheid
+    # ============================================================
     
-    # 4) Genereer moderne PDF
+    if filter_vocht and "vocht" in df.columns:
+        vocht_lower = filter_vocht.lower()
+        
+        # Map vocht naar compatible plant voorkeuren
+        if "zeer nat" in vocht_lower:
+            compatible_vocht = ["nat", "zeer nat", "vochtig"]
+        elif "nat" in vocht_lower:
+            compatible_vocht = ["nat", "vochtig", "zeer nat"]
+        elif "vochtig" in vocht_lower:
+            compatible_vocht = ["vochtig", "nat", "droog"]
+        elif "zeer droog" in vocht_lower:
+            compatible_vocht = ["zeer droog", "droog"]
+        elif "droog" in vocht_lower:
+            compatible_vocht = ["droog", "zeer droog", "vochtig"]
+        else:
+            compatible_vocht = []
+        
+        if compatible_vocht:
+            before_vocht = len(df)
+            df = df[df["vocht"].apply(lambda v: _has_any_value(v, compatible_vocht))]
+            if os.getenv("PLANTWIJS_DEBUG", "").lower() == "true":
+                print(f"[PDF] Vocht filter: {before_vocht} → {len(df)} planten")
+    
+    # ============================================================
+    # KRITIEKE FIX: Filter op BODEM geschiktheid
+    # ============================================================
+    
+    if filter_bodem:
+        bodem_lower = filter_bodem.lower()
+        
+        # Bepaal compatible grondsoorten
+        if "klei" in bodem_lower or "zavel" in bodem_lower:
+            compatible_bodem = ["klei", "zavel", "leem", "zware klei", "lichte klei", "alle"]
+        elif "zand" in bodem_lower:
+            compatible_bodem = ["zand", "lemig zand", "alle"]
+        elif "veen" in bodem_lower:
+            compatible_bodem = ["veen", "venig", "alle"]
+        elif "leem" in bodem_lower or "löss" in bodem_lower or "loss" in bodem_lower:
+            compatible_bodem = ["leem", "löss", "loss", "klei", "zavel", "alle"]
+        else:
+            compatible_bodem = []
+        
+        if compatible_bodem:
+            def matches_bodem(row):
+                bodem_val = str(row.get("bodem", "") or "").lower()
+                grond_val = str(row.get("grondsoorten", "") or "").lower()
+                combined = bodem_val + " " + grond_val
+                # "alle grondsoorten" of "alle" betekent altijd geschikt
+                if "alle" in combined:
+                    return True
+                return any(b in combined for b in compatible_bodem)
+            
+            before_bodem = len(df)
+            df = df[df.apply(matches_bodem, axis=1)]
+            if os.getenv("PLANTWIJS_DEBUG", "").lower() == "true":
+                print(f"[PDF] Bodem filter: {before_bodem} → {len(df)} planten")
+    
+    # ============================================================
+    # FIX: Voeg beplantingstype kolom toe indien nodig
+    # ============================================================
+    
+    df = df.copy()
+    
+    if "beplantingstype" not in df.columns:
+        def _derive_beplantingstype(row):
+            """Bepaal of het een boom, heester of bodembedekker is."""
+            # Check expliciete type kolom
+            soort_type = str(row.get("type", "") or "").lower()
+            if soort_type in ["boom", "tree"]:
+                return "Boom"
+            elif soort_type in ["struik", "heester", "shrub"]:
+                # Kijk naar hoogte voor onderscheid heester/bodembedekker
+                hoogte = str(row.get("hoogte", "") or "")
+                try:
+                    match = re.search(r'(\d+(?:[,\.]\d+)?)', hoogte.replace(',', '.'))
+                    if match:
+                        h = float(match.group(1))
+                        if h < 0.5:
+                            return "Bodembedekker"
+                except:
+                    pass
+                return "Heester"
+            elif soort_type in ["klimplant", "klimmer"]:
+                return "Klimplant"
+            
+            # Fallback: kijk naar TreeEbb kolommen
+            boom_src = str(row.get("beplantingstypes_boomtypen", "") or "").strip()
+            overig_src = str(row.get("beplantingstypes_overige_beplanting", "") or "").strip()
+            
+            if boom_src and not overig_src:
+                return "Boom"
+            elif overig_src and not boom_src:
+                overig_lower = overig_src.lower()
+                if any(k in overig_lower for k in ["heester", "struik", "haag"]):
+                    return "Heester"
+                elif any(k in overig_lower for k in ["bodembedekker", "vaste plant", "kruid"]):
+                    return "Bodembedekker"
+                else:
+                    return "Heester"
+            elif boom_src and overig_src:
+                return "Boom"
+            
+            # Laatste fallback: hoogte
+            hoogte = str(row.get("hoogte", "") or row.get("eigenschappen_hoogte", "") or "")
+            try:
+                match = re.search(r'(\d+)', hoogte)
+                if match:
+                    h = int(match.group(1))
+                    if h >= 8:
+                        return "Boom"
+                    elif h >= 2:
+                        return "Heester"
+                    else:
+                        return "Bodembedekker"
+            except:
+                pass
+            
+            return "Boom"  # Default
+        
+        df["beplantingstype"] = df.apply(_derive_beplantingstype, axis=1)
+    
+    # ============================================================
+    # FIX: Sorteer op relevantie (beste matches eerst)
+    # ============================================================
+    
+    def _score_plant(row):
+        """Geef score aan plant op basis van geschiktheid."""
+        score = 0
+        
+        # Bonus voor exacte vocht match
+        if filter_vocht and "vocht" in df.columns:
+            plant_vocht = str(row.get("vocht", "")).lower()
+            if filter_vocht.lower() in plant_vocht:
+                score += 10
+        
+        # Bonus voor exacte bodem match
+        if filter_bodem:
+            plant_bodem = str(row.get("bodem", "") or "") + " " + str(row.get("grondsoorten", "") or "")
+            if filter_bodem.lower() in plant_bodem.lower():
+                score += 10
+        
+        # Bonus voor inheems (vs ingeburgerd)
+        status = str(row.get("status_nl", "")).lower()
+        if status == "inheems":
+            score += 5
+        
+        # Bonus voor hoge ecologische waarde
+        eco = str(row.get("ecowaarde", "") or row.get("biodiversiteit", "") or "")
+        if eco:
+            score += 3
+        
+        return score
+    
+    df["_score"] = df.apply(_score_plant, axis=1)
+    df = df.sort_values(["_score", "naam"], ascending=[False, True])
+    df = df.drop(columns=["_score"])
+    
+    # Debug info
+    if os.getenv("PLANTWIJS_DEBUG", "").lower() == "true":
+        print(f"[PDF] Finale selectie: {len(df)} planten (van {original_count} totaal)")
+        if len(df) > 0:
+            print(f"[PDF] Top 3: {list(df.head(3)['naam'])}")
+    
+    # ========================================================================
+    # 4) GENEREER MODERNE PDF
+    # ========================================================================
+    
     pdf_bytes = generate_locatierapport_v2(
         lat=lat,
         lon=lon,
         context_data=context_data,
-        plant_df=df.head(50) if len(df) > 0 else None  # Top 50 voor rapport
+        plant_df=df.head(50) if len(df) > 0 else None
     )
     
-    # 5) Return als streaming response
-    from io import BytesIO
+    # ========================================================================
+    # 5) RETURN ALS STREAMING RESPONSE
+    # ========================================================================
+    
     buf = BytesIO(pdf_bytes)
     headers = {"Content-Disposition": f'inline; filename="beplantingsadvies_{lat:.5f}_{lon:.5f}.pdf"'}
     buf.seek(0)
@@ -3632,7 +3839,7 @@ def index() -> HTMLResponse:
 <head>
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <title>PlantWijs v3.9.7</title>
+  <title>PlantWijs v3.10.0</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
