@@ -1,0 +1,40 @@
+titel: Grondwatertrappen (Gt) – algemene uitleg
+kernsamenvatting: 'Grondwatertrappen (Gt) geven een gestandaardiseerde indicatie van hoe hoog en hoe sterk
+  fluctuerend het
+
+  grondwater staat. Ze zijn gebaseerd op langjarige gemiddelden en vormen een cruciale schakel tussen
+  bodem,
+
+  hydrologie en beplantingsmogelijkheden.
+
+  '
+uitleg_ghg_glg: 'Gt-klassen zijn afgeleid van twee parameters:
+
+  - GHG (Gemiddeld Hoogste Grondwaterstand): maatgevend voor winter- en natte perioden.
+
+  - GLG (Gemiddeld Laagste Grondwaterstand): maatgevend voor zomerdroogte.
+
+  De combinatie bepaalt zowel natstress als droogtestress voor wortels.
+
+  '
+interpretatie: 'De Gt is geen exacte meting op perceelsniveau, maar een regionale indicatie. Lokale factoren
+  zoals drainage,
+
+  peilbeheer, microreliëf (AHN), bodemtextuur en verdichting kunnen de feitelijke situatie sterk beïnvloeden.
+
+  '
+betekenis_voor_erfbeplanting: 'Gebruik Gt altijd in combinatie met bodemtype en geomorfologie. Een ''natte''
+  Gt op zand kan heel anders
+
+  uitpakken dan dezelfde Gt op klei of veen.
+
+  '
+bronnen: &id001
+- stowa_2010_grondwaterregime_op_basis_van_karteerba_2
+- wur_bodemkaart_van_nederland_toelichting_gt_system
+duiding:
+  rapporttekst: 'Deze grondwatertrap is gebaseerd op langjarige gemiddelden van de hoogste (GHG) en laagste
+    (GLG) grondwaterstand. Gt-klassen zijn afgeleid van twee parameters: - GHG (Gemiddeld Hoogste Grondwaterstand):
+    maatgevend voor winter- en natte perioden. - GLG (Gemiddeld Laagste Grondwaterstand): maatgevend voor
+    zomerdroogte. De combinatie bepaalt zowel natstress als droogtestress voor wortels.'
+  bronnen: *id001

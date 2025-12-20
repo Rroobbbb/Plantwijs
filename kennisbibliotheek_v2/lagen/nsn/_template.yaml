@@ -1,0 +1,201 @@
+# ============================================================================
+# NSN (Natuurlijk Systeem Nederland) - Template
+# 
+# FOCUS: Geomorfologie en landvorm
+# - Ontstaansgeschiedenis
+# - Reliëf en vorm
+# - Positie in landschap
+#
+# NIET in dit bestand:
+# - Bodemtype (→ bodem/)
+# - Waterhuishouding (→ gt/)
+# - Concrete plantensoorten (→ advies/)
+# ============================================================================
+
+titel: "[Code] | [Nederlandse naam]"
+categorie: "[Kustlandschap/Dekzandlandschap/Rivierengebied/etc.]"
+synoniem: ["Alternatieve naam 1"]  # optioneel
+
+# ────────────────────────────────────────────────────────────────────────────
+# ONTSTAANSGESCHIEDENIS
+# ────────────────────────────────────────────────────────────────────────────
+
+ontstaansgeschiedenis:
+  periode: "[Geologisch tijdperk - bijv. Holoceen, Pleistoceen]"
+  proces: "[Vormingsproces - bijv. eolisch, fluviaal, glaciaal, marien]"
+  ouderdom: "[Leeftijd in jaren of periode]"
+  
+  beschrijving: |
+    Korte uitleg hoe dit landschap is ontstaan (2-4 zinnen).
+    Focus op het proces en de historische context.
+    
+    Bijvoorbeeld:
+    - "Gevormd door windafzetting tijdens laatste ijstijd"
+    - "Ontstaan door opslibbing in oude kreekbedding"
+    - "Opgestuwd door landijs uit het noorden"
+
+# ────────────────────────────────────────────────────────────────────────────
+# LANDVORM (het belangrijkste deel)
+# ────────────────────────────────────────────────────────────────────────────
+
+landvorm:
+  
+  reliëf:
+    hoogtebereik: "[X-Y]m boven NAP"
+    vorm: "[Vlak/Golvend/Heuvelachtig/Langgerekt/Kom-vormig]"
+    helling: "[X-Y]% gemiddeld, [optioneel: max Z%]"
+    hoogteverschil: "[X-Y]m binnen typisch perceel"
+    opmerking: "[Bijzonderheden]"  # optioneel
+  
+  positie_in_landschap:
+    ligging: "[Hoog/Laag/Middelhoog t.o.v. omgeving]"
+    relatie_omgeving: "[Hoe verhoudt dit zich tot aangrenzende systemen?]"
+    voorbeeld: |
+      "Hoger gelegen dan uiterwaarden en komgronden"
+      "Lage ligging tussen dekzandruggen"
+      "Hoogste punt in directe omgeving"
+  
+  karakteristieke_patronen:  # optioneel maar waardevol
+    - "[Patroon 1 - bijv. Langgerekte ruggen NW-ZO georiënteerd]"
+    - "[Patroon 2 - bijv. Kleinschalig microreliëf met bulten en slenken]"
+    - "[Patroon 3 - bijv. Terrasvorming zichtbaar in landschap]"
+  
+  erosie_en_dynamiek:  # optioneel
+    erosiegevoeligheid: "[Laag/Matig/Hoog]"
+    actieve_processen: "[Welke processen zijn nu actief?]"
+    stabiliteit: "[Stabiel/Matig stabiel/Dynamisch]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# HYDROMORFOLOGIE (alleen grote lijnen, details in gt.yaml)
+# ────────────────────────────────────────────────────────────────────────────
+
+hydromorfologie:  # optioneel maar nuttig
+  afwatering:
+    snelheid: "[Snel/Matig/Traag - afhankelijk van reliëf]"
+    richting: "[Waarheen stroomt water af?]"
+    opmerking: "[Bijzonderheden zoals stagnatie op flanken, snelle afvoer op top]"
+  
+  waterberging:
+    capaciteit: "[Laag/Matig/Hoog - afhankelijk van vorm]"
+    locatie: "[Waar accumuleert water? bijv. laagtes, kommen]"
+  
+  overstromingsrisico:  # alleen relevant voor sommige systemen
+    frequentie: "[Nooit/Zelden/Regelmatig/Frequent]"
+    type: "[Rivieroverstroming/Kwel/Oppervlakkige afstroming]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# RUIMTELIJKE VARIATIE
+# ────────────────────────────────────────────────────────────────────────────
+
+ruimtelijke_variatie:
+  # Als er duidelijke zones zijn binnen dit systeem
+  
+  zones:  # optioneel, alleen als relevant
+    zone_hoog:
+      naam: "[Bijv. Top/Rug/Plateau]"
+      kenmerken: "[Wat is hier anders?]"
+      hoogteligging: "[Relatief t.o.v. rest]"
+    
+    zone_midden:
+      naam: "[Bijv. Flank/Helling]"
+      kenmerken: "[Wat is hier anders?]"
+      hoogteligging: "[Relatief t.o.v. rest]"
+    
+    zone_laag:
+      naam: "[Bijv. Voet/Dal/Laagte]"
+      kenmerken: "[Wat is hier anders?]"
+      hoogteligging: "[Relatief t.o.v. rest]"
+  
+  gradiënten:  # optioneel
+    - "[Gradiënt 1 - bijv. Hoog-droog naar laag-nat]"
+    - "[Gradiënt 2 - bijv. Windgeëxponeerd naar beschut]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# BETEKENIS VOOR ERFBEPLANTING (alleen wat reliëf betreft)
+# ────────────────────────────────────────────────────────────────────────────
+
+betekenis_voor_erfbeplanting:
+  
+  reliëf_implicaties: |
+    Wat betekent de LANDVORM voor beplanting? (2-4 zinnen)
+    
+    Focus op:
+    - Afwatering (snel/traag door helling)
+    - Microklimaat (wind, zon, schaduw door reliëf)
+    - Toegankelijkheid voor machines
+    - Erosierisico bij kaalslag
+    
+    Bijvoorbeeld:
+    "Hogere ligging betekent snellere afwatering. Water loopt snel weg, 
+    geen stagnatierisico maar wel droogte in zomer. Benut microreliëf: 
+    plant droogteminnende soorten op top, vochtiger soorten in laagtes."
+  
+  ontwerp_uitgangspunten:  # optioneel
+    - "[Principe 1 - bijv. Benut hoogteverschil voor zonering]"
+    - "[Principe 2 - bijv. Plant dwars op helling voor erosiepreventie]"
+    - "[Principe 3 - bijv. Creëer luwte op geëxponeerde delen]"
+  
+  aandachtspunten:
+    - "[Punt 1 - bijv. Erosie bij ontbossing op steile hellingen]"
+    - "[Punt 2 - bijv. Windexposure op hogere delen]"
+    - "[Punt 3 - bijv. Moeilijke toegang met machines door helling]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# BRONNEN
+# ────────────────────────────────────────────────────────────────────────────
+
+bronnen:
+  primair:
+    - id: "[bron_id - bijv. berendsen_2005]"
+      context: "Ontstaansgeschiedenis en geomorfologie"
+    
+    - id: "[bron_id - bijv. bro_geomorfologische_kaart]"
+      context: "Landvormclassificatie"
+  
+  aanvullend:  # optioneel
+    - id: "[bron_id]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# RAPPORTTEKST (voor bewoners - alleen over landvorm)
+# ────────────────────────────────────────────────────────────────────────────
+
+duiding:
+  rapporttekst: |
+    **Wat voor landschap is dit?**
+    
+    [Leg in 2-3 zinnen uit wat dit systeem is, zonder jargon. Focus op 
+    wat je ZIET in het landschap.]
+    
+    Bijvoorbeeld:
+    "Deze locatie ligt op een dekzandrug - een langgerekte, glooiende 
+    heuvel die tijdens de laatste ijstijd is ontstaan. U kunt het zien 
+    aan het golvende karakter van het land: sommige plekken liggen een 
+    paar meter hoger dan andere."
+    
+    **Wat betekent dit voor beplanting?**
+    
+    [Alleen de implicaties van de LANDVORM, in 2-3 punten. Houd het heel 
+    concreet en visueel.]
+    
+    Bijvoorbeeld:
+    - Het hoogteverschil zorgt ervoor dat water snel wegloopt van de 
+      hogere delen naar de lagere delen
+    - Hogere plekken zijn vaak windiger en droger
+    - Lagere plekken zijn beschutter en kunnen vochtiger zijn
+    
+    [NIET vermelden: bodemtype, exacte waterhuishouding, concrete soorten
+    → Dat komt uit andere lagen]
+    
+    LENGTE: Max 200 woorden (kort en bondig!)
+
+# ────────────────────────────────────────────────────────────────────────────
+# METADATA
+# ────────────────────────────────────────────────────────────────────────────
+
+metadata:  # optioneel
+  versie: "1.0"
+  laatst_bijgewerkt: "YYYY-MM-DD"
+  auteur: "[Naam]"
+  review_status: "[Concept/Review/Definitief]"
+  opmerkingen: |
+    [Eventuele opmerkingen voor toekomstige bewerkingen]

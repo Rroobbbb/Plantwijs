@@ -1,0 +1,40 @@
+titel: "Erosiebestrijding (hellingen, zand)"
+
+toepasbaar_bij:
+  - "hellingen"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "hoog"
+
+waarom: |
+  Hellingen >5%: bodem spoelt weg bij regen. Stuifzand: waait weg bij wind. Planten = fixatie.
+
+hoe: |
+  HELLINGEN:
+1. Plant DWARS op helling (water remmen)
+2. Terrassen maken bij >15% helling
+3. Bodembedekkers tussen bomen
+4. Wortelstokken: wilg, sleedoorn, braam
+
+STUIFZAND:
+1. GRASSEN eerst (fixeren)
+2. KRUIPENDE planten (dekken)
+3. STRUIKEN (beschermen)
+4. BOMEN pas na fixatie
+
+Soorten erosie-bestendig:
+- Wilgen (wortelstelsel houdt vast)
+- Braam, sleedoorn (uitlopers fixeren)
+- Grassen (direct effect)
+
+effect_tijdlijn:
+  direct: "95% minder erosie, bodem blijft ter plekke"
+
+
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Praktisch principe - direct toepasbaar"

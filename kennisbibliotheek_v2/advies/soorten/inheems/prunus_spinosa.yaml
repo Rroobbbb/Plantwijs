@@ -1,0 +1,82 @@
+titel: Prunus spinosa
+wetenschappelijke_naam: Prunus spinosa
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt droogte
+groei:
+  hoogte: 3 - 4 m
+  hoogte_range:
+    min: 3.0
+    max: 4.0
+    tekst: 3 - 4 m
+  breedte: 3 - 4 m
+  breedte_range:
+    min: 3.0
+    max: 4.0
+    tekst: 3 - 4 m
+  kroonvorm: rond
+  kroonstructuur: halfopen
+  winterhardheid: 5A - 9B
+functie: Vroege bloei (maart!) = belangrijk voor vroege bijen/vlinders.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - nectarwaarde 3
+  - pollenwaarde 3
+  insecten: 150+ soorten
+  vlinders: Waardplant ringvlinder, keizersmantel
+  vogels: Broedplaats, bessen
+  score: 10/10
+  bloei: Maart-april (vóór bladeren!)
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  let_op: Maakt worteluitlopers - kan woekeren
+klimaat_toekomst:
+  droogte_score: 9
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / prspinos-prunus-spinosa'
+  aangevuld: Ja

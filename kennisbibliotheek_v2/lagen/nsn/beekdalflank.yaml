@@ -1,0 +1,46 @@
+titel: Beekdalflank
+code: bknsn_bd2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Beekdalengebied
+ontstaansgeschiedenis:
+  proces: Erosierand beekdal
+landvorm:
+  reliëf:
+    vorm: Flauwe helling naar beek
+    hoogtebereik: Variabel
+    helling: 2-5%
+  positie_in_landschap:
+    ligging: Flank tussen rug en dal
+    beschrijving: Overgang rug naar dal
+hydromorfologie:
+  afwatering:
+    beschrijving: Matig vochtig (overgang)
+typische_bodem:
+  types: Podzol, beekeerdgrond
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Overgangszone - interessant voor variatie droog/nat.
+
+    '
+  ontwerp_uitgangspunten:
+  - Respecteer de waterloop - niet dichtgooien of dempen
+  - Plant op minimaal 5m van waterlijn (wortelschade voorkomen)
+  - Benut natte zone voor waterminnende soorten
+duiding:
+  rapporttekst: '**Beekdalflank**
+
+
+    Overgang rug naar dal
+
+
+    Water: Matig vochtig (overgang)
+
+    Bodem: Podzol, beekeerdgrond
+
+
+    Overgangszone - interessant voor variatie droog/nat.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

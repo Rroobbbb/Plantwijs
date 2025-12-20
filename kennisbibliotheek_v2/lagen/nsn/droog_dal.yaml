@@ -1,0 +1,46 @@
+titel: Droog dal (geen permanente beek)
+code: bknsn_heuvl5
+categorie: NSN - Geomorfologisch
+fgr_relatie: Heuvelland
+ontstaansgeschiedenis:
+  proces: Erosie vroeger, nu droog (kalkoplossing)
+landvorm:
+  reliëf:
+    vorm: Dal zonder water
+    hoogtebereik: Variabel
+    helling: Variabel
+  positie_in_landschap:
+    ligging: Dal
+    beschrijving: V-vormig dal
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog (kalkrijk = water zakt weg)
+typische_bodem:
+  types: Krijtgrond, leemgrond
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Beschut maar droog. Kalkminnaars. Uniek voor Zuid-Limburg.
+
+    '
+  ontwerp_uitgangspunten:
+  - Respecteer de waterloop - niet dichtgooien of dempen
+  - Plant op minimaal 5m van waterlijn (wortelschade voorkomen)
+  - Benut natte zone voor waterminnende soorten
+duiding:
+  rapporttekst: '**Droog dal (geen permanente beek)**
+
+
+    V-vormig dal
+
+
+    Water: Droog (kalkrijk = water zakt weg)
+
+    Bodem: Krijtgrond, leemgrond
+
+
+    Beschut maar droog. Kalkminnaars. Uniek voor Zuid-Limburg.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

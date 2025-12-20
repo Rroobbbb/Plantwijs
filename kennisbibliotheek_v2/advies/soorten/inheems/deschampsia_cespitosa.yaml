@@ -1,0 +1,74 @@
+titel: Deschampsia cespitosa
+wetenschappelijke_naam: Deschampsia cespitosa
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+    - alle grondsoorten
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 0,75 - 1,25 m
+  hoogte_range:
+    min: 0.75
+    max: 1.25
+    tekst: 0,75 - 1,25 m
+  breedte: 1 - 1,8 m
+  breedte_range:
+    min: 1.0
+    max: 1.8
+    tekst: 1 - 1,8 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 4A - 9B
+functie: 'Type: struik. landschappelijke beplanting / schaduwtolerant / stedelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb: []
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - patiotuin
+  - begraafplaats
+  - verkeer, industrie
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / decespit-deschampsia-cespitosa'
+  aangevuld: Basis TreeEbb

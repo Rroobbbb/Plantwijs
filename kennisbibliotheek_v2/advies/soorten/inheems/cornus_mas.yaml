@@ -1,0 +1,79 @@
+titel: Cornus mas
+wetenschappelijke_naam: Cornus mas
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 10
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt hitte
+groei:
+  hoogte: 5 - 7 m
+  hoogte_range:
+    min: 5.0
+    max: 7.0
+    tekst: 5 - 7 m
+  breedte: 3 - 5 m
+  breedte_range:
+    min: 3.0
+    max: 5.0
+    tekst: 3 - 5 m
+  kroonvorm: rond / afgeplat rond
+  kroonstructuur: gesloten
+  winterhardheid: 4A - 8B
+functie: 'Type: pionier. klimaatbeplanting / voedselbos / ecobeplanting / landschappelijke beplanting
+  / stedelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - mensen
+  - nectarwaarde 4
+  - pollenwaarde 4
+praktisch:
+  toepassingen:
+  - straat
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  verharding_tolerantie:
+  - geen
+  - open
+  - dicht
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / comas-cornus-mas'
+  aangevuld: Basis TreeEbb

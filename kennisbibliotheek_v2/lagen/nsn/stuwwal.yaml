@@ -1,0 +1,46 @@
+titel: Stuwwal
+code: bknsn_stuw1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  proces: IJsdruk (landijs stuwen)
+landvorm:
+  reliëf:
+    vorm: Sterk golvend tot heuvelachtig
+    hoogtebereik: 20-110m NAP
+    helling: 5-20%
+  positie_in_landschap:
+    ligging: Hoogste in dekzandgebied
+    beschrijving: Langgerekte rug met sterke hellingen
+hydromorfologie:
+  afwatering:
+    beschrijving: Zeer variabel (top droog, dal nat)
+typische_bodem:
+  types: Gestuwde lagen (mix zand/klei/keileem)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Spectaculair reliëf! Grote variatie droog/nat. Utrechtse Heuvelrug.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut hoogteverschillen voor variatie
+  - Mulch essentieel op arme grond
+  - Organische stof opbouw prioriteit
+duiding:
+  rapporttekst: '**Stuwwal**
+
+
+    Langgerekte rug met sterke hellingen
+
+
+    Water: Zeer variabel (top droog, dal nat)
+
+    Bodem: Gestuwde lagen (mix zand/klei/keileem)
+
+
+    Spectaculair reliëf! Grote variatie droog/nat. Utrechtse Heuvelrug.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

@@ -1,0 +1,58 @@
+titel: Kernzinnen per grondwatertrap (rapport-samenvatting)
+toelichting: 'Deze kernzinnen zijn bedoeld voor de samenvatting van het rapport. Ze vertalen de technische
+
+  grondwatertrap (Gt) naar een begrijpelijke, standplaatsgerichte duiding voor bewoners.
+
+  '
+zinnen:
+  gt_i_ii:
+    label: Zeer nat tot nat (Gt I–II)
+    kernzin: 'Het grondwater staat hier hoog, waardoor de bodem vaak nat is en wortels snel last kunnen
+      krijgen
+
+      van zuurstofgebrek; beplanting moet goed tegen natte voeten kunnen.
+
+      '
+  gt_iic_iii:
+    label: Matig nat tot vochtig (Gt IIc–III)
+    kernzin: 'Dit is een relatief gunstige vochttoestand met veel mogelijkheden voor beplanting, al kan
+      in
+
+      droge zomers tijdelijk droogtestress optreden.
+
+      '
+  gt_iv:
+    label: Matig droog (Gt IV)
+    kernzin: 'Het grondwater zakt in de zomer dieper weg, waardoor beplanting afhankelijker wordt van
+      regen en
+
+      bodemvocht; vooral op zand is droogte een aandachtspunt.
+
+      '
+  gt_v_vi:
+    label: Droog tot zeer droog (Gt V–VI)
+    kernzin: 'De bodem is in het groeiseizoen vaak droog; zonder vochtvasthoudende bodem en beschutting
+      ontstaat
+
+      snel droogtestress voor bomen en struiken.
+
+      '
+  gt_vii_viii:
+    label: Uiterst droog (Gt VII–VIII)
+    kernzin: 'Het grondwater is structureel diep; alleen zeer droogtetolerante beplanting is hier kansrijk,
+
+      tenzij aanvullende water- of bodemmaatregelen worden genomen.
+
+      '
+gebruik_in_rapport: 'Combineer deze kernzin altijd met bodemtype, geomorfologie en microreliëf (AHN) voor
+  een correcte
+
+  en locatie-specifieke uitleg.
+
+  '
+bronnen: &id001
+- stowa_grondwatertrappen_en_hydrologische_interpret
+- wur_bodem_en_water_in_relatie_tot_vegetatie
+duiding:
+  rapporttekst: ''
+  bronnen: *id001

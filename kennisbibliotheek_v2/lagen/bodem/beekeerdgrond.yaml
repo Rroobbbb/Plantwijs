@@ -1,0 +1,63 @@
+titel: Beekeerdgrond
+code: beekeerdgrond
+categorie: Zand - Eerdgrond
+textuur:
+  beschrijving: 'Zand met dikke donkere bovengrond (beekdalafzetting)
+
+    '
+  samenstelling:
+    organische_stof: Variabel
+chemie:
+  pH:
+    range: 5.5-6.5 (zwak zuur)
+  voedselrijkdom:
+    algemeen: Matig - beter dan podzol
+fysisch:
+  vochtvasthoudend_vermogen:
+    capaciteit: Matig tot hoog (vaak in beekdalen)
+  bewortelbaarheid:
+    beschrijving: Goed
+  doorlatendheid:
+    beschrijving: Zie bodemtype eigenschappen
+betekenis_voor_erfbeplanting:
+  bodem_implicaties: 'Goede bodem, iets vochtiger houden
+
+    '
+  aandachtspunten:
+  - Zie bodem_implicaties voor specifiek advies
+plantmogelijkheden:
+  beschrijving: 'Breed scala - els, eik, vruchtbomen
+
+    '
+  geschikte_soorten:
+  - Breed scala - els, eik, vruchtbomen
+duiding:
+  rapporttekst: '**Beekeerdgrond**
+
+
+    Kenmerken:
+
+    - Zand met dikke donkere bovengrond (beekdalafzetting)
+
+    - pH: 5.5-6.5 (zwak zuur)
+
+    - Voeding: Matig - beter dan podzol
+
+    - Vocht: Matig tot hoog (vaak in beekdalen)
+
+
+    Geschikt voor: Breed scala - els, eik, vruchtbomen
+
+
+    Advies: Goede bodem, iets vochtiger houden
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact maar compleet - gebaseerd op Nederlandse bodemkaart
+profielopbouw:
+  beschrijving: Typisch Zand - Eerdgrond profiel
+praktische_adviezen:
+  algemeen: Afgestemd op bodemtype en situatie

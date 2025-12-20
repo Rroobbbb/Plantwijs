@@ -1,0 +1,45 @@
+titel: Keileemplateau
+code: bknsn_glac4
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  periode: Saalien
+  proces: Afzetting keileem (grondmorene) door landijs
+  beschrijving: Keileem is materiaal dat onder het landijs werd meegevoerd en afgezet.
+    Het vormt een ondoorlatende laag.
+landvorm:
+  reliëf:
+    vorm: Vlak plateau
+    hoogtebereik: Variabel
+    helling: <2%
+  positie_in_landschap:
+    ligging: Plateau
+    beschrijving: Vlakte met keileem
+hydromorfologie:
+  afwatering:
+    beschrijving: Stagnerend (ondoorlatende laag)
+typische_bodem:
+  types: Keileem
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'PROBLEEM: stagnatie water. Drainage vaak nodig. Moeilijke bodem.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut microreliëf voor variatie
+  - 'Bij keileem: drainage overwegen'
+  - Grote hoogteverschillen benutten
+duiding:
+  rapporttekst: '**Keileemplateau**
+
+
+    Vlakte met keileem
+
+
+    PROBLEEM: stagnatie water. Drainage vaak nodig. Moeilijke bodem.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

@@ -1,0 +1,45 @@
+titel: Esdek (oude akker)
+code: bknsn_erf1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  periode: Middeleeuwen - 1900
+  proces: Eeuwenlange ophoging door plaggen en mest
+  beschrijving: Esdekken ontstonden door eeuwenlang opdekken van akkers met plaggen
+    (heideplaggen) vermengd met mest. Dit creëerde vruchtbare verhoogde akkers.
+landvorm:
+  reliëf:
+    vorm: Vlak plateau
+    hoogtebereik: 0.5-2m boven omgeving
+    helling: <2%
+  positie_in_landschap:
+    ligging: Iets hoger
+    beschrijving: Verhoogd plateau (eeuwen mest)
+hydromorfologie:
+  afwatering:
+    beschrijving: Goed gedraineerd
+typische_bodem:
+  types: Enkeerdgrond (zeer vruchtbaar zand!)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'BESTE zandgrond! Eeuwen landbouw = vruchtbaar. Alles mogelijk.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut de vruchtbare bodem (als esdek)
+  - Verbeter arme bodem met compost (als woeste grond)
+  - Respecteer historische waarde
+duiding:
+  rapporttekst: '**Esdek (oude akker)**
+
+
+    Verhoogd plateau (eeuwen mest)
+
+
+    BESTE zandgrond! Eeuwen landbouw = vruchtbaar. Alles mogelijk.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

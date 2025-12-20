@@ -1,0 +1,71 @@
+titel: Crataegus laevigata
+wetenschappelijke_naam: Crataegus laevigata
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt droogte
+groei:
+  hoogte: 5 - 8 m
+  hoogte_range:
+    min: 5.0
+    max: 8.0
+    tekst: 5 - 8 m
+  breedte: 3 - 6 m
+  breedte_range:
+    min: 3.0
+    max: 6.0
+    tekst: 3 - 6 m
+  kroonvorm: ovaal
+  kroonstructuur: halfopen
+  winterhardheid: 5A - 9B
+functie: 'Type: hoofdboom. landschappelijke beplanting / stedelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - nectarwaarde 1
+  - pollenwaarde 1
+praktisch:
+  toepassingen:
+  - straat
+  - park
+  - groenstrook
+  - grote tuin
+  - kleine tuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / crlaevig-crataegus-laevigata'
+  aangevuld: Basis TreeEbb

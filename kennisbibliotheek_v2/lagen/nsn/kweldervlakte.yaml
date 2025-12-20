@@ -1,0 +1,46 @@
+titel: Kweldervlakte
+code: bknsn_klei3
+categorie: NSN - Geomorfologisch
+fgr_relatie: Getijdengebied
+ontstaansgeschiedenis:
+  periode: Actueel/recent
+  proces: Slibafzetting tijdens overstromingen in getijdengebied
+  beschrijving: Kwelders groeien aan door slibafzetting bij elke overstroming. Pionierplanten
+    vangen slib en verhogen het maaiveld geleidelijk.
+landvorm:
+  reliëf:
+    vorm: Zeer vlak
+    hoogtebereik: Rond NAP
+    helling: <0.5%
+  positie_in_landschap:
+    ligging: Tussen laag en hoog water
+    beschrijving: Vlakte (overstroming bij hoog water)
+hydromorfologie:
+  afwatering:
+    beschrijving: Wisselend (zout getijde)
+typische_bodem:
+  types: Jong slik
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'ZOUT! Alleen zouttolerante soorten. Zeekraal, lamsoor, engels
+    slijkgras.
+
+    '
+  ontwerp_uitgangspunten:
+  - Alleen mogelijk buiten getijdenzone
+  - Bescherming tegen zout essentieel
+  - Extreme omstandigheden - alleen specialisten
+duiding:
+  rapporttekst: '**Kweldervlakte**
+
+
+    Vlakte (overstroming bij hoog water)
+
+
+    ZOUT! Alleen zouttolerante soorten. Zeekraal, lamsoor, engels slijkgras.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

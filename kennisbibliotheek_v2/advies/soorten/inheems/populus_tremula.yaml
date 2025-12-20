@@ -1,0 +1,80 @@
+titel: Populus tremula
+wetenschappelijke_naam: Populus tremula
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+    - alle grondsoorten
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 18 - 25 m
+  hoogte_range:
+    min: 18.0
+    max: 25.0
+    tekst: 18 - 25 m
+  breedte: 8 - 12 m
+  breedte_range:
+    min: 8.0
+    max: 12.0
+    tekst: 8 - 12 m
+  kroonvorm: ovaal
+  kroonstructuur: halfopen
+  winterhardheid: 2A - 7B
+  snelheid_jaar_1_5: 80-120cm/jaar (zeer snel!)
+functie: Snelle pionier. Trilende bladeren. Maakt worteluitlopers.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - vlinders
+  insecten: 250+ soorten
+  score: 7/10
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  - wadi
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  let_op: Maakt worteluitlopers - kan woekeren
+klimaat_toekomst:
+  droogte_score: 6
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / potremul-populus-tremula'
+  aangevuld: Ja

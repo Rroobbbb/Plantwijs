@@ -1,0 +1,89 @@
+titel: Crataegus monogyna
+wetenschappelijke_naam: Crataegus monogyna
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 6 - 10 m
+  hoogte_range:
+    min: 6.0
+    max: 10.0
+    tekst: 6 - 10 m
+  breedte: 2 - 5 m
+  breedte_range:
+    min: 2.0
+    max: 5.0
+    tekst: 2 - 5 m
+  kroonvorm: rond
+  kroonstructuur: gesloten
+  winterhardheid: 5A - 10A
+  snelheid_jaar_1_5: 30-50cm/jaar
+functie: Uitstekende haagplant. Vogelbescherming door doornen. Bloei + bessen.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - uilen
+  - kleine zoogdieren
+  - nectarwaarde 1
+  - pollenwaarde 1
+  insecten: 200+ soorten
+  vogels: Broedplaats + voedselbron
+  score: 10/10
+  bloei: Mei (wit, geurig)
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - patiotuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  verharding_tolerantie:
+  - geen
+  gebruik_haag: Uitstekend - ondoordringbaar
+  let_op: Doornen! Niet bij paden
+klimaat_toekomst:
+  droogte_score: 9
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / crmonogy-crataegus-monogyna'
+  aangevuld: Ja

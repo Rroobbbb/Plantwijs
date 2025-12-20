@@ -1,0 +1,46 @@
+titel: Overslaggrond (crevasse)
+code: bknsn_riv6
+categorie: NSN - Geomorfologisch
+fgr_relatie: Rivierengebied
+ontstaansgeschiedenis:
+  proces: Zandafzetting bij dijkdoorbraak
+landvorm:
+  reliëf:
+    vorm: Waaier (uitwaaiering)
+    hoogtebereik: 0-3m NAP
+    helling: 1-3% (van doorbraak af)
+  positie_in_landschap:
+    ligging: Hoger dan komgrond
+    beschrijving: Waaier achter dijkdoorbraak
+hydromorfologie:
+  afwatering:
+    beschrijving: Beter gedraineerd dan omgeving
+typische_bodem:
+  types: Zand met kleidek
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Verrassend droog in verder nat gebied. Goede plek!
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met microreliëf (oeverwal vs kom)
+  - 'Bij overstromingsrisico: overstroming-tolerante soorten'
+  - Benut vruchtbare klei
+duiding:
+  rapporttekst: '**Overslaggrond (crevasse)**
+
+
+    Waaier achter dijkdoorbraak
+
+
+    Water: Beter gedraineerd dan omgeving
+
+    Bodem: Zand met kleidek
+
+
+    Verrassend droog in verder nat gebied. Goede plek!
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

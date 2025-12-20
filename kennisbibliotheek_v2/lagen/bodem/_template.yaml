@@ -1,0 +1,284 @@
+# ============================================================================
+# BODEM - Template
+# 
+# FOCUS: Bodemtype en bodemeigenschappen
+# - Textuur en samenstelling
+# - Chemische eigenschappen (pH, voedselrijkdom)
+# - Fysische eigenschappen (doorlatendheid, draagkracht)
+#
+# NIET in dit bestand:
+# - Grondwaterstand (→ gt/)
+# - Reliëf/landvorm (→ nsn/)
+# - Concrete plantensoorten (→ advies/)
+# ============================================================================
+
+titel: "[Bodemtype - Nederlandse naam]"
+code: "[Stiboka code indien van toepassing]"
+categorie: "[Zand/Klei/Veen/Leem/Loss]"
+synoniem: ["Alternatieve naam 1"]  # optioneel
+
+# ────────────────────────────────────────────────────────────────────────────
+# TEXTUUR EN SAMENSTELLING
+# ────────────────────────────────────────────────────────────────────────────
+
+textuur:
+  hoofdtextuur: "[Zand/Klei/Veen/Leem/Loss]"
+  korrelgrootte: "[Zeer fijn/Fijn/Matig grof/Grof - met μm range]"
+  korrelgrootte_detail: "[105-300μm]"  # optioneel
+  
+  samenstelling:
+    zand_percentage: "[X-Y]%"  # indien relevant
+    silt_percentage: "[X-Y]%"  # indien relevant
+    klei_percentage: "[X-Y]%"  # indien relevant
+    organische_stof: "[X-Y]%"
+    
+  textuurklasse: "[Volgens NEN classificatie]"
+  
+  beschrijving: |
+    Korte beschrijving van de textuur (2-3 zinnen).
+    Hoe voelt het aan? Hoe ziet het eruit?
+    
+    Bijvoorbeeld:
+    "Fijn zand dat gemakkelijk tussen de vingers door glijdt. Vrijwel geen 
+    klei of silt, waardoor het goed doorlatend is maar slecht water vasthoudt."
+
+# ────────────────────────────────────────────────────────────────────────────
+# CHEMISCHE EIGENSCHAPPEN
+# ────────────────────────────────────────────────────────────────────────────
+
+chemie:
+  pH:
+    range: "[X.X - Y.Y]"
+    typisch: "[Typische waarde]"
+    classificatie: "[Zeer zuur/Zuur/Neutraal/Basisch/Zeer basisch]"
+  
+  voedselrijkdom:
+    algemeen: "[Zeer arm/Arm/Matig/Rijk/Zeer rijk]"
+    
+    nutriënten:  # optioneel maar waardevol
+      stikstof: "[Laag/Matig/Hoog]"
+      fosfor: "[Laag/Matig/Hoog]"
+      kalium: "[Laag/Matig/Hoog]"
+      calcium: "[Laag/Matig/Hoog]"
+    
+    beperkingen:
+      - "[Beperking 1 - bijv. Fosfor deficiëntie typisch]"
+      - "[Beperking 2 - bijv. Zure pH kan aluminium mobiliseren]"
+  
+  kalkgehalte:  # indien relevant
+    aanwezig: "[Ja/Nee]"
+    type: "[Kalkloos/Kalkarm/Kalkrijk]"
+    opmerking: "[Bijzonderheden - bijv. Kalk spoelt uit in 50-100 jaar]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# FYSISCHE EIGENSCHAPPEN
+# ────────────────────────────────────────────────────────────────────────────
+
+fysisch:
+  
+  doorlatendheid:
+    verticaal: "[Zeer laag/Laag/Matig/Hoog/Zeer hoog]"
+    horizontaal: "[Idem]"
+    K_waarde: "[X-Y cm/dag]"  # optioneel, voor professionals
+    
+    beschrijving: |
+      Hoe snel gaat water door de bodem? (1-2 zinnen)
+      
+      Bijvoorbeeld:
+      "Zeer hoog doorlatend. Water zakt binnen uren weg, geen stagnatie."
+  
+  vochtvasthoudend_vermogen:
+    capaciteit: "[Zeer laag/Laag/Matig/Hoog/Zeer hoog]"
+    beschikbaar_water: "[X-Y mm per meter bodem]"  # optioneel
+    
+    beschrijving: |
+      Hoeveel vocht kan de bodem vasthouden? (1-2 zinnen)
+      
+      Bijvoorbeeld:
+      "Zeer laag. Zand houdt bijna geen vocht vast. Bij droogte zijn 
+      planten volledig afhankelijk van regen."
+  
+  bewortelbaarheid:
+    diepte: "[Ondiep <50cm / Matig 50-100cm / Diep >100cm]"
+    belemmeringen: "[Geen / Keileem op Xcm / Grondwater op Xcm / Verdichting]"
+    
+    beschrijving: |
+      Hoe diep kunnen wortels? Wat belemmert? (1-2 zinnen)
+  
+  draagkracht:
+    droog: "[Zeer laag/Laag/Matig/Hoog/Zeer hoog]"
+    nat: "[Idem]"
+    
+    bewerkbaarheid: |
+      Wanneer is de bodem bewerkbaar? Beperkingen? (2-3 zinnen)
+      
+      Bijvoorbeeld:
+      "Alleen bewerkbaar bij droge omstandigheden. Bij nat weer enorme 
+      verdichtingsrisico. Wacht met machines tot grond draagkrachtig is."
+  
+  verdichting:
+    gevoeligheid: "[Zeer laag/Laag/Matig/Hoog/Zeer hoog]"
+    herstel: "[Snel/Matig/Traag/Zeer traag]"
+    opmerking: "[Bijzonderheden]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# BODEMHORIZONTEN (optioneel, voor professionals)
+# ────────────────────────────────────────────────────────────────────────────
+
+profielopbouw:  # optioneel
+  beschrijving: |
+    Korte beschrijving van de typische horizonten (als relevant).
+  
+  horizonten:  # optioneel
+    - horizont: "A"
+      dikte: "[X-Y cm]"
+      kenmerken: "[Beschrijving]"
+    
+    - horizont: "E"
+      dikte: "[X-Y cm]"
+      kenmerken: "[Beschrijving - bijv. Uitspoelingshorizont, lichtgrijs]"
+    
+    - horizont: "B"
+      dikte: "[X-Y cm]"
+      kenmerken: "[Beschrijving - bijv. Inspoeling ijzer, roodbruin]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# BODEMONTWIKKELING EN DYNAMIEK
+# ────────────────────────────────────────────────────────────────────────────
+
+bodem_dynamiek:  # optioneel maar waardevol
+  
+  natuurlijke_processen:
+    - "[Proces 1 - bijv. Podzolering actief]"
+    - "[Proces 2 - bijv. Uitspoeling van kalk]"
+    - "[Proces 3 - bijv. Oxidatie van veen bij ontwatering]"
+  
+  tijdschaal:
+    ontwikkelingssnelheid: "[Zeer traag/Traag/Matig/Snel]"
+    stabiliteit: "[Stabiel/Matig stabiel/Dynamisch]"
+  
+  menselijke_invloed:
+    - "[Invloed 1 - bijv. Bemesting verhoogt pH tijdelijk]"
+    - "[Invloed 2 - bijv. Grondbewerking vernietigt structuur]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# BETEKENIS VOOR ERFBEPLANTING (alleen wat bodem betreft)
+# ────────────────────────────────────────────────────────────────────────────
+
+betekenis_voor_erfbeplanting:
+  
+  bodem_implicaties: |
+    Wat betekent dit BODEMTYPE voor beplanting? (3-5 zinnen)
+    
+    Focus op:
+    - Voedselrijkdom (arm/rijk → welke soorten?)
+    - pH (zuur/basisch → welke soorten?)
+    - Doorlatendheid (snel/traag → droogte/nattigheid)
+    - Bewerkbaarheid (wanneer planten/bewerken?)
+    
+    Bijvoorbeeld:
+    "Zure, voedselarme zandgrond. Alleen soorten die tegen lage pH kunnen 
+    en weinig voeding nodig hebben, gedijen hier. Water zakt snel weg, dus 
+    droogtetolerantie is belangrijk. Organische stof opbouw is cruciaal om 
+    vocht vast te houden."
+  
+  bodemverbetering:  # optioneel
+    mogelijkheden:
+      - "[Optie 1 - bijv. Organische stof toevoegen verbetert vochtvasthouden]"
+      - "[Optie 2 - bijv. Bekalking verhoogt pH (tijdelijk)]"
+      - "[Optie 3 - bijv. Gips toevoegen bij zware klei verbetert structuur]"
+    
+    beperkingen:
+      - "[Beperking 1 - bijv. pH-verhoging is tijdelijk, moet herhaald]"
+      - "[Beperking 2 - bijv. Structuurverbetering klei kost jaren]"
+  
+  aandachtspunten:
+    - "[Punt 1 - bijv. Werk niet bij natte bodem (verdichting!)]"
+    - "[Punt 2 - bijv. Mulch is essentieel op zandgrond]"
+    - "[Punt 3 - bijv. Voorkom grondbewerking op klei in najaar]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# KOPPELING MET GRONDWATERTRAPPEN
+# ────────────────────────────────────────────────────────────────────────────
+
+typische_combinaties:  # optioneel maar nuttig
+  # Welke Gt's komen vaak voor bij dit bodemtype?
+  
+  vaak:
+    - "GWT VII (zeer droog)"  # bijvoorbeeld
+    - "GWT VI (droog)"
+  
+  soms:
+    - "GWT V (matig droog)"
+  
+  zelden:
+    - "GWT II (nat)"
+  
+  opmerking: |
+    [Uitleg waarom bepaalde combinaties vaak/zelden voorkomen]
+
+# ────────────────────────────────────────────────────────────────────────────
+# BRONNEN
+# ────────────────────────────────────────────────────────────────────────────
+
+bronnen:
+  primair:
+    - id: "[bron_id - bijv. stiboka_1981_bodemkaart]"
+      context: "Bodemclassificatie en kenmerken"
+    
+    - id: "[bron_id - bijv. bro_bodemkaart]"
+      context: "Actuele bodemdata"
+  
+  aanvullend:  # optioneel
+    - id: "[bron_id]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# RAPPORTTEKST (voor bewoners - alleen over bodem)
+# ────────────────────────────────────────────────────────────────────────────
+
+duiding:
+  rapporttekst: |
+    **Wat voor bodem heeft u?**
+    
+    [Leg in 2-3 zinnen uit wat dit bodemtype is. Maak het tastbaar en 
+    visueel.]
+    
+    Bijvoorbeeld:
+    "U heeft een zandgrond - een bodem die vooral uit zandkorrels bestaat. 
+    Als u een handje grond pakt, voelt het korrelig aan en valt het 
+    gemakkelijk uit elkaar. Dit type grond komt veel voor in Nederland, 
+    vooral in het oosten en zuiden."
+    
+    **Wat zijn de kenmerken?**
+    
+    [2-4 concrete, begrijpelijke kenmerken. Geen jargon!]
+    
+    Bijvoorbeeld:
+    - De bodem is **voedselarm** - er zitten weinig voedingsstoffen in
+    - De bodem is **zuur** (lage pH) - niet alle planten houden daarvan
+    - Water loopt er **snel doorheen** - droogte in de zomer is een risico
+    - De grond is **licht** en gemakkelijk te bewerken
+    
+    **Wat betekent dit voor uw planten?**
+    
+    [1-2 praktische tips, heel concreet]
+    
+    Bijvoorbeeld:
+    "Kies planten die tegen zure grond kunnen (zoals rododendron, hortensia, 
+    heide) en die niet veel voeding nodig hebben. Dek de grond af met 
+    houtsnippers of bladmolm - dat helpt om vocht vast te houden en verbetert 
+    langzaam de grond."
+    
+    [NIET vermelden: grondwaterstand, reliëf, exacte soorten → Andere lagen]
+    
+    LENGTE: Max 250 woorden
+
+# ────────────────────────────────────────────────────────────────────────────
+# METADATA
+# ────────────────────────────────────────────────────────────────────────────
+
+metadata:  # optioneel
+  versie: "1.0"
+  laatst_bijgewerkt: "YYYY-MM-DD"
+  auteur: "[Naam]"
+  review_status: "[Concept/Review/Definitief]"

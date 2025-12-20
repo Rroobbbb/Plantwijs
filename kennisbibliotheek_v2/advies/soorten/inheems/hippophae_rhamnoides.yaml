@@ -1,0 +1,70 @@
+titel: Hippophae rhamnoides
+wetenschappelijke_naam: Hippophae rhamnoides
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 10
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt droogte
+  - verdraagt hitte
+groei:
+  hoogte: 4 - 8 m
+  hoogte_range:
+    min: 4.0
+    max: 8.0
+    tekst: 4 - 8 m
+  breedte: 4 - 8 m
+  breedte_range:
+    min: 4.0
+    max: 8.0
+    tekst: 4 - 8 m
+  kroonvorm: breed vaas
+  kroonstructuur: gesloten
+  winterhardheid: 4A - 7B
+functie: 'Type: pionier. klimaatbeplanting / voedselbos / ecobeplanting / landschappelijke beplanting
+  / stedelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+praktisch:
+  toepassingen:
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - landschap
+  - ecologische zone
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / hirhamno-hippophae-rhamnoides'
+  aangevuld: Basis TreeEbb

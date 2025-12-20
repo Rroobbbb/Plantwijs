@@ -1,0 +1,64 @@
+titel: Berberis vulgaris
+wetenschappelijke_naam: Berberis vulgaris
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 4
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 1 - 3 m
+  hoogte_range:
+    min: 1.0
+    max: 3.0
+    tekst: 1 - 3 m
+  breedte: 1 - 3 m
+  breedte_range:
+    min: 1.0
+    max: 3.0
+    tekst: 1 - 3 m
+  kroonvorm: vaas
+  kroonstructuur: gesloten
+  winterhardheid: 4A - 9A
+functie: 'Type: pionier. voedselbos / ecobeplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - verkeer, industrie
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / bevulgar-berberis-vulgaris'
+  aangevuld: Basis TreeEbb

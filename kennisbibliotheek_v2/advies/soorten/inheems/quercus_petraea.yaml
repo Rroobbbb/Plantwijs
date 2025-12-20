@@ -1,0 +1,82 @@
+titel: Quercus petraea
+wetenschappelijke_naam: Quercus petraea
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 25 - 30 m
+  hoogte_range:
+    min: 25.0
+    max: 30.0
+    tekst: 25 - 30 m
+  breedte: 20 - 25 m
+  breedte_range:
+    min: 20.0
+    max: 25.0
+    tekst: 20 - 25 m
+  kroonvorm: rond
+  kroonstructuur: gesloten
+  winterhardheid: 5A - 10B
+  snelheid_jaar_1_5: 20-40cm/jaar
+  worteltype: Penwortel
+  levensduur: 300-500 jaar
+functie: Wintereik - vergelijkbaar met zomereik maar minder nat-tolerant.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  insecten: 450+ soorten
+  score: 10/10
+praktisch:
+  toepassingen:
+  - laan
+  - plein
+  - parkeerplaats
+  - park
+  - groenstrook
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  verharding_tolerantie:
+  - geen
+  - open
+  - dicht
+klimaat_toekomst:
+  droogte_score: 9
+  hitte_score: 8
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / qupetrae-quercus-petraea'
+  aangevuld: Ja

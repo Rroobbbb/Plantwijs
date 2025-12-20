@@ -1,0 +1,73 @@
+titel: Ilex aquifolium
+wetenschappelijke_naam: Ilex aquifolium
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt geen wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt droogte
+groei:
+  hoogte: 5 - 10 m
+  hoogte_range:
+    min: 5.0
+    max: 10.0
+    tekst: 5 - 10 m
+  breedte: 3 - 5 m
+  breedte_range:
+    min: 3.0
+    max: 5.0
+    tekst: 3 - 5 m
+  kroonvorm: breed piramidaal
+  kroonstructuur: halfopen
+  winterhardheid: 6A - 8B
+  snelheid_jaar_1_5: 15-25cm/jaar (traag)
+functie: Hulst - wintergroen. Rode bessen. Goede haagplant.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - vlinders
+  - vogels
+  - uilen
+  vogels: Rode bessen herfst/winter
+  score: 7/10
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - begraafplaats
+  - windsingel
+  - kustgebied
+  verharding_tolerantie: []
+  gebruik_haag: Zeer geschikt
+  bijzonderheid: Wintergroen, rode bessen decoratief
+klimaat_toekomst:
+  droogte_score: 6
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / ilaquifo-ilex-aquifolium'
+  aangevuld: Ja

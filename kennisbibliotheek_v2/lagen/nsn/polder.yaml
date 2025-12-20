@@ -1,0 +1,56 @@
+titel: "Polder (vlak zeekleigebied)"
+code: "bknsn_zee2"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Zeekleigebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Drooggemaakte zeebodem"
+  beschrijving: |
+    Drooggemaakte zeebodem
+
+landvorm:
+  reliëf:
+    vorm: "Zeer vlak"
+    hoogtebereik: "-5 tot 0m NAP"
+    helling: "<0.5%"
+  
+  positie_in_landschap:
+    ligging: "Beneden zeespiegel"
+    beschrijving: "Vlak"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Hoog grondwater, gecontroleerd via drainage"
+
+typische_bodem:
+  types: "Zware zeeklei"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    NAT zonder drainage. Zeer vlak = weinig afwisseling. Drainage essentieel.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Polder (vlak zeekleigebied)**
+    
+    Dit is een Zeer vlak landvorm op -5 tot 0m NAP.
+    
+    Kenmerkend:
+    - Vlak
+    - Hoog grondwater, gecontroleerd via drainage
+    - Bodem: Zware zeeklei
+    
+    Voor beplanting betekent dit:
+    NAT zonder drainage. Zeer vlak = weinig afwisseling. Drainage essentieel.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

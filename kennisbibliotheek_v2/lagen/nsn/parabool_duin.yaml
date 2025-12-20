@@ -1,0 +1,44 @@
+titel: Parabool duin
+code: bknsn_duin5
+categorie: NSN - Geomorfologisch
+fgr_relatie: Duingebied
+ontstaansgeschiedenis:
+  periode: Holoceen/Pleistoceen
+  proces: Hoefijzervormig (open naar wind)
+  beschrijving: Deze landvorm ontstond door natuurlijke processen in het verleden.
+landvorm:
+  reliëf:
+    vorm: U-vormig duin
+    hoogtebereik: Variabel
+    helling: Steil binnen, flauw buiten
+  positie_in_landschap:
+    ligging: Variabel
+    beschrijving: Hoefijzervormig (open naar wind)
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog op rug, nat in kom
+typische_bodem:
+  types: Duinzand
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Interessante vorm. Binnen beschut en vochtiger.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het microreliëf - top droog, vallei vochtig
+  - Bescherm tegen verdere verstuiving (geleidelijk beplanten)
+  - Kies windbestendige en zouttolerante soorten
+duiding:
+  rapporttekst: '**Parabool duin**
+
+
+    Hoefijzervormig (open naar wind)
+
+
+    Interessante vorm. Binnen beschut en vochtiger.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

@@ -1,0 +1,63 @@
+titel: Malus sylvestris
+wetenschappelijke_naam: Malus sylvestris
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  wind_tolerantie: verdraagt wind
+  extreme_condities: []
+groei:
+  hoogte: 3 - 10 m
+  hoogte_range:
+    min: 3.0
+    max: 10.0
+    tekst: 3 - 10 m
+  breedte: 4 - 8 m
+  breedte_range:
+    min: 4.0
+    max: 8.0
+    tekst: 4 - 8 m
+  kroonvorm: rond
+  kroonstructuur: halfopen
+  winterhardheid: 4A - 9A
+functie: 'Type: pionier. voedselbos / ecobeplanting / landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - nectarwaarde 3
+  - pollenwaarde 3
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - kleine tuin
+  - landschap
+  - ecologische zone
+  verharding_tolerantie: []
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / masylves-malus-sylvestris'
+  aangevuld: Basis TreeEbb

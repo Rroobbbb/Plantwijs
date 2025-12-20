@@ -1,0 +1,56 @@
+titel: "Kustduin (zeereep, binnenduin)"
+code: "bknsn_duin1"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Duingebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Windafzetting zand van strand"
+  beschrijving: |
+    Windafzetting zand van strand
+
+landvorm:
+  reliëf:
+    vorm: "Sterk golvend tot heuvelachtig"
+    hoogtebereik: "0-50m NAP"
+    helling: "5-30% (lokaal steiler)"
+  
+  positie_in_landschap:
+    ligging: "Wisselend (top/vallei)"
+    beschrijving: "Duinruggen + duinvalleien"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Droog op duintop, nat in vallei (zoetwaterlens)"
+
+typische_bodem:
+  types: "Duinzand (kalkhoudend)"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    Microreliëf! Duintop droog+winderig, vallei vochtig+beschut.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Kustduin (zeereep, binnenduin)**
+    
+    Dit is een Sterk golvend tot heuvelachtig landvorm op 0-50m NAP.
+    
+    Kenmerkend:
+    - Duinruggen + duinvalleien
+    - Droog op duintop, nat in vallei (zoetwaterlens)
+    - Bodem: Duinzand (kalkhoudend)
+    
+    Voor beplanting betekent dit:
+    Microreliëf! Duintop droog+winderig, vallei vochtig+beschut.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

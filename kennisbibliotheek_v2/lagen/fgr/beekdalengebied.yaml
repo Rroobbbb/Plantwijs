@@ -1,0 +1,50 @@
+titel: Beekdalengebied
+code: fgr_beekdalengebied
+regio: Binnen dekzandgebied (overal kleine beekjes)
+geografie:
+  karakteristiek: 'Smalle natte dalen tussen dekzandruggen
+
+    '
+bodem:
+  beschrijving: Beekeerdgrond, veengrond, humeus
+hydrologie:
+  beschrijving: Nat tot zeer nat (Gt II-III), kwel
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: 'Natte standplaats - kies nat-tolerante soorten.
+
+    '
+  soorten_specifiek:
+    geschikt: Els, wilg, vogelkers, moerasspirea
+  ontwerp_uitgangspunten:
+  - Benut natte zone optimaal - els en wilg zijn hier koning
+  - Respecteer beekloop - plant minimaal 5m vanaf waterlijn
+  - Kwel = permanent nat - accepteer dit als kracht
+  - Vogelkers, moerasspirea, gelderse roos = beekdal specialisten
+duiding:
+  rapporttekst: '**Beekdalengebied**
+
+
+    Karakteristiek: Smalle natte dalen tussen dekzandruggen
+
+
+    Bodem: Beekeerdgrond, veengrond, humeus
+
+    Water: Nat tot zeer nat (Gt II-III), kwel
+
+
+    Geschikte soorten: Els, wilg, vogelkers, moerasspirea
+
+
+    Advies: Natte standplaats - kies nat-tolerante soorten.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact FGR - geografische context
+landschappelijke_context:
+  karakteristiek_beeld:
+  - Zie geografie karakteristiek
+  erfbeplanting_past_bij:
+  - Gebruik inheemse soorten passend bij regio

@@ -1,0 +1,68 @@
+titel: Castanea sativa
+wetenschappelijke_naam: Castanea sativa
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 8
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt droogte
+groei:
+  hoogte: 25 - 30 m
+  hoogte_range:
+    min: 25.0
+    max: 30.0
+    tekst: 25 - 30 m
+  breedte: 20 - 25 m
+  breedte_range:
+    min: 20.0
+    max: 25.0
+    tekst: 20 - 25 m
+  kroonvorm: rond / afgeplat rond
+  kroonstructuur: gesloten
+  winterhardheid: 6A - 11B
+functie: 'Type: pionier. voedselbos / ecobeplanting / landschappelijke beplanting / stedelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - mensen
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - daktuin
+  - grote tuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / casativa-castanea-sativa'
+  aangevuld: Basis TreeEbb

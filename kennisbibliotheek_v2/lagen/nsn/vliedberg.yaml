@@ -1,0 +1,45 @@
+titel: Vliedberg (terp zonder bewoning)
+code: bknsn_klei1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Zeekleigebied
+ontstaansgeschiedenis:
+  periode: Middeleeuwen of natuurlijk
+  proces: Natuurlijke ophoging of kleine kunstmatige verhoging
+  beschrijving: Vliedbergen zijn kleine verhogingen, soms natuurlijk ontstaan, soms
+    door mensen opgeworpen maar kleiner dan echte terpen.
+landvorm:
+  reliëf:
+    vorm: Verhoging
+    hoogtebereik: 1-3m boven omgeving
+    helling: Variabel
+  positie_in_landschap:
+    ligging: Hoogste in polder
+    beschrijving: Heuvel (kleiner dan terp)
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog
+typische_bodem:
+  types: Klei
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Beste plek in polder! Droog, goed zicht.
+
+    '
+  ontwerp_uitgangspunten:
+  - NOOIT betreden bij nat (permanente verdichting)
+  - 'Op verhogingen (terp/wierde): veel mogelijk'
+  - 'In laagtes: drainage overwegen'
+duiding:
+  rapporttekst: '**Vliedberg (terp zonder bewoning)**
+
+
+    Heuvel (kleiner dan terp)
+
+
+    Beste plek in polder! Droog, goed zicht.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

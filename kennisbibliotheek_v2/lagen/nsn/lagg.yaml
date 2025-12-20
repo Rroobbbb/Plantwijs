@@ -1,0 +1,45 @@
+titel: Lagg (natte rand hoogveen)
+code: bknsn_hoogveen2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Laagveengebied
+ontstaansgeschiedenis:
+  periode: Holoceen
+  proces: Afstromend water van hoogveen creëert natte rand
+  beschrijving: De lagg is de natte zone rond hoogvenen waar het zure, voedselarme
+    water van het hoogveen afstroomt en mengt met rijker grondwater.
+landvorm:
+  reliëf:
+    vorm: Laagte rond hoogveen
+    hoogtebereik: Lager dan kern
+    helling: Flauw
+  positie_in_landschap:
+    ligging: Rand hoogveen
+    beschrijving: Ring rond hoogveen
+hydromorfologie:
+  afwatering:
+    beschrijving: Zeer nat, voedselrijker
+typische_bodem:
+  types: Veengrond
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Overgang hoogveen naar normaal. Berken mogelijk op rand.
+
+    '
+  ontwerp_uitgangspunten:
+  - BESCHERMD - geen beplanting in actief hoogveen
+  - 'Op rand: zuurtolerante soorten (berk, grove den)'
+  - Respecteer de hydrologie
+duiding:
+  rapporttekst: '**Lagg (natte rand hoogveen)**
+
+
+    Ring rond hoogveen
+
+
+    Overgang hoogveen naar normaal. Berken mogelijk op rand.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

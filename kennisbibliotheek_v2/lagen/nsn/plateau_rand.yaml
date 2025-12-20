@@ -1,0 +1,46 @@
+titel: Plateaurand
+code: bknsn_heuvl4
+categorie: NSN - Geomorfologisch
+fgr_relatie: Heuvelland
+ontstaansgeschiedenis:
+  proces: Erosierand
+landvorm:
+  reliëf:
+    vorm: Rand plateau (overgang)
+    hoogtebereik: 100-200m NAP
+    helling: 1-5%
+  positie_in_landschap:
+    ligging: Rand hoogste gebied
+    beschrijving: Rand plateau voor helling begint
+hydromorfologie:
+  afwatering:
+    beschrijving: Goed gedraineerd
+typische_bodem:
+  types: Löss
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Wind op rand. Mooie uitzichtlocatie. Windbreking overwegen.
+
+    '
+  ontwerp_uitgangspunten:
+  - 'Benut microklimaat: Zuid-helling warm, Noord-helling koel'
+  - Plant dwars op helling (erosiebestrijding)
+  - Gebruik terrassen bij steile hellingen
+duiding:
+  rapporttekst: '**Plateaurand**
+
+
+    Rand plateau voor helling begint
+
+
+    Water: Goed gedraineerd
+
+    Bodem: Löss
+
+
+    Wind op rand. Mooie uitzichtlocatie. Windbreking overwegen.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

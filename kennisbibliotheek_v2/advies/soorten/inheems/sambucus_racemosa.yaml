@@ -1,0 +1,62 @@
+titel: Sambucus racemosa
+wetenschappelijke_naam: Sambucus racemosa
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities: []
+groei:
+  hoogte: 2 - 4 m
+  hoogte_range:
+    min: 2.0
+    max: 4.0
+    tekst: 2 - 4 m
+  breedte: 2 - 4 m
+  breedte_range:
+    min: 2.0
+    max: 4.0
+    tekst: 2 - 4 m
+  kroonvorm: rond
+  kroonstructuur: open
+  winterhardheid: 4A - 8B
+functie: 'Type: pionier. '
+ecologische_waarde:
+  biodiversiteit_treeebb: []
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - kleine tuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  verharding_tolerantie:
+  - geen
+  - open
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / saracemo-sambucus-racemosa'
+  aangevuld: Basis TreeEbb

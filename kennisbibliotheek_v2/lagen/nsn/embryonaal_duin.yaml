@@ -1,0 +1,45 @@
+titel: Embryonaal duin (jonge duintjes)
+code: bknsn_duin6
+categorie: NSN - Geomorfologisch
+fgr_relatie: Duingebied
+ontstaansgeschiedenis:
+  periode: Actueel (recent)
+  proces: Eerste zandvang door helm en zandhaver
+  beschrijving: Embryonale duinen zijn de eerste fase van duinvorming. Helmgras vangt
+    zand uit het strand, waardoor kleine duintjes ontstaan.
+landvorm:
+  reliëf:
+    vorm: Lage duintjes
+    hoogtebereik: 0-3m boven strand
+    helling: Variabel
+  positie_in_landschap:
+    ligging: Overgang strand-duin
+    beschrijving: Kleine duintjes
+hydromorfologie:
+  afwatering:
+    beschrijving: Wisselend
+typische_bodem:
+  types: Stuivend zand
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Zeer jong, dynamisch. Alleen helm, duindoorn.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het microreliëf - top droog, vallei vochtig
+  - Bescherm tegen verdere verstuiving (geleidelijk beplanten)
+  - Kies windbestendige en zouttolerante soorten
+duiding:
+  rapporttekst: '**Embryonaal duin (jonge duintjes)**
+
+
+    Kleine duintjes
+
+
+    Zeer jong, dynamisch. Alleen helm, duindoorn.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

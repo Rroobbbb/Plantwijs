@@ -1,0 +1,66 @@
+titel: Salix viminalis
+wetenschappelijke_naam: Salix viminalis
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - zavel
+    - zware klei
+    - lichte klei
+  licht:
+  - zon
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 3 - 8 m
+  hoogte_range:
+    min: 3.0
+    max: 8.0
+    tekst: 3 - 8 m
+  breedte: 3 - 6 m
+  breedte_range:
+    min: 3.0
+    max: 6.0
+    tekst: 3 - 6 m
+  kroonvorm: vaas / breed vaas
+  kroonstructuur: halfopen
+  winterhardheid: 4A - 9B
+functie: 'Type: pionier. stedelijke beplanting / ecobeplanting / landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - landschap
+  - ecologische zone
+  - windsingel
+  - wadi
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / savimina-salix-viminalis'
+  aangevuld: Basis TreeEbb

@@ -1,0 +1,49 @@
+titel: Getijdengebied (Waddenzee, Delta)
+code: fgr_getijdengebied
+regio: Waddeneilanden, Zeeuwse Delta, Dollard
+geografie:
+  karakteristiek: 'Getijdeninvloed, kwelders, schorren, zout water
+
+    '
+bodem:
+  beschrijving: Jonge klei/slib, slikkig, zout
+hydrologie:
+  beschrijving: Wisselend (getijde), zout grondwater
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: 'Extreem: zout, wind, overstromingen. Specialisten nodig.
+
+    '
+  soorten_specifiek:
+    geschikt: 'Zouttolerante soorten: zeekraal, lamsoor, duindoorn'
+  ontwerp_uitgangspunten:
+  - 'EXTREEM: zout + overstroming'
+  - Alleen specialisten (zeekraal, lamsoor)
+  - Wees realistisch of vraag experts
+duiding:
+  rapporttekst: '**Getijdengebied (Waddenzee, Delta)**
+
+
+    Karakteristiek: Getijdeninvloed, kwelders, schorren, zout water
+
+
+    Bodem: Jonge klei/slib, slikkig, zout
+
+    Water: Wisselend (getijde), zout grondwater
+
+
+    Geschikte soorten: Zouttolerante soorten: zeekraal, lamsoor, duindoorn
+
+
+    Advies: Extreem: zout, wind, overstromingen. Specialisten nodig.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact FGR - geografische context
+landschappelijke_context:
+  karakteristiek_beeld:
+  - Zie geografie karakteristiek
+  erfbeplanting_past_bij:
+  - Inheemse soorten passend bij landschap

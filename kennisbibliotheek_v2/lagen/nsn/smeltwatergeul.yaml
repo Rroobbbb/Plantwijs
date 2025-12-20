@@ -1,0 +1,45 @@
+titel: Smeltwatergeul
+code: bknsn_glac3
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  periode: Weichselien
+  proces: Erosie door smeltwater van landijs
+  beschrijving: Smeltwatergeulen ontstonden door krachtige smeltwater stromen van
+    het ijsfront die brede ondiepe dalen uitschuurden.
+landvorm:
+  reliëf:
+    vorm: Geul
+    hoogtebereik: Variabel
+    helling: Zeer flauw
+  positie_in_landschap:
+    ligging: Laagte
+    beschrijving: Ondiepe brede geul
+hydromorfologie:
+  afwatering:
+    beschrijving: Matig vochtig
+typische_bodem:
+  types: Zand, grind
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Vochtiger dan omgeving. Grover materiaal mogelijk.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut microreliëf voor variatie
+  - 'Bij keileem: drainage overwegen'
+  - Grote hoogteverschillen benutten
+duiding:
+  rapporttekst: '**Smeltwatergeul**
+
+
+    Ondiepe brede geul
+
+
+    Vochtiger dan omgeving. Grover materiaal mogelijk.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

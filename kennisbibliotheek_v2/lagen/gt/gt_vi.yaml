@@ -1,0 +1,281 @@
+titel: "GWT VI - Droog"
+code: "gt_vi"
+categorie: "Droog"
+
+grondwaterstand:
+  gemiddeld_hoogste_grondwaterstand:
+    afkorting: "GHG"
+    diepte_cm: "80-120 cm onder maaiveld"
+    periode: "Januari-maart"
+    beschrijving: |
+      Zelfs in de natste periode (winter) staat grondwater diep - op 
+      80-120cm (gemiddeld 100cm). Wortels kunnen grondwater bereiken in 
+      winter, maar net.
+  
+  gemiddeld_laagste_grondwaterstand:
+    afkorting: "GLG"
+    diepte_cm: ">120 cm onder maaiveld (vaak 150-200cm)"
+    periode: "Augustus-september"
+    beschrijving: |
+      In zomer zakt grondwater weg tot zeer diep (150-200cm). Volledig 
+      buiten bereik van vrijwel alle wortels. Vergelijkbaar met Gt VII.
+  
+  fluctuatie:
+    amplitude: "70-100 cm"
+    stabiliteit: "Droog (winter) tot zeer droog (zomer)"
+    beschrijving: |
+      Grote fluctuatie van droog (winter, 100cm) naar zeer droog (zomer, 
+      170cm). Grondwater speelt beperkte rol voor plantengroei.
+
+waterregime:
+  type: "Sterke infiltratie (water zakt snel weg)"
+  
+  drainage:
+    natuurlijk: "Zeer goed"
+    kunstmatig: "Niet nodig (al te goed)"
+    beschrijving: |
+      Water zakt zeer snel weg. Drainage is geen issue - eerder het 
+      tegenovergestelde: te weinig water vasthouden.
+  
+  droogtegevoeligheid:
+    periode: "Mei-september (heel groeisei zoen)"
+    ernst: "Hoog"
+    beschrijving: |
+      Grondwater staat altijd te diep voor planten. Bij droogte >1 week 
+      ontstaat stress. Planten volledig afhankelijk van regenwater en 
+      bodemvocht. Zonder watergift grote kans op uitval jonge planten.
+  
+  nattigheid:
+    periode: "Nooit"
+    ernst: "Zeer laag"
+    drainage_problemen: "Nee"
+    beschrijving: |
+      Nooit te nat. Water zakt altijd snel weg. Zelfs in winter blijft 
+      grondwater diep. Geen risico op wateroverlast.
+  
+  beschikbaar_water_planten:
+    wortelzone: "0-80cm (afhankelijk van bodem en regen)"
+    hoeveelheid: "Weinig - alleen regenwater + bodemvocht"
+    beschrijving: |
+      Grondwater te diep hele jaar (winter 100cm, zomer 170cm). Planten 
+      kunnen alleen putten uit:
+      1. Recent regenwater (snel weg in zand)
+      2. Vocht vastgehouden door bodem (bij zand ZEER weinig)
+      
+      Bij droogte >1 week = watergebrek vrijwel zeker.
+
+seizoensdynamiek:
+  winter_voorjaar:
+    grondwaterstand: "90-110cm diep"
+    toestand: "Droog maar voldoende regen"
+    risico: "Geen wateroverlast, wel droog"
+  
+  lente:
+    grondwaterstand: "120cm (dalend)"
+    toestand: "Nog vocht uit winter"
+    opmerking: "Beste plantseizoen - plant zo vroeg mogelijk (mrt)"
+  
+  zomer:
+    grondwaterstand: "150-200cm (zeer diep)"
+    toestand: "Droog tot zeer droog"
+    risico: "Droogtestress vrijwel zeker bij >1 week geen regen"
+  
+  herfst:
+    grondwaterstand: "130-150cm (stijgend)"
+    toestand: "Nog droog"
+    opmerking: "Plantseizoen mogelijk maar let op watergift"
+
+betekenis_voor_erfbeplanting:
+  water_implicaties: |
+    **DROOG** - uitdagend maar haalbaar met de juiste aanpak!
+    
+    **Grondwater speelt GEEN rol** - staat te diep (>80cm hele jaar).
+    
+    **Planten zijn volledig afhankelijk van:**
+    1. Regenwater (onvoorspelbaar)
+    2. Vocht vasthoudend vermogen bodem (bij zand zeer laag!)
+    
+    **Dit vraagt om:**
+    - Extra inspanning eerste 5 jaren (watergift!)
+    - Slim plantkeuze (alleen droogte-tolerant)
+    - Bodemverbetering (organische stof!)
+    - Mulchen is ESSENTIEEL
+    
+    **Realistische verwachting:**
+    - Eerste 5 jaar: intensieve watergift nodig
+    - Jaar 6-10: minder water, maar wel monitoren
+    - Jaar 10+: zelfvoorzienend (mits diepe wortels)
+    
+    **Kies ALLEEN soorten met:**
+    - Hoge droogte-tolerantie (score 7+/10)
+    - Diepe penwortel (eik, den)
+    - Bewezen succes op droge zandgrond
+    
+    **Voordelen:**
+    - Nooit wateroverlast
+    - Diep bewortelen mogelijk (>100cm)
+    - Geschikt voor droogte-specialisten
+    
+    **Nadelen:**
+    - Veel watergift eerste jaren (€€€ + tijd)
+    - Beperkte soortkeuze
+    - Risico op uitval bij verwaarlozing
+    - Mulchen en bodemverbetering zijn ESSENTIEEL, niet optioneel
+  
+  water_beheer:
+    watergeven:
+      nodig: "JA, intensief eerste 5 jaren"
+      frequentie: "Eerste 3 jaar: 2x per week bij geen regen / Jaar 4-5: 1x per week"
+      hoeveelheid: "20-25L per boom per keer, 15L per struik"
+      stoppen: "Geleidelijk afbouwen jaar 6-10"
+      let_op: "Plan dit van tevoren - dit is serieuze tijdsinvestering!"
+    
+    drainage:
+      nodig: "Nee - water zakt al te snel weg"
+      reden: "Probleem is water VASTHOUDEN, niet afvoeren"
+  
+  seizoens_aandacht:
+    - "Plant ZEER vroeg voorjaar (maart) = maximaal vocht uit winter"
+    - "Eerste 5 zomers: INTENSIEVE watergift essentieel"
+    - "Mulch 15cm (dikker dan normaal!) is VERPLICHT"
+    - "Monitor continu: bij twijfel = water geven"
+  
+  aandachtspunten:
+    - "**MULCH 15cm IS VERPLICHT** - dit halveert waterbehoefte"
+    - "**BODEMVERBETERING ESSENTIEEL** - meng compost/bladmolm door bovenste 30cm"
+    - "Wateropslag overwegen: regentonnen, IBC containers (besparing!)"
+    - "Automatische druppelirrigatie sterk overwegen (bespaart enorm veel tijd)"
+    - "Plant in groepen (geen solitair) = gezamenlijk microklimaat"
+    - "Overweeg serieus of je dit wilt - dit is INTENSIEF"
+
+plantmogelijkheden:
+  zeer_geschikt_droogte_specialisten:
+    - "Grove den (Pinus sylvestris) - specialist voor zeer droog zand"
+    - "Zomereik (Quercus robur) - diepe penwortel, hoge droogte-tolerantie"
+    - "Veldesdoorn (Acer campestre) - extreem droogte-tolerant"
+    - "Meidoorn (Crataegus monogyna) - zeer robuust"
+    - "Sleedoorn (Prunus spinosa) - zeer droogte-tolerant"
+    - "Jeneverbes (Juniperus communis) - specialist droog zand"
+  
+  mogelijk_met_extra_zorg:
+    - "Ruwe berk (Betula pendula) - droogte-tolerant maar watergift eerste 5 jaar"
+    - "Winterlinde (Tilia cordata) - meer water nodig dan andere"
+    - "Haagbeuk (Carpinus betulus) - grens van mogelijke"
+  
+  niet_realistisch:
+    - "Beuk (Fagus sylvatica) - te droogtegevoelig"
+    - "Meeste vruchtbomen - te veel water nodig"
+    - "Hazelaar - wil vochtiger"
+    - "Zwarte els - wil nat"
+    - "Wilgen - te droog"
+    - "Es - te droog"
+
+praktische_tips:
+  watervoorziening:
+    - "Investeer in IBC container (1000L) of meerdere regentonnen"
+    - "Druppelirrigatie met timer = enorme tijdsbesparing"
+    - "Grijs water hergebruiken (douche, wasmachine)"
+  
+  bodemverbetering:
+    - "Meng 10cm compost door bovenste 30cm bij aanplant"
+    - "Voeg jaarlijks 5cm nieuwe mulch toe"
+    - "Na 10 jaar: humuslaag van 10-15cm = game changer"
+  
+  plant_strategie:
+    - "Start klein (jonge planten 40-60cm passen zich beter aan)"
+    - "Plant in groepen van 3-5 (gezamenlijk microklimaat)"
+    - "Maak lichte kom rond plant (water verzamelt)"
+
+indicator_vegetatie:
+  natuurlijk:
+    - "Struikhei = zeer droog"
+    - "Buntgras = droog zand"
+    - "Schapengras = droog, voedselarm"
+  
+  onkruiden:
+    - "Zandblauwtje = zeer droog zand"
+    - "Klein streepzaad = droog"
+
+bronnen:
+  primair:
+    - id: "bro_grondwatertrap"
+      context: "Gt-classificatie"
+
+duiding:
+  rapporttekst: |
+    **Uw locatie is DROOG - dit vraagt extra inzet!**
+    
+    Het grondwater staat hier diep - zelfs in de winter niet hoger dan 
+    80-100 centimeter, en in de zomer zakt het weg tot 150-200 centimeter. 
+    Dit betekent dat planten het grondwater nooit kunnen bereiken. Ze zijn 
+    volledig afhankelijk van regenwater.
+    
+    **Wees eerlijk tegen uzelf: dit is INTENSIEF**
+    
+    Zonder extra inspanning zullen de meeste planten hier niet overleven. 
+    U moet zich realiseren dat dit een serieuze tijds- en geldinvestering 
+    vraagt, vooral de eerste 5 jaar:
+    
+    - **Watergift**: 2x per week, 20 liter per boom (eerste 3 jaar)
+    - **Tijd**: ~2 uur per week watergeven
+    - **Kosten**: Water + mogelijk irrigatiesysteem
+    
+    **Bent u hiertoe bereid? Dan is het haalbaar!**
+    
+    **Essentiële maatregelen (niet optioneel!):**
+    
+    **1. MULCHEN (15cm dik) - VERPLICHT**
+    - Halveert de hoeveelheid water die nodig is
+    - Zonder mulch is succes vrijwel onmogelijk
+    - Houtsnippers of bladmolm, 15cm dik
+    - Vul jaarlijks bij
+    
+    **2. WATERGIFT (eerste 5 jaar) - INTENSIEF**
+    - Eerste 3 jaar: 2x per week 20 liter per boom
+    - Jaar 4-5: 1x per week 20 liter
+    - Overweeg druppelirrigatie (bespaart veel tijd!)
+    - Zorg voor watervoorraad (regentonnen, IBC)
+    
+    **3. BODEMVERBETERING - ESSENTIEEL**
+    - Meng 10cm compost door bovenste 30cm bij aanplant
+    - Dit verhoogt vocht vasthouden met 100-200%
+    
+    **Kies ALLEEN droogte-specialisten:**
+    
+    **Prima keuzes:**
+    - **Grove den** - De specialist voor droog zand
+    - **Eik** - Diepe penwortel, zeer droogte-tolerant
+    - **Veldesdoorn** - Extreem robuust
+    - **Meidoorn** - Overleeft vrijwel alles
+    
+    **Niet geschikt:**
+    - Beuk, vruchtbomen, hazelaar (te veel water nodig)
+    - Els, wilg, es (willen nat)
+    
+    **Realistisch tijdspad:**
+    
+    - **Jaar 1-5**: Intensieve zorg nodig (2x/week water)
+    - **Jaar 6-10**: Minder intensief (1x/2 weken water)
+    - **Jaar 10+**: Zelfvoorzienend (diepe wortels ontwikkeld)
+    
+    **Onze aanbeveling:**
+    
+    Dit IS haalbaar, maar alleen als u:
+    1. Bereid bent tot 5 jaar intensieve zorg
+    2. Investeert in mulch en bodemverbetering
+    3. Kiest voor droogte-specialisten
+    4. Realistische verwachtingen heeft
+    
+    **Overweeg alternatieven:**
+    - Minder bomen, meer rotsachtige/heide tuin
+    - Verhoogde bedden met betere grond
+    - Accepteer langzame groei
+    
+    Met de juiste aanpak groeit hier een prachtige beplanting, maar het 
+    vraagt meer van u dan op een vochtiger locatie. Plan dit goed!
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerkingen: "Wees realistisch - dit is pittig maar haalbaar"

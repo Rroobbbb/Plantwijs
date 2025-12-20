@@ -1,0 +1,77 @@
+titel: Sambucus nigra
+wetenschappelijke_naam: Sambucus nigra
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 3 - 6 m
+  hoogte_range:
+    min: 3.0
+    max: 6.0
+    tekst: 3 - 6 m
+  breedte: 3 - 6 m
+  breedte_range:
+    min: 3.0
+    max: 6.0
+    tekst: 3 - 6 m
+  kroonvorm: rond
+  kroonstructuur: open
+  winterhardheid: 4A - 9B
+  snelheid_jaar_1_5: 60-100cm/jaar (zeer snel)
+functie: Snelgroeiende struik. Bloemen + bessen eetbaar. Hoge vogelwaarde.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  insecten: 100+ soorten
+  vogels: Bessen zeer geliefd
+  score: 8/10
+praktisch:
+  toepassingen:
+  - groenstrook
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+  - dicht
+  eetbaar: Bloemen (vlierbloesem) en bessen (jam)
+klimaat_toekomst:
+  droogte_score: 6
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / samnigra-sambucus-nigra'
+  aangevuld: Ja

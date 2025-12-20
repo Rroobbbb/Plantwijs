@@ -1,0 +1,182 @@
+titel: GWT VII - Zeer droog
+code: gt_vii
+categorie: Zeer droog
+grondwaterstand:
+  gemiddeld_hoogste_grondwaterstand:
+    afkorting: GHG
+    diepte_cm: 120-180 cm onder maaiveld
+    periode: Januari-maart
+    beschrijving: "Zelfs in de natste periode (winter) staat het grondwater diep.\
+      \ \nGemiddeld 140cm onder maaiveld.\n"
+  gemiddeld_laagste_grondwaterstand:
+    afkorting: GLG
+    diepte_cm: '>180 cm onder maaiveld'
+    periode: Juli-september
+    beschrijving: "In zomer zakt grondwater weg tot diep (>200cm). Volledig buiten\
+      \ \nbereik van plantwortels.\n"
+  fluctuatie:
+    amplitude: 60-100 cm
+    stabiliteit: Stabiel (grondwater speelt geen rol)
+    beschrijving: "Grondwater fluctueert wel, maar blijft altijd zeer diep. Voor \n\
+      planten maakt het weinig uit - ze bereiken het toch niet.\n"
+waterregime:
+  type: Infiltratie (water zakt weg)
+  drainage:
+    natuurlijk: Zeer goed
+    kunstmatig: Niet nodig
+    beschrijving: "Water zakt zeer snel weg. Geen drainageprobleem, eerder het \n\
+      tegenovergestelde: te snel weg.\n"
+  droogtegevoeligheid:
+    periode: Mei-september (soms al april)
+    ernst: Zeer hoog
+    beschrijving: "Zonder regen of watergift droogt de wortelzone (0-80cm) volledig\
+      \ \nuit. Planten zijn volledig afhankelijk van regen of beregening. \nBij droogte\
+      \ >2 weken groot risico.\n"
+  nattigheid:
+    periode: Geen
+    ernst: Zeer laag
+    drainage_problemen: Nee
+    beschrijving: "Nooit te nat. Water zakt altijd snel weg. Geen risico op \nwateroverlast.\n"
+  beschikbaar_water_planten:
+    wortelzone: 0-80cm (alleen regenwater + bodemvocht)
+    hoeveelheid: Zeer weinig (afhankelijk van bodem en regen)
+    beschrijving: "Planten kunnen alleen put uit:\n1. Recent regenwater in wortelzone\n\
+      2. Vocht vastgehouden door bodem (bij zand ZEER weinig)\n\nBij droogte >2 weken\
+      \ = stress. Bij >4 weken = ernstige schade \nzonder watergift.\n"
+seizoensdynamiek:
+  winter_voorjaar:
+    grondwaterstand: 140cm diep
+    toestand: Voldoende regen, grond vochtig
+    risico: Geen wateroverlast
+  lente:
+    grondwaterstand: 160cm diep (dalend)
+    toestand: Nog voldoende vocht uit winter
+    opmerking: Optimaal plantseizoen (maart-april)
+  zomer:
+    grondwaterstand: '>200cm diep'
+    toestand: Droog tot zeer droog
+    risico: Droogtestress bij >2 weken geen regen
+  herfst:
+    grondwaterstand: 180cm (stijgend)
+    toestand: Grond wordt weer vochtiger
+    opmerking: Ook goed plantseizoen (oktober-november)
+betekenis_voor_erfbeplanting:
+  water_implicaties: '**Grondwater speelt GEEN rol** - staat te diep (>120cm hele
+    jaar).
+
+
+    **Planten zijn volledig afhankelijk van:**
+
+    1. Regenwater
+
+    2. Vocht vasthoudend vermogen van de bodem
+
+
+    **In de praktijk betekent dit:**
+
+    - Droogte in zomer is GROOT risico (vooral bij zandgrond)
+
+    - Jonge planten (eerste 3 jaar) hebben extra water nodig
+
+    - Mulchen is ESSENTIEEL om vocht vast te houden
+
+    - Kies soorten die droogte verdragen
+
+
+    **Voordelen:**
+
+    - Nooit te nat (ideaal voor bomen die natte voeten haten)
+
+    - Diep bewortelen mogelijk (tot >100cm)
+
+    - Geen drainage nodig
+
+    '
+  water_beheer:
+    watergeven:
+      nodig: Ja, vooral eerste 3 jaren
+      frequentie: 'Bij droogte >1 week: 1-2x per week'
+      hoeveelheid: 20L per boom per keer, 10L per struik
+    drainage:
+      nodig: Nee
+      reden: Water zakt al snel genoeg weg
+  seizoens_aandacht:
+  - 'Voorjaar: Plant bij voorkeur in maart-april (grond nog vochtig)'
+  - 'Zomer: Monitor droogte, geef extra water bij >2 weken geen regen'
+  - 'Herfst: Ook goed plantseizoen (okt-nov), minder watergift nodig'
+  - 'Winter: Geen aandacht nodig'
+  aandachtspunten:
+  - Mulch 10-15cm is CRUCIAAL (vermindert watergift met 50%)
+  - Kies soorten met hoge droogte-tolerantie
+  - 'Eerste 3 zomers: plan watergift in (automatisch of hand)'
+  - Diepe beworteling stimuleren (weinig water, maar regelmatig)
+indicator_vegetatie:
+  natuurlijk:
+  - Struikhei = zeer droog
+  - Buntgras = droog zand
+  - Schapengras = droog, arm
+  onkruiden:
+  - Zandblauwtje = droog zand
+  - Klein streepzaad = droge grond
+bronnen:
+  primair:
+  - id: bro_grondwatertrap
+    context: Gt-classificatie
+  - id: stiboka_1981
+    context: Gt-indeling en kenmerken
+duiding:
+  rapporttekst: "**Hoe zit het met water op uw locatie?**\n\nHet grondwater staat\
+    \ hier heel diep - meer dan 1,2 meter onder de grond, \nhet hele jaar door. Zelfs\
+    \ in de winter komt het niet hoger dan 1,2 meter. \nIn de zomer zakt het weg tot\
+    \ meer dan 2 meter diep. Dit betekent dat \nplanten het grondwater niet kunnen\
+    \ bereiken met hun wortels.\n\n**Planten zijn afhankelijk van regen**\n\nZonder\
+    \ grondwater moeten planten het hebben van regenwater. Dat is \nprima in natte\
+    \ periodes, maar bij droogte (geen regen voor 2+ weken) \nkrijgen ze het moeilijk.\
+    \ Vooral jonge planten (eerste 3 jaar) hebben \ndan extra water nodig.\n\n**Wat\
+    \ betekent dit door het jaar heen?**\n\n- **Winter/voorjaar**: Voldoende regen,\
+    \ geen problemen\n- **Zomer**: Bij droogte (>2 weken geen regen) stress voor planten\n\
+    - **Herfst**: Weer meer regen, situatie verbetert\n\n**Praktische tips**\n\n1.\
+    \ **Mulchen is essentieel!** Dek de grond af met 10cm houtsnippers \n   of bladeren.\
+    \ Dit voorkomt dat vocht verdampt en scheelt 50% watergift.\n\n2. **Extra water\
+    \ geven:** Eerste 3 zomers bij droogte 20 liter per \n   week per boom, 10 liter\
+    \ per struik.\n\n3. **Kies slimme soorten:** Eik, berk, den, veldesdoorn verdragen\
+    \ \n   droogte goed. Vermijd soorten die veel water nodig hebben.\n"
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+plantmogelijkheden:
+  zeer_geschikt:
+  - Grove den (Pinus sylvestris) - droogte-specialist
+  - Zomereik (Quercus robur) - diepe penwortel
+  - Veldesdoorn (Acer campestre) - zeer droogte-tolerant
+  - Sleedoorn (Prunus spinosa) - zeer droogte-tolerant
+  - Meidoorn (Crataegus monogyna) - robuust
+  - Jeneverbes (Juniperus communis) - heide-specialist
+  geschikt_met_intensieve_watergift:
+  - Ruwe berk (Betula pendula) - watergift eerste 5 jaar
+  - Winterlinde (Tilia cordata) - watergift eerste 5 jaar, mulch essentieel
+  - Lijsterbes (Sorbus aucuparia) - watergift 3-5 jaar
+  - Hazelaar (Corylus avellana) - watergift 4-5 jaar
+  te_vermeiden:
+  - Beuk (veel te droog - niet haalbaar)
+  - Zwarte els (wil nat)
+  - Wilgen (te droog)
+  - Es (te droog)
+  - Meeste vruchtbomen (30-50% uitval zonder irrigatie)
+heide_alternatief:
+  waarom_overwegen: Bij GT VII is normaal bos pittig haalbaar met veel zorg, maar
+    een heide-achtige beplanting past beter bij de natuurlijke omstandigheden en vraagt
+    veel minder onderhoud.
+  geschikte_soorten:
+  - Struikhei (Calluna vulgaris) - perfecte match
+  - Jeneverbes (Juniperus communis) - groeit goed
+  - Grove den (Pinus sylvestris) - solitair
+  - Brem (Cytisus scoparius) - stikstofbinder
+  - Wilde tijm (Thymus serpyllum) - bodembedekker
+  voordelen:
+  - Minimaal water nodig na aanslag
+  - Past bij landschap (vaak heidevelden)
+  - Hoge biodiversiteit (vlinders, bijen)
+  - Weinig onderhoud
+  - Authentiek Nederlands

@@ -1,0 +1,56 @@
+titel: "Lössplateau"
+code: "bknsn_heuvl1"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Heuvelland"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Lössafzetting (wind)"
+  beschrijving: |
+    Lössafzetting (wind)
+
+landvorm:
+  reliëf:
+    vorm: "Vlak plateau"
+    hoogtebereik: "50-150m NAP"
+    helling: "0-2%"
+  
+  positie_in_landschap:
+    ligging: "Hoogste"
+    beschrijving: "Vlak plateau tussen dalen"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Goed gedraineerd"
+
+typische_bodem:
+  types: "Löss (zeer vruchtbaar)"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    Beste landbouwgrond NL! Wind op plateau. Vruchtbaar.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Lössplateau**
+    
+    Dit is een Vlak plateau landvorm op 50-150m NAP.
+    
+    Kenmerkend:
+    - Vlak plateau tussen dalen
+    - Goed gedraineerd
+    - Bodem: Löss (zeer vruchtbaar)
+    
+    Voor beplanting betekent dit:
+    Beste landbouwgrond NL! Wind op plateau. Vruchtbaar.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

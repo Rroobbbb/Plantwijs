@@ -1,0 +1,88 @@
+titel: Tilia cordata
+wetenschappelijke_naam: Tilia cordata
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 7
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt hitte
+  - weinig tot zelden luisaantasting
+groei:
+  hoogte: 20 - 25 m
+  hoogte_range:
+    min: 20.0
+    max: 25.0
+    tekst: 20 - 25 m
+  breedte: 10 - 15 m
+  breedte_range:
+    min: 10.0
+    max: 15.0
+    tekst: 10 - 15 m
+  kroonvorm: eirond
+  kroonstructuur: gesloten
+  winterhardheid: 4A - 8B
+  snelheid_jaar_1_5: 30-50cm/jaar
+  levensduur: 500-1000 jaar
+functie: Belangrijke bijenboom (bloei juli). Droogte-toleranter dan zomerlinde.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vogels
+  - nectarwaarde 5
+  - pollenwaarde 5
+  insecten: 300+ soorten
+  bijen: Zeer belangrijk! Bloei juli
+  score: 9/10
+praktisch:
+  toepassingen:
+  - straat
+  - laan
+  - plein
+  - parkeerplaats
+  - park
+  - groenstrook
+  - daktuin
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+  - dicht
+klimaat_toekomst:
+  droogte_score: 7
+  hitte_score: 8
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / ticordat-tilia-cordata'
+  aangevuld: Ja

@@ -1,0 +1,96 @@
+titel: Lössgrond
+code: loss
+categorie: Löss
+textuur:
+  beschrijving: 'Zeer vruchtbaar, fijn silt, Zuid-Limburg
+
+    '
+  samenstelling:
+    organische_stof: Variabel
+  hoofdtextuur: Löss (zeer fijn silt)
+  korrelgrootte: Zeer fijn
+  korrelgrootte_detail: 2-50μm (silt fractie)
+  textuurklasse: Silt loam
+chemie:
+  pH:
+    range: 7.0-8.0 (neutraal tot basisch)
+  voedselrijkdom:
+    algemeen: Zeer rijk - beste landbouwgrond NL
+fysisch:
+  vochtvasthoudend_vermogen:
+    capaciteit: Zeer hoog
+    beschikbaar_water: 200-300 mm per meter
+    beschrijving: Fijne deeltjes + organische stof = excellent vochtvasthouden.
+  bewortelbaarheid:
+    diepte: Zeer diep (>200cm)
+    belemmeringen: Geen
+    beschrijving: Homogeen, rijkmaar, diep profiel. Perfect bewortelbaar.
+  doorlatendheid:
+    verticaal: Matig
+    K_waarde: 10-50 cm/dag
+    beschrijving: Gebalanceerde drainage - niet te snel, niet te langzaam. Ideaal.
+  draagkracht:
+    droog: Hoog
+    nat: Matig (kan glad zijn)
+    bewerkbaarheid: Goed, maar niet bij te nat (smeren)
+betekenis_voor_erfbeplanting:
+  bodem_implicaties: 'U heeft de beste bodem van NL - geniet!
+
+    '
+  aandachtspunten:
+  - Wind op plateaus - mulch tegen uitdroging
+  - Erosie op hellingen - plant dwars, mulch, bodembedekkers
+  - Niet bewerken bij nat (smeren, structuurschade)
+  - Geniet van deze topbodem - beste van Nederland!
+plantmogelijkheden:
+  beschrijving: 'Vrijwel alles - ideaal voor vruchtbomen
+
+    '
+  geschikte_soorten:
+  - Vruchtbomen - IDEAAL (appel, peer, pruim, kers)
+  - Walnoot - uniek mogelijk in NL (warmte + voeding)
+  - Tamme kastanje - Zuid-Limburg specialiteit
+  - Haagbeuk - prachtige groei
+  - Beuk, eik - topkwaliteit hout
+  - Hazelaar, linde - uitstekend
+  - Vrijwel ALLES groeit hier perfect
+duiding:
+  rapporttekst: '**Lössgrond**
+
+
+    Kenmerken:
+
+    - Zeer vruchtbaar, fijn silt, Zuid-Limburg
+
+    - pH: 7.0-8.0 (neutraal tot basisch)
+
+    - Voeding: Zeer rijk - beste landbouwgrond NL
+
+    - Vocht: Hoog
+
+
+    Geschikt voor: Vrijwel alles - ideaal voor vruchtbomen
+
+
+    Advies: U heeft de beste bodem van NL - geniet!
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact maar compleet - gebaseerd op Nederlandse bodemkaart
+profielopbouw:
+  beschrijving: Homogeen lösspakket, windafzetting uit ijstijd. Kan tot 10m+ dik zijn.
+  horizonten:
+  - horizont: Ap (bouwvoor)
+    dikte: 30cm
+    kenmerken: Bewerkt, humeus
+  - horizont: A
+    dikte: 30-50cm
+    kenmerken: Donker, rijk aan organische stof
+  - horizont: C (löss)
+    dikte: '>500cm'
+    kenmerken: Geel-bruin, homogeen silt
+praktische_adviezen:
+  algemeen: Afgestemd op bodemtype en situatie

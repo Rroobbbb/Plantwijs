@@ -1,0 +1,250 @@
+# Template voor NSN kennisbibliotheek items
+# Kopieer dit bestand en pas aan voor een nieuw NSN type
+# 
+# NIVEAUS VAN UITWERKING:
+# - BASIS: titel, beschrijving, kenmerken, betekenis_voor_erfbeplanting, bronnen, duiding
+# - UITGEBREID: + aanleg_en_uitvoering, veelgestelde_vragen
+# - VOLLEDIG: + seizoenskalender, klimaat_en_toekomst, landschapsecologie
+#
+# Start altijd met BASIS, werk later uit naar UITGEBREID/VOLLEDIG
+
+titel: "[Code] | [Nederlandse naam]"
+categorie: "[Hoofdcategorie: Kustlandschap/Dekzandlandschap/Rivierengebied/etc.]"
+synoniem: ["Alternatieve naam 1", "Alternatieve naam 2"]  # optioneel
+
+# ═══════════════════════════════════════════════════════════════════════════
+# TECHNISCHE BESCHRIJVING (voor professionals/GIS)
+# ═══════════════════════════════════════════════════════════════════════════
+
+beschrijving: |
+  Technische beschrijving van het natuurlijk systeem:
+  - Ontstaansgeschiedenis (geologisch tijdperk)
+  - Vormingsproces (fluviaal/eolisch/glaciaal/marien)
+  - Positie in landschap
+  
+  Houd het feitelijk en wetenschappelijk. 2-4 zinnen.
+
+kenmerken:
+  reliëf:
+    hoogtebereik: "[X-Y]m boven NAP"
+    vorm: "[Vlak/Golvend/Heuvelachtig/Langgerekt]"
+    helling: "[X-Y]% gemiddeld"
+    opmerking: "[Bijzonderheden]"  # optioneel
+  
+  bodem:
+    textuur: "[Zand/Klei/Leem/Veen] met [grove/fijne/etc.] textuur"
+    organische_stof: "[Laag/Matig/Hoog] ([X-Y]% in bovengrond)"
+    pH: "[Zuur/Neutraal/Basisch] (pH [X-Y])"
+    drainage: "[Snel/Matig/Slecht] drainerend"
+    voedselrijkdom: "[Voedselarm/Matig/Voedselrijk]"
+  
+  water:
+    grondwatertrap_typisch: "GWT [code] ([omschrijving])"
+    grondwaterdiepte: "[X-Y]m onder maaiveld"
+    fluctuatie: "[X-Y]cm seizoensvariatie"
+    kwel_infiltratie: "[Kwel/Infiltratie/Neutraal]gebied"
+    bijzonderheden: "[Overstroming/Stagnatie/etc.]"  # optioneel
+  
+  klimaat:  # optioneel, alleen als relevant afwijkt van landelijk gemiddelde
+    neerslag: "[X-Y]mm/jaar"
+    wind: "[Beschut/Matig/Zeer winderig]"
+    zoutinvloed: "[Ja/Nee, tot X km]"  # alleen kust
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ECOLOGIE (optioneel voor basis-items)
+# ═══════════════════════════════════════════════════════════════════════════
+
+natuurlijke_vegetatie:  # optioneel
+  historisch: "[Wat groeide hier vroeger natuurlijk?]"
+  potentieel_climax: "[Wat zou hier groeien zonder menselijk ingrijpen?]"
+  actueel: "[Wat groeit hier nu feitelijk?]"
+  kenmerkende_soorten:
+    bomen: ["Soort 1", "Soort 2", "Soort 3"]
+    struiken: ["Soort 1", "Soort 2"]
+    kruiden: ["Soort 1", "Soort 2"]
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ONTWERPADVIES (KERN - altijd invullen)
+# ═══════════════════════════════════════════════════════════════════════════
+
+betekenis_voor_erfbeplanting:
+  
+  strategie_kernboodschap: |
+    In 2-4 zinnen: wat is DE uitdaging/kans van dit systeem voor beplanting?
+    
+    Bijvoorbeeld:
+    - "Dekzandruggen zijn droog → kies droogtetolerante soorten"
+    - "Kleibodems zijn nat → voorkom verdichting, kies nat-tolerante soorten"
+    - "Kustgebied is winderig → windkering is prioriteit"
+  
+  # OPTIE A: Eenvoudige structuur (voor basis-items)
+  belangrijkste_aandachtspunten:
+    - "Aandachtspunt 1 (bijv. drainage, wind, droogte)"
+    - "Aandachtspunt 2"
+    - "Aandachtspunt 3"
+  
+  geschikte_hoofdsoorten:
+    bomen: ["Soort 1 (reden)", "Soort 2 (reden)", "Soort 3 (reden)"]
+    struiken: ["Soort 1 (reden)", "Soort 2 (reden)"]
+  
+  ongeschikte_soorten:  # optioneel maar nuttig
+    - "Soort X (reden waarom niet geschikt)"
+    - "Soort Y (reden)"
+  
+  # OPTIE B: Uitgebreide zonering (voor showcase-items)
+  # Gebruik dit voor belangrijke/veel voorkomende types
+  zonering:  # optioneel, alleen voor uitgebreide items
+    zone_1_naam:
+      kenmerken: "[Droog/Nat/Wind/etc.]"
+      uitdaging: "[Grootste probleem]"
+      geschikte_soorten:
+        - naam: "[Wetenschappelijk] ([Nederlands])"
+          functie: "[Waarom deze soort?]"
+          plantafstand: "[XxY]m"
+          opmerking: "[Bijzonderheden]"  # optioneel
+    
+    zone_2_naam:
+      # Zelfde structuur als zone_1
+
+# ═══════════════════════════════════════════════════════════════════════════
+# PRAKTISCHE UITVOERING (optioneel - alleen showcase items)
+# ═══════════════════════════════════════════════════════════════════════════
+
+aanleg_en_uitvoering:  # optioneel
+  
+  timing:
+    optimaal: "[Beste seizoen/maand]"
+    goed: "[Ook goed seizoen]"
+    vermijden: "[Te vermijden seizoen + waarom]"
+  
+  bodemvoorbereiding:
+    actie: "[Wat moet er gebeuren?]"
+    waarom: "[Waarom is dit belangrijk?]"
+    let_op: "[Specifieke aandachtspunten]"
+  
+  plantmateriaal_keuze:
+    maat_bomen: "[Aanbevolen maat + waarom]"
+    worteltype: "[Blote wortel/Pot + seizoen]"
+    herkomst: "[Nederlands/Regionaal/etc.]"
+  
+  nazorg_eerste_jaar:
+    - "[Actie 1: wanneer + wat]"
+    - "[Actie 2: wanneer + wat]"
+    - "[Actie 3: wanneer + wat]"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# VEELGESTELDE VRAGEN (optioneel - alleen showcase items)
+# ═══════════════════════════════════════════════════════════════════════════
+
+veelgestelde_vragen:  # optioneel
+  
+  q_meest_gestelde_vraag:
+    vraag: "[Vraag zoals bewoner het zou stellen]"
+    antwoord: |
+      [Helder, praktisch antwoord zonder jargon]
+      
+      Gebruik:
+      - Concrete voorbeelden
+      - Vergelijkingen die helpen
+      - Waarom-uitleg (niet alleen wat)
+      - Praktische tips
+  
+  q_tweede_vraag:
+    vraag: "[Vraag]"
+    antwoord: "[Antwoord]"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SEIZOENSKALENDER (optioneel - alleen showcase items)
+# ═══════════════════════════════════════════════════════════════════════════
+
+seizoenskalender:  # optioneel
+  januari:
+    plantwerk: "[Wat kan/moet er gebeuren?]"
+    onderhoud: "[Onderhoudstaken]"
+    natuurwaarde: "[Wat is er te zien/beleven?]"
+  
+  februari:
+    plantwerk: "[...]"
+    onderhoud: "[...]"
+    natuurwaarde: "[...]"
+  
+  # etc voor alle maanden
+  # TIP: groepeer maanden indien zinvol (bijv. juni_augustus)
+
+# ═══════════════════════════════════════════════════════════════════════════
+# KLIMAAT & TOEKOMST (optioneel - alleen showcase items)
+# ═══════════════════════════════════════════════════════════════════════════
+
+klimaat_en_toekomst:  # optioneel
+  
+  betekenis_voor_dit_systeem:
+    risico_verhoogd:
+      - "[Risico 1: bijv. droogte neemt toe]"
+      - "[Risico 2: bijv. overstromingen vaker]"
+    
+    kansen:
+      - "[Kans 1: bijv. langere groeiseizoen]"
+      - "[Kans 2: bijv. warmteminnende soorten mogelijk]"
+  
+  adaptatie_tips:
+    - "[Tip 1: concreet wat te doen]"
+    - "[Tip 2: concreet wat te doen]"
+  
+  klimaatbestendige_soorten:
+    veilig: ["Soort 1 (waarom)", "Soort 2 (waarom)"]
+    experiment: ["Soort 3 (experimenteel, waarom)", "Soort 4"]
+    vermijden: ["Soort 5 (risico, waarom)", "Soort 6"]
+
+# ═══════════════════════════════════════════════════════════════════════════
+# BRONNEN (altijd invullen - minimaal 2)
+# ═══════════════════════════════════════════════════════════════════════════
+
+bronnen:
+  # Gebruik bron-ID's die in bronnen.yaml zijn gedefinieerd
+  # Of vul hier direct in als het een eenmalige bron is
+  
+  primair:  # Wetenschappelijke bronnen
+    - id: "[bron_id_uit_bronnen_yaml]"
+      context: "[Waar deze bron voor gebruikt is]"  # optioneel
+  
+  praktijk:  # Praktijkkennis
+    - id: "[bron_id]"
+      context: "[...]"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# RAPPORTTEKST (altijd invullen - voor bewoners)
+# ═══════════════════════════════════════════════════════════════════════════
+
+duiding:
+  rapporttekst: |
+    **Wat voor plek is dit?**
+    
+    [In 2-4 zinnen: leg uit wat dit systeem is, zonder jargon. Alsof je het
+    uitlegt aan je buurvrouw die niks van geologie weet.]
+    
+    **Wat betekent dit voor beplanting?**
+    
+    [In 3-5 punten: wat zijn de belangrijkste implicaties? Wat is anders dan
+    gemiddeld? Wat moet je weten?]
+    
+    Bijvoorbeeld:
+    - Droge zandgrond → soorten die tegen droogte kunnen
+    - Kleigrond → niet graven bij nat weer
+    - Kustgebied → wind is een factor
+    
+    **Welke soorten passen hier?**
+    
+    [Geef 3-5 concrete voorbeelden met uitleg waarom. Verdeel in categorieën
+    als dat helpt (pioniers/hoofdsoorten, bomen/struiken, etc.)]
+    
+    **Praktische tip**
+    
+    [Eén concrete, uitvoerbare tip die direct helpt. Geen abstracte adviezen.]
+    
+    TOON:
+    - Persoonlijk ("Uw locatie", "U kunt")
+    - Helder (geen jargon of met uitleg)
+    - Concreet (geen "geschikte soorten" maar "Zomereik en Winterlinde")
+    - Praktisch (wat kan ik er mee?)
+    
+    LENGTE: 300-500 woorden (niet langer, bewoners lezen toch niet meer)

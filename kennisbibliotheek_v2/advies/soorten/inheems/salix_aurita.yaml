@@ -1,0 +1,65 @@
+titel: Salix aurita
+wetenschappelijke_naam: Salix aurita
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 0,5 - 3 m
+  hoogte_range:
+    min: 0.5
+    max: 3.0
+    tekst: 0,5 - 3 m
+  breedte: 0,5 - 3 m
+  breedte_range:
+    min: 0.5
+    max: 3.0
+    tekst: 0,5 - 3 m
+  kroonvorm: breed ovaal
+  kroonstructuur: open
+  winterhardheid: 5B - 9B
+functie: 'Type: pionier. ecobeplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  - wadi
+  - kustgebied
+  verharding_tolerantie: []
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / saaurita-salix-aurita'
+  aangevuld: Basis TreeEbb

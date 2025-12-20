@@ -1,0 +1,46 @@
+titel: Duinvallei
+code: bknsn_duin4
+categorie: NSN - Geomorfologisch
+fgr_relatie: Duingebied
+ontstaansgeschiedenis:
+  proces: Uitwaaiing tussen duinen
+landvorm:
+  reliëf:
+    vorm: Laagte tussen duinen
+    hoogtebereik: 0-10m NAP
+    helling: <5%
+  positie_in_landschap:
+    ligging: Laagste tussen duinen
+    beschrijving: Langgerekte vallei
+hydromorfologie:
+  afwatering:
+    beschrijving: NAT (zoetwaterlens bereikt maaiveld)
+typische_bodem:
+  types: Duinzand (nat)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'UNIEK: nat in verder droog duingebied! Wilg, els mogelijk.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het microreliëf - top droog, vallei vochtig
+  - Bescherm tegen verdere verstuiving (geleidelijk beplanten)
+  - Kies windbestendige en zouttolerante soorten
+duiding:
+  rapporttekst: '**Duinvallei**
+
+
+    Langgerekte vallei
+
+
+    Water: NAT (zoetwaterlens bereikt maaiveld)
+
+    Bodem: Duinzand (nat)
+
+
+    UNIEK: nat in verder droog duingebied! Wilg, els mogelijk.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

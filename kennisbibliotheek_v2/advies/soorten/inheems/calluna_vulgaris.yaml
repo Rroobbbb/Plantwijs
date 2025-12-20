@@ -1,0 +1,66 @@
+titel: Calluna vulgaris
+wetenschappelijke_naam: Calluna vulgaris
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 10
+  nattigheid_tolerantie_score: 4
+  pH_voorkeur:
+  - zuur
+  voedsel_behoefte:
+  - voedselarm
+  bodemtype_voorkeur:
+    types:
+    - veen
+    - zand
+  licht:
+  - zon
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt droogte
+groei:
+  hoogte: 0,6 - 0,9 m
+  hoogte_range:
+    min: 0.6
+    max: 0.9
+    tekst: 0,6 - 0,9 m
+  breedte: 0,6 - 0,8 m
+  breedte_range:
+    min: 0.6
+    max: 0.8
+    tekst: 0,6 - 0,8 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 5A - 9A
+functie: 'Type: struik. stedelijke beplanting / ecobeplanting / landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - patiotuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / cavulgar-calluna-vulgaris'
+  aangevuld: Basis TreeEbb

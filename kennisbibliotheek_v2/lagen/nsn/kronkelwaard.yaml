@@ -1,0 +1,56 @@
+titel: "Kronkelwaard (binnenbocht rivier)"
+code: "bknsn_riv3"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Rivierengebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Sedimentatie binnenbocht"
+  beschrijving: |
+    Sedimentatie binnenbocht
+
+landvorm:
+  reliëf:
+    vorm: "Vlak"
+    hoogtebereik: "0-3m NAP"
+    helling: "<1%"
+  
+  positie_in_landschap:
+    ligging: "Binnenbocht rivier"
+    beschrijving: "Halve maan (binnenbocht)"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Matig nat"
+
+typische_bodem:
+  types: "Lichte klei, zand"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    Goede bodem, matig vochtig. Prima voor beplanting.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Kronkelwaard (binnenbocht rivier)**
+    
+    Dit is een Vlak landvorm op 0-3m NAP.
+    
+    Kenmerkend:
+    - Halve maan (binnenbocht)
+    - Matig nat
+    - Bodem: Lichte klei, zand
+    
+    Voor beplanting betekent dit:
+    Goede bodem, matig vochtig. Prima voor beplanting.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

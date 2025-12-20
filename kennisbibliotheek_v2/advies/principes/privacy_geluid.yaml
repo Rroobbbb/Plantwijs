@@ -1,0 +1,45 @@
+titel: "Privacy en geluidswering"
+
+toepasbaar_bij:
+  - "privacy_wens"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "hoog"
+
+waarom: |
+  Beplanting werkt beter dan schutting: natuurlijk, goedkoper, geluid dempen.
+
+hoe: |
+  SNELLE PRIVACY (3-5 jaar):
+- Haagbeuk: wintergroen effect, dicht
+- Liguster: (half)wintergroen
+- Taxus: altijd groen, zeer dicht
+
+GELUIDSWERING:
+- Dikke haag (2m+ breed) = 5-10 dB reductie
+- Meerdere lagen = beter
+- Altijdgroen = jaar rond privacy
+
+STRATEGIE:
+1e jaar: Plant haag 1m hoog (blote wortel)
+2e jaar: 2m hoog
+3e jaar: 3m hoog, dicht
+5e jaar: Volledige privacy
+
+SOORTEN haag:
+- Haagbeuk: meest gebruikt
+- Taxus: duurder maar zeer dicht
+- Meidoorn: doornen = extra privacy
+- Beuk: vergelijkbaar haagbeuk
+
+effect_tijdlijn:
+  direct: "Privacy binnen 3-5 jaar, 5-10dB minder geluid"
+
+
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Praktisch principe - direct toepasbaar"

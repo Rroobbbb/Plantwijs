@@ -1,0 +1,82 @@
+titel: Taxus baccata
+wetenschappelijke_naam: Taxus baccata
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 7
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 10 - 15 m
+  hoogte_range:
+    min: 10.0
+    max: 15.0
+    tekst: 10 - 15 m
+  breedte: 8 - 12 m
+  breedte_range:
+    min: 8.0
+    max: 12.0
+    tekst: 8 - 12 m
+  kroonvorm: breed piramidaal
+  kroonstructuur: gesloten
+  winterhardheid: 6A - 9A
+  snelheid_jaar_1_5: 10-20cm/jaar (zeer traag)
+  levensduur: 1000+ jaar
+functie: Venijnboom - zeer schaduw-tolerant. GIFTIG! Goede haagplant.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - uilen
+  - nectarwaarde 0
+  - pollenwaarde 3
+  vogels: Rode bessen (alleen vrouwelijke planten)
+  score: 6/10
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  verharding_tolerantie:
+  - geen
+  gebruik_haag: Uitstekend, zeer dicht
+  let_op: GIFTIG! Alle delen behalve rode bes (zaad wél giftig)
+  schaduw_tolerantie: Zeer hoog - groeit in volle schaduw
+klimaat_toekomst:
+  droogte_score: 7
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / tabaccat-taxus-baccata'
+  aangevuld: Ja

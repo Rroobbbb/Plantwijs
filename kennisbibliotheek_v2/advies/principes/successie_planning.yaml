@@ -1,0 +1,44 @@
+titel: "Successie planning (gefaseerde ontwikkeling)"
+
+toepasbaar_bij:
+  - "nieuwe_aanleg"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "hoog"
+
+waarom: |
+  Natuurlijke bosvorming: pioniers → hoofdbomen. Nabootsen = sneller resultaat.
+
+hoe: |
+  FASE 1 (jaar 0-5): PIONIERS (snelle groei, bodemverbetering)
+- Berk: 1-2m/jaar groei, bladafval verbetert bodem
+- Els: stikstoffixatie, verbetert bodem
+- Wilg: zeer snel, windbreking
+
+FASE 2 (jaar 3-10): HOOFDBOMEN planten tussen pioniers
+- Eik: groeit langzaam, pioniers geven beschutting
+- Beuk: schaduw-tolerant, groeit door pioniers
+- Linde: groeit rustig door
+
+FASE 3 (jaar 10-20): PIONIERS verwijderen (dunning)
+- Dunnen birken (te dicht)
+- Hoofdbomen krijgen ruimte
+- Systeem bereikt eindstadium
+
+VOORDEEL:
+- Snelle dekking (pioniers)
+- Beschutting voor gevoelige soorten
+- Bodemverbetering (berk, els)
+- Natuurlijk proces
+
+effect_tijdlijn:
+  direct: "50% sneller volgroeid bos, betere bodem"
+
+
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Praktisch principe - direct toepasbaar"

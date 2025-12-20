@@ -1,0 +1,61 @@
+titel: Daphne mezereum
+wetenschappelijke_naam: Daphne mezereum
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 5
+  nattigheid_tolerantie_score: 5
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - halfschaduw
+  wind_tolerantie: verdraagt matige wind
+  extreme_condities: []
+groei:
+  hoogte: 1 - 2 m
+  hoogte_range:
+    min: 1.0
+    max: 2.0
+    tekst: 1 - 2 m
+  breedte: 1 - 2 m
+  breedte_range:
+    min: 1.0
+    max: 2.0
+    tekst: 1 - 2 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 4A - 7B
+functie: 'Type: struik. '
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - nectarwaarde 1
+  - pollenwaarde 0
+praktisch:
+  toepassingen:
+  - park
+  - grote tuin
+  - kleine tuin
+  - patiotuin
+  - begraafplaats
+  verharding_tolerantie: []
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / damezere-daphne-mezereum'
+  aangevuld: Basis TreeEbb

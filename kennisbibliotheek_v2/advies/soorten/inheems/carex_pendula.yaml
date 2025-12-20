@@ -1,0 +1,70 @@
+titel: Carex pendula
+wetenschappelijke_naam: Carex pendula
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 3
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zware klei
+    - lichte klei
+    - lemige grond
+    - alle grondsoorten
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 0,75 - 1,5 m
+  hoogte_range:
+    min: 0.75
+    max: 1.5
+    tekst: 0,75 - 1,5 m
+  breedte: 1 - 1 m
+  breedte_range:
+    min: 1.0
+    max: 1.0
+    tekst: 1 - 1 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 5A - 9B
+functie: 'Type: struik. landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb: []
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - patiotuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / capendul-carex-pendula'
+  aangevuld: Basis TreeEbb

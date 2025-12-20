@@ -1,0 +1,74 @@
+titel: Salix caprea
+wetenschappelijke_naam: Salix caprea
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 5
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 5 - 8 m
+  hoogte_range:
+    min: 5.0
+    max: 8.0
+    tekst: 5 - 8 m
+  breedte: 3 - 5 m
+  breedte_range:
+    min: 3.0
+    max: 5.0
+    tekst: 3 - 5 m
+  kroonvorm: ovaal
+  kroonstructuur: halfopen
+  winterhardheid: 4A - 9B
+functie: Boswilg - belangrijkste vroege nectarbron (maart). Grote katjes.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - nectarwaarde 5
+  - pollenwaarde 5
+  insecten: ZEER belangrijk - eerste nectar
+  bijen: Eerste nectar maart
+  score: 10/10
+  bloei: Maart (grote gele katjes)
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  - windsingel
+  - wadi
+  - kustgebied
+  verharding_tolerantie: []
+klimaat_toekomst:
+  droogte_score: 5
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / sacaprea-salix-caprea'
+  aangevuld: Ja

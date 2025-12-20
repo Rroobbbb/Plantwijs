@@ -1,0 +1,49 @@
+titel: Terp (verhoging in polder)
+code: bknsn_terp1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Zeekleigebied
+ontstaansgeschiedenis:
+  periode: Holoceen/Pleistoceen
+  proces: Ronde/ovale heuvel
+  beschrijving: Deze landvorm ontstond door natuurlijke processen in het verleden.
+landvorm:
+  reliëf:
+    vorm: Kunstmatige verhoging
+    hoogtebereik: 0-5m NAP
+    helling: Variabel (kunstmatig)
+  positie_in_landschap:
+    ligging: Hoogste punt in polder
+    beschrijving: Ronde/ovale heuvel
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog (verhoogd boven grondwater)
+typische_bodem:
+  types: Klei (opgebracht)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'BESTE plek in polder! Droog, geen wateroverlast. Unieke kans.
+
+    '
+  ontwerp_uitgangspunten:
+  - NOOIT betreden bij nat (permanente verdichting)
+  - 'Op verhogingen (terp/wierde): veel mogelijk'
+  - 'In laagtes: drainage overwegen'
+duiding:
+  rapporttekst: '**Terp (verhoging in polder)**
+
+
+    Ronde/ovale heuvel
+
+
+    Water: Droog (verhoogd boven grondwater)
+
+    Bodem: Klei (opgebracht)
+
+
+    Advies: BESTE plek in polder! Droog, geen wateroverlast. Unieke kans.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

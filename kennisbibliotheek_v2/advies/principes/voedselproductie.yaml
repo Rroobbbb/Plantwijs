@@ -1,0 +1,45 @@
+titel: "Voedselproductie integreren"
+
+toepasbaar_bij:
+  - "voedsel_wens"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "hoog"
+
+waarom: |
+  Food forests: voedsel + biodiversiteit + laag onderhoud. Meer dan alleen sier.
+
+hoe: |
+  BOMEN (groot, langzaam):
+- Appel, peer (jaar 5-7)
+- Walnoot (jaar 10-15)
+- Tamme kastanje (jaar 10+)
+- Hazelnoot (jaar 5-7)
+
+STRUIKEN (snel resultaat):
+- Framboos (jaar 2)
+- Braam (jaar 2)
+- Rode bes, zwarte bes (jaar 3)
+- Sleedoorn (slee, jaar 5)
+
+COMBINEER lagen:
+- Boven: notenbomen
+- Midden: fruit struiken
+- Onder: wilde aardbei, daslook
+
+PERMACULTUUR principes:
+- Plant eens, oogst decennia
+- Zelfvoorzienend systeem
+- Geen omgraven
+
+effect_tijdlijn:
+  direct: "Kilo's fruit/noten per jaar, zelfvoorzienend"
+
+
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Praktisch principe - direct toepasbaar"

@@ -1,0 +1,82 @@
+titel: Carpinus betulus
+wetenschappelijke_naam: Carpinus betulus
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 8
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+    - alle grondsoorten
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt hitte
+groei:
+  hoogte: 15 - 20 m
+  hoogte_range:
+    min: 15.0
+    max: 20.0
+    tekst: 15 - 20 m
+  breedte: 12 - 15 m
+  breedte_range:
+    min: 12.0
+    max: 15.0
+    tekst: 12 - 15 m
+  kroonvorm: breed eirond
+  kroonstructuur: gesloten
+  winterhardheid: 5A - 8B
+  snelheid_jaar_1_5: 25-40cm/jaar
+  bijzonderheid: Houdt blad (bruin) in winter
+functie: Alternatief voor beuk bij droge omstandigheden. Wintergroen effect.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  insecten: 150+ soorten
+  score: 7/10
+praktisch:
+  toepassingen:
+  - laan
+  - park
+  - groenstrook
+  - daktuin
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  verharding_tolerantie:
+  - geen
+  gebruik_haag: Zeer geschikt, dicht
+klimaat_toekomst:
+  droogte_score: 8
+  hitte_score: 7
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / cabetulu-carpinus-betulus'
+  aangevuld: Ja

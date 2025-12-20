@@ -1,0 +1,77 @@
+titel: Salix alba
+wetenschappelijke_naam: Salix alba
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 3
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 15 - 25 m
+  hoogte_range:
+    min: 15.0
+    max: 25.0
+    tekst: 15 - 25 m
+  breedte: 12 - 18 m
+  breedte_range:
+    min: 12.0
+    max: 18.0
+    tekst: 12 - 18 m
+  kroonvorm: ovaal / eirond
+  kroonstructuur: open
+  winterhardheid: 4A - 9B
+  snelheid_jaar_1_5: 100-150cm/jaar (extreem snel!)
+functie: Schietwilg - zeer snelle groei. Voor natte standplaatsen.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - uilen
+  - nectarwaarde 5
+  - pollenwaarde 5
+  insecten: 250+ soorten
+  score: 8/10
+  bloei: Maart-april (katjes, eerste nectar)
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  - wadi
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst:
+  droogte_score: 3
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / saalba-salix-alba'
+  aangevuld: Ja

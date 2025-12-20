@@ -1,0 +1,46 @@
+titel: Veenweidegebied
+code: bknsn_veen3
+categorie: NSN - Geomorfologisch
+fgr_relatie: Laagveengebied
+ontstaansgeschiedenis:
+  proces: Ontwaterd veengebied
+landvorm:
+  reliëf:
+    vorm: Zeer vlak
+    hoogtebereik: -3 tot 0m NAP
+    helling: <0.5%
+  positie_in_landschap:
+    ligging: Laag
+    beschrijving: Vlak met sloten
+hydromorfologie:
+  afwatering:
+    beschrijving: Hoog grondwater, zakkend
+typische_bodem:
+  types: Veen met kleidek
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'NAT + zakkend. Drainage nodig. Els, wilg op perceelsranden.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het reliëf, niet ertegen
+  - Benut microreliëf voor variatie
+  - Kies soorten passend bij waterstand en bodem
+duiding:
+  rapporttekst: '**Veenweidegebied**
+
+
+    Vlak met sloten
+
+
+    Water: Hoog grondwater, zakkend
+
+    Bodem: Veen met kleidek
+
+
+    NAT + zakkend. Drainage nodig. Els, wilg op perceelsranden.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

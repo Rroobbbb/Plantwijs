@@ -1,0 +1,56 @@
+titel: "Dekzandrug"
+code: "bknsn_dz1"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Dekzandgebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Windafzetting ijstijd"
+  beschrijving: |
+    Windafzetting ijstijd
+
+landvorm:
+  reliëf:
+    vorm: "Golvend (rug)"
+    hoogtebereik: "5-25m NAP"
+    helling: "1-5%"
+  
+  positie_in_landschap:
+    ligging: "Hoog in landschap"
+    beschrijving: "Langgerekte rug NW-ZO"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Snel afstromend naar laagtes"
+
+typische_bodem:
+  types: "Podzol, vaaggrond"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    Droogte op rug, vochtiger in flanken. Benut hoogteverschil!
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Dekzandrug**
+    
+    Dit is een Golvend (rug) landvorm op 5-25m NAP.
+    
+    Kenmerkend:
+    - Langgerekte rug NW-ZO
+    - Snel afstromend naar laagtes
+    - Bodem: Podzol, vaaggrond
+    
+    Voor beplanting betekent dit:
+    Droogte op rug, vochtiger in flanken. Benut hoogteverschil!
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

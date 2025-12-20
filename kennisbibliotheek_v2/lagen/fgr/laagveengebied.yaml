@@ -1,0 +1,49 @@
+titel: Laagveengebied
+code: fgr_laagveengebied
+regio: West-Nederland (Groene Hart, Hollandse plassengebied)
+geografie:
+  karakteristiek: 'Veengrond, sloten, plasjes, zakkende bodem
+
+    '
+bodem:
+  beschrijving: Veen, vaak met kleidek, zakkend
+hydrologie:
+  beschrijving: Zeer nat (Gt I-II), permanent hoog grondwater
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: 'Accepteer moeras OF intensieve drainage. Zakkende bodem!
+
+    '
+  soorten_specifiek:
+    geschikt: Els, wilg, moerasplanten. Normale bomen moeilijk
+  ontwerp_uitgangspunten:
+  - Accepteer NAT (moeras werkt best)
+  - OF drain intensief (veen zakt door)
+  - NOOIT betreden bij nat
+duiding:
+  rapporttekst: '**Laagveengebied**
+
+
+    Karakteristiek: Veengrond, sloten, plasjes, zakkende bodem
+
+
+    Bodem: Veen, vaak met kleidek, zakkend
+
+    Water: Zeer nat (Gt I-II), permanent hoog grondwater
+
+
+    Geschikte soorten: Els, wilg, moerasplanten. Normale bomen moeilijk
+
+
+    Advies: Accepteer moeras OF intensieve drainage. Zakkende bodem!
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact FGR - geografische context
+landschappelijke_context:
+  karakteristiek_beeld:
+  - Zie geografie karakteristiek
+  erfbeplanting_past_bij:
+  - Inheemse soorten passend bij landschap

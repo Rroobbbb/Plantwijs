@@ -1,0 +1,45 @@
+titel: Randzone IJsselmeerpolders
+code: bknsn_ijssel2
+categorie: NSN - Geomorfologisch
+fgr_relatie: IJsselmeergebied
+ontstaansgeschiedenis:
+  periode: 20e eeuw
+  proces: Overgangszone tussen oud land en nieuwe polder
+  beschrijving: De randzone is het overgangsgebied tussen de nieuw ingepolderde gronden
+    en het oude land, met gemengde kenmerken.
+landvorm:
+  reliëf:
+    vorm: Zwak golvend
+    hoogtebereik: Variabel
+    helling: 1-3%
+  positie_in_landschap:
+    ligging: Rand
+    beschrijving: Overgang polder naar oud land
+hydromorfologie:
+  afwatering:
+    beschrijving: Wisselend
+typische_bodem:
+  types: Mix klei en zand
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Overgang oud-nieuw. Gevarieerder dan binnenpolder.
+
+    '
+  ontwerp_uitgangspunten:
+  - Jonge bodem - nog in ontwikkeling
+  - Wind is uitdaging (open landschap)
+  - Drainage is meestal goed geregeld
+duiding:
+  rapporttekst: '**Randzone IJsselmeerpolders**
+
+
+    Overgang polder naar oud land
+
+
+    Overgang oud-nieuw. Gevarieerder dan binnenpolder.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

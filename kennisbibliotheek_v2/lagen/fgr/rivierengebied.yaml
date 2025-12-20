@@ -1,0 +1,49 @@
+titel: Rivierengebied
+code: fgr_rivierengebied
+regio: Gelderland, Utrecht (Betuwe, Land van Maas en Waal)
+geografie:
+  karakteristiek: 'Komklei en oeverwallen langs rivieren, kronkelwaarden
+
+    '
+bodem:
+  beschrijving: Lichte rivierklei (ideaal!), lokaal zand
+hydrologie:
+  beschrijving: Matig tot nat (Gt III-V), wisselend
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: 'Uitstekend! Beste landbouwgrond na löss.
+
+    '
+  soorten_specifiek:
+    geschikt: Vrijwel alles - ideale bodem! Eik, linde, fruitbomen
+  ontwerp_uitgangspunten:
+  - Oeverwal (hoog) vs kom (laag) microreliëf
+  - 'Uiterwaard: alleen overstroming-tolerant'
+  - Benut vruchtbare rivierklei
+duiding:
+  rapporttekst: '**Rivierengebied**
+
+
+    Karakteristiek: Komklei en oeverwallen langs rivieren, kronkelwaarden
+
+
+    Bodem: Lichte rivierklei (ideaal!), lokaal zand
+
+    Water: Matig tot nat (Gt III-V), wisselend
+
+
+    Geschikte soorten: Vrijwel alles - ideale bodem! Eik, linde, fruitbomen
+
+
+    Advies: Uitstekend! Beste landbouwgrond na löss.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact FGR - geografische context
+landschappelijke_context:
+  karakteristiek_beeld:
+  - Zie geografie karakteristiek
+  erfbeplanting_past_bij:
+  - Inheemse soorten passend bij landschap

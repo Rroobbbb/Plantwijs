@@ -1,0 +1,95 @@
+titel: Acer campestre
+wetenschappelijke_naam: Acer campestre
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+    - alle grondsoorten
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt hitte
+groei:
+  hoogte: 10 - 12 m
+  hoogte_range:
+    min: 10.0
+    max: 12.0
+    tekst: 10 - 12 m
+  breedte: 7 - 8 m
+  breedte_range:
+    min: 7.0
+    max: 8.0
+    tekst: 7 - 8 m
+  kroonvorm: eirond
+  kroonstructuur: gesloten
+  winterhardheid: 5A - 9A
+  snelheid_jaar_1_5: 30-50cm/jaar
+functie: Zeer robuuste boom voor moeilijke standplaatsen. Klimaatbestendig.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - nectarwaarde 5
+  - pollenwaarde 5
+  insecten: 100+ soorten
+  bijen: Bloei voorjaar
+  score: 8/10
+praktisch:
+  toepassingen:
+  - laan
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+  gebruik_haag: Uitstekend
+  extreme_condities:
+  - strooizout
+  - droogte
+  - hitte
+klimaat_toekomst:
+  droogte_score: 9
+  hitte_score: 9
+  toekomst_beoordeling: Uitstekend
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / accampes-acer-campestre'
+  aangevuld: Ja

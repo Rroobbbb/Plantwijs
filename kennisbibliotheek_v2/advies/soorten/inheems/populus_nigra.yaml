@@ -1,0 +1,63 @@
+titel: Populus nigra
+wetenschappelijke_naam: Populus nigra
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 3
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt luchtverontreiniging
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 25 - 30 m
+  hoogte_range:
+    min: 25.0
+    max: 30.0
+    tekst: 25 - 30 m
+  breedte: 10 - 15 m
+  breedte_range:
+    min: 10.0
+    max: 15.0
+    tekst: 10 - 15 m
+  kroonvorm: breed piramidaal
+  kroonstructuur: halfopen
+  winterhardheid: 4A - 8B
+functie: 'Type: pionier. landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - vlinders
+praktisch:
+  toepassingen:
+  - park
+  - verkeer, industrie
+  - landschap
+  - windsingel
+  - wadi
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / ponigra-populus-nigra'
+  aangevuld: Basis TreeEbb

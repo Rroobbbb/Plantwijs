@@ -1,0 +1,49 @@
+titel: Zeekleigebied
+code: fgr_zeekleigebied
+regio: Noord- en West-Nederland (polders)
+geografie:
+  karakteristiek: 'Vlak polderland, zware klei, diep beneden NAP, dijken
+
+    '
+bodem:
+  beschrijving: Zware zeeklei, kalkrijk, voedselrijk
+hydrologie:
+  beschrijving: Hoog grondwater (Gt II-IV), drainage essentieel
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: 'Drainage vaak nodig. Vermijd betreden bij nat!
+
+    '
+  soorten_specifiek:
+    geschikt: Wilg, els, eik (met drainage), meidoorn
+  ontwerp_uitgangspunten:
+  - NOOIT betreden bij nat (verdichting!)
+  - Zoek verhogingen (terp, kreekresten)
+  - Drainage meestal nodig in vlakke polders
+duiding:
+  rapporttekst: '**Zeekleigebied**
+
+
+    Karakteristiek: Vlak polderland, zware klei, diep beneden NAP, dijken
+
+
+    Bodem: Zware zeeklei, kalkrijk, voedselrijk
+
+    Water: Hoog grondwater (Gt II-IV), drainage essentieel
+
+
+    Geschikte soorten: Wilg, els, eik (met drainage), meidoorn
+
+
+    Advies: Drainage vaak nodig. Vermijd betreden bij nat!
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact FGR - geografische context
+landschappelijke_context:
+  karakteristiek_beeld:
+  - Zie geografie karakteristiek
+  erfbeplanting_past_bij:
+  - Inheemse soorten passend bij landschap

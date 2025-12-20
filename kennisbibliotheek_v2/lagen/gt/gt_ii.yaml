@@ -1,0 +1,240 @@
+titel: "GWT II - Nat"
+code: "gt_ii"
+categorie: "Nat"
+
+grondwaterstand:
+  gemiddeld_hoogste_grondwaterstand:
+    afkorting: "GHG"
+    diepte_cm: "<25 cm onder maaiveld"
+    periode: "December-maart"
+    beschrijving: |
+      Grondwater komt in winter zeer dicht bij maaiveld (binnen 25cm). 
+      In zeer natte periodes kan het tijdelijk aan maaiveld komen.
+  
+  gemiddeld_laagste_grondwaterstand:
+    afkorting: "GLG"
+    diepte_cm: "50-80 cm onder maaiveld"
+    periode: "Augustus-september"
+    beschrijving: |
+      In zomer zakt grondwater weg naar 50-80cm diepte. Nog relatief hoog 
+      vergeleken met drogere grondwatertrappen, maar wel seizoensverschil.
+  
+  fluctuatie:
+    amplitude: "50-80 cm"
+    stabiliteit: "Nat (winter) tot vochtig (zomer)"
+    beschrijving: |
+      Duidelijke seizoensfluctuatie van zeer nat (winter, 25cm) naar nog 
+      redelijk nat (zomer, 60-80cm). Grondwater blijft altijd binnen bereik.
+
+waterregime:
+  type: "Kwel of slechte drainage"
+  
+  drainage:
+    natuurlijk: "Slecht"
+    kunstmatig: "Vaak aanwezig of sterk aanbevolen"
+    beschrijving: |
+      Water loopt slecht af. Drainage verbetert situatie aanzienlijk, 
+      vooral voor landbouw of bewoning. Voor natuur vaak niet nodig.
+  
+  droogtegevoeligheid:
+    periode: "Zeer zelden"
+    ernst: "Laag"
+    beschrijving: |
+      Ook in droge zomers blijft grondwater relatief hoog (60-80cm). 
+      Diepe wortels kunnen water bereiken. Droogte zelden probleem.
+  
+  nattigheid:
+    periode: "December-april (vooral winter/voorjaar)"
+    ernst: "Hoog"
+    drainage_problemen: "Ja, zonder drainage wateroverlast"
+    beschrijving: |
+      In winter staat grondwater zeer hoog (binnen 25cm). Grond verzadigd, 
+      weinig zuurstof in wortelzone. Alleen nat-tolerante soorten overleven.
+  
+  beschikbaar_water_planten:
+    wortelzone: "0-25cm (winter) tot 0-80cm (zomer)"
+    hoeveelheid: "Ruim - grondwater altijd binnen bereik"
+    beschrijving: |
+      Planten hebben altijd water beschikbaar. In winter staat grondwater 
+      zo hoog dat wortels niet dieper kunnen (geen zuurstof). In zomer 
+      meer ruimte, maar grondwater blijft bereikbaar.
+
+seizoensdynamiek:
+  winter_voorjaar:
+    grondwaterstand: "10-25cm diep"
+    toestand: "Zeer nat, verzadigd"
+    risico: "Wateroverlast, wortels beperkt tot bovenste 25cm, zuurstofgebrek"
+  
+  lente:
+    grondwaterstand: "30-50cm (dalend)"
+    toestand: "Nog nat, maar begint te draineren"
+    opmerking: "Plant bij voorkeur eind april/begin mei als grond droger is"
+  
+  zomer:
+    grondwaterstand: "50-80cm"
+    toestand: "Vochtig, optimaal voor nat-minnende soorten"
+    risico: "Weinig, watervoorziening goed"
+  
+  herfst:
+    grondwaterstand: "40-60cm (stijgend)"
+    toestand: "Wordt natter"
+    opmerking: "Draagkracht neemt snel af"
+
+betekenis_voor_erfbeplanting:
+  water_implicaties: |
+    **Nat tot zeer nat** - grondwater in winter zeer hoog (25cm).
+    
+    **Betekenis voor planten:**
+    - Winter: Wortels kunnen max 20-25cm diep (te nat dieper)
+    - Zomer: Wortels kunnen dieper (60-80cm), grondwater bereikbaar
+    - Water nooit probleem, eerder te veel
+    - Zuurstofgebrek bij wortels in winter
+    
+    **Kies soorten die:**
+    - Natte voeten verdragen (vooral winter!)
+    - Oppervlakkige beworteling accepteren
+    - Tegen zuurstofarm milieu kunnen
+    
+    **Mogelijkheden:**
+    - Zonder maatregelen: Beperkt tot nat-tolerante soorten
+    - Met drainage: Veel meer mogelijkheden
+    - Op microverhogingen (30cm): Normale soorten mogelijk
+    
+    **Voordelen:**
+    - Nooit watergift nodig
+    - Altijd voldoende vocht
+    
+    **Nadelen:**
+    - Beperkte soortkeuze zonder drainage
+    - Slechte draagkracht in winter/voorjaar
+    - Veel bomen verdragen dit niet (eik, beuk, den)
+  
+  water_beheer:
+    watergeven:
+      nodig: "Nee, alleen eerste weken na aanplant"
+      frequentie: "Zeer zelden"
+      hoeveelheid: "Minimaal"
+    
+    drainage:
+      nodig: "Sterk aanbevolen voor meer plantmogelijkheden"
+      type: "Diepe drainage (80-100cm) of greppels"
+      reden: "Verlaagt GHG tot 40-50cm, veel meer soorten mogelijk"
+      effect: "Verandert Gt II naar iets tussen Gt III en Gt V"
+  
+  seizoens_aandacht:
+    - "Winter/voorjaar: Vermijd betreden (te nat, verdichting)"
+    - "Plant in april-mei (na afname winterwater)"
+    - "Zomer: Ideaal, geen aandacht nodig"
+    - "Herfst: Plant voor eind oktober (daarna te nat)"
+  
+  aandachtspunten:
+    - "Plant bij voorkeur op microverhogingen (20-30cm)"
+    - "Kies nat-tolerante soorten: els, wilg, es, populier"
+    - "Vermijd: eik, beuk, naaldbomen (te nat)"
+    - "Drainage overweeg serieus - verruimt mogelijkheden enorm"
+    - "Zonder drainage: accepteer beperkingen"
+
+plantmogelijkheden:
+  zonder_drainage:
+    zeer_geschikt:
+      - "Zwarte els (Alnus glutinosa) - specialist"
+      - "Wilgen (Salix alba, S. caprea) - houden van nat"
+      - "Es (Fraxinus excelsior) - verdraagt nat redelijk"
+      - "Gewone vogelkers (Prunus padus)"
+    
+    matig_geschikt:
+      - "Ratelpopulier (Populus tremula) - nat-tolerant"
+      - "Zachte berk (Betula pubescens) - beter dan ruwe berk"
+      - "Meidoorn (Crataegus monogyna) - redelijk tolerant"
+    
+    niet_geschikt:
+      - "Zomereik (te nat in winter)"
+      - "Beuk (te nat)"
+      - "Grove den (te nat)"
+      - "Ruwe berk (wil droger)"
+  
+  met_drainage:
+    - "Veel meer soorten mogelijk"
+    - "Ook eik mogelijk (met voorbehoud)"
+    - "Meeste vruchtbomen"
+    - "Normale haagplanten"
+  
+  op_verhogingen_30cm:
+    - "Vrijwel alle normale erfsoorten"
+    - "Inclusief eik, beuk (op verhoging)"
+
+indicator_vegetatie:
+  natuurlijk:
+    - "Pitrus = nat"
+    - "Grote wederik = nat"
+    - "Moerasspirea = nat"
+    - "Dotterbloem = nat tot vochtig"
+    - "Pinksterbloem = vochtig"
+  
+  onkruiden:
+    - "Ridderzuring = nat"
+    - "Kruipende boterbloem = vochtig tot nat"
+    - "Penningkruid = vochtig"
+
+bronnen:
+  primair:
+    - id: "bro_grondwatertrap"
+      context: "Gt-classificatie"
+
+duiding:
+  rapporttekst: |
+    **Uw locatie is NAT**
+    
+    Het grondwater staat hier in de winter zeer hoog - binnen 25 centimeter 
+    van het maaiveld. In de zomer zakt het weg naar 50-80 centimeter diepte, 
+    maar dat is nog steeds relatief hoog. Dit betekent dat de grond vrijwel 
+    het hele jaar vochtig tot nat is.
+    
+    **Wat betekent dit voor uw beplanting?**
+    
+    De hoge grondwaterstand in winter beperkt welke bomen en struiken u kunt 
+    planten. Veel soorten verdragen geen "natte voeten" en zullen slecht 
+    groeien of zelfs afsterven. U moet kiezen voor soorten die specifiek 
+    tegen natte omstandigheden kunnen.
+    
+    **Geschikte soorten zonder maatregelen:**
+    
+    - **Zwarte els** - Dé boom voor natte plekken, verbetert zelfs de bodem
+    - **Wilgen** - Alle soorten wilg houden van nat
+    - **Es** - Verdraagt natte omstandigheden redelijk goed
+    - **Gewone vogelkers** - Prachtige bloei, verdraagt nat
+    
+    **Niet geschikt:**
+    - Eik, beuk, naaldbomen - deze willen het droger
+    
+    **Opties om meer mogelijkheden te krijgen:**
+    
+    **1. Drainage aanleggen (BESTE optie voor erfbeplanting)**
+    - Laat professioneel drainage aanleggen
+    - Verlaagt grondwater met 20-30cm
+    - Veel meer soorten worden dan mogelijk
+    - Inclusief fruitbomen, eik (met voorbehoud)
+    
+    **2. Plant op verhogingen (TUSSENOPLOSSING)**
+    - Maak heuveltjes van 30cm hoog
+    - Plant bomen/struiken daarop
+    - Wortels staan dan boven hoogste grondwater
+    - Meer soorten mogelijk zonder drainage
+    
+    **3. Accepteer beperkingen (GOEDKOOPST)**
+    - Kies alleen nat-tolerante soorten
+    - Els, wilg, vogelkers
+    - Werkt met de natuur mee
+    - Laagste kosten
+    
+    **Praktische tips:**
+    
+    - Plant in april-mei (grond is dan wat droger)
+    - Vermijd betreden in winter (te nat, verdichting)
+    - Watergeven is vrijwel nooit nodig
+    - Overweeg drainage als u meer keuze wilt
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"

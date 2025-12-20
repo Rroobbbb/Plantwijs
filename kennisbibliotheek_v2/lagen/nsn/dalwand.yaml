@@ -1,0 +1,56 @@
+titel: "Dalwand (helling heuvelland)"
+code: "bknsn_heuvl2"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Heuvelland"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Erosie door beekjes"
+  beschrijving: |
+    Erosie door beekjes
+
+landvorm:
+  reliëf:
+    vorm: "Steile helling"
+    hoogtebereik: "Variabel"
+    helling: "5-30%+"
+  
+  positie_in_landschap:
+    ligging: "Helling"
+    beschrijving: "Helling"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Droog (Z-helling), vochtiger (N-helling)"
+
+typische_bodem:
+  types: "Leemgrond, krijtgrond"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    MICROKLIMAAT belangrijk! Z-helling warm+droog, N-helling koel+vochtig.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Dalwand (helling heuvelland)**
+    
+    Dit is een Steile helling landvorm op Variabel.
+    
+    Kenmerkend:
+    - Helling
+    - Droog (Z-helling), vochtiger (N-helling)
+    - Bodem: Leemgrond, krijtgrond
+    
+    Voor beplanting betekent dit:
+    MICROKLIMAAT belangrijk! Z-helling warm+droog, N-helling koel+vochtig.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

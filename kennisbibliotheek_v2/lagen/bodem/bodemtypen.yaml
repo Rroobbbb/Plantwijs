@@ -1,0 +1,99 @@
+podzolgrond:
+  titel: Podzolgrond
+  beschrijving: Uitspoelingsbodem op zand, gekenmerkt door arme bovengrond en inspoelingslaag die worteling
+    kan beperken.
+  water_en_beworteling: Vaak droog tot matig droog; beperkte nutriëntenbeschikbaarheid.
+  betekenis_voor_erfbeplanting: Kies soorten die tegen armoede en droogte kunnen; organische-stofopbouw
+    essentieel.
+  bronnen:
+  - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+  duiding:
+    rapporttekst: 'Podzolgrond. Uitspoelingsbodem op zand, gekenmerkt door arme bovengrond en inspoelingslaag
+      die worteling kan beperken.
+
+
+      Voor water en beworteling geldt: Vaak droog tot matig droog; beperkte nutriëntenbeschikbaarheid.
+
+
+      Voor beplanting en beheer betekent dit: Kies soorten die tegen armoede en droogte kunnen; organische-stofopbouw
+      essentieel.'
+enkeerdgrond:
+  titel: Enkeerdgrond (esdek)
+  beschrijving: Door eeuwenlange bemesting opgehoogde akkerbodem met dikke humusrijke bovengrond.
+  water_en_beworteling: Goede beworteling; ondergrond vaak zandiger en droger.
+  betekenis_voor_erfbeplanting: Zeer geschikt voor boomgaarden, erven en hagen; let op droogte onderin
+    profiel.
+  bronnen:
+  - jongmans_a_g_e_a_2013_landschappen_van_nederland_g
+  duiding:
+    rapporttekst: 'Enkeerdgrond (esdek). Door eeuwenlange bemesting opgehoogde akkerbodem met dikke humusrijke
+      bovengrond.
+
+
+      Voor water en beworteling geldt: Goede beworteling; ondergrond vaak zandiger en droger.
+
+
+      Voor beplanting en beheer betekent dit: Zeer geschikt voor boomgaarden, erven en hagen; let op droogte
+      onderin profiel.'
+beekeerdgrond:
+  titel: Beekeerdgrond
+  beschrijving: Natte bodem in beekdalen met periodieke overstroming en afzetting.
+  water_en_beworteling: Hoge Gt; natte tot zeer natte wortelzone.
+  betekenis_voor_erfbeplanting: Gebruik vocht- en overstromingstolerante soorten.
+  bronnen:
+  - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
+  duiding:
+    rapporttekst: 'Beekeerdgrond. Natte bodem in beekdalen met periodieke overstroming en afzetting.
+
+
+      Voor water en beworteling geldt: Hoge Gt; natte tot zeer natte wortelzone.
+
+
+      Voor beplanting en beheer betekent dit: Gebruik vocht- en overstromingstolerante soorten.'
+moerige_grond:
+  titel: Moerige grond
+  beschrijving: Overgangsbodem tussen mineraal en veen; dunne veenlaag op zand of klei.
+  water_en_beworteling: Vaak nat, lage draagkracht.
+  betekenis_voor_erfbeplanting: Lichte structuren; vermijd zware bomen.
+  bronnen:
+  - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
+  duiding:
+    rapporttekst: 'Moerige grond. Overgangsbodem tussen mineraal en veen; dunne veenlaag op zand of klei.
+
+
+      Voor water en beworteling geldt: Vaak nat, lage draagkracht.
+
+
+      Voor beplanting en beheer betekent dit: Lichte structuren; vermijd zware bomen.'
+vaaggrond:
+  titel: Vaaggrond (vlakvaag-/holtpodzolachtig)
+  beschrijving: Jonge of zwak ontwikkelde bodems zonder duidelijke profielvorming.
+  water_en_beworteling: Sterk afhankelijk van textuur en Gt.
+  betekenis_voor_erfbeplanting: Altijd combineren met bodemtextuur en Gt voor advies.
+  bronnen:
+  - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+  duiding:
+    rapporttekst: 'Vaaggrond (vlakvaag-/holtpodzolachtig). Jonge of zwak ontwikkelde bodems zonder duidelijke
+      profielvorming.
+
+
+      Voor water en beworteling geldt: Sterk afhankelijk van textuur en Gt.
+
+
+      Voor beplanting en beheer betekent dit: Altijd combineren met bodemtextuur en Gt voor advies.'
+antropogene_bodem:
+  titel: Antropogene bodem (vergraven/opgebracht)
+  beschrijving: Door mens sterk gewijzigde bodem; profiel en waterhuishouding verstoord.
+  water_en_beworteling: Onvoorspelbaar; vaak storende lagen.
+  betekenis_voor_erfbeplanting: Altijd maatwerk; profielinspectie aanbevolen.
+  bronnen:
+  - wur_toelichting_bodem_en_grondwaterkartering
+  duiding:
+    rapporttekst: 'Antropogene bodem (vergraven/opgebracht). Door mens sterk gewijzigde bodem; profiel
+      en waterhuishouding verstoord.
+
+
+      Voor water en beworteling geldt: Onvoorspelbaar; vaak storende lagen.
+
+
+      Voor beplanting en beheer betekent dit: Altijd maatwerk; profielinspectie aanbevolen.'

@@ -1,0 +1,60 @@
+titel: Salix repens
+wetenschappelijke_naam: Salix repens
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - alle grondsoorten
+  licht:
+  - zon
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 0 - 1 m
+  hoogte_range:
+    min: 0.0
+    max: 1.0
+    tekst: 0 - 1 m
+  breedte: 0 - 1 m
+  breedte_range:
+    min: 0.0
+    max: 1.0
+    tekst: 0 - 1 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 4A - 8B
+functie: 'Type: pionier. ecobeplanting / stedelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - kleine tuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  - wadi
+  verharding_tolerantie: []
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / sarepens-salix-repens'
+  aangevuld: Basis TreeEbb

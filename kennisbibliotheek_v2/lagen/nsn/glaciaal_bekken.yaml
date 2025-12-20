@@ -1,0 +1,46 @@
+titel: Glaciaal bekken
+code: bknsn_glac2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  proces: Uitschuring door landijs
+landvorm:
+  reliëf:
+    vorm: Kom (laagte)
+    hoogtebereik: Variabel
+    helling: Flauw naar centrum
+  positie_in_landschap:
+    ligging: Laagte
+    beschrijving: Komvormige laagte
+hydromorfologie:
+  afwatering:
+    beschrijving: Nat tot zeer nat (stagnerend)
+typische_bodem:
+  types: Veen, beekeerdgrond
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Waterreservoir. Zeer nat. Accepteer nat of drain intensief.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut microreliëf voor variatie
+  - 'Bij keileem: drainage overwegen'
+  - Grote hoogteverschillen benutten
+duiding:
+  rapporttekst: '**Glaciaal bekken**
+
+
+    Komvormige laagte
+
+
+    Water: Nat tot zeer nat (stagnerend)
+
+    Bodem: Veen, beekeerdgrond
+
+
+    Waterreservoir. Zeer nat. Accepteer nat of drain intensief.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

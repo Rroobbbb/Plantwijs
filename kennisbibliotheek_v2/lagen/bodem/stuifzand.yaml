@@ -1,0 +1,192 @@
+titel: Stuifzand (actief of gefixeerd)
+code: stuifzand
+categorie: Zand - Extreem
+textuur:
+  hoofdtextuur: Zand (zeer fijn tot grof)
+  korrelgrootte: Variabel (vaak grof)
+  korrelgrootte_detail: 150-600μm
+  samenstelling:
+    zand_percentage: 95-99%
+    silt_percentage: 0-3%
+    klei_percentage: 0-2%
+    organische_stof: <0.5% (vrijwel geen)
+  beschrijving: "Puur zand, vaak grof, dat (recent) is verstuurd door wind. Vrijwel\
+    \ \ngeen organische stof. Voelt grofkorrelig en droog aan. Bij actief \nstuifzand\
+    \ kan het nog verstuiven, bij gefixeerd stuifzand is \nvegetatie aanwezig die\
+    \ het vasthoudt.\n"
+chemie:
+  pH:
+    range: 4.0-6.0
+    typisch: '5.0'
+    classificatie: Zuur
+  voedselrijkdom:
+    algemeen: Extreem arm (armste bodem van Nederland)
+    nutriënten:
+      stikstof: Vrijwel afwezig
+      fosfor: Vrijwel afwezig
+      kalium: Zeer laag
+      calcium: Zeer laag
+    beperkingen:
+    - Geen enkele nutriënten reserve
+    - Geen buffering
+    - Planten moeten het hebben van atmosferische depositie
+    - Alleen stikstoffixerende planten kunnen overleven zonder input
+  kalkgehalte:
+    aanwezig: Nee
+    type: Kalkloos
+fysisch:
+  doorlatendheid:
+    verticaal: Extreem hoog
+    K_waarde: 500-1500 cm/dag (hoogste van alle bodems)
+    beschrijving: "Extreem doorlatend. Water verdwijnt binnen minuten tot uur. Bij\
+      \ grof \nstuifzand kan water letterlijk doorheen stromen zonder vast te houden.\n"
+  vochtvasthoudend_vermogen:
+    capaciteit: Extreem laag
+    beschikbaar_water: 20-40 mm per meter bodem (laagste van NL)
+    beschrijving: "Vrijwel geen vocht vasthouden. Zonder organische stof houdt zand\
+      \ \nbijna niks vast. Plant droogt uit binnen 1-2 dagen zonder regen.\n"
+  bewortelbaarheid:
+    diepte: Zeer diep (>200cm, geen belemmeringen)
+    belemmeringen: Geen
+    beschrijving: "Perfect bewortelbaar tot extreme diepte. Zeer los, geen verdichtingen.\
+      \ \nMaar: vrijwel geen voeding en vocht.\n"
+  draagkracht:
+    droog: Zeer hoog (hard gepakt)
+    nat: Hoog (maar kan instabiel zijn bij actief stuifzand)
+    bewerkbaarheid: "Zeer lastig. Bij droog weer stuift het, bij nat weer kan het\
+      \ \ninstabiel zijn. Niet geschikt voor machines.\n"
+  verdichting:
+    gevoeligheid: Zeer laag
+    herstel: Zeer snel (wind herstructureert)
+  stuifgevoeligheid:
+    risico: Zeer hoog bij actief stuifzand, laag bij gefixeerd
+    beschrijving: "Bij kale grond en wind kan zand verstuiven. Fixatie door vegetatie\
+      \ \nis cruciaal. Grassen en kruipende planten houden zand vast.\n"
+profielopbouw:
+  beschrijving: "Geen profielontwikkeling. Homogeen zandpakket, vaak met duidelijke\
+    \ \nwindlagen (scheve gelaagdheid). Soms kleine humuslaag bovenin bij \ngefixeerd\
+    \ stuifzand.\n"
+  horizonten:
+  - horizont: A (optioneel)
+    dikte: 0-5 cm
+    kenmerken: Zeer dunne humuslaag (alleen bij gefixeerd stuifzand)
+  - horizont: C
+    dikte: '>200 cm'
+    kenmerken: Geel-grijs zand, homogeen of met windlagen
+bodem_dynamiek:
+  natuurlijke_processen:
+  - Verstuiving bij actief stuifzand (bij wind + droogte)
+  - Zeer langzame humusaccumulatie (eeuwen)
+  - Fixatie door vegetatie (grassen, kruipende planten)
+  - Extreme uitspoeling bij regen
+  tijdschaal:
+    ontwikkelingssnelheid: Zeer langzaam (millennia tot normale bodem)
+    stabiliteit: Instabiel (actief) tot stabiel (gefixeerd)
+betekenis_voor_erfbeplanting:
+  bodem_implicaties: "**EXTREEM MOEILIJKE BODEM** - de armste en droogste van Nederland.\n\
+    \n**Dit is niet geschikt voor normale erfbeplanting.**\n\n**Kenmerken:**\n- Armste\
+    \ bodem van Nederland\n- Extreem droog (water verdwijnt in minuten)\n- Stuifrisico\
+    \ bij kale grond\n- Vrijwel geen organische stof\n- Geen buffering\n\n**Eerlijk\
+    \ advies:**\n\nNormale bomen/struiken aanplanten op stuifzand is ZEER moeilijk\
+    \ en \nvraagt extreme inspanning. Zelfs met intensieve zorg is succes niet \n\
+    gegarandeerd.\n\n**Drie realistische opties:**\n\n**OPTIE 1: Natuurlijke stuifzand\
+    \ vegetatie (STERK AANBEVOLEN)**\n- Omarm de unieke situatie\n- Plant stuifzand\
+    \ specialisten\n- Zeer laag onderhoud\n- Hoge natuurwaarde\n- Past bij de bodem\n\
+    \n**Geschikte soorten:**\n- Struikhei, dopheide (prachtige bloei)\n- Jeneverbes\
+    \ (zeldzaam, groeit langzaam)\n- Buntgras, zandstruisgras\n- Heidespurrie\n- Wilde\
+    \ tijm\n- Grove den (enkele exemplaren)\n\n**OPTIE 2: Grond vervangen (ZEER DUUR)**\n\
+    - Haal 50-100cm stuifzand weg\n- Vervang met betere grond\n- Kosten: €€€€ (tienduizenden)\n\
+    - Dan zijn normale soorten mogelijk\n\n**OPTIE 3: Extreme bodemverbetering (ZEER\
+    \ INTENSIEF)**\n- Alleen als je ECHT bomen wilt\n- Zie praktisch advies hieronder\n\
+    - Lage successkans (30-50%)\n- Extreme tijds/geld investering\n"
+  bodemverbetering:
+    optie_3_details: "Als je TOCH bomen wilt (niet aanbevolen):\n\n1. **Plantgaten\
+      \ 100x100x100cm**\n   - Vul met 50% compost + 50% eigen zand\n   - Dit creëert\
+      \ lokale vruchtbare zone\n\n2. **Mulch 25cm (!) dik**\n   - Dubbel van normaal\n\
+      \   - Essentieel om vocht vast te houden\n\n3. **Druppelirrigatie VERPLICHT**\n\
+      \   - Dagelijks water eerste 3 jaar\n   - Om de dag jaar 4-10\n   - Zonder dit:\
+      \ kansloos\n\n4. **Groenbemesters intensief**\n   - Lupine voor stikstoffixatie\n\
+      \   - Vergroot jaarlijks organische stof\n\n5. **Windbrekers**\n   - Plant eerst\
+      \ heg om stuiven te stoppen\n   - Beschermt tegen uitdroging\n\n**Realistische\
+      \ verwachting:**\n- 50-70% uitval zelfs met goede zorg\n- Zeer langzame groei\
+      \ (halve snelheid normaal)\n- Permanent onderhoud nodig\n- Kosten: €1000-2000/jaar\
+      \ eerste 10 jaar\n"
+  aandachtspunten:
+  - '**OVERWEEG ZEER SERIEUS: is dit het waard?**'
+  - Stuifzand vegetatie is PRACHTIG - echt een aanrader
+  - Normale bomen is vechten tegen de natuur
+  - 'Als je toch bomen wilt: grove den is enige realistische optie'
+  - Verwacht uitval, langzame groei, permanent onderhoud
+  - Grond vervangen is vaak beter dan eindeloos proberen
+plantmogelijkheden:
+  natuurlijke_stuifzand_vegetatie:
+    zeer_geschikt:
+    - Struikhei (Calluna vulgaris) - prachtig purple augustus
+    - Dopheide (Erica tetralix) - roze bloemen
+    - Jeneverbes (Juniperus communis) - zeldzaam, waardevol
+    - Brem (Cytisus scoparius) - geel, stikstoffixatie
+    - Buntgras (Corynephorus canescens) - siergras
+    - Heidespurrie (Spergula morisonii) - bodemfixatie
+    - Wilde tijm (Thymus serpyllum) - geurig
+    enkele_bomen_mogelijk:
+    - Grove den (Pinus sylvestris) - enkele als accent (met zorg)
+  met_extreme_maatregelen_misschien:
+  - Grove den - beste kans, maar nog steeds moeilijk
+  - Zomereik - zeer lage successkans (<30%)
+  - Jeneverbes - als grote struik/kleine boom
+  niet_realistisch:
+  - Vrijwel alle andere bomen/struiken
+  - Zelfs zeer droogte-tolerante soorten hebben het moeilijk
+  - Vruchtbomen, haagplanten - vergeet het
+typische_combinaties:
+  altijd:
+  - Gt VII-VIII (extreem droog)
+  locaties:
+  - Veluwe stuifzanden
+  - Kootwijkerzand
+  - Loonse en Drunense Duinen
+  - Schoorlse Duinen (kust)
+bronnen:
+  primair:
+  - id: stiboka_1981_bodemkaart
+    context: Stuifzanden classificatie
+  - id: natuurmonumenten_stuifzandbeheer
+    context: Vegetatie stuifzanden
+duiding:
+  rapporttekst: "**U heeft STUIFZAND - een unieke maar extreme bodem**\n\nStuifzand\
+    \ is puur zand dat door de wind is opgestoven. Het is de \narmste en droogste\
+    \ bodem van Nederland - vergelijkbaar met een \nwoestijn. Er is vrijwel geen voedsel,\
+    \ water verdwijnt binnen het uur, \nen bij wind kan het zand letterlijk verstuiven.\n\
+    \n**Wees realistisch: normale erfbeplanting is hier NIET haalbaar**\n\nWe moeten\
+    \ eerlijk tegen u zijn: proberen om normale bomen en struiken \nop stuifzand te\
+    \ krijgen is vechten tegen de natuur. Zelfs met extreme \ninspanning (dagelijks\
+    \ water, tonnen compost, duizenden euro's) is de \nsuccesskans laag (30-50% uitval).\n\
+    \n**Maar er is goed nieuws: stuifzand is UNIEK en PRACHTIG!**\n\nIn plaats van\
+    \ ertegen te vechten, kunt u beter omarmen wat u heeft:\n\n**Maak een stuifzand/heide\
+    \ tuin:**\n\nDit is ECHT mooi en heeft enorme voordelen:\n\n**Prachtige soorten:**\n\
+    - **Struikhei** - Massale purple bloei in augustus (bee heaven!)\n- **Jeneverbes**\
+    \ - Zeldzaam en waardevol, groeit tot mooie struik\n- **Brem** - Gele bloemen,\
+    \ fixeert stikstof\n- **Wilde tijm** - Heerlijk geurig, paarse bloemen\n- **Enkele\
+    \ grove dennen** - Als accent (met zorg wel mogelijk)\n\n**Voordelen stuifzandtuin:**\n\
+    - **Laag onderhoud** - vrijwel geen water nodig!\n- **Uniek** - weinig mensen\
+    \ hebben dit\n- **Natuurwaarde** - reptielen, bijen, vlinders\n- **Seizoen** -\
+    \ prachtig het hele jaar\n- **Kosten** - zeer laag (€200-500 eenmalig)\n\n**Bezoek\
+    \ voor inspiratie:**\n- Kootwijkerzand (Veluwe)\n- Loonse en Drunense Duinen\n\
+    - Hoge Veluwe (heideterreinen)\n\n**Wilt u TOCH bomen proberen?**\n\nDan moet\
+    \ u weten:\n- **Alleen grove den heeft kans** (en zelfs die is moeilijk)\n- **Plantgat\
+    \ 1x1x1 meter** met 50% compost\n- **Druppelirrigatie VERPLICHT** (dagelijks water!)\n\
+    - **Mulch 25cm dik**\n- **Kosten:** €1000-2000/jaar eerste 10 jaar\n- **Verwachting:**\
+    \ 50-70% sterft toch, rest groeit zeer langzaam\n\n**Onze sterke aanbeveling:\
+    \ ga voor stuifzandtuin!**\n\nHet is echt prachtig, past bij de locatie, kost\
+    \ bijna niks, en heeft \nveel meer kans van slagen dan vechten tegen de natuur.\n\
+    \n**Praktisch:**\n\n1. **Fixeer het zand** - plant grassen/heide zodat het niet\
+    \ stuift\n2. **Enkele accenten** - 1-3 grove dennen als boskader\n3. **Heide vlakken**\
+    \ - struikhei in groepen\n4. **Jeneverbes** - enkele exemplaren (worden prachtig\
+    \ oud)\n5. **Geniet** - u heeft iets unieks!\n"
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerkingen: Wees ZEER eerlijk - dit is extreem moeilijk. Stuur naar prachtig alternatief.
+praktische_adviezen:
+  algemeen: Afgestemd op bodemtype en situatie

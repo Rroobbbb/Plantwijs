@@ -1,0 +1,130 @@
+titel: "Biodiversiteit maximaliseren"
+
+toepasbaar_bij:
+  - "alle_situaties"
+  - "natuur_prioriteit"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "zeer_hoog"
+
+waarom: |
+  Nederland heeft 50% biodiversiteitsverlies sinds 1900. Particuliere 
+  tuinen/erven vormen 10% van NL oppervlak - enorm potentieel! Een goed 
+  beplant erf kan 100+ insectensoorten, 20+ vogelsoorten en kleine 
+  zoogdieren ondersteunen.
+
+hoe: |
+  **1. Plant INHEEMSE soorten (80%+ van beplanting)**
+  - Inheemse planten = 10-50x meer insecten dan exoten
+  - Eik: 500+ insectensoorten
+  - Meidoorn: 200+ insectensoorten
+  - Sleedoorn: 150+ insectensoorten, waardplant vlinders
+  
+  **2. Creëer LAGEN (verticale structuur)**
+  - Hoge bomen (15m+): vogelnesten, vleermuizen
+  - Middelste laag (5-15m): broedbos
+  - Struiken (1-5m): dekking, foerageer
+  - Kruiden/grassen (0-1m): insecten, zaden
+  - Dood hout: schimmels, kevers, holenbroeders
+  
+  **3. Plant voor BLOEI hele seizoen**
+  - Maart: Wilgenkatjes (eerste nectar!)
+  - April: Sleedoorn, meidoorn
+  - Mei: Haagbeuk, lijsterbes
+  - Juni-juli: Linde (belangrijkste bijenboom!)
+  - Aug-sept: Klimop (laatste nectar)
+  
+  **4. Zorg voor BESSEN/NOTEN (voedsel winter)**
+  - Meidoorn: rode bessen (nov-feb)
+  - Sleedoorn: blauwe bessen
+  - Lijsterbes: oranje bessen (vogelmagneet)
+  - Hazelaar: noten (eekhoorn, muis)
+  - Eik: eikels (gaai, eekhoorn)
+  
+  **5. Laat DOOD HOUT staan/liggen**
+  - Staand dood hout: spechten, holenbroeders
+  - Liggend dood hout: kevers, egels, padden
+  - Takkenhopen: winterverblijf
+  - Stobben: paddenstoelen, kevers
+  
+  **6. Creëer WATER element**
+  - Vijver (50cm+ diep): kikkers, libellen
+  - Ondiepe plas: vogelbad, drinkplaats
+  - Nat hoekje: moerasplanten
+  
+  **7. Variatie in STRUCTUUR**
+  - Open plekken (zon, bloemen)
+  - Dichte plekken (dekking)
+  - Randen (overgang = hotspot!)
+  - Solitaire bomen (landmark)
+  - Groepen (microklimaat)
+  
+  **8. GEEN pesticiden/kunstmest**
+  - Insecten sterven van pesticiden
+  - Kunstmest verstoort bodem
+  - Werk met de natuur, niet ertegen
+  
+  **9. Niet te NETJES**
+  - Laat bladeren liggen (humuslaag, overwinteringsplaats)
+  - Snoei niet te strak (holtes = nestplaatsen)
+  - Wilde hoekjes (rijk aan leven)
+  
+  **10. NESTKASTJES/VLEERMUISKASTEN**
+  - Nestkastjes: 3+ soorten (mees, spreeuw, gierzwaluw)
+  - Vleermuiskasten: koloniekasten Noord/Oost
+  - Insectenhotel: solitaire bijen
+
+effect_tijdlijn:
+  jaar_1: "Eerste insecten/vogels verschijnen"
+  jaar_3: "Duidelijke toename biodiversiteit"
+  jaar_5_10: "Gevestigde populaties, broedvogels"
+  jaar_10_plus: "Rijke biodiversiteit hotspot"
+
+soorten_prioriteit:
+  top_5_biodiversiteit:
+    - naam: "Zomereik (Quercus robur)"
+      waarde: "500+ insectensoorten, eikels voor 40+ diersoorten"
+    
+    - naam: "Meidoorn (Crataegus monogyna)"
+      waarde: "200+ insecten, broedplaats, bessen nov-feb"
+    
+    - naam: "Sleedoorn (Prunus spinosa)"
+      waarde: "150+ insecten, waardplant vlinders, vroege bloei"
+    
+    - naam: "Winterlinde (Tilia cordata)"
+      waarde: "300+ insecten, belangrijkste bijenboom (bloei juli)"
+    
+    - naam: "Hazelaar (Corylus avellana)"
+      waarde: "Eerste stuifmeel voorjaar, noten voor zoogdieren"
+
+combineer_met:
+  - "Organische stof opbouw"
+  - "Water vasthouden"
+  - "Klimaatadaptatie"
+
+meetbare_resultaten:
+  - "Aantal vogelsoorten verdubbelt binnen 5 jaar"
+  - "50-100+ verschillende insectensoorten binnen 3 jaar"
+  - "Broedvogels vestigen zich jaar 2-3"
+  - "Egels, spitsmuizen verschijnen jaar 3-5"
+
+veelgemaakte_fouten:
+  - "Te veel exoten planten (weinig biodiversiteit)"
+  - "Te netjes (geen wild leven mogelijk)"
+  - "Alleen hoge bomen (geen struiklaag = weinig dekking)"
+  - "Geen bloei in maart-april (vroege bijen verhongeren)"
+  - "Geen water (libellen, amfibieën missen)"
+
+bronnen:
+  - id: "vlinderstichting_2020_tuinvlinders"
+    context: "Waardplanten Nederlandse vlinders"
+  - id: "vogelbescherming_2019_vogeltuinen"
+    context: "Nestelgelegenheid en voedsel voor vogels"
+  - id: "universiteit_wageningen_insecten_inheems"
+    context: "Insectenaantallen op inheemse vs exotische planten"
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"

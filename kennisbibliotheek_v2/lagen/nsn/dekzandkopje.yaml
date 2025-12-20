@@ -1,0 +1,45 @@
+titel: Dekzandkopje
+code: bknsn_dz5
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  periode: Weichselien (laatste ijstijd)
+  proces: Lokale windophoping dekzand
+  beschrijving: Kleine verhevenheden ontstaan door lokale windophoping van dekzand,
+    vaak rond obstakels of vegetatie.
+landvorm:
+  reliëf:
+    vorm: Kleine verhevenheid
+    hoogtebereik: 1-5m boven omgeving
+    helling: 2-8%
+  positie_in_landschap:
+    ligging: Lokaal hoogste punt
+    beschrijving: Kleine heuvel/kopje
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog (snelle afwatering)
+typische_bodem:
+  types: Podzol
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Droog op top. Benut voor variatie in verder vlakker gebied.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut hoogteverschillen voor variatie
+  - Mulch essentieel op arme grond
+  - Organische stof opbouw prioriteit
+duiding:
+  rapporttekst: '**Dekzandkopje**
+
+
+    Kleine heuvel/kopje
+
+
+    Droog op top. Benut voor variatie in verder vlakker gebied.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

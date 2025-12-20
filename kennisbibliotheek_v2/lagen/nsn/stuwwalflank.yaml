@@ -1,0 +1,47 @@
+titel: Stuwwalflank
+code: bknsn_stuw2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  proces: Steile rand door ijsstuwing
+landvorm:
+  reliëf:
+    vorm: Steile helling
+    hoogtebereik: Variabel
+    helling: 8-25%
+  positie_in_landschap:
+    ligging: Flank
+    beschrijving: Steile flank stuwwal
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog (snel afstromend)
+typische_bodem:
+  types: Zand, keileem (keileem kan stagnerend zijn)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Erosierisico! Plant dwars op helling. Keileem kan waterstagnatie
+    geven.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut hoogteverschillen voor variatie
+  - Mulch essentieel op arme grond
+  - Organische stof opbouw prioriteit
+duiding:
+  rapporttekst: '**Stuwwalflank**
+
+
+    Steile flank stuwwal
+
+
+    Water: Droog (snel afstromend)
+
+    Bodem: Zand, keileem (keileem kan stagnerend zijn)
+
+
+    Erosierisico! Plant dwars op helling. Keileem kan waterstagnatie geven.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

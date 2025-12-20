@@ -1,0 +1,46 @@
+titel: Zeereep (voorste duinenrij)
+code: bknsn_duin2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Duingebied
+ontstaansgeschiedenis:
+  proces: Directe zandaanvoer strand
+landvorm:
+  reliëf:
+    vorm: Hoog (eerste duinen)
+    hoogtebereik: 5-30m NAP
+    helling: 10-30%
+  positie_in_landschap:
+    ligging: Front kust
+    beschrijving: Eerste duinenrij achter strand
+hydromorfologie:
+  afwatering:
+    beschrijving: Zeer droog + zout spray
+typische_bodem:
+  types: Duinzand (kalkrijk)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'EXTREEM: wind, zout, droog. Duindoorn, helm, zeekraal.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het microreliëf - top droog, vallei vochtig
+  - Bescherm tegen verdere verstuiving (geleidelijk beplanten)
+  - Kies windbestendige en zouttolerante soorten
+duiding:
+  rapporttekst: '**Zeereep (voorste duinenrij)**
+
+
+    Eerste duinenrij achter strand
+
+
+    Water: Zeer droog + zout spray
+
+    Bodem: Duinzand (kalkrijk)
+
+
+    EXTREEM: wind, zout, droog. Duindoorn, helm, zeekraal.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

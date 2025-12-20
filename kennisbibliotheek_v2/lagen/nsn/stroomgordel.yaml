@@ -1,0 +1,46 @@
+titel: Stroomgordel (actieve rivier zone)
+code: bknsn_riv4
+categorie: NSN - Geomorfologisch
+fgr_relatie: Rivierengebied
+ontstaansgeschiedenis:
+  proces: Actieve rivierdynamiek
+landvorm:
+  reliëf:
+    vorm: Zwak golvend (oeverwallen + geulen)
+    hoogtebereik: -1 tot 5m NAP
+    helling: 1-3%
+  positie_in_landschap:
+    ligging: Meest actieve zone
+    beschrijving: Zone met oeverwallen en stroomgeulen
+hydromorfologie:
+  afwatering:
+    beschrijving: Wisselend (oeverwal droog, geul nat)
+typische_bodem:
+  types: Mix lichte klei en zand
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Zeer gevarieerd! Microreliëf belangrijk. Mix van nat en droog.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met microreliëf (oeverwal vs kom)
+  - 'Bij overstromingsrisico: overstroming-tolerante soorten'
+  - Benut vruchtbare klei
+duiding:
+  rapporttekst: '**Stroomgordel (actieve rivier zone)**
+
+
+    Zone met oeverwallen en stroomgeulen
+
+
+    Water: Wisselend (oeverwal droog, geul nat)
+
+    Bodem: Mix lichte klei en zand
+
+
+    Zeer gevarieerd! Microreliëf belangrijk. Mix van nat en droog.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

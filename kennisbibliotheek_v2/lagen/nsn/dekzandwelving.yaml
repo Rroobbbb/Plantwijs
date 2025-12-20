@@ -1,0 +1,46 @@
+titel: Dekzandwelving
+code: bknsn_dz3
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  proces: Gestuwde dekzanden (ijsdruk)
+landvorm:
+  reliëf:
+    vorm: Zwak golvend (brede welving)
+    hoogtebereik: 10-30m NAP
+    helling: 0.5-2%
+  positie_in_landschap:
+    ligging: Hoger gebied
+    beschrijving: Brede welving (meerdere km breed)
+hydromorfologie:
+  afwatering:
+    beschrijving: Wisselend (top droger, flanken vochtiger)
+typische_bodem:
+  types: Podzol, stuifzand (top)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Groot hoogtegebied met variatie. Top droog, flanken normaal.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut hoogteverschillen voor variatie
+  - Mulch essentieel op arme grond
+  - Organische stof opbouw prioriteit
+duiding:
+  rapporttekst: '**Dekzandwelving**
+
+
+    Brede welving (meerdere km breed)
+
+
+    Water: Wisselend (top droger, flanken vochtiger)
+
+    Bodem: Podzol, stuifzand (top)
+
+
+    Groot hoogtegebied met variatie. Top droog, flanken normaal.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

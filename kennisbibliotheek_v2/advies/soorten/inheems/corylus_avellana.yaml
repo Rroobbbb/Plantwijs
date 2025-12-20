@@ -1,0 +1,75 @@
+titel: Corylus avellana
+wetenschappelijke_naam: Corylus avellana
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt matige wind / verdraagt wind
+  extreme_condities: []
+groei:
+  hoogte: 5 - 10 m
+  hoogte_range:
+    min: 5.0
+    max: 10.0
+    tekst: 5 - 10 m
+  breedte: 4 - 8 m
+  breedte_range:
+    min: 4.0
+    max: 8.0
+    tekst: 4 - 8 m
+  kroonvorm: vaas
+  kroonstructuur: gesloten
+  winterhardheid: 5A - 8B
+  snelheid_jaar_1_5: 40-60cm/jaar
+functie: Vroegbloeiende struik (feb-mrt) = eerste stuifmeel. Hazelnoten eetbaar.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - mensen
+  insecten: Eerste stuifmeel voorjaar
+  zoogdieren: Eekhoorn, hazelmuis
+  score: 9/10
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - landschap
+  - ecologische zone
+  verharding_tolerantie:
+  - geen
+  eerste_noten: Vanaf jaar 5-7
+klimaat_toekomst:
+  droogte_score: 6
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / coavella-corylus-avellana'
+  aangevuld: Ja

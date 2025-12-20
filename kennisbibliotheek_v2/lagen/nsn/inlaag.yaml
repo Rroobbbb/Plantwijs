@@ -1,0 +1,45 @@
+titel: Inlaag (Flevoland)
+code: bknsn_ijssel1
+categorie: NSN - Geomorfologisch
+fgr_relatie: IJsselmeergebied
+ontstaansgeschiedenis:
+  periode: 20e eeuw (1930-1968)
+  proces: Droogmaking IJsselmeer door inpoldering
+  beschrijving: De IJsselmeerpolders ontstonden door drooglegging van delen van de
+    Zuiderzee/IJsselmeer met behulp van dijken en gemalen.
+landvorm:
+  reliëf:
+    vorm: Zeer vlak
+    hoogtebereik: -4 tot -2m NAP
+    helling: <0.5%
+  positie_in_landschap:
+    ligging: Zeer laag
+    beschrijving: Vlak (recent drooggemaakt)
+hydromorfologie:
+  afwatering:
+    beschrijving: Kunstmatig gecontroleerd
+typische_bodem:
+  types: Jonge zeeklei
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Jonge polder. Goed drainage netwerk. Populieren veel aangeplant.
+
+    '
+  ontwerp_uitgangspunten:
+  - Jonge bodem - nog in ontwikkeling
+  - Wind is uitdaging (open landschap)
+  - Drainage is meestal goed geregeld
+duiding:
+  rapporttekst: '**Inlaag (Flevoland)**
+
+
+    Vlak (recent drooggemaakt)
+
+
+    Jonge polder. Goed drainage netwerk. Populieren veel aangeplant.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

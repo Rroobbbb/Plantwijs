@@ -1,0 +1,278 @@
+# ============================================================================
+# GRONDWATERTRAP (Gt) - Template
+# 
+# FOCUS: Waterhuishouding en grondwaterstand
+# - Grondwaterdiepte (hoog en laag)
+# - Fluctuatie
+# - Invloed op plantengroei
+#
+# NIET in dit bestand:
+# - Bodemtype (→ bodem/)
+# - Reliëf (→ nsn/)
+# - Concrete plantensoorten (→ advies/)
+# ============================================================================
+
+titel: "GWT [Romeins cijfer] - [Karakterisering]"
+code: "[I/II/III/IV/V/VI/VII/VIII]"
+categorie: "[Zeer nat/Nat/Vochtig/Matig droog/Droog/Zeer droog]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# GRONDWATERDIEPTE (het belangrijkste deel)
+# ────────────────────────────────────────────────────────────────────────────
+
+grondwaterstand:
+  
+  gemiddeld_hoogste_grondwaterstand:
+    afkorting: "GHG"
+    diepte_cm: "[X-Y cm onder maaiveld]"
+    periode: "[Januari-maart typisch]"
+    beschrijving: |
+      Hoe hoog komt het grondwater gemiddeld in de winter/voorjaar? (1-2 zinnen)
+  
+  gemiddeld_laagste_grondwaterstand:
+    afkorting: "GLG"
+    diepte_cm: "[X-Y cm onder maaiveld]"
+    periode: "[Juli-september typisch]"
+    beschrijving: |
+      Hoe diep zakt het grondwater in de zomer? (1-2 zinnen)
+  
+  fluctuatie:
+    amplitude: "[X-Y cm verschil tussen GHG en GLG]"
+    stabiliteit: "[Stabiel/Matig variabel/Sterk variabel]"
+    
+    beschrijving: |
+      Hoe sterk varieert de grondwaterstand door het jaar? (1-2 zinnen)
+      
+      Bijvoorbeeld:
+      "Fluctuatie van 60-100cm. In natte winters staat grondwater op 40cm, 
+      in droge zomers zakt het weg naar 120cm diepte."
+
+# ────────────────────────────────────────────────────────────────────────────
+# WATERREGIME
+# ────────────────────────────────────────────────────────────────────────────
+
+waterregime:
+  
+  type: "[Infiltratie/Kwel/Neutraal/Wisselend]"
+  
+  drainage:
+    natuurlijk: "[Zeer slecht/Slecht/Matig/Goed/Zeer goed]"
+    kunstmatig: "[Ja/Nee - indien drainage aanwezig]"
+    
+    beschrijving: |
+      Hoe wordt overtollig water afgevoerd? (1-2 zinnen)
+  
+  droogtegevoeligheid:
+    periode: "[Welke maanden risico? bijv. Juni-september]"
+    ernst: "[Laag/Matig/Hoog/Zeer hoog]"
+    
+    beschrijving: |
+      Wanneer en hoe erg is droogte een probleem? (1-2 zinnen)
+  
+  nattigheid:
+    periode: "[Welke maanden nat? bijv. December-maart]"
+    ernst: "[Laag/Matig/Hoog/Zeer hoog]"
+    drainage_problemen: "[Ja/Nee]"
+    
+    beschrijving: |
+      Wanneer en hoe lang is het te nat? (1-2 zinnen)
+  
+  beschikbaar_water_planten:
+    wortelzone: "[Diepte waarop planten water kunnen opnemen - bijv. 0-80cm]"
+    hoeveelheid: "[Weinig/Matig/Veel water beschikbaar]"
+    
+    beschrijving: |
+      Hoeveel water is er beschikbaar voor planten door het seizoen? (2-3 zinnen)
+      
+      Bijvoorbeeld:
+      "In voorjaar veel water beschikbaar (grondwater op 40cm). In zomer 
+      droogt wortelzone uit (grondwater >150cm), planten zijn dan afhankelijk 
+      van regen."
+
+# ────────────────────────────────────────────────────────────────────────────
+# SEIZOENSDYNAMIEK
+# ────────────────────────────────────────────────────────────────────────────
+
+seizoensdynamiek:
+  
+  winter_voorjaar:
+    grondwaterstand: "[Gemiddelde diepte]"
+    toestand: "[Zeer nat/Nat/Vochtig/Verzadigd]"
+    risico: "[Wateroverlast/Verzadiging/Beperkte drainage/etc.]"
+    
+  lente:
+    grondwaterstand: "[Gemiddelde diepte]"
+    toestand: "[Dalend/Optimaal/Vochtig]"
+    opmerking: "[Beste plantseizoen / Let op late nachtvorst in natte delen / etc.]"
+  
+  zomer:
+    grondwaterstand: "[Gemiddelde diepte]"
+    toestand: "[Droog/Zeer droog/Vochtig]"
+    risico: "[Droogtestress/Verdamping/etc.]"
+  
+  herfst:
+    grondwaterstand: "[Gemiddelde diepte]"
+    toestand: "[Stijgend/Vochtig worden]"
+    opmerking: "[Plantseizoen / Draagkracht neemt af / etc.]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# BIJZONDERE OMSTANDIGHEDEN
+# ────────────────────────────────────────────────────────────────────────────
+
+bijzonderheden:  # optioneel
+  
+  kwel:  # indien relevant
+    aanwezig: "[Ja/Nee]"
+    type: "[Permanente kwel/Seizoenskwel]"
+    sterkte: "[Zwak/Matig/Sterk]"
+    gevolgen: "[Wat betekent dit voor waterhuishouding?]"
+  
+  stagnatie:  # indien relevant
+    laag: "[Diepte waarop water stagneert - bijv. keileem op 80cm]"
+    effect: "[Schijngrondwaterspiegel/Tijdelijke verzadiging]"
+    periode: "[Wanneer treedt dit op?]"
+  
+  overstroming:  # indien relevant (vooral rivierengebied)
+    frequentie: "[1x per X jaar]"
+    duur: "[Gemiddelde duur]"
+    type: "[Rivieroverstroming/Oppervlakkige afstroming]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# BETEKENIS VOOR ERFBEPLANTING (alleen wat water betreft)
+# ────────────────────────────────────────────────────────────────────────────
+
+betekenis_voor_erfbeplanting:
+  
+  water_implicaties: |
+    Wat betekent deze GRONDWATERTRAP voor beplanting? (4-6 zinnen)
+    
+    Focus op:
+    - Watervoorziening (genoeg/te veel/te weinig?)
+    - Wortelmogelijkheden (kunnen wortels diep?)
+    - Seizoensrisico's (droogte zomer? nattigheid winter?)
+    - Beheersimplicaties (watergeven nodig? drainage nodig?)
+    
+    Bijvoorbeeld (voor GWT VII):
+    "Grondwater speelt geen rol voor planten (>120cm diep hele jaar). 
+    Planten zijn volledig afhankelijk van regen. In droge zomers groot 
+    droogterisico. Water geven eerste jaren essentieel. Mulchen helpt 
+    enorm om vocht vast te houden. Kies soorten die tegen droogte kunnen."
+    
+    Bijvoorbeeld (voor GWT III):
+    "Grondwater staat in winter/voorjaar op 40cm. Wortels kunnen niet 
+    dieper dan 40cm (te nat). In zomer zakt grondwater weg, maar blijft 
+    binnen bereik wortelzone (80cm). Goede watervoorziening hele jaar. 
+    Kies soorten die natte voeten verdragen in winter."
+  
+  water_beheer:  # optioneel
+    watergeven:
+      nodig: "[Ja/Nee/Alleen eerste jaren/Alleen droge zomers]"
+      frequentie: "[Indicatie - bijv. 1x per week bij droogte]"
+      hoeveelheid: "[Indicatie - bijv. 20L per boom per week]"
+    
+    drainage:
+      nodig: "[Ja/Nee/Misschien]"
+      type: "[Diepe drainage/Oppervlakkige greppels/Verhoogde bedden]"
+      reden: "[Waarom wel/niet drainage?]"
+  
+  seizoens_aandacht:
+    - "[Winter: Let op wateroverlast bij aanplant]"
+    - "[Zomer: Extra watergift nodig bij droogte >2 weken]"
+    - "[Voorjaar: Optimaal plantseizoen, grondwater daalt]"
+    - "[Herfst: Let op draagkracht bij nat weer]"
+  
+  aandachtspunten:
+    - "[Punt 1 - bijv. Plant op microverhogingen bij natte Gt]"
+    - "[Punt 2 - bijv. Mulch essentieel bij droge Gt]"
+    - "[Punt 3 - bijv. Kies onderstammen aangepast aan waterhuishouding]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# INDICATORPLANTEN
+# ────────────────────────────────────────────────────────────────────────────
+
+indicator_vegetatie:  # optioneel maar nuttig
+  natuurlijk:
+    - "[Plant 1 - bijv. Pitrus = nat]"
+    - "[Plant 2 - bijv. Struikhei = droog]"
+    - "[Plant 3 - bijv. Riet = zeer nat]"
+  
+  onkruiden:  # optioneel, praktisch
+    - "[Onkruid 1 - bijv. Ridderzuring = nat]"
+    - "[Onkruid 2 - bijv. Vogelmuur = matig vochtig]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# BRONNEN
+# ────────────────────────────────────────────────────────────────────────────
+
+bronnen:
+  primair:
+    - id: "[bron_id - bijv. bro_grondwaterspiegeldiepte]"
+      context: "Grondwatertrap classificatie"
+    
+    - id: "[bron_id - bijv. stiboka_1981]"
+      context: "Gt-indeling en kenmerken"
+  
+  aanvullend:  # optioneel
+    - id: "[bron_id]"
+
+# ────────────────────────────────────────────────────────────────────────────
+# RAPPORTTEKST (voor bewoners - alleen over water)
+# ────────────────────────────────────────────────────────────────────────────
+
+duiding:
+  rapporttekst: |
+    **Hoe zit het met water op uw locatie?**
+    
+    [Leg in 2-3 zinnen uit wat deze grondwatertrap betekent. Geen jargon!]
+    
+    Bijvoorbeeld (GWT VII):
+    "Uw grondwater staat heel diep (meer dan 1.2 meter onder de grond, 
+    het hele jaar). Dit betekent dat planten het grondwater niet kunnen 
+    bereiken met hun wortels. Ze zijn volledig afhankelijk van regenwater."
+    
+    Bijvoorbeeld (GWT III):
+    "Uw grondwater staat relatief hoog. In de winter kan het tot 40cm onder 
+    het maaiveld komen. In de zomer zakt het weg naar ongeveer 80cm diep. 
+    Planten hebben dus het hele jaar toegang tot water via hun wortels."
+    
+    **Wat betekent dit door het jaar heen?**
+    
+    [Per seizoen kort aangeven wat de situatie is]
+    
+    Bijvoorbeeld (GWT VII - droog):
+    - **Winter/voorjaar**: Voldoende regen, planten hebben water
+    - **Zomer**: Bij droogte (>2 weken geen regen) hebben planten het moeilijk
+    - **Herfst**: Weer meer regen, situatie verbetert
+    
+    Bijvoorbeeld (GWT III - nat):
+    - **Winter/voorjaar**: Veel water, sommige plekken kunnen te nat zijn
+    - **Zomer**: Ook in droge zomers blijft grondwater binnen bereik
+    - **Herfst**: Grondwater stijgt weer, bodem wordt natter
+    
+    **Praktische tip**
+    
+    [1-2 concrete, uitvoerbare tips]
+    
+    Bijvoorbeeld (droog):
+    "Dek de grond af met een dikke laag houtsnippers of bladeren (10cm). 
+    Dit voorkomt dat vocht verdampt en helpt enorm in droge zomers. Geef 
+    jonge planten extra water in de eerste 2-3 zomers."
+    
+    Bijvoorbeeld (nat):
+    "Plant bomen en struiken bij voorkeur op kleine heuveltjes (20-30cm hoog). 
+    Zo staan de wortels in de winter niet in het water. Kies soorten die 
+    natte omstandigheden verdragen."
+    
+    [NIET vermelden: bodemtype, reliëf, exacte soorten → Andere lagen]
+    
+    LENGTE: Max 250 woorden
+
+# ────────────────────────────────────────────────────────────────────────────
+# METADATA
+# ────────────────────────────────────────────────────────────────────────────
+
+metadata:  # optioneel
+  versie: "1.0"
+  laatst_bijgewerkt: "YYYY-MM-DD"
+  auteur: "[Naam]"
+  review_status: "[Concept/Review/Definitief]"

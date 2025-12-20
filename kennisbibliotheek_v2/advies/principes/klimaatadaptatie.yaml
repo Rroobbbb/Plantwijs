@@ -1,0 +1,34 @@
+titel: "Klimaatadaptatie (toekomstbestendig planten)"
+
+toepasbaar_bij:
+  - "alle_situaties"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "hoog"
+
+waarom: |
+  Klimaat verandert: +2-4°C, extremer weer, langere droogte. Plant voor 2050, niet voor nu.
+
+hoe: |
+  1. Kies droogte-tolerante soorten (score 7+/10)
+2. Plant diep-wortelende soorten (eik, den)
+3. Vermijd droogtegevoelige soorten (beuk op zand)
+4. Diversiteit (20+ soorten = weerbaar)
+5. Noordelijke soorten vermijden (koud nodig)
+6. Zuid-Europese soorten overwegen (klimaat schuift op)
+7. Mulch 15cm (buffert extreme neerslag EN droogte)
+8. Regenwater opvangen (droogteperiodes)
+
+effect_tijdlijn:
+  direct: "Planten overleven klimaatverandering"
+
+soorten_specifiek:
+  voorbeelden: "Veldesdoorn 9/10, Eik 8/10, Linde 7/10, Den 9/10"
+
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Praktisch principe - direct toepasbaar"

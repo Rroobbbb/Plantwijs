@@ -1,0 +1,66 @@
+titel: Lonicera xylosteum
+wetenschappelijke_naam: Lonicera xylosteum
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 5
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 0,8 - 1 m
+  hoogte_range:
+    min: 0.8
+    max: 1.0
+    tekst: 0,8 - 1 m
+  breedte: 1 - 1,2 m
+  breedte_range:
+    min: 1.0
+    max: 1.2
+    tekst: 1 - 1,2 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 3A - 6B
+functie: 'Type: pionier. schaduwtolerant / ecobeplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - kleine tuin
+  - begraafplaats
+  - verkeer, industrie
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / lonxylos-lonicera-xylosteum'
+  aangevuld: Basis TreeEbb

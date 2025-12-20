@@ -1,0 +1,45 @@
+titel: Getijdengeul
+code: bknsn_getij1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Getijdengebied
+ontstaansgeschiedenis:
+  periode: Holoceen/Actueel
+  proces: Erosie door getijdenstromingen
+  beschrijving: Getijdengeulen ontstaan door krachtige in- en uitgaande getijdenstromingen
+    die zand en slib eroderen en transporteren.
+landvorm:
+  reliëf:
+    vorm: Geul (laagte)
+    hoogtebereik: Beneden NAP
+    helling: Steil (geulkant)
+  positie_in_landschap:
+    ligging: Laagste
+    beschrijving: Kronkelende geul
+hydromorfologie:
+  afwatering:
+    beschrijving: Permanent water (getijde)
+typische_bodem:
+  types: Slik, zand
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Alleen oevervegetatie. Riet, zeekraal op oevers.
+
+    '
+  ontwerp_uitgangspunten:
+  - Alleen mogelijk buiten getijdenzone
+  - Bescherming tegen zout essentieel
+  - Extreme omstandigheden - alleen specialisten
+duiding:
+  rapporttekst: '**Getijdengeul**
+
+
+    Kronkelende geul
+
+
+    Alleen oevervegetatie. Riet, zeekraal op oevers.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

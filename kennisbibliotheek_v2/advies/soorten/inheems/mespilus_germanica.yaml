@@ -1,0 +1,74 @@
+titel: Mespilus germanica
+wetenschappelijke_naam: Mespilus germanica
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 10
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt hitte
+groei:
+  hoogte: 4 - 6 m
+  hoogte_range:
+    min: 4.0
+    max: 6.0
+    tekst: 4 - 6 m
+  breedte: 4 - 6 m
+  breedte_range:
+    min: 4.0
+    max: 6.0
+    tekst: 4 - 6 m
+  kroonvorm: afgeplat rond
+  kroonstructuur: gesloten
+  winterhardheid: 5B - 9B
+functie: 'Type: hoofdboom. klimaatbeplanting / voedselbos / ecobeplanting / landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - mensen
+  - nectarwaarde 3
+  - pollenwaarde 3
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / megerman-mespilus-germanica'
+  aangevuld: Basis TreeEbb

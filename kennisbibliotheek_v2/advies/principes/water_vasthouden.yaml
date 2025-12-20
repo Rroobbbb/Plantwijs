@@ -1,0 +1,102 @@
+titel: "Water vasthouden"
+
+toepasbaar_bij:
+  - "droogte"
+  - "zeer_droog"
+  - "droog"
+  - "zand"
+
+relevantie:
+  ernst_probleem: "zeer_hoog"
+  effect: "zeer_hoog"
+
+waarom: |
+  Bij droogte en/of zandgrond is water vasthouden cruciaal voor overleving 
+  van planten. Zonder maatregelen droogt de grond snel uit en sterven 
+  planten of groeien ze slecht. Water vasthouden verhoogt de kans op 
+  succes met 300-400%.
+
+hoe: |
+  **1. Mulchen (MEEST EFFECTIEF)**
+  - Dek grond af met 10-15cm organisch materiaal
+  - Materialen: houtsnippers, bladmolm, stro, schors
+  - Effect: -50% verdamping, +50% vochtvasthouden
+  - Herhaal jaarlijks (vulbij tot 10cm)
+  
+  **2. Bodem verbeteren**
+  - Meng compost/bladmolm door bovenste 20cm (bij aanplant)
+  - Verhoogt vochtvast houden vermogen van zand met 100-200%
+  - Werkt 3-5 jaar, dan herhalen
+  
+  **3. Slim planten**
+  - Plant in groepen (niet verspreid) = microklimaat
+  - Maak lichte kom rond plant (diameter 1m) = water verzamelt
+  - Vermijd planten op zuidhelling (te droog)
+  
+  **4. Bodemstructuur beschermen**
+  - NIET spitten/frezen (vernietigt structuur)
+  - Laat alle blad liggen (houdt vocht vast)
+  - Vermijd betreden van natte grond (verdichting)
+  
+  **5. Watergift optimaliseren**
+  - 1x per week diep gieten (20L) is beter dan dagelijks beetje
+  - Diep gieten stimuleert diepe wortels
+  - Geef water 's avonds/ochtends (minder verdamping)
+
+effect_tijdlijn:
+  direct: "Mulch werkt meteen (-50% verdamping)"
+  jaar_1_3: "Bodemverbetering zichtbaar (+30% vocht)"
+  jaar_5_10: "Humuslaag opgebouwd, zelfvoorzienend"
+
+materialen:
+  houtsnippers:
+    voor: "Langzaam afbreekbaar, blijft luchtig, mooi"
+    tegen: "Kan eerste maanden stikstof binden"
+    kosten: "Gratis bij boomverzorgers"
+    toepassing: "Overal, vooral bij bomen/struiken"
+  
+  bladmolm:
+    voor: "Rijk aan voeding, snel composterend"
+    tegen: "Kan wegwaaien"
+    kosten: "Gratis bij gemeente of eigen tuin"
+    toepassing: "Vooral bij vaste planten, onder struiken"
+  
+  stro:
+    voor: "Goedkoop, effectief"
+    tegen: "Ziet er minder mooi uit, waait weg"
+    kosten: "Zeer goedkoop"
+    toepassing: "Moestuin, tussen jonge aanplant"
+  
+  compost:
+    voor: "Voedingsrijk, verbetert structuur"
+    tegen: "Breekt snel af, jaarlijks bijvullen"
+    kosten: "Gratis (zelf maken) of matig (kopen)"
+    toepassing: "Mengen door grond, dunne laag als mulch"
+
+veelgemaakte_fouten:
+  - "Te dunne mulchlaag (<5cm) = weinig effect"
+  - "Mulch tegen stam = rotrisico"
+  - "Plastic/worteldoek gebruiken = werkt NIET (geen organische stof)"
+  - "Grond omwerken = vernietigt structuur"
+  - "Dagelijks beetje gieten = oppervlakkige wortels"
+
+meetbare_resultaten:
+  - "Bodemvocht +30-50% na mulchen"
+  - "Watergift behoefte -50%"
+  - "Plantengroei +20-40%"
+  - "Overlevingskans jonge planten +300%"
+
+combineer_met:
+  - "Organische stof opbouw"
+  - "Droogte-tolerante soorten kiezen"
+
+bronnen:
+  - id: "wur_2019_mulchen_droogte"
+    context: "Effectiviteit mulchen bij droogte"
+  - id: "staatsbosbeheer_2020_bodemverbetering"
+    context: "Praktijkervaringen bodem verbetering"
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"

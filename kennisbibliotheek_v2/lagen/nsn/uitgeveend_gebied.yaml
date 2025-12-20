@@ -1,0 +1,46 @@
+titel: Uitgeveend gebied (petgaten)
+code: bknsn_veen2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Laagveengebied
+ontstaansgeschiedenis:
+  proces: Veenafgraving (turf)
+landvorm:
+  reliëf:
+    vorm: Laagte (afgegraven)
+    hoogtebereik: -2 tot -1m NAP
+    helling: Variabel (kunstmatig)
+  positie_in_landschap:
+    ligging: Diepste punten
+    beschrijving: Laagte waar veen is afgegraven
+hydromorfologie:
+  afwatering:
+    beschrijving: Permanent water (meren, petgaten)
+typische_bodem:
+  types: Klei (ondergrond veen)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'WATER! Alleen oeverplanten. Riet, lisdodde, wilg (op kant).
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het reliëf, niet ertegen
+  - Benut microreliëf voor variatie
+  - Kies soorten passend bij waterstand en bodem
+duiding:
+  rapporttekst: '**Uitgeveend gebied (petgaten)**
+
+
+    Laagte waar veen is afgegraven
+
+
+    Water: Permanent water (meren, petgaten)
+
+    Bodem: Klei (ondergrond veen)
+
+
+    WATER! Alleen oeverplanten. Riet, lisdodde, wilg (op kant).
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

@@ -1,0 +1,101 @@
+titel: Dekzandgebieden
+code: fgr_dekzand
+regio: Oost- en Zuid-Nederland
+ligging:
+  provincies:
+  - Gelderland
+  - Overijssel
+  - Drenthe
+  - Noord-Brabant
+  specifiek: Veluwe, Utrechtse Heuvelrug, Salland, Drents Plateau
+  oppervlakte_km2: ~6000 km²
+geografie:
+  karakteristiek: "Golvend zandlandschap met dekzandruggen en laagtes. Gevormd door\
+    \ \nwindafzetting tijdens ijstijden. Hoogste delen van het zandgebied.\n"
+  hoogteverschillen:
+    range: 5-110m NAP
+    reliëf: Golvend (2-10m hoogteverschil)
+    hellingen: 1-5%
+geologie:
+  hoofdgesteenten:
+  - type: Dekzand (eolisch)
+    ouderdom: 10.000-150.000 jaar
+    dikte: 2-20m
+  ontstaan: Windafzetting tijdens ijstijden, zand uit drooggevallen rivierbeddingen
+bodem:
+  dominante_typen:
+  - Podzolgrond (70%)
+  - Vaaggrond (20%)
+  - Beekeerdgrond in laagtes (10%)
+  kwaliteit: Arm tot matig
+  pH: 4.5-5.5 (zuur)
+  voeding: Arm
+hydrologie:
+  grondwater: Meestal diep (Gt V-VII)
+  beken: Kleine beekjes in laagtes
+  karakter: Snelle afwatering van ruggen naar laagtes
+klimaat:
+  type: Zeeklimaat met continentale invloed
+  neerslag: 750-850mm/jaar
+  bijzonderheden: Kouder dan kust, warmer dan heuvelland
+vegetatie:
+  natuurlijke_vegetatie:
+  - Eiken-berkenbos
+  - Grove dennenbos (aangeplant)
+  - Heide (voormalig)
+  - Stuifzanden (lokaal)
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: '**STANDAARD ZANDGEBIED** - typisch Oost-Nederland
+
+
+    Kenmerken:
+
+    - Golvend reliëf (hoogteverschillen 2-10m)
+
+    - Snelle afwatering (water loopt naar laagtes)
+
+    - Arme zandgrond (podzol)
+
+    - Droogte op ruggen, vochtig in laagtes
+
+
+    Kansen:
+
+    - Microreliëf benutten (variatie!)
+
+    - Ruggen: droogte-tolerant
+
+    - Laagtes: vochtminnend
+
+    '
+  soorten_specifiek:
+    ruggen_droog:
+    - Eik, berk, den
+    - Meidoorn, sleedoorn
+    laagtes_vochtig:
+    - Els, wilg
+    - Hazelaar, vogelkers
+  aandachtspunten:
+  - Benut hoogteverschil voor variatie
+  - Mulch essentieel op arme podzol
+  - Watergift eerste jaren (vooral op ruggen)
+  ontwerp_uitgangspunten:
+  - Benut microreliëf (ruggen droog, laagtes nat) - variatie is je kracht
+  - Mulch 15cm ESSENTIEEL op arme podzol - halveert watergift
+  - Plant in voorjaar (grond nog vochtig) voor beste aanslag
+duiding:
+  rapporttekst: "**Dekzandgebied - het golvende zandlandschap van Oost-Nederland**\n\
+    \nU woont in het typische golvende zandlandschap. Ruggen en laagtes \nwisselen\
+    \ elkaar af - dat geeft kansen voor variatie!\n\n**Benut het reliëf:**\n- Hogere\
+    \ plekken: droogte-tolerant (eik, berk, den)\n- Lagere plekken: vochtminnend (els,\
+    \ wilg)\n- Hellingen: overgangen\n\nDit is het standaard Oost-Nederlandse landschap\
+    \ - arme zandgrond maar \nmet de juiste soorten en mulch prima haalbaar.\n"
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+landschappelijke_context:
+  karakteristiek_beeld:
+  - Zie geografie karakteristiek
+  erfbeplanting_past_bij:
+  - Gebruik inheemse soorten passend bij regio

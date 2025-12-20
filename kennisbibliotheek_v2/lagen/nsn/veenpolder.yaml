@@ -1,0 +1,56 @@
+titel: "Veenpolder (laagveen)"
+code: "bknsn_veen1"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Laagveengebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Veengroei, later ontwaterd"
+  beschrijving: |
+    Veengroei, later ontwaterd
+
+landvorm:
+  reliëf:
+    vorm: "Zeer vlak"
+    hoogtebereik: "-5 tot 0m NAP"
+    helling: "<0.5%"
+  
+  positie_in_landschap:
+    ligging: "Zeer laag"
+    beschrijving: "Vlak"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Zeer nat, zakkende bodem"
+
+typische_bodem:
+  types: "Veen, soms met kleidek"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    ZEER NAT + zakkend. Accepteer moeras OF intensieve drainage.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Veenpolder (laagveen)**
+    
+    Dit is een Zeer vlak landvorm op -5 tot 0m NAP.
+    
+    Kenmerkend:
+    - Vlak
+    - Zeer nat, zakkende bodem
+    - Bodem: Veen, soms met kleidek
+    
+    Voor beplanting betekent dit:
+    ZEER NAT + zakkend. Accepteer moeras OF intensieve drainage.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

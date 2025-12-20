@@ -1,0 +1,45 @@
+titel: Brongebied (kwelbron)
+code: bknsn_beek3
+categorie: NSN - Geomorfologisch
+fgr_relatie: Beekdalengebied
+ontstaansgeschiedenis:
+  periode: Holoceen
+  proces: Grondwater komt aan oppervlakte (kwel)
+  beschrijving: Brongebieden ontstaan waar grondwater door drukverschillen of geologische
+    lagen aan het oppervlak komt. Vaak begin van beeksystemen.
+landvorm:
+  reliëf:
+    vorm: Natte plek (kwel)
+    hoogtebereik: Variabel
+    helling: Flauw
+  positie_in_landschap:
+    ligging: Hoog in beekloop
+    beschrijving: Natte plek waar beek begint
+hydromorfologie:
+  afwatering:
+    beschrijving: Zeer nat (kwel)
+typische_bodem:
+  types: Beekdalgrond
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Permanent nat door kwel. Els, moerasspirea, dotterbloem.
+
+    '
+  ontwerp_uitgangspunten:
+  - Respecteer de waterloop - niet dichtgooien of dempen
+  - Plant op minimaal 5m van waterlijn (wortelschade voorkomen)
+  - Benut natte zone voor waterminnende soorten
+duiding:
+  rapporttekst: '**Brongebied (kwelbron)**
+
+
+    Natte plek waar beek begint
+
+
+    Permanent nat door kwel. Els, moerasspirea, dotterbloem.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

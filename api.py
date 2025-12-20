@@ -1075,17 +1075,34 @@ def _match_bodem_row(row: pd.Series, keuzes: List[str]) -> bool:
 _CONTEXT_PATH = os.environ.get("CONTEXT_DESCRIPTIONS_PATH", "").strip()
 if not _CONTEXT_PATH:
     # Prefer split-knowledge dir if present, else fallback to monolithic file
-    _CONTEXT_PATH = "kennisbibliotheek" if os.path.isdir(os.path.join(os.path.dirname(__file__), "kennisbibliotheek")) else "context_descriptions.yaml"
+    # Auto-detect kennisbibliotheek_v2, kennisbibliotheek, of fallback
+    def _detect_kb_path():
+        search_paths = [
+            Path(__file__).resolve().parent / "kennisbibliotheek_v2",
+            Path(__file__).resolve().parent / "Plantwijs" / "kennisbibliotheek_v2",
+            Path.cwd() / "kennisbibliotheek_v2",
+            Path(__file__).resolve().parent / "kennisbibliotheek",
+            Path(__file__).resolve().parent / "Plantwijs" / "kennisbibliotheek",
+            Path.cwd() / "kennisbibliotheek",
+        ]
+        for p in search_paths:
+            if p.exists() and p.is_dir():
+                return str(p)
+        return "context_descriptions.yaml"
+    
+    _CONTEXT_PATH = _detect_kb_path()
 
 def _resolve_context_sources(path: str) -> list[str]:
     """Vind kennisbronnen: óf één context_descriptions.yaml, óf een map met losse YAML's.
-
+    
+    V2 UPGRADE: Ondersteunt nu ook submappen (kennisbibliotheek_v2/lagen/bodem/ etc.)
+    
     Backwards compatible:
     - Als 'path' een bestaand bestand is → [path]
-    - Als 'path' een bestaande map is → alle *.yaml/*.yml/*.json in die map
+    - Als 'path' een bestaande map is → alle *.yaml/*.yml/*.json RECURSIEF
     - Als 'path' niet bestaat:
         * zoek context_descriptions.yaml op bekende plekken
-        * zoek map 'kennisbibliotheek' op bekende plekken (split-variant)
+        * zoek map 'kennisbibliotheek' of 'kennisbibliotheek_v2' op bekende plekken
     """
     p = str(path or "").strip() or "context_descriptions.yaml"
     candidates = [
@@ -1094,40 +1111,86 @@ def _resolve_context_sources(path: str) -> list[str]:
         Path(__file__).resolve().parent / p,
         Path(__file__).resolve().parent / "Plantwijs" / p,
     ]
-
-    # 1) Direct: bestand
+    
+    # Helper: laad RECURSIEF alle YAML bestanden uit een directory
+    def _load_recursive(directory: Path) -> list[str]:
+        """Laad alle YAML bestanden recursief, met slimme filters."""
+        files = []
+        try:
+            for root, dirs, filenames in os.walk(directory):
+                # Skip __pycache__, .git, etc.
+                dirs[:] = [d for d in dirs if not d.startswith('.') and d != '__pycache__']
+                
+                root_path = Path(root)
+                
+                for filename in filenames:
+                    # Alleen YAML/JSON bestanden
+                    if not filename.lower().endswith(('.yaml', '.yml', '.json')):
+                        continue
+                    
+                    # Skip privé/template bestanden
+                    if filename.startswith('_') or filename.startswith('.'):
+                        continue
+                    
+                    # Skip helper bestanden (GT sub-types, validators, etc.)
+                    skip_files = {
+                        'bodemtypen.yaml', 'eigenschappen.yaml', 'textuur.yaml',
+                        'combinatieregels_bodem_gt.yaml', 'droogtestress_indicator.yaml',
+                        'ia.yaml', 'ib.yaml', 'iia.yaml', 'iib.yaml', 'iic.yaml',
+                        'iiia.yaml', 'iiib.yaml', 'ivc.yaml', 'ivu.yaml',
+                        'kernzinnen_samenvatting.yaml', 'toelichting_algemeen.yaml',
+                        'validatie_en_waarschuwingen.yaml',
+                        'vad.yaml', 'vao.yaml', 'vbd.yaml', 'vbo.yaml', 
+                        'vid.yaml', 'viid.yaml', 'viiid.yaml', 'viiio.yaml',
+                        'viio.yaml', 'vio.yaml'
+                    }
+                    if filename in skip_files:
+                        continue
+                    
+                    full_path = root_path / filename
+                    files.append(str(full_path))
+        except Exception:
+            pass
+        
+        return sorted(files)
+    
+    # 1) Direct: bestand (backwards compatible)
     for c in candidates:
         try:
             if c.exists() and c.is_file():
                 return [str(c)]
         except Exception:
             continue
-
-    # 2) Direct: directory
+    
+    # 2) Direct: directory (NU MET RECURSIE)
     for c in candidates:
         try:
             if c.exists() and c.is_dir():
-                files = sorted([str(x) for x in c.iterdir() if x.is_file() and x.suffix.lower() in (".yaml", ".yml", ".json")])
-                return files
-        except Exception:
-            continue
-
-    # 3) Fallback: standaard split-map 'kennisbibliotheek'
-    kb = "kennisbibliotheek"
-    kb_candidates = [
-        Path.cwd() / kb,
-        Path(__file__).resolve().parent / kb,
-        Path(__file__).resolve().parent / "Plantwijs" / kb,
-    ]
-    for c in kb_candidates:
-        try:
-            if c.exists() and c.is_dir():
-                files = sorted([str(x) for x in c.iterdir() if x.is_file() and x.suffix.lower() in (".yaml", ".yml", ".json")])
+                files = _load_recursive(c)
                 if files:
                     return files
         except Exception:
             continue
-
+    
+    # 3) Fallback: zoek 'kennisbibliotheek_v2' OF 'kennisbibliotheek'
+    kb_candidates = [
+        Path.cwd() / "kennisbibliotheek_v2",
+        Path(__file__).resolve().parent / "kennisbibliotheek_v2",
+        Path(__file__).resolve().parent / "Plantwijs" / "kennisbibliotheek_v2",
+        Path.cwd() / "kennisbibliotheek",
+        Path(__file__).resolve().parent / "kennisbibliotheek",
+        Path(__file__).resolve().parent / "Plantwijs" / "kennisbibliotheek",
+    ]
+    
+    for c in kb_candidates:
+        try:
+            if c.exists() and c.is_dir():
+                files = _load_recursive(c)
+                if files:
+                    return files
+        except Exception:
+            continue
+    
     # 4) Laatste fallback: return het 'meest logische' pad zodat debug duidelijk blijft
     return [str(candidates[0])]
 

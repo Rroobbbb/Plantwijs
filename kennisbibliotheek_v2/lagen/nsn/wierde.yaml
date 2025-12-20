@@ -1,0 +1,45 @@
+titel: Wierde (Groninger terp)
+code: bknsn_klei2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Zeekleigebied
+ontstaansgeschiedenis:
+  periode: Ijzertijd - Middeleeuwen
+  proces: Eeuwenlange ophoging door mensen tegen overstromingen
+  beschrijving: Wierden zijn grote kunstmatige heuvels die generaties lang werden
+    opgehoogd met klei en mest om boven het waterpeil uit te komen.
+landvorm:
+  reliëf:
+    vorm: Hoge terp
+    hoogtebereik: 2-8m boven polder
+    helling: Matig
+  positie_in_landschap:
+    ligging: Hoogste
+    beschrijving: Grote kunstmatige heuvel
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog
+typische_bodem:
+  types: Klei (opgebracht)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'IDEAAL in kleigebied! Enige echt droge plek. Alles mogelijk.
+
+    '
+  ontwerp_uitgangspunten:
+  - NOOIT betreden bij nat (permanente verdichting)
+  - 'Op verhogingen (terp/wierde): veel mogelijk'
+  - 'In laagtes: drainage overwegen'
+duiding:
+  rapporttekst: '**Wierde (Groninger terp)**
+
+
+    Grote kunstmatige heuvel
+
+
+    IDEAAL in kleigebied! Enige echt droge plek. Alles mogelijk.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

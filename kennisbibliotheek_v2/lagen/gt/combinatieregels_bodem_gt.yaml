@@ -1,0 +1,102 @@
+titel: Combinatieregels Bodem × Grondwatertrap (Gt)
+kernsamenvatting: 'De combinatie van bodemtype en grondwatertrap (Gt) bepaalt de feitelijke standplaatscondities.
+
+  Dezelfde Gt-klasse kan op verschillende bodems tot andere risico’s en kansen leiden.
+
+  '
+regels:
+  zand:
+    natte_gt:
+      uitleg: 'Op zandbodems met natte Gt (I–II) is er ondanks infiltratie kans op zuurstofgebrek in de
+        wortelzone,
+
+        vooral in laagtes en bij stagnatie. Tegelijk kan het profiel in droge zomers snel uitdrogen.
+
+        '
+      aandachtspunten:
+      - zuurstofgebrek
+      - instabiele beworteling
+      - zomerdroogte
+    droge_gt:
+      uitleg: 'Droge Gt (IV–VIII) op zand betekent sterke afhankelijkheid van neerslag en bodemvocht.
+
+        Zonder humusopbouw ontstaat snel droogtestress.
+
+        '
+      aandachtspunten:
+      - droogtestress
+      - uitspoeling
+      - hitte
+  klei:
+    natte_gt:
+      uitleg: 'Natte Gt op klei (vooral zware klei/komklei) geeft langdurig natte wortelzones en beperkte
+        beluchting.
+
+        Structuurschade door betreding is een groot risico.
+
+        '
+      aandachtspunten:
+      - wortelverstikking
+      - slechte draagkracht
+      - structuurschade
+    droge_gt:
+      uitleg: 'Ook bij drogere Gt kan klei tijdelijk nat blijven door slechte infiltratie.
+
+        In zomers kan oppervlakkige uitdroging optreden met scheurvorming.
+
+        '
+      aandachtspunten:
+      - wisselende nat-droogstress
+      - scheurvorming
+  veen:
+    natte_gt:
+      uitleg: 'Natte Gt is essentieel om veenafbraak te beperken. Wortelruimte is beperkt door hoge waterstand
+
+        en lage draagkracht.
+
+        '
+      aandachtspunten:
+      - bodemdaling
+      - beperkte verankering
+      - windworp
+    droge_gt:
+      uitleg: 'Droge Gt op veen leidt tot oxidatie, bodemdaling en verlies aan draagkracht.
+
+        Standplaats wordt instabiel voor bomen.
+
+        '
+      aandachtspunten:
+      - veenoxidatie
+      - bodemdaling
+      - instabiliteit
+  leem_en_zavel:
+    natte_gt:
+      uitleg: 'Natte Gt op leem/zavel kan leiden tot verslemping en tijdelijke natstress,
+
+        maar de vochtbuffer is gunstig voor veel soorten.
+
+        '
+      aandachtspunten:
+      - verslemping
+      - tijdelijke natstress
+    droge_gt:
+      uitleg: 'Droge Gt op leem/zavel is vaak goed hanteerbaar dankzij de vochtbuffer,
+
+        mits bodemstructuur intact blijft.
+
+        '
+      aandachtspunten:
+      - erosie op hellingen
+      - oppervlakkige uitdroging
+betekenis_voor_erfbeplanting: 'Gebruik deze combinatieregels om soortenkeuze, standplaats en beheermaatregelen
+  te bepalen.
+
+  Combineer ze altijd met geomorfologie (GMM) en microreliëf (AHN) voor een compleet beeld.
+
+  '
+bronnen: &id001
+- stowa_grondwater_en_bodeminteractie
+- wur_bodemfysica_en_beworteling_achtergrond
+duiding:
+  rapporttekst: ''
+  bronnen: *id001

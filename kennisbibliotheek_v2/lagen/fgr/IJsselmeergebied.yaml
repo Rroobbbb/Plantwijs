@@ -1,0 +1,50 @@
+titel: IJsselmeergebied (jonge polders)
+code: fgr_IJsselmeergebied
+regio: Flevoland, Noordoostpolder
+geografie:
+  karakteristiek: 'Zeer vlak, jonge zeeklei, grote percelen, bos-aanplant
+
+    '
+bodem:
+  beschrijving: Zware zeeklei, kalkrijk, recent drooggemaakt
+hydrologie:
+  beschrijving: Gecontroleerd (drainage), Gt V-VI
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: 'Jonge bodem, winderig, maar vruchtbaar.
+
+    '
+  soorten_specifiek:
+    geschikt: Populier (veel aangeplant), wilg, els, eik
+  ontwerp_uitgangspunten:
+  - Jonge bodem - nog in ontwikkeling, geef het tijd
+  - Wind is GROTE uitdaging (open landschap) - windbreking prioriteit
+  - Drainage is meestal goed geregeld (jonge polders)
+  - Veel aangeplante bossen (populier) - leer van bestaande beplanting
+duiding:
+  rapporttekst: '**IJsselmeergebied (jonge polders)**
+
+
+    Karakteristiek: Zeer vlak, jonge zeeklei, grote percelen, bos-aanplant
+
+
+    Bodem: Zware zeeklei, kalkrijk, recent drooggemaakt
+
+    Water: Gecontroleerd (drainage), Gt V-VI
+
+
+    Geschikte soorten: Populier (veel aangeplant), wilg, els, eik
+
+
+    Advies: Jonge bodem, winderig, maar vruchtbaar.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact FGR - geografische context
+landschappelijke_context:
+  karakteristiek_beeld:
+  - Zie geografie karakteristiek
+  erfbeplanting_past_bij:
+  - Gebruik inheemse soorten passend bij regio

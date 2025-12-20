@@ -1,0 +1,45 @@
+titel: Beekloop (actieve bedding)
+code: bknsn_beek4
+categorie: NSN - Geomorfologisch
+fgr_relatie: Beekdalengebied
+ontstaansgeschiedenis:
+  periode: Holoceen
+  proces: Continue watererosie door beekstroming
+  beschrijving: De beekloop ontstaat door erosie van stromend water. De meanderende
+    vorm ontstaat door verschillen in stroomsnelheid tussen binnen- en buitenbocht.
+landvorm:
+  reliëf:
+    vorm: Geul
+    hoogtebereik: Laagste
+    helling: Steil (oevers)
+  positie_in_landschap:
+    ligging: Laagste in dal
+    beschrijving: Meanderend
+hydromorfologie:
+  afwatering:
+    beschrijving: Permanent water
+typische_bodem:
+  types: Zand, grind
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Beekloop zelf: alleen oeverplanten. Wilg, els op oever.
+
+    '
+  ontwerp_uitgangspunten:
+  - Respecteer de waterloop - niet dichtgooien of dempen
+  - Plant op minimaal 5m van waterlijn (wortelschade voorkomen)
+  - Benut natte zone voor waterminnende soorten
+duiding:
+  rapporttekst: '**Beekloop (actieve bedding)**
+
+
+    Meanderend
+
+
+    Beekloop zelf: alleen oeverplanten. Wilg, els op oever.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

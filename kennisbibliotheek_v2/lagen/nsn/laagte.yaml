@@ -1,0 +1,45 @@
+titel: Laagte (depressie)
+code: bknsn_dz6
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  periode: Weichselien/Holoceen
+  proces: Lokale uitwaaiing of afwatering
+  beschrijving: Laagtes ontstaan door lokale uitwaaiing van zand of als natuurlijke
+    afwateringsgebieden tussen dekzandruggen.
+landvorm:
+  reliëf:
+    vorm: Laagte
+    hoogtebereik: 1-3m lager dan omgeving
+    helling: Flauw naar centrum
+  positie_in_landschap:
+    ligging: Lokaal laagste
+    beschrijving: Kom/laagte
+hydromorfologie:
+  afwatering:
+    beschrijving: Nat tot zeer nat
+typische_bodem:
+  types: Beekeerdgrond, veen
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Water verzamelt. Nat microklimaat. Els, wilg.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut hoogteverschillen voor variatie
+  - Mulch essentieel op arme grond
+  - Organische stof opbouw prioriteit
+duiding:
+  rapporttekst: '**Laagte (depressie)**
+
+
+    Kom/laagte
+
+
+    Water verzamelt. Nat microklimaat. Els, wilg.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

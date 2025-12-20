@@ -1,0 +1,45 @@
+kalkrijk:
+  uitleg: Aanwezigheid van calciumcarbonaat; beïnvloedt pH en soortenkeuze.
+  implicatie: Geschikt voor kalkminnende soorten; minder risico op verzuring.
+  duiding:
+    rapporttekst: 'Kalkrijk
+
+
+      Aanwezigheid van calciumcarbonaat; beïnvloedt pH en soortenkeuze.
+
+
+      Voor beplanting en beheer betekent dit: Geschikt voor kalkminnende soorten; minder risico op verzuring.'
+kalkarm:
+  uitleg: Weinig tot geen calciumcarbonaat; pH vaak lager.
+  implicatie: Kies zuurminnende of tolerante soorten.
+  duiding:
+    rapporttekst: 'Kalkarm
+
+
+      Weinig tot geen calciumcarbonaat; pH vaak lager.
+
+
+      Voor beplanting en beheer betekent dit: Kies zuurminnende of tolerante soorten.'
+verdicht:
+  uitleg: Door berijding of belasting samengedrukte bodemstructuur.
+  implicatie: Beperkte beworteling en waterafvoer; herstelmaatregelen nodig.
+  duiding:
+    rapporttekst: 'Verdicht
+
+
+      Door berijding of belasting samengedrukte bodemstructuur.
+
+
+      Voor beplanting en beheer betekent dit: Beperkte beworteling en waterafvoer; herstelmaatregelen
+      nodig.'
+gley_stagnatie:
+  uitleg: Langdurige natte omstandigheden door stagnatie of kwel.
+  implicatie: Alleen nat-tolerante beplanting kansrijk.
+  duiding:
+    rapporttekst: 'Gley stagnatie
+
+
+      Langdurige natte omstandigheden door stagnatie of kwel.
+
+
+      Voor beplanting en beheer betekent dit: Alleen nat-tolerante beplanting kansrijk.'

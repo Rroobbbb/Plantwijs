@@ -1,0 +1,70 @@
+titel: Ulex europaeus
+wetenschappelijke_naam: Ulex europaeus
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 2 - 2,5 m
+  hoogte_range:
+    min: 2.0
+    max: 2.5
+    tekst: 2 - 2,5 m
+  breedte: 2 - 2,5 m
+  breedte_range:
+    min: 2.0
+    max: 2.5
+    tekst: 2 - 2,5 m
+  kroonvorm: rond
+  kroonstructuur: ''
+  winterhardheid: 7A - 10B
+functie: 'Type: struik. ecobeplanting / landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - nectarwaarde 3
+  - pollenwaarde 3
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - patiotuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / uleuropa-ulex-europaeus'
+  aangevuld: Basis TreeEbb

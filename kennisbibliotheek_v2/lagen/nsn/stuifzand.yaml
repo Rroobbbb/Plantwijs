@@ -1,0 +1,56 @@
+titel: "Stuifzand (zandverstuiving)"
+code: "bknsn_stuif1"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Dekzandgebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Recente winderosie"
+  beschrijving: |
+    Recente winderosie
+
+landvorm:
+  reliëf:
+    vorm: "Onregelmatig golvend"
+    hoogtebereik: "Variabel"
+    helling: "Zeer variabel"
+  
+  positie_in_landschap:
+    ligging: "Variabel"
+    beschrijving: "Stuifkuilen, ruggen"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Extreem droog"
+
+typische_bodem:
+  types: "Stuifzand (extreem arm)"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    EXTREEM! Maak heidetuin. Fixeer zand eerst (grassen).
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Stuifzand (zandverstuiving)**
+    
+    Dit is een Onregelmatig golvend landvorm op Variabel.
+    
+    Kenmerkend:
+    - Stuifkuilen, ruggen
+    - Extreem droog
+    - Bodem: Stuifzand (extreem arm)
+    
+    Voor beplanting betekent dit:
+    EXTREEM! Maak heidetuin. Fixeer zand eerst (grassen).
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

@@ -1,0 +1,62 @@
+titel: Ulmus glabra
+wetenschappelijke_naam: Ulmus glabra
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 5
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - zware klei
+    - lichte klei
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt strooizout
+groei:
+  hoogte: 25 - 35 m
+  hoogte_range:
+    min: 25.0
+    max: 35.0
+    tekst: 25 - 35 m
+  breedte: 15 - 20 m
+  breedte_range:
+    min: 15.0
+    max: 20.0
+    tekst: 15 - 20 m
+  kroonvorm: rond
+  kroonstructuur: halfopen
+  winterhardheid: 5A - 8B
+functie: 'Type: pionier. landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - vlinders
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - landschap
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / ulglabra-ulmus-glabra'
+  aangevuld: Basis TreeEbb

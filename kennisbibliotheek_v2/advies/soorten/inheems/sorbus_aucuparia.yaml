@@ -1,0 +1,84 @@
+titel: Sorbus aucuparia
+wetenschappelijke_naam: Sorbus aucuparia
+type: bijboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 9
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt hitte
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 8 - 12 m
+  hoogte_range:
+    min: 8.0
+    max: 12.0
+    tekst: 8 - 12 m
+  breedte: 6 - 8 m
+  breedte_range:
+    min: 6.0
+    max: 8.0
+    tekst: 6 - 8 m
+  kroonvorm: breed eirond
+  kroonstructuur: halfopen
+  winterhardheid: 4A - 9B
+functie: Wilde lijsterbes - oranje bessen zeer decoratief. Vogelmagneet.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - nectarwaarde 3
+  - pollenwaarde 3
+  vogels: Bessen zeer geliefd (40+ soorten)
+  score: 9/10
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  - wadi
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst:
+  droogte_score: 6
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / soaucupa-sorbus-aucuparia'
+  aangevuld: Ja

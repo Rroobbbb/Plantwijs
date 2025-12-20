@@ -1,0 +1,113 @@
+titel: Kleigrond - Lichte rivierklei
+code: rivierklei_licht
+categorie: Klei
+textuur:
+  hoofdtextuur: Lichte klei
+  samenstelling:
+    zand_percentage: 30-50%
+    silt_percentage: 20-35%
+    klei_percentage: 20-35%
+    organische_stof: 3-8%
+  beschrijving: "Gemengde textuur - tussen zand en zware klei in. Voelt zandig én\
+    \ \nkleiig aan. Kruimelt beter dan zware klei. Bruine tot donkerbruine \nkleur\
+    \ door humus.\n"
+chemie:
+  pH:
+    range: 6.0-7.5
+    typisch: '6.8'
+    classificatie: Zwak zuur tot neutraal
+  voedselrijkdom:
+    algemeen: Matig rijk tot rijk
+    nutriënten:
+      stikstof: Matig tot hoog
+      fosfor: Matig
+      kalium: Matig tot hoog
+fysisch:
+  doorlatendheid:
+    verticaal: Matig
+    K_waarde: 5-50 cm/dag
+    beschrijving: Veel beter dan zware klei, maar trager dan zand
+  vochtvasthoudend_vermogen:
+    capaciteit: Hoog
+    beschikbaar_water: 140-180 mm/meter
+    beschrijving: Goede balans - houdt vocht maar droog wel door
+  bewortelbaarheid:
+    diepte: Goed (60-100cm)
+    belemmeringen: Weinig
+    beschrijving: Veel makkelijker bewortelbaar dan zware klei
+  draagkracht:
+    droog: Hoog
+    nat: Matig
+    bewerkbaarheid: Redelijk goed - veel makkelijker dan zware klei
+  verdichting:
+    gevoeligheid: Matig
+    herstel: Matig snel (sneller dan zware klei)
+betekenis_voor_erfbeplanting:
+  bodem_implicaties: '**LICHTE KLEI** - de "goldilocks" tussen zand en zware klei!
+
+
+    Dit is een van de BESTE bodems voor erfbeplanting:
+
+    - Voldoende voeding (beter dan zand)
+
+    - Goede vocht balans (beter dan zand)
+
+    - Makkelijk bewerkbaar (beter dan zware klei)
+
+    - Weinig wateroverlast (beter dan zware klei)
+
+
+    **Voordelen:**
+
+    - Breed scala aan soorten mogelijk
+
+    - Goede groei
+
+    - Matig onderhoud
+
+    - Weinig problemen
+
+
+    **Kleine aandachtspunten:**
+
+    - Bij extreem nat: mogelijk drainage
+
+    - Bij droogte: soms watergift (maar minder dan zand)
+
+    - Vermijd bewerken bij erg nat (maar minder kritiek dan zware klei)
+
+    '
+  aandachtspunten:
+  - Plant bij voorkeur in voorjaar of herfst
+  - Organische stof toevoegen verbetert structuur verder
+  - 'Bij twijfel over drainage: doe de watertest (zie zeeklei)'
+  - Mulchen optioneel maar wel nuttig
+plantmogelijkheden:
+  zeer_geschikt:
+  - Vrijwel ALLE soorten werken hier goed!
+  - Eik, beuk, berk, linde - allemaal prima
+  - Vruchtbomen - uitstekend
+  - Haagplanten - zeer geschikt
+  niet_geschikt:
+  - Alleen extreme specialisten (heide op zeer zure grond)
+duiding:
+  rapporttekst: "**U heeft LICHTE RIVIERKLEI - een uitstekende bodem!**\n\nDit is\
+    \ een van de beste bodems voor erfbeplanting. Het combineert de \nvoordelen van\
+    \ klei (voeding, vocht) met de voordelen van zand \n(doorlatendheid, bewerkbaarheid).\n\
+    \n**Kenmerken:**\n- Rijk genoeg aan voeding\n- Goede vochtbalans\n- Makkelijk\
+    \ te bewerken\n- Breed scala aan planten mogelijk\n\n**Vrijwel alles groeit hier\
+    \ goed!**\n\nU kunt kiezen uit het volledige palet: eik, beuk, berk, linde, \n\
+    vruchtbomen, haagplanten - het werkt allemaal.\n\n**Minimaal onderhoud:**\n- Mulchen\
+    \ optioneel maar nuttig\n- Watergift zelden nodig (alleen extreme droogte)\n-\
+    \ Drainage meestal niet nodig\n\n**Tips:**\n- Voeg compost toe bij aanplant (verbetert\
+    \ verder)\n- Plant in voorjaar (maart-april) of herfst (oktober)\n- Bij nat weer:\
+    \ wacht even met bewerken (maar minder kritiek dan zware klei)\n\n**U heeft geluk\
+    \ met deze bodem - geniet ervan!**\n"
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+profielopbouw:
+  beschrijving: Typisch Klei profiel
+praktische_adviezen:
+  algemeen: Afgestemd op bodemtype en situatie

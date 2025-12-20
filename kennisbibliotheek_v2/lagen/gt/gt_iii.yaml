@@ -1,0 +1,184 @@
+titel: GWT III - Nat
+code: gt_iii
+categorie: Nat
+grondwaterstand:
+  gemiddeld_hoogste_grondwaterstand:
+    afkorting: GHG
+    diepte_cm: <40 cm onder maaiveld
+    periode: December-maart
+    beschrijving: "In winter/voorjaar staat grondwater hoog - binnen 40cm van maaiveld.\
+      \ \nWortels kunnen niet dieper dan deze grens.\n"
+  gemiddeld_laagste_grondwaterstand:
+    afkorting: GLG
+    diepte_cm: 80-120 cm onder maaiveld
+    periode: Juli-september
+    beschrijving: "In zomer zakt grondwater weg, maar blijft binnen bereik van diepe\
+      \ \nwortels (gemiddeld 100cm diep).\n"
+  fluctuatie:
+    amplitude: 60-80 cm
+    stabiliteit: Matig variabel
+    beschrijving: "Grote fluctuatie tussen winter (hoog, 40cm) en zomer (laag, 100cm).\
+      \ \nDit vraagt om aanpassing van planten.\n"
+waterregime:
+  type: Neutraal tot zwakke kwel
+  drainage:
+    natuurlijk: Matig
+    kunstmatig: Vaak aanwezig (drainage buizen)
+    beschrijving: 'Natuurlijke drainage matig. Vaak verbeterd met drainage om winter-
+
+      wateroverlast te verminderen.
+
+      '
+  droogtegevoeligheid:
+    periode: Zelden (grondwater blijft binnen bereik)
+    ernst: Laag
+    beschrijving: "Ook in droge zomers blijft grondwater op 80-100cm diepte. Diepe\
+      \ \nwortels kunnen water bereiken. Droogte is zelden probleem.\n"
+  nattigheid:
+    periode: December-maart
+    ernst: Hoog
+    drainage_problemen: Ja (zonder drainage)
+    beschrijving: "In winter staat grondwater hoog (< 40cm). Grond is verzadigd, \n\
+      wortels kunnen niet dieper. Kans op wateroverlast bij hevige regen.\n"
+  beschikbaar_water_planten:
+    wortelzone: 0-40cm (winter) tot 0-100cm (zomer)
+    hoeveelheid: Veel - grondwater binnen bereik
+    beschrijving: 'Planten hebben altijd water beschikbaar:
+
+      - Winter: grondwater op 40cm (oppervlakkige wortels voldoende)
+
+      - Zomer: grondwater op 100cm (diepe wortels nodig)
+
+
+      Watergebrek is zelden probleem. Natte omstandigheden wel.
+
+      '
+seizoensdynamiek:
+  winter_voorjaar:
+    grondwaterstand: 30-40cm diep
+    toestand: Nat, verzadigd
+    risico: Wateroverlast, beperkte worteldiepte, geen zuurstof diep
+  lente:
+    grondwaterstand: 60cm (dalend)
+    toestand: Nog nat, maar draineert
+    opmerking: Plant bij voorkeur laat (april-mei) als grond droger is
+  zomer:
+    grondwaterstand: 80-120cm
+    toestand: Optimaal - grondwater binnen bereik, grond niet verzadigd
+    risico: Geen
+  herfst:
+    grondwaterstand: 60cm (stijgend)
+    toestand: Natter wordend
+    opmerking: Draagkracht neemt af, voorzichtig met machines
+betekenis_voor_erfbeplanting:
+  water_implicaties: '**Grondwater speelt GROTE rol** - staat in winter hoog (40cm).
+
+
+    **Betekenis voor planten:**
+
+    - Wortels kunnen in winter niet dieper dan 40cm (te nat, geen zuurstof)
+
+    - In zomer wel dieper (grondwater 80-100cm), maar blijft binnen bereik
+
+    - Watervoorziening het hele jaar goed
+
+
+    **In de praktijk:**
+
+    - Kies soorten die **natte voeten** verdragen (winter!)
+
+    - Vermijd soorten die droogte nodig hebben
+
+    - Plant bij voorkeur op kleine verhogingen (20-30cm hoog)
+
+    - Drainage kan helpen maar is vaak aanwezig
+
+
+    **Voordelen:**
+
+    - Nooit watergebrek (ook niet in droge zomers)
+
+    - Geen watergift nodig (behalve eerste maanden na aanplant)
+
+
+    **Nadelen:**
+
+    - Natte omstandigheden in winter = niet alle soorten verdragen dit
+
+    - Beperkte worteldiepte in winter
+
+    - Slechte draagkracht najaar/winter
+
+    '
+  water_beheer:
+    watergeven:
+      nodig: Nee, alleen eerste maanden na aanplant
+      frequentie: Alleen bij extreme droogte
+      hoeveelheid: Minder dan op droge grond
+    drainage:
+      nodig: Vaak al aanwezig, anders sterk aan te raden
+      type: Diepe drainage (80-100cm) of oppervlakkige greppels
+      reden: Vermindert winterwateroverlast, vergroot wortelzone
+  seizoens_aandacht:
+  - 'Winter: Vermijd betreden/machines (verzadiging, verdichting)'
+  - 'Voorjaar: Plant laat (april-mei) als grond droger is'
+  - 'Zomer: Ideale omstandigheden, geen actie nodig'
+  - 'Herfst: Draagkracht neemt af, voorzichtig'
+  aandachtspunten:
+  - Plant op microverhogingen (20-30cm) = betere drainage bij wortels
+  - 'Kies boomsoorten die nat verdragen: els, wilg, es (beperkt)'
+  - 'Vermijd: eik, beuk, meeste naaldbomen (willen droog)'
+  - Drainage sterk aan te raden als nog niet aanwezig
+indicator_vegetatie:
+  natuurlijk:
+  - Pitrus = nat
+  - Riet = zeer nat
+  - Dotterbloem = nat
+  - Moerasspirea = nat tot vochtig
+  onkruiden:
+  - Ridderzuring = nat
+  - Kruipende boterbloem = vochtig tot nat
+bronnen:
+  primair:
+  - id: bro_grondwatertrap
+    context: Gt-classificatie
+duiding:
+  rapporttekst: "**Hoe zit het met water op uw locatie?**\n\nHet grondwater staat\
+    \ hier relatief hoog. In de winter kan het tot \nbinnen 40 centimeter onder het\
+    \ maaiveld stijgen. In de zomer zakt \nhet weg naar ongeveer 1 meter diep, maar\
+    \ dat is nog steeds binnen \nbereik voor plantenwortels.\n\n**Wat betekent dit\
+    \ door het jaar heen?**\n\n- **Winter/voorjaar**: Veel water, de grond kan verzadigd\
+    \ zijn. \n  Sommige plekken kunnen te nat zijn voor gevoelige planten.\n\n- **Zomer**:\
+    \ Ook in droge zomers blijft het grondwater binnen bereik \n  van de wortels.\
+    \ Planten hebben altijd water beschikbaar.\n\n- **Herfst**: Het grondwater stijgt\
+    \ weer, de bodem wordt natter.\n\n**Praktische tips**\n\n1. **Plant op heuveltjes:**\
+    \ Maak kleine verhogingen (20-30cm hoog) \n   waar u bomen en struiken plant.\
+    \ Zo staan hun wortels in de winter \n   niet in het water.\n\n2. **Kies de juiste\
+    \ soorten:** Els, wilg en populier verdragen natte \n   omstandigheden goed. Vermijd\
+    \ eik en beuk (willen het droger).\n\n3. **Plantseizoen:** Plant bij voorkeur\
+    \ in april-mei (grond is dan \n   al wat droger) of in de herfst, maar vóór het\
+    \ te nat wordt.\n\n4. **Geen extra water nodig:** Het grondwater voorziet in voldoende\
+    \ \n   water, ook in droge zomers. Alleen eerste weken na aanplant \n   mogelijk\
+    \ wat extra water.\n"
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+plantmogelijkheden:
+  zeer_geschikt:
+  - Zwarte els (Alnus glutinosa) - houdt van natte voeten
+  - Schietwilg (Salix alba) - nat specialist
+  - Grauwe wilg (Salix cinerea) - struikvorm, zeer nat-tolerant
+  - Gewone vogelkers (Prunus padus) - nat verdragend
+  - Es (Fraxinus excelsior) - nat-tolerant
+  geschikt_met_drainage:
+  - Zomereik (Quercus robur) - matige nat-tolerantie
+  - Ruwe berk (Betula pendula) - na drainage
+  - Hazelaar (Corylus avellana) - liever iets droger
+  - Meidoorn (Crataegus monogyna) - breed spectrum
+  - Haagbeuk (Carpinus betulus) - kan nat verdragen
+  te_vermeiden_zonder_drainage:
+  - Beuk (te nat - wortelrot)
+  - Grove den (te nat)
+  - Linde op zeer natte plekken
+  - Vruchtbomen (meeste soorten te nat)

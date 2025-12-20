@@ -1,0 +1,49 @@
+titel: Strandwal (oude kustlijn)
+code: bknsn_strand1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Zeekleigebied/Duingebied
+ontstaansgeschiedenis:
+  periode: Holoceen/Pleistoceen
+  proces: Langgerekte rug (oude duinenrij)
+  beschrijving: Deze landvorm ontstond door natuurlijke processen in het verleden.
+landvorm:
+  reliëf:
+    vorm: Lage rug
+    hoogtebereik: 0-5m NAP
+    helling: 1-3%
+  positie_in_landschap:
+    ligging: Iets hoger
+    beschrijving: Langgerekte rug (oude duinenrij)
+hydromorfologie:
+  afwatering:
+    beschrijving: Beter gedraineerd dan omgeving
+typische_bodem:
+  types: Zand met kleidek
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Hoger+droger dan omgeving. Goede plek in nat gebied.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het reliëf, niet ertegen
+  - Benut microreliëf voor variatie
+  - Kies soorten passend bij waterstand en bodem
+duiding:
+  rapporttekst: '**Strandwal (oude kustlijn)**
+
+
+    Langgerekte rug (oude duinenrij)
+
+
+    Water: Beter gedraineerd dan omgeving
+
+    Bodem: Zand met kleidek
+
+
+    Advies: Hoger+droger dan omgeving. Goede plek in nat gebied.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

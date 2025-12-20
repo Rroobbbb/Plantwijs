@@ -1,0 +1,79 @@
+titel: Hedera helix
+wetenschappelijke_naam: Hedera helix
+type: bijboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 10
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - neutraal
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+    - alle grondsoorten
+  licht:
+  - zon
+  - halfschaduw
+  - schaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt hitte
+groei:
+  hoogte: 3 - 30 m
+  hoogte_range:
+    min: 3.0
+    max: 30.0
+    tekst: 3 - 30 m
+  breedte: 3 - 30 m
+  breedte_range:
+    min: 3.0
+    max: 30.0
+    tekst: 3 - 30 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 5A - 9B
+functie: 'Type: bijboom. klimaatbeplanting / stedelijke beplanting / schaduwtolerant / ecobeplanting /
+  solide beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+  - dicht
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / hehelix-hedera-helix'
+  aangevuld: Basis TreeEbb

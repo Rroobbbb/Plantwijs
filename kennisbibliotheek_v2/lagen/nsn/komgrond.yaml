@@ -1,0 +1,56 @@
+titel: "Komgrond (kom)"
+code: "bknsn_riv2"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Rivierengebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Afzetting fijn materiaal (klei) bij overstromingen"
+  beschrijving: |
+    Afzetting fijn materiaal (klei) bij overstromingen
+
+landvorm:
+  reliëf:
+    vorm: "Laagte achter oeverwal"
+    hoogtebereik: "-2 tot 2m NAP"
+    helling: "<1%"
+  
+  positie_in_landschap:
+    ligging: "Laagste achter oeverwal"
+    beschrijving: "Vlakke laagte"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Nat, slecht gedraineerd"
+
+typische_bodem:
+  types: "Zware klei"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    NAT en zware klei. Drainage vaak nodig. Pas op verdichting!
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Komgrond (kom)**
+    
+    Dit is een Laagte achter oeverwal landvorm op -2 tot 2m NAP.
+    
+    Kenmerkend:
+    - Vlakke laagte
+    - Nat, slecht gedraineerd
+    - Bodem: Zware klei
+    
+    Voor beplanting betekent dit:
+    NAT en zware klei. Drainage vaak nodig. Pas op verdichting!
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

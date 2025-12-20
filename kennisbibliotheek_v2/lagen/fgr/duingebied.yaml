@@ -1,0 +1,49 @@
+titel: Duingebied (kustduinen)
+code: fgr_duingebied
+regio: Hele kust (Noord-Holland tot Zeeland)
+geografie:
+  karakteristiek: 'Dynamische duinen, kalkrijk zand, wind, zout
+
+    '
+bodem:
+  beschrijving: Duinzand (kalkhoudend), arm tot matig
+hydrologie:
+  beschrijving: Wisselend (Gt V-VII), zoetwaterlens
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: 'Wind en zout zijn uitdaging. Kalktolerante soorten.
+
+    '
+  soorten_specifiek:
+    geschikt: Meidoorn, duindoorn, wilde liguster, jeneverbes
+  ontwerp_uitgangspunten:
+  - 'Microreliëf: top droog, vallei vochtig'
+  - Wind + zout = uitdaging
+  - Bescherm tegen verstuiving
+duiding:
+  rapporttekst: '**Duingebied (kustduinen)**
+
+
+    Karakteristiek: Dynamische duinen, kalkrijk zand, wind, zout
+
+
+    Bodem: Duinzand (kalkhoudend), arm tot matig
+
+    Water: Wisselend (Gt V-VII), zoetwaterlens
+
+
+    Geschikte soorten: Meidoorn, duindoorn, wilde liguster, jeneverbes
+
+
+    Advies: Wind en zout zijn uitdaging. Kalktolerante soorten.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Compact FGR - geografische context
+landschappelijke_context:
+  karakteristiek_beeld:
+  - Zie geografie karakteristiek
+  erfbeplanting_past_bij:
+  - Inheemse soorten passend bij landschap

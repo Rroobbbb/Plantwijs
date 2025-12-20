@@ -1,0 +1,86 @@
+titel: Alnus glutinosa
+wetenschappelijke_naam: Alnus glutinosa
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 2
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zware klei
+    - lichte klei
+    - zand
+    - lemige grond
+    - alle grondsoorten
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 10 - 20 m
+  hoogte_range:
+    min: 10.0
+    max: 20.0
+    tekst: 10 - 20 m
+  breedte: 6 - 12 m
+  breedte_range:
+    min: 6.0
+    max: 12.0
+    tekst: 6 - 12 m
+  kroonvorm: breed piramidaal
+  kroonstructuur: halfopen
+  winterhardheid: 3A - 8B
+  snelheid_jaar_1_5: 50-80cm/jaar
+functie: Boom voor natte standplaatsen. Verbetert bodem via stikstoffixatie.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vogels
+  - nectarwaarde 0
+  - pollenwaarde 1
+  insecten: 200+ soorten
+  vogels: Zaden in winter (sijsjes)
+  score: 8/10
+  bijzonderheid: Stikstoffixatie via wortelknolletjes
+praktisch:
+  toepassingen:
+  - straat
+  - laan
+  - park
+  - groenstrook
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - windsingel
+  - wadi
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst:
+  droogte_score: 2
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / alglutin-alnus-glutinosa'
+  aangevuld: Ja

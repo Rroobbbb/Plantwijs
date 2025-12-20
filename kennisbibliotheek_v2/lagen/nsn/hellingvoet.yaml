@@ -1,0 +1,46 @@
+titel: Hellingvoet
+code: bknsn_heuvl3
+categorie: NSN - Geomorfologisch
+fgr_relatie: Heuvelland
+ontstaansgeschiedenis:
+  proces: Colluvium (afgespoeld materiaal)
+landvorm:
+  reliëf:
+    vorm: Overgang helling naar dal
+    hoogtebereik: Variabel
+    helling: 2-8%
+  positie_in_landschap:
+    ligging: Onderaan helling
+    beschrijving: Flauwere zone onderaan helling
+hydromorfologie:
+  afwatering:
+    beschrijving: Vochtiger (water verzamelt)
+typische_bodem:
+  types: Colluviaal leem/löss
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Vochtiger dan dalwand. Dieper bodem (opgespoeld).
+
+    '
+  ontwerp_uitgangspunten:
+  - 'Benut microklimaat: Zuid-helling warm, Noord-helling koel'
+  - Plant dwars op helling (erosiebestrijding)
+  - Gebruik terrassen bij steile hellingen
+duiding:
+  rapporttekst: '**Hellingvoet**
+
+
+    Flauwere zone onderaan helling
+
+
+    Water: Vochtiger (water verzamelt)
+
+    Bodem: Colluviaal leem/löss
+
+
+    Vochtiger dan dalwand. Dieper bodem (opgespoeld).
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

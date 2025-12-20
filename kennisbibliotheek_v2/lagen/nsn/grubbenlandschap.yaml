@@ -1,0 +1,45 @@
+titel: Grubbenlandschap (holle wegen)
+code: bknsn_loss2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Heuvelland
+ontstaansgeschiedenis:
+  periode: Middeleeuwen - heden
+  proces: Diepe erosie door eeuwenlang gebruik van onverharde wegen
+  beschrijving: Holle wegen (grubben) ontstonden door eeuwenlang verkeer over onverharde
+    wegen. De zachte löss erodeerde diep weg.
+landvorm:
+  reliëf:
+    vorm: Ingesneden wegen
+    hoogtebereik: Variabel
+    helling: Steil (wanden)
+  positie_in_landschap:
+    ligging: Verbindingen
+    beschrijving: Diep ingesneden (2-6m) holle wegen
+hydromorfologie:
+  afwatering:
+    beschrijving: Variabel
+typische_bodem:
+  types: Blootgelegd profiel
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Karakteristiek! Haagbeuken op rand (typisch Zuid-Limburg).
+
+    '
+  ontwerp_uitgangspunten:
+  - 'Benut microklimaat: Zuid-helling warm, Noord-helling koel'
+  - Plant dwars op helling (erosiebestrijding)
+  - Gebruik terrassen bij steile hellingen
+duiding:
+  rapporttekst: '**Grubbenlandschap (holle wegen)**
+
+
+    Diep ingesneden (2-6m) holle wegen
+
+
+    Karakteristiek! Haagbeuken op rand (typisch Zuid-Limburg).
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

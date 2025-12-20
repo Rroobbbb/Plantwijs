@@ -1,0 +1,255 @@
+titel: "GWT V - Matig droog"
+code: "gt_v"
+categorie: "Matig droog"
+
+grondwaterstand:
+  gemiddeld_hoogste_grondwaterstand:
+    afkorting: "GHG"
+    diepte_cm: "40-80 cm onder maaiveld"
+    periode: "Januari-maart"
+    beschrijving: |
+      In winter komt grondwater op 40-80cm diepte (gemiddeld 60cm). 
+      Vergelijkbaar met Gt IV, maar zakt in zomer dieper weg.
+  
+  gemiddeld_laagste_grondwaterstand:
+    afkorting: "GLG"
+    diepte_cm: ">120 cm onder maaiveld (vaak 120-180cm)"
+    periode: "Augustus-september"
+    beschrijving: |
+      In zomer zakt grondwater weg tot diep (>120cm, vaak 140-160cm). 
+      Aan grens van bereikbaarheid voor wortels. Dit is het verschil met Gt IV.
+  
+  fluctuatie:
+    amplitude: "80-120 cm"
+    stabiliteit: "Vochtig (winter) tot droog (zomer)"
+    beschrijving: |
+      Grote fluctuatie tussen vochtig in winter (60cm) en droog in zomer 
+      (140cm). Planten moeten zich aanpassen aan beide extremen.
+
+waterregime:
+  type: "Infiltratie (water zakt weg)"
+  
+  drainage:
+    natuurlijk: "Goed tot zeer goed"
+    kunstmatig: "Niet nodig"
+    beschrijving: |
+      Water loopt goed weg. Geen wateroverlast, maar wel snel droog in 
+      zomer. Dit is de meest voorkomende Gt in Nederland.
+  
+  droogtegevoeligheid:
+    periode: "Juni-september"
+    ernst: "Matig tot hoog"
+    beschrijving: |
+      In zomer zakt grondwater weg tot >120cm. Bij droogte zijn planten 
+      afhankelijk van regenwater en bodemvocht. Jonge planten (eerste 3 
+      jaar) hebben extra water nodig. Oudere planten redden het meestal.
+  
+  nattigheid:
+    periode: "Zelden"
+    ernst: "Zeer laag"
+    drainage_problemen: "Nee"
+    beschrijving: |
+      Grondwater staat ook in winter diep genoeg (60cm+). Geen water-
+      overlast, geen natte voeten. Water loopt goed weg.
+  
+  beschikbaar_water_planten:
+    wortelzone: "0-60cm (winter) tot 0-140cm (zomer, maar grondwater te diep)"
+    hoeveelheid: "Voldoende in winter, beperkt in zomer"
+    beschrijving: |
+      - Winter: grondwater op 60cm = bereikbaar voor diepe wortels
+      - Zomer: grondwater >120cm = vaak te diep
+      - Planten afhankelijk van capillaire opstijging en regenwater
+      - Bij droogte >2 weken = watergebrek mogelijk
+
+seizoensdynamiek:
+  winter_voorjaar:
+    grondwaterstand: "50-70cm diep"
+    toestand: "Vochtig, goed"
+    risico: "Geen - ideaal"
+  
+  lente:
+    grondwaterstand: "80-100cm (dalend)"
+    toestand: "Nog voldoende vocht"
+    opmerking: "Goed plantseizoen"
+  
+  zomer:
+    grondwaterstand: "120-160cm (te diep)"
+    toestand: "Droog, grondwater buiten bereik"
+    risico: "Droogtestress bij >2 weken geen regen"
+  
+  herfst:
+    grondwaterstand: "100-120cm (stijgend)"
+    toestand: "Wordt vochtiger"
+    opmerking: "Ook goed plantseizoen"
+
+betekenis_voor_erfbeplanting:
+  water_implicaties: |
+    **MATIG DROOG** - meest voorkomende situatie in Nederland.
+    
+    **Kenmerken:**
+    - Winter: Voldoende vocht (grondwater op 60cm)
+    - Zomer: Kan droog worden (grondwater >120cm)
+    - Fluctuatie vraagt aanpassing van planten
+    
+    **Betekenis voor planten:**
+    - Geen wateroverlast (voordeel!)
+    - Zomer kan droog zijn (nadeel bij droogte)
+    - Jonge planten (eerste 3 jaar) extra aandacht in zomer
+    - Oudere planten meestal zelfvoorzienend
+    
+    **Kies bij voorkeur:**
+    - Soorten met matige tot goede droogte-tolerantie
+    - Diep wortelende soorten (eik, den)
+    - Vermijd zeer droogtegevoelige soorten (beuk op zand)
+    
+    **Plantmogelijkheden:**
+    - Meeste soorten mogelijk met goede voorbereiding
+    - Eik, berk, linde, veldesdoorn - prima
+    - Beuk kan, maar lastig op zand (wil vochtiger)
+    - Vruchtbomen mogelijk met watergift eerste jaren
+    
+    **Voordelen:**
+    - Geen wateroverlast
+    - Goede drainage
+    - Meeste soorten mogelijk
+    - Oudere planten zelfvoorzienend
+    
+    **Nadelen:**
+    - Jonge planten hebben watergift nodig (eerste 3 jaar)
+    - Bij droogte extra aandacht
+    - Sommige soorten zijn te droogtegevoelig
+  
+  water_beheer:
+    watergeven:
+      nodig: "Ja, eerste 3 jaren bij droogte"
+      frequentie: "Bij droogte >1 week: 1x per week"
+      hoeveelheid: "15-20L per boom, 10L per struik"
+      stoppen: "Na jaar 3-4 meestal niet meer nodig"
+    
+    drainage:
+      nodig: "Nee"
+      reden: "Drainage is al goed"
+  
+  seizoens_aandacht:
+    - "Plant bij voorkeur in maart-april (grond nog vochtig)"
+    - "Eerste 3 zomers: monitor droogte, geef water bij >1 week geen regen"
+    - "Mulch is BELANGRIJK (10cm) - halveert waterbehoefte"
+    - "Vanaf jaar 4: meestal zelfvoorzienend"
+  
+  aandachtspunten:
+    - "Mulchen met 10cm is zeer effectief (halveert watergift)"
+    - "Stimuleer diepe beworteling: beter 1x/week veel dan dagelijks beetje"
+    - "Bij aanplant: maak kuil, vul met water, laat zakken voor contact wortels-grondwater"
+    - "Vermijd planten op zuidhelling (nog droger)"
+    - "Kies bij twijfel droogte-tolerante soorten"
+
+plantmogelijkheden:
+  zeer_geschikt:
+    - "Zomereik (Quercus robur) - diepe penwortel, droogte-tolerant"
+    - "Ruwe berk (Betula pendula) - droogte-tolerant"
+    - "Winterlinde (Tilia cordata) - droogte-toleranter dan zomerlinde"
+    - "Veldesdoorn (Acer campestre) - zeer droogte-tolerant"
+    - "Grove den (Pinus sylvestris) - droogte-specialist"
+    - "Meidoorn (Crataegus monogyna) - robuust"
+    - "Sleedoorn (Prunus spinosa) - zeer droogte-tolerant"
+  
+  geschikt_met_watergift:
+    - "Beuk (Fagus sylvatica) - eerste 5 jaar extra water, vooral op zand"
+    - "Haagbeuk (Carpinus betulus) - beter dan beuk, maar ook water nodig"
+    - "Vruchtbomen - watergift eerste 3-4 jaar essentieel"
+    - "Hazelaar (Corylus avellana) - watergift eerste 3 jaar"
+  
+  te_vermeiden:
+    - "Zwarte els (wil natter)"
+    - "Wilgen (te droog in zomer)"
+    - "Es (bij voorkeur vochtiger)"
+
+indicator_vegetatie:
+  natuurlijk:
+    - "Struikhei (droog zand)"
+    - "Bochtige smele (droog, zuur)"
+    - "Schapengras (droog)"
+  
+  onkruiden:
+    - "Zandblauwtje (droog zand)"
+    - "Klein streepzaad (droog)"
+
+bronnen:
+  primair:
+    - id: "bro_grondwatertrap"
+      context: "Gt-classificatie"
+
+duiding:
+  rapporttekst: |
+    **Uw locatie is MATIG DROOG**
+    
+    Dit is de meest voorkomende grondwatersituatie in Nederland. Het 
+    grondwater staat in de winter op ongeveer 60 centimeter diepte, maar 
+    in de zomer zakt het weg tot meer dan 120 centimeter - vaak zelfs 
+    140-160 centimeter. Dit betekent dat het grondwater in de zomer te 
+    diep is voor planten om te bereiken.
+    
+    **Wat betekent dit door het jaar heen?**
+    
+    - **Winter/voorjaar**: Voldoende vocht, geen problemen
+    - **Zomer**: Kan droog worden als het niet regent
+    - **Herfst**: Wordt weer vochtiger
+    
+    **Wat betekent dit voor uw planten?**
+    
+    De meeste bomen en struiken kunnen hier prima groeien, maar ze hebben 
+    wel extra aandacht nodig in de eerste jaren:
+    
+    **Eerste 3 zomers na aanplant:**
+    - Geef extra water bij droogte (>1 week geen regen)
+    - 15-20 liter per boom per week
+    - 10 liter per struik per week
+    
+    **Na 3-4 jaar:**
+    - Planten hebben diepe wortels ontwikkeld
+    - Meestal zelfvoorzienend (ook in droge zomers)
+    - Alleen bij extreme droogte (>4 weken) mogelijk water geven
+    
+    **Zeer geschikte soorten (minimaal water nodig):**
+    
+    - **Eik** - Diepe penwortel, zeer droogte-tolerant
+    - **Berk** - Oppervlakkige wortels maar droogte-tolerant
+    - **Veldesdoorn** - Extreem droogte-tolerant, zeer robuust
+    - **Meidoorn** - Robuuste haagplant
+    - **Grove den** - Specialist voor droge zandgrond
+    
+    **Ook mogelijk (meer watergift eerste jaren):**
+    - Beuk, haagbeuk, vruchtbomen, hazelaar
+    
+    **De belangrijkste tip: MULCHEN!**
+    
+    Dek de grond af met 10 centimeter houtsnippers of bladeren. Dit:
+    - Voorkomt verdamping (50% minder waterverlies!)
+    - Halveert de hoeveelheid water die u moet geven
+    - Verbetert de bodem op lange termijn
+    
+    **Praktisch stappenplan:**
+    
+    1. **Bij aanplant (mrt-apr of okt-nov)**:
+       - Graaf ruime kuil
+       - Mulch direct 10cm dik rondom plant
+    
+    2. **Eerste 3 zomers**:
+       - Check wekelijks: regen gehad?
+       - Geen regen >1 week → water geven
+       - 1x per week flink (15-20L) is beter dan dagelijks beetje
+    
+    3. **Na jaar 3-4**:
+       - Planten zijn zelfvoorzienend
+       - Alleen bij extreme droogte (>4 weken) water geven
+       - Geniet!
+    
+    **Dit is een normale situatie - geen zorgen!**
+    Met de juiste soorten en wat aandacht de eerste jaren groeit hier een 
+    prachtige beplanting.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerkingen: "Meest voorkomende Gt in NL - maak gebruiker gerust"

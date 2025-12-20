@@ -1,0 +1,77 @@
+titel: Prunus avium
+wetenschappelijke_naam: Prunus avium
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt matige wind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 15 - 25 m
+  hoogte_range:
+    min: 15.0
+    max: 25.0
+    tekst: 15 - 25 m
+  breedte: 10 - 15 m
+  breedte_range:
+    min: 10.0
+    max: 15.0
+    tekst: 10 - 15 m
+  kroonvorm: rond / breed eirond
+  kroonstructuur: halfopen
+  winterhardheid: 4A - 9B
+  snelheid_jaar_1_5: 50-80cm/jaar
+functie: Zoete kers - prachtige bloei april. Kersen eetbaar. Snel groeiend.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - nectarwaarde 5
+  - pollenwaarde 5
+  insecten: 150+ soorten
+  vogels: Kersen (als je ze voor bent!)
+  score: 8/10
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  verharding_tolerantie:
+  - geen
+  eetbaar: Kersen (juli)
+  eerste_kersen: Vanaf jaar 5-7
+klimaat_toekomst:
+  droogte_score: 6
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / pravium-prunus-avium'
+  aangevuld: Ja

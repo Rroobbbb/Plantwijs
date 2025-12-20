@@ -1,0 +1,64 @@
+titel: Salix purpurea
+wetenschappelijke_naam: Salix purpurea
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - zavel
+    - zware klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 3 - 5 m
+  hoogte_range:
+    min: 3.0
+    max: 5.0
+    tekst: 3 - 5 m
+  breedte: 3 - 5 m
+  breedte_range:
+    min: 3.0
+    max: 5.0
+    tekst: 3 - 5 m
+  kroonvorm: vaas
+  kroonstructuur: gesloten
+  winterhardheid: 4A - 8B
+functie: 'Type: pionier. stedelijke beplanting / ecobeplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - landschap
+  - ecologische zone
+  - wadi
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / sapurpur-salix-purpurea'
+  aangevuld: Basis TreeEbb

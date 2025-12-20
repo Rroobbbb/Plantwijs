@@ -1,0 +1,74 @@
+titel: Ligustrum vulgare
+wetenschappelijke_naam: Ligustrum vulgare
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 7
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 2 - 5 m
+  hoogte_range:
+    min: 2.0
+    max: 5.0
+    tekst: 2 - 5 m
+  breedte: 2 - 5 m
+  breedte_range:
+    min: 2.0
+    max: 5.0
+    tekst: 2 - 5 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 7A - 10B
+functie: Wilde liguster - haagplant met hoge bijenwaarde. Wintergroen in milde winters.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - nectarwaarde 4
+  - pollenwaarde 4
+  bijen: Bloei juni-juli, honing
+  vogels: Zwarte bessen
+  score: 7/10
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - kleine tuin
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - kustgebied
+  verharding_tolerantie: []
+  gebruik_haag: Zeer geschikt
+  bijzonderheid: Wintergroen in milde winters
+klimaat_toekomst:
+  droogte_score: 7
+  hitte_score: null
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / livulgar-ligustrum-vulgare'
+  aangevuld: Ja

@@ -1,0 +1,117 @@
+titel: "[Naam FGR]"
+code: "fgr_[code]"
+regio: "[Provincies/gebied]"
+
+ligging:
+  provincies: ["..."]
+  specifiek: "..."
+  oppervlakte_km2: "~..."
+
+geografie:
+  karakteristiek: |
+    Beschrijving van het landschap, reliëf, karakteristieke elementen
+  
+  hoogteverschillen:
+    range: "... NAP"
+    reliëf: "Vlak/Golvend/Heuvelachtig"
+    hellingen: "...%"
+  
+  karakteristieke_elementen:
+    - "Element 1"
+    - "Element 2"
+
+geologie:
+  hoofdgesteenten:
+    - type: "..."
+      ouderdom: "..."
+      voorkomen: "..."
+  
+  ontstaan: "Hoe is dit landschap ontstaan?"
+
+bodem:
+  dominante_typen:
+    - "Bodemtype 1"
+    - "Bodemtype 2"
+  
+  kwaliteit: "Arm/Matig/Rijk"
+  pH: "..."
+  voeding: "..."
+
+hydrologie:
+  grondwater: "Diep/Hoog/Wisselend"
+  beken: "Aanwezig/Afwezig"
+  karakter: "Beschrijving waterhuishouding"
+
+klimaat:
+  type: "Zeeklimaat/Continentaal/..."
+  neerslag: "...mm/jaar"
+  bijzonderheden: "Warmer/Kouder/Windiger dan gemiddeld"
+
+vegetatie:
+  natuurlijke_vegetatie:
+    - "Vegetatietype 1"
+    - "Vegetatietype 2"
+  
+  karakteristieke_soorten:
+    - "Soort 1"
+    - "Soort 2"
+
+landgebruik:
+  huidig:
+    - "Gebruik 1 - ...%"
+    - "Gebruik 2 - ...%"
+
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: |
+    Wat betekent deze regio voor beplantingskeuze?
+    
+    Voordelen:
+    - ...
+    
+    Uitdagingen:
+    - ...
+  
+  ontwerp_uitgangspunten:
+    - "Principe 1"
+    - "Principe 2"
+  
+  soorten_specifiek:
+    zeer_geschikt:
+      - "Soort 1 - waarom"
+      - "Soort 2 - waarom"
+    
+    te_vermeiden:
+      - "Soort 1 - waarom niet"
+  
+  aandachtspunten:
+    - "Punt 1"
+    - "Punt 2"
+
+landschappelijke_context:
+  karakteristiek_beeld:
+    - "Landschapselement 1"
+    - "Landschapselement 2"
+  
+  erfbeplanting_past_bij:
+    - "Past bij landschap 1"
+    - "Past bij landschap 2"
+
+bronnen:
+  primair:
+    - id: "fgr_indeling_nl"
+      context: "Fysisch Geografische Regio indeling"
+
+duiding:
+  rapporttekst: |
+    **Gebruikersvriendelijke uitleg**
+    
+    Wat is bijzonder aan deze regio?
+    
+    Wat betekent dit voor beplanting?
+    
+    Praktische tips specifiek voor deze regio.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "YYYY-MM-DD"
+  auteur: "..."

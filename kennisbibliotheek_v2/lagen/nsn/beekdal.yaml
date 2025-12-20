@@ -1,0 +1,56 @@
+titel: "Beekdal"
+code: "bknsn_bd1"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Beekdalengebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Erosie door beek"
+  beschrijving: |
+    Erosie door beek
+
+landvorm:
+  reliëf:
+    vorm: "Dal (laagste punt)"
+    hoogtebereik: "2-15m NAP"
+    helling: "0-2% (zeer flauw)"
+  
+  positie_in_landschap:
+    ligging: "Laagste punt landschap"
+    beschrijving: "Langgerekt dal langs beek"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Nat tot zeer nat, kwel"
+
+typische_bodem:
+  types: "Beekeerdgrond, veen"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    NAT! Kies nat-tolerante soorten. Els, wilg, vogelkers.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Beekdal**
+    
+    Dit is een Dal (laagste punt) landvorm op 2-15m NAP.
+    
+    Kenmerkend:
+    - Langgerekt dal langs beek
+    - Nat tot zeer nat, kwel
+    - Bodem: Beekeerdgrond, veen
+    
+    Voor beplanting betekent dit:
+    NAT! Kies nat-tolerante soorten. Els, wilg, vogelkers.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

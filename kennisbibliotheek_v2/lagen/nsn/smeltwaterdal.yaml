@@ -1,0 +1,46 @@
+titel: Smeltwaterdal
+code: bknsn_glac1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  proces: Erosie door smeltwater ijstijd
+landvorm:
+  reliëf:
+    vorm: Breed dal
+    hoogtebereik: 5-20m NAP
+    helling: Zeer flauw
+  positie_in_landschap:
+    ligging: Laagste in landschap
+    beschrijving: Breed dal (erosie smeltwater)
+hydromorfologie:
+  afwatering:
+    beschrijving: Nat tot zeer nat
+typische_bodem:
+  types: Beekdalgrond, veen
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'NAT! Brede natte zone. Els, wilg. Gelderse Vallei.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut microreliëf voor variatie
+  - 'Bij keileem: drainage overwegen'
+  - Grote hoogteverschillen benutten
+duiding:
+  rapporttekst: '**Smeltwaterdal**
+
+
+    Breed dal (erosie smeltwater)
+
+
+    Water: Nat tot zeer nat
+
+    Bodem: Beekdalgrond, veen
+
+
+    NAT! Brede natte zone. Els, wilg. Gelderse Vallei.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

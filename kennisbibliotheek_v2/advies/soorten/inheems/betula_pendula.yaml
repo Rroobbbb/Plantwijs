@@ -1,0 +1,82 @@
+titel: Betula pendula
+wetenschappelijke_naam: Betula pendula
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 7
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  wind_tolerantie: verdraagt wind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 15 - 20 m
+  hoogte_range:
+    min: 15.0
+    max: 20.0
+    tekst: 15 - 20 m
+  breedte: 9 - 12 m
+  breedte_range:
+    min: 9.0
+    max: 12.0
+    tekst: 9 - 12 m
+  kroonvorm: smal ovaal
+  kroonstructuur: open
+  winterhardheid: 2A - 9A
+  snelheid_jaar_1_5: 60-100cm/jaar
+  snelheid_jaar_5_15: 40-60cm/jaar
+  worteltype: Hartvormig, oppervlakkig
+  levensduur: 80-100 jaar
+functie: Snelle pionier voor bodemverbetering. Bladafval verbetert zure grond.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - nectarwaarde 0
+  - pollenwaarde 1
+  insecten: 300+ soorten
+  vogels: Nestgelegenheid kleine zangvogels
+  score: 8/10
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - daktuin
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  verharding_tolerantie:
+  - geen
+  plantmaat: 60-100cm blote wortel
+  aanslag: Zeer goed
+  nazorg: Minimaal, zeer robuust
+klimaat_toekomst:
+  droogte_score: 7
+  hitte_score: 7
+  toekomst_beoordeling: ''
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / bependul-betula-pendula'
+  aangevuld: Ja

@@ -1,0 +1,40 @@
+titel: Interpretatiebeperkingen en waarschuwingen (Gt)
+kernsamenvatting: 'Grondwatertrappen zijn kaartwaarden op basis van regionale, langjarige gemiddelden.
+
+  Ze geven richting, maar zijn geen exacte meting op perceelsniveau.
+
+  '
+aandachtspunten:
+- kaartwaarde_vs_werkelijkheid: 'Lokale omstandigheden zoals drainage, peilbeheer, ophoging, verdichting
+    en microreliëf
+
+    kunnen sterk afwijken van de kaartwaarde.
+
+    '
+- seizoens- en klimaatvariatie: 'Extreem natte of droge jaren kunnen tijdelijk leiden tot andere omstandigheden
+    dan
+
+    de Gt suggereert. Klimaatverandering vergroot deze afwijkingen.
+
+    '
+- schaalniveau: 'Gt is gekarteerd op landschappelijke schaal; binnen één erf kunnen meerdere vochtcondities
+
+    voorkomen.
+
+    '
+- interpretatie_in_combinatie: 'Gebruik Gt nooit los, maar altijd samen met bodemtype, geomorfologie (GMM),
+
+    natuurlijk systeem (NSN) en hoogte (AHN).
+
+    '
+gebruik_in_rapport: 'Deze waarschuwingen worden automatisch toegevoegd als nuancerende tekst bij het advies,
+
+  om te voorkomen dat kaartwaarden als absolute waarheid worden geïnterpreteerd.
+
+  '
+bronnen: &id001
+- stowa_grondwatertrappen_en_onzekerheden
+- wur_toelichting_bodem_en_grondwaterkartering
+duiding:
+  rapporttekst: ''
+  bronnen: *id001

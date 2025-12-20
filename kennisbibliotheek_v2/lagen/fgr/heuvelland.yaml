@@ -1,0 +1,275 @@
+titel: "Heuvelland"
+code: "fgr_heuvelland"
+regio: "Zuid-Limburg"
+
+ligging:
+  provincies: ["Limburg"]
+  specifiek: "Zuid-Limburg, rond Valkenburg, Maastricht, Vaals"
+  oppervlakte_km2: "~250 km²"
+  
+geografie:
+  karakteristiek: |
+    Het ENIGE echte heuvelland van Nederland. Glooiend landschap met 
+    heuvels tot 322m (Vaalserberg - hoogste punt NL). Diepe dalen, 
+    steile hellingen, kronkelende beekjes.
+  
+  hoogteverschillen:
+    range: "50m - 322m NAP"
+    reliëf: "Sterk glooiend tot heuvelachtig"
+    hellingen: "5-30% (plaatselijk steiler)"
+  
+  karakteristieke_elementen:
+    - "Plateaus met löss"
+    - "Diepe ingesneden beekdalen"
+    - "Droge kalkhellingen"
+    - "Groeves (mergelwinning)"
+    - "Holle wegen"
+    - "Bossen op hellingen"
+
+geologie:
+  hoofdgesteenten:
+    - type: "Krijtgesteente (mergel/kalksteen)"
+      ouderdom: "65-100 miljoen jaar (Krijt)"
+      voorkomen: "Ondergrond, zichtbaar in groeves"
+    
+    - type: "Löss (fijn stof)"
+      ouderdom: "10.000-150.000 jaar (IJstijden)"
+      voorkomen: "Bovengrond plateaus"
+    
+    - type: "Vuursteeneluvium"
+      voorkomen: "Hellingen (restant na kalkoplossing)"
+  
+  ontstaan: |
+    Heuvelland ontstond door:
+    1. Stuwing tijdens ijstijden (plateau omhoog)
+    2. Erosie door beekjes (dalen ingesneden)
+    3. Lössafzetting door wind (vruchtbare toplaag)
+    4. Kalkoplossing (groeves, grotten)
+
+bodem:
+  dominante_typen:
+    - "Löss (zeer vruchtbaar)"
+    - "Krijtgrond (kalkrijk)"
+    - "Leemgrond (hellingen)"
+    - "Beekdalgronden (vochtig)"
+  
+  kwaliteit: "Zeer goed - beste landbouwgrond van NL"
+  pH: "Neutraal tot basisch (7.0-8.5)"
+  voeding: "Zeer rijk"
+
+hydrologie:
+  beken:
+    - "Geul"
+    - "Gulp"
+    - "Selzerbeek"
+    - "Eyserbeek"
+  
+  karakter: "Snelstromende beekjes, kalkrijk water"
+  grondwater: "Diep (50-100m+), kalkrijk"
+  bronnen: "Kwelbronnen op hellingen"
+
+klimaat:
+  type: "Zeeklimaat met continentale invloed"
+  
+  bijzonderheden:
+    - "Warmste regio Nederland (Zuid-expositie)"
+    - "Minst neerslag van NL (~700mm/jaar)"
+    - "Sneeuw in winter (hoogte-effect)"
+    - "Microklimaten door reliëf (N vs Z hellingen)"
+  
+  temperatuur:
+    zomer: "18-20°C (warmst van NL)"
+    winter: "2-4°C"
+
+vegetatie:
+  natuurlijke_vegetatie:
+    - "Kalkgrasland (zeer zeldzaam)"
+    - "Hellingbossen (eik-haagbeuk)"
+    - "Struweel op krijthellingen"
+    - "Beekbegeleidend bos"
+  
+  karakteristieke_soorten:
+    - "Orchideeën (kalkgrasland)"
+    - "Haagbeuk (typisch heuvelland)"
+    - "Wilde kamperfoelie"
+    - "Bosbes op zure plekken"
+    - "Wilde liguster"
+  
+  zeldzaamheden:
+    - "30+ orchideeënsoorten"
+    - "Zuid-Europese soorten (warmteminnend)"
+    - "Kalkminnaars"
+
+landgebruik:
+  huidig:
+    - "Landbouw (akkers op löss) - 50%"
+    - "Bos (hellingen) - 30%"
+    - "Natuur (kalkgraslanden) - 10%"
+    - "Bewoning/recreatie - 10%"
+  
+  historisch:
+    - "Mergelwinning (groeves)"
+    - "Hakhoutbeheer (steenkool alternatief)"
+    - "Schapenbegrazing (kalkgraslanden)"
+
+betekenis_voor_erfbeplanting:
+  regio_karakteristieken: |
+    **UNIEKE REGIO** - anders dan rest van Nederland!
+    
+    **Voordelen Zuid-Limburg:**
+    - Warmste regio (langste groeiseizoen)
+    - Minste vorst (Zuid-soorten mogelijk)
+    - Vruchtbare bodem (löss = beste landbouwgrond)
+    - Veel zon (Zuid-hellingen)
+    - Kalkrijk (veel soorten houden daarvan)
+    
+    **Uitdagingen:**
+    - Hellingen (erosie, bereikbaarheid)
+    - Microklimaten (N-helling ≠ Z-helling)
+    - Kalkrijke grond (niet alle soorten verdragen)
+    - Droogte op Zuid-hellingen
+    - Wind op plateaus
+  
+  ontwerp_uitgangspunten:
+    - "Benut microklimaat (Z-helling = warm, N-helling = koel)"
+    - "Plant dwars op helling (erosiebestrijding)"
+    - "Kies kalktolerante soorten"
+    - "Op Zuid-hellingen: droogte-tolerant"
+    - "Benut warmte: Zuid-Europese soorten mogelijk"
+  
+  soorten_specifiek:
+    uitstekend_geschikt:
+      - "Haagbeuk (Carpinus betulus) - typisch heuvelland"
+      - "Veldesdoorn (Acer campestre) - kalkminnaar"
+      - "Meidoorn (Crataegus monogyna) - kalkminnaar"
+      - "Kornoelje (Cornus mas) - warmteminnend"
+      - "Wilde liguster (Ligustrum vulgare) - kalk OK"
+      - "Taxus (Taxus baccata) - kalk OK"
+      - "Hulst (Ilex aquifolium) - Zuid-hellingen"
+    
+    mogelijk_hier:
+      - "Buxus (warmte + kalk)"
+      - "Tamme kastanje (Castanea sativa) - zuidgrens areaal"
+      - "Walnoot (Juglans regia) - warmte nodig"
+    
+    te_vermeiden:
+      - "Heide (te basisch)"
+      - "Rododendron (te basisch)"
+      - "Grove den op kalkrijke plekken"
+  
+  aandachtspunten:
+    - "Zuid-hellingen: extreem droog in zomer (watergift!)"
+    - "Noord-hellingen: kouder, vochtiger (meer keuze)"
+    - "Plateaus: wind, löss kan eroderen"
+    - "Erosiebestrijding op hellingen (dwars planten, terrassen)"
+    - "Benut warmte - experimenten mogelijk"
+
+landschappelijke_context:
+  karakteristiek_beeld:
+    - "Open akkers op plateaus (löss)"
+    - "Bossen op steile hellingen"
+    - "Holle wegen met haagbeuken"
+    - "Beekdalen met elzen/wilgen"
+    - "Dorpen in dalen (beschut)"
+  
+  erfbeplanting_past_bij:
+    - "Haagbeuken heggen (typisch heuvelland)"
+    - "Fruit (kersen, walnoot, pruim)"
+    - "Wijngaarden (Zuid-hellingen!)"
+    - "Gemengde bossen (eik, beuk, haagbeuk)"
+
+bronnen:
+  primair:
+    - id: "fgr_indeling_nl"
+      context: "Fysisch Geografische Regio indeling"
+    - id: "staatsbosbeheer_heuvelland"
+      context: "Vegetatie Zuid-Limburg"
+
+duiding:
+  rapporttekst: |
+    **U woont in het HEUVELLAND - de meest unieke regio van Nederland!**
+    
+    Zuid-Limburg is compleet anders dan de rest van Nederland. Dit is het 
+    enige echte heuvelland, met glooiende heuvels, diepe dalen, en de 
+    vruchtbaarste grond van het land.
+    
+    **Wat maakt het heuvelland bijzonder?**
+    
+    **1. Reliëf (heuvels!)**
+    - Enige streek met echte heuvels (tot 322m)
+    - Diepe beekdalen
+    - Steile hellingen (soms 20-30%)
+    - Microklimaten: Zuid-helling ≠ Noord-helling
+    
+    **2. Klimaat (warmst van NL)**
+    - Langste groeiseizoen
+    - Minste nachtvorst
+    - Zuid-Europese soorten mogelijk
+    - Maar: droogte op Zuid-hellingen
+    
+    **3. Bodem (beste van NL)**
+    - Löss = zeer vruchtbaar
+    - Kalkrijk (hoge pH)
+    - Rijk aan mineralen
+    
+    **Wat betekent dit voor uw beplanting?**
+    
+    **ENORME MOGELIJKHEDEN!**
+    
+    U kunt soorten planten die in de rest van Nederland niet lukken:
+    - Haagbeuk (typisch heuvelland)
+    - Buxus (warmte nodig)
+    - Walnoot (zuidgrens areaal)
+    - Tamme kastanje
+    - Wijngaarden op Zuid-hellingen!
+    
+    **Maar let op microklimaten:**
+    
+    **Zuid-helling (warm, droog):**
+    - Warmteminnende soorten
+    - Droogte-tolerant
+    - Veel zon
+    - Fruit, wijn mogelijk
+    
+    **Noord-helling (koel, vochtig):**
+    - "Normale" soorten
+    - Meer vocht beschikbaar
+    - Minder extreem
+    
+    **Plateau (wind, droog):**
+    - Windbestendig
+    - Erosiebestrijding
+    
+    **Dal (beschut, vochtig):**
+    - Vochtige soorten
+    - Beschut tegen wind
+    
+    **Praktische tips:**
+    
+    **1. Benut het microklimaat**
+    - Zuid-helling: experimenteer met warmteminnende soorten
+    - Noord-helling: veilige keuzes
+    
+    **2. Erosie voorkomen (hellingen)**
+    - Plant dwars op helling
+    - Overweeg terrassen
+    - Bodembedekkers tussen planten
+    
+    **3. Kies kalktolerante soorten**
+    - Haagbeuk, veldesdoorn, meidoorn = prima
+    - Heide, rododendron = niet geschikt (te basisch)
+    
+    **4. Zuid-hellingen: watergift in zomer**
+    - Kan extreem droog worden
+    - Kies droogte-tolerant OF plan watergift
+    
+    **U heeft een unieke kans!**
+    
+    Het heuvelland biedt mogelijkheden die de rest van Nederland niet 
+    heeft. Benut de warmte, de vruchtbare bodem, en het reliëf. 
+    Experimenteer gerust - dit is de plek waar het kan!
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"

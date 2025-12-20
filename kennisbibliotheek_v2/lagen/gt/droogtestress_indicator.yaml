@@ -1,0 +1,30 @@
+titel: Droogtestress en bewortelbaarheid (Gt-context)
+kernsamenvatting: 'Gt-waarden geven een eerste indicatie van droogterisico en bewortelbare diepte voor
+  bomen en struiken,
+
+  vooral in het groeiseizoen.
+
+  '
+relatie_met_wortels: 'Bij diep wegzakkend grondwater (Gt V–VIII) zijn planten volledig afhankelijk van
+  bodemvocht en neerslag.
+
+  Bij hoge Gt (I–II) kan zuurstofgebrek de beworteling beperken.
+
+  '
+praktijknuance: 'Op klei kan ondanks een droge Gt toch tijdelijk natstress optreden door slechte infiltratie.
+
+  Op zand kan een natte Gt toch snel droog aanvoelen door lage vochtbuffer.
+
+  '
+betekenis_voor_erfbeplanting: 'Combineer Gt met maatregelen zoals mulchen, microreliëf, waterberging en
+  soortenkeuze om
+
+  klimaatbestendige beplanting te realiseren.
+
+  '
+bronnen: &id001
+- wur_water_en_bomen_achtergrond_beworteling
+- atlas_leefomgeving_droogte_en_grondwater
+duiding:
+  rapporttekst: ''
+  bronnen: *id001

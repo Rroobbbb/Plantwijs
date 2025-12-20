@@ -1,0 +1,40 @@
+titel: "Minimaal onderhoud (makkelijke tuin)"
+
+toepasbaar_bij:
+  - "weinig_tijd"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "hoog"
+
+waarom: |
+  Niet iedereen heeft tijd. Slim plantplan = 1-2 uur/maand ipv 1-2 uur/week.
+
+hoe: |
+  1. INHEEMSE soorten (geen ziekten, robuust)
+2. JUISTE plek (geen verzorging nodig)
+3. MULCH 15cm (geen onkruid, geen water)
+4. LANGZAME groeiers (minder snoeien)
+5. ZELFVOORZIENEND (geen bemesting)
+
+Soorten minimaal onderhoud:
+- Eik: plant en vergeet (na jaar 3)
+- Meidoorn: 1x/jaar snoeien (haag)
+- Sleedoorn: uitlopers inhouden, verder niks
+- Lijsterbes: helemaal niks
+
+VERMIJD:
+- Snelgroeiers (blijven snoeien)
+- Exoten (ziekten, verzorging)
+- Eenjarigen (elk jaar opnieuw)
+
+effect_tijdlijn:
+  direct: "80% minder werk, lagere kosten"
+
+
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Praktisch principe - direct toepasbaar"

@@ -1,0 +1,45 @@
+titel: Plaat (zandplaat)
+code: bknsn_getij2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Getijdengebied
+ontstaansgeschiedenis:
+  periode: Actueel (zeer dynamisch)
+  proces: Zandafzetting door getijdestromingen
+  beschrijving: Platen zijn dynamische zandbanken die ontstaan door afzetting in getijdengebied.
+    Ze zijn zeer mobiel en veranderen continu.
+landvorm:
+  reliëf:
+    vorm: Zeer vlak
+    hoogtebereik: Rond NAP (droogvallend)
+    helling: <1%
+  positie_in_landschap:
+    ligging: Tussen geulen
+    beschrijving: Vlakke zandbank
+hydromorfologie:
+  afwatering:
+    beschrijving: Wisselend (droog bij laagwater)
+typische_bodem:
+  types: Zand
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Instabiel, dynamisch. Geen beplanting mogelijk (te dynamisch).
+
+    '
+  ontwerp_uitgangspunten:
+  - Alleen mogelijk buiten getijdenzone
+  - Bescherming tegen zout essentieel
+  - Extreme omstandigheden - alleen specialisten
+duiding:
+  rapporttekst: '**Plaat (zandplaat)**
+
+
+    Vlakke zandbank
+
+
+    Instabiel, dynamisch. Geen beplanting mogelijk (te dynamisch).
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

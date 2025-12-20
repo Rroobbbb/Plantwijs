@@ -1,0 +1,45 @@
+titel: Lössdal (droog dal in löss)
+code: bknsn_loss1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Heuvelland
+ontstaansgeschiedenis:
+  periode: Pleistoceen
+  proces: Erosie in perioden met permafrost, nu droog
+  beschrijving: Deze dalen ontstonden door erosie tijdens perioden met permafrost.
+    De kalkrijke ondergrond zorgt nu voor snelle infiltratie.
+landvorm:
+  reliëf:
+    vorm: Droog dal
+    hoogtebereik: Variabel
+    helling: Flauw
+  positie_in_landschap:
+    ligging: Dal
+    beschrijving: Breed dal zonder beek
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog
+typische_bodem:
+  types: Löss, krijtgrond
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Uniek: vruchtbaar maar droog. Fruit mogelijk met watergift.
+
+    '
+  ontwerp_uitgangspunten:
+  - 'Benut microklimaat: Zuid-helling warm, Noord-helling koel'
+  - Plant dwars op helling (erosiebestrijding)
+  - Gebruik terrassen bij steile hellingen
+duiding:
+  rapporttekst: '**Lössdal (droog dal in löss)**
+
+
+    Breed dal zonder beek
+
+
+    Uniek: vruchtbaar maar droog. Fruit mogelijk met watergift.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

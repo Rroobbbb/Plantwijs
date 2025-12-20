@@ -1,0 +1,56 @@
+titel: "Dekzandvlakte"
+code: "bknsn_dz2"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Dekzandgebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Windafzetting tussen ruggen"
+  beschrijving: |
+    Windafzetting tussen ruggen
+
+landvorm:
+  reliëf:
+    vorm: "Vlak tot zwak golvend"
+    hoogtebereik: "5-20m NAP"
+    helling: "<1%"
+  
+  positie_in_landschap:
+    ligging: "Tussen ruggen"
+    beschrijving: "Vlakke vlakte"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Wisselend, soms stagnerend"
+
+typische_bodem:
+  types: "Podzol"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    Minder uitgesproken dan rug. Kan lokaal nat zijn.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Dekzandvlakte**
+    
+    Dit is een Vlak tot zwak golvend landvorm op 5-20m NAP.
+    
+    Kenmerkend:
+    - Vlakke vlakte
+    - Wisselend, soms stagnerend
+    - Bodem: Podzol
+    
+    Voor beplanting betekent dit:
+    Minder uitgesproken dan rug. Kan lokaal nat zijn.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

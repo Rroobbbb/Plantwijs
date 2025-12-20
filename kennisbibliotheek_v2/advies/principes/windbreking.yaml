@@ -1,0 +1,41 @@
+titel: "Windbreking (haag/bos als windscherm)"
+
+toepasbaar_bij:
+  - "wind_expositie"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "hoog"
+
+waarom: |
+  Wind vergroot verdamping 2-3x, vertraagt groei, beschadigt jonge planten. Windscherm creëert microklimaat.
+
+hoe: |
+  1. Plant HAAG aan windkant (W/ZW Nederland)
+   - Hoogte: 2-4m
+   - Soorten: Meidoorn, haagbeuk, hazelaar
+   - Dicht maar niet ondoordringbaar (turbulentie vermijden)
+
+2. Achter haag: gevoelige soorten beschut
+   - Beschut gebied = 10x haaghoogte
+   - 3m hoog = 30m beschut gebied
+
+3. NIET te dicht (lucht moet erdoor)
+   - 50% doorlatendheid ideaal
+   - Te dicht = turbulentie achter haag
+
+4. Geleidelijk dichter
+   - 1e rij: robuust (meidoorn)
+   - 2e rij: minder robuust
+   - 3e rij: gevoelig (fruit)
+
+effect_tijdlijn:
+  direct: "2x snellere groei achter haag, minder watergift, minder storm schade"
+
+
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Praktisch principe - direct toepasbaar"

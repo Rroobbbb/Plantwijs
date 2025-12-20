@@ -1,0 +1,56 @@
+titel: "Oeverwal (stroomrug)"
+code: "bknsn_riv1"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Rivierengebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Afzetting bij overstromingen (grof materiaal)"
+  beschrijving: |
+    Afzetting bij overstromingen (grof materiaal)
+
+landvorm:
+  reliëf:
+    vorm: "Lage rug langs rivier"
+    hoogtebereik: "0-5m NAP"
+    helling: "1-3%"
+  
+  positie_in_landschap:
+    ligging: "Hoogste in rivierengebied"
+    beschrijving: "Langgerekte rug evenwijdig aan rivier"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Goed gedraineerd"
+
+typische_bodem:
+  types: "Lichte rivierklei, zand"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    IDEAAL! Droog genoeg, vruchtbare grond. Beste plek in uiterwaarden.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Oeverwal (stroomrug)**
+    
+    Dit is een Lage rug langs rivier landvorm op 0-5m NAP.
+    
+    Kenmerkend:
+    - Langgerekte rug evenwijdig aan rivier
+    - Goed gedraineerd
+    - Bodem: Lichte rivierklei, zand
+    
+    Voor beplanting betekent dit:
+    IDEAAL! Droog genoeg, vruchtbare grond. Beste plek in uiterwaarden.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

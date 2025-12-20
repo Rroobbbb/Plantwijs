@@ -1,0 +1,46 @@
+titel: Gorzen (schor/kwelder)
+code: bknsn_zee4
+categorie: NSN - Geomorfologisch
+fgr_relatie: Getijdengebied
+ontstaansgeschiedenis:
+  proces: Slibafzetting getijdengebied
+landvorm:
+  reliëf:
+    vorm: Zeer vlak
+    hoogtebereik: Rond NAP (getijzone)
+    helling: <0.5%
+  positie_in_landschap:
+    ligging: Tussen laag- en hoogwater
+    beschrijving: Vlakte (dagelijks onder water)
+hydromorfologie:
+  afwatering:
+    beschrijving: Zout water, getijde-invloed
+typische_bodem:
+  types: Jong slib, klei
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'EXTREEM: zout, overstromingen. Alleen specialisten (zeekraal).
+
+    '
+  ontwerp_uitgangspunten:
+  - NOOIT betreden bij nat (permanente verdichting)
+  - 'Op verhogingen: veel mogelijk'
+  - 'In laagtes: drainage overwegen'
+duiding:
+  rapporttekst: '**Gorzen (schor/kwelder)**
+
+
+    Vlakte (dagelijks onder water)
+
+
+    Water: Zout water, getijde-invloed
+
+    Bodem: Jong slib, klei
+
+
+    EXTREEM: zout, overstromingen. Alleen specialisten (zeekraal).
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

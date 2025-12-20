@@ -1,0 +1,66 @@
+titel: Rhamnus cathartica
+wetenschappelijke_naam: Rhamnus cathartica
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 3
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 4 - 6 m
+  hoogte_range:
+    min: 4.0
+    max: 6.0
+    tekst: 4 - 6 m
+  breedte: 4 - 6 m
+  breedte_range:
+    min: 4.0
+    max: 6.0
+    tekst: 4 - 6 m
+  kroonvorm: rond
+  kroonstructuur: open
+  winterhardheid: 4A - 9B
+functie: 'Type: pionier. ecobeplanting / landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / rhcathar-rhamnus-cathartica'
+  aangevuld: Basis TreeEbb

@@ -1,0 +1,45 @@
+titel: Waalgronden (oud rivierzand)
+code: bknsn_zand1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  periode: Pleistoceen (Saalien/Elsterien)
+  proces: Afzetting grof zand en grind door Rijn/Waal
+  beschrijving: Waalgronden zijn oude rivierafzettingen van de Rijn/Waal uit perioden
+    met veel water en grof materiaal-transport.
+landvorm:
+  reliëf:
+    vorm: Terras
+    hoogtebereik: 15-30m NAP
+    helling: <2%
+  positie_in_landschap:
+    ligging: Hoog terras
+    beschrijving: Hooggelegen terras
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog
+typische_bodem:
+  types: Grof zand, grind
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Zeer droog door grof materiaal. Grove den, eik.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het reliëf, niet ertegen
+  - Benut microreliëf voor variatie
+  - Kies soorten passend bij waterstand en bodem
+duiding:
+  rapporttekst: '**Waalgronden (oud rivierzand)**
+
+
+    Hooggelegen terras
+
+
+    Zeer droog door grof materiaal. Grove den, eik.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

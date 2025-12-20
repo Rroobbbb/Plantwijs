@@ -1,0 +1,132 @@
+titel: Podzolgrond (haarpodzol)
+code: podzol
+categorie: Zand
+textuur:
+  hoofdtextuur: Zand
+  korrelgrootte: Fijn tot matig grof
+  korrelgrootte_detail: 105-300μm
+  samenstelling:
+    zand_percentage: 85-95%
+    silt_percentage: 2-8%
+    klei_percentage: 0-5%
+    organische_stof: 1-3% (bovengrond)
+  beschrijving: "Fijn zand dat gemakkelijk tussen de vingers door glijdt. Vrijwel\
+    \ geen \nklei, waardoor het goed doorlatend is maar slecht water vasthoudt. \n\
+    Bovengrond vaak iets donkerder door organische stof.\n"
+chemie:
+  pH:
+    range: 4.0-5.5
+    typisch: '4.5'
+    classificatie: Zuur
+  voedselrijkdom:
+    algemeen: Arm
+    nutriënten:
+      stikstof: Laag
+      fosfor: Zeer laag
+      kalium: Laag
+      calcium: Zeer laag
+    beperkingen:
+    - Fosfor deficiëntie zeer typisch
+    - Lage pH mobiliseert aluminium (giftig voor sommige planten)
+    - Uitspoeling van voedingsstoffen
+  kalkgehalte:
+    aanwezig: Nee
+    type: Kalkloos
+fysisch:
+  doorlatendheid:
+    verticaal: Zeer hoog
+    K_waarde: 100-500 cm/dag
+    beschrijving: "Zeer hoog doorlatend. Water zakt binnen uren weg. Geen stagnatie,\
+      \ \nmaar ook geen waterreserve voor droge periodes.\n"
+  vochtvasthoudend_vermogen:
+    capaciteit: Zeer laag
+    beschikbaar_water: 40-80 mm per meter bodem
+    beschrijving: "Zeer laag. Zand houdt bijna geen vocht vast. Bij droogte zijn \n\
+      planten volledig afhankelijk van regen of grondwater.\n"
+  bewortelbaarheid:
+    diepte: Diep (>100cm)
+    belemmeringen: Geen (tenzij grondwater of keileem)
+    beschrijving: "Goed bewortelbaar tot grote diepte. Losse structuur biedt weinig\
+      \ \nweerstand. Diepe beworteling helpt bij droogte.\n"
+  draagkracht:
+    droog: Hoog
+    nat: Matig
+    bewerkbaarheid: "Goed bewerkbaar bij alle vochtigheidsgraden. Verdichting minder\
+      \ \nprobleem dan bij klei, maar vermijd zware machines bij nat weer.\n"
+  verdichting:
+    gevoeligheid: Matig
+    herstel: Matig snel
+profielopbouw:
+  beschrijving: "Typische podzol met duidelijke lagen: donkere bovengrond, lichtgrijze\
+    \ \nuitspoelingshorizont, bruinrode inspoelingshorizont.\n"
+  horizonten:
+  - horizont: A
+    dikte: 5-15 cm
+    kenmerken: Donkergrijs door organische stof, zuur
+  - horizont: E
+    dikte: 10-30 cm
+    kenmerken: Lichtgrijs, uitgespoeld (as-laag), zeer arm
+  - horizont: B
+    dikte: 20-50 cm
+    kenmerken: Bruin/roodbruin, inspoeling ijzer en humus
+bodem_dynamiek:
+  natuurlijke_processen:
+  - Podzolering actief (uitspoeling bovengrond, inspoeling ondergrond)
+  - Continue verzuring door neerslag
+  - Uitspoeling van voedingsstoffen
+  tijdschaal:
+    ontwikkelingssnelheid: Traag (eeuwen voor duidelijke podzol)
+    stabiliteit: Stabiel
+betekenis_voor_erfbeplanting:
+  bodem_implicaties: "Zure, voedselarme zandgrond met zeer slechte vochtvasthoudend\
+    \ vermogen. \n\n**Kies planten die kunnen tegen:**\n- Lage pH (zuur)\n- Weinig\
+    \ voeding\n- Droogte in zomer\n\n**Goede soorten:** Eik, berk, den, heide, bosbes,\
+    \ rhododendron\n**Vermijd:** Kalkminnaars, voedselrijke-grond soorten\n\n**Cruciaal:**\
+    \ Organische stof opbouw! Mulch met houtsnippers/bladmolm \nverbetert vocht vasthouden\
+    \ EN voeding.\n"
+  bodemverbetering:
+    mogelijkheden:
+    - Organische stof toevoegen (10cm mulch) = MEEST EFFECTIEF
+    - Bekalken verhoogt pH (tijdelijk, herhaal elke 3-5 jaar)
+    - Compost mengen in bovengrond (bij aanplant)
+    beperkingen:
+    - pH-verhoging door bekalking is tijdelijk
+    - Voedselarmoede blijft (tenzij bemesten, maar dan vervuiling)
+    - Vocht vasthouden alleen te verbeteren met organische stof
+  aandachtspunten:
+  - Mulch 10-15cm is ESSENTIEEL voor vocht en voeding
+  - Watergift eerste 3 jaren bij droogte (20L/week per boom)
+  - Vermijd grondbewerking (vernietigt weinige organische stof)
+typische_combinaties:
+  vaak:
+  - GWT VI (droog)
+  - GWT VII (zeer droog)
+  soms:
+  - GWT V (matig droog)
+  zelden:
+  - GWT III of natter (dan vaak andere bodem)
+bronnen:
+  primair:
+  - id: stiboka_1981_bodemkaart
+    context: Bodemclassificatie podzolgronden
+  - id: bro_bodemkaart
+    context: Actuele bodemdata
+duiding:
+  rapporttekst: "**Wat voor bodem heeft u?**\n\nU heeft een podzolgrond - een typische\
+    \ zandgrond die vaak voorkomt \nin Nederland. Als u een schep grond pakt, voelt\
+    \ het korrelig aan en \nvalt het gemakkelijk uit elkaar. U kunt vaak verschillende\
+    \ lagen zien: \ndonker bovenin, lichtgrijs daaronder, en bruinachtig dieper.\n\
+    \n**Wat zijn de kenmerken?**\n\n- **Zuur** (lage pH) - niet alle planten houden\
+    \ daarvan\n- **Voedselarm** - weinig voedingsstoffen beschikbaar\n- **Zeer doorlatend**\
+    \ - water loopt er snel doorheen\n- **Droogtegevoelig** - in droge zomers grote\
+    \ problemen\n\n**Wat betekent dit voor uw planten?**\n\nKies planten die tegen\
+    \ zure grond kunnen (eik, berk, rododendron) en \ndie weinig voeding nodig hebben.\
+    \ Dek de grond af met een dikke laag \n(10cm) houtsnippers of bladeren - dat is\
+    \ het belangrijkste wat u kunt \ndoen! Het helpt vocht vast te houden én voorziet\
+    \ langzaam van voeding.\n"
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+praktische_adviezen:
+  algemeen: Afgestemd op bodemtype en situatie

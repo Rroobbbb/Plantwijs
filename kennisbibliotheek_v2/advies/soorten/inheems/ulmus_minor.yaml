@@ -1,0 +1,66 @@
+titel: Ulmus minor
+wetenschappelijke_naam: Ulmus minor
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - iepziekteresistentie 1
+groei:
+  hoogte: 25 - 30 m
+  hoogte_range:
+    min: 25.0
+    max: 30.0
+    tekst: 25 - 30 m
+  breedte: 15 - 20 m
+  breedte_range:
+    min: 15.0
+    max: 20.0
+    tekst: 15 - 20 m
+  kroonvorm: breed ovaal
+  kroonstructuur: halfopen
+  winterhardheid: 5A - 7B
+functie: 'Type: pionier. ecobeplanting / landschappelijke beplanting / solide beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - vlinders
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / ulmminor-ulmus-minor'
+  aangevuld: Basis TreeEbb

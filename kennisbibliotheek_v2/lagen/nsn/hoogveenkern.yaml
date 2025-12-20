@@ -1,0 +1,45 @@
+titel: Hoogveenkern (actief hoogveen)
+code: bknsn_hoogveen1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Laagveengebied
+ontstaansgeschiedenis:
+  periode: Holoceen (Subboreaal/Subatlanticum)
+  proces: Veengroei omhoog door regenwater (ombrotrofe groei)
+  beschrijving: Hoogvenen groeiden omhoog door accumulatie van veenmos (Sphagnum)
+    dat alleen van regenwater leeft, resulterend in bolle vorm.
+landvorm:
+  reliëf:
+    vorm: Zwak bol
+    hoogtebereik: Variabel
+    helling: Zeer flauw
+  positie_in_landschap:
+    ligging: Hoogste in veengebied
+    beschrijving: Bolling (hoger dan omgeving)
+hydromorfologie:
+  afwatering:
+    beschrijving: Zeer nat, zuur
+typische_bodem:
+  types: Levend hoogveen
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'BESCHERMD! Zeer zuur, nat. Geen beplanting (natuurgebied).
+
+    '
+  ontwerp_uitgangspunten:
+  - BESCHERMD - geen beplanting in actief hoogveen
+  - 'Op rand: zuurtolerante soorten (berk, grove den)'
+  - Respecteer de hydrologie
+duiding:
+  rapporttekst: '**Hoogveenkern (actief hoogveen)**
+
+
+    Bolling (hoger dan omgeving)
+
+
+    BESCHERMD! Zeer zuur, nat. Geen beplanting (natuurgebied).
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

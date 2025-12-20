@@ -1,0 +1,223 @@
+titel: Kleigrond - Zware zeeklei
+code: zeeklei_zwaar
+categorie: Klei
+textuur:
+  hoofdtextuur: Zware klei
+  korrelgrootte: Zeer fijn (<2μm = klei)
+  korrelgrootte_detail: <2μm klei, 2-50μm silt
+  samenstelling:
+    zand_percentage: 0-20%
+    silt_percentage: 20-40%
+    klei_percentage: 40-70% (zwaar!)
+    organische_stof: 2-6%
+  beschrijving: "Zware, compacte klei uit zeebodems. Voelt vet, plakkerig aan bij\
+    \ nat. \nWordt steenhard bij droogte, krijgt diepe scheuren. Grijsbruine tot \n\
+    donkerbruine kleur. Kneedt goed tot bal die niet uit elkaar valt.\n"
+chemie:
+  pH:
+    range: 7.0-8.2
+    typisch: '7.8'
+    classificatie: Neutraal tot licht basisch
+  voedselrijkdom:
+    algemeen: Rijk tot zeer rijk
+    nutriënten:
+      stikstof: Hoog (bindt goed aan klei)
+      fosfor: Matig tot hoog
+      kalium: Hoog
+      calcium: Zeer hoog (kalkrijk)
+      magnesium: Hoog
+    voordelen:
+    - Uitstekende nutriënten buffering
+    - Langzame afgifte voeding
+    - Weinig uitspoeling
+  kalkgehalte:
+    aanwezig: Ja
+    type: Matig tot rijk kalkhoudend
+    percentage: 2-15% CaCO3
+fysisch:
+  doorlatendheid:
+    verticaal: Zeer laag (probleem!)
+    K_waarde: 0.1-5 cm/dag (extreem traag)
+    beschrijving: "Zeer slecht doorlatend. Water kan dagen tot weken blijven staan.\
+      \ \nKleilaag fungeert als barrière. Bij natte periodes wateroverlast, \nbij\
+      \ droogte scheuren.\n"
+  vochtvasthoudend_vermogen:
+    capaciteit: Zeer hoog
+    beschikbaar_water: 180-250 mm per meter bodem (hoogste van NL)
+    beschrijving: "Uitstekend vocht vasthouden. Klei bindt water stevig. Bij optimale\
+      \ \nvochtigheid ideaal, maar bij te nat OF te droog problemen.\n"
+  bewortelbaarheid:
+    diepte: Matig (40-80cm, afhankelijk van verdichting)
+    belemmeringen: Verdichte kleilagen, hoge grondwaterstand, zuurstofgebrek bij nat
+    beschrijving: "Beworteling moeilijk bij zware klei. Wortels moeten scheuren vinden.\
+      \ \nBij te nat: zuurstofgebrek. Bij te droog: te hard. Optimaal alleen \nbij\
+      \ juiste vochtigheid.\n"
+  draagkracht:
+    droog: Zeer hoog (steenhard)
+    nat: ZEER LAAG (smurrie)
+    bewerkbaarheid: "Zeer moeilijk bewerkbaar. Bij nat: smurrie, onbegaanbaar, extreme\
+      \ \nverdichting bij betreden. Bij droog: steenhard, niet te bewerken. \nAlleen\
+      \ bewerkbaar bij juiste vochtigheid (klein tijdsvenster!).\n"
+  verdichting:
+    gevoeligheid: Zeer hoog bij nat
+    herstel: Zeer langzaam (jaren)
+    kritiek: "Betreden/bewerken bij nat = permanent schade! Verdichting herstelt \n\
+      zeer langzaam (5-10 jaar). Dit is de grootste valkuil bij klei.\n"
+  krimp_zwel:
+    amplitude: Zeer hoog (5-15cm hoogteverschil)
+    beschrijving: "Bij droogte krimpt klei, ontstaan diepe scheuren (5-10cm breed,\
+      \ \n50cm+ diep). Bij nattigheid zwelt klei, scheuren sluiten. Wortels \nkunnen\
+      \ beschadigen.\n"
+profielopbouw:
+  beschrijving: "Homogene kleilaag tot grote diepte. Soms boven organische toplaag\
+    \ \n(oude vegetatie). Grijze kleur vaak door reductie (zuurstofarm).\n"
+  horizonten:
+  - horizont: A
+    dikte: 15-30 cm
+    kenmerken: Donkergrijs, humeus, kleiig
+  - horizont: B/C
+    dikte: '>100 cm'
+    kenmerken: Grijze zware klei, homogeen, soms roest (ijzer)
+bodem_dynamiek:
+  natuurlijke_processen:
+  - Krimp/zwel cyclus (jaarlijks)
+  - Zeer langzame profielontwikkeling
+  - Reductie bij hoge grondwaterstand (grijs)
+  - Oxidatie bij droogte (roest)
+  tijdschaal:
+    ontwikkelingssnelheid: Zeer langzaam (millennia)
+    stabiliteit: Stabiel maar dynamisch (krimp/zwel)
+betekenis_voor_erfbeplanting:
+  bodem_implicaties: "**ZWARE KLEI** - rijk aan voeding, maar technisch uitdagend!\n\
+    \n**Het paradox van zware klei:**\n- RIJK aan voeding (voordeel!)\n- GOED vocht\
+    \ vasthouden (voordeel!)\n- MAAR: zeer moeilijk te bewerken (nadeel!)\n- MAAR:\
+    \ wateroverlast bij nat (nadeel!)\n- MAAR: steenhard bij droog (nadeel!)\n- MAAR:\
+    \ verdichting = permanente schade (nadeel!)\n\n**De uitdaging: het juiste moment\
+    \ vinden**\n\nKlei is alleen bewerkbaar bij de juiste vochtigheid (niet te nat,\
+    \ \nniet te droog). Dat venster is KLEIN (2-4 weken per jaar!).\n\n**Kies planten\
+    \ die kunnen tegen:**\n- Wisselende vochtigheid (nat winter, mogelijk droog zomer)\n\
+    - Zware, compacte grond (beperkte beworteling)\n- Hoge pH (basisch/kalkrijk)\n\
+    - Krimpscheuren (wortelbeschadiging)\n\n**Geschikt:** Wilg, es, meidoorn, eik\
+    \ (matig), fruitbomen\n**Problematisch:** Naaldbomen (te nat + te basisch), heide\n\
+    \n**CRUCIAAL: Vermijd verdichting!**\n- NOOIT betreden bij nat (permanent schade!)\n\
+    - Plant alleen bij juiste vochtigheid\n- Geen zware machines\n"
+  bodemverbetering:
+    mogelijkheden:
+    - actie: Drainage aanleggen
+      effect: Vermindert wateroverlast drastisch
+      duurzaamheid: 20-30 jaar
+      prioriteit: HOOG - vaak essentieel
+    - actie: Organische stof (compost/mest)
+      effect: Verbetert structuur, luchtigheid
+      duurzaamheid: 3-5 jaar, herhalen
+      prioriteit: Matig - helpt wel
+    - actie: Gipsstrooien (bij zeer zware klei)
+      effect: Verbetert kruimelstructuur
+      duurzaamheid: 2-3 jaar
+      prioriteit: Laag - alleen bij problemen
+    beperkingen:
+    - Structuur verbeteren is langzaam proces (jaren)
+    - Organische stof helpt maar is geen wondermiddel
+    - Drainage is vaak enige echte oplossing voor nattigheid
+  aandachtspunten:
+  - '**NOOIT betreden bij nat** - dit is regel #1!'
+  - Plant alleen bij juiste vochtigheid (voel met hand)
+  - Drainage sterk overwegen (maakt enorm verschil)
+  - Plantgat BREED maken (80cm+), niet diep (verdichte laag)
+  - Organische stof toevoegen bij aanplant
+  - Kies soorten die wisselende vochtigheid verdragen
+  - 'Bij droogte: geef flink water (klei scheurt anders, wortels beschadigen)'
+plantmogelijkheden:
+  zeer_geschikt:
+  - Zwarte els (Alnus glutinosa) - houdt van nat + klei
+  - Wilgen (Salix spp.) - nat-tolerant
+  - Es (Fraxinus excelsior) - klei specialist
+  - Meidoorn (Crataegus monogyna) - zeer robuust
+  - Vruchtbomen (appel, peer) - mits drainage!
+  geschikt_met_drainage:
+  - Zomereik (Quercus robur) - verdraagt klei redelijk
+  - Linde (Tilia spp.) - met drainage goed
+  - Haagbeuk (Carpinus betulus) - verdraagt klei
+  mogelijk_maar_suboptimaal:
+  - Berk (verdraagt klei maar groeit traag)
+  - Veldesdoorn (verdraagt maar liever lichter)
+  niet_geschikt:
+  - Naaldbomen (te nat + te basisch)
+  - Heide (te basisch, te zwaar)
+  - Rododendron (te basisch)
+praktische_tips:
+  herken_juiste_moment:
+  - 'Knijp handvol grond: moet net niet plakken'
+  - 'Kneed tot bal: moet net niet uit elkaar vallen'
+  - 'Oftewel: kruimelig maar nog vochtig'
+  - Dit moment is 2-4 weken per jaar (meestal april of september)
+  drainage_check:
+  - Graaf gat 50cm diep, vul met water
+  - Hoe lang duurt het om leeg te lopen?
+  - '>24 uur = drainage STERK aanbevolen'
+  - '>48 uur = drainage ESSENTIEEL'
+  verdichting_voorkomen:
+  - Leg planken neer om op te lopen
+  - Werk vanaf planken, nooit rechtstreeks op natte klei
+  - Geen machines bij nat weer (zelfs kruiwagen maakt schade)
+typische_combinaties:
+  vaak:
+  - Gt II-IV (nat tot matig vochtig)
+  - Zeeklei polders (NL kust)
+  - Rivierklei uiterwaarden
+  locaties:
+  - Zeeland, Noord-Holland polders
+  - Rivierengebied (klei-op-veen)
+bronnen:
+  primair:
+  - id: stiboka_1981_bodemkaart
+    context: Zeeklei classificatie
+  - id: wur_kleigronden_beheer
+    context: Bewerking zware klei
+duiding:
+  rapporttekst: "**U heeft ZWARE ZEEKLEI - rijk maar technisch uitdagend**\n\nZeeklei\
+    \ is rijk aan voeding en houdt goed vocht vast - dat is het \ngoede nieuws. Het\
+    \ slechte nieuws is dat het een van de moeilijkste \nbodems is om mee te werken.\n\
+    \n**Het probleem met zware klei:**\n\nKlei is extreem: bij nat is het smurrie\
+    \ (onbegaanbaar), bij droog \nis het steenhard (onbewerkbaar). Alleen bij de juiste\
+    \ vochtigheid \nkunt u ermee werken - en dat moment is maar 2-4 weken per jaar!\n\
+    \n**Kenmerken van uw bodem:**\n\n- **Zeer voedselrijk** - planten groeien goed\
+    \ als ze eenmaal staan\n- **Houdt goed vocht vast** - minder watergift nodig\n\
+    - **Maar: wateroverlast in winter** - slecht doorlatend\n- **Maar: steenhard bij\
+    \ droogte** - kan scheuren\n- **Maar: zeer gevoelig voor verdichting** - permanent\
+    \ schade!\n\n**De #1 regel: NOOIT betreden bij nat!**\n\nAls u op natte klei loopt,\
+    \ verdicht u de grond. Dit herstelt NIET - \nde schade blijft 5-10 jaar. Wacht\
+    \ tot de klei de juiste vochtigheid \nheeft voordat u iets doet.\n\n**Hoe weet\
+    \ u wanneer het juiste moment is?**\n\nPak een handvol grond:\n- Te nat: plakt\
+    \ aan uw hand\n- Te droog: valt meteen uit elkaar\n- ✅ Goed: kruimelig maar vochtig,\
+    \ kneedt tot bal\n\nDit moment is meestal in april of september.\n\n**Drainage:\
+    \ vaak essentieel**\n\nZware klei heeft vaak drainage nodig om winterwateroverlast\
+    \ te \nverminderen. Doe deze test:\n\n1. Graaf gat 50cm diep\n2. Vul met water\n\
+    3. Hoe lang duurt het om leeg te lopen?\n   - <12 uur = drainage optioneel\n \
+    \  - 12-24 uur = drainage aanbevolen\n   - >24 uur = drainage STERK aanbevolen\n\
+    \   - >48 uur = drainage ESSENTIEEL\n\n**Geschikte planten voor zware klei:**\n\
+    \n**Zonder drainage:**\n- Zwarte els - specialist voor natte klei\n- Wilgen -\
+    \ houden van nat\n- Es - klei specialist\n- Meidoorn - zeer robuust\n\n**Met drainage\
+    \ (sterk aanbevolen):**\n- Eik - verdraagt klei redelijk\n- Linde - groeit goed\
+    \ op klei\n- Fruitbomen (appel, peer) - ideaal op klei!\n- Haagbeuk - verdraagt\
+    \ zware grond\n\n**Niet geschikt:**\n- Naaldbomen (te nat + klei is te basisch)\n\
+    - Heide, rododendron (verkeerde pH)\n\n**Praktische tips:**\n\n**Bij aanplant:**\n\
+    - Wacht op juiste vochtigheid (kruimelig maar vochtig)\n- Maak plantgat BREED\
+    \ (80cm+), niet dieper dan nodig\n- Meng compost door uitgegraven grond (30% compost)\n\
+    - Leg planken neer om op te lopen (niet rechtstreeks op klei!)\n\n**Jaarlijks\
+    \ onderhoud:**\n- Bij droogte: geef flink water (anders scheurt klei, wortels\
+    \ beschadigen)\n- Voeg elk voorjaar compost toe (verbetert structuur)\n- Vermijd\
+    \ betreden in natte periodes\n\n**Drainage overwegen?**\n\nAls u wateroverlast\
+    \ heeft in winter (doe de test!), overweeg dan \nprofessionele drainage. Dit maakt\
+    \ ENORM verschil:\n- Langere bewerkbare periode\n- Minder wateroverlast\n- Meer\
+    \ plantmogelijkheden\n- Betere groei\n\nKosten: €2000-5000 afhankelijk van oppervlakte,\
+    \ maar vaak de moeite waard.\n\n**De positieve kant:**\n\nAls u de juiste momenten\
+    \ pakt en drainage hebt, is klei eigenlijk \nuitstekend: rijk aan voeding, goede\
+    \ vochtvoorziening, en planten \ngroeien er goed op. Het vraagt alleen meer technische\
+    \ kennis dan \nzandgrond.\n"
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+praktische_adviezen:
+  algemeen: Afgestemd op bodemtype en situatie

@@ -1,0 +1,163 @@
+titel: Zandgrond (vaaggrond - jonge zandgrond)
+code: zandgrond_vaag
+categorie: Zand
+textuur:
+  hoofdtextuur: Zand
+  korrelgrootte: Fijn tot matig grof
+  korrelgrootte_detail: 105-400μm
+  samenstelling:
+    zand_percentage: 85-95%
+    silt_percentage: 2-10%
+    klei_percentage: 0-5%
+    organische_stof: 1-2% (bovengrond)
+  beschrijving: "Puur zand zonder duidelijke profielontwikkeling. Jonge grond, vaak\
+    \ in \nrivierduinen of recent opgestoven zand. Voelt grofkorrelig aan, valt \n\
+    direct uit elkaar. Geen verschillende lagen zichtbaar (in tegenstelling \ntot\
+    \ podzol).\n"
+chemie:
+  pH:
+    range: 5.0-6.5
+    typisch: '5.8'
+    classificatie: Zwak zuur tot neutraal
+  voedselrijkdom:
+    algemeen: Zeer arm tot arm
+    nutriënten:
+      stikstof: Zeer laag
+      fosfor: Laag
+      kalium: Laag
+      calcium: Laag
+    beperkingen:
+    - Geen nutriënten reserve
+    - Geen buffering
+    - Alle voeding uit organische stof bovengrond
+  kalkgehalte:
+    aanwezig: Nee
+    type: Kalkloos (tenzij recent opgestoven uit kalkrijk gebied)
+fysisch:
+  doorlatendheid:
+    verticaal: Zeer hoog
+    K_waarde: 200-800 cm/dag (extreem hoog bij grof zand)
+    beschrijving: "Extreem doorlatend. Water zakt binnen uren weg, zelfs sneller dan\
+      \ \npodzol. Grof zand kan wel 800 cm/dag doorlaten.\n"
+  vochtvasthoudend_vermogen:
+    capaciteit: Zeer laag
+    beschikbaar_water: 30-60 mm per meter bodem (minder dan podzol)
+    beschrijving: "Bijna geen vocht vasthouden. Bij grof zand nog slechter dan normaal\
+      \ \nzand. Plant droogt binnen dagen uit zonder regen.\n"
+  bewortelbaarheid:
+    diepte: Zeer diep (>150cm, geen belemmeringen)
+    belemmeringen: Geen
+    beschrijving: "Perfect bewortelbaar tot zeer grote diepte. Los, luchtig, geen\
+      \ \nverdichtingen. Ideaal voor penwortel ontwikkeling.\n"
+  draagkracht:
+    droog: Zeer hoog
+    nat: Matig tot hoog
+    bewerkbaarheid: "Zeer goed bewerkbaar. Stuift wel bij droog weer. Geen verdichting\
+      \ \ndoor machines.\n"
+  verdichting:
+    gevoeligheid: Laag
+    herstel: Snel
+profielopbouw:
+  beschrijving: "Geen duidelijke lagen - effen zandprofiel. Soms iets donkerder bovenin\
+    \ \ndoor organische stof, maar geen uitspoelings- of inspoelingshorizonten \n\
+    zoals bij podzol.\n"
+  horizonten:
+  - horizont: A
+    dikte: 10-20 cm
+    kenmerken: Licht grijs-bruin, licht organisch
+  - horizont: C
+    dikte: '>100 cm'
+    kenmerken: Geelbruin zand, geen ontwikkeling, homogeen
+bodem_dynamiek:
+  natuurlijke_processen:
+  - Geen podzolering (nog te jong)
+  - Zeer zwakke humusaccumulatie
+  - 'Bij wind: verstuiving mogelijk'
+  - 'Bij regen: snelle uitspoeling'
+  tijdschaal:
+    ontwikkelingssnelheid: Langzaam (duizenden jaren tot podzol)
+    stabiliteit: Instabiel bij kale grond (stuifrisico)
+betekenis_voor_erfbeplanting:
+  bodem_implicaties: "Jong, voedselarm, extreem doorlatend zand. Dit is nog armer\
+    \ en droger \ndan podzolgrond.\n\n**Vergelijkbaar met podzol maar:**\n- Nog slechter\
+    \ vocht vasthouden\n- Nog minder organische stof\n- Vaak grover zand\n- Geen buffering\n\
+    \n**Kies planten die kunnen tegen:**\n- Extreme droogte\n- Zeer lage pH (zwak\
+    \ zuur)\n- Extreem lage voeding\n- Grote temperatuurschommelingen (zand warmt/koelt\
+    \ snel)\n\n**Bodemverbetering is CRUCIAAL:**\n- Zonder organische stof: bijna\
+    \ onmogelijk\n- Met 15cm mulch + compost: haalbaar\n- Doel: humuslaag opbouwen\
+    \ (duurt 5-10 jaar)\n\n**Geschikt:** Grove den, jeneverbes, berk, eik (met veel\
+    \ zorg)\n**Niet geschikt:** Voedselrijke-grond soorten, vruchtbomen\n"
+  bodemverbetering:
+    prioriteit: ZEER HOOG - zonder verbetering zeer moeilijk
+    mogelijkheden:
+    - actie: Organische stof toevoegen (15-20cm mulch)
+      effect: Essentieel - verhoogt vocht + voeding dramatisch
+      duurzaamheid: Blijvend maar aanvullen elk jaar
+    - actie: Compost mengen (10cm door bovenste 30cm)
+      effect: Verhoogt vochtvasthoudend vermogen met 200%+
+      duurzaamheid: 3-5 jaar, herhalen
+    - actie: Groenbemesters (lupine, spurrie)
+      effect: Stikstof fixatie + organische stof
+      duurzaamheid: Jaarlijks in eerste 5 jaar
+    beperkingen:
+    - Voeding toevoegen via compost (bemesting vervuilt grondwater!)
+    - Vocht vasthouden alleen via organische stof
+    - Duurt jaren om humuslaag op te bouwen
+  aandachtspunten:
+  - Mulch 15-20cm is VERPLICHT (niet optioneel)
+  - Bodemverbetering bij aanplant essentieel
+  - Water vaak en veel eerste 5 jaar (25L/week per boom)
+  - Groenbemesters helpen enorm
+  - Bescherm tegen wind (stuifrisico)
+  - Vermijd kaalslag (erosie/stuiven)
+typische_combinaties:
+  vaak:
+  - Gt VI-VIII (zeer droog)
+  - Rivierduinen, stuifduinen
+  - Jonge zandopstuvingen
+  soms:
+  - Gt V (matig droog)
+  zelden:
+  - Natte Gt's (jong zand is meestal hoog gelegen)
+bronnen:
+  primair:
+  - id: stiboka_1981_bodemkaart
+    context: Vaaggronden classificatie
+  - id: bro_bodemkaart
+    context: Actuele bodemdata zandgronden
+duiding:
+  rapporttekst: "**Wat voor bodem heeft u?**\n\nU heeft jonge zandgrond - ook wel\
+    \ vaaggrond genoemd. Dit is puur zand \nzonder duidelijke lagen. Als u een schep\
+    \ neemt ziet u vrijwel alleen \nmaar zand, zonder de bruine/grijze lagen die podzolgronden\
+    \ hebben.\n\n**Wat zijn de kenmerken?**\n\n- **Extreem doorlatend** - water zakt\
+    \ zeer snel weg\n- **Zeer arm** - bijna geen voedingsstoffen\n- **Droogtegevoelig**\
+    \ - plant droogt snel uit\n- **Zwak zuur** - niet alle planten houden daarvan\n\
+    - **Stuifgevoelig** - bij wind kan zand verstuiven\n\n**Dit is lastiger dan normale\
+    \ zandgrond (podzol):**\n\nJonge zandgrond is nóg armer en nóg droger dan podzolgrond.\
+    \ Er is \nvrijwel geen organische stof en het zand kan grover zijn.\n\n**Wat betekent\
+    \ dit voor uw planten?**\n\n**ZONDER bodemverbetering is dit zeer moeilijk.**\
+    \ Maar met de juiste \naanpak is het haalbaar:\n\n**Essentiële maatregelen (VERPLICHT):**\n\
+    \n**1. Dikke mulchlaag (15-20cm)**\n- Houtsnippers of bladmolm\n- Dit is niet\
+    \ optioneel - zonder mulch bijna kansloos\n- Vul elk jaar bij tot 15cm\n\n**2.\
+    \ Compost bij aanplant**\n- Meng 10cm compost door bovenste 30cm\n- Dit verhoogt\
+    \ vocht vasthouden dramatisch\n\n**3. Intensieve watergift**\n- Eerste 5 jaar:\
+    \ 25 liter per week per boom\n- Ook in winter bij droogte!\n- Druppelirrigatie\
+    \ sterk overwegen\n\n**4. Groenbemesters**\n- Plant lupine of spurrie tussen bomen\n\
+    - Fixeert stikstof uit de lucht\n- Vergroot organische stof\n\n**Geschikte planten\
+    \ (met bovenstaande maatregelen):**\n\n- **Grove den** - Specialist voor arm zand\n\
+    - **Jeneverbes** - Houdt van stuifzand\n- **Berk** - Pionier, verbetert bodem\n\
+    - **Eik** - Met veel zorg mogelijk\n- **Struikhei** - Voor natuurlijke tuin\n\n\
+    **Niet geschikt:**\n- Voedselrijke-grond soorten\n- Vruchtbomen (te weinig voeding)\n\
+    - Haagbeuk, beuk (te voedselarm)\n\n**Positieve kant:**\n\nNa 10 jaar consequent\
+    \ mulchen en compost toevoegen heeft u een mooie \nhumuslaag opgebouwd. Dan wordt\
+    \ het steeds makkelijker en kunnen meer \nsoorten. U bouwt letterlijk uw eigen\
+    \ bodem op!\n\n**TIP: Zie het als project**\n\nDe eerste 5 jaar is intensief,\
+    \ maar elk jaar ziet u verbetering. De \nbodem wordt donkerder (humus), planten\
+    \ groeien beter, watergift kan \nminder. U bent letterlijk de bodem aan het creëren\
+    \ die hier ontbreekt.\n"
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+praktische_adviezen:
+  algemeen: Afgestemd op bodemtype en situatie

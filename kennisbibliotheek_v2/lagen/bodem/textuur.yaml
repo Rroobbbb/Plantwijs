@@ -1,0 +1,193 @@
+zand:
+  titel: Zand
+  beschrijving: Zandige bodems zijn goed doorlatend en drogen relatief snel uit. Ze zijn vaak voedselarmer
+    dan klei en vragen om standplaatsgeschikte soorten.
+  beheerimplicaties: Let op droogte in zomer, windgevoeligheid en snelle uitspoeling van nutriënten; mulch
+    en organische stof helpen.
+  geschikte_beplanting: Eik, berk, lijsterbes, grove den; op rijker zand ook beuk, esdoorn en diverse
+    struiken.
+  duiding:
+    rapporttekst: 'De bodem is hier overwegend zand. Zandige bodems zijn goed doorlatend en drogen relatief
+      snel uit. Ze zijn vaak voedselarmer dan klei en vragen om standplaatsgeschikte soorten.
+
+
+      Geschikte soorten zijn onder andere Eik, berk, lijsterbes, grove den; op rijker zand ook beuk, esdoorn
+      en diverse struiken.
+
+
+      Qua beheer en inrichting is het belangrijk om te letten op Let op droogte in zomer, windgevoeligheid
+      en snelle uitspoeling van nutriënten; mulch en organische stof helpen.'
+lemig_zand:
+  titel: Lemig zand
+  beschrijving: 'Zand met een leemfractie: betere vocht- en nutriëntenbuffer dan puur zand, maar nog steeds
+    redelijk doorlatend.'
+  beheerimplicaties: Meestal breed inzetbaar; voorkom verslemping bij intensieve betreding als het nat
+    is.
+  geschikte_beplanting: Veel inheemse loofbomen en struweel doen het hier goed; zowel drogere als matig
+    vochtige soorten mogelijk.
+  duiding:
+    rapporttekst: 'De bodem is hier overwegend lemig zand. Zand met een leemfractie: betere vocht- en
+      nutriëntenbuffer dan puur zand, maar nog steeds redelijk doorlatend.
+
+
+      Geschikte soorten zijn onder andere Veel inheemse loofbomen en struweel doen het hier goed; zowel
+      drogere als matig vochtige soorten mogelijk.
+
+
+      Qua beheer en inrichting is het belangrijk om te letten op Meestal breed inzetbaar; voorkom verslemping
+      bij intensieve betreding als het nat is.'
+leem:
+  titel: Leem / löss
+  beschrijving: Leemrijke bodems houden water en voedingsstoffen goed vast. Ze zijn vruchtbaar maar kunnen
+    gevoelig zijn voor verslemping en erosie (op hellingen).
+  beheerimplicaties: Werk met bodembedekking en wortelnetwerk om structuur te behouden; vermijd zware
+    belasting als de bodem nat is.
+  geschikte_beplanting: Eik, haagbeuk, es, linde, fruitbomen; hagen en struweel ontwikkelen vaak snel.
+  samenvatting: '**Leem** is een fijne minerale fractie (silt + klei) die water goed vasthoudt en vaak
+    vruchtbaar is; in het rivierengebied komt leem vaak als bijmenging of dek voor.'
+  bronnen_aanvullend:
+  - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
+  - everts_f_h_e_a_natura_2000_herstelstrategie_n_deel
+  - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+  - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
+  - geologie_van_nederland_komgrond_komklei_en_uitleg_
+  duiding:
+    rapporttekst: 'De bodem is hier overwegend leem / löss. Leemrijke bodems houden water en voedingsstoffen
+      goed vast. Ze zijn vruchtbaar maar kunnen gevoelig zijn voor verslemping en erosie (op hellingen).
+
+
+      Geschikte soorten zijn onder andere Eik, haagbeuk, es, linde, fruitbomen; hagen en struweel ontwikkelen
+      vaak snel.
+
+
+      Qua beheer en inrichting is het belangrijk om te letten op Werk met bodembedekking en wortelnetwerk
+      om structuur te behouden; vermijd zware belasting als de bodem nat is.'
+zavel:
+  titel: Zavel
+  beschrijving: 'Mengsel van zand en klei: relatief vruchtbaar, met goede bewerkbaarheid en een gematigde
+    waterhuishouding.'
+  beheerimplicaties: Breed toepasbaar; bij langdurige natte perioden kan toch tijdelijke waterverzadiging
+    optreden.
+  geschikte_beplanting: 'Veel soorten mogelijk: eik, iep, es, linde, populier, wilg (op nattere plekken),
+    meidoorn, sleedoorn.'
+  samenvatting: '**Zavel** vormt een overgang tussen zand en klei: meer lutum dan zand, maar duidelijk
+    beter doorlatend dan zware klei.'
+  bronnen_aanvullend:
+  - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
+  - everts_f_h_e_a_natura_2000_herstelstrategie_n_deel
+  - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+  - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
+  - geologie_van_nederland_komgrond_komklei_en_uitleg_
+  duiding:
+    rapporttekst: 'De bodem is hier overwegend zavel. Mengsel van zand en klei: relatief vruchtbaar, met
+      goede bewerkbaarheid en een gematigde waterhuishouding.
+
+
+      Geschikte soorten zijn onder andere Veel soorten mogelijk: eik, iep, es, linde, populier, wilg (op
+      nattere plekken), meidoorn, sleedoorn.
+
+
+      Qua beheer en inrichting is het belangrijk om te letten op Breed toepasbaar; bij langdurige natte
+      perioden kan toch tijdelijke waterverzadiging optreden.'
+lichte_klei:
+  titel: Lichte klei
+  beschrijving: Kleigrond met nog redelijk wat zand/silt. Vruchtbaar en vochtvasthoudend, maar minder
+    zwaar dan komklei.
+  beheerimplicaties: Bij nat weer gevoelig voor structuurverlies; drainage en organische stof helpen.
+  geschikte_beplanting: Iep, linde, es, esdoorn, wilg en populier; struiken zoals meidoorn, Gelderse roos
+    en kornoelje.
+  duiding:
+    rapporttekst: 'De bodem is hier overwegend lichte klei. Kleigrond met nog redelijk wat zand/silt.
+      Vruchtbaar en vochtvasthoudend, maar minder zwaar dan komklei.
+
+
+      Geschikte soorten zijn onder andere Iep, linde, es, esdoorn, wilg en populier; struiken zoals meidoorn,
+      Gelderse roos en kornoelje.
+
+
+      Qua beheer en inrichting is het belangrijk om te letten op Bij nat weer gevoelig voor structuurverlies;
+      drainage en organische stof helpen.'
+zware_klei:
+  titel: Zware klei (komklei)
+  beschrijving: Fijnkorrelige, zware klei die water lang vasthoudt en langzaam opwarmt. Vaak natte standplaats,
+    vooral in komgebieden.
+  beheerimplicaties: Vermijd zware machines bij nat weer; kies soorten met tolerantie voor natte voeten
+    en wisselende zuurstofcondities.
+  geschikte_beplanting: Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier, Gelderse roos.
+  duiding:
+    rapporttekst: 'De bodem is hier overwegend zware klei (komklei). Fijnkorrelige, zware klei die water
+      lang vasthoudt en langzaam opwarmt. Vaak natte standplaats, vooral in komgebieden.
+
+
+      Geschikte soorten zijn onder andere Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier,
+      Gelderse roos.
+
+
+      Qua beheer en inrichting is het belangrijk om te letten op Vermijd zware machines bij nat weer;
+      kies soorten met tolerantie voor natte voeten en wisselende zuurstofcondities.'
+veen:
+  titel: Veen / venige bodem
+  beschrijving: Organische bodem met hoge waterstand van oorsprong. Slap draagvermogen en gevoelig voor
+    inklinking bij ontwatering.
+  beheerimplicaties: Houd rekening met bodemdaling en instabiele verankering; kies soorten die nat kunnen
+    en niet extreem windgevoelig zijn.
+  geschikte_beplanting: Zwarte els, wilg, berken; riet- en moerasstruweel op natte delen.
+  duiding:
+    rapporttekst: 'De bodem is hier overwegend veen / venige bodem. Organische bodem met hoge waterstand
+      van oorsprong. Slap draagvermogen en gevoelig voor inklinking bij ontwatering.
+
+
+      Geschikte soorten zijn onder andere Zwarte els, wilg, berken; riet- en moerasstruweel op natte delen.
+
+
+      Qua beheer en inrichting is het belangrijk om te letten op Houd rekening met bodemdaling en instabiele
+      verankering; kies soorten die nat kunnen en niet extreem windgevoelig zijn.'
+klei:
+  titel: Klei (algemeen, inclusief rivierklei)
+  beschrijving: 'Kleigronden bestaan uit fijne minerale deeltjes en hebben daardoor een hoge water- en
+    nutriëntenbuffer. In het Nederlandse rivierengebied is klei vaak gevormd door afzetting bij overstromingen:
+    grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen), en fijne slibfractie verder
+    weg in komgebieden (komklei).'
+  beheerimplicaties: Werk bij voldoende draagkracht; voorkom verdichting; benut microverhogingen en verbeter
+    structuur met organische stof waar passend.
+  geschikte_beplanting: 'Natte delen: els, wilg, populier. Hogere ruggen: meidoorn, veldesdoorn (en andere
+    soorten passend bij de lokale situatie).'
+  samenvatting: '**Klei** is mineraal materiaal met relatief veel lutum (<2 µm). In het rivierengebied
+    bestaat klei meestal uit **rivierklei**: fijn sediment dat tijdens overstromingen en in rustig water
+    is afgezet. Belangrijk onderscheid: **oeverwal-/stroomrugklei** (vaak lichter, meer zavelig, beter
+    doorlatend) versus **komklei** (vaak zwaarder, natter, slechter doorlatend).'
+  bronnen:
+  - geologie_van_nederland_komgrond_komklei_tno
+  - berendsen_h_j_a_2005_fysische_geografie_van_nederl_2
+  - jongmans_a_g_e_a_2013_landschappen_van_nederland_g
+  bronnen_aanvullend:
+  - berendsen_h_j_a_1993_de_ontwikkeling_van_het_neder
+  - everts_f_h_e_a_natura_2000_herstelstrategie_n_deel
+  - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+  - atlas_leefomgeving_bodemkaart_van_nederland_1_50_0
+  - geologie_van_nederland_komgrond_komklei_en_uitleg_
+  duiding:
+    rapporttekst: 'De bodem bestaat hier uit kleigrond. Kleigronden bestaan uit fijne minerale deeltjes
+      en hebben daardoor een hoge water- en nutriëntenbuffer. In het Nederlandse rivierengebied is klei
+      vaak gevormd door afzetting bij overstromingen: grover materiaal dichtbij (oude) rivierlopen (oeverwallen/stroomruggen),
+      en fijne slibfractie verder weg in komgebieden (komklei).
+
+
+      Binnen kleigronden is het onderscheid tussen hogere, beter doorlatende kleiruggen (oeverwal/stroomrug)
+      en lagere, nattere komgronden belangrijk. Op ruggen is de bodem vaak draagkrachtiger en iets droger;
+      in kommen blijft water langer staan en is de kans op langdurige vernatting groter.
+
+
+      Geschikte beplantingsrichting (voorzichtig): Op de laagste en natste delen passen soorten die natte
+      omstandigheden verdragen, zoals Els, wilg, populier, iep; in struweel o.a. zwarte bes, vlier, Gelderse
+      roos. Op iets hogere delen (ruggen/oeverwallen) is vaak meer mogelijk, zoals Iep, linde, es, esdoorn,
+      wilg en populier; struiken zoals meidoorn, Gelderse roos en kornoelje. Plaats soorten die gevoelig
+      zijn voor natte voeten bij voorkeur op microverhogingen of de meest draagkrachtige delen van het
+      erf.
+
+
+      Qua beheer en inrichting: Voor nattere/zwaardere klei geldt: Vermijd zware machines bij nat weer;
+      kies soorten met tolerantie voor natte voeten en wisselende zuurstofcondities; Voor lichtere klei
+      geldt: Bij nat weer gevoelig voor structuurverlies; drainage en organische stof helpen; Algemeen:
+      voer grondwerk en aanplant uit bij voldoende draagkracht om verdichting te voorkomen; werk waar
+      nodig met organische stof (mulch/compost) voor een betere bodemstructuur en doorworteling..'

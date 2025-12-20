@@ -1,0 +1,74 @@
+titel: "Organische stof opbouw"
+
+# Wanneer is dit principe relevant?
+toepasbaar_bij:
+  - "droogte"
+  - "zeer_droog"
+  - "zand"
+  - "voedselarmoede"
+  - "arm"
+
+relevantie:
+  ernst_probleem: "hoog"  # Voor zandgrond is dit cruciaal
+  effect: "zeer_hoog"     # Grote impact op vochtvast houding
+
+# Waarom dit principe?
+waarom: |
+  Zandgrond houdt slecht vocht vast (weinig klei/silt). Organische stof 
+  kan tot 10x zijn eigen gewicht aan water vasthouden. Door organische 
+  stof op te bouwen, verbeter je de vochtbuffer EN de voedingsstoffen.
+  Dit is DE basis-interventie voor zandgronden.
+
+# Hoe pas je dit toe?
+hoe: |
+  **Direct na aanplant:**
+  - Mulch 10-15cm houtsnippers/bladmolm rondom elke plant
+  - Creëer mulchzone van minimaal 1m diameter
+  
+  **Jaarlijks onderhoud:**
+  - Laat alle blad liggen in herfst (niet opruimen!)
+  - Vul mulch aan tot 10cm dikte (1x per jaar)
+  - Stapel tak/twijghout als droge houtwal (composteert langzaam)
+  
+  **Langetermijn:**
+  - Na 10-15 jaar ontstaat humusrijke bovengrond (5-10cm dik)
+  - Systeem wordt zelfvoorzienend (blad van bomen voedt bodem)
+
+effect_tijdlijn:
+  jaar_1_3: "Mulch breekt af, eerste verbetering zichtbaar"
+  jaar_5_10: "Humuslaag 2-5cm dik, vochtvast houding +50%"
+  jaar_15_20: "Humuslaag 5-10cm dik, zelfvoorzienend systeem"
+
+materialen:
+  houtsnippers:
+    voor: "Langzaam composterend, blijft luchtig, ziet er goed uit"
+    tegen: "Kan stikstof binden eerste maanden"
+    kosten: "Vaak gratis bij boomverzorgers"
+  
+  bladmolm:
+    voor: "Rijk aan voedingsstoffen, snel composterend"
+    tegen: "Kan wegwaaien bij wind"
+    kosten: "Vaak gratis bij gemeente"
+  
+  schors:
+    voor: "Ziet er decoratief uit"
+    tegen: "Waait snel weg, duur"
+    kosten: "Relatief duur"
+
+veelgemaakte_fouten:
+  - "Te dunne mulchlaag (<5cm) - effect minimaal"
+  - "Worteldoek gebruiken ipv mulch - werkt niet"
+  - "Mulch tegen stam - rot risico"
+  - "Te veel stikstofrijk materiaal - verbranding"
+
+meetbare_resultaten:
+  - "Vochtgehalte bodem +30-50% na 3 jaar"
+  - "Minder watergift nodig (-50% na 5 jaar)"
+  - "Betere groei planten (+20-40% na 5 jaar)"
+
+bronnen:
+  - id: "wur_2018_organische_stof_zandgrond"
+    context: "Effecten organische stof op vochtvasthouden"
+  
+  - id: "staatsbosbeheer_2020_mulchen_praktijk"
+    context: "Praktijkervaringen mulchen bij aanplant"

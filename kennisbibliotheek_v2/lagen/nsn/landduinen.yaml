@@ -1,0 +1,46 @@
+titel: Landduinen (binnenlandse stuifduinen)
+code: bknsn_landduin1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  proces: Stuiven landinwaarts (Middeleeuwen)
+landvorm:
+  reliëf:
+    vorm: Golvend (duinen)
+    hoogtebereik: Variabel
+    helling: 5-20%
+  positie_in_landschap:
+    ligging: Variabel
+    beschrijving: Duinachtig
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog
+typische_bodem:
+  types: Stuifzand
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Extreem droog. Heide-vegetatie. Kootwijkerzand, Loonse Duinen.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het microreliëf - top droog, vallei vochtig
+  - Bescherm tegen verdere verstuiving (geleidelijk beplanten)
+  - Kies windbestendige en zouttolerante soorten
+duiding:
+  rapporttekst: '**Landduinen (binnenlandse stuifduinen)**
+
+
+    Duinachtig
+
+
+    Water: Droog
+
+    Bodem: Stuifzand
+
+
+    Extreem droog. Heide-vegetatie. Kootwijkerzand, Loonse Duinen.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

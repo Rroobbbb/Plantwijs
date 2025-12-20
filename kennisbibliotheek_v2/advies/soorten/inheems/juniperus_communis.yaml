@@ -1,0 +1,61 @@
+titel: Juniperus communis
+wetenschappelijke_naam: Juniperus communis
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  wind_tolerantie: verdraagt matige wind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 5 - 8 m
+  hoogte_range:
+    min: 5.0
+    max: 8.0
+    tekst: 5 - 8 m
+  breedte: 2 - 3 m
+  breedte_range:
+    min: 2.0
+    max: 3.0
+    tekst: 2 - 3 m
+  kroonvorm: zuil
+  kroonstructuur: gesloten
+  winterhardheid: 3A - 8B
+functie: 'Type: pionier. voedselbos'
+ecologische_waarde:
+  biodiversiteit_treeebb: []
+praktisch:
+  toepassingen:
+  - park
+  - grote tuin
+  - verkeer, industrie
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+  - dicht
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / jucommun-juniperus-communis'
+  aangevuld: Basis TreeEbb

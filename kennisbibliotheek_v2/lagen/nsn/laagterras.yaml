@@ -1,0 +1,46 @@
+titel: Laagterras (oude riviervlakte)
+code: bknsn_dz4
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  proces: Oude rivierafzettingen (Pleistoceen)
+landvorm:
+  reliëf:
+    vorm: Vlak terras
+    hoogtebereik: 10-25m NAP
+    helling: <1%
+  positie_in_landschap:
+    ligging: Tussen dekzandruggen
+    beschrijving: Vlakte (oude rivierbedding)
+hydromorfologie:
+  afwatering:
+    beschrijving: Matig gedraineerd
+typische_bodem:
+  types: Rivierzand, grind
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Grover zand dan dekzand. Iets beter water vasthouden.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut hoogteverschillen voor variatie
+  - Mulch essentieel op arme grond
+  - Organische stof opbouw prioriteit
+duiding:
+  rapporttekst: '**Laagterras (oude riviervlakte)**
+
+
+    Vlakte (oude rivierbedding)
+
+
+    Water: Matig gedraineerd
+
+    Bodem: Rivierzand, grind
+
+
+    Grover zand dan dekzand. Iets beter water vasthouden.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

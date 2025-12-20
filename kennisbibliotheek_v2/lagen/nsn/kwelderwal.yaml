@@ -1,0 +1,46 @@
+titel: Kwelderwal
+code: bknsn_zee3
+categorie: NSN - Geomorfologisch
+fgr_relatie: Zeekleigebied/Getijdengebied
+ontstaansgeschiedenis:
+  proces: Zandafzetting langs kweldergeulen
+landvorm:
+  reliëf:
+    vorm: Lage rug parallel aan kust
+    hoogtebereik: -1 tot 1m NAP
+    helling: 1-2%
+  positie_in_landschap:
+    ligging: Iets hoger in kwelder
+    beschrijving: Langgerekte rug
+hydromorfologie:
+  afwatering:
+    beschrijving: Beter gedraineerd
+typische_bodem:
+  types: Zandige klei
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Relatief droog in verder nat kweldergebied.
+
+    '
+  ontwerp_uitgangspunten:
+  - NOOIT betreden bij nat (permanente verdichting)
+  - 'Op verhogingen: veel mogelijk'
+  - 'In laagtes: drainage overwegen'
+duiding:
+  rapporttekst: '**Kwelderwal**
+
+
+    Langgerekte rug
+
+
+    Water: Beter gedraineerd
+
+    Bodem: Zandige klei
+
+
+    Relatief droog in verder nat kweldergebied.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

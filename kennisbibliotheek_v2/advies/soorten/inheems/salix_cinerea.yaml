@@ -1,0 +1,69 @@
+titel: Salix cinerea
+wetenschappelijke_naam: Salix cinerea
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 9
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt droogte
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 3 - 5 m
+  hoogte_range:
+    min: 3.0
+    max: 5.0
+    tekst: 3 - 5 m
+  breedte: 3 - 5 m
+  breedte_range:
+    min: 3.0
+    max: 5.0
+    tekst: 3 - 5 m
+  kroonvorm: ovaal
+  kroonstructuur: halfopen
+  winterhardheid: 4A - 9B
+functie: 'Type: pionier. stedelijke beplanting / ecobeplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - landschap
+  - ecologische zone
+  - windsingel
+  - wadi
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / sacinere-salix-cinerea'
+  aangevuld: Basis TreeEbb

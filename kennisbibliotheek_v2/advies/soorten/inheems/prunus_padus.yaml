@@ -1,0 +1,68 @@
+titel: Prunus padus
+wetenschappelijke_naam: Prunus padus
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 3
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt geen wind
+  extreme_condities:
+  - verdraagt kortstondige overstroming
+groei:
+  hoogte: 5 - 15 m
+  hoogte_range:
+    min: 5.0
+    max: 15.0
+    tekst: 5 - 15 m
+  breedte: 4 - 8 m
+  breedte_range:
+    min: 4.0
+    max: 8.0
+    tekst: 4 - 8 m
+  kroonvorm: breed piramidaal
+  kroonstructuur: gesloten
+  winterhardheid: 3A - 8B
+functie: 'Type: pionier. ecobeplanting / landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - nectarwaarde 3
+  - pollenwaarde 3
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - grote tuin
+  - landschap
+  - ecologische zone
+  - windsingel
+  - wadi
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / prpadus-prunus-padus'
+  aangevuld: Basis TreeEbb

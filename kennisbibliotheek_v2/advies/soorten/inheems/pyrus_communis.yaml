@@ -1,0 +1,73 @@
+titel: Pyrus communis
+wetenschappelijke_naam: Pyrus communis
+type: pionier
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 5
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 10 - 15 m
+  hoogte_range:
+    min: 10.0
+    max: 15.0
+    tekst: 10 - 15 m
+  breedte: 5 - 10 m
+  breedte_range:
+    min: 5.0
+    max: 10.0
+    tekst: 5 - 10 m
+  kroonvorm: eirond
+  kroonstructuur: halfopen
+  winterhardheid: 5A - 9B
+functie: 'Type: pionier. voedselbos'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  - mensen
+  - nectarwaarde 5
+  - pollenwaarde 5
+praktisch:
+  toepassingen:
+  - laan
+  - park
+  - groenstrook
+  - daktuin
+  - grote tuin
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+  - dicht
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / pycommun-pyrus-communis'
+  aangevuld: Basis TreeEbb

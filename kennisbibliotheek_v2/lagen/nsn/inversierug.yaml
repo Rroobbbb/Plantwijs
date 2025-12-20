@@ -1,0 +1,45 @@
+titel: Inversierug (opgevulde kreek)
+code: bknsn_delta1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Zeekleigebied
+ontstaansgeschiedenis:
+  periode: Middeleeuwen/later
+  proces: Zandig opgevulde getijdenkreek in zeekleigebied
+  beschrijving: Inversieruggen zijn opgevulde kreken die nu hoger liggen dan omgeving
+    door inklinking van klei. Het grove zand in de kreek klinkt niet in.
+landvorm:
+  reliëf:
+    vorm: Rug (hoger)
+    hoogtebereik: -1 tot 2m NAP
+    helling: 1-3%
+  positie_in_landschap:
+    ligging: Hoger in polder
+    beschrijving: Kronkelende rug (opgevulde kreek)
+hydromorfologie:
+  afwatering:
+    beschrijving: Beter gedraineerd
+typische_bodem:
+  types: Zand met kleidek
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Beste plek in verder nat zeekleigebied! Zelfde als kreekresten.
+
+    '
+  ontwerp_uitgangspunten:
+  - NOOIT betreden bij nat (permanente verdichting)
+  - 'Op verhogingen (terp/wierde): veel mogelijk'
+  - 'In laagtes: drainage overwegen'
+duiding:
+  rapporttekst: '**Inversierug (opgevulde kreek)**
+
+
+    Kronkelende rug (opgevulde kreek)
+
+
+    Beste plek in verder nat zeekleigebied! Zelfde als kreekresten.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

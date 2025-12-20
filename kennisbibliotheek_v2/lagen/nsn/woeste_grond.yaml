@@ -1,0 +1,45 @@
+titel: Woeste grond (heidegrond)
+code: bknsn_erf2
+categorie: NSN - Geomorfologisch
+fgr_relatie: Dekzandgebied
+ontstaansgeschiedenis:
+  periode: Voor 1900
+  proces: Onbemeste gronden, vroeger heidegebied
+  beschrijving: Woeste gronden waren niet-gecultiveerde gebieden, vaak heide, die
+    werden gebruikt voor schapenbegrazing maar niet bemest.
+landvorm:
+  reliëf:
+    vorm: Variabel
+    hoogtebereik: Variabel
+    helling: Variabel
+  positie_in_landschap:
+    ligging: Variabel
+    beschrijving: Voormalige heide
+hydromorfologie:
+  afwatering:
+    beschrijving: Variabel
+typische_bodem:
+  types: Haarpodzol (zeer arm!)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Zeer arm. Was heide. Bodemverbetering ESSENTIEEL.
+
+    '
+  ontwerp_uitgangspunten:
+  - Benut de vruchtbare bodem (als esdek)
+  - Verbeter arme bodem met compost (als woeste grond)
+  - Respecteer historische waarde
+duiding:
+  rapporttekst: '**Woeste grond (heidegrond)**
+
+
+    Voormalige heide
+
+
+    Zeer arm. Was heide. Bodemverbetering ESSENTIEEL.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

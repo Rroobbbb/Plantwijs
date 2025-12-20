@@ -1,0 +1,50 @@
+titel: Uiterwaard (tussen zomer- en winterdijk)
+code: bknsn_uit1
+categorie: NSN - Geomorfologisch
+fgr_relatie: Rivierengebied
+ontstaansgeschiedenis:
+  periode: Holoceen/Pleistoceen
+  proces: Vlakte tussen rivier en dijk
+  beschrijving: Deze landvorm ontstond door natuurlijke processen in het verleden.
+landvorm:
+  reliëf:
+    vorm: Vlak tot zwak golvend
+    hoogtebereik: -1 tot 5m NAP
+    helling: <2%
+  positie_in_landschap:
+    ligging: Tussen dijken
+    beschrijving: Vlakte tussen rivier en dijk
+hydromorfologie:
+  afwatering:
+    beschrijving: Wisselend (overstroming winter, droog zomer)
+typische_bodem:
+  types: Rivierklei, zand
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Overstromingsrisico! Kies overstroming-tolerante soorten (wilg,
+    es).
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het reliëf, niet ertegen
+  - Benut microreliëf voor variatie
+  - Kies soorten passend bij waterstand en bodem
+duiding:
+  rapporttekst: '**Uiterwaard (tussen zomer- en winterdijk)**
+
+
+    Vlakte tussen rivier en dijk
+
+
+    Water: Wisselend (overstroming winter, droog zomer)
+
+    Bodem: Rivierklei, zand
+
+
+    Advies: Overstromingsrisico! Kies overstroming-tolerante soorten (wilg, es).
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude
+  opmerking: Uitgebreid NSN - complete geomorfologische context

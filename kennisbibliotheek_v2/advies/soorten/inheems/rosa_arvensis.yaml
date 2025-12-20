@@ -1,0 +1,72 @@
+titel: Rosa arvensis
+wetenschappelijke_naam: Rosa arvensis
+type: struik
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 6
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt luchtverontreiniging
+groei:
+  hoogte: 0,5 - 2 m
+  hoogte_range:
+    min: 0.5
+    max: 2.0
+    tekst: 0,5 - 2 m
+  breedte: 2 - 4 m
+  breedte_range:
+    min: 2.0
+    max: 4.0
+    tekst: 2 - 4 m
+  kroonvorm: ''
+  kroonstructuur: ''
+  winterhardheid: 5B - 7B
+functie: 'Type: struik. ecobeplanting / landschappelijke beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - kleine zoogdieren
+  - vogels
+praktisch:
+  toepassingen:
+  - park
+  - groenstrook
+  - bakken
+  - containers
+  - daktuin
+  - grote tuin
+  - kleine tuin
+  - patiotuin
+  - begraafplaats
+  - landschap
+  - ecologische zone
+  - windsingel
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / roarvens-rosa-arvensis'
+  aangevuld: Basis TreeEbb

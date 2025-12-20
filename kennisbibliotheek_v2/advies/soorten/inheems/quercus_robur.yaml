@@ -1,0 +1,88 @@
+titel: Quercus robur
+wetenschappelijke_naam: Quercus robur
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 8
+  nattigheid_tolerantie_score: 7
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - voedselarm
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt matige zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt droogte
+  - verdraagt luchtverontreiniging
+  - verdraagt hitte
+groei:
+  hoogte: 25 - 35 m
+  hoogte_range:
+    min: 25.0
+    max: 35.0
+    tekst: 25 - 35 m
+  breedte: 25 - 35 m
+  breedte_range:
+    min: 25.0
+    max: 35.0
+    tekst: 25 - 35 m
+  kroonvorm: rond
+  kroonstructuur: halfopen
+  winterhardheid: 5A - 10A
+  snelheid_jaar_1_5: 20-40cm/jaar (traag)
+  snelheid_jaar_5_15: 40-60cm/jaar
+  worteltype: Penwortel (3-5m diep)
+  levensduur: 300-500 jaar
+functie: Dé hoofdboom voor natuurwaarde. Ondersteuning 500+ insectensoorten.
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - bijen
+  - vlinders
+  - vogels
+  - kleine zoogdieren
+  insecten: 500+ soorten (hoogste van NL)
+  vogels: Eikels voor gaai, eekhoorn
+  score: 10/10
+praktisch:
+  toepassingen:
+  - laan
+  - park
+  - groenstrook
+  - grote tuin
+  - begraafplaats
+  - verkeer, industrie
+  - landschap
+  - ecologische zone
+  - windsingel
+  verharding_tolerantie:
+  - geen
+  plantmaat: 40-80cm blote wortel
+  aanslag: Traag eerste 2-3 jaar
+  ziekten:
+  - Eikenprocessierups
+  - Meeldauw (cosmetisch)
+klimaat_toekomst:
+  droogte_score: 8
+  hitte_score: 8
+  toekomst_beoordeling: Veilige keuze
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / qurobur-quercus-robur'
+  aangevuld: Ja

@@ -1,0 +1,38 @@
+titel: Gt IVu (matig droog)
+beschrijving: 'Grondwatertrap IVu is een relatief droge tot matig droge grondwatertrap, gedefinieerd via
+  klassen van de gemiddeld hoogste grondwaterstand (GHG) en gemiddeld laagste grondwaterstand (GLG). De
+  lettercombinaties in Gt geven zowel een absolute diepteklasse als de seizoensfluctuatie weer; de exacte
+  grenzen zijn in de bodemkartering vastgelegd.
+
+  '
+betekenis: 'Bij Gt IVu staat het grondwater doorgaans dieper dan bij natte trappen, waardoor droogtestress
+  in warme zomers kan optreden, zeker op zandige bodems. Op klei kan de wortelzone toch tijdelijk nat
+  zijn door slechte infiltratie of hoge peilen; combineer de Gt daarom altijd met bodemtype en waterbeheer.
+
+  '
+uitleg_ghg_glg: 'Grondwatertrappen worden afgeleid uit langjarige gemiddelden: GHG (winter) en GLG (zomer).
+  Samen vatten ze de jaarlijkse fluctuatie samen en zijn ze een belangrijke indicator voor vegetatie,
+  draagkracht en gebruiksmogelijkheden.'
+bronnen: &id001
+- stowa_2010_grondwaterregime_op_basis_van_karteerba
+- wur_edepot_2018_landsdekkende_actuele_informatie_o
+- wikipedia_grondwatertrap_begrippen_ghg_glg
+- wur_landschapsleutel_legenda_s_bodemkaarten_gt_sys
+duiding:
+  rapporttekst: 'Gt IVu (matig droog) wordt gekenmerkt door grondwatertrap IVu is een relatief droge tot
+    matig droge grondwatertrap, gedefinieerd via klassen van de gemiddeld hoogste grondwaterstand (GHG)
+    en gemiddeld laagste grondwaterstand (GLG). De lettercombinaties in Gt geven zowel een absolute diepteklasse
+    als de seizoensfluctuatie weer; de exacte grenzen zijn in de bodemkartering vastgelegd.
+
+
+    Deze grondwatertrap is gebaseerd op langjarige gemiddelden van de hoogste (GHG) en laagste (GLG) grondwaterstand.
+    Grondwatertrappen worden afgeleid uit langjarige gemiddelden: GHG (winter) en GLG (zomer). Samen vatten
+    ze de jaarlijkse fluctuatie samen en zijn ze een belangrijke indicator voor vegetatie, draagkracht
+    en gebruiksmogelijkheden.
+
+
+    Voor erf- en landschapsbeplanting betekent dit het volgende. Bij Gt IVu staat het grondwater doorgaans
+    dieper dan bij natte trappen, waardoor droogtestress in warme zomers kan optreden, zeker op zandige
+    bodems. Op klei kan de wortelzone toch tijdelijk nat zijn door slechte infiltratie of hoge peilen;
+    combineer de Gt daarom altijd met bodemtype en waterbeheer.'
+  bronnen: *id001

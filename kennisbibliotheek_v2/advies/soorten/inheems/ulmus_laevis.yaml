@@ -1,0 +1,71 @@
+titel: Ulmus laevis
+wetenschappelijke_naam: Ulmus laevis
+type: hoofdboom
+familie: Onbekend
+inheems:
+  status_nl: inheems
+  nsr_status: 1a
+standplaats:
+  droogte_tolerantie_score: 6
+  nattigheid_tolerantie_score: 10
+  pH_voorkeur:
+  - zuur
+  - neutraal
+  - basisch
+  voedsel_behoefte:
+  - matig voedselrijk
+  - voedselrijk
+  bodemtype_voorkeur:
+    types:
+    - löss
+    - zavel
+    - veen
+    - lichte klei
+    - zand
+    - lemige grond
+  licht:
+  - zon
+  - halfschaduw
+  wind_tolerantie: verdraagt wind / verdraagt zeewind
+  extreme_condities:
+  - verdraagt strooizout
+  - verdraagt kortstondige overstroming
+  - weinig tot zelden luisaantasting
+  - iepziekteresistentie 3
+groei:
+  hoogte: 25 - 35 m
+  hoogte_range:
+    min: 25.0
+    max: 35.0
+    tekst: 25 - 35 m
+  breedte: 10 - 20 m
+  breedte_range:
+    min: 10.0
+    max: 20.0
+    tekst: 10 - 20 m
+  kroonvorm: rond / breed ovaal
+  kroonstructuur: halfopen
+  winterhardheid: 5A - 8B
+functie: 'Type: hoofdboom. ecobeplanting / landschappelijke beplanting / solide beplanting'
+ecologische_waarde:
+  biodiversiteit_treeebb:
+  - vlinders
+praktisch:
+  toepassingen:
+  - laan
+  - park
+  - grote tuin
+  - landschap
+  - ecologische zone
+  - windsingel
+  - wadi
+  - kustgebied
+  verharding_tolerantie:
+  - geen
+  - open
+  - dicht
+klimaat_toekomst: {}
+bron:
+  database: TreeEbb
+  url: 'https: / www.ebben.nl / nl / treeebb / ullaevis-ulmus-laevis'
+  aangevuld: Basis TreeEbb

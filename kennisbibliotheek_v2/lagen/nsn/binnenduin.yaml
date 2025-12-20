@@ -1,0 +1,46 @@
+titel: Binnenduin (oude duinen)
+code: bknsn_duin3
+categorie: NSN - Geomorfologisch
+fgr_relatie: Duingebied
+ontstaansgeschiedenis:
+  proces: Oude duinvorming
+landvorm:
+  reliëf:
+    vorm: Golvend
+    hoogtebereik: 5-25m NAP
+    helling: 3-15%
+  positie_in_landschap:
+    ligging: Achter zeereep (beschutter)
+    beschrijving: Oudere duinen achter zeereep
+hydromorfologie:
+  afwatering:
+    beschrijving: Droog top, vochtig vallei
+typische_bodem:
+  types: Duinzand (ontkalkt in oude delen)
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'Gevarieerder dan zeereep. Microreliëf benutten!
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met het microreliëf - top droog, vallei vochtig
+  - Bescherm tegen verdere verstuiving (geleidelijk beplanten)
+  - Kies windbestendige en zouttolerante soorten
+duiding:
+  rapporttekst: '**Binnenduin (oude duinen)**
+
+
+    Oudere duinen achter zeereep
+
+
+    Water: Droog top, vochtig vallei
+
+    Bodem: Duinzand (ontkalkt in oude delen)
+
+
+    Gevarieerder dan zeereep. Microreliëf benutten!
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

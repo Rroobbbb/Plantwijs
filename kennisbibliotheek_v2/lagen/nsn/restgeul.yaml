@@ -1,0 +1,46 @@
+titel: Restgeul (dichtgeslibde geul)
+code: bknsn_riv5
+categorie: NSN - Geomorfologisch
+fgr_relatie: Rivierengebied
+ontstaansgeschiedenis:
+  proces: Dichtgeslibde oude rivierarm
+landvorm:
+  reliëf:
+    vorm: Laagte (oude geul)
+    hoogtebereik: -1 tot 3m NAP
+    helling: <1%
+  positie_in_landschap:
+    ligging: Laagte in stroomvlakte
+    beschrijving: Langgerekte laagte
+hydromorfologie:
+  afwatering:
+    beschrijving: Nat (slecht gedraineerd)
+typische_bodem:
+  types: Klei, veen
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: 'NAT! Vaak moerasplek. Wilg, els geschikt.
+
+    '
+  ontwerp_uitgangspunten:
+  - Werk met microreliëf (oeverwal vs kom)
+  - 'Bij overstromingsrisico: overstroming-tolerante soorten'
+  - Benut vruchtbare klei
+duiding:
+  rapporttekst: '**Restgeul (dichtgeslibde geul)**
+
+
+    Langgerekte laagte
+
+
+    Water: Nat (slecht gedraineerd)
+
+    Bodem: Klei, veen
+
+
+    NAT! Vaak moerasplek. Wilg, els geschikt.
+
+    '
+metadata:
+  versie: '1.0'
+  laatst_bijgewerkt: '2024-12-20'
+  auteur: Claude

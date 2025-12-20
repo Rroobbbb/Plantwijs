@@ -1,0 +1,56 @@
+titel: "Kreekresten (voormalige kreek)"
+code: "bknsn_zee1"
+categorie: "NSN - Geomorfologisch"
+
+fgr_relatie: "Zeekleigebied"
+
+ontstaansgeschiedenis:
+  periode: "Pleistoceen/Holoceen"
+  proces: "Opgevulde getijdenkreek"
+  beschrijving: |
+    Opgevulde getijdenkreek
+
+landvorm:
+  reliëf:
+    vorm: "Lage rug in polder"
+    hoogtebereik: "-2 tot 0m NAP"
+    helling: "1-2%"
+  
+  positie_in_landschap:
+    ligging: "Iets hoger in polder"
+    beschrijving: "Kronkelende rug (oude kreekloop)"
+
+hydromorfologie:
+  afwatering:
+    beschrijving: "Beter gedraineerd dan omgeving"
+
+typische_bodem:
+  types: "Zandige klei"
+
+betekenis_voor_erfbeplanting:
+  reliëf_implicaties: |
+    Relatief droog in natte polder. Beste plek voor bomen in kleigebied.
+  
+  ontwerp_uitgangspunten:
+    - "Werk met het reliëf, niet ertegen"
+    - "Benut microreliëf voor variatie"
+
+duiding:
+  rapporttekst: |
+    **Kreekresten (voormalige kreek)**
+    
+    Dit is een Lage rug in polder landvorm op -2 tot 0m NAP.
+    
+    Kenmerkend:
+    - Kronkelende rug (oude kreekloop)
+    - Beter gedraineerd dan omgeving
+    - Bodem: Zandige klei
+    
+    Voor beplanting betekent dit:
+    Relatief droog in natte polder. Beste plek voor bomen in kleigebied.
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Basis NSN - geomorfologische context"

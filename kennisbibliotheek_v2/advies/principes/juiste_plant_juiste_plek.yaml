@@ -1,0 +1,36 @@
+titel: "Juiste plant op juiste plek"
+
+toepasbaar_bij:
+  - "alle_situaties"
+
+relevantie:
+  ernst_probleem: "hoog"
+  effect: "hoog"
+
+waarom: |
+  Plant tegen voorkeuren in = slechte groei, ziekten, uitval. Werk MET de bodem, niet ertegen.
+
+hoe: |
+  Check ALTIJD voor planten:
+1. Grondwaterstand (nat/droog)
+2. Bodemtype (zand/klei/veen)
+3. pH (zuur/neutraal/basisch)
+4. Licht (zon/schaduw)
+5. Ruimte (eindmaat!)
+
+Voorbeelden:
+- Els op NAT, niet op droog
+- Beuk op KLEI/LEEM, niet op droog zand
+- Heide op ZUUR, niet op kalk
+- Eik op DROOG/MATIG, niet te nat
+
+effect_tijdlijn:
+  direct: "80% minder uitval, 2x snellere groei, gezonde planten"
+
+
+
+metadata:
+  versie: "1.0"
+  laatst_bijgewerkt: "2024-12-20"
+  auteur: "Claude"
+  opmerking: "Praktisch principe - direct toepasbaar"
