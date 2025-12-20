@@ -1350,13 +1350,15 @@ def _load_context_db() -> dict:
     """Laad kennisbibliotheek.
 
     Ondersteunt:
-    - monolithisch context_descriptions.yaml (oude situatie)
-    - split-map 'kennisbibliotheek/' met meerdere YAML's (nieuwe situatie)
+    - monolithisch context_descriptions.yaml (oude situatie met top-level keys)
+    - split-map 'kennisbibliotheek_v2/lagen/' met submappen per categorie (nieuwe situatie)
 
-    Merge-regel:
-    - top-level dicts worden samengevoegd
-    - bij key-conflict en beide waarden zijn dicts → deep-merge
-    - anders: laatste bron wint (maar we proberen overlappen te vermijden door split)
+    V2 STRATEGIE:
+    - Bestanden in `/lagen/bodem/` → worden gegroepeerd onder key 'bodem'
+    - Bestanden in `/lagen/gt/` → worden gegroepeerd onder key 'gt'
+    - etc.
+    - Bestandsnaam zonder extensie wordt de sub-key
+    - Bijvoorbeeld: lagen/bodem/zandgrond.yaml → merged['bodem']['zandgrond'] = {...}
     """
     def _deep_merge(a: dict, b: dict) -> dict:
         out = dict(a)
@@ -1394,10 +1396,51 @@ def _load_context_db() -> dict:
 
     sources = _resolve_context_sources(_CONTEXT_PATH)
     merged: dict = {}
+    
     for p in sources:
         d = _load_one(p)
-        if isinstance(d, dict) and d:
+        if not (isinstance(d, dict) and d):
+            continue
+        
+        # Detecteer of dit een v2 bestand is (zonder top-level category key)
+        # door te kijken of het pad een /lagen/ submap bevat
+        path_obj = Path(p)
+        parts = path_obj.parts
+        
+        # Zoek naar categorie in pad (bodem, gt, fgr, nsn, soorten, principes)
+        category = None
+        item_name = path_obj.stem  # bestandsnaam zonder extensie
+        
+        # Check if path contains /lagen/ or /advies/
+        if 'lagen' in parts:
+            # Find category after 'lagen'
+            try:
+                lagen_idx = parts.index('lagen')
+                if lagen_idx + 1 < len(parts):
+                    category = parts[lagen_idx + 1]
+            except ValueError:
+                pass
+        elif 'advies' in parts:
+            # advies/principes/ of advies/soorten/
+            try:
+                advies_idx = parts.index('advies')
+                if advies_idx + 1 < len(parts):
+                    category = parts[advies_idx + 1]
+            except ValueError:
+                pass
+        
+        # Als we een categorie hebben gevonden, groepeer het bestand
+        if category:
+            # Initialiseer categorie als het nog niet bestaat
+            if category not in merged:
+                merged[category] = {}
+            
+            # Voeg bestand toe onder zijn naam
+            merged[category][item_name] = d
+        else:
+            # Oude stijl: direct mergen (heeft waarschijnlijk top-level keys)
             merged = _deep_merge(merged, d)
+    
     return merged
 
 CONTEXT_DB = _load_context_db()
