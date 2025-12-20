@@ -1201,7 +1201,10 @@ def _resolve_context_path(path: str) -> str:
     return srcs[0] if srcs else str(path or "context_descriptions.yaml")
 
 def _normalize_key(value: str) -> str:
-    """Normaliseer key met speciale mappings voor NSN en GT."""
+    """Normaliseer key met COMPLETE mappings voor NSN, GT, Bodem, FGR.
+    
+    Ondersteunt 75+ WMS varianten → kennisbibliotheek bestandsnamen.
+    """
     s = str(value or "").strip().lower()
     if not s:
         return ""
@@ -1213,39 +1216,183 @@ def _normalize_key(value: str) -> str:
     s = re.sub(r"[^a-z0-9]+", "_", s)
     s = re.sub(r"_+", "_", s).strip("_")
     
-    # NSN speciale mappings (WMS geeft andere namen dan bestandsnamen)
+    # ========================================================================
+    # NSN MAPPINGS (40 landvormen) - WMS varianten → bestandsnaam
+    # ========================================================================
     nsn_mappings = {
+        # Riviergebied varianten
+        'kom': 'komgrond',
+        'komgrond': 'komgrond',
         'rivierkom': 'komgrond',
         'komgebied': 'komgrond',
         'oeverwal': 'oeverwal',
+        'stroomrug': 'oeverwal',
+        'oeverwalflank': 'oeverwalflank',
         'kronkelwaard': 'kronkelwaard',
-        'stroomrug': 'stroomrug',
-        'uiterwaardvlakte': 'uiterwaard',
         'overslaggrond': 'overslaggrond',
+        'laagterras': 'laagterras',
+        'inversierug': 'inversierug',
+        
+        # Dekzand varianten
+        'dekzandrug': 'dekzandrug',
+        'dekzandvlakte': 'dekzandvlakte',
+        'dekzandkopje': 'dekzandkopje',
+        'dekzandwelving': 'dekzandwelving',
+        'esdek': 'esdek',
+        
+        # Beekdal varianten
+        'beekdal': 'beekdal',
+        'beekdalflank': 'beekdalflank',
+        'beekloop': 'beekloop',
+        'brongebied': 'brongebied',
+        'droog_dal': 'droog_dal',
+        'dalwand': 'dalwand',
+        
+        # Duinen varianten
+        'binnenduin': 'binnenduin',
+        'duinvallei': 'duinvallei',
+        'embryonaal_duin': 'embryonaal_duin',
+        'kustduin': 'kustduin',
+        'landduinen': 'landduinen',
+        'parabool_duin': 'parabool_duin',
+        
+        # Kust/getijden varianten
+        'gorzen': 'gorzen',
+        'kweldervlakte': 'kweldervlakte',
+        'kwelderwal': 'kwelderwal',
+        'getijdengeul': 'getijdengeul',
+        'kreekresten': 'kreekresten',
+        
+        # Veen varianten
+        'hoogveenkern': 'hoogveenkern',
+        'lagg': 'lagg',
+        
+        # Löss varianten
+        'loss_droog_dal': 'loss_droog_dal',
+        'lossdal': 'loss_droog_dal',
+        'lossplateau': 'lossplateau',
+        
+        # Overig
+        'hellingvoet': 'hellingvoet',
+        'glaciaal_bekken': 'glaciaal_bekken',
+        'grubbenlandschap': 'grubbenlandschap',
+        'inlaag': 'inlaag',
+        'keileemplateau': 'keileemplateau',
+        'laagte': 'laagte',
+        'pingoruine': 'pingoruine',
     }
     
-    # GT speciale mappings (GT VIo → vio.yaml)
+    # ========================================================================
+    # GT MAPPINGS (8 hoofd + 15 sub = 23 types)
+    # ========================================================================
     gt_mappings = {
-        'gt_vio': 'vio',
-        'gt_vid': 'vid', 
-        'gt_viio': 'viio',
-        'gt_viid': 'viid',
-        'gt_viiio': 'viiio',
-        'gt_viiid': 'viiid',
+        # Subtypes (romeins + letter) - BELANGRIJKSTE!
+        'gt_ia': 'ia', 'ia': 'ia',
+        'gt_ib': 'ib', 'ib': 'ib',
+        'gt_iia': 'iia', 'iia': 'iia',
+        'gt_iib': 'iib', 'iib': 'iib',
+        'gt_iic': 'iic', 'iic': 'iic',
+        'gt_iiia': 'iiia', 'iiia': 'iiia',
+        'gt_iiib': 'iiib', 'iiib': 'iiib',
+        'gt_ivc': 'ivc', 'ivc': 'ivc',
+        'gt_ivu': 'ivu', 'ivu': 'ivu',
+        'gt_vad': 'vad', 'vad': 'vad',
+        'gt_vao': 'vao', 'vao': 'vao',
+        'gt_vbd': 'vbd', 'vbd': 'vbd',
+        'gt_vbo': 'vbo', 'vbo': 'vbo',
+        'gt_vid': 'vid', 'vid': 'vid',
+        'gt_vio': 'vio', 'vio': 'vio',  # JOUW VOORBEELD!
+        'gt_viid': 'viid', 'viid': 'viid',
+        'gt_viio': 'viio', 'viio': 'viio',
+        'gt_viiid': 'viiid', 'viiid': 'viiid',
+        'gt_viiio': 'viiio', 'viiio': 'viiio',
+        
+        # Hoofdtypen (romeinse cijfers) - fallback
+        'gt_i': 'gt_i', 'i': 'gt_i',
+        'gt_ii': 'gt_ii', 'ii': 'gt_ii',
+        'gt_iii': 'gt_iii', 'iii': 'gt_iii',
+        'gt_iv': 'gt_iv', 'iv': 'gt_iv',
+        'gt_v': 'gt_v', 'v': 'gt_v',
+        'gt_vi': 'gt_vi', 'vi': 'gt_vi',
+        'gt_vii': 'gt_vii', 'vii': 'gt_vii',
+        'gt_viii': 'gt_viii', 'viii': 'gt_viii',
     }
     
-    # Check mappings
+    # ========================================================================
+    # BODEM MAPPINGS (12 types + varianten)
+    # ========================================================================
+    bodem_mappings = {
+        # Klei varianten
+        'zware_zeeklei': 'zeeklei_zwaar',
+        'zeeklei_zwaar': 'zeeklei_zwaar',
+        'zeeklei': 'zeeklei_zwaar',  # default naar zwaar
+        'lichte_rivierklei': 'rivierklei_licht',
+        'rivierklei_licht': 'rivierklei_licht',
+        'rivierklei': 'rivierklei_licht',  # default naar licht
+        'kleigrond_zware_zeeklei': 'zeeklei_zwaar',
+        'kleigrond_lichte_rivierklei': 'rivierklei_licht',
+        
+        # Zand varianten
+        'zandgrond': 'zandgrond_vaaggrond',
+        'zandgrond_vaaggrond': 'zandgrond_vaaggrond',
+        'vaaggrond': 'zandgrond_vaaggrond',
+        'stuifzand': 'stuifzand',
+        
+        # Veen varianten
+        'veen': 'veengrond',
+        'veengrond': 'veengrond',
+        
+        # Löss varianten
+        'loss': 'loss',
+        'lossgrond': 'loss',
+        
+        # Leem varianten
+        'leem': 'leemgrond',
+        'leemgrond': 'leemgrond',
+        
+        # Overig
+        'beekeerdgrond': 'beekeerdgrond',
+        'enkeerdgrond': 'enkeerdgrond',
+        'kalkrijk': 'kalkrijk',
+        'kalkrijke_grond': 'kalkrijk',
+        'keileem': 'keileem',
+        'podzol': 'podzolgrond',
+        'podzolgrond': 'podzolgrond',
+    }
+    
+    # ========================================================================
+    # FGR MAPPINGS (9 regio's + varianten)
+    # ========================================================================
+    fgr_mappings = {
+        'rivierengebied': 'rivierengebied',
+        'zeekleigebied': 'zeekleigebied',
+        'duingebied': 'duingebied',
+        'duinen': 'duingebied',  # variant
+        'laagveengebied': 'laagveengebied',
+        'dekzandgebied': 'dekzandgebied',
+        'hogere_zandgronden': 'dekzandgebied',  # ongeveer
+        'heuvelland': 'heuvelland',
+        'lossgebied': 'lossgebied',
+        'ijsselmeergebied': 'ijsselmeergebied',
+        'beekdalengebied': 'beekdalengebied',
+        'getijdengebied': 'getijdengebied',
+        'waddenzee': 'getijdengebied',  # variant
+        'waddengebied': 'getijdengebied',  # variant
+    }
+    
+    # ========================================================================
+    # APPLY MAPPINGS
+    # ========================================================================
+    
+    # Check alle mappings in volgorde
     if s in nsn_mappings:
         return nsn_mappings[s]
     if s in gt_mappings:
         return gt_mappings[s]
-    
-    # GT sub-types: gt_vio → vio (fallback)
-    if s.startswith('gt_') and len(s) <= 10:
-        suffix = s[3:]  # verwijder "gt_"
-        # Als het een romeins cijfer + o/d is, gebruik direct
-        if suffix in ['vio', 'vid', 'viio', 'viid', 'viiio', 'viiid', 'viio', 'viiid']:
-            return suffix
+    if s in bodem_mappings:
+        return bodem_mappings[s]
+    if s in fgr_mappings:
+        return fgr_mappings[s]
     
     return s
 
