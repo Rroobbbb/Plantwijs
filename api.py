@@ -1641,11 +1641,12 @@ def generate_locatierapport_v2(
     # 1. EXTRACT DATA UIT CONTEXT
     # ========================================================================
     
-    fgr_data = context_data.get('fgr', {})
-    nsn_data = context_data.get('nsn', {})
-    bodem_data = context_data.get('bodem', {})
-    gt_data = context_data.get('gt', {})
-    principes = context_data.get('principes', [])
+    # Safely extract data with None fallback to empty dict
+    fgr_data = context_data.get('fgr') or {}
+    nsn_data = context_data.get('nsn') or {}
+    bodem_data = context_data.get('bodem') or {}
+    gt_data = context_data.get('gt') or {}
+    principes = context_data.get('principes') or []
     
     # Labels voor display
     fgr_label = fgr_data.get('titel', 'Onbekend')
@@ -3061,10 +3062,10 @@ def advies_pdf(
     
     # 2) Haal context data op uit kennisbibliotheek
     context_data = {
-        'fgr': _context_lookup('fgr', _normalize_key(fgr)) if fgr and fgr != "Onbekend" else {},
-        'nsn': _context_lookup('nsn', _normalize_key(nsn_val)) if nsn_val else {},
-        'bodem': _context_lookup('bodem', _normalize_key(bodem_display or bodem_raw)) if (bodem_display or bodem_raw) else {},
-        'gt': _context_lookup('gt', _normalize_key(gt_code)) if gt_code else {},
+        'fgr': _context_lookup('fgr', _normalize_key(fgr)) or {} if fgr and fgr != "Onbekend" else {},
+        'nsn': _context_lookup('nsn', _normalize_key(nsn_val)) or {} if nsn_val else {},
+        'bodem': _context_lookup('bodem', _normalize_key(bodem_display or bodem_raw)) or {} if (bodem_display or bodem_raw) else {},
+        'gt': _context_lookup('gt', _normalize_key(gt_code)) or {} if gt_code else {},
     }
     
     # 3) Plant selectie (simplified - gebruik bestaande logica of maak nieuwe)
