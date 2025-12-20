@@ -1201,14 +1201,52 @@ def _resolve_context_path(path: str) -> str:
     return srcs[0] if srcs else str(path or "context_descriptions.yaml")
 
 def _normalize_key(value: str) -> str:
+    """Normaliseer key met speciale mappings voor NSN en GT."""
     s = str(value or "").strip().lower()
     if not s:
         return ""
+    
+    # Basis normalisatie
     s = unicodedata.normalize("NFKD", s)
     s = "".join(ch for ch in s if not unicodedata.combining(ch))
     s = re.sub(r"\(.*?\)", "", s)  # verwijder haakjesinhoud
     s = re.sub(r"[^a-z0-9]+", "_", s)
     s = re.sub(r"_+", "_", s).strip("_")
+    
+    # NSN speciale mappings (WMS geeft andere namen dan bestandsnamen)
+    nsn_mappings = {
+        'rivierkom': 'komgrond',
+        'komgebied': 'komgrond',
+        'oeverwal': 'oeverwal',
+        'kronkelwaard': 'kronkelwaard',
+        'stroomrug': 'stroomrug',
+        'uiterwaardvlakte': 'uiterwaard',
+        'overslaggrond': 'overslaggrond',
+    }
+    
+    # GT speciale mappings (GT VIo → vio.yaml)
+    gt_mappings = {
+        'gt_vio': 'vio',
+        'gt_vid': 'vid', 
+        'gt_viio': 'viio',
+        'gt_viid': 'viid',
+        'gt_viiio': 'viiio',
+        'gt_viiid': 'viiid',
+    }
+    
+    # Check mappings
+    if s in nsn_mappings:
+        return nsn_mappings[s]
+    if s in gt_mappings:
+        return gt_mappings[s]
+    
+    # GT sub-types: gt_vio → vio (fallback)
+    if s.startswith('gt_') and len(s) <= 10:
+        suffix = s[3:]  # verwijder "gt_"
+        # Als het een romeins cijfer + o/d is, gebruik direct
+        if suffix in ['vio', 'vid', 'viio', 'viid', 'viiio', 'viiid', 'viio', 'viiid']:
+            return suffix
+    
     return s
 
 
