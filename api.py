@@ -1582,6 +1582,9 @@ def _load_context_db() -> dict:
     sources = _resolve_context_sources(_CONTEXT_PATH)
     merged: dict = {}
     
+    # DEBUG: Tel hoeveel bestanden per categorie
+    category_counts = {}
+    
     for p in sources:
         d = _load_one(p)
         if not (isinstance(d, dict) and d):
@@ -1622,9 +1625,23 @@ def _load_context_db() -> dict:
             
             # Voeg bestand toe onder zijn naam
             merged[category][item_name] = d
+            
+            # DEBUG: Tel
+            category_counts[category] = category_counts.get(category, 0) + 1
         else:
             # Oude stijl: direct mergen (heeft waarschijnlijk top-level keys)
             merged = _deep_merge(merged, d)
+    
+    # DEBUG: Log wat er geladen is
+    print("[CONTEXT] Kennisbibliotheek geladen:")
+    for cat in sorted(merged.keys()):
+        if isinstance(merged[cat], dict):
+            count = len(merged[cat])
+            print(f"  {cat}: {count} items")
+            if cat == 'gt':
+                # Toon eerste 5 GT keys
+                gt_keys = list(merged[cat].keys())[:10]
+                print(f"    Sample keys: {gt_keys}")
     
     return merged
 
