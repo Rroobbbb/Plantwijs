@@ -1959,21 +1959,61 @@ def generate_locatierapport_v2(
     story.append(Paragraph(f"Regio: {fgr_label}", style_h2))
     
     if fgr_data:
-        # Klimaat
+        # Probeer alle mogelijke velden
+        
+        # 1. Geografie
+        geografie = fgr_data.get('geografie', {})
+        if geografie:
+            karakteristiek = geografie.get('karakteristiek', '')
+            if karakteristiek:
+                story.append(Paragraph(f"<b>Karakteristiek:</b> {karakteristiek}", style_body))
+        
+        # 2. Klimaat
         klimaat = fgr_data.get('klimaat', {})
         if klimaat:
-            klimaat_tekst = f"Klimaat: {klimaat.get('type', '')} " \
-                          f"({klimaat.get('neerslag', '')} neerslag). " \
-                          f"{klimaat.get('bijzonderheden', '')}"
-            story.append(Paragraph(klimaat_tekst.strip(), style_body))
+            klimaat_delen = []
+            if klimaat.get('type'):
+                klimaat_delen.append(f"Type: {klimaat.get('type')}")
+            if klimaat.get('neerslag'):
+                klimaat_delen.append(f"Neerslag: {klimaat.get('neerslag')}")
+            if klimaat.get('bijzonderheden'):
+                klimaat_delen.append(klimaat.get('bijzonderheden'))
+            
+            if klimaat_delen:
+                story.append(Paragraph(f"<b>Klimaat:</b> {'. '.join(klimaat_delen)}", style_body))
         
-        # Rapporttekst FGR
-        fgr_rapport = fgr_data.get('duiding', {}).get('rapporttekst', '')
-        if fgr_rapport:
-            # Eerste alinea
-            alineas = fgr_rapport.split('\n\n')
-            if alineas:
-                story.append(Paragraph(alineas[0].strip(), style_body))
+        # 3. Bodem (van FGR)
+        bodem_fgr = fgr_data.get('bodem', {})
+        if bodem_fgr and isinstance(bodem_fgr, dict):
+            bodem_tekst = bodem_fgr.get('karakteristiek', '') or bodem_fgr.get('typisch', '')
+            if bodem_tekst:
+                story.append(Paragraph(f"<b>Typische bodems:</b> {bodem_tekst}", style_body))
+        
+        # 4. Landschappelijke context
+        landschap = fgr_data.get('landschappelijke_context', {})
+        if landschap and isinstance(landschap, dict):
+            context = landschap.get('beschrijving', '') or landschap.get('algemeen', '')
+            if context:
+                story.append(Paragraph(f"<b>Landschap:</b> {context}", style_body))
+        
+        # 5. Duiding / rapporttekst
+        duiding = fgr_data.get('duiding', {})
+        if duiding and isinstance(duiding, dict):
+            rapporttekst = duiding.get('rapporttekst', '') or duiding.get('beschrijving', '')
+            if rapporttekst:
+                # Split op paragrafen, toon eerste 2
+                paragrafen = [p.strip() for p in rapporttekst.split('\n\n') if p.strip()]
+                for p in paragrafen[:2]:
+                    story.append(Paragraph(p, style_body))
+        
+        # 6. Betekenis voor erfbeplanting
+        beplanting = fgr_data.get('betekenis_voor_erfbeplanting', {})
+        if beplanting and isinstance(beplanting, dict):
+            algemeen = beplanting.get('algemeen', '') or beplanting.get('beschrijving', '')
+            if algemeen:
+                story.append(Paragraph(f"<b>Voor erfbeplanting:</b> {algemeen}", style_body))
+    else:
+        story.append(Paragraph("Geen specifieke informatie beschikbaar voor deze regio.", style_caption))
     
     story.append(Spacer(1, 6))
     
@@ -1983,21 +2023,63 @@ def generate_locatierapport_v2(
     story.append(Paragraph(f"Landvorm: {nsn_label}", style_h2))
     
     if nsn_data:
-        # Ontstaansgeschiedenis (NIEUW in v2!)
+        # 1. Ontstaansgeschiedenis
         ontstaan = nsn_data.get('ontstaansgeschiedenis', {})
-        if ontstaan:
-            ontstaan_tekst = f"<b>Hoe ontstond deze landvorm?</b> " \
-                           f"{ontstaan.get('beschrijving', '')}"
-            story.append(Paragraph(ontstaan_tekst, style_body))
+        if ontstaan and isinstance(ontstaan, dict):
+            ontstaan_tekst = ontstaan.get('beschrijving', '') or ontstaan.get('proces', '')
+            if ontstaan_tekst:
+                story.append(Paragraph(f"<b>Hoe ontstond deze landvorm?</b> {ontstaan_tekst}", style_body))
+            
+            periode = ontstaan.get('periode', '')
+            if periode:
+                story.append(Paragraph(f"<i>Periode: {periode}</i>", style_caption))
         
-        # Hoogte/reliëf info
+        # 2. Landvorm algemeen
         landvorm = nsn_data.get('landvorm', {})
-        if landvorm:
+        if landvorm and isinstance(landvorm, dict):
+            # Hoogteligging
+            hoogte = landvorm.get('hoogteligging', {})
+            if hoogte and isinstance(hoogte, dict):
+                hoogte_tekst = hoogte.get('beschrijving', '') or hoogte.get('relatief', '')
+                if hoogte_tekst:
+                    story.append(Paragraph(f"<b>Hoogteligging:</b> {hoogte_tekst}", style_body))
+            
+            # Positie
             positie = landvorm.get('positie_in_landschap', {})
-            if positie:
+            if positie and isinstance(positie, dict):
                 positie_tekst = positie.get('beschrijving', '')
                 if positie_tekst:
-                    story.append(Paragraph(positie_tekst, style_body))
+                    story.append(Paragraph(f"<b>Positie:</b> {positie_tekst}", style_body))
+            
+            # Reliëf
+            relief = landvorm.get('relief', '')
+            if relief:
+                story.append(Paragraph(f"<b>Reliëf:</b> {relief}", style_body))
+        
+        # 3. Hydromorfologie
+        hydro = nsn_data.get('hydromorfologie', {})
+        if hydro and isinstance(hydro, dict):
+            drainage = hydro.get('drainage', '') or hydro.get('waterhuishouding', '')
+            if drainage:
+                story.append(Paragraph(f"<b>Waterhuishouding:</b> {drainage}", style_body))
+        
+        # 4. Duiding
+        duiding = nsn_data.get('duiding', {})
+        if duiding and isinstance(duiding, dict):
+            rapporttekst = duiding.get('rapporttekst', '') or duiding.get('beschrijving', '')
+            if rapporttekst:
+                paragrafen = [p.strip() for p in rapporttekst.split('\n\n') if p.strip()]
+                for p in paragrafen[:2]:
+                    story.append(Paragraph(p, style_body))
+        
+        # 5. Betekenis voor erfbeplanting
+        beplanting = nsn_data.get('betekenis_voor_erfbeplanting', {})
+        if beplanting and isinstance(beplanting, dict):
+            algemeen = beplanting.get('algemeen', '') or beplanting.get('beschrijving', '')
+            if algemeen:
+                story.append(Paragraph(f"<b>Voor erfbeplanting:</b> {algemeen}", style_body))
+    else:
+        story.append(Paragraph("Geen informatie beschikbaar voor deze landvorm.", style_caption))
     
     story.append(Spacer(1, 6))
     
@@ -2107,53 +2189,118 @@ def generate_locatierapport_v2(
     ))
     story.append(Spacer(1, 8))
     
-    # Verzamel alle ontwerp uitgangspunten
-    alle_tips = []
+    # Verzamel alle ontwerp uitgangspunten + praktische tips
+    heeft_advies = False
     
-    # 1. Van FGR
+    # 1. Van FGR (Regio)
     if fgr_data:
-        fgr_beplanting = fgr_data.get('betekenis_voor_erfbeplanting', {})
-        fgr_tips = fgr_beplanting.get('ontwerp_uitgangspunten', [])
-        if fgr_tips:
-            alle_tips.extend([('Regio', tip) for tip in fgr_tips[:3]])
+        beplanting_fgr = fgr_data.get('betekenis_voor_erfbeplanting', {})
+        
+        if beplanting_fgr and isinstance(beplanting_fgr, dict):
+            story.append(Paragraph("<b>Regio:</b>", style_h2))
+            
+            # Ontwerp uitgangspunten
+            ontwerp_tips = beplanting_fgr.get('ontwerp_uitgangspunten', [])
+            if ontwerp_tips and isinstance(ontwerp_tips, list):
+                for tip in ontwerp_tips[:5]:  # Max 5
+                    story.append(Paragraph(f"• {tip}", style_tip))
+                heeft_advies = True
+            
+            # Algemeen advies
+            algemeen = beplanting_fgr.get('algemeen', '') or beplanting_fgr.get('beschrijving', '')
+            if algemeen and not ontwerp_tips:
+                story.append(Paragraph(algemeen, style_body))
+                heeft_advies = True
+            
+            if heeft_advies:
+                story.append(Spacer(1, 6))
     
-    # 2. Van NSN
+    # 2. Van NSN (Landvorm)  
     if nsn_data:
-        nsn_beplanting = nsn_data.get('betekenis_voor_erfbeplanting', {})
-        nsn_tips = nsn_beplanting.get('ontwerp_uitgangspunten', [])
-        if nsn_tips:
-            alle_tips.extend([('Landvorm', tip) for tip in nsn_tips[:3]])
+        beplanting_nsn = nsn_data.get('betekenis_voor_erfbeplanting', {})
+        
+        if beplanting_nsn and isinstance(beplanting_nsn, dict):
+            story.append(Paragraph("<b>Landvorm:</b>", style_h2))
+            
+            # Ontwerp uitgangspunten
+            ontwerp_tips = beplanting_nsn.get('ontwerp_uitgangspunten', [])
+            if ontwerp_tips and isinstance(ontwerp_tips, list):
+                for tip in ontwerp_tips[:5]:
+                    story.append(Paragraph(f"• {tip}", style_tip))
+                heeft_advies = True
+            
+            # Praktische adviezen
+            praktisch = beplanting_nsn.get('praktische_adviezen', [])
+            if praktisch and isinstance(praktisch, list):
+                for tip in praktisch[:3]:
+                    story.append(Paragraph(f"• {tip}", style_tip))
+                heeft_advies = True
+            
+            if heeft_advies:
+                story.append(Spacer(1, 6))
     
     # 3. Van Bodem
     if bodem_data:
-        bodem_beplanting = bodem_data.get('betekenis_voor_erfbeplanting', {})
-        bodem_tips = bodem_beplanting.get('aandachtspunten', [])
-        if bodem_tips:
-            alle_tips.extend([('Bodem', tip) for tip in bodem_tips[:3]])
-    
-    # 4. Van GT
-    if gt_data:
-        gt_beplanting = gt_data.get('betekenis_voor_erfbeplanting', {})
-        gt_tips = gt_beplanting.get('seizoens_aandacht', [])
-        if gt_tips:
-            alle_tips.extend([('Water', tip) for tip in gt_tips[:3]])
-    
-    # Render top 10 tips (max 3 per categorie)
-    if alle_tips:
-        tips_per_categorie = {}
-        for cat, tip in alle_tips:
-            if cat not in tips_per_categorie:
-                tips_per_categorie[cat] = []
-            if len(tips_per_categorie[cat]) < 3:
-                tips_per_categorie[cat].append(tip)
+        beplanting_bodem = bodem_data.get('betekenis_voor_erfbeplanting', {})
         
-        # Render per categorie
-        for cat, tips in tips_per_categorie.items():
-            story.append(Paragraph(f"<b>{cat}:</b>", style_h2))
-            for tip in tips:
-                story.append(Paragraph(f"• {tip}", style_tip))
-            story.append(Spacer(1, 6))
-    else:
+        if beplanting_bodem and isinstance(beplanting_bodem, dict):
+            story.append(Paragraph("<b>Bodem:</b>", style_h2))
+            
+            # Aandachtspunten
+            aandacht = beplanting_bodem.get('aandachtspunten', [])
+            if aandacht and isinstance(aandacht, list):
+                for tip in aandacht[:5]:
+                    story.append(Paragraph(f"• {tip}", style_tip))
+                heeft_advies = True
+            
+            # Praktische tips
+            praktisch = beplanting_bodem.get('praktische_tips', [])
+            if praktisch and isinstance(praktisch, list):
+                for tip in praktisch[:3]:
+                    story.append(Paragraph(f"• {tip}", style_tip))
+                heeft_advies = True
+            
+            if heeft_advies:
+                story.append(Spacer(1, 6))
+        
+        # EXTRA: Praktische adviezen top-level
+        praktisch_adv = bodem_data.get('praktische_adviezen', {})
+        if praktisch_adv and isinstance(praktisch_adv, dict):
+            werkbaarheid = praktisch_adv.get('werkbaarheid', [])
+            if werkbaarheid and isinstance(werkbaarheid, list):
+                if not heeft_advies:
+                    story.append(Paragraph("<b>Bodem:</b>", style_h2))
+                for tip in werkbaarheid[:3]:
+                    story.append(Paragraph(f"• {tip}", style_tip))
+                heeft_advies = True
+                story.append(Spacer(1, 6))
+    
+    # 4. Van GT (Water)
+    if gt_data:
+        beplanting_gt = gt_data.get('betekenis_voor_erfbeplanting', {})
+        
+        if beplanting_gt and isinstance(beplanting_gt, dict):
+            story.append(Paragraph("<b>Water:</b>", style_h2))
+            
+            # Seizoens aandacht
+            seizoen = beplanting_gt.get('seizoens_aandacht', [])
+            if seizoen and isinstance(seizoen, list):
+                for tip in seizoen[:5]:
+                    story.append(Paragraph(f"• {tip}", style_tip))
+                heeft_advies = True
+            
+            # Praktische tips
+            praktisch = beplanting_gt.get('praktische_tips', [])
+            if praktisch and isinstance(praktisch, list):
+                for tip in praktisch[:3]:
+                    story.append(Paragraph(f"• {tip}", style_tip))
+                heeft_advies = True
+            
+            if heeft_advies:
+                story.append(Spacer(1, 6))
+    
+    # Fallback als er GEEN advies is
+    if not heeft_advies:
         story.append(Paragraph(
             "Plant in voorjaar of najaar, verbeter de bodem met compost, en kies soorten " \
             "die passen bij uw grondwaterstand.",
