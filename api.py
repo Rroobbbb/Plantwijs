@@ -3531,10 +3531,26 @@ def advies_pdf(
     ahn_val, _props_ahn = ahn_from_wms(lat, lon)
     gmm_val, _props_gmm = gmm_from_wms(lat, lon)
     
+    # DEBUG: Log wat we gevonden hebben
+    print(f"[DEBUG PDF] FGR: {fgr}")
+    print(f"[DEBUG PDF] NSN: {nsn_val}")
+    print(f"[DEBUG PDF] Bodem: {bodem_raw}")
+    print(f"[DEBUG PDF] GT code: {gt_code} (type: {type(gt_code)})")
+    print(f"[DEBUG PDF] Vocht: {vocht_raw}")
+    
     # Normalize labels
     bodem_display = (bodem[0] if bodem else bodem_raw) or ""
     
     # 2) Haal context data op uit kennisbibliotheek
+    # DEBUG: Log normalisatie
+    if gt_code:
+        normalized_gt = _normalize_key(gt_code)
+        print(f"[DEBUG PDF] GT normalized: '{gt_code}' → '{normalized_gt}'")
+        gt_lookup = _context_lookup('gt', normalized_gt)
+        print(f"[DEBUG PDF] GT lookup result: {type(gt_lookup)} with {len(gt_lookup) if gt_lookup else 0} keys")
+        if gt_lookup:
+            print(f"[DEBUG PDF] GT titel: {gt_lookup.get('titel', 'N/A')}")
+    
     context_data = {
         'fgr': _context_lookup('fgr', _normalize_key(fgr)) or {} if fgr and fgr != "Onbekend" else {},
         'nsn': _context_lookup('nsn', _normalize_key(nsn_val)) or {} if nsn_val else {},
