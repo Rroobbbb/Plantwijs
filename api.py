@@ -1079,16 +1079,30 @@ if not _CONTEXT_PATH:
     def _detect_kb_path():
         """Detecteer automatisch welke kennisbibliotheek beschikbaar is."""
         search_paths = [
+            # Root van repository (meest waarschijnlijk bij GitHub deploy)
+            Path(__file__).resolve().parent.parent / "kennisbibliotheek_v2",
             Path(__file__).resolve().parent / "kennisbibliotheek_v2",
-            Path(__file__).resolve().parent / "Plantwijs" / "kennisbibliotheek_v2",
             Path.cwd() / "kennisbibliotheek_v2",
+            # Legacy paden
+            Path(__file__).resolve().parent / "Plantwijs" / "kennisbibliotheek_v2",
             Path(__file__).resolve().parent / "kennisbibliotheek",
             Path(__file__).resolve().parent / "Plantwijs" / "kennisbibliotheek",
             Path.cwd() / "kennisbibliotheek",
         ]
+        
+        print("[STARTUP] Zoek kennisbibliotheek in:")
         for p in search_paths:
-            if p.exists() and p.is_dir():
+            exists = p.exists() and p.is_dir()
+            status = "✓ GEVONDEN" if exists else "✗ niet gevonden"
+            print(f"  {status}: {p}")
+            if exists:
+                # Check of er daadwerkelijk bestanden in zitten
+                yaml_count = len(list(p.rglob("*.yaml"))) + len(list(p.rglob("*.yml")))
+                print(f"    → {yaml_count} YAML bestanden")
                 return str(p)
+        
+        print("[STARTUP] ⚠️  WAARSCHUWING: Geen kennisbibliotheek gevonden!")
+        print("[STARTUP] Fallback naar context_descriptions.yaml (oude stijl)")
         return "context_descriptions.yaml"
     
     _CONTEXT_PATH = _detect_kb_path()
@@ -1632,16 +1646,17 @@ def _load_context_db() -> dict:
             # Oude stijl: direct mergen (heeft waarschijnlijk top-level keys)
             merged = _deep_merge(merged, d)
     
-    # DEBUG: Log wat er geladen is
-    print("[CONTEXT] Kennisbibliotheek geladen:")
-    for cat in sorted(merged.keys()):
-        if isinstance(merged[cat], dict):
-            count = len(merged[cat])
-            print(f"  {cat}: {count} items")
-            if cat == 'gt':
-                # Toon eerste 5 GT keys
-                gt_keys = list(merged[cat].keys())[:10]
-                print(f"    Sample keys: {gt_keys}")
+    # DEBUG: Log wat er geladen is (alleen als PLANTWIJS_DEBUG=true)
+    if os.getenv("PLANTWIJS_DEBUG", "").lower() == "true":
+        print("[CONTEXT] Kennisbibliotheek geladen:")
+        for cat in sorted(merged.keys()):
+            if isinstance(merged[cat], dict):
+                count = len(merged[cat])
+                print(f"  {cat}: {count} items")
+                if cat == 'gt':
+                    # Toon eerste 5 GT keys
+                    gt_keys = list(merged[cat].keys())[:10]
+                    print(f"    Sample keys: {gt_keys}")
     
     return merged
 
@@ -3548,19 +3563,20 @@ def advies_pdf(
     ahn_val, _props_ahn = ahn_from_wms(lat, lon)
     gmm_val, _props_gmm = gmm_from_wms(lat, lon)
     
-    # DEBUG: Log wat we gevonden hebben
-    print(f"[DEBUG PDF] FGR: {fgr}")
-    print(f"[DEBUG PDF] NSN: {nsn_val}")
-    print(f"[DEBUG PDF] Bodem: {bodem_raw}")
-    print(f"[DEBUG PDF] GT code: {gt_code} (type: {type(gt_code)})")
-    print(f"[DEBUG PDF] Vocht: {vocht_raw}")
+    # DEBUG (alleen als PLANTWIJS_DEBUG=true in environment)
+    if os.getenv("PLANTWIJS_DEBUG", "").lower() == "true":
+        print(f"[DEBUG PDF] FGR: {fgr}")
+        print(f"[DEBUG PDF] NSN: {nsn_val}")
+        print(f"[DEBUG PDF] Bodem: {bodem_raw}")
+        print(f"[DEBUG PDF] GT code: {gt_code} (type: {type(gt_code)})")
+        print(f"[DEBUG PDF] Vocht: {vocht_raw}")
     
     # Normalize labels
     bodem_display = (bodem[0] if bodem else bodem_raw) or ""
     
     # 2) Haal context data op uit kennisbibliotheek
-    # DEBUG: Log normalisatie
-    if gt_code:
+    # DEBUG (alleen als PLANTWIJS_DEBUG=true)
+    if os.getenv("PLANTWIJS_DEBUG", "").lower() == "true" and gt_code:
         normalized_gt = _normalize_key(gt_code)
         print(f"[DEBUG PDF] GT normalized: '{gt_code}' → '{normalized_gt}'")
         gt_lookup = _context_lookup('gt', normalized_gt)
