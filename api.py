@@ -1939,6 +1939,25 @@ def generate_locatierapport_v2(
             style_body
         ))
     
+    story.append(Spacer(1, 10))
+    
+    # ========================================================================
+    # 6.5 KAART
+    # ========================================================================
+    
+    # Voeg kaart toe (zoals oude rapport)
+    map_img = _static_map_image(lat, lon, z=16, tiles=2)
+    if map_img:
+        try:
+            rl_map = RLImage(map_img, width=175 * mm, height=90 * mm)
+            story.append(rl_map)
+            story.append(Paragraph(
+                f"<i>Kaart van de locatie ({lat:.5f}°N, {lon:.5f}°E)</i>",
+                style_caption
+            ))
+        except Exception:
+            pass  # Skip bij error
+    
     story.append(PageBreak())
     
     # ========================================================================
@@ -2350,40 +2369,120 @@ def generate_locatierapport_v2(
         
         story.append(Spacer(1, 8))
     
-    # Als er een plant_df is, render tabel
+    # Als er een plant_df is, render UITGEBREIDE tabel
     if plant_df is not None and len(plant_df) > 0:
         story.append(Paragraph(
-            "<b>Meer passende soorten:</b>",
+            "<b>Geschikte soorten voor uw locatie:</b>",
             style_body
         ))
+        story.append(Spacer(1, 4))
         
-        # Maak compacte tabel (max 20 soorten)
-        tabel_data = [['Nederlandse naam', 'Type']]
+        # Bepaal welke kolommen beschikbaar zijn
+        has_vocht = 'vocht' in plant_df.columns or 'standplaats_bodemvochtigheid' in plant_df.columns
+        has_licht = 'standplaats_licht' in plant_df.columns or 'licht' in plant_df.columns
+        has_hoogte = 'hoogte_cm' in plant_df.columns or 'hoogte' in plant_df.columns
+        has_bloei = 'bloeiperiode' in plant_df.columns or 'bloei' in plant_df.columns
+        has_eco = 'ecologische_waarde' in plant_df.columns
         
-        for idx, row in plant_df.head(20).iterrows():
-            naam = row.get('naam', row.get('nederlandse_naam', ''))
-            soort_type = row.get('beplantingstype', row.get('type', 'Boom'))
+        # Maak tabel header op basis van beschikbare data
+        if has_vocht and has_licht:
+            # Uitgebreide tabel
+            tabel_data = [[
+                Paragraph("<b>Naam</b>", style_small),
+                Paragraph("<b>Type</b>", style_small),
+                Paragraph("<b>Vocht</b>", style_small),
+                Paragraph("<b>Licht</b>", style_small),
+                Paragraph("<b>Bloei</b>", style_small)
+            ]]
             
-            tabel_data.append([naam, soort_type])
+            col_widths = [50*mm, 28*mm, 28*mm, 28*mm, 36*mm]
+            
+            for idx, row in plant_df.head(20).iterrows():
+                # Extract data met fallbacks
+                naam = row.get('naam', row.get('nederlandse_naam', '?'))
+                soort_type = row.get('beplantingstype', row.get('type', 'Boom'))
+                
+                vocht = row.get('vocht', row.get('standplaats_bodemvochtigheid', ''))
+                if isinstance(vocht, str):
+                    vocht = vocht.split(',')[0].strip() if vocht else '-'
+                else:
+                    vocht = '-'
+                
+                licht = row.get('standplaats_licht', row.get('licht', ''))
+                if isinstance(licht, str):
+                    licht = licht.split(',')[0].strip() if licht else '-'
+                else:
+                    licht = '-'
+                
+                bloei = row.get('bloeiperiode', row.get('bloei', ''))
+                if isinstance(bloei, str):
+                    bloei = bloei[:15] if bloei else '-'  # Max 15 chars
+                else:
+                    bloei = '-'
+                
+                tabel_data.append([
+                    naam,
+                    soort_type,
+                    vocht,
+                    licht,
+                    bloei
+                ])
+        else:
+            # Simpele tabel (als vocht/licht niet beschikbaar)
+            tabel_data = [[
+                Paragraph("<b>Nederlandse naam</b>", style_small),
+                Paragraph("<b>Type</b>", style_small),
+                Paragraph("<b>Hoogte</b>", style_small)
+            ]]
+            
+            col_widths = [80*mm, 50*mm, 40*mm]
+            
+            for idx, row in plant_df.head(20).iterrows():
+                naam = row.get('naam', row.get('nederlandse_naam', ''))
+                soort_type = row.get('beplantingstype', row.get('type', 'Boom'))
+                hoogte = row.get('hoogte_cm', row.get('hoogte', ''))
+                
+                # Format hoogte
+                if hoogte and str(hoogte).replace('.','').isdigit():
+                    try:
+                        h_cm = float(hoogte)
+                        if h_cm > 100:
+                            hoogte_str = f"{h_cm/100:.1f}m"
+                        else:
+                            hoogte_str = f"{h_cm:.0f}cm"
+                    except:
+                        hoogte_str = str(hoogte)
+                else:
+                    hoogte_str = '-'
+                
+                tabel_data.append([naam, soort_type, hoogte_str])
         
-        soorten_tabel = Table(tabel_data, colWidths=[100*mm, 70*mm])
+        soorten_tabel = Table(tabel_data, colWidths=col_widths)
         soorten_tabel.setStyle(TableStyle([
             ('BACKGROUND', (0, 0), (-1, 0), C_SECONDARY),
             ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
             ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-            ('FONTSIZE', (0, 0), (-1, 0), 10),
-            ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
-            ('TOPPADDING', (0, 0), (-1, 0), 8),
+            ('FONTSIZE', (0, 0), (-1, 0), 9),
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 6),
+            ('TOPPADDING', (0, 0), (-1, 0), 6),
             ('GRID', (0, 0), (-1, -1), 0.5, C_LINE),
-            ('FONTSIZE', (0, 1), (-1, -1), 9),
-            ('LEFTPADDING', (0, 0), (-1, -1), 6),
-            ('RIGHTPADDING', (0, 0), (-1, -1), 6),
-            ('TOPPADDING', (0, 1), (-1, -1), 5),
-            ('BOTTOMPADDING', (0, 1), (-1, -1), 5),
+            ('FONTSIZE', (0, 1), (-1, -1), 8.5),
+            ('LEFTPADDING', (0, 0), (-1, -1), 5),
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),
+            ('TOPPADDING', (0, 1), (-1, -1), 4),
+            ('BOTTOMPADDING', (0, 1), (-1, -1), 4),
             ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, C_BG]),
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
         ]))
         
         story.append(soorten_tabel)
+        
+        # Legenda
+        story.append(Spacer(1, 4))
+        story.append(Paragraph(
+            "<i>Vocht: droog/vochtig/nat · Licht: zon/halfschaduw/schaduw · Bloei: maanden</i>",
+            style_caption
+        ))
     
     story.append(Spacer(1, 10))
     
