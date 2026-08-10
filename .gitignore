@@ -33,12 +33,6 @@ out/**
 !out/.gitkeep
 
 ########################################
-# Public data — alleen 2 CSV's toegestaan
-########################################
-!out/plantwijs_full.csv
-!out/plantwijs_full_semicolon.csv
-
-########################################
 # Grote lokale databestanden
 # (data/LBK_BKNSN_2023.zip hoort er WEL in — zie docs/DEPLOY.md §4)
 ########################################
