@@ -86,10 +86,12 @@ DATA_PATHS = [p for p in DATA_PATHS if p]
 MIN_DATASET_ROWS = 500
 
 # Online CSV fallback (GitHub raw) — alleen als er lokaal echt niets gevonden wordt
+# NB: de repo gebruikt branch `master` (niet `main`); met /main/ gaven deze
+# URL's altijd 404 en heeft de online fallback in de praktijk nooit gewerkt.
 ONLINE_CSV_URLS: List[str] = [
     os.environ.get("PLANTWIJS_ONLINE_CSV_URL", "").strip(),
-    "https://raw.githubusercontent.com/Rroobbbb/plantwijs/main/data/treeebb_planten_allfields.csv",
-    "https://raw.githubusercontent.com/Rroobbbb/plantwijs/main/out/treeebb_planten_allfields.csv",
+    "https://raw.githubusercontent.com/Rroobbbb/plantwijs/master/data/treeebb_planten_allfields.csv",
+    "https://raw.githubusercontent.com/Rroobbbb/plantwijs/master/out/treeebb_planten_allfields.csv",
 ]
 ONLINE_CSV_URLS = [u for u in ONLINE_CSV_URLS if u]
 
