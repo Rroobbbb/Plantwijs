@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PlantWijs — Beplantingsadvies op maat voor jouw plek</title>
+
+<meta name="description" content="Klik op de kaart of zoek je adres en zie welk landschap bij jouw plek hoort: bodem, grondwater, hoogte en landvorm. PlantWijs laat zien welke bomen en struiken daar van nature thuishoren.">
+<meta name="robots" content="index, follow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlantWijs">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="PlantWijs — Beplantingsadvies op maat voor jouw plek">
+<meta property="og:description" content="Zie welk landschap bij jouw plek hoort en welke bomen en struiken daar van nature thuishoren.">
+<meta property="og:image" content="/static/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PlantWijs — Beplantingsadvies op maat voor jouw plek">
+<meta name="twitter:description" content="Zie welk landschap bij jouw plek hoort en welke bomen en struiken daar van nature thuishoren.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231d5c3f'/%3E%3Cpath%20d='M24%206.5c1.4%209.6-3.9%2016-11.6%2015.8C11%2012.6%2016.3%207.4%2024%206.5Z'%20fill='%238fd6ae'/%3E%3Cpath%20d='M10.4%2026c1.9-6.4%205-10.6%209.4-13'%20stroke='%238fd6ae'%20stroke-width='2'%20stroke-linecap='round'%20fill='none'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231d5c3f'/%3E%3Cpath%20d='M24%206.5c1.4%209.6-3.9%2016-11.6%2015.8C11%2012.6%2016.3%207.4%2024%206.5Z'%20fill='%238fd6ae'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/static/css/app.css">
+
+<script>
+  /* Thema vóór de eerste paint zetten, zodat er geen lichtflits is in donkere modus. */
+  (function () {
+    try {
+      var saved = localStorage.getItem('pw_theme');
+      var dark = saved ? saved === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PlantWijs",
+  "alternateName": "PlantWijs — Beplantingsadvies op maat voor jouw plek",
+  "inLanguage": "nl-NL",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "isAccessibleForFree": true,
+  "description": "PlantWijs combineert landelijke kaarten (landschapsregio, bodem, grondwatertrap, hoogte, geomorfologie en Natuurlijk Systeem Nederland) tot een beplantingsadvies op maat: welk landschap hoort bij jouw plek, en welke bomen en struiken passen daarbij.",
+  "featureList": [
+    "Locatieprofiel uit landelijke kaarten",
+    "Uitleg over het landschap en hoe je het versterkt",
+    "Indicatie van de wortelbare diepte",
+    "Soortenlijst met filters en export naar CSV en Excel"
+  ],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#advies">Ga direct naar het advies</a>
+
+<header class="site-header">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 32 32" role="img" aria-label="PlantWijs">
+      <rect width="32" height="32" rx="8" fill="var(--brand-mark-bg)"></rect>
+      <path d="M24 6.5c1.4 9.6-3.9 16-11.6 15.8C11 12.6 16.3 7.4 24 6.5Z" fill="var(--brand-mark-leaf)"></path>
+      <path d="M10.4 26c1.9-6.4 5-10.6 9.4-13" stroke="var(--brand-mark-leaf)" stroke-width="2" stroke-linecap="round" fill="none"></path>
+    </svg>
+    <span class="brand-text">
+      <span class="brand-name">PlantWijs</span>
+      <span class="brand-tagline">Beplantingsadvies op maat voor jouw plek</span>
+    </span>
+  </div>
+
+  <button id="themeToggle" class="icon-btn" type="button" aria-pressed="false">
+    <span class="sr-only">Wissel tussen licht en donker thema</span>
+  </button>
+</header>
+
+<main class="app-shell">
+
+  <!-- ───────────────────────── Kaart ───────────────────────── -->
+  <section class="map-pane" aria-label="Kaart van Nederland">
+    <div id="map" role="application" aria-label="Klikbare kaart van Nederland"></div>
+
+    <p id="mapHint" class="map-hint">
+      <span class="map-hint-dot" aria-hidden="true"></span>
+      Klik ergens op de kaart om te beginnen
+    </p>
+  </section>
+
+  <!-- ───────────────────────── Adviespaneel ───────────────────────── -->
+  <aside id="advies" class="advice-pane is-half" aria-label="Adviespaneel">
+
+    <div class="sheet-head">
+      <button id="sheetGrip" class="sheet-grip" type="button" aria-expanded="false"
+              aria-controls="adviceScroll">
+        <span class="sheet-grip-bar" aria-hidden="true"></span>
+        <span class="sr-only">Adviespaneel groter of kleiner maken</span>
+      </button>
+      <p id="sheetTitle" class="sheet-title">Jouw advies</p>
+    </div>
+
+    <div id="adviceScroll" class="advice-scroll">
+
+      <!-- Startstaat -->
+      <div id="emptyState" class="card empty-state">
+        <h2 class="empty-title">Welk landschap hoort bij jouw plek?</h2>
+        <p>
+          Klik op de kaart of zoek je adres. PlantWijs kijkt dan in de landelijke kaarten
+          wat er onder jouw voeten zit: het landschap, de bodem, het grondwater en de hoogte.
+          Daarna zie je welke bomen en struiken daar van nature bij horen.
+        </p>
+        <ol class="steps">
+          <li><span class="step-num">1</span><span>Zoek je adres in de balk op de kaart, of klik op de plek die je wilt bekijken.</span></li>
+          <li><span class="step-num">2</span><span>Lees wat de kaarten over die plek zeggen en wat dat betekent.</span></li>
+          <li><span class="step-num">3</span><span>Stel de soortenlijst af op jouw situatie en neem hem mee als bestand.</span></li>
+        </ol>
+        <p class="empty-tip">
+          <strong>Let op:</strong> de kaarten weten niet hoeveel zon jouw plek krijgt.
+          Dat stel je zelf in bij de soortenlijst.
+        </p>
+      </div>
+
+      <!-- Netwerk-/serverfout -->
+      <div id="errorState" class="card error-state" role="alert" hidden>
+        <h2 class="error-title">We konden de gegevens niet ophalen</h2>
+        <p id="errorText" class="error-text"></p>
+        <button id="errorRetry" class="btn btn-primary" type="button">Opnieuw proberen</button>
+      </div>
+
+      <!-- Laadstatus -->
+      <p id="loadStatus" class="load-status" role="status" aria-live="polite" hidden></p>
+
+      <!-- a. Jouw plek -->
+      <section id="secPlek" class="section" aria-labelledby="secPlekTitle" hidden>
+        <div class="section-head">
+          <h2 id="secPlekTitle" class="section-title">Jouw plek</h2>
+          <p id="plekCoords" class="section-sub"></p>
+        </div>
+        <p class="section-intro">
+          Dit vonden de landelijke kaarten op deze plek. Klik op het informatie-teken
+          voor uitleg en de bron.
+        </p>
+        <div id="chipGrid" class="chip-grid"></div>
+      </section>
+
+      <!-- b. Jouw landschap -->
+      <section id="secLandschap" class="section" aria-labelledby="secLandschapTitle" hidden>
+        <div class="section-head">
+          <h2 id="secLandschapTitle" class="section-title">Jouw landschap</h2>
+        </div>
+        <div id="landschapBody"></div>
+      </section>
+
+      <!-- c. Wortelruimte -->
+      <section id="secWortel" class="section" aria-labelledby="secWortelTitle" hidden>
+        <div class="section-head">
+          <h2 id="secWortelTitle" class="section-title">Wortelruimte</h2>
+        </div>
+        <p class="section-intro">
+          Wortelruimte is de diepte waarin wortels goed kunnen groeien. Hoe meer ruimte,
+          hoe groter een boom kan worden en hoe beter hij droogte doorstaat.
+        </p>
+        <div id="wortelBody"></div>
+      </section>
+
+      <!-- d. Wat kun jij doen -->
+      <section id="secDoen" class="section" aria-labelledby="secDoenTitle" hidden>
+        <div class="section-head">
+          <h2 id="secDoenTitle" class="section-title">Wat kun jij doen</h2>
+        </div>
+        <p class="section-intro">
+          Beplantingsvormen die goed passen bij dit landschap.
+        </p>
+        <div id="doenBody" class="doen-grid"></div>
+      </section>
+
+      <!-- e. Passende soorten -->
+      <section id="secSoorten" class="section" aria-labelledby="secSoortenTitle" hidden>
+        <div class="section-head">
+          <h2 id="secSoortenTitle" class="section-title">Passende soorten</h2>
+        </div>
+
+        <form id="speciesFilters" class="filters" aria-label="Filters voor de soortenlijst">
+          <fieldset class="filter-group">
+            <legend>Hoeveel licht krijgt de plek?</legend>
+            <div class="segmented">
+              <label class="seg"><input type="checkbox" name="licht" value="zon"><span>Zon</span></label>
+              <label class="seg"><input type="checkbox" name="licht" value="halfschaduw"><span>Halfschaduw</span></label>
+              <label class="seg"><input type="checkbox" name="licht" value="schaduw"><span>Schaduw</span></label>
+            </div>
+            <p class="hint">
+              De kaarten weten dit niet. Kies zelf wat er bij jouw plek past, dan wordt de lijst een stuk scherper.
+            </p>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Welke soorten wil je zien?</legend>
+            <div class="segmented">
+              <label class="seg"><input type="checkbox" name="status" value="inheems" checked><span>Inheems</span></label>
+              <label class="seg"><input type="checkbox" name="status" value="ingeburgerd" checked><span>Ingeburgerd</span></label>
+              <label class="seg"><input type="checkbox" name="status" value="exoot"><span>Exoot</span></label>
+            </div>
+            <p class="hint">
+              Inheems: hoort hier van nature thuis. Ingeburgerd: hier lang geleden gebracht en inmiddels
+              onderdeel van de natuur. Exoot: van elders.
+            </p>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Bomen of struiken?</legend>
+            <div class="segmented">
+              <label class="seg"><input type="checkbox" name="type" value="boom" checked><span>Bomen</span></label>
+              <label class="seg"><input type="checkbox" name="type" value="heester" checked><span>Struiken</span></label>
+            </div>
+          </fieldset>
+
+          <label class="switch">
+            <input type="checkbox" id="excludeInvasief" checked>
+            <span class="switch-track" aria-hidden="true"><span class="switch-knob"></span></span>
+            <span class="switch-label">
+              Invasieve soorten weglaten
+              <span class="hint">Soorten die zich hier zo sterk uitbreiden dat ze andere planten verdringen.</span>
+            </span>
+          </label>
+
+          <details id="moreFilters" class="more-filters">
+            <summary>Meer filters</summary>
+            <p class="hint hint-block">
+              Klopt de kaart niet met wat jij ter plekke ziet? Dan kun je de kaartwaarde hier
+              overschrijven. Zolang je niets kiest, gebruiken we de waarde van de kaart.
+            </p>
+
+            <fieldset class="filter-group">
+              <legend>Vocht in de bodem</legend>
+              <div class="segmented segmented-wrap">
+                <label class="seg"><input type="checkbox" name="vocht" value="zeer nat"><span>Zeer nat</span></label>
+                <label class="seg"><input type="checkbox" name="vocht" value="nat"><span>Nat</span></label>
+                <label class="seg"><input type="checkbox" name="vocht" value="vochtig"><span>Vochtig</span></label>
+                <label class="seg"><input type="checkbox" name="vocht" value="droog"><span>Droog</span></label>
+                <label class="seg"><input type="checkbox" name="vocht" value="zeer droog"><span>Zeer droog</span></label>
+              </div>
+              <p id="vochtKaartHint" class="hint"></p>
+            </fieldset>
+
+            <fieldset class="filter-group">
+              <legend>Grondsoort</legend>
+              <div class="segmented segmented-wrap">
+                <label class="seg"><input type="checkbox" name="bodem" value="zand"><span>Zand</span></label>
+                <label class="seg"><input type="checkbox" name="bodem" value="klei"><span>Klei</span></label>
+                <label class="seg"><input type="checkbox" name="bodem" value="leem"><span>Leem</span></label>
+                <label class="seg"><input type="checkbox" name="bodem" value="veen"><span>Veen</span></label>
+              </div>
+              <p id="bodemKaartHint" class="hint"></p>
+            </fieldset>
+          </details>
+        </form>
+
+        <div id="filterStatus" class="filter-status" role="status" aria-live="polite"></div>
+
+        <div class="table-toolbar">
+          <p id="speciesCount" class="species-count"></p>
+          <button id="btnColumns" class="btn btn-quiet" type="button" aria-haspopup="dialog" aria-expanded="false">
+            Kolommen
+          </button>
+        </div>
+
+        <div class="table-scroll">
+          <table id="speciesTable" class="species-table">
+            <caption class="sr-only">Soorten die passen bij de gekozen plek en filters</caption>
+            <thead><tr id="tableHead"></tr></thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+
+        <div id="tableEmpty" class="table-empty" hidden></div>
+        <nav id="pager" class="pager" aria-label="Bladeren door de soortenlijst" hidden></nav>
+      </section>
+
+      <!-- f. Meenemen -->
+      <section id="secMeenemen" class="section" aria-labelledby="secMeenemenTitle" hidden>
+        <div class="section-head">
+          <h2 id="secMeenemenTitle" class="section-title">Meenemen</h2>
+        </div>
+        <p class="section-intro">
+          Je downloadt precies de soorten die nu in de tabel staan, met de filters die je hebt gekozen.
+        </p>
+        <div class="takeaway">
+          <a id="btnCsv" class="btn btn-quiet" href="/export/csv" download>CSV-bestand</a>
+          <a id="btnXlsx" class="btn btn-quiet" href="/export/xlsx" download>Excel-bestand</a>
+          <button id="btnPdf" class="btn btn-accent" type="button" disabled
+                  title="Rapport binnenkort beschikbaar">PDF-rapport</button>
+        </div>
+        <p id="pdfNote" class="hint">Het PDF-rapport met kaartgegevens en landschapsverhaal is nog in de maak.</p>
+      </section>
+
+      <footer class="advice-foot">
+        <p>
+          Gegevens: PDOK / BRO (bodem, grondwatertrap, hoogte, geomorfologie),
+          Fysisch Geografische Regio's en Natuurlijk Systeem Nederland.
+          Kaartwaarden zijn indicatief: kijk altijd ook zelf op de plek.
+        </p>
+      </footer>
+    </div>
+  </aside>
+</main>
+
+<!-- Zwevende popovers (buiten de scrollende container gehouden) -->
+<div id="popover" class="popover" role="dialog" aria-modal="false" hidden></div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module" src="/static/js/main.js"></script>
+</body>
+</html>
