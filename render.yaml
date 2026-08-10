@@ -1,0 +1,26 @@
+# Render Blueprint voor PlantWijs — zie docs/DEPLOY.md voor de toelichting.
+# Gebruik: Render → New → Blueprint → deze repo aanwijzen.
+services:
+  - type: web
+    name: plantwijs
+    runtime: python
+    plan: free
+    region: frankfurt
+    branch: main
+    autoDeploy: true
+
+    buildCommand: pip install -r requirements.txt
+    # $PORT wordt door Render gezet. Eén worker: het gratis plan heeft 512 MB RAM.
+    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+
+    # Doet geen netwerk-calls en bouwt geen NSN-index, dus altijd snel.
+    healthCheckPath: /api/health
+
+    envVars:
+      # runtime.txt pint dezelfde versie voor platforms die dat bestand lezen.
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      # Zelfgekozen geheim; alleen hiermee werkt /api/admin/reload.
+      # sync: false ⇒ Render vraagt de waarde bij de eerste deploy en houdt hem buiten de repo.
+      - key: PLANTWIJS_ADMIN_KEY
+        sync: false
