@@ -12,6 +12,15 @@ __pycache__/
 *.whl
 
 ########################################
+# Test- & tooling-caches
+########################################
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+########################################
 # Environment variables (local only)
 ########################################
 .env
@@ -30,10 +39,22 @@ out/**
 !out/plantwijs_full_semicolon.csv
 
 ########################################
-# Editor / OS files
+# Grote lokale databestanden
+# (data/LBK_BKNSN_2023.zip hoort er WEL in — zie docs/DEPLOY.md §4)
+########################################
+# uitgepakte NSN-data (o.a. data/nsn_natuurlijk_systeem.geojson) is honderden MB's
+data/*.geojson
+# NSN-index wordt in de tijdelijke map van het systeem gebouwd, maar voor de zekerheid:
+plantwijs_nsn/
+*.sqlite
+*.sqlite3
+
+########################################
+# Editor / OS / tooling files
 ########################################
 .vscode/
 .idea/
+.claude/worktrees/
 .DS_Store
 Thumbs.db
 
