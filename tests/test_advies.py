@@ -268,17 +268,17 @@ def test_alle_bronnen_leeg(client: TestClient, monkeypatch):
 
 
 # ───────────────────── soortenselectie: bodem en vocht (fix QA-1)
-# Mini-dataset met de TreeEbb-schrijfwijzen: "zware klei" hoort bij de
-# categorie klei, "löss"/"zavel" bij leem. Vroeger werd hier ruw op tekst
-# vergeleken, waardoor klei en leem nul soorten opleverden.
+# Mini-dataset met de TreeEbb-schrijfwijzen: "zware klei" en "zavel" horen bij
+# de categorie klei, "lemige grond" en "löss" bij leem. Vroeger werd hier ruw
+# op tekst vergeleken, waardoor klei en leem nul soorten opleverden.
 def _mini_dataset() -> pd.DataFrame:
     return pd.DataFrame([
         {"naam": "Kleiplant", "wetenschappelijke_naam": "Testus argillae",
          "status_nl": "inheems", "invasief": "nee", "standplaats_licht": "zon",
-         "vocht": "vochtig | nat", "grondsoorten": "zware klei | lichte klei"},
+         "vocht": "vochtig | nat", "grondsoorten": "zware klei | zavel"},
         {"naam": "Leemplant", "wetenschappelijke_naam": "Testus limi",
          "status_nl": "inheems", "invasief": "nee", "standplaats_licht": "zon",
-         "vocht": "zeer nat", "grondsoorten": "löss | zavel"},
+         "vocht": "zeer nat", "grondsoorten": "lemige grond | löss"},
         {"naam": "Zandplant", "wetenschappelijke_naam": "Testus harenae",
          "status_nl": "inheems", "invasief": "nee", "standplaats_licht": "zon",
          "vocht": "droog", "grondsoorten": "zand"},
@@ -362,7 +362,7 @@ def test_advies_geo_en_pdf_selecteren_hetzelfde(client: TestClient, monkeypatch)
     ("moerige eerdgronden", "veen"),
     ("Zware klei", "klei"),
     ("Duinvaaggronden; fijn zand", "zand"),
-    ("Kalkrijke poldervaaggronden; zavel", "leem"),
+    ("Kalkrijke poldervaaggronden; zavel", "klei"),
 ])
 def test_soil_from_text(ruw: str, verwacht: str):
     assert pdok._soil_from_text(ruw) == verwacht

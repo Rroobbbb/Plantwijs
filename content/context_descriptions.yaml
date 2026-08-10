@@ -278,7 +278,7 @@ categorieen:
       bron: "BRO Bodemkaart (PDOK); eigen bewerking"
 
     - id: leem
-      match_exact: ["leem", "löss", "loss", "zavel"]
+      match_exact: ["leem", "löss", "loss"]
       match: ["leem", "löss", "loss", "silt", "brikgrond", "radebrik", "bergbrik"]
       titel: "Leem- en lössgrond"
       ontstaan: >-

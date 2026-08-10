@@ -23,7 +23,7 @@ from plantwijs.services.pdok import _soil_from_text  # noqa: E402
         ("Leemarm fijn zand", "zand"),
         ("Zwak lemig fijn zand", "zand"),
         ("Kalkarme zandgronden", "zand"),
-        ("Zavel", "leem"),
+        ("Zavel", "klei"),
         ("Löss", "leem"),
         ("Petgaten", "veen"),
         ("Moerige gronden op zand", "veen"),

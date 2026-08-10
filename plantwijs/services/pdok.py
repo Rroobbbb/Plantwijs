@@ -27,6 +27,7 @@ from ..config import (
     TX_WGS84_RD,
     TX_WGS84_WEB,
 )
+from .dataset import SOIL_SYNONYMS
 
 
 # ───────────────────── HTTP utils
@@ -232,15 +233,14 @@ def fgr_from_point(lat: float, lon: float) -> str | None:
     return None
 
 
-# Termen uit de BRO Bodemkaart → de vier PlantWijs-bodemcategorieën.
-# "petgat(en)" en "moerig(e)" zijn veenvarianten: petgaten zijn uitgeveende
-# stroken in het laagveen, moerige gronden hebben een veenlaag in het profiel.
-_SOIL_TOKENS = {
-    "veen": {"veen", "petgat", "moerig"},
-    "klei": {"klei", "zware klei", "lichte klei"},
-    "leem": {"leem", "loess", "löss", "zavel"},
-    "zand": {"zand", "dekzand"},
-}
+# Termen uit de BRO Bodemkaart → de vier PlantWijs-bodemcategorieën, via de
+# gedeelde synoniementabel in `services.dataset` (kaartzijde en soortenfilter
+# hanteren zo dezelfde indeling; zavel telt bij klei). Substring-matching is
+# hier nodig omdat kaarttermen samenstellingen zijn ("Zeekleigronden").
+# Veen staat voorop: "petgat(en)" en "moerig(e)" zijn veenvarianten — petgaten
+# zijn uitgeveende stroken in het laagveen, moerige gronden hebben een veenlaag
+# in het profiel — ook als de term daarnaast zand of klei noemt.
+_SOIL_PRIORITEIT = ("veen", "klei", "leem", "zand")
 
 # Sleutel waaronder `bodem_from_bodemkaart` de ruwe kaartterm in de props legt,
 # zodat /advies/geo hem als `bodem_detail` kan tonen ("Bodemkaart noemt dit:
@@ -255,10 +255,9 @@ _RE_SOIL_ARM = re.compile(r"\b(?:leem|klei|zand|veen|humus|kalk)arm\w*")
 
 def _soil_from_text(text: str) -> Optional[str]:
     t = _RE_SOIL_ARM.sub(" ", (text or "").lower())
-    for soil, keys in _SOIL_TOKENS.items():
-        for k in keys:
-            if k in t:
-                return soil
+    for soil in _SOIL_PRIORITEIT:
+        if any(k in t for k in SOIL_SYNONYMS[soil]):
+            return soil
     return None
 
 

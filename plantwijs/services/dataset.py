@@ -7,7 +7,7 @@ import math
 import os
 import re
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
 import requests
@@ -369,8 +369,35 @@ def _split_tokens(cell: Any) -> List[str]:
             if t.strip()]
 
 
-_SOIL_CANON = {"zand", "klei", "leem", "veen"}
+# Canonieke bodemklasse → alle schrijfwijzen waaronder die klasse in de bronnen
+# voorkomt. De TreeEbb-kolom `grondsoorten` kent precies de tokens "zand",
+# "zavel", "lichte klei", "zware klei", "lemige grond", "löss", "veen" en
+# "alle grondsoorten"; de losse woorden "klei" en "leem" komen daar dus nooit
+# in voor. De BRO Bodemkaart levert daarnaast termen als "dekzand",
+# "petgat(en)" en "moerig(e)". Zavel (8–25% lutum) is in de Nederlandse
+# bodemclassificatie een kleigrond en telt daarom bij klei, niet bij leem.
+# `services.pdok` gebruikt dezelfde tabel voor de ruwe kaarttermen, zodat de
+# kaartzijde en de soortenfilter niet uiteen kunnen lopen.
+SOIL_SYNONYMS: Dict[str, Tuple[str, ...]] = {
+    "zand": ("zand", "dekzand"),
+    "klei": ("klei", "lichte klei", "zware klei", "zavel"),
+    "leem": ("leem", "lemige grond", "löss", "loess"),
+    "veen": ("veen", "petgat", "moerig"),
+}
+
+_SOIL_CANON = set(SOIL_SYNONYMS)
 _RE_ALL = re.compile(r"\balle\s+grondsoorten\b", re.I)
+
+# Losse tokens zijn eenduidig; de volgorde bepaalt alleen welke klasse wint bij
+# samengestelde ruwe kaarttermen die als filterkeuze binnenkomen
+# ("zandige leem" → leem).
+_SOIL_ORDER = ("leem", "zand", "klei", "veen")
+_SOIL_RES: Dict[str, re.Pattern] = {
+    canon: re.compile(r"\b(?:%s)\b" % "|".join(
+        re.escape(s.replace("ö", "o")) for s in sorted(syns, key=len, reverse=True)
+    ))
+    for canon, syns in SOIL_SYNONYMS.items()
+}
 
 
 def _canon_soil_token(tok: str) -> Optional[str]:
@@ -380,14 +407,9 @@ def _canon_soil_token(tok: str) -> Optional[str]:
     t = t.replace("ö", "o")
     if _RE_ALL.search(t):
         return "__ALL__"
-    if re.search(r"\b(loess|loss|löss|leem|zavel)\b", t):
-        return "leem"
-    if re.search(r"\bdekzand\b|\bzand\b", t):
-        return "zand"
-    if re.search(r"\bklei\b", t):
-        return "klei"
-    if re.search(r"\bveen\b", t):
-        return "veen"
+    for canon in _SOIL_ORDER:
+        if _SOIL_RES[canon].search(t):
+            return canon
     return None
 
 
@@ -452,12 +474,12 @@ def filter_standplaats(
     - **vocht**: exacte tokenvergelijking. De dataset gebruikt precies de vijf
       klassen uit docs/API.md (zeer droog|droog|vochtig|nat|zeer nat) en de
       Gt-afleiding in `services.pdok` levert dezelfde vijf, dus dat volstaat.
-    - **bodem**: gecanoniseerde vergelijking via `_match_bodem_row`. De
-      TreeEbb-kolom `grondsoorten` bevat termen als "zware klei", "löss" en
-      "zavel"; die horen bij de categorieën klei respectievelijk leem. Een
-      ruwe kaartwaarde die niet naar zand/klei/leem/veen te herleiden is
-      (bijvoorbeeld "Bebouwing") filtert bewust niet: liever de volledige
-      lijst dan een lege.
+    - **bodem**: gecanoniseerde vergelijking via `_match_bodem_row`, op basis
+      van `SOIL_SYNONYMS`. De TreeEbb-kolom `grondsoorten` bevat termen als
+      "lichte klei" en "zavel" (→ klei) en "lemige grond" en "löss" (→ leem);
+      "alle grondsoorten" telt bij elke klasse mee. Een ruwe kaartwaarde die
+      niet naar zand/klei/leem/veen te herleiden is (bijvoorbeeld "Bebouwing")
+      filtert bewust niet: liever de volledige lijst dan een lege.
     """
     vocht = [v for v in (vocht or []) if str(v or "").strip()]
     bodem = [b for b in (bodem or []) if str(b or "").strip()]
