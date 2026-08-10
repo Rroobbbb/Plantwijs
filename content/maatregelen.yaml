@@ -54,7 +54,7 @@ vormen:
       Een houtsingel is een brede strook bomen en struiken zonder aarden wal, meestal
       langs een perceelgrens of rond een erf. Rond boerderijen heet hij erfsingel of
       windsingel: hij vangt wind, stof en geluid en geeft het erf beschutting. Een
-      singel is minstens drie tot zes meter breed en heeft een gesloten struiklaag aan
+      singel is doorgaans drie tot zes meter breed en heeft een gesloten struiklaag aan
       de buitenzijde. Hij past in vrijwel elk Nederlands landschap, mits je de soorten
       op de bodem afstemt.
     biodiversiteit: >-
@@ -83,16 +83,16 @@ vormen:
     omschrijving: >-
       Een struweelhaag is een vrij uitgroeiende haag van doornige en besdragende
       struiken. Anders dan een geschoren heg mag hij bloeien en vrucht dragen, waardoor
-      hij veel meer oplevert voor dieren. Een struweelhaag is één tot drie meter breed
-      en twee tot vier meter hoog. Van oudsher werd hij gebruikt als veekering op
-      plekken waar geen wal of sloot lag.
+      hij veel meer oplevert voor dieren. Een volgroeide struweelhaag is al gauw twee
+      tot drie meter breed en minstens even hoog. Van oudsher werd hij gebruikt als
+      veekering op plekken waar geen wal of sloot lag.
     biodiversiteit: >-
       Dit is een van de rijkste beplantingsvormen op het erf. De bloei in het voorjaar
       voedt bijen en vlinders, de bessen in de nazomer en winter voeden merels,
       lijsters en zanglijsters. Doornige struiken zoals sleedoorn en meidoorn zijn
       veilige nestplaatsen voor kleine zangvogels.
     onderhoud: >-
-      Weinig werk: eens in de vijf tot tien jaar terugzetten, en steeds maar een deel
+      Weinig werk: eens in de zes tot vijftien jaar terugzetten, en steeds maar een deel
       tegelijk zodat er altijd bloei en bes overblijft. Werk buiten het broedseizoen.
     past_bij:
       fgr: [rivierengebied, zeekleigebied, heuvelland, hogere_zandgronden, afgesloten_zeearmen]
@@ -197,9 +197,10 @@ vormen:
     omschrijving: >-
       Een hoogstamboomgaard is een weide met fruitbomen op een hoge stam, zodat er vee
       onder kan lopen of gemaaid kan worden. Tot in de twintigste eeuw hoorde bij vrijwel
-      elk erf zo'n boomgaard voor eigen fruit. Reken op ongeveer honderd tot honderdvijftig
-      bomen per hectare, dus acht tot tien meter tussen de bomen. Oude, streekeigen rassen
-      houden de boomgaard herkenbaar en zijn vaak beter bestand tegen ziekten.
+      elk erf zo'n boomgaard voor eigen fruit. Reken op vijftig tot honderdvijftig bomen
+      per hectare; als plantafstand geldt ruwweg zes meter voor peer en pruim, tien voor
+      appel en twaalf voor kers. Oude, streekeigen rassen houden de boomgaard herkenbaar
+      en zijn vaak beter bestand tegen ziekten.
     biodiversiteit: >-
       De combinatie van bloeiende bomen, kruidenrijk grasland en oud hout maakt dit een
       van de soortenrijkste erfelementen. De voorjaarsbloei is belangrijk voor bijen en
@@ -268,7 +269,8 @@ vormen:
       kruiden. De waarde neemt toe met de leeftijd, dus behoud van oude knotbomen is
       belangrijker dan nieuwe aanplant.
     onderhoud: >-
-      Regelmatig en verplicht: knotten om de drie tot zes jaar, buiten het broedseizoen
+      Regelmatig en verplicht: knotten om de drie tot zes jaar bij wilg en populier
+      (es en els mogen iets langer, knoteiken veel langer), buiten het broedseizoen
       en bij voorkeur in de winter. Als je te lang wacht, worden de takken zo zwaar dat
       de kop openscheurt.
     past_bij:
@@ -287,8 +289,9 @@ vormen:
   - id: griend
     naam: "Griend"
     omschrijving: >-
-      Een griend is een dicht wilgenbos dat elke één tot drie jaar volledig wordt
-      afgezet. De jonge, rechte twijgen werden gebruikt voor manden, hoepels,
+      Een griend is een dicht wilgenbos dat om de paar jaar volledig wordt afgezet:
+      dun vlechtwerk-hout jaarlijks (snijgriend), zwaarder hout om de twee tot vijf
+      jaar (hakgriend). De jonge, rechte twijgen werden gebruikt voor manden, hoepels,
       zinkstukken en dijkwerk. Grienden liggen van oudsher in de natte delen van het
       rivierengebied en in de zoetwatergetijdengebieden, waar ze bestand zijn tegen
       regelmatige overstroming. Omdat de begroeiing laag blijft, houdt een griend
@@ -299,8 +302,8 @@ vormen:
       is waardevol voor moerasvogels zoals rietzanger en blauwborst. Doordat je in
       delen afzet, staan er altijd verschillende leeftijden naast elkaar.
     onderhoud: >-
-      Intensief maar eenvoudig: afzetten om de één tot drie jaar in de winter, telkens
-      een deel van het perceel. Zonder dat beheer groeit een griend binnen enkele jaren
+      Intensief maar eenvoudig: afzetten om de twee tot vijf jaar in de winter (dun
+      vlechtwerk-hout zelfs jaarlijks), telkens een deel van het perceel. Zonder dat beheer groeit een griend binnen enkele jaren
       uit tot wilgenbos.
     past_bij:
       fgr: [rivierengebied, laagveengebied, getijdengebied, afgesloten_zeearmen]
@@ -384,15 +387,16 @@ vormen:
       Zuid-Limburgse heuvelland. Hij ontstond doordat grond die van de akker afspoelde
       werd tegengehouden door een strook struiken en bomen op de perceelgrens; door de
       eeuwen heen groeide daar een trapje in de helling. Een graft is dus tegelijk
-      perceelgrens, erosieremmer en houtleverancier. Herstel van graften is een van de
-      effectiefste manieren om modderstromen te beperken.
+      perceelgrens, erosieremmer en houtleverancier. Graften remmen het afspoelen van
+      water en vruchtbare grond; daarom worden ze bij erosiebestrijding in het
+      heuvelland hersteld.
     biodiversiteit: >-
       Graften zijn lijnvormige struwelen in een verder open akkerlandschap en daarmee
       belangrijk als leefgebied en verbindingsroute. Op kalkrijke hellingen groeien er
       bijzondere struiken die elders in Nederland zeldzaam zijn. De warme, zonnige
       zijde is waardevol voor insecten en hazelworm.
     onderhoud: >-
-      Gemiddeld: de struiklaag gefaseerd afzetten in een cyclus van acht tot vijftien
+      Gemiddeld: de struiklaag gefaseerd afzetten in een cyclus van zes tot vijftien
       jaar. Laat de wortels en de grondwal intact, want juist die houden de helling
       vast.
     past_bij:
