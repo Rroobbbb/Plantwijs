@@ -1,0 +1,167 @@
+# Inventarisatie BKNSN / NSN — data/LBK_BKNSN_2023.zip
+# Bestand : nsn_natuurlijk_systeem.geojson (EPSG:28992, MultiPolygon)
+# Methode : stream-scan regel voor regel, regex op de properties
+# Let op  : de properties heten 'BKNSN_code' en 'Subtype_na' (hoofdletter S).
+#           Er is GEEN property 'subtype_na' (kleine letter) of 'hoofdtype' in dit bestand.
+#           De backend geeft de waarde van Subtype_na terug als NSN-label.
+#
+# Features totaal : 435007
+# Unieke code/naam-paren : 54
+# Unieke Subtype_na-waarden : 49
+
+==============================================================================
+DEEL 1 — Unieke Subtype_na-waarden (alfabetisch), met aantal features
+==============================================================================
+SUBTYPE_NA                                         AANTAL  CODE(S)
+------------------------------------------------------------------------------
+:ingoruines en periglaciale laagten                  2574  Kl3
+Antropogeen Element                                119452  A
+Beekdal                                               179  Lg5
+Beekdal veen                                         4222  Dz6
+Beekdal zand/leem                                   18418  Dz5
+Daluitspoelingswaaier                                 150  Sw3
+Dekzandrug                                          12796  Dz1
+Dekzandvlakte                                       32122  Dz2
+Depressie                                            1501  Hv3
+Depressie veen                                       3097  Dz8
+Depressie zand                                       3104  Dz7
+Droogdal                                             7636  Lg6, Sw4
+Droogdal met keileem                                  298  Sw4x
+Droogdal met veen                                     366  Sw4v
+Es                                                   7552  Dz4, Sw5
+Grondmorene plateau, -vlakte                         3535  Kl2
+Grondmorenerug                                       1836  Kl1
+Hoogveen                                             2544  Hv1
+Kalkhelling                                           284  Lg3
+Kreekbedding                                         7903  Zk4
+Kreekrug                                             9867  Dr2, Zk3
+Kustduinen                                            963  Bd3
+Laagveenvlakte                                       7146  Dz9, Lv1
+Losshelling                                          1822  Lg2
+Lossplateau                                           564  Lg1
+Meerbodem                                            3603  Dr1
+Ontgonnen hoogveen                                   1403  Hv2
+Overige afzettingen                                   207  Lg8
+Overslaggronden                                        22  Rg4
+Petgaten                                             1986  Lv2
+Restgeul                                            10262  Rg5, Rt4
+Rivierduin                                           1215  Rt3
+Rivierkom                                            8610  Rg2
+Rivierterras                                          176  Lg7
+Rivierterras klei                                    2313  Rt2
+Rivierterras zand                                    8456  Rt1
+Smeltwaterafzettingen, sandr                        15874  Sw2
+Strandvlakte                                         5461  Bd2
+Strandwal                                             763  Bd1
+Stroomrug, oeverwal                                  4732  Rg1
+Stuifzandduin (en bijbehorende vlaktes)              3569  Dz3
+Stuwwal                                              2068  Sw1
+Terp                                                 1935  At
+Uiterwaard                                           5948  Rg3
+Veenrest                                             1537  Dr3
+Water                                               80194  W
+Zeekleivlakte                                       20618  Zk2
+Zoetwatergetijdenafzetting                           1932  Zk6
+Zoutwatergetijdenafzetting                           2192  Zk7
+
+==============================================================================
+DEEL 2 — Alle BKNSN_code / Subtype_na-paren, gegroepeerd per hoofdgroep
+         (hoofdgroep afgeleid uit het codeprefix; beschrijvend)
+==============================================================================
+
+[Antropogeen]
+  A      Antropogeen Element                                119452
+
+[Antropogeen (terpen/opgeworpen)]
+  At     Terp                                                 1935
+
+[Dekzandlandschap]
+  Dz1    Dekzandrug                                          12796
+  Dz2    Dekzandvlakte                                       32122
+  Dz3    Stuifzandduin (en bijbehorende vlaktes)              3569
+  Dz4    Es                                                   7210
+  Dz5    Beekdal zand/leem                                   18418
+  Dz6    Beekdal veen                                         4222
+  Dz7    Depressie zand                                       3104
+  Dz8    Depressie veen                                       3097
+  Dz9    Laagveenvlakte                                        503
+
+[Droogmakerij]
+  Dr1    Meerbodem                                            3603
+  Dr2    Kreekrug                                             1029
+  Dr3    Veenrest                                             1537
+
+[Duin- en strandwallandschap]
+  Bd1    Strandwal                                             763
+  Bd2    Strandvlakte                                         5461
+  Bd3    Kustduinen                                            963
+
+[Hoogveenlandschap]
+  Hv1    Hoogveen                                             2544
+  Hv2    Ontgonnen hoogveen                                   1403
+  Hv3    Depressie                                            1501
+
+[Keileemlandschap]
+  Kl1    Grondmorenerug                                       1836
+  Kl2    Grondmorene plateau, -vlakte                         3535
+  Kl3    :ingoruines en periglaciale laagten                  2574
+
+[Laagveenlandschap]
+  Lv1    Laagveenvlakte                                       6643
+  Lv2    Petgaten                                             1986
+
+[Loss- en heuvellandschap]
+  Lg1    Lossplateau                                           564
+  Lg2    Losshelling                                          1822
+  Lg3    Kalkhelling                                           284
+  Lg5    Beekdal                                               179
+  Lg6    Droogdal                                             1580
+  Lg7    Rivierterras                                          176
+  Lg8    Overige afzettingen                                   207
+
+[Rivierenlandschap (holoceen)]
+  Rg1    Stroomrug, oeverwal                                  4732
+  Rg2    Rivierkom                                            8610
+  Rg3    Uiterwaard                                           5948
+  Rg4    Overslaggronden                                        22
+  Rg5    Restgeul                                             6233
+
+[Rivierterrassenlandschap (pleistoceen)]
+  Rt1    Rivierterras zand                                    8456
+  Rt2    Rivierterras klei                                    2313
+  Rt3    Rivierduin                                           1215
+  Rt4    Restgeul                                             4029
+
+[Stuwwallandschap]
+  Sw1    Stuwwal                                              2068
+  Sw2    Smeltwaterafzettingen, sandr                        15874
+  Sw3    Daluitspoelingswaaier                                 150
+  Sw4    Droogdal                                             6056
+  Sw4v   Droogdal met veen                                     366
+  Sw4x   Droogdal met keileem                                  298
+  Sw5    Es                                                    342
+
+[Water]
+  W      Water                                               80194
+
+[Zeekleilandschap]
+  Zk2    Zeekleivlakte                                       20618
+  Zk3    Kreekrug                                             8838
+  Zk4    Kreekbedding                                         7903
+  Zk6    Zoetwatergetijdenafzetting                           1932
+  Zk7    Zoutwatergetijdenafzetting                           2192
+
+==============================================================================
+OPMERKINGEN BIJ DE BRONDATA
+==============================================================================
+- Kl3 staat in de brondata als ':ingoruines en periglaciale laagten'. Het eerste
+  teken is in de bron beschadigd (byte 0x3a = ':'). Bedoeld is vrijwel zeker
+  'Pingoruines en periglaciale laagten'. context_descriptions.yaml matcht op
+  beide schrijfwijzen.
+- Sommige Subtype_na-waarden komen onder meerdere codes voor en zijn dus
+  dubbelzinnig zonder code: 'Es' (Dz4, Sw5), 'Droogdal' (Lg6, Sw4),
+  'Restgeul' (Rg5, Rt4), 'Kreekrug' (Dr2, Zk3), 'Laagveenvlakte' (Dz9, Lv1),
+  'Depressie' (Hv3). De teksten in context_descriptions.yaml zijn zo
+  geschreven dat ze voor beide herkomsten kloppen.
+- 'Water' (W) en 'Antropogeen Element' (A) samen zijn ~46%% van de features;
+  dat zijn geen landschapstypen maar bebouwing/infrastructuur en open water.

@@ -1,0 +1,409 @@
+# PlantWijs — kennislaag: catalogus van beplantingsvormen voor bewoners en erven
+# Zie content/README.md voor de conventies.
+meta:
+  versie: "2026-08-10"
+  doel: >-
+    Catalogus van beplantingsvormen die een bewoner op of rond het erf kan aanleggen,
+    met per vorm bij welke landschappen en vochtomstandigheden hij past.
+  disclaimer: >-
+    Indicatief; gebaseerd op kaartinterpretatie op regioschaal. Lokale situatie kan afwijken.
+    Controleer altijd de regels van gemeente en waterschap voordat je aanplant.
+  soortnotatie: >-
+    Elke voorbeeldsoort staat als "Nederlandse naam (Wetenschappelijke naam)". De
+    wetenschappelijke naam tussen haakjes komt letterlijk voor in de kolom 'naam' van
+    data/treeebb_planten_allfields.csv en is daarmee koppelbaar aan de soortenlijst.
+    Uitlezen kan met een eenvoudige regex op de tekst tussen haakjes.
+  past_bij: >-
+    Verwijst naar id's uit content/context_descriptions.yaml, per categorie
+    (fgr, vocht, bodem, nsn). Een lege of ontbrekende lijst betekent 'geen beperking'.
+
+vormen:
+  - id: houtwal
+    naam: "Houtwal"
+    omschrijving: >-
+      Een houtwal is een strook bomen en struiken op een opgeworpen aarden wal, vaak met
+      een greppel ernaast. Boeren legden ze aan als veekering en als perceelgrens, en
+      oogstten er brandhout, geriefhout en strooisel uit. De wal maakt de standplaats
+      droger dan het omringende land, waardoor er een eigen begroeiing op groeit. Op de
+      hogere zandgronden is dit de oudste en meest kenmerkende erfgrens.
+    biodiversiteit: >-
+      Een houtwal is een lijn van bos door open land en werkt daardoor als
+      verbindingsroute voor vleermuizen, vogels en kleine zoogdieren. De gelaagde
+      opbouw van bomen, struiken en kruiden levert nest-, schuil- en voedselplekken op.
+      De warme, zonnige zuidzijde is bovendien belangrijk voor insecten en reptielen.
+    onderhoud: >-
+      Zet de struiklaag gefaseerd af in een cyclus van acht tot vijftien jaar, en steeds
+      maar een deel tegelijk. Laat enkele bomen doorgroeien tot overstaander. Buiten het
+      broedseizoen werken; het afgezette hout kun je als takkenril op de wal leggen.
+    past_bij:
+      fgr: [hogere_zandgronden, heuvelland]
+      vocht: [droog, vochtig, zeer_droog]
+      bodem: [zand, leem]
+      nsn: [dekzandrug, dekzandvlakte, es, stuwwal, smeltwaterafzetting, grondmorenerug, rivierterras_zand, rivierduin]
+    voorbeeldsoorten:
+      - "Zomereik (Quercus robur)"
+      - "Ruwe berk (Betula pendula)"
+      - "Hazelaar (Corylus avellana)"
+      - "Lijsterbes (Sorbus aucuparia)"
+      - "Sporkehout (Frangula alnus)"
+      - "Sleedoorn (Prunus spinosa)"
+
+  - id: houtsingel
+    naam: "Houtsingel of erfsingel"
+    omschrijving: >-
+      Een houtsingel is een brede strook bomen en struiken zonder aarden wal, meestal
+      langs een perceelgrens of rond een erf. Rond boerderijen heet hij erfsingel of
+      windsingel: hij vangt wind, stof en geluid en geeft het erf beschutting. Een
+      singel is minstens drie tot zes meter breed en heeft een gesloten struiklaag aan
+      de buitenzijde. Hij past in vrijwel elk Nederlands landschap, mits je de soorten
+      op de bodem afstemt.
+    biodiversiteit: >-
+      De dichte struiklaag biedt broedgelegenheid voor struweelvogels en dekking voor
+      egels, marterachtigen en amfibieën. Bloeiende en besdragende soorten leveren het
+      hele seizoen voedsel. In open landschappen is een singel vaak het enige
+      houtige element in de wijde omgeving en daarmee extra waardevol.
+    onderhoud: >-
+      Snoei de buitenrand om de drie tot vijf jaar terug zodat de singel dicht blijft
+      van onderen. Zet de struiklaag verder gefaseerd af in een cyclus van tien tot
+      twintig jaar. Werk buiten het broedseizoen.
+    past_bij:
+      fgr: [hogere_zandgronden, rivierengebied, zeekleigebied, laagveengebied, heuvelland, getijdengebied, afgesloten_zeearmen, duinen]
+      vocht: [vochtig, nat, droog]
+      nsn: [dekzandvlakte, zeekleivlakte, meerbodem, kreekrug, laagveenvlakte, stroomrug_oeverwal, ontgonnen_hoogveen, antropogeen_element]
+    voorbeeldsoorten:
+      - "Zwarte els (Alnus glutinosa)"
+      - "Zomereik (Quercus robur)"
+      - "Hazelaar (Corylus avellana)"
+      - "Gelderse roos (Viburnum opulus)"
+      - "Boswilg (Salix caprea)"
+      - "Gewone vlier (Sambucus nigra)"
+
+  - id: struweelhaag
+    naam: "Struweelhaag"
+    omschrijving: >-
+      Een struweelhaag is een vrij uitgroeiende haag van doornige en besdragende
+      struiken. Anders dan een geschoren heg mag hij bloeien en vrucht dragen, waardoor
+      hij veel meer oplevert voor dieren. Een struweelhaag is één tot drie meter breed
+      en twee tot vier meter hoog. Van oudsher werd hij gebruikt als veekering op
+      plekken waar geen wal of sloot lag.
+    biodiversiteit: >-
+      Dit is een van de rijkste beplantingsvormen op het erf. De bloei in het voorjaar
+      voedt bijen en vlinders, de bessen in de nazomer en winter voeden merels,
+      lijsters en zanglijsters. Doornige struiken zoals sleedoorn en meidoorn zijn
+      veilige nestplaatsen voor kleine zangvogels.
+    onderhoud: >-
+      Weinig werk: eens in de vijf tot tien jaar terugzetten, en steeds maar een deel
+      tegelijk zodat er altijd bloei en bes overblijft. Werk buiten het broedseizoen.
+    past_bij:
+      fgr: [rivierengebied, zeekleigebied, heuvelland, hogere_zandgronden, afgesloten_zeearmen]
+      vocht: [vochtig, droog]
+      nsn: [stroomrug_oeverwal, kreekrug, rivierterras, rivierterras_klei, losshelling, dekzandrug, es, overslaggronden]
+    voorbeeldsoorten:
+      - "Eenstijlige meidoorn (Crataegus monogyna)"
+      - "Sleedoorn (Prunus spinosa)"
+      - "Hondsroos (Rosa canina)"
+      - "Rode kornoelje (Cornus sanguinea)"
+      - "Kardinaalsmuts (Euonymus europaeus)"
+      - "Gelderse roos (Viburnum opulus)"
+
+  - id: knipheg
+    naam: "Knip- of scheerheg"
+    omschrijving: >-
+      Een knip- of scheerheg is een strak gesnoeide haag van één of enkele soorten,
+      meestal een halve tot anderhalve meter breed. Hij markeert een erfgrens, een tuin
+      of een oprit en houdt door het knippen een dichte, gesloten vorm. Deze vorm hoort
+      vooral bij de directe omgeving van het huis en bij dorps- en erfranden. Kies
+      streekeigen soorten in plaats van een conifeer: die passen beter en leveren meer op.
+    biodiversiteit: >-
+      Een geschoren heg levert minder bloei en bes op dan een struweelhaag, maar de
+      dichte structuur is een uitstekende nestplaats voor onder meer heggenmus en
+      roodborst. Beuk en haagbeuk houden hun blad in de winter, wat extra dekking geeft.
+      Laat een deel ongeschoren als je bloei en bessen wilt.
+    onderhoud: >-
+      Intensief: één tot twee keer per jaar knippen, in juni en eventueel eind
+      augustus. Controleer voor het knippen altijd op nesten.
+    past_bij:
+      fgr: [heuvelland, rivierengebied, hogere_zandgronden, zeekleigebied, laagveengebied]
+      vocht: [vochtig, droog]
+      nsn: [es, stroomrug_oeverwal, losshelling, lossplateau, terp, antropogeen_element]
+    voorbeeldsoorten:
+      - "Haagbeuk (Carpinus betulus)"
+      - "Beuk (Fagus sylvatica)"
+      - "Veldesdoorn (Acer campestre)"
+      - "Eenstijlige meidoorn (Crataegus monogyna)"
+      - "Taxus (Taxus baccata)"
+      - "Hulst (Ilex aquifolium)"
+
+  - id: bomenrij_laan
+    naam: "Bomenrij of laan"
+    omschrijving: >-
+      Een bomenrij is een enkele rij bomen langs een weg, oprit of kavelgrens; staan er
+      rijen aan beide zijden, dan spreken we van een laan. Bomenrijen benadrukken de
+      lijnen in het landschap: een weg, een dijk, een kanaal of een oude stroomrug.
+      Kies één soort voor een rustig beeld, of meng soorten als je meer variatie en
+      minder ziektegevoeligheid wilt. Houd voldoende plantafstand aan, meestal acht tot
+      twaalf meter.
+    biodiversiteit: >-
+      Oude laanbomen zijn belangrijk als vliegroute voor vleermuizen en leveren op
+      termijn holten voor vogels en vleermuizen. Bloeiende soorten als linde zijn in
+      juni een belangrijke drachtplant voor bijen. De waarde neemt sterk toe naarmate
+      de bomen ouder en dikker worden.
+    onderhoud: >-
+      Begeleidingssnoei in de eerste vijftien jaar om een goede stam en kroon op te
+      bouwen; daarna vooral controle op veiligheid. Reken op een lange omlooptijd en
+      geef de bomen van begin af aan voldoende ondergrondse ruimte.
+    past_bij:
+      fgr: [rivierengebied, zeekleigebied, laagveengebied, hogere_zandgronden, heuvelland, afgesloten_zeearmen]
+      vocht: [vochtig, droog, nat]
+      nsn: [stroomrug_oeverwal, zeekleivlakte, meerbodem, lossplateau, ontgonnen_hoogveen, strandwal, es, antropogeen_element]
+    voorbeeldsoorten:
+      - "Zomereik (Quercus robur)"
+      - "Winterlinde (Tilia cordata)"
+      - "Hollandse linde (Tilia x europaea)"
+      - "Fladderiep (Ulmus laevis)"
+      - "Zoete kers (Prunus avium)"
+      - "Beuk (Fagus sylvatica)"
+
+  - id: solitaire_boom
+    naam: "Solitaire boom"
+    omschrijving: >-
+      Een solitaire boom staat alleen en kan zijn kroon volledig uitbouwen. Op erven
+      stond vaak een enkele grote boom bij het huis of aan de oprit, als markering en
+      voor de schaduw. Juist doordat hij vrijstaat, wordt zo'n boom breed, grillig en
+      opvallend. Geef hem ruimte: reken op een kroon van tien tot twintig meter breed
+      en plant hem niet te dicht op gebouwen of leidingen.
+    biodiversiteit: >-
+      Een oude, vrijstaande boom is een van de rijkste elementen op een erf. Dikke
+      takken, holten, scheuren en dood hout leveren plek aan vleermuizen, holenbroeders,
+      kevers, korstmossen en paddenstoelen. Die waarde ontstaat pas na tientallen jaren,
+      dus behoud van bestaande oude bomen weegt zwaarder dan nieuwe aanplant.
+    onderhoud: >-
+      Weinig: begeleidingssnoei in de jonge jaren en daarna periodieke controle op
+      veiligheid. Laat dood hout in de kroon zitten waar dat veilig kan.
+    past_bij:
+      fgr: [hogere_zandgronden, rivierengebied, zeekleigebied, laagveengebied, heuvelland, afgesloten_zeearmen]
+      vocht: [vochtig, droog, nat]
+      nsn: [dekzandrug, es, stroomrug_oeverwal, rivierduin, terp, kreekrug, antropogeen_element]
+    voorbeeldsoorten:
+      - "Zomereik (Quercus robur)"
+      - "Winterlinde (Tilia cordata)"
+      - "Beuk (Fagus sylvatica)"
+      - "Walnoot (Juglans regia)"
+      - "Tamme kastanje (Castanea sativa)"
+      - "Zwarte populier (Populus nigra)"
+
+  - id: hoogstamboomgaard
+    naam: "Hoogstamboomgaard"
+    omschrijving: >-
+      Een hoogstamboomgaard is een weide met fruitbomen op een hoge stam, zodat er vee
+      onder kan lopen of gemaaid kan worden. Tot in de twintigste eeuw hoorde bij vrijwel
+      elk erf zo'n boomgaard voor eigen fruit. Reken op ongeveer honderd tot honderdvijftig
+      bomen per hectare, dus acht tot tien meter tussen de bomen. Oude, streekeigen rassen
+      houden de boomgaard herkenbaar en zijn vaak beter bestand tegen ziekten.
+    biodiversiteit: >-
+      De combinatie van bloeiende bomen, kruidenrijk grasland en oud hout maakt dit een
+      van de soortenrijkste erfelementen. De voorjaarsbloei is belangrijk voor bijen en
+      hommels; oude fruitbomen krijgen relatief snel holten en zijn daardoor geliefd bij
+      steenuil, spechten en vleermuizen. Val- en resterend fruit is wintervoedsel voor
+      lijsters en zoogdieren.
+    onderhoud: >-
+      Vraagt aandacht: de eerste tien jaar jaarlijks opbouwsnoei, daarna eens in de drie
+      tot vijf jaar onderhoudssnoei in de winter. Het grasland eronder één tot twee keer
+      per jaar maaien met afvoer, of laten begrazen. Jonge bomen beschermen tegen vee en
+      wild.
+    past_bij:
+      fgr: [rivierengebied, heuvelland, zeekleigebied, hogere_zandgronden, laagveengebied]
+      vocht: [vochtig, droog]
+      bodem: [klei, leem, zand]
+      nsn: [stroomrug_oeverwal, kreekrug, losshelling, lossplateau, rivierterras_klei, es, terp]
+    voorbeeldsoorten:
+      - "Appel (Malus domestica)"
+      - "Peer (Pyrus communis)"
+      - "Pruim (Prunus domestica)"
+      - "Zoete kers (Prunus avium)"
+      - "Walnoot (Juglans regia)"
+      - "Mispel (Mespilus germanica)"
+      - "Kweepeer (Cydonia oblonga)"
+
+  - id: geriefbosje
+    naam: "Klein bosje of geriefbosje"
+    omschrijving: >-
+      Een geriefbosje is een klein bosje van enkele are tot een halve hectare, vlak bij
+      het erf. Vroeger leverde het gerief: bonenstaken, gereedschapshout, brandhout en
+      hakhout. Het is meestal vierkant of rechthoekig en heeft een dichte struikrand
+      rondom. In natte streken lag er vaak een greppel of sloot omheen.
+    biodiversiteit: >-
+      Een klein bosje werkt als stapsteen tussen grotere natuurgebieden en is in open
+      landschap vaak de enige plek met bosplanten, dood hout en schaduw. De mantel en
+      zoom aan de zonzijde zijn het rijkst. Laat dood hout liggen en houd de randen
+      geleidelijk in plaats van strak.
+    onderhoud: >-
+      Weinig: hakhoutbeheer in een cyclus van acht tot twintig jaar, telkens een deel
+      tegelijk. Houd de buitenrand dicht door de struiklaag periodiek terug te zetten.
+    past_bij:
+      fgr: [hogere_zandgronden, laagveengebied, rivierengebied, zeekleigebied, heuvelland]
+      vocht: [vochtig, nat, droog]
+      nsn: [dekzandvlakte, dekzandrug, laagveenvlakte, rivierkom, beekdal_zand_leem, ontgonnen_hoogveen, grondmorene_plateau]
+    voorbeeldsoorten:
+      - "Zwarte els (Alnus glutinosa)"
+      - "Zomereik (Quercus robur)"
+      - "Ruwe berk (Betula pendula)"
+      - "Hazelaar (Corylus avellana)"
+      - "Boswilg (Salix caprea)"
+      - "Lijsterbes (Sorbus aucuparia)"
+
+  - id: knotbomen
+    naam: "Knotbomen"
+    omschrijving: >-
+      Knotbomen zijn bomen waarvan de kroon steeds op dezelfde hoogte wordt afgezet,
+      meestal op ongeveer anderhalve tot twee meter. Door dat herhaalde knotten ontstaat
+      een dikke, knoestige kop waar telkens nieuwe takken uit groeien. Het hout werd
+      gebruikt voor gereedschap, hekwerk, vlechtwerk en brandhout. Knotwilgen langs
+      sloten en kavelgrenzen zijn het bekendste beeld, maar ook els, es en iep werden
+      geknot.
+    biodiversiteit: >-
+      Een oude knotboom is hol en vol scheuren en daarmee een van de waardevolste
+      elementen in het agrarisch landschap. Steenuil, holenbroeders, vleermuizen en
+      insecten gebruiken de holten. In de knotkop groeien vaak varens, mossen en
+      kruiden. De waarde neemt toe met de leeftijd, dus behoud van oude knotbomen is
+      belangrijker dan nieuwe aanplant.
+    onderhoud: >-
+      Regelmatig en verplicht: knotten om de drie tot zes jaar, buiten het broedseizoen
+      en bij voorkeur in de winter. Als je te lang wacht, worden de takken zo zwaar dat
+      de kop openscheurt.
+    past_bij:
+      fgr: [rivierengebied, laagveengebied, zeekleigebied, hogere_zandgronden, getijdengebied]
+      vocht: [nat, zeer_nat, vochtig]
+      bodem: [klei, veen]
+      nsn: [rivierkom, laagveenvlakte, restgeul, kreekbedding, uiterwaard, petgaten, water, beekdal_zand_leem, meerbodem]
+    voorbeeldsoorten:
+      - "Schietwilg (Salix alba)"
+      - "Kraakwilg (Salix fragilis)"
+      - "Zwarte els (Alnus glutinosa)"
+      - "Gewone es (Fraxinus excelsior)"
+      - "Gladde iep (Ulmus minor)"
+      - "Haagbeuk (Carpinus betulus)"
+
+  - id: griend
+    naam: "Griend"
+    omschrijving: >-
+      Een griend is een dicht wilgenbos dat elke één tot drie jaar volledig wordt
+      afgezet. De jonge, rechte twijgen werden gebruikt voor manden, hoepels,
+      zinkstukken en dijkwerk. Grienden liggen van oudsher in de natte delen van het
+      rivierengebied en in de zoetwatergetijdengebieden, waar ze bestand zijn tegen
+      regelmatige overstroming. Omdat de begroeiing laag blijft, houdt een griend
+      hoogwater veel minder tegen dan opgaand bos.
+    biodiversiteit: >-
+      Wilgen bloeien vroeg in het voorjaar en zijn dan een van de eerste en
+      belangrijkste voedselbronnen voor bijen en hommels. De dichte, vochtige structuur
+      is waardevol voor moerasvogels zoals rietzanger en blauwborst. Doordat je in
+      delen afzet, staan er altijd verschillende leeftijden naast elkaar.
+    onderhoud: >-
+      Intensief maar eenvoudig: afzetten om de één tot drie jaar in de winter, telkens
+      een deel van het perceel. Zonder dat beheer groeit een griend binnen enkele jaren
+      uit tot wilgenbos.
+    past_bij:
+      fgr: [rivierengebied, laagveengebied, getijdengebied, afgesloten_zeearmen]
+      vocht: [zeer_nat, nat]
+      bodem: [klei, veen]
+      nsn: [uiterwaard, rivierkom, restgeul, zoetwatergetijdenafzetting, laagveenvlakte, petgaten, water]
+    voorbeeldsoorten:
+      - "Katwilg (Salix viminalis)"
+      - "Amandelwilg (Salix triandra)"
+      - "Bittere wilg (Salix purpurea)"
+      - "Schietwilg (Salix alba)"
+
+  - id: elzensingel
+    naam: "Elzensingel"
+    omschrijving: >-
+      Een elzensingel is een smalle rij zwarte elzen langs een sloot of kavelgrens, vaak
+      maar één of twee rijen breed. In natte veen- en beekdalgebieden was dit de
+      standaard perceelscheiding: de els groeit goed met natte voeten en het hout was
+      bruikbaar als brandhout en geriefhout. De singels volgen de lange, smalle
+      verkaveling en vormen daardoor een sterk lijnenpatroon in het landschap.
+    biodiversiteit: >-
+      Elzen leveren zaad waar sijzen en putters in de winter op afkomen, en de wortels
+      binden stikstof waardoor de bodem eromheen rijker is. De singels vormen
+      verbindingslijnen door een verder open, nat landschap. Een onderbegroeiing van
+      wilg en gelderse roos maakt de singel aanzienlijk rijker.
+    onderhoud: >-
+      Gemiddeld: afzetten als hakhout in een cyclus van zes tot vijftien jaar, telkens
+      een deel tegelijk zodat het lijnenpatroon zichtbaar blijft. Werk buiten het
+      broedseizoen.
+    past_bij:
+      # Bewust géén hogere_zandgronden/zand: in zandgebied hoort de elzensingel
+      # alleen in de natte beekdalen, en die vangt de nsn-lijst hieronder al af.
+      fgr: [laagveengebied, rivierengebied]
+      vocht: [nat, zeer_nat, vochtig]
+      bodem: [veen, klei]
+      nsn: [laagveenvlakte, beekdal_zand_leem, beekdal_veen, beekdal, rivierkom, petgaten, depressie_veen, veenrest, strandvlakte]
+    voorbeeldsoorten:
+      - "Zwarte els (Alnus glutinosa)"
+      - "Grauwe wilg (Salix cinerea)"
+      - "Gelderse roos (Viburnum opulus)"
+      - "Sporkehout (Frangula alnus)"
+      - "Vogelkers (Prunus padus)"
+      - "Boswilg (Salix caprea)"
+
+  - id: bloemrijke_zoom
+    naam: "Bloemrijke zoom en mantel"
+    omschrijving: >-
+      De zoom is de kruidenrijke strook aan de zonzijde van een bosje, houtwal of haag;
+      de mantel is de struikenrand daartussen. Samen vormen ze een geleidelijke overgang
+      van hoog naar laag en van schaduw naar zon. Reken op twee tot zes meter breedte
+      voor de zoom. Dit is de goedkoopste en snelste manier om bestaande beplanting
+      veel waardevoller te maken.
+    biodiversiteit: >-
+      Zoom en mantel zijn vaak het rijkste deel van een beplanting. De warme, zonnige,
+      luwe strook is aantrekkelijk voor vlinders, wilde bijen, sprinkhanen en
+      reptielen, terwijl de bloeiende struiken nectar en bessen leveren. Een harde grens
+      tussen bos en gemaaid gras mist die hele overgangswereld.
+    onderhoud: >-
+      Weinig maar consequent: de kruidenzoom één keer per jaar maaien in de nazomer en
+      het maaisel altijd afvoeren, want verschraling is hier de sleutel. Maai gefaseerd
+      en laat elk jaar een deel staan als overwinteringsplek. De struikenmantel eens in
+      de vijf tot tien jaar terugzetten.
+    past_bij:
+      fgr: [hogere_zandgronden, rivierengebied, zeekleigebied, laagveengebied, heuvelland, duinen, afgesloten_zeearmen, getijdengebied]
+      vocht: [droog, vochtig, nat]
+      nsn: []
+    voorbeeldsoorten:
+      - "Hondsroos (Rosa canina)"
+      - "Egelantier (Rosa rubiginosa)"
+      - "Sleedoorn (Prunus spinosa)"
+      - "Rode kornoelje (Cornus sanguinea)"
+      - "Kardinaalsmuts (Euonymus europaeus)"
+      - "Gelderse roos (Viburnum opulus)"
+      - "Ruwe smele (Deschampsia cespitosa)"
+      - "Pijpenstrootje (Molinia caerulea)"
+
+  - id: graft
+    naam: "Graft"
+    omschrijving: >-
+      Een graft is een begroeide steilrand dwars op een helling, kenmerkend voor het
+      Zuid-Limburgse heuvelland. Hij ontstond doordat grond die van de akker afspoelde
+      werd tegengehouden door een strook struiken en bomen op de perceelgrens; door de
+      eeuwen heen groeide daar een trapje in de helling. Een graft is dus tegelijk
+      perceelgrens, erosieremmer en houtleverancier. Herstel van graften is een van de
+      effectiefste manieren om modderstromen te beperken.
+    biodiversiteit: >-
+      Graften zijn lijnvormige struwelen in een verder open akkerlandschap en daarmee
+      belangrijk als leefgebied en verbindingsroute. Op kalkrijke hellingen groeien er
+      bijzondere struiken die elders in Nederland zeldzaam zijn. De warme, zonnige
+      zijde is waardevol voor insecten en hazelworm.
+    onderhoud: >-
+      Gemiddeld: de struiklaag gefaseerd afzetten in een cyclus van acht tot vijftien
+      jaar. Laat de wortels en de grondwal intact, want juist die houden de helling
+      vast.
+    past_bij:
+      fgr: [heuvelland]
+      vocht: [droog, vochtig]
+      bodem: [leem]
+      nsn: [losshelling, lossplateau, kalkhelling, droogdal, rivierterras_klei]
+    voorbeeldsoorten:
+      - "Haagbeuk (Carpinus betulus)"
+      - "Veldesdoorn (Acer campestre)"
+      - "Hazelaar (Corylus avellana)"
+      - "Gele kornoelje (Cornus mas)"
+      - "Wollige sneeuwbal (Viburnum lantana)"
+      - "Eenstijlige meidoorn (Crataegus monogyna)"

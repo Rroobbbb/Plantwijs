@@ -1,0 +1,394 @@
+wortelbare_diepte:
+  meta:
+    naam: Beplantingswijzer – Wortelbare diepte (bandbreedtes)
+    versie: '2025-12-16'
+    doel: Machineleesbare regels om op basis van NSN/BKNSN, bodem en Gt een indicatieve
+      wortelbare diepte (cm) te duiden voor erfbeplanting.
+    opmerking: Wortelbare diepte is indicatief. Lokale factoren (verdichting, storende
+      lagen, drainage/peilbeheer, microreliëf/AHN, tijdelijke extremen) kunnen sterk
+      afwijken van kaartwaarden.
+    output:
+      eenheid: cm
+      vorm: bandbreedte (min-max)
+      interpretatie: De bandbreedte is de meest waarschijnlijke effectieve bewortelbare
+        zone voor bomen/struiken zonder ingrijpende grondverbetering.
+  klassen:
+    zeer_beperkt:
+      band_cm: 0-30
+      indicatie: Wortelzone zeer beperkt; natstress of storende lagen domineren.
+    beperkt:
+      band_cm: 30-60
+      indicatie: Wortelzone beperkt; keuze soorten en maatregelen belangrijk.
+    matig:
+      band_cm: 60-100
+      indicatie: Redelijk; veel soorten mogelijk met standplaatsgericht beheer.
+    goed:
+      band_cm: 100-150
+      indicatie: Goede wortelruimte; brede soortenkeuze, mits bodemstructuur goed.
+    zeer_goed:
+      band_cm: 150-200
+      indicatie: Zeer goede wortelruimte; droogterisico hangt vooral van vochtbuffer
+        af.
+  basisregels_bodem_gt:
+    uitleg: Basisregels bepalen de wortelbare diepte primair uit Gt (nat–droog) en
+      bodemtextuur/organisch materiaal. Daarna kunnen NSN/BKNSN-modifiers de uitkomst
+      verschuiven (natter/droger/kwel/stagnatie/dynamiek).
+    regels:
+    - bodem:
+      - zware_klei
+      - klei
+      - veen
+      - moerige_grond
+      gt:
+      - ia
+      - ib
+      klasse: zeer_beperkt
+      wortelbare_diepte_cm: 0-30
+      beperkende_factoren:
+      - zuurstofgebrek
+      - lage_draagkracht
+      - wortelverstikking
+      maatregelen:
+      - microverhoging
+      - beperk_belasting
+      - kies_nattolerant
+    - bodem:
+      - zand
+      - lemig_zand
+      - zavel
+      - lichte_klei
+      gt:
+      - ia
+      - ib
+      klasse: beperkt
+      wortelbare_diepte_cm: 30-60
+      beperkende_factoren:
+      - zuurstofgebrek_in_laagtes
+      - instabiele_verankering
+      maatregelen:
+      - plant_op_ruggen
+      - structuurverbetering
+      - kies_nattolerant
+    - bodem:
+      - zware_klei
+      - klei
+      - veen
+      - moerige_grond
+      gt:
+      - iia
+      - iib
+      klasse: beperkt
+      wortelbare_diepte_cm: 30-60
+      beperkende_factoren:
+      - periodieke_natte_wortelzone
+      - structuurgevoeligheid
+      maatregelen:
+      - microreliëf_benutten
+      - werk_bij_draagkracht
+      - kies_robuust
+    - bodem:
+      - zand
+      - lemig_zand
+      - zavel
+      - lichte_klei
+      - leem
+      gt:
+      - iia
+      - iib
+      klasse: matig
+      wortelbare_diepte_cm: 60-100
+      beperkende_factoren:
+      - natte_perioden_winter
+      - zomerdroogte_op_zand_mogelijk
+      maatregelen:
+      - mulch_organische_stof
+      - standplaatszonering
+      - kies_mix_soorten
+    - bodem:
+      - zware_klei
+      - klei
+      gt:
+      - iic
+      - iiia
+      - iiib
+      klasse: matig
+      wortelbare_diepte_cm: 60-100
+      beperkende_factoren:
+      - wisselende_natte_wortelzone
+      - kans_op_verdichting
+      maatregelen:
+      - bodemstructuur_bewaken
+      - mulch
+      - vermijd_natte_bewerking
+    - bodem:
+      - veen
+      - moerige_grond
+      gt:
+      - iic
+      - iiia
+      - iiib
+      klasse: beperkt
+      wortelbare_diepte_cm: 30-60
+      beperkende_factoren:
+      - lage_draagkracht
+      - onvoldoende_verankering
+      maatregelen:
+      - lichte_structuren
+      - kies_windvaste_soorten
+      - peilbeheer
+    - bodem:
+      - zand
+      - lemig_zand
+      - zavel
+      - lichte_klei
+      - leem
+      gt:
+      - iic
+      - iiia
+      - iiib
+      klasse: goed
+      wortelbare_diepte_cm: 100-150
+      beperkende_factoren:
+      - droogtestress_in_extreme_zomers_op_zand
+      maatregelen:
+      - mulch_organische_stof
+      - schaduw_luwte
+      - water_infiltratie
+    - bodem:
+      - zand
+      - lemig_zand
+      gt:
+      - ivu
+      - ivc
+      klasse: goed
+      wortelbare_diepte_cm: 100-150
+      beperkende_factoren:
+      - droogtestress
+      - lage_vochtbuffer
+      maatregelen:
+      - organische_stof_opbouw
+      - bodembedekking
+      - wadi_infiltratie
+    - bodem:
+      - zavel
+      - lichte_klei
+      - klei
+      - leem
+      gt:
+      - ivu
+      - ivc
+      klasse: goed
+      wortelbare_diepte_cm: 100-150
+      beperkende_factoren:
+      - tijdelijke_natstress_op_klei_mogelijk
+      - scheurvorming_droogte
+      maatregelen:
+      - structuur_bewaken
+      - mulch
+      - soortkeuze_robuust
+    - bodem:
+      - zware_klei
+      gt:
+      - ivu
+      - ivc
+      klasse: matig
+      wortelbare_diepte_cm: 60-100
+      beperkende_factoren:
+      - storende_dichte_lagen
+      - wisselende_nat_droogstress
+      maatregelen:
+      - vermijd_verdichting
+      - plant_op_ruggen
+      - bodemleven_stimuleren
+    - bodem:
+      - zand
+      - lemig_zand
+      gt:
+      - vao
+      - vad
+      - vbo
+      - vbd
+      klasse: zeer_goed
+      wortelbare_diepte_cm: 150-200
+      beperkende_factoren:
+      - droogtestress
+      - uitspoeling
+      - hittestress
+      maatregelen:
+      - luwte
+      - mulch
+      - wateropvang_infiltratie
+      - droogtetolerante_soorten
+    - bodem:
+      - zavel
+      - leem
+      - lichte_klei
+      gt:
+      - vao
+      - vad
+      - vbo
+      - vbd
+      klasse: goed
+      wortelbare_diepte_cm: 100-150
+      beperkende_factoren:
+      - droogte_in_bovenlaag
+      - erosie_op_helling_bij_leem
+      maatregelen:
+      - bodembedekking
+      - contourbeplanting
+      - water_infiltratie
+    - bodem:
+      - klei
+      - zware_klei
+      gt:
+      - vao
+      - vad
+      - vbo
+      - vbd
+      klasse: matig
+      wortelbare_diepte_cm: 60-100
+      beperkende_factoren:
+      - dichte_klei_beperkt_doorworteling
+      - scheurvorming
+      maatregelen:
+      - structuurverbetering
+      - organische_stof
+      - kies_dieproot
+    - bodem:
+      - zand
+      - lemig_zand
+      - zavel
+      - leem
+      gt:
+      - vio
+      - vid
+      klasse: zeer_goed
+      wortelbare_diepte_cm: 150-200
+      beperkende_factoren:
+      - structurele_zomerdroogte
+      maatregelen:
+      - droogtetolerante_soorten
+      - schaduw_luwte
+      - bodemvochtbuffer
+    - bodem:
+      - klei
+      - zware_klei
+      gt:
+      - vio
+      - vid
+      klasse: goed
+      wortelbare_diepte_cm: 100-150
+      beperkende_factoren:
+      - dichte_lagen
+      - krimp_zwel
+      maatregelen:
+      - bodemstructuur
+      - mulch
+      - soortkeuze
+    - bodem:
+      - zand
+      - lemig_zand
+      - zavel
+      - leem
+      gt:
+      - viio
+      - viid
+      - viiio
+      - viiid
+      klasse: zeer_goed
+      wortelbare_diepte_cm: 150-200
+      beperkende_factoren:
+      - extreme_droogte
+      - hitte
+      - jonge_aanplant_kwetsbaar
+      maatregelen:
+      - droogtespecialisten
+      - bodemverbetering
+      - tijdelijke_ondersteuning_bewatering
+    - bodem:
+      - klei
+      - zware_klei
+      - veen
+      - moerige_grond
+      gt:
+      - viio
+      - viid
+      - viiio
+      - viiid
+      klasse: matig
+      wortelbare_diepte_cm: 60-100
+      beperkende_factoren:
+      - structuurproblemen
+      - instabiliteit_veen_bij_droogte
+      maatregelen:
+      - peilbeheer
+      - lichte_structuren
+      - soortkeuze_robust
+  nsn_modifiers:
+    uitleg: NSN/BKNSN-modifiers verschuiven de basisuitkomst. Gebruik deze alleen
+      als de NSN-eenheid duidelijk een nat/droog/stagnatie/dynamiek-signaal geeft
+      dat niet al in Gt tot uitdrukking komt.
+    regels:
+    - nsn:
+      - bknsn_rg2
+      - bknsn_rg3
+      - bknsn_rg5
+      - bknsn_zk4
+      - bknsn_zk6
+      - bknsn_zk7
+      - bknsn_lv2
+      - bknsn_hv3
+      effect:
+        verschuif_klasse: -1
+      toelichting: 'Kom/uiterwaard/restgeul/kreekbedding/petgaten: meer natstress
+        en lagere effectieve beworteling.'
+    - nsn:
+      - bknsn_dz3
+      - bknsn_rt3
+      - bknsn_bd3
+      - bknsn_sw2
+      - bknsn_sw3
+      effect:
+        verschuif_klasse: 1
+      toelichting: 'Stuifzand/rivierduin/duinen/sandr: vaak diep doorwortelbaar maar
+        droogterisico; effectieve wortelzone kan dieper.'
+    - nsn:
+      - bknsn_kl2
+      - bknsn_sw4x
+      - keileemgebied
+      effect:
+        verschuif_klasse: -1
+      toelichting: Keileem/stagnatie verlaagt effectieve beworteling door zuurstofgebrek
+        en storende lagen.
+    - nsn:
+      - bknsn_dz4
+      - bknsn_sw5
+      - dekzand_dekzandrug
+      effect:
+        min_cm_plus: 10
+        max_cm_plus: 20
+      toelichting: 'Essen/akkerruggen: humusrijke bovengrond vergroot effectieve wortelruimte
+        in de bovenlaag.'
+    klasse_orde:
+    - zeer_beperkt
+    - beperkt
+    - matig
+    - goed
+    - zeer_goed
+  toepassing:
+    stappen:
+    - 1) Bepaal bodemcomponent (textuur/bodemtype) en Gt-klasse voor locatie.
+    - 2) Kies bijpassende basisregel (bodem × Gt) → klasse + bandbreedte.
+    - 3) Pas NSN/BKNSN-modifier toe indien relevant (verschuif klasse of cm-banden).
+    - 4) Voeg waarschuwingen toe bij verdichte/storende lagen of afwijkend peilbeheer.
+    outputvelden:
+    - klasse
+    - wortelbare_diepte_cm
+    - beperkende_factoren
+    - maatregelen
+  bronnen:
+  - stowa_2010_grondwaterregime_op_basis_van_karteerba
+  - wur_water_en_bomen_achtergrond_beworteling
+  - wur_bodemfysica_en_beworteling_achtergrond
+  - wur_stichting_voor_bodemkartering_bodemkaart_van_n
+  - wur_landschapsleutel_legenda_s_bodemkaarten_gt_sys
