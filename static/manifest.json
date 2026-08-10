@@ -1,0 +1,17 @@
+{
+  "name": "PlantWijs — Beplantingsadvies op maat voor jouw plek",
+  "short_name": "PlantWijs",
+  "description": "Klik op de kaart of zoek je adres en zie welk landschap bij jouw plek hoort — en welke bomen en struiken daar van nature thuishoren.",
+  "lang": "nl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f6f2",
+  "theme_color": "#1d5c3f",
+  "icons": [
+    { "src": "/static/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/static/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/static/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

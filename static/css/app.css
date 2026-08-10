@@ -843,6 +843,12 @@ a { color: var(--primary); }
   margin-top: 6px; padding-top: 14px; border-top: 1px solid var(--border);
   font-size: .78rem; color: var(--muted); line-height: 1.5;
 }
+.advice-foot .foot-links { margin-top: 6px; }
+.advice-foot .foot-links a {
+  color: var(--muted); text-decoration: underline; text-underline-offset: 2px;
+}
+.advice-foot .foot-links a:hover,
+.advice-foot .foot-links a:focus-visible { color: var(--fg); }
 
 /* Toast */
 .toast {
