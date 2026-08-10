@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+  base.html — het casco van elke contentpagina (build.py vult de variabelen).
+  Variabelen: title_tag, description, canonical, og_type, og_title, css_url,
+  jsonld, main. Alles staat lokaal: geen CDN, geen externe fonts, geen JavaScript.
+-->
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ title_tag }}</title>
+
+<meta name="description" content="{{ description }}">
+<meta name="robots" content="index, follow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1512" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="{{ canonical }}">
+
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:site_name" content="Beplantingswijzer">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ description }}">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231d5c3f'/%3E%3Cpath%20d='M24%206.5c1.4%209.6-3.9%2016-11.6%2015.8C11%2012.6%2016.3%207.4%2024%206.5Z'%20fill='%238fd6ae'/%3E%3Cpath%20d='M10.4%2026c1.9-6.4%205-10.6%209.4-13'%20stroke='%238fd6ae'%20stroke-width='2'%20stroke-linecap='round'%20fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="{{ css_url }}">
+
+{{ jsonld }}
+</head>
+
+<body>
+<a class="skip-link" href="#inhoud">Ga direct naar de inhoud</a>
+
+<header class="site-header">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 32 32" role="img" aria-label="Beplantingswijzer">
+      <rect width="32" height="32" rx="8" fill="var(--brand-mark-bg)"></rect>
+      <path d="M24 6.5c1.4 9.6-3.9 16-11.6 15.8C11 12.6 16.3 7.4 24 6.5Z" fill="var(--brand-mark-leaf)"></path>
+      <path d="M10.4 26c1.9-6.4 5-10.6 9.4-13" stroke="var(--brand-mark-leaf)" stroke-width="2" stroke-linecap="round" fill="none"></path>
+    </svg>
+    <span class="brand-text">
+      <span class="brand-name">Beplantingswijzer</span>
+      <span class="brand-tagline">Advies op maat voor jouw plek</span>
+    </span>
+  </a>
+
+  <nav class="site-nav" aria-label="Hoofdmenu">
+    <a class="nav-link" href="/gids/">Gids</a>
+    <a class="btn btn-primary" href="/">Open de kaart</a>
+  </nav>
+</header>
+
+<main id="inhoud">
+{{ main }}
+
+<section class="cta" aria-labelledby="cta-titel">
+  <div class="wrap cta-inner">
+    <h2 class="cta-titel" id="cta-titel">Bekijk wat er op jouw adres past</h2>
+    <p class="cta-tekst">
+      Elke plek in Nederland heeft een eigen bodem, grondwaterstand en landschap. Klik op de kaart of
+      vul je adres in, dan zie je welk landschap bij jouw plek hoort en welke bomen en struiken
+      daarbij passen.
+    </p>
+    <p class="cta-knop"><a class="btn btn-accent btn-lg" href="/">Bekijk wat er op jouw adres past</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="foot-lead"><strong>Beplantingswijzer</strong> geeft voor elke plek in Nederland een
+      beplantingsadvies op maat. Gratis, zonder account.</p>
+    <p class="foot-bron"><strong>Bronnen.</strong> Het locatieprofiel komt uit landelijke kaarten:
+      de Fysisch-Geografische Regio&#39;s en de hoogtekaart AHN via PDOK, en de Bodemkaart, de
+      Grondwaterspiegeldiepte (grondwatertrap) en de Geomorfologische kaart via de BRO. Het
+      natuurlijk systeem komt uit Natuurlijk Systeem Nederland (BKNSN 2023). De soortenlijst komt
+      uit TreeEbb, verrijkt met de Standaardlijst Flora NL 2020 voor de status inheems,
+      ingeburgerd of exoot.</p>
+    <p class="foot-links">
+      <a href="/">Kaart en advies</a>
+      <span aria-hidden="true">·</span>
+      <a href="/gids/">Gids</a>
+      <span aria-hidden="true">·</span>
+      <a href="/gids/over-beplantingswijzer/">Over Beplantingswijzer</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

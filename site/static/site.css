@@ -1,0 +1,434 @@
+/* ============================================================================
+   Beplantingswijzer — huisstijl van de contentlaag (/gids/, /blog/)
+
+   Zelfde palet, typografie en vormtaal als de app (static/css/app.css), maar
+   zonder JavaScript: licht en donker volgen `prefers-color-scheme`. Geen CDN's,
+   geen externe fonts, geen icoonbibliotheek.
+
+   Volgorde: tokens · reset · lay-out · header · kruimels · artikel · content ·
+             tabellen · antwoordblok · faq · bronnen · kaarten · cta · footer ·
+             responsive · motion · print
+   ========================================================================== */
+
+/* ─────────────────────────── 1. Tokens ─────────────────────────── */
+:root {
+  --bg:            #f7f6f2;
+  --panel:         #ffffff;
+  --panel-soft:    #f3f2ec;
+  --fg:            #1f2937;
+  --muted:         #5b6a62;
+  --border:        #e3e1d8;
+  --border-strong: #cfccc0;
+
+  --primary:       #1d5c3f;
+  --primary-soft:  #e7f0ea;
+  --primary-ink:   #ffffff;
+
+  --accent:        #c77b3a;
+  --accent-bg:     #a8632a;   /* CTA-achtergrond, witte tekst = AA */
+  --accent-text:   #8a5119;   /* accentkleur voor kleine tekst = AA */
+  --accent-soft:   #fbf0e4;
+
+  --ok:            #1d6b45;
+  --ok-soft:       #e8f2ec;
+
+  --brand-mark-bg:   #1d5c3f;
+  --brand-mark-leaf: #8fd6ae;
+
+  --shadow-sm: 0 1px 2px rgba(20, 32, 26, .05), 0 1px 3px rgba(20, 32, 26, .05);
+  --shadow-md: 0 4px 14px rgba(20, 32, 26, .08);
+
+  --r-sm: 9px;
+  --r:    12px;
+  --r-lg: 14px;
+
+  --wrap:  72rem;   /* buitenmaat van de pagina */
+  --tekst: 68ch;    /* leesbreedte van lopende tekst */
+
+  --dur: 180ms;
+  --ease: cubic-bezier(.2, .7, .3, 1);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:            #0e1512;
+    --panel:         #16211b;
+    --panel-soft:    #1c2a23;
+    --fg:            #e8efe9;
+    --muted:         #9fb3a7;
+    --border:        #263630;
+    --border-strong: #374b41;
+
+    --primary:       #4caf82;
+    --primary-soft:  #172b22;
+    --primary-ink:   #07130d;
+
+    --accent:        #e39a5c;
+    --accent-bg:     #a8632a;
+    --accent-text:   #e39a5c;
+    --accent-soft:   #241a11;
+
+    --ok:            #5fc493;
+    --ok-soft:       #14251c;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+    --shadow-md: 0 4px 14px rgba(0, 0, 0, .34);
+
+    color-scheme: dark;
+  }
+}
+
+/* ─────────────────────────── 2. Reset & basis ─────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: 650;
+  letter-spacing: -.012em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+p { margin: 0 0 .8em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--primary); text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+img { max-width: 100%; height: auto; }
+
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: 12px; top: -100px; z-index: 20;
+  background: var(--panel); color: var(--fg);
+  border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+  padding: 10px 14px; font-weight: 600; text-decoration: none;
+  box-shadow: var(--shadow-md);
+}
+.skip-link:focus { top: 12px; }
+
+/* ─────────────────────────── 3. Lay-out ─────────────────────────── */
+.wrap {
+  width: min(100% - clamp(28px, 6vw, 64px), var(--wrap));
+  margin-inline: auto;
+}
+
+.prose { max-width: var(--tekst); }
+
+/* ─────────────────────────── 4. Header ─────────────────────────── */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  padding: 11px clamp(14px, 4vw, 32px);
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+}
+
+.brand {
+  display: flex; align-items: center; gap: 10px; min-width: 0;
+  color: inherit; text-decoration: none;
+}
+.brand-mark { width: 34px; height: 34px; flex: none; border-radius: 8px; }
+.brand-text { display: flex; flex-direction: column; min-width: 0; }
+.brand-name { font-size: 1.14rem; font-weight: 650; letter-spacing: -.018em; line-height: 1.15; }
+.brand-tagline {
+  font-size: .765rem; color: var(--muted); line-height: 1.3;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.site-nav { display: flex; align-items: center; gap: clamp(10px, 2vw, 18px); }
+.nav-link {
+  font-size: .9rem; font-weight: 600; color: var(--fg);
+  text-decoration: none; padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav-link:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* ─────────────────────────── 5. Knoppen ─────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 15px; border-radius: var(--r-sm);
+  border: 1px solid var(--border-strong); background: var(--panel); color: var(--fg);
+  font-size: .875rem; font-weight: 600; text-decoration: none; white-space: nowrap;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.btn:hover { background: var(--panel-soft); }
+
+.btn-primary { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
+.btn-primary:hover { background: color-mix(in srgb, var(--primary) 86%, black); border-color: color-mix(in srgb, var(--primary) 86%, black); }
+
+.btn-accent { background: var(--accent-bg); border-color: var(--accent-bg); color: #fff; }
+.btn-accent:hover { background: color-mix(in srgb, var(--accent-bg) 88%, black); border-color: color-mix(in srgb, var(--accent-bg) 88%, black); }
+
+.btn-lg { padding: 12px 22px; font-size: .98rem; border-radius: var(--r); }
+
+/* ─────────────────────────── 6. Kruimelpad ─────────────────────────── */
+.kruimels {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
+  font-size: .8rem; color: var(--muted);
+  margin-bottom: 18px;
+}
+.kruimels a { color: var(--muted); text-decoration: underline; }
+.kruimels a:hover { color: var(--fg); }
+.kruimel-sep { color: var(--border-strong); }
+
+/* ─────────────────────────── 7. Artikelkop ─────────────────────────── */
+.page { padding: clamp(26px, 5vw, 52px) 0 clamp(30px, 5vw, 56px); }
+
+.page-head { margin-bottom: 26px; }
+.page-kicker {
+  margin: 0 0 8px;
+  font-size: .715rem; text-transform: uppercase; letter-spacing: .055em;
+  font-weight: 700; color: var(--accent-text);
+}
+.page-titel { font-size: clamp(1.72rem, 1.15rem + 2.3vw, 2.4rem); margin-bottom: 12px; }
+.page-lead {
+  font-size: 1.06rem; color: var(--muted); line-height: 1.6; margin-bottom: 10px;
+}
+.page-meta {
+  margin: 0; font-size: .8rem; color: var(--muted);
+  padding-top: 10px; border-top: 1px solid var(--border);
+}
+
+/* ─────────────────────────── 8. Lopende tekst ─────────────────────────── */
+.content { font-size: 1.02rem; line-height: 1.68; }
+
+.content h2 {
+  font-size: 1.42rem;
+  margin: 1.9em 0 .55em;
+  padding-top: .1em;
+  display: flex; align-items: baseline; gap: 10px;
+}
+.content h2::before {
+  content: ""; flex: none;
+  width: 5px; height: .82em; border-radius: 3px;
+  background: var(--primary);
+  transform: translateY(.04em);
+}
+.content h3 { font-size: 1.13rem; margin: 1.6em 0 .45em; }
+.content h4 { font-size: 1rem; margin: 1.4em 0 .4em; color: var(--muted); }
+.content > *:first-child { margin-top: 0; }
+
+.content ul, .content ol { margin: 0 0 1em; padding-left: 1.35em; }
+.content li { margin-bottom: .4em; }
+.content li > ul, .content li > ol { margin-top: .4em; }
+.content ul { list-style: none; padding-left: 1.25em; }
+.content ul > li { position: relative; }
+.content ul > li::before {
+  content: ""; position: absolute; left: -1.05em; top: .62em;
+  width: 7px; height: 7px; border-radius: 2px;
+  background: var(--primary); transform: rotate(45deg);
+}
+
+.content strong { font-weight: 650; }
+.content code {
+  font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
+  font-size: .88em; background: var(--panel-soft);
+  border: 1px solid var(--border); border-radius: 5px; padding: .1em .35em;
+}
+.content pre {
+  background: var(--panel-soft); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 14px 16px; overflow-x: auto;
+}
+.content pre code { border: 0; background: none; padding: 0; }
+
+.content blockquote {
+  margin: 1.4em 0; padding: 2px 0 2px 18px;
+  border-left: 4px solid var(--border-strong);
+  color: var(--muted); font-style: italic;
+}
+
+.content hr { border: 0; border-top: 1px solid var(--border); margin: 2.2em 0; }
+
+/* ─────────────────────────── 9. Tabellen ─────────────────────────── */
+.table-scroll {
+  margin: 1.4em 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--panel);
+  -webkit-overflow-scrolling: touch;
+}
+.table-scroll table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.table-scroll th, .table-scroll td {
+  text-align: left; vertical-align: top;
+  padding: 10px 13px; border-bottom: 1px solid var(--border);
+}
+.table-scroll thead th {
+  background: var(--panel-soft); color: var(--muted);
+  font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .045em;
+  border-bottom: 1px solid var(--border-strong); white-space: nowrap;
+}
+.table-scroll tbody tr:last-child td { border-bottom: 0; }
+.table-scroll tbody tr:nth-child(even) { background: color-mix(in srgb, var(--panel-soft) 55%, transparent); }
+
+/* ─────────────────────────── 10. Antwoordblok ─────────────────────────── */
+.antwoord {
+  margin: 0 0 30px;
+  padding: 17px 19px;
+  background: var(--primary-soft);
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--r);
+  font-size: 1.04rem; line-height: 1.6;
+}
+.antwoord p { margin-bottom: .6em; }
+
+/* ─────────────────────────── 11. FAQ ─────────────────────────── */
+.faq { margin-top: 2.6em; }
+.faq-titel { font-size: 1.42rem; margin-bottom: 14px; }
+
+.faq-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  margin-bottom: 9px;
+  overflow: hidden;
+}
+.faq-item > summary {
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 15px; cursor: pointer; list-style: none;
+  font-size: .98rem; font-weight: 600;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary::after {
+  content: ""; margin-left: auto; flex: none;
+  width: 8px; height: 8px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform var(--dur) var(--ease);
+}
+.faq-item[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.faq-item > summary:hover { background: var(--panel-soft); }
+.faq-antwoord { padding: 0 15px 15px; font-size: .95rem; line-height: 1.62; }
+
+/* ─────────────────────────── 12. Bronnen ─────────────────────────── */
+.bronnen {
+  margin-top: 2.6em; padding: 16px 18px;
+  background: var(--panel-soft);
+  border: 1px solid var(--border); border-radius: var(--r);
+}
+.bronnen-titel { font-size: 1.02rem; margin-bottom: 9px; }
+.bronnen ul { margin: 0; padding-left: 1.15em; font-size: .89rem; color: var(--muted); }
+.bronnen li { margin-bottom: .3em; }
+
+/* ─────────────────────────── 13. Gidsoverzicht ─────────────────────────── */
+.kaart-grid {
+  list-style: none; margin: 26px 0 0; padding: 0;
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+.kaart {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.kaart:hover { border-color: var(--border-strong); box-shadow: var(--shadow-md); }
+.kaart-link {
+  display: flex; flex-direction: column; gap: 7px;
+  padding: 18px; height: 100%;
+  color: inherit; text-decoration: none;
+}
+.kaart-kicker {
+  font-size: .705rem; text-transform: uppercase; letter-spacing: .055em;
+  font-weight: 700; color: var(--accent-text);
+}
+.kaart-titel { font-size: 1.08rem; font-weight: 650; letter-spacing: -.012em; line-height: 1.3; }
+.kaart-tekst { font-size: .885rem; color: var(--muted); line-height: 1.5; }
+.kaart-meer {
+  margin-top: auto; padding-top: 8px;
+  font-size: .855rem; font-weight: 600; color: var(--primary);
+}
+.kaart-link:hover .kaart-meer { text-decoration: underline; }
+
+.leeg {
+  margin-top: 26px; padding: 24px;
+  border: 1px dashed var(--border-strong); border-radius: var(--r);
+  background: var(--panel-soft); color: var(--muted); text-align: center;
+}
+
+/* ─────────────────────────── 14. CTA ─────────────────────────── */
+.cta {
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--primary-soft), var(--bg) 78%);
+  padding: clamp(30px, 6vw, 56px) 0;
+}
+.cta-inner { max-width: 60ch; }
+.cta-titel { font-size: clamp(1.35rem, 1.05rem + 1.3vw, 1.8rem); margin-bottom: 10px; }
+.cta-tekst { color: var(--muted); font-size: 1rem; margin-bottom: 18px; }
+.cta-knop { margin: 0; }
+
+/* ─────────────────────────── 15. Footer ─────────────────────────── */
+.site-footer {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  padding: 28px 0 36px;
+  font-size: .82rem; color: var(--muted); line-height: 1.55;
+}
+.site-footer .wrap { max-width: 78ch; }
+.foot-lead { color: var(--fg); font-size: .9rem; margin-bottom: .8em; }
+.foot-bron { margin-bottom: .9em; }
+.foot-bron strong { color: var(--fg); }
+.foot-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.foot-links a { color: var(--muted); text-decoration: underline; }
+.foot-links a:hover { color: var(--fg); }
+
+/* ─────────────────────────── 16. Responsive ─────────────────────────── */
+@media (max-width: 640px) {
+  .site-header { padding: 10px 16px; }
+  .brand-tagline { display: none; }
+  .site-nav { gap: 12px; }
+  .content h2 { font-size: 1.28rem; }
+  .faq-titel { font-size: 1.28rem; }
+}
+
+@media (max-width: 400px) {
+  body { font-size: 15px; }
+  .nav-link { display: none; }
+}
+
+/* ─────────────────────────── 17. Motion & print ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+@media print {
+  .site-header, .cta, .kruimels { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .prose, .wrap { max-width: none; width: auto; }
+  .faq-item > summary::after { display: none; }
+  a { color: #000; }
+}

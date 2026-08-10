@@ -1,0 +1,35 @@
+# ============================================================================
+# Netlify-regels voor beplantingswijzer.nl — zie docs/SEO_PLAN.md §4.
+#
+# Netlify is de voordeur van het domein. De contentlaag (/gids/, /blog/) staat
+# hier statisch; al het andere wordt met status 200 doorgegeven aan de
+# FastAPI-backend op Render. Status 200 = proxy, dus geen redirect: de bezoeker
+# en Google zien één domein, en alle autoriteit landt op dezelfde host.
+#
+# ▲ NA DE RENDER-DEPLOY INVULLEN ▲
+# Vervang hieronder https://RENDER-BACKEND-URL.onrender.com door de echte
+# service-URL van Render (Render → service "beplantingswijzer" → bovenaan de
+# pagina). Zolang de placeholder er staat, werkt alleen de contentlaag.
+#
+# De regels worden op volgorde afgelopen: de eerste die past, wint. De regels
+# die naar zichzelf verwijzen houden dat pad bewust op Netlify, zodat de
+# geforceerde proxy onderaan (200!) ze niet alsnog naar de backend stuurt.
+# ============================================================================
+
+# ── Statisch: de contentlaag van deze repo (site/_site/) ────────────────────
+/gids                       /gids/                              301!
+/gids/*                     /gids/:splat                        200
+/blog/*                     /blog/:splat                        200
+
+# CSS en andere assets van de contentlaag. Bewust /site-static/ en niet
+# /static/: dat laatste pad is van de app en hoort bij de backend.
+/site-static/*              /site-static/:splat                 200
+
+# Sitemap van de contentlaag. De app-sitemap blijft op /sitemap.xml bij de
+# backend; meld in Search Console beide aan.
+/sitemap-content.xml        /sitemap-content.xml                200
+
+# ── Alles daarbuiten: proxy naar de FastAPI-backend op Render ───────────────
+# Hieronder vallen de tool zelf (/), /advies/*, /api/*, /export/*, /static/*,
+# /docs, /openapi.json, /llms.txt, /robots.txt en /sitemap.xml.
+/*                          https://RENDER-BACKEND-URL.onrender.com/:splat   200!

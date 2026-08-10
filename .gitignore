@@ -31,6 +31,8 @@ htmlcov/
 ########################################
 out/**
 !out/.gitkeep
+# uitvoer van site/build.py; wordt bij elke build opnieuw gemaakt
+site/_site/
 
 ########################################
 # Grote lokale databestanden

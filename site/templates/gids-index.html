@@ -1,0 +1,20 @@
+<!--
+  gids-index.html — het overzicht van alle live gidsen (/gids/).
+  Variabelen: title, lead, aantal, items.
+-->
+<article class="page">
+  <div class="wrap">
+    <div class="prose">
+      <nav class="kruimels" aria-label="Kruimelpad">
+        <a href="/">Start</a><span class="kruimel-sep" aria-hidden="true">›</span><span aria-current="page">Gids</span>
+      </nav>
+      <header class="page-head">
+        <h1 class="page-titel">{{ title }}</h1>
+        <p class="page-lead">{{ lead }}</p>
+        <p class="page-meta">{{ aantal }} online</p>
+      </header>
+    </div>
+
+    {{ items }}
+  </div>
+</article>

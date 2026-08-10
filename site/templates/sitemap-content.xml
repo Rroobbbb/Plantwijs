@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap van de contentlaag van Beplantingswijzer: de gidsen, de blogartikelen
+  en het gidsoverzicht. De sitemap van de applicatie staat apart op /sitemap.xml.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{{ urls }}
+</urlset>

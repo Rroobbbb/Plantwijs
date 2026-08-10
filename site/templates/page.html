@@ -1,0 +1,26 @@
+<!--
+  page.html — één gids- of blogartikel binnen base.html.
+  Variabelen: breadcrumb, kicker, title, lead, meta, antwoord, body, faq, bronnen.
+  De H1 komt uit de frontmatter (title); de tekst zelf begint bij een H2.
+-->
+<article class="page">
+  <div class="wrap prose">
+    {{ breadcrumb }}
+    <header class="page-head">
+      {{ kicker }}
+      <h1 class="page-titel">{{ title }}</h1>
+      <p class="page-lead">{{ lead }}</p>
+      <p class="page-meta">{{ meta }}</p>
+    </header>
+
+    {{ antwoord }}
+
+    <div class="content">
+{{ body }}
+    </div>
+
+    {{ faq }}
+
+    {{ bronnen }}
+  </div>
+</article>

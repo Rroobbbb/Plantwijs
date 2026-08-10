@@ -1,0 +1,7 @@
+# Afhankelijkheden van de statische sitebuild (site/build.py).
+# Bewust minimaal: de contentpipeline heeft geen Node, geen framework en geen
+# CDN nodig. De app zelf gebruikt requirements.txt in de projectroot.
+#
+# Getest met markdown 3.10.3 en pyyaml 6.0.3 op Python 3.11.
+markdown>=3.5,<4
+pyyaml>=6.0,<7

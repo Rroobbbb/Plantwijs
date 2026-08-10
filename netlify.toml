@@ -1,0 +1,40 @@
+# ============================================================================
+# Netlify — de voordeur van beplantingswijzer.nl (docs/SEO_PLAN.md §4 en §5).
+#
+# Netlify serveert de statische contentlaag uit site/_site/ en proxyt al het
+# andere naar de FastAPI-backend op Render. De proxyregels staan in
+# site/_redirects; build.py kopieert dat bestand mee naar de publicatiemap.
+#
+# Deze configuratie is bedoeld voor deploys die Netlify zelf bouwt (bijvoorbeeld
+# vanuit de Git-koppeling). De vaste route is .github/workflows/site.yml: die
+# bouwt en uploadt de map, en die pipeline gebruikt dit bestand niet.
+# ============================================================================
+
+[build]
+  command = "pip install -r site/requirements.txt && python site/build.py"
+  publish = "site/_site"
+
+[build.environment]
+  # Zelfde versie als runtime.txt en render.yaml. Ondersteunt de build-image van
+  # Netlify deze versie niet, haal deze regel dan weg: build.py draait op elke
+  # Python vanaf 3.8 en heeft alleen markdown en pyyaml nodig.
+  PYTHON_VERSION = "3.11"
+
+# De contentpagina's zijn statisch en veranderen alleen bij een nieuwe build.
+# Netlify zet zelf een sterke etag; hiermee wordt herhaald bezoek nog sneller.
+[[headers]]
+  for = "/site-static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/gids/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/blog/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,102 @@
+# ============================================================================
+# Bouwt en publiceert de statische contentlaag (site/) naar Netlify.
+# Zie docs/SEO_PLAN.md §5 en site/README.md.
+#
+# Twee triggers:
+#   push      — een wijziging in site/ gaat meteen live.
+#   schedule  — elke drie dagen om 06:00 UTC. Die run publiceert de artikelen
+#               waarvan de `publicatiedatum` in de frontmatter is aangebroken:
+#               build.py bouwt alleen pagina's met status `live` én een datum van
+#               vandaag of eerder. Zo schrijf je in batches en druppelt de site
+#               vanzelf elke paar dagen een nieuw stuk.
+#
+# Zonder de secrets NETLIFY_AUTH_TOKEN en NETLIFY_SITE_ID draait de build wel,
+# maar wordt de deploystap netjes overgeslagen met een melding in de samenvatting.
+# ============================================================================
+
+name: Site bouwen en publiceren
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "site/**"
+      - "netlify.toml"
+      - ".github/workflows/site.yml"
+  schedule:
+    # 06:00 UTC, elke derde dag van de maand-reeks (1, 4, 7, … ).
+    - cron: "0 6 */3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Bouwen en deployen
+    runs-on: ubuntu-latest
+
+    # De secrets komen hier als env-var binnen. Ontbreken ze, dan zijn ze leeg en
+    # slaat de `if:` hieronder de deploystap over — dat is de enige manier om in
+    # GitHub Actions op het bestaan van een secret te toetsen.
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+    steps:
+      - name: Repo ophalen
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 installeren
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Afhankelijkheden installeren
+        run: python -m pip install --upgrade pip -r site/requirements.txt
+
+      - name: Site bouwen
+        run: |
+          {
+            echo "### Buildoverzicht"
+            echo ""
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          python site/build.py | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Deployen naar Netlify
+        if: env.NETLIFY_AUTH_TOKEN != '' && env.NETLIFY_SITE_ID != ''
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: site/_site
+          production-deploy: true
+          deploy-message: "Contentbuild ${{ github.event_name }} · ${{ github.sha }}"
+          # Geen commentaar op commits/PR's en geen GitHub-deployment: dan is er
+          # ook geen github-token met schrijfrechten nodig.
+          enable-commit-comment: false
+          enable-pull-request-comment: false
+          enable-github-deployment: false
+
+      - name: Melden dat de deploy is overgeslagen
+        if: env.NETLIFY_AUTH_TOKEN == '' || env.NETLIFY_SITE_ID == ''
+        run: |
+          echo "::notice title=Netlify-deploy overgeslagen::De secrets NETLIFY_AUTH_TOKEN en/of NETLIFY_SITE_ID ontbreken. De site is wel gebouwd, maar niet gepubliceerd."
+          {
+            echo ""
+            echo "### Deploy overgeslagen"
+            echo ""
+            echo "De site is gebouwd, maar niet gepubliceerd: de secrets \`NETLIFY_AUTH_TOKEN\` en/of \`NETLIFY_SITE_ID\` ontbreken."
+            echo "Zet ze onder **Settings → Secrets and variables → Actions** (zie docs/SEO_PLAN.md §11)."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Gebouwde site bewaren als artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site/_site
+          retention-days: 7
