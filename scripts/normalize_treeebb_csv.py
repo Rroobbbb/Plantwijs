@@ -64,11 +64,16 @@ def main(path_str: str):
     header = text[0]
     delim = ";" if header.count(";") >= header.count(",") else ","
 
+    # Kolommen die géén multi-waardelijst zijn en dus niet genormaliseerd mogen
+    # worden (een URL bevat '/' en zou anders uit elkaar getrokken worden).
+    kop_cellen = header.split(delim)
+    skip_idx = {i for i, k in enumerate(kop_cellen) if k.strip().lstrip("﻿").lower() in ("naam", "url")}
+
     out_lines = [header]
     for line in text[1:]:
         # naive split; ok omdat jouw CSV geen quoted separators gebruikt
         cells = line.split(delim)
-        cells2 = [norm_cell(c) for c in cells]
+        cells2 = [c if i in skip_idx else norm_cell(c) for i, c in enumerate(cells)]
         out_lines.append(delim.join(cells2))
 
     path.write_text("\n".join(out_lines) + "\n", encoding="utf-8")

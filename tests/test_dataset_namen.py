@@ -39,7 +39,9 @@ def test_sl2020_lookup_is_gevuld():
 def test_kolommen_aanwezig(df):
     for kolom in ("naam", "wetenschappelijke_naam", "nederlandse_naam"):
         assert kolom in df.columns, kolom
-    assert len(df) == 1644
+    # Het exacte aantal verschuift per scrape (TreeEbb voegt toe/verwijdert);
+    # de ondergrens bewaakt dat er geen kapotte of verouderde set is geladen.
+    assert len(df) >= 1500
 
 
 def test_wetenschappelijke_naam_is_de_latijnse_naam(df):
