@@ -34,16 +34,18 @@ categorieen:
       match: ["hogere zandgronden", "zandgronden"]
       titel: "Hogere zandgronden"
       ontstaan: >-
-        In de laatste ijstijden was Nederland koud en vrijwel kaal. De wind had
-        vrij spel en blies grote hoeveelheden zand over het land. Dat zand, dekzand,
-        legde zich neer als lage ruggen en vlakke velden; dat reliëf zie je hier nog
-        steeds terug. Het zand is arm aan voedingsstoffen en houdt weinig water vast.
-        Onder heide en bos vormde zich in de bodem een podzol: een grijze laag waaruit
-        stoffen zijn weggespoeld, met daaronder een donkere laag waarin ijzer en humus
-        zijn vastgelegd. Boeren woonden op de droge ruggen en brachten daar eeuwenlang
-        plaggen en mest op hun akkers, waardoor een dik donker esdek groeide; de lagere
-        en nattere delen bleven heide en woeste grond tot ze in de negentiende en
-        twintigste eeuw werden ontgonnen tot akker, weiland en bos.
+        In de laatste ijstijd, het Weichselien, was Nederland koud en vrijwel kaal.
+        De wind had vrij spel en blies grote hoeveelheden zand over het land. Dat
+        zand, dekzand, legde zich neer als lage ruggen en vlakke velden; dat reliëf
+        zie je hier nog steeds terug. Het zand is arm aan voedingsstoffen en houdt
+        weinig water vast. Onder heide en bos vormde zich in de bodem een podzol:
+        een grijze laag waaruit ijzer, aluminium en humus zijn weggespoeld, met
+        daaronder een donkere laag waarin diezelfde stoffen weer zijn vastgelegd.
+        Boeren woonden op de droge ruggen en brachten daar vanaf de middeleeuwen tot
+        het eind van de negentiende eeuw plaggen en mest op hun akkers, waardoor een
+        dik donker esdek groeide; de lagere en nattere delen bleven heide en woeste
+        grond tot ze in de negentiende en twintigste eeuw werden ontgonnen tot akker,
+        weiland en bos.
       versterken:
         - "Leg een houtwal of houtsingel aan langs de perceelrand. Dat is hier van oudsher de manier om een erf of akker af te bakenen."
         - "Kies soorten die met arme, droge grond overweg kunnen: zomereik, ruwe berk, lijsterbes, hazelaar en sporkehout."
@@ -51,7 +53,7 @@ categorieen:
         - "Maak aan de zonzijde van de beplanting een kruidenrijke zoom van twee tot vier meter breed. Maai die één keer per jaar en voer het maaisel af."
         - "Bemest niet en breng geen tuinaarde aan. De schraalheid hoort bij dit landschap en levert juist de meeste bloemen en insecten op."
         - "Laat dood hout liggen en stapel snoeihout op tot een takkenril langs de houtwal."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK); Geologie van Nederland (TNO-GDN), dekzand en podzolbodem; RCE, Oude akkercomplexen"
 
     - id: heuvelland
       match_exact: ["heuvelland"]
@@ -59,22 +61,25 @@ categorieen:
       titel: "Heuvelland"
       ontstaan: >-
         In Zuid-Limburg ligt kalksteen betrekkelijk dicht onder de oppervlakte. Die
-        kalk is gevormd in een warme, ondiepe zee, lang vóór de ijstijden. De Maas en
-        haar zijrivieren hebben zich er in de loop van honderdduizenden jaren doorheen
-        gesneden en lieten terrassen achter: oude rivierbeddingen die nu hoog in het
+        kalk is in het Krijt gevormd in een warme, ondiepe zee, tientallen miljoenen
+        jaren vóór de ijstijden. Doordat het gebied langzaam omhoog kwam, sneden de
+        Maas en haar zijrivieren zich er in de loop van honderdduizenden jaren
+        doorheen. Ze lieten terrassen achter: oude rivierbeddingen die nu hoog in het
         landschap liggen. Tijdens de ijstijden waaide er bovenop een fijn, vruchtbaar
-        stof neer: löss. Löss is goed bewerkbaar maar spoelt gemakkelijk weg op een
-        helling, en daarom legden boeren graften aan: begroeide steilrandjes dwars op
-        de helling die de afspoelende grond tegenhouden. Hoogstamboomgaarden rond de
-        dorpen en diep uitgesleten holle wegen horen bij hetzelfde beeld.
+        stof neer: löss, plaatselijk tot wel vijftien meter dik. Löss is goed
+        bewerkbaar maar spoelt gemakkelijk weg op een helling. Daar horen graften bij:
+        begroeide steilrandjes die evenwijdig aan de hoogtelijnen lopen en afspoelende
+        grond tegenhouden; ze zijn waarschijnlijk aangelegd om erosie tegen te gaan.
+        Hoogstamboomgaarden rond de dorpen en holle wegen die door het gebruik diep in
+        de zachte grond zijn ingesleten, horen bij hetzelfde beeld.
       versterken:
-        - "Herstel of plant een graft: een strook struiken en bomen dwars op de helling, die afspoelende grond opvangt en de helling vasthoudt."
+        - "Herstel of plant een graft: een strook struiken en bomen evenwijdig aan de hoogtelijnen, die afspoelende grond opvangt en de helling vasthoudt."
         - "Leg een hoogstamboomgaard aan met appel, peer, pruim en kers, met grasland of begrazing eronder."
         - "Gebruik struiken van kalkrijke grond: gele kornoelje, rode kornoelje, wollige sneeuwbal, wegedoorn, zuurbes en eenstijlige meidoorn."
-        - "Plant een walnoot of tamme kastanje bij het erf; die staan hier van oudsher bij de boerderijen."
+        - "Plant een walnoot bij het erf; noten- en fruitbomen horen hier van oudsher bij de boerderij."
         - "Laat de zomen langs holle wegen en graften met rust. Maai hooguit één keer per jaar en voer het maaisel af."
         - "Kies bij een haag voor haagbeuk of veldesdoorn in plaats van een strakke conifeer; die passen bij de streek en zijn veel waardevoller voor dieren."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK); natuurkennis.nl (OBN), Heuvellandschap; Geologie van Nederland (TNO-GDN)"
 
     - id: rivierengebied
       match_exact: ["rivierengebied"]
@@ -95,8 +100,8 @@ categorieen:
         - "Zet knotwilgen langs een sloot of kavelgrens en knot ze om de drie tot vijf jaar."
         - "Kies in de lage, natte kom voor zwarte els, schietwilg en gelderse roos in plaats van soorten van droge grond."
         - "Combineer een haag met een brede bloemrijke zoom aan de zonzijde; dat levert veel op voor insecten, vogels en kleine zoogdieren."
-        - "Informeer bij het waterschap voordat je in de uiterwaard of vlak langs een watergang plant; daar gelden vaak beperkingen vanwege de waterafvoer."
-      bron: "FGR (PDOK); eigen bewerking"
+        - "Informeer bij de rivierbeheerder of het waterschap voordat je in de uiterwaard of vlak langs een watergang plant; daar gelden beperkingen vanwege de waterafvoer."
+      bron: "FGR (PDOK); Geologie van Nederland (TNO-GDN), rivierlandschap; Rijkswaterstaat, beheer van uiterwaarden"
 
     - id: zeekleigebied
       match_exact: ["zeekleigebied"]
@@ -106,11 +111,12 @@ categorieen:
         Dit land stond lange tijd onder invloed van de zee. Bij elke vloed kwam er
         water binnen dat slib meebracht, en dat slib bezonk laag na laag als klei.
         Zo groeide een vlak en vruchtbaar landschap dat langzaam boven water uit
-        kwam. Geulen en kreken raakten opgevuld met zand; omdat het zand minder
-        inklinkt dan klei liggen die oude geulen nu vaak juist iets hoger in het veld,
-        als kreekruggen. Vanaf de middeleeuwen legden mensen dijken aan en polderden
-        ze stuk voor stuk gebieden in. Het resultaat is een open landschap met rechte
-        kavels, brede sloten en weinig opgaand groen.
+        kwam. Geulen en kreken raakten opgevuld met zand. Toen het land werd ontwaterd
+        klonk de klei ernaast sterk in en het zand nauwelijks, waardoor die oude geulen
+        nu juist iets hoger in het veld liggen: kreekruggen. Vanaf de middeleeuwen
+        legden mensen dijken aan en polderden ze stuk voor stuk gebieden in. Het
+        resultaat is een open landschap met rechte kavels, brede sloten en weinig
+        opgaand groen.
       versterken:
         - "Houd de openheid in stand: concentreer beplanting op en rond het erf en niet midden in het open veld."
         - "Leg een erfsingel aan aan de wind- en noordzijde van het erf; een dichte, gelaagde singel is hier de gebruikelijke vorm."
@@ -118,18 +124,19 @@ categorieen:
         - "Plant een enkele grote solitaire boom of een kleine boomgroep bij de oprit als markering van het erf."
         - "Maak een kruidenrijke rand langs de sloot; die verbindt het erf met het slotenpatroon van de polder."
         - "Vermijd soorten van arme zandgrond en van zure bodems; op kalkrijke, zware klei komen die niet tot hun recht."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK); Geologie van Nederland (TNO-GDN), zeekleilandschap en kreekrug"
 
     - id: laagveengebied
       match_exact: ["laagveengebied"]
       match: ["laagveengebied", "laagveen"]
       titel: "Laagveengebied"
       ontstaan: >-
-        Achter de duinen en de oude kwelders bleef water staan. Planten die daarin
-        groeiden verteerden niet volledig, omdat er in dat natte, zuurstofarme milieu
-        nauwelijks afbraak plaatsvindt. Zo stapelde zich duizenden jaren lang veen op:
-        een dikke laag half verteerd plantenmateriaal. Vanaf de middeleeuwen groeven
-        mensen sloten om het veen te ontwateren en er te kunnen boeren, maar door die
+        Achter de strandwallen en duinen raakte het achterland grotendeels afgesloten
+        van de zee en bleef water staan. Planten die daarin groeiden verteerden niet
+        volledig, omdat er in dat natte, zuurstofarme milieu nauwelijks afbraak
+        plaatsvindt. Zo stapelde zich duizenden jaren lang veen op: een dikke laag
+        half verteerd plantenmateriaal. Vanaf ongeveer de elfde eeuw groeven mensen
+        sloten om het veen te ontwateren en er te kunnen boeren, maar door die
         ontwatering klonk het veen in en zakte het land. Later is er op veel plaatsen
         veen gebaggerd voor turf, waardoor petgaten en plassen ontstonden. Wat overbleef
         is een nat, open landschap met lange smalle kavels en heel veel water.
@@ -140,7 +147,7 @@ categorieen:
         - "Plant in lijnen langs de kavelrichting en niet in blokken; de lange strookvormige verkaveling is het kenmerk van dit gebied."
         - "Houd afstand tot de slootkant en stem het onderhoudspad af met het waterschap voordat je plant."
         - "Laat oevers gefaseerd staan: maai niet alles tegelijk, zodat riet- en ruigtezomen blijven bestaan voor vogels en insecten."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK); Geologie van Nederland (TNO-GDN), veenlandschap; natuurkennis.nl (OBN), Laagveen- en zeekleilandschap"
 
     - id: duinen
       match_exact: ["duinen"]
@@ -148,13 +155,15 @@ categorieen:
       titel: "Duinen"
       ontstaan: >-
         De Noordzee heeft eeuwenlang zand naar de kust gebracht, en de wind blies dat
-        zand landinwaarts tot duinen. De oudste en laagste duinen liggen het verst van
-        zee; de hoge duinen langs de kustlijn zijn veel jonger. Het duinzand bevat kalk
-        uit vergruisde schelpen, maar die kalk spoelt in de loop van de eeuwen uit de
-        bovengrond weg. Daardoor is de bodem in de oude duinen zuur en arm, terwijl de
-        jonge duinen dichter bij zee nog kalkrijk zijn. In de laagtes tussen de duinen
-        komt het grondwater dicht aan de oppervlakte, waardoor daar juist vochtige en
-        soms kalkrijke omstandigheden heersen.
+        zand landinwaarts tot duinen. De oude duinen, gevormd tussen ongeveer vijfduizend
+        en tweeduizend jaar geleden, zijn laag en liggen het verst van zee. De hoge
+        jonge duinen langs de kustlijn zijn veel jonger: die groeiden vooral tussen
+        ongeveer 1200 en 1600. Ten zuiden van Bergen in Noord-Holland bevat het duinzand
+        veel kalk uit vergruisde schelpen; op de Waddeneilanden en ten noorden van Bergen
+        is het van nature kalkarm. Bovendien spoelt kalk in de loop van de eeuwen uit de
+        bovengrond weg, waardoor de oude duinen zuur en arm zijn. In de laagtes tussen de
+        duinen komt het grondwater dicht aan de oppervlakte, waardoor daar juist vochtige
+        en soms kalkrijke omstandigheden heersen.
       versterken:
         - "Gebruik struiken die zout en wind verdragen: duindoorn, wilde liguster, eenstijlige meidoorn, vlier, kruipwilg en duinroos."
         - "Houd de beplanting laag en gesloten. Losse, hoge bomen waaien in de zeewind snel scheef of sterven af aan de zeezijde."
@@ -162,7 +171,7 @@ categorieen:
         - "Vermijd soorten die zich in de duinen agressief uitbreiden, zoals rimpelroos, Amerikaanse vogelkers en pontische rododendron."
         - "Bemest niet en geef geen extra water. De duinbodem hoort schraal en droog te zijn; juist daar horen de bijzondere soorten."
         - "Laat open zand en korte, schrale vegetatie waar mogelijk in stand; veel duinsoorten hebben kaal, stuivend zand nodig."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK); Geologie van Nederland (TNO-GDN), kustduin; natuurkennis.nl (OBN), Duin- en kustlandschap"
 
     - id: getijdengebied
       match_exact: ["getijdengebied"]
@@ -183,19 +192,22 @@ categorieen:
         - "Gebruik de buitenste rij struiken als schild: laat die laag en dicht, met daarachter geleidelijk hogere beplanting."
         - "Overleg altijd met de waterbeheerder voordat je op of vlak bij een dijk plant."
         - "Houd het zicht op dijk, wad en water vrij; de wijdheid is hier het kenmerk van het landschap."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK); Geologie van Nederland (TNO-GDN), zeekleiafzettingen en kwelders"
 
     - id: afgesloten_zeearmen
       match_exact: ["afgesloten zeearmen"]
       match: ["afgesloten zeearmen", "zeearmen", "zeearm"]
       titel: "Afgesloten zeearmen"
       ontstaan: >-
-        Dit waren open zeearmen waar eb en vloed vrij spel hadden. Na de watersnoodramp
-        van 1953 zijn ze met dammen en keringen afgesloten. Daardoor verdween het getij
-        grotendeels en veranderde het water op veel plaatsen van zout in brak of zoet.
-        De oude platen, slikken en geulen liggen er nog, maar worden niet meer elke dag
-        overstroomd. Langs de randen is nieuw land en nieuwe natuur ontstaan. Het is
-        daardoor een jong, open en waterrijk landschap.
+        Dit waren open zeearmen waar eb en vloed vrij spel hadden. De grootste is de
+        Zuiderzee: die werd in 1932 door de Afsluitdijk van de Waddenzee gescheiden en
+        veranderde in het zoete IJsselmeer. In het zuidwesten volgden na de
+        watersnoodramp van 1953 de Deltawerken, tussen 1956 en 1998 gebouwd, waarmee
+        onder meer het Haringvliet, het Grevelingenmeer en het Veerse Meer werden
+        afgesloten. Daardoor verdween het getij er grotendeels en veranderde het water
+        van zout in brak of zoet. De oude platen, slikken en geulen liggen er nog, maar
+        worden niet meer elke dag overstroomd. Langs de randen is nieuw land en nieuwe
+        natuur ontstaan. Het is daardoor een jong, open en waterrijk landschap.
       versterken:
         - "Houd rekening met zout in de ondergrond. Ook waar het oppervlaktewater nu zoet is, kan de bodem nog brak zijn."
         - "Kies voor de buitenste rij robuuste soorten die zout en wind verdragen: duindoorn, vlier, eenstijlige meidoorn en schietwilg."
@@ -203,22 +215,24 @@ categorieen:
         - "Gebruik een kruidenrijke zoom als geleidelijke overgang van de beplanting naar het open land."
         - "Ga na of de grond opgespoten is. Opgespoten zand is meestal arm en droog en vraagt andere soorten dan de omliggende klei."
         - "Kies op de hoge, droge zandplaten geen soorten die veel water en een rijke bodem vragen."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK); Rijkswaterstaat, Afsluitdijk en Deltawerken"
 
     - id: fgr_niet_ingedeeld
-      match_exact: ["niet ingedeeld", "noordzee"]
-      match: ["niet ingedeeld", "noordzee", "buitenland"]
-      titel: "Niet ingedeeld of open water"
+      match_exact: ["niet ingedeeld", "niet indeelbaar", "noordzee"]
+      match: ["niet ingedeeld", "niet indeelbaar", "noordzee", "buitenland"]
+      titel: "Niet indeelbaar of open zee"
       ontstaan: >-
-        Deze plek valt buiten de indeling in fysisch-geografische regio's. Dat gebeurt
-        bij open zee, bij grote wateren en soms bij recent opgespoten of aangelegd land.
-        Er is dan geen landschapsverhaal op regioschaal te geven. De andere kaartlagen,
-        zoals bodem, grondwatertrap en geomorfologie, zeggen op zo'n plek meestal meer.
+        Deze plek valt buiten de indeling in fysisch-geografische regio's. De kaart
+        gebruikt daarvoor twee waarden: 'Niet indeelbaar', dat vooral op grote steden
+        en sterk vergraven terrein ligt, en 'Noordzee' voor de open zee. Er is dan geen
+        landschapsverhaal op regioschaal te geven, omdat de natuurlijke ondergrond hier
+        is verdwenen of onder water ligt. De andere kaartlagen, zoals bodem,
+        grondwatertrap en geomorfologie, zeggen op zo'n plek meestal meer.
       versterken:
         - "Kijk naar de bodemsoort en de vochtklasse van deze plek; die geven de beste aanwijzing voor wat er kan groeien."
         - "Kijk ook naar het landschap in de directe omgeving en sluit met vorm en soortkeuze daarbij aan."
         - "Bij recent opgespoten of aangevoerde grond: laat de bodem eerst onderzoeken voordat je grote beplanting aanlegt."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK), waarden 'Niet indeelbaar' en 'Noordzee'"
 
     - id: onbekend
       match_exact: []
@@ -233,7 +247,7 @@ categorieen:
         - "Gebruik de bodemsoort en de vochtklasse als basis voor je soortkeuze."
         - "Kijk in de omgeving welke beplantingsvormen er van oudsher voorkomen: houtwallen, singels, hagen of boomgaarden."
         - "Kies bij twijfel voor inheemse soorten uit de streek; die passen vrijwel altijd."
-      bron: "FGR (PDOK); eigen bewerking"
+      bron: "FGR (PDOK); geen kaartwaarde beschikbaar op deze plek"
 
   # ==========================================================================
   # BODEM — gecanoniseerde bodemsoort (BRO Bodemkaart via WMS)
@@ -256,7 +270,7 @@ categorieen:
         - "Houd de bodem bedekt met bladeren, strooisel of houtsnippers. Dat beperkt verdamping en bouwt langzaam humus op."
         - "Geef de eerste twee groeiseizoenen water bij aanhoudende droogte; daarna moet de beplanting het zelf redden."
         - "Bemest niet zwaar. De waarde van zandgrond zit juist in de schraalheid en de soorten die daarbij horen."
-      bron: "BRO Bodemkaart (PDOK); eigen bewerking"
+      bron: "BRO Bodemkaart (PDOK); Geologie van Nederland (TNO-GDN), zandlandschap en podzolbodem"
 
     - id: klei
       match_exact: ["klei"]
@@ -275,7 +289,7 @@ categorieen:
         - "Maak een ruim plantgat, maar vul het met de eigen grond en niet met losse potgrond; anders blijft water in het gat staan."
         - "Plant iets hoger dan het maaiveld op plekken waar water blijft staan, zodat de wortelhals niet verdrinkt."
         - "Houd de grond bedekt met een laag organisch materiaal; dat verbetert de structuur en houdt de bovenlaag luchtig."
-      bron: "BRO Bodemkaart (PDOK); eigen bewerking"
+      bron: "BRO Bodemkaart (PDOK); Geologie van Nederland (TNO-GDN), zeekleibodem en rivierlandschap"
 
     - id: leem
       match_exact: ["leem", "löss", "loss"]
@@ -283,18 +297,18 @@ categorieen:
       titel: "Leem- en lössgrond"
       ontstaan: >-
         Leem en löss zitten qua korrelgrootte tussen zand en klei in. Löss is tijdens
-        de ijstijden als fijn stof door de wind aangevoerd en ligt vooral in Zuid-Limburg;
-        leem komt daarnaast voor in beekdalen en op plekken waar smeltwater fijn materiaal
-        heeft afgezet. Deze grond houdt water goed vast en is vruchtbaar en goed
-        bewerkbaar. Tegelijk slaat hij makkelijk dicht bij een felle bui en spoelt hij
-        op hellingen snel weg.
+        de ijstijden als fijn stof door de wind aangevoerd en ligt vooral in Zuid-Limburg,
+        daar plaatselijk tot wel vijftien meter dik; leem komt daarnaast voor in beekdalen
+        en op plekken waar smeltwater fijn materiaal heeft afgezet. Deze grond houdt water
+        goed vast en is vruchtbaar en goed bewerkbaar. Tegelijk slaat hij makkelijk dicht
+        bij een felle bui en spoelt hij op hellingen snel weg.
       versterken:
         - "Kies soorten die een vruchtbare, vochthoudende bodem waarderen: haagbeuk, winterlinde, veldesdoorn, hazelaar en gele kornoelje."
         - "Houd de bodem bedekt. Kale löss- en leemgrond spoelt bij een zware bui zo weg."
         - "Plant op een helling dwars op het verhang, zodat de beplanting afstromend water en grond opvangt."
         - "Vermijd zware machines op natte grond; leem verdicht snel en dan komt er geen lucht meer bij de wortels."
         - "Voeg een struiklaag en een kruidenzoom toe. Op deze rijke grond geeft gelaagde beplanting de meeste variatie."
-      bron: "BRO Bodemkaart (PDOK); eigen bewerking"
+      bron: "BRO Bodemkaart (PDOK); natuurkennis.nl (OBN), Heuvellandschap; Geologie van Nederland (TNO-GDN), löss"
 
     - id: veen
       match_exact: ["veen", "moerige grond"]
@@ -314,7 +328,7 @@ categorieen:
         - "Plant niet te diep en houd de wortelhals op maaiveldhoogte; in een natte veenbodem is de doorwortelbare laag dun."
         - "Kies vormen die bij natte grond horen: elzensingels, knotwilgen en griend passen hier beter dan een strakke haag."
         - "Houd er rekening mee dat bomen op veen minder stevig wortelen en bij storm eerder scheefzakken; plant ze niet vlak bij gebouwen."
-      bron: "BRO Bodemkaart (PDOK); eigen bewerking"
+      bron: "BRO Bodemkaart (PDOK); Geologie van Nederland (TNO-GDN), veenlandschap; natuurkennis.nl (OBN), Hoogveen"
 
     - id: onbekend
       match_exact: []
@@ -330,7 +344,7 @@ categorieen:
         - "Let op hoe snel water in het proefgat wegzakt; dat vertelt je meer over de standplaats dan de kaart."
         - "Kies bij twijfel soorten die veel verdragen, zoals eenstijlige meidoorn, vlier, veldesdoorn en zomereik."
         - "Verbeter bij bouwgrond eerst de structuur en de doorwortelbare ruimte voordat je grote bomen plant."
-      bron: "BRO Bodemkaart (PDOK); eigen bewerking"
+      bron: "BRO Bodemkaart (PDOK); geen kaartwaarde beschikbaar op deze plek"
 
   # ==========================================================================
   # VOCHT — vochtklasse afgeleid uit de grondwatertrap (Gt)
@@ -341,65 +355,73 @@ categorieen:
       match: ["zeer nat"]
       titel: "Zeer nat"
       ontstaan: >-
-        Het grondwater staat hier vrijwel het hele jaar dicht onder het maaiveld en in
-        de winter vaak tot in de wortelzone. Zulke plekken liggen in beekdalen, in
-        veengebieden, in kommen en in oude geulen. Doordat de grond bijna altijd
-        verzadigd is, komt er weinig zuurstof bij de wortels. Alleen soorten die daar
-        speciaal op zijn ingesteld kunnen er goed groeien.
+        Deze klasse hoort bij grondwatertrap I en II. Het grondwater staat vrijwel het
+        hele jaar dicht onder het maaiveld: in de natste tijd meestal binnen een halve
+        meter en ook in de droogste tijd zelden dieper dan tachtig centimeter. Zulke
+        plekken liggen in beekdalen, in veengebieden, in kommen en in oude geulen.
+        Doordat de grond bijna altijd verzadigd is, komt er weinig zuurstof bij de
+        wortels. Alleen soorten die daar speciaal op zijn ingesteld kunnen er goed
+        groeien.
       versterken:
         - "Kies uitgesproken natte soorten: zwarte els, schietwilg, grauwe wilg, geoorde wilg, laurierwilg en gelderse roos."
         - "Plant op een licht opgeworpen rug of bult als je een soort wilt die iets minder nat wil staan."
         - "Kies vormen die bij nat land horen: elzensingel, knotbomen en griend werken hier goed."
         - "Ga niet draineren om meer soorten te kunnen planten. Juist de natte omstandigheden maken deze plek waardevol."
         - "Houd er rekening mee dat de wortelzone dun is; bomen worden hier minder hoog en minder stormvast."
-      bron: "BRO Grondwatertrappen Gt (PDOK); eigen bewerking"
+      bron: "BRO Grondwatertrappen Gt (PDOK); klassegrenzen GHG/GLG uit BRO Model grondwaterspiegeldiepte (docs.geostandaarden.nl/bro/wdm)"
 
     - id: nat
       match_exact: ["nat"]
       match: ["nat"]
       titel: "Nat"
       ontstaan: >-
-        De grondwaterstand komt hier in de winter hoog te staan, tot in of vlak onder de
-        wortelzone, en zakt in de zomer een stuk weg. De grond is daardoor een deel van
-        het jaar verzadigd en een deel van het jaar goed doorlucht. Dat wisselende beeld
-        hoort bij beekdalranden, lage kleigronden en de overgang van hoog naar laag.
-        Voor beplanting betekent het dat de soort tegen een natte winter moet kunnen.
+        Deze klasse hoort bij grondwatertrap III. In de natte tijd van het jaar komt het
+        grondwater tot binnen ongeveer veertig centimeter onder maaiveld, dus tot in of
+        vlak onder de wortelzone; in de droge tijd zakt het tot ergens tussen tachtig
+        centimeter en 1,2 meter. De grond is daardoor een deel van het jaar verzadigd en
+        een deel van het jaar goed doorlucht. Dat wisselende beeld hoort bij
+        beekdalranden, lage kleigronden en de overgang van hoog naar laag. Voor
+        beplanting betekent het dat de soort tegen een natte winter moet kunnen.
       versterken:
         - "Kies soorten die een natte winter verdragen: zwarte els, schietwilg, boswilg, vogelkers, gelderse roos en sporkehout."
         - "Plant niet te diep. In natte grond is te diep planten een veelvoorkomende oorzaak van uitval."
         - "Gebruik de hoogteverschillen: zet soorten die het droger willen een halve meter hoger op de flank."
         - "Elzensingels en knotbomen zijn hier de meest passende vormen."
         - "Wacht met planten tot de grond begaanbaar is; werken op natte grond verdicht hem blijvend."
-      bron: "BRO Grondwatertrappen Gt (PDOK); eigen bewerking"
+      bron: "BRO Grondwatertrappen Gt (PDOK); klassegrenzen GHG/GLG uit BRO Model grondwaterspiegeldiepte (docs.geostandaarden.nl/bro/wdm)"
 
     - id: vochtig
       match_exact: ["vochtig"]
       match: ["vochtig"]
       titel: "Vochtig"
       ontstaan: >-
-        Het grondwater staat hier op middelmatige diepte: in de winter binnen bereik van
-        diepere wortels, in de zomer voldoende ver weg om de grond goed doorlucht te
-        houden. Dit is voor beplanting de meest gunstige situatie die in Nederland
-        voorkomt. Er is genoeg vocht in het groeiseizoen zonder dat de wortels verstikken.
-        Verreweg de meeste bomen en struiken doen het hier goed.
+        Deze klasse hoort bij grondwatertrap IV en V. In de natte tijd van het jaar staat
+        het grondwater ergens tussen een kwart meter en tachtig centimeter onder maaiveld,
+        dus binnen bereik van diepere wortels; in de droge tijd zakt het tot voorbij
+        tachtig centimeter en soms tot dieper dan 1,2 meter, ver genoeg om de grond goed
+        doorlucht te houden. Dit is voor beplanting de meest gunstige situatie die in
+        Nederland voorkomt: genoeg vocht in het groeiseizoen zonder dat de wortels
+        verstikken. Verreweg de meeste bomen en struiken doen het hier goed.
       versterken:
         - "Je hebt hier de ruimste keuze. Laat de bodemsoort en het landschapstype de doorslag geven, niet het vocht."
         - "Bouw de beplanting gelaagd op: bomen, struiken en een kruidenzoom. Dat levert op deze standplaats het meeste op."
         - "Meng meerdere soorten door elkaar in plaats van rijen van één soort; dat maakt de beplanting minder gevoelig voor ziekten."
         - "Houd de bodem bedekt met blad en strooisel; dat houdt het vocht vast tot in de nazomer."
         - "Denk vooruit aan drogere zomers: neem ook een paar soorten op die droogte goed verdragen."
-      bron: "BRO Grondwatertrappen Gt (PDOK); eigen bewerking"
+      bron: "BRO Grondwatertrappen Gt (PDOK); klassegrenzen GHG/GLG uit BRO Model grondwaterspiegeldiepte (docs.geostandaarden.nl/bro/wdm)"
 
     - id: droog
       match_exact: ["droog"]
       match: ["droog"]
       titel: "Droog"
       ontstaan: >-
-        Het grondwater staat hier diep, ook in de winter. Beplanting is dus vrijwel
-        helemaal afhankelijk van het regenwater dat de bodem kan vasthouden. Zulke
-        plekken liggen op dekzandruggen, stuwwallen, oeverwallen en hoge terrassen.
-        In een droge zomer kan de bovengrond wekenlang uitdrogen, waardoor jonge
-        beplanting het zwaar krijgt.
+        Deze klasse hoort bij grondwatertrap VI. Ook in de natte tijd van het jaar blijft
+        het grondwater ongeveer een halve tot een hele meter onder maaiveld, en in de
+        droge tijd zakt het dieper dan 1,2 meter weg: buiten bereik van de meeste
+        wortels. Beplanting is daardoor vooral afhankelijk van het regenwater dat de
+        bodem kan vasthouden. Zulke plekken liggen op dekzandruggen, stuwwallen,
+        oeverwallen en hoge terrassen. In een droge zomer kan de bovengrond wekenlang
+        uitdrogen, waardoor jonge beplanting het zwaar krijgt.
       versterken:
         - "Kies soorten die droogte goed doorstaan: zomereik, wintereik, ruwe berk, grove den, lijsterbes en sleedoorn."
         - "Plant in het najaar, zodat de wortels de hele winter en het voorjaar hebben om zich te vestigen."
@@ -407,18 +429,21 @@ categorieen:
         - "Leg een dikke laag houtsnippers of blad rond de planten; dat beperkt verdamping uit de bovengrond aanzienlijk."
         - "Geef de eerste twee zomers gericht water: liever een enkele keer veel dan vaak een beetje."
         - "Plant dicht genoeg om elkaar te beschutten; een gesloten beplanting droogt minder snel uit dan losse struiken."
-      bron: "BRO Grondwatertrappen Gt (PDOK); eigen bewerking"
+      bron: "BRO Grondwatertrappen Gt (PDOK); klassegrenzen GHG/GLG uit BRO Model grondwaterspiegeldiepte (docs.geostandaarden.nl/bro/wdm)"
 
     - id: zeer_droog
       match_exact: ["zeer droog"]
       match: ["zeer droog"]
       titel: "Zeer droog"
       ontstaan: >-
-        Het grondwater is hier het hele jaar buiten bereik van de wortels. De beplanting
-        leeft volledig van wat de bodem aan regenwater vasthoudt, en dat is op stuifzand,
-        hoge duinen, stuwwaltoppen en grove zandgrond weinig. In de zomer droogt de
-        bovengrond volledig uit. Alleen soorten die daarop zijn ingesteld houden het
-        hier op eigen kracht vol.
+        Deze klasse hoort bij grondwatertrap VII en VIII. Zelfs in de natste tijd van het
+        jaar staat het grondwater dieper dan tachtig centimeter, bij trap VIII zelfs
+        dieper dan anderhalve meter, en in de droge tijd zakt het nog verder weg. Voor
+        vrijwel alle beplanting is het daarmee het hele jaar buiten bereik. De beplanting
+        leeft van wat de bodem aan regenwater vasthoudt, en dat is op stuifzand, hoge
+        duinen, stuwwaltoppen en grove zandgrond weinig. In de zomer droogt de bovengrond
+        volledig uit. Alleen soorten die daarop zijn ingesteld houden het hier op eigen
+        kracht vol.
       versterken:
         - "Kies uitgesproken droogtesoorten: grove den, ruwe berk, zomereik, jeneverbes, sleedoorn en duindoorn."
         - "Houd de beplanting laag en dicht. Struweel houdt op zeer droge grond veel beter stand dan losse bomen."
@@ -426,7 +451,7 @@ categorieen:
         - "Bedek de grond rond de planten met strooisel of snippers en houd die laag de eerste jaren op peil."
         - "Verwacht uitval en plant er iets meer dan nodig; dat is op deze standplaats normaal."
         - "Bemest niet en breng geen aarde aan. Schrale droge grond is een landschapswaarde op zich."
-      bron: "BRO Grondwatertrappen Gt (PDOK); eigen bewerking"
+      bron: "BRO Grondwatertrappen Gt (PDOK); klassegrenzen GHG/GLG uit BRO Model grondwaterspiegeldiepte (docs.geostandaarden.nl/bro/wdm)"
 
     - id: onbekend
       match_exact: []
@@ -442,7 +467,7 @@ categorieen:
         - "Let op de begroeiing die er nu al staat: riet, pitrus en wilg wijzen op nat, struikhei en mos op droog."
         - "Kijk waar na een flinke regenbui plassen blijven staan; dat verraadt de lage en natte plekken."
         - "Kies bij twijfel soorten met een brede tolerantie, zoals zwarte els aan de natte kant en zomereik aan de drogere kant."
-      bron: "BRO Grondwatertrappen Gt (PDOK); eigen bewerking"
+      bron: "BRO Grondwatertrappen Gt (PDOK); klassegrenzen GHG/GLG uit BRO Model grondwaterspiegeldiepte (docs.geostandaarden.nl/bro/wdm)"
 
   # ==========================================================================
   # GMM — landvormen uit de Geomorfologische kaart (BRO, WMS-omschrijving)
@@ -454,20 +479,22 @@ categorieen:
       match: ["oud bouwland", "esdek", "enkeerd", "bouwlanddek", "essen en kampen", "eerdlaag"]
       titel: "Es of oud bouwland"
       ontstaan: >-
-        Dit is een oude akker die door mensen is opgehoogd. Boeren staken eeuwenlang
-        plaggen en heidezoden, gebruikten die als strooisel in de potstal en brachten
-        het mengsel van mest en plaggen op hun akkers. Zo groeide de akker langzaam
-        omhoog en ontstond een dikke, donkere bouwvoor van soms wel een meter dik.
-        Zulke essen liggen bijna altijd op de hogere, droge delen van het zandlandschap,
-        vlak bij het dorp. De randen zijn vaak nog te herkennen aan een steilrandje met
-        oude eiken of een houtwal eromheen.
+        Dit is een oude akker die door mensen is opgehoogd. Vanaf de middeleeuwen tot
+        het eind van de negentiende eeuw staken boeren plaggen en heidezoden, gebruikten
+        die als strooisel in de stal en brachten het mengsel van mest en plaggen op hun
+        akkers. Vanaf ongeveer de achttiende eeuw gebeurde dat mengen in een speciale
+        potstal. Zo groeide de akker langzaam omhoog en ontstond een donker plaggendek
+        dat van dertig centimeter tot ruim een meter dik kan zijn. Zulke essen liggen
+        bijna altijd op de hogere, droge delen van het zandlandschap, vlak bij het dorp.
+        De randen zijn vaak nog te herkennen aan een steilrandje met oude eiken of een
+        houtwal eromheen.
       versterken:
         - "Houd het open middenveld van de es open. De waarde zit juist in het bolle, onbebouwde akkervlak."
         - "Versterk de rand: een houtwal, een eikenrij of een steilrandbeplanting langs de esrand maakt de vorm weer zichtbaar."
         - "Kies soorten van de zandgrond: zomereik, ruwe berk, hazelaar, lijsterbes en sleedoorn."
         - "Leg langs de esrand een bloemrijke akkerrand of kruidenzoom aan van enkele meters breed."
         - "Plant geen bos midden op de es; dat wist het historische patroon uit."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); RCE, Oude akkercomplexen (cultuurhistorisch beheer)"
 
     - id: dekzandrug
       match_exact: []
@@ -476,17 +503,19 @@ categorieen:
       ontstaan: >-
         In de laatste ijstijd was de grond hier kaal en bevroren en had de wind vrij
         spel. Zand werd opgenomen en verderop weer neergelegd in langgerekte, lage
-        ruggen: dekzandruggen. Ze zijn meestal maar één tot enkele meters hoog, maar in
-        het vlakke zandlandschap is dat genoeg om droog te liggen. Juist daarom lagen
-        de eerste akkers, boerderijen, kerken en wegen op deze ruggen. Het zand is arm
-        en doorlatend, dus regenwater zakt snel weg.
+        ruggen: dekzandruggen. Aan het eind van de ijstijd kwam er meer begroeiing, die
+        het zand vasthield, waardoor de ruggen bleven liggen. Ze kunnen kilometers lang
+        en ongeveer honderd meter breed worden en zijn meestal maar één tot enkele meters
+        hoog, maar in het vlakke zandlandschap is dat genoeg om droog te liggen. Juist
+        daarom lagen de eerste akkers, boerderijen, kerken en wegen op deze ruggen. Het
+        zand is arm en doorlatend, dus regenwater zakt snel weg.
       versterken:
         - "Leg een houtwal of houtsingel aan langs de rug; die volgt de vorm van het landschap en maakt hem zichtbaar."
         - "Kies droogteverdragende soorten: zomereik, wintereik, ruwe berk, lijsterbes, hazelaar en sleedoorn."
         - "Plant een solitaire eik of een kleine eikengroep op het hoogste punt; dat is hier een oud en herkenbaar beeld."
         - "Maak een brede kruidenrijke zoom aan de zuidzijde en maai die maar één keer per jaar."
         - "Vermijd bemesting en het aanvoeren van grond; de schraalheid is hier de landschapswaarde."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: dekzandvlakte
       match_exact: []
@@ -504,7 +533,7 @@ categorieen:
         - "Leg een singel of struweel aan langs de perceelrand; in het vlakke land geeft dat direct structuur."
         - "Ga niet extra draineren om te kunnen planten, maar kies soorten die bij het natte karakter passen."
         - "Laat laagtes waar water blijft staan met rust; die zijn waardevol voor amfibieën en insecten."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: stuifzand_landduinen
       match_exact: []
@@ -524,19 +553,21 @@ categorieen:
         - "Plant klein plantmateriaal in het najaar en reken op enige uitval."
         - "Voeg geen grond, compost of mest toe. Verrijking is hier de grootste bedreiging voor de bijzondere soorten."
         - "Laat open zandplekken open; ze zijn belangrijk voor warmteminnende insecten en reptielen."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: stuwwal
       match_exact: []
       match: ["stuwwal", "gestuwde", "stuwwalglooiing"]
       titel: "Stuwwal"
       ontstaan: >-
-        Ongeveer 150.000 jaar geleden schoof landijs vanuit het noorden Nederland
-        binnen. De ijstongen duwden de bodem voor zich uit en omhoog, zoals een schaaf
-        een krul opschuift. De opgestuwde lagen zand, grind en klei vormen de heuvels
-        die we nu stuwwallen noemen, zoals de Veluwe en de Utrechtse Heuvelrug. Doordat
-        ze hoog liggen, zakt regenwater diep weg en is de bovengrond droog en arm.
-        In de opgestuwde lagen zit soms leem, waardoor water plaatselijk juist blijft
+        Tijdens de voorlaatste ijstijd, het Saalien, schoof ongeveer 150.000 jaar geleden
+        landijs vanuit het noorden Nederland binnen. Het ijs kwam tot ongeveer de lijn
+        Haarlem-Utrecht-Nijmegen. De ijstongen duwden de bodem voor zich uit en omhoog,
+        zoals een schaaf een krul opschuift. De opgestuwde lagen zand, grind en klei
+        vormen de heuvels die we nu stuwwallen noemen, zoals de Veluwe en de Utrechtse
+        Heuvelrug; de hoogste komen tot ruim honderd meter boven zeeniveau. Doordat ze
+        hoog liggen, zakt regenwater diep weg en is de bovengrond droog en arm. In de
+        schuin opgestuwde lagen zit soms leem, waardoor water plaatselijk juist blijft
         hangen.
       versterken:
         - "Kies soorten die droogte en armoede verdragen: zomereik, wintereik, ruwe berk, grove den, lijsterbes en hazelaar."
@@ -544,7 +575,7 @@ categorieen:
         - "Maak de overgang van bos naar open terrein geleidelijk met een mantel van struiken en een kruidenzoom."
         - "Let op leemlagen in de ondergrond; waar water blijft staan passen zachte berk en sporkehout beter."
         - "Laat oude, dikke bomen en dood hout staan; op de stuwwal zijn dat de rijkste plekken voor paddenstoelen, insecten en vogels."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: smeltwaterwaaier
       match_exact: []
@@ -562,7 +593,7 @@ categorieen:
         - "Leg lange singels of houtwallen aan in de richting van het verhang, zodat het flauwe reliëf zichtbaar blijft."
         - "Houd de bodem bedekt met strooisel; op grof zand verdwijnt vocht anders erg snel."
         - "Bemest niet; deze grond is van nature schraal en dat hoort erbij."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: droogdal
       match_exact: []
@@ -582,7 +613,7 @@ categorieen:
         - "Kies op de droge flanken zomereik, ruwe berk, sleedoorn en eenstijlige meidoorn."
         - "Houd de dalbodem begroeid; kale grond spoelt bij hevige regen snel uit."
         - "Herstel oude graften of steilrandjes als die er nog zijn; ze remmen erosie en horen bij het beeld."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: loss_glooiing_plateau
       match_exact: []
@@ -594,15 +625,17 @@ categorieen:
         kalksteen. De hoge, vlakke delen heten plateaus; daartussen liggen glooiende
         hellingen die naar de dalen aflopen. Löss is vruchtbaar en goed bewerkbaar,
         maar zeer gevoelig voor erosie: bij een felle bui slaat de grond dicht en
-        stroomt hij als modder de helling af. Boeren legden daarom graften en
-        holle wegen ontstonden waar karren zich in de zachte grond insneden.
+        stroomt hij als modder de helling af. Op de hellingen liggen graften,
+        begroeide steilrandjes evenwijdig aan de hoogtelijnen die waarschijnlijk zijn
+        aangelegd om erosie tegen te gaan, en holle wegen die door het gebruik diep in
+        de zachte grond zijn ingesleten.
       versterken:
-        - "Plant altijd dwars op de helling. Een strook beplanting die het verhang volgt, versnelt erosie juist."
-        - "Herstel graften: begroeide steilrandjes dwars op de helling die grond vasthouden."
+        - "Plant altijd evenwijdig aan de hoogtelijnen. Een strook beplanting die het verhang volgt, versnelt erosie juist."
+        - "Herstel graften: begroeide steilrandjes evenwijdig aan de hoogtelijnen die grond vasthouden."
         - "Kies soorten van de rijke lössgrond: haagbeuk, winterlinde, veldesdoorn, hazelaar, gele kornoelje en wollige sneeuwbal."
         - "Houd de bodem bedekt; kale löss is de grootste oorzaak van modderstromen in deze streek."
         - "Leg op het plateau een hoogstamboomgaard of een bomenrij langs de weg aan; dat past bij het open akkerbeeld."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: beekdalbodem
       match_exact: []
@@ -623,7 +656,7 @@ categorieen:
         - "Plant niet strak tot aan de beek. Een onbeplante, kruidenrijke oeverstrook is waardevol en houdt de beek licht."
         - "Voer maaisel af en bemest niet; in een beekdal levert verschraling snel bloemrijk grasland op."
         - "Overleg met het waterschap over de onderhoudsstrook langs de beek voordat je plant."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: rivierduin_donk
       match_exact: []
@@ -635,16 +668,17 @@ categorieen:
         rivierbeddingen blies de wind zand op tot langgerekte duinen langs de oevers.
         Later, toen het klimaat opwarmde, groeide er veen en klei omheen, maar de
         zandkoppen bleven als hoge, droge plekken boven het natte land uitsteken.
-        Zulke koppen heten donken. Ze waren eeuwenlang de enige droge plek in de
-        omgeving en werden daarom bewoond; vaak staan er nu nog een dorp of een
-        boerderij op.
+        Zulke koppen heten donken; het grootste deel van het duin ligt daaronder nog
+        begraven onder veen en klei. Ze waren eeuwenlang de enige droge plek in de
+        omgeving en werden daarom al vroeg bewoond; vaak staan er nu nog een dorp of
+        een boerderij op.
       versterken:
         - "Kies droogteverdragende soorten die bij zandgrond horen: zomereik, ruwe berk, hazelaar, sleedoorn en lijsterbes."
         - "Zet een solitaire eik of een kleine boomgroep op de kop; dat maakt de hoogte in het vlakke land zichtbaar."
         - "Houd de overgang van de droge kop naar het natte omringende land geleidelijk met een struweelrand."
         - "Kies aan de voet van de kop juist natte soorten: zwarte els, schietwilg en gelderse roos."
         - "Graaf niet af en hoog niet op; het hoogteverschil is hier de historische en landschappelijke waarde."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: oeverwal_stroomrug
       match_exact: []
@@ -665,7 +699,7 @@ categorieen:
         - "Kies soorten van rijke, goed doorlatende grond: zoete kers, walnoot, veldesdoorn, hazelaar en kardinaalsmuts."
         - "Zet een bomenrij of laan langs de weg of de oprit; die versterkt de lijn van de stroomrug."
         - "Houd het hoogteverschil met de lager gelegen kom zichtbaar en plant daar juist wilg en els."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: komvlakte
       match_exact: []
@@ -684,7 +718,7 @@ categorieen:
         - "Plant iets verhoogd of op een lichte rug waar water blijft staan, zodat de wortelhals niet verdrinkt."
         - "Werk nooit op natte klei. Verdichte komklei herstelt zich jarenlang niet."
         - "Houd de openheid van de kom in stand; plant in lijnen langs de kavelgrenzen en niet in blokken midden in het veld."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: uiterwaard
       match_exact: []
@@ -699,12 +733,12 @@ categorieen:
         hier vaak vlak naast elkaar. Uiterwaarden werden gebruikt als hooiland, wilgengriend
         en steenfabriekterrein.
       versterken:
-        - "Overleg altijd eerst met de rivierbeheerder en het waterschap. In de uiterwaard gelden strikte regels, omdat beplanting de waterafvoer remt."
+        - "Overleg altijd eerst met de rivierbeheerder. In de uiterwaard legt Rijkswaterstaat in de vegetatielegger vast welke begroeiing is toegestaan, omdat beplanting de waterafvoer remt; vaak is een vergunning nodig."
         - "Kies soorten die overstroming verdragen: schietwilg, zwarte els, zwarte populier en gelderse roos."
         - "Griend en knotwilgen zijn hier de meest passende vormen; ze blijven laag en houden water minder tegen dan opgaand bos."
         - "Plant in de stroomrichting van de rivier, niet dwars erop, zodat het water bij hoogwater door kan."
         - "Laat oude strangen en laagtes open; ze zijn belangrijk voor vissen, amfibieën en vogels."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Rijkswaterstaat, vegetatielegger en beheer van uiterwaarden"
 
     - id: rivierterras
       match_exact: []
@@ -724,28 +758,29 @@ categorieen:
         - "Kies waar een leem- of losslaag ligt juist rijkere soorten: haagbeuk, veldesdoorn en hazelaar."
         - "Houd de steilranden tussen twee terrassen begroeid; ze zijn erosiegevoelig en waardevol als warme, zonnige rand."
         - "Bemest niet op de grindige delen; droge, schrale terrassen zijn juist rijk aan bijzondere insecten."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: strandwal_strandvlakte
       match_exact: []
       match: ["strandwal", "strandvlakte", "oude duinen", "strandwallen"]
       titel: "Strandwal of strandvlakte"
       ontstaan: >-
-        Toen de zeespiegel na de laatste ijstijd steeg, bouwde de zee langs de kust
-        zandruggen op: strandwallen. Achter elke wal ontstond een lagere, nattere
+        Na de laatste ijstijd steeg de zeespiegel eerst snel. Toen die stijging ongeveer
+        vijfduizend jaar geleden sterk afzwakte, kon de zee langs de kust zandruggen
+        opbouwen: strandwallen. Achter elke wal ontstond een lagere, nattere
         strandvlakte. Doordat de kustlijn zich stap voor stap zeewaarts verplaatste,
-        ontstond een reeks evenwijdige ruggen en vlaktes. Op de droge strandwallen
-        kwamen de oudste dorpen, wegen en later de landgoederen en bollenvelden; in de
-        natte strandvlaktes groeide veen en lag weiland. De kalk is uit de bovengrond
-        van deze oude wallen grotendeels weggespoeld, waardoor de grond er zuurder is
-        dan in de jonge duinen.
+        ontstond tot ongeveer het begin van onze jaartelling een reeks evenwijdige
+        ruggen en vlaktes. Op de droge strandwallen kwamen de oudste dorpen, wegen en
+        later de landgoederen en bollenvelden; in de natte strandvlaktes groeide veen en
+        lag weiland. De kalk is uit de bovengrond van deze oude wallen grotendeels
+        weggespoeld, waardoor de grond er zuurder is dan in de jonge duinen.
       versterken:
         - "Kies op de droge strandwal soorten van zandgrond: zomereik, ruwe berk, hazelaar, lijsterbes en hulst."
         - "Kies in de lagere strandvlakte natte soorten: zwarte els, schietwilg, gelderse roos en sporkehout."
         - "Plant in de lengterichting van de wallen; het evenwijdige patroon is hier het kenmerk van het landschap."
         - "Leg langs de oude wegen een bomenrij of laan aan; dat past bij de bewoningsgeschiedenis van de wal."
         - "Houd de overgang tussen wal en vlakte zichtbaar met een struweelrand in plaats van een strakke grens."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: kustduinen
       match_exact: []
@@ -753,12 +788,14 @@ categorieen:
       titel: "Kustduinen"
       ontstaan: >-
         De zee bracht eeuwenlang zand naar het strand en de wind blies dat landinwaarts.
-        Zo groeiden hoge duinen, die vanaf ongeveer duizend jaar geleden over de oudere
-        strandwallen heen zijn geschoven. Het zand bevat kalk uit vergruisde schelpen,
-        maar die kalk spoelt geleidelijk uit de bovengrond weg. In de laagtes tussen de
-        duinen, de duinvalleien, komt het grondwater dicht aan de oppervlakte; daar is
-        het vochtig en soms kalkrijk. Duinen zijn altijd in beweging: wind, zout en
-        droogte bepalen wat er kan groeien.
+        Zo groeiden hoge jonge duinen, die vooral tussen ongeveer 1200 en 1600 over de
+        oudere strandwallen heen zijn geschoven. Ten zuiden van Bergen in Noord-Holland
+        bevat het zand veel kalk uit vergruisde schelpen; op de Waddeneilanden en ten
+        noorden van Bergen is het duinzand van nature kalkarm. Bovendien spoelt kalk
+        geleidelijk uit de bovengrond weg. In de laagtes tussen de duinen, de
+        duinvalleien, komt het grondwater dicht aan de oppervlakte; daar is het vochtig
+        en soms kalkrijk. Duinen zijn altijd in beweging: wind, zout en droogte bepalen
+        wat er kan groeien.
       versterken:
         - "Kies zout- en windverdragende struiken: duindoorn, wilde liguster, eenstijlige meidoorn, kruipwilg, duinroos en vlier."
         - "Houd de beplanting laag en gesloten; hoge losse bomen overleven de zeewind zelden."
@@ -766,7 +803,7 @@ categorieen:
         - "Vermijd woekeraars die in de duinen problemen geven, zoals rimpelroos en Amerikaanse vogelkers."
         - "Laat vochtige duinvalleien open; daar horen lage, kruidenrijke begroeiing en geen bomen."
         - "Bemest niet en geef geen water; schraalte hoort bij dit landschap."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Geologie van Nederland (TNO-GDN), kustduin; natuurkennis.nl (OBN), Duin- en kustlandschap"
 
     - id: getijdenvlakte_kwelder
       match_exact: []
@@ -786,7 +823,7 @@ categorieen:
         - "Concentreer beplanting op het erf en langs de dijkvoet; het open veld hoort hier open te blijven."
         - "Volg met de beplanting het oude krekenpatroon of de kavelgrenzen in plaats van een rechte lijn dwars door het veld."
         - "Plant een gelaagde, dichte singel als windvang, met de laagste struiken aan de windzijde."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: ontgonnen_veenvlakte
       match_exact: []
@@ -806,7 +843,7 @@ categorieen:
         - "Kies soorten voor arme, wisselend vochtige grond: zwarte els, ruwe berk, zachte berk, zomereik en lijsterbes."
         - "Houd de openheid van het middenveld in stand; de wijdsheid hoort bij dit landschap."
         - "Verbeter bij aanplant de bodemstructuur van dalgrond, maar bemest niet zwaar; dat spoelt hier snel uit."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: droogmakerij
       match_exact: []
@@ -826,7 +863,7 @@ categorieen:
         - "Kies soorten voor natte, zware klei: schietwilg, zwarte els, eenstijlige meidoorn, vlier en fladderiep."
         - "Houd rekening met een hoge grondwaterstand en soms brak of zout kwelwater; plant zo nodig op een lichte verhoging."
         - "Houd de openheid in het midden van de polder in stand en concentreer beplanting bij erven en langs de randen."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: veenvlakte
       match_exact: []
@@ -846,7 +883,7 @@ categorieen:
         - "Kies passende vormen: elzensingel, knotwilgen en griend horen bij dit natte landschap."
         - "Plant ondiep en niet te dicht bij gebouwen; bomen op veen wortelen ondiep en waaien eerder scheef."
         - "Laat natte laagtes en veenputjes open; die zijn waardevol voor libellen, amfibieën en moerasvogels."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
     - id: gmm_antropogeen
       match_exact: []
@@ -855,17 +892,18 @@ categorieen:
       ontstaan: >-
         De oorspronkelijke landvorm is hier door mensen veranderd of helemaal verdwenen.
         Dat kan gaan om bebouwing, om opgehoogd of opgespoten terrein, om afgraving, om
-        een dijk of om een terp of wierde: een kunstmatige woonheuvel die mensen vóór de
-        bedijking opwierpen om droog te wonen. De bodem bestaat op zulke plekken vaak uit
-        aangevoerd materiaal en is soms verdicht of vermengd met puin. De kaart zegt hier
-        dus meer over de menselijke ingreep dan over de natuurlijke ondergrond.
+        een dijk of om een terp of wierde: een kunstmatige woonheuvel die mensen vanaf
+        ongeveer 500 voor Christus, vóór de bedijking, opwierpen om droog te wonen. De
+        bodem bestaat op zulke plekken vaak uit aangevoerd materiaal en is soms verdicht
+        of vermengd met puin. De kaart zegt hier dus meer over de menselijke ingreep dan
+        over de natuurlijke ondergrond.
       versterken:
         - "Onderzoek de bodem ter plekke met een proefgat; op opgehoogd terrein wijkt de werkelijkheid vaak sterk af van de kaart."
         - "Let op verdichting en puin. Breek verdichte lagen open of kies een andere plantplaats voordat je grote bomen zet."
         - "Kies soorten die veel verdragen: veldesdoorn, eenstijlige meidoorn, vlier, zomereik en fladderiep."
         - "Sluit met vorm en soortkeuze aan bij het omringende landschap, ook als de ondergrond hier kunstmatig is."
         - "Zorg voor voldoende doorwortelbare ruimte; dat is in bebouwd gebied meestal de beperkende factor, niet de soort."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); RCE, Terp (cultuurhistorisch beheer)"
 
     - id: onbekend
       match_exact: []
@@ -880,7 +918,7 @@ categorieen:
         - "Kijk naar het reliëf in het veld: ligt deze plek hoog of laag ten opzichte van de omgeving?"
         - "Gebruik de bodemsoort en de vochtklasse als leidraad voor je soortkeuze."
         - "Sluit met de vorm van de beplanting aan bij wat in de directe omgeving gebruikelijk is."
-      bron: "BRO Geomorfologische kaart (GMM, PDOK); eigen bewerking"
+      bron: "BRO Geomorfologische kaart (GMM, PDOK); Toelichting bij de legenda Geomorfologische kaart van Nederland 1:50.000 (WUR, 2017); Geologie van Nederland (TNO-GDN)"
 
   # ==========================================================================
   # NSN — Basiskaart Natuurlijk Systeem Nederland (BKNSN 2023)
@@ -895,20 +933,20 @@ categorieen:
       match: ["ontgonnen hoogveen", "veenkolon", "dalgrond"]
       titel: "Ontgonnen hoogveen"
       ontstaan: >-
-        Hier lag ooit een dik hoogveenpakket. Vanaf de zeventiende eeuw is dat
-        grotendeels afgegraven voor turf. Er werden kanalen en wijken gegraven om het
-        veen af te voeren en het gebied stap voor stap af te werken. Wat overbleef was
-        de zandondergrond met een restje veen, dat werd omgezet tot dalgrond en in
-        cultuur gebracht. Het resultaat is een strak, open landschap met rechte
-        kanalen, lange smalle kavels en lintbebouwing langs de vaart. De bodem is arm,
-        zuur en gevoelig voor droogte.
+        Hier lag ooit een dik hoogveenpakket. In de eerste helft van de zeventiende eeuw
+        begon de grootschalige vervening voor turf, gefinancierd met Hollands kapitaal.
+        Er werden kanalen en wijken gegraven, die zorgden voor de afwatering en waarover
+        de turf werd afgevoerd. Wat overbleef was de zandondergrond, die met het restje
+        bovenveen werd vermengd tot dalgrond en in cultuur gebracht. Het resultaat is een
+        strak, open landschap met rechte kanalen, lange smalle kavels en lintbebouwing
+        langs de vaart. De bodem is arm, zuur en gevoelig voor droogte.
       versterken:
         - "Volg met beplanting het rechte patroon van kanalen, wijken en wegen; die strakheid is de identiteit van dit landschap."
         - "Leg singels of een laanbeplanting aan langs de vaart of de weg, in plaats van losse groepen midden in het veld."
         - "Kies soorten voor arme, wisselend natte grond: zwarte els, zachte berk, ruwe berk, zomereik en lijsterbes."
         - "Houd de openheid van het middenveld in stand; de wijdsheid hoort hier bij."
         - "Bemest niet zwaar; op dalgrond spoelen voedingsstoffen snel uit naar het oppervlaktewater."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Hv2); RCE, Panorama Landschap - Veenkoloniën en Westerwolde"
 
     - id: hoogveen
       match_exact: ["hoogveen"]
@@ -928,7 +966,7 @@ categorieen:
         - "Ga zeer terughoudend om met ontwatering in de omgeving; hoogveen is volledig afhankelijk van een hoge waterstand."
         - "Leg beplanting op afstand aan, als bufferzone op de rand: zachte berk, sporkehout en geoorde wilg passen daar."
         - "Voer geen mest, bagger of grond aan in of nabij het veen; hoogveen verdraagt geen verrijking."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Hv1); natuurkennis.nl (OBN), N06.03 Hoogveen; Geologie van Nederland (TNO-GDN), hoogveen"
 
     - id: beekdal_veen
       match_exact: ["beekdal veen"]
@@ -948,7 +986,7 @@ categorieen:
         - "Verlaag het waterpeil niet om te kunnen planten; dat laat het veen verteren en de bodem verder zakken."
         - "Voer maaisel af en bemest niet. Op kwelrijke veenbodems levert verschraling snel bijzondere planten op."
         - "Een elzensingel of een rij knotwilgen langs de dalrand is hier de meest passende vorm."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Dz6); natuurkennis.nl (OBN), Beekdallandschap"
 
     - id: beekdal_zand_leem
       match_exact: ["beekdal zand/leem", "beekdal zand-leem"]
@@ -969,47 +1007,50 @@ categorieen:
         - "Zorg dat de beek voldoende licht houdt; een volledig dichtgegroeide beek verliest veel waterleven."
         - "Voer maaisel af en bemest niet; verschraald beekdalgrasland wordt snel bloemrijk."
         - "Stem het planten af met het waterschap in verband met de onderhoudsstrook langs de beek."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Dz5); natuurkennis.nl (OBN), Beekdallandschap"
 
     - id: beekdal
       match_exact: ["beekdal"]
       match: ["beekdal"]
       titel: "Beekdal"
       ontstaan: >-
-        Dit is de laagte waar een beek doorheen stroomt of ooit stroomde. Het water
-        heeft het dal in de loop van duizenden jaren uitgesleten en er bij hoogwater
-        fijn materiaal in achtergelaten. Van de hogere randen sijpelt grondwater naar
-        het dal toe, waardoor het er vochtiger is dan in de omgeving. Beekdalen waren
-        daarom van oudsher hooiland en weide, met bomen en struiken langs de randen in
-        plaats van midden in het dal.
+        Dit is de laagte waar een beek doorheen stroomt of ooit stroomde; in de
+        Basiskaart hoort dit label bij het löss- en heuvellandschap van Zuid-Limburg.
+        Het water heeft het dal in de loop van duizenden jaren uitgesleten en er bij
+        hoogwater fijn materiaal in achtergelaten. Waar de ondergrond slecht doorlatend
+        is, treedt grondwater aan de dalrand uit als bron of kwel, waardoor het dal
+        vochtiger is dan de omgeving. Beekdalen waren daarom van oudsher hooiland en
+        weide, met bomen en struiken langs de randen in plaats van midden in het dal.
       versterken:
         - "Kies soorten die tegen natte voeten kunnen: zwarte els, schietwilg, boswilg, vogelkers en gelderse roos."
         - "Beplant vooral de dalrand en houd de dalbodem open."
         - "Laat een onbeplante, kruidenrijke strook langs de beek liggen."
         - "Voer maaisel af en bemest niet; dat maakt het grasland in het dal bloemrijker."
         - "Overleg met het waterschap over de onderhoudsstrook voordat je langs de beek plant."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Lg5, löss- en heuvellandschap); natuurkennis.nl (OBN), Heuvellandschap en Beekdallandschap"
 
     - id: pingoruine
       match_exact: [":ingoruines en periglaciale laagten", "pingoruines en periglaciale laagten"]
       match: ["ingoruine", "pingoruine", "pingoruïne", "periglaciale laagt"]
       titel: "Pingoruïne of periglaciale laagte"
       ontstaan: >-
-        In de ijstijd was de bodem permanent bevroren. Op sommige plekken groeide onder
-        de grond een ijslens die de bovenliggende laag omhoog duwde tot een heuvel met
-        een ijskern: een pingo. Rond die heuvel gleed grond naar beneden en vormde een
-        wal. Toen het klimaat opwarmde, smolt de ijskern en zakte de heuvel in; wat
-        overbleef was een ronde kuil met een randwal eromheen. Zulke pingoruïnes staan
-        vaak vol water of veen en zijn nu herkenbaar als opvallend ronde vennen en
-        laagtes in het zandlandschap. Daarnaast liggen er andere laagtes die door vorst
-        en smeltwater zijn gevormd.
+        In de ijstijd was de bodem permanent bevroren. Op sommige plekken perste
+        grondwater zich door een scheur omhoog, bevroor en groeide aan tot een ijslens
+        die de bovenliggende laag omhoog duwde: een pingo, een heuvel die tientallen
+        meters hoog kon worden. Toen het ijs smolt, gleed de grond van de heuvel af en
+        hoopte zich aan de voet op tot een ringvormige wal. Wat overbleef was een ronde
+        kuil met een randwal eromheen, die zich vulde met water en later met veen. De
+        meeste Nederlandse pingoruïnes dateren van ongeveer 13.000 tot 11.000 jaar
+        geleden en liggen in Friesland, Groningen, Drenthe en Overijssel; ze zijn
+        herkenbaar als opvallend ronde vennen en laagtes. Daarnaast liggen er andere
+        laagtes die door vorst en smeltwater zijn gevormd.
       versterken:
         - "Laat de laagte zelf open. Een open ven of natte kuil is de kern van de waarde van deze plek."
         - "Plant hooguit op de randwal: zachte berk, zomereik, sporkehout en geoorde wilg passen daar."
         - "Draineer niet en voer geen water aan; deze laagtes zijn afhankelijk van regenwater en zijn van nature voedselarm."
         - "Houd bladinval beperkt door niet strak rondom te beplanten; veel blad in het water maakt het snel voedselrijk."
-        - "Graaf de randwal niet af; die hoort bij de vorm en is vaak eeuwenoud."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+        - "Graaf de randwal niet af; die hoort bij de vorm en is duizenden jaren oud."
+      bron: "BKNSN 2023 (code Kl3); Geologie van Nederland (TNO-GDN), pingoruïne; RCE, aardkundig erfgoed"
 
     - id: depressie_veen
       match_exact: ["depressie veen"]
@@ -1028,7 +1069,7 @@ categorieen:
         - "Draineer niet. Juist het vasthouden van water maakt deze plek bijzonder en beperkt verdroging in de omgeving."
         - "Plant langs de rand van de laagte in plaats van erin, als geleidelijke overgang naar de hogere grond."
         - "Voer geen bagger, mest of grond aan; deze laagtes zijn van nature voedselarm."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: depressie_zand
       match_exact: ["depressie zand"]
@@ -1047,24 +1088,24 @@ categorieen:
         - "Laat plekken waar water blijft staan open; die zijn waardevol voor amfibieën en insecten."
         - "Draineer niet extra om te kunnen planten, maar kies soorten die bij het natte karakter passen."
         - "Bemest niet; deze laagtes zijn van nature arm en dat levert de meeste bijzondere planten op."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: depressie
       match_exact: ["depressie"]
       match: ["depressie", "laagte"]
       titel: "Laagte"
       ontstaan: >-
-        Dit is een lager gelegen kom in het landschap waar water van nature naartoe
-        stroomt en blijft staan. Zulke laagtes hebben meestal geen afvoer naar een beek.
-        Het grondwater staat er dicht onder het maaiveld, waardoor het er natter en
-        vaak zuurder is dan in de omgeving. Van oudsher lagen hier vennen, moerasjes en
-        natte bosjes.
+        Dit is een lager gelegen kom waar water van nature naartoe stroomt en blijft
+        staan; in de Basiskaart hoort dit label bij het hoogveenlandschap, zoals de
+        Peel. Zulke laagtes hebben meestal geen afvoer naar een beek. Het grondwater
+        staat er dicht onder het maaiveld, waardoor het er natter en vaak zuurder is dan
+        in de omgeving. Van oudsher lagen hier vennen, moerasjes en natte bosjes.
       versterken:
         - "Kies soorten die natte grond verdragen: zwarte els, zachte berk, grauwe wilg, geoorde wilg en sporkehout."
         - "Laat de natste kern open en plant vooral langs de rand van de laagte."
         - "Houd water vast in plaats van het af te voeren; dat helpt ook tegen verdroging in de omgeving."
         - "Voer geen grond of mest aan; deze plekken zijn van nature voedselarm."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Hv3, hoogveenlandschap); natuurkennis.nl (OBN), voedselarme venen"
 
     - id: droogdal
       match_exact: ["droogdal", "droogdal met veen", "droogdal met keileem"]
@@ -1084,7 +1125,7 @@ categorieen:
         - "Kies in een vochtige dalbodem, bijvoorbeeld boven keileem of veen, juist zwarte els, boswilg en sporkehout."
         - "Houd de dalbodem begroeid; kale grond spoelt bij hevige regen snel uit."
         - "Herstel bestaande steilrandjes of graften; die remmen erosie en horen bij het beeld van dit landschap."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: rivierterras_zand
       match_exact: ["rivierterras zand"]
@@ -1103,7 +1144,7 @@ categorieen:
         - "Plant klein plantmateriaal in het najaar en bedek de grond met strooisel of houtsnippers."
         - "Bemest niet. Droge, schrale terrassen zijn juist rijk aan warmteminnende insecten en planten."
         - "Houd open, zonnige plekken en zandige randen in stand; die horen bij dit droge landschap."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: rivierterras_klei
       match_exact: ["rivierterras klei"]
@@ -1122,7 +1163,7 @@ categorieen:
         - "Leg een hoogstamboomgaard of een struweelhaag aan; op deze vruchtbare terrassen past dat goed."
         - "Houd de bodem bedekt en rijd niet met zware machines over natte grond; klei en leem verdichten snel."
         - "Voeg een kruidenrijke zoom toe langs de perceelrand voor insecten en akkervogels."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: rivierterras
       match_exact: ["rivierterras"]
@@ -1130,19 +1171,20 @@ categorieen:
       titel: "Rivierterras"
       ontstaan: >-
         Een rivierterras is een oude rivierbedding die nu hoog en droog in het landschap
-        ligt. Tijdens de ijstijden wisselden koude en warme perioden elkaar af: in koude
-        tijden vulde de rivier haar dal op met zand en grind, in warme tijden sneed ze
-        zich er weer in. Wat na elke insnijding aan de zijkant bleef liggen vormt een
-        trap van steeds oudere en hoger gelegen vlakken langs Maas en Rijn. De
-        bovengrond is meestal grof, goed doorlatend en droog, soms met een laag leem of
-        löss erover.
+        ligt; in de Basiskaart hoort dit label bij het löss- en heuvellandschap van
+        Zuid-Limburg. Tijdens de ijstijden wisselden koude en warme perioden elkaar af:
+        in koude tijden vulde de Maas haar dal op met zand en grind, in warme tijden
+        sneed ze zich er weer in. Doordat het gebied bovendien langzaam omhoog kwam,
+        bleef na elke insnijding een terras aan de zijkant liggen. Zo ontstond een trap
+        van steeds oudere en hoger gelegen vlakken. De bovengrond is meestal grof, goed
+        doorlatend en droog, soms met een laag leem of löss erover.
       versterken:
         - "Kies droogteverdragende soorten: zomereik, wintereik, ruwe berk, sleedoorn, eenstijlige meidoorn en hondsroos."
         - "Kies waar een leem- of losslaag ligt juist haagbeuk, veldesdoorn en hazelaar."
         - "Leg een houtwal of struweelhaag langs de terrasrand; dat maakt de trapvorm zichtbaar."
         - "Houd steilranden tussen twee terrassen begroeid; ze zijn erosiegevoelig en waardevol als warme, zonnige rand."
         - "Bemest niet op de grindige delen; de schraalheid is daar de landschapswaarde."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Lg7, löss- en heuvellandschap); natuurkennis.nl (OBN), Heuvellandschap"
 
     - id: laagveenvlakte
       match_exact: ["laagveenvlakte"]
@@ -1152,10 +1194,10 @@ categorieen:
         Hier stond het water zo hoog dat plantenresten niet konden verteren en zich
         eeuw na eeuw opstapelden tot veen. Anders dan hoogveen wordt laagveen gevoed
         door grondwater en door beek- of rivierwater, waardoor het minder arm en minder
-        zuur is. Vanaf de middeleeuwen groeven mensen sloten om het veen te ontwateren
-        en er te boeren, waardoor het inklonk en de bodem daalde. Op veel plaatsen is
-        ook veen gebaggerd voor turf. Wat overbleef is een nat, open landschap met lange
-        smalle kavels en veel water.
+        zuur is. Vanaf ongeveer de elfde eeuw groeven mensen sloten om het veen te
+        ontwateren en er te boeren, waardoor het inklonk en de bodem daalde; die daling
+        gaat nog altijd door. Op veel plaatsen is ook veen gebaggerd voor turf. Wat
+        overbleef is een nat, open landschap met lange smalle kavels en veel water.
       versterken:
         - "Plant elzensingels langs de kavelsloten; dat is hier de klassieke lijn in het landschap."
         - "Kies natte soorten: zwarte els, schietwilg, grauwe wilg, geoorde wilg, gelderse roos en sporkehout."
@@ -1163,7 +1205,7 @@ categorieen:
         - "Plant in lijnen langs de kavelrichting en niet in blokken; de smalle strookverkaveling is hier het kenmerk."
         - "Verlaag het peil niet en houd afstand tot de slootkant; stem het onderhoudspad af met het waterschap."
         - "Maai oevers gefaseerd, zodat er altijd riet- en ruigtezomen blijven staan."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (codes Lv1 en Dz9); natuurkennis.nl (OBN), Laagveen- en zeekleilandschap; Geologie van Nederland (TNO-GDN), laagveen"
 
     - id: zeekleivlakte
       match_exact: ["zeekleivlakte"]
@@ -1184,7 +1226,7 @@ categorieen:
         - "Werk nooit op natte klei; verdichting herstelt zich hier jarenlang niet."
         - "Maak een kruidenrijke rand langs de sloot als verbinding tussen erf en polder."
         - "Plant iets verhoogd waar water blijft staan, zodat de wortelhals niet verdrinkt."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: strandvlakte
       match_exact: ["strandvlakte"]
@@ -1203,48 +1245,50 @@ categorieen:
         - "Houd de laagte zelf open als grasland en plant vooral op de overgang naar de hogere strandwal."
         - "Draineer niet extra; het natte karakter hoort bij deze strook."
         - "Leg een elzensingel of een rij knotwilgen langs de kavelsloot aan."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: strandwal
       match_exact: ["strandwal"]
       match: ["strandwal", "oude duinen"]
       titel: "Strandwal"
       ontstaan: >-
-        Toen de zeespiegel na de laatste ijstijd steeg, bouwde de zee langs de kust
-        zandruggen op. Doordat de kustlijn zich stap voor stap zeewaarts verplaatste,
-        ontstond een reeks evenwijdige wallen met daartussen lagere vlaktes. De
-        strandwallen lagen hoog en droog en waren daarmee de aantrekkelijkste plek in
-        het natte kustgebied: de oudste dorpen, wegen en later de landgoederen liggen er
-        op. De kalk is uit de bovengrond grotendeels weggespoeld, waardoor de grond hier
-        zuurder en armer is dan in de jonge duinen.
+        Na de laatste ijstijd steeg de zeespiegel eerst snel. Toen die stijging ongeveer
+        vijfduizend jaar geleden sterk afzwakte, bouwde de zee langs de kust zandruggen
+        op. Doordat de kustlijn zich stap voor stap zeewaarts verplaatste, ontstond tot
+        ongeveer het begin van onze jaartelling een reeks evenwijdige wallen met
+        daartussen lagere vlaktes. De strandwallen lagen hoog en droog en waren daarmee
+        de aantrekkelijkste plek in het natte kustgebied: de oudste dorpen, wegen en
+        later de landgoederen liggen erop. De kalk is uit de bovengrond grotendeels
+        weggespoeld, waardoor de grond hier zuurder en armer is dan in de jonge duinen.
       versterken:
         - "Kies soorten van droge, zure zandgrond: zomereik, ruwe berk, hazelaar, lijsterbes en hulst."
         - "Plant in de lengterichting van de wal; dat versterkt het evenwijdige patroon van het kustlandschap."
         - "Leg langs de oude wegen op de wal een bomenrij of laan aan; dat past bij de bewoningsgeschiedenis."
         - "Maak de overgang naar de lagere strandvlakte geleidelijk met een struweelrand."
         - "Bemest niet; de schraalheid van de oude duingrond hoort erbij."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Bd1); Geologie van Nederland (TNO-GDN), strandwal en kustduin"
 
     - id: grondmorene_plateau
       match_exact: ["grondmorene plateau, -vlakte"]
       match: ["grondmorene plateau", "grondmorenevlakte", "grondmorene vlakte", "keileemplateau", "keileemvlakte"]
       titel: "Grondmoreneplateau of -vlakte"
       ontstaan: >-
-        Onder het landijs dat Nederland ongeveer 150.000 jaar geleden bereikte, werd
-        het meegevoerde materiaal fijngemalen en samengeperst tot keileem: een stugge
-        mengeling van klei, zand, grind en zwerfkeien. Waar het ijs over de ondergrond
-        schoof zonder hem op te stuwen, bleef die keileem als een vlakke deken achter.
-        Keileem laat water heel slecht door, waardoor regenwater erop blijft staan in
-        plaats van weg te zakken. Zulke plateaus en vlaktes zijn daarom vaak nat in de
-        winter en juist droog in de zomer, omdat de wortels niet bij het diepere
-        grondwater kunnen.
+        Onder het landijs dat Nederland tijdens het Saalien, ongeveer 150.000 jaar
+        geleden, bereikte, werd het meegevoerde materiaal fijngemalen en samengeperst
+        tot keileem: een stugge, meestal kalkloze mengeling van klei, leem, zand, grind
+        en zwerfkeien. Waar het ijs over de ondergrond schoof zonder hem op te stuwen,
+        bleef die keileem als een vlakke deken achter; het Drents Plateau is er het
+        grootste voorbeeld van. Keileem laat water heel slecht door, waardoor regenwater
+        erop blijft staan in plaats van weg te zakken. Zulke plateaus en vlaktes zijn
+        daarom vaak nat in de winter en juist droog in de zomer, omdat de wortels niet
+        bij het diepere grondwater kunnen.
       versterken:
         - "Kies soorten die zowel natte winters als droge zomers verdragen: zomereik, zachte berk, ruwe berk, lijsterbes en sporkehout."
         - "Plant niet in een kuil; op keileem blijft water in het plantgat staan en verdrinken de wortels."
         - "Houd rekening met een dunne doorwortelbare laag; bomen blijven hier lager en zijn gevoeliger voor storm."
         - "Laat plekken waar in de winter water blijft staan open; ze zijn waardevol voor amfibieën."
         - "Werk niet op natte grond; keileem verdicht extreem snel en herstelt nauwelijks."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: grondmorenerug
       match_exact: ["grondmorenerug"]
@@ -1252,18 +1296,19 @@ categorieen:
       titel: "Grondmorenerug"
       ontstaan: >-
         Ook deze rug is een spoor van het landijs. Onder het ijs werd meegesleept
-        materiaal fijngemalen tot keileem en op sommige plaatsen tot langgerekte ruggen
-        opgehoopt in de richting waarin het ijs bewoog. De rug ligt daardoor hoger en
-        droger dan de omringende vlakte, maar in de ondergrond zit nog steeds de stugge,
-        slecht doorlatende keileem. Op zulke ruggen liggen van oudsher de bewoning, de
-        akkers en de doorgaande wegen.
+        materiaal fijngemalen tot keileem, dat aan de randen van het keileemplateau tot
+        langgerekte ruggen werd opgestuwd. Die ruggen liggen noordnoordoost-zuidzuidwest
+        en verraden daarmee dat het ijs uit het noorden kwam. De rug ligt hoger en droger
+        dan de omringende vlakte, maar in de ondergrond zit nog steeds de stugge, slecht
+        doorlatende keileem. Op zulke ruggen liggen van oudsher de bewoning, de akkers en
+        de doorgaande wegen.
       versterken:
         - "Kies soorten voor een droge bovengrond boven een natte, stugge ondergrond: zomereik, ruwe berk, lijsterbes en hazelaar."
         - "Leg een houtwal langs de rug aan; die volgt de vorm van het landschap en maakt hem zichtbaar."
         - "Plant niet in een kuil en werk het plantgat niet glad; op keileem vormt een gladde wand een waterdichte bak."
         - "Zet een solitaire eik of een boomgroep op het hoogste punt als markering."
         - "Houd er rekening mee dat wortels de keileem niet in gaan; kies geen soorten die diep moeten wortelen."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Kl1); RCE, aardkundig erfgoed - keileemruggen van Zuidwolde; Geologie van Nederland (TNO-GDN), grondmorene"
 
     - id: dekzandrug
       match_exact: ["dekzandrug"]
@@ -1282,7 +1327,7 @@ categorieen:
         - "Zet een solitaire eik of een kleine eikengroep op het hoogste punt; dat is hier een oud en herkenbaar beeld."
         - "Maak een brede kruidenrijke zoom aan de zonzijde en maai die één keer per jaar met afvoer van het maaisel."
         - "Bemest niet en voer geen grond aan; de schraalheid is hier de landschapswaarde."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: dekzandvlakte
       match_exact: ["dekzandvlakte"]
@@ -1301,7 +1346,7 @@ categorieen:
         - "Leg een singel of struweelrand langs de perceelrand aan; in het vlakke land geeft dat meteen structuur."
         - "Draineer niet extra om te kunnen planten, maar kies soorten die bij het natte karakter passen."
         - "Laat laagtes waar water blijft staan met rust; die zijn waardevol voor amfibieën en insecten."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: stuifzandduin
       match_exact: ["stuifzandduin (en bijbehorende vlaktes)"]
@@ -1321,7 +1366,7 @@ categorieen:
         - "Plant klein plantmateriaal in het najaar en reken op enige uitval."
         - "Voeg geen grond, compost of mest toe; verrijking is hier de grootste bedreiging."
         - "Laat open zandplekken open; ze zijn belangrijk voor warmteminnende insecten en reptielen."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: restgeul
       match_exact: ["restgeul"]
@@ -1340,7 +1385,7 @@ categorieen:
         - "Houd open water en natte laagtes open; ze zijn belangrijk voor vissen, amfibieën en libellen."
         - "Plant op de flauwe oever en niet in de geul zelf; een deel van de oever kruidenrijk laten is waardevol."
         - "Draineer niet; het vasthouden van water is hier juist de kwaliteit."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: veenrest
       match_exact: ["veenrest"]
@@ -1359,7 +1404,7 @@ categorieen:
         - "Plant ondiep en niet te dicht bij gebouwen; bomen wortelen in veen ondiep en waaien eerder scheef."
         - "Rijd niet met zware machines over de veenrest; die is licht en drukt makkelijk in."
         - "Voer geen grond of mest aan; veen is van nature arm en dat hoort bij de plek."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: kreekrug
       match_exact: ["kreekrug"]
@@ -1380,7 +1425,7 @@ categorieen:
         - "Leg een hoogstamboomgaard of een erfsingel aan op de rug; dat is hier de klassieke plek voor beplanting."
         - "Houd het lagere land ernaast open; het contrast tussen rug en kom is het kenmerk van dit landschap."
         - "Graaf de rug niet af; het hoogteverschil is klein maar landschappelijk en cultuurhistorisch waardevol."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (codes Zk3 en Dr2); Geologie van Nederland (TNO-GDN), kwelder en kreekrug"
 
     - id: kreekbedding
       match_exact: ["kreekbedding"]
@@ -1391,15 +1436,17 @@ categorieen:
         elk tij het gebied in en uit stroomde. Doordat het water er met kracht doorheen
         ging, bleef de bedding open en werd hij dieper uitgesleten dan de omgeving.
         Na de bedijking viel de kreek droog of bleef hij als watergang in gebruik. De
-        bodem bestaat vaak uit zandig materiaal en de bedding ligt als een kronkelende
-        laagte of watergang in de polder.
+        bodem bestaat vaak uit zandig materiaal. Waar de omringende klei na ontwatering
+        sterk is ingeklonken, is zo'n zandige geulvulling juist hoger komen te liggen;
+        die noemen we een kreekrug. Waar dat niet is gebeurd, ligt de bedding nog als een
+        kronkelende laagte of watergang in de polder.
       versterken:
         - "Volg met beplanting de kronkelende loop van de kreek; die lijn is het geheugen van het landschap."
         - "Kies soorten die natte, kalkrijke grond verdragen: schietwilg, zwarte els, eenstijlige meidoorn, vlier en gelderse roos."
         - "Houd open water en natte laagtes in de bedding open; ze zijn waardevol voor vogels en waterleven."
         - "Zet knotwilgen langs de kreek; dat is een passende en onderhoudsvriendelijke vorm."
         - "Houd rekening met zout of brak kwelwater; kies bij twijfel zoutverdragende soorten."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: meerbodem
       match_exact: ["meerbodem"]
@@ -1420,7 +1467,7 @@ categorieen:
         - "Kies soorten voor natte, zware klei: schietwilg, zwarte els, eenstijlige meidoorn, vlier en fladderiep."
         - "Houd rekening met brak of zout kwelwater; kies bij twijfel zoutverdragende soorten en plant iets verhoogd."
         - "Werk nooit op natte klei; verdichting van meerbodemklei herstelt zich nauwelijks."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: petgaten
       match_exact: ["petgaten"]
@@ -1440,7 +1487,7 @@ categorieen:
         - "Laat een deel van de petgaten open water en rietland; bebossing van alles maakt het gebied juist armer."
         - "Zet knotwilgen op de legakker in plaats van doorgroeiende bomen; die blijven lichter en waaien minder snel om."
         - "Rijd of loop niet met zware belasting over de legakkers; ze zijn smal en drijvend van karakter."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Lv2); natuurkennis.nl (OBN), Laagveen- en zeekleilandschap"
 
     - id: stroomrug_oeverwal
       match_exact: ["stroomrug, oeverwal"]
@@ -1461,7 +1508,7 @@ categorieen:
         - "Kies soorten van rijke, goed doorlatende grond: zoete kers, walnoot, veldesdoorn, hazelaar en kardinaalsmuts."
         - "Zet een bomenrij of laan langs de weg of de oprit; die versterkt de lijn van de stroomrug."
         - "Houd het hoogteverschil met de lagere kom zichtbaar en kies daar juist wilg en els."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: rivierkom
       match_exact: ["rivierkom"]
@@ -1480,7 +1527,7 @@ categorieen:
         - "Plant iets verhoogd waar water blijft staan, zodat de wortelhals niet verdrinkt."
         - "Werk nooit op natte klei; verdichte komklei herstelt zich jarenlang niet."
         - "Houd de openheid van de kom in stand: plant in lijnen langs de kavelgrenzen en niet in blokken."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: uiterwaard
       match_exact: ["uiterwaard"]
@@ -1495,12 +1542,12 @@ categorieen:
         Uiterwaarden werden gebruikt als hooiland, wilgengriend en voor de kleiwinning
         van steenfabrieken.
       versterken:
-        - "Overleg altijd eerst met de rivierbeheerder en het waterschap; in de uiterwaard gelden strikte regels omdat beplanting de waterafvoer remt."
+        - "Overleg altijd eerst met de rivierbeheerder; Rijkswaterstaat legt in de vegetatielegger vast welke begroeiing in de uiterwaard is toegestaan, omdat beplanting de waterafvoer remt."
         - "Kies soorten die overstroming verdragen: schietwilg, zwarte els, zwarte populier en gelderse roos."
         - "Griend en knotwilgen zijn hier de meest passende vormen; ze blijven laag en houden water minder tegen dan opgaand bos."
         - "Plant in de stroomrichting van de rivier en niet dwars erop."
         - "Laat oude geulen, strangen en laagtes open; ze zijn belangrijk voor vissen, amfibieën en vogels."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Rg3); Rijkswaterstaat, vegetatielegger en beheer van uiterwaarden"
 
     - id: overslaggronden
       match_exact: ["overslaggronden"]
@@ -1509,17 +1556,20 @@ categorieen:
       ontstaan: >-
         Overslaggronden zijn het gevolg van een dijkdoorbraak. Als een dijk bezweek,
         schoot het water met grote kracht naar binnen. Het sloeg een diep gat in de
-        grond, een wiel of kolk, en spoelde het uitgeslagen zand als een waaier over
-        het achterliggende land. Die zandige waaier ligt nu als een afwijkend, lichter
-        en droger stuk grond midden in de zwaardere klei. De wielen zelf zijn vaak
-        blijven bestaan als diepe, ronde plassen vlak achter de dijk.
+        grond, een wiel of kolk, en spoelde het uitgeslagen materiaal als een waaier
+        over het achterliggende land. Die waaier bestaat uit klei vermengd met grof zand
+        en soms grind uit de diepere ondergrond, en is tot ongeveer anderhalve meter
+        dik. Hij ligt nu als een lichtere, hoger gelegen en beter doorlatende plek in de
+        zwaardere klei en is van oudsher gewilde grond voor fruitteelt. De wielen zelf
+        zijn vaak blijven bestaan als diepe, ronde plassen; de herstelde dijk loopt er
+        meestal in een bocht omheen.
       versterken:
-        - "Kies soorten voor lichtere, droge zandgrond, ook al ligt de plek midden in het kleigebied: zomereik, ruwe berk, sleedoorn en eenstijlige meidoorn."
+        - "Kies soorten voor lichtere, goed doorlatende grond, ook al ligt de plek midden in het kleigebied: zomereik, ruwe berk, sleedoorn en eenstijlige meidoorn."
+        - "Een hoogstamboomgaard past hier goed; overslaggronden zijn van oudsher gewilde fruitgrond."
         - "Laat het wiel of de kolk open water blijven; die plassen zijn diep, oud en waardevol."
         - "Plant rond het wiel een struweelrand in plaats van een gesloten bosje, zodat het water licht houdt."
-        - "Maak het verhaal zichtbaar: een boomgroep of struweel op de overslagwaaier laat zien waar de doorbraak was."
-        - "Graaf de zandwaaier niet af; het is een leesbaar spoor van de waterstaatsgeschiedenis."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+        - "Graaf de waaier niet af; het is een leesbaar spoor van de waterstaatsgeschiedenis."
+      bron: "BKNSN 2023 (code Rg4); RCE, Dijkdoorbraakgaten (beheermodel); Geologie van Nederland (TNO-GDN), doorbraakgaten"
 
     - id: rivierduin
       match_exact: ["rivierduin"]
@@ -1531,15 +1581,17 @@ categorieen:
         rivierbeddingen blies de wind zand op tot langgerekte duinen langs de oevers.
         Toen het klimaat opwarmde, groeide er veen en klei omheen, maar de zandkoppen
         bleven als hoge, droge plekken boven het natte land uitsteken. Zulke koppen
-        heten donken. Ze waren eeuwenlang de enige droge plek in de wijde omgeving en
-        werden daarom al vroeg bewoond; vaak staat er nu nog een dorp of boerderij op.
+        heten donken; het grootste deel van het duin ligt daaronder nog begraven onder
+        veen en klei. Ze waren eeuwenlang de enige droge plek in de wijde omgeving en
+        werden daarom al in de steentijd bewoond; vaak staat er nu nog een dorp of
+        boerderij op.
       versterken:
         - "Kies droogteverdragende soorten van zandgrond: zomereik, ruwe berk, hazelaar, sleedoorn en lijsterbes."
         - "Zet een solitaire eik of een kleine boomgroep op de kop; dat maakt de hoogte in het vlakke land zichtbaar."
         - "Maak de overgang van de droge kop naar het natte omringende land geleidelijk met een struweelrand."
         - "Kies aan de voet van de kop juist natte soorten: zwarte els, schietwilg en gelderse roos."
         - "Graaf niet af en hoog niet op; het hoogteverschil is hier de landschappelijke en archeologische waarde."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: kustduinen
       match_exact: ["kustduinen"]
@@ -1547,11 +1599,13 @@ categorieen:
       titel: "Kustduinen"
       ontstaan: >-
         De zee bracht eeuwenlang zand naar het strand en de wind blies dat landinwaarts.
-        Zo groeiden hoge duinen, die vanaf ongeveer duizend jaar geleden over de oudere
-        strandwallen heen schoven. Het zand bevat kalk uit vergruisde schelpen, maar die
-        kalk spoelt geleidelijk uit de bovengrond weg. In de laagtes tussen de duinen,
-        de duinvalleien, komt het grondwater dicht aan de oppervlakte; daar is het
-        vochtig en soms kalkrijk. Wind, zout en droogte bepalen hier wat er kan groeien.
+        Zo groeiden hoge jonge duinen, die vooral tussen ongeveer 1200 en 1600 over de
+        oudere strandwallen heen schoven. Ten zuiden van Bergen in Noord-Holland bevat
+        het zand veel kalk uit vergruisde schelpen; op de Waddeneilanden en ten noorden
+        van Bergen is het duinzand van nature kalkarm. Bovendien spoelt kalk geleidelijk
+        uit de bovengrond weg. In de laagtes tussen de duinen, de duinvalleien, komt het
+        grondwater dicht aan de oppervlakte; daar is het vochtig en soms kalkrijk. Wind,
+        zout en droogte bepalen hier wat er kan groeien.
       versterken:
         - "Kies zout- en windverdragende struiken: duindoorn, wilde liguster, eenstijlige meidoorn, kruipwilg, duinroos en vlier."
         - "Houd de beplanting laag en gesloten; hoge losse bomen overleven de zeewind zelden."
@@ -1559,18 +1613,20 @@ categorieen:
         - "Vermijd woekeraars die in de duinen problemen geven, zoals rimpelroos en Amerikaanse vogelkers."
         - "Laat vochtige duinvalleien open; daar horen lage, kruidenrijke begroeiing en geen bomen."
         - "Bemest niet en geef geen water; schraalte en droogte horen bij dit landschap."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Bd3); Geologie van Nederland (TNO-GDN), kustduin; natuurkennis.nl (OBN), Duin- en kustlandschap"
 
     - id: stuwwal
       match_exact: ["stuwwal"]
       match: ["stuwwal", "gestuwd"]
       titel: "Stuwwal"
       ontstaan: >-
-        Ongeveer 150.000 jaar geleden schoof landijs vanuit het noorden Nederland
-        binnen. De ijstongen duwden de bodem voor zich uit en omhoog, zoals een schaaf
-        een krul opschuift. De opgestuwde lagen zand, grind en klei vormen de heuvels
-        die we stuwwallen noemen. Doordat ze hoog liggen, zakt regenwater diep weg en is
-        de bovengrond droog en arm. In de schuin opgestuwde lagen zit soms leem, waardoor
+        Tijdens de voorlaatste ijstijd, het Saalien, schoof ongeveer 150.000 jaar geleden
+        landijs vanuit het noorden Nederland binnen, tot ongeveer de lijn
+        Haarlem-Utrecht-Nijmegen. De ijstongen duwden de bodem voor zich uit en omhoog,
+        zoals een schaaf een krul opschuift. De opgestuwde lagen zand, grind en klei
+        vormen de heuvels die we stuwwallen noemen; de hoogste komen tot ruim honderd
+        meter boven zeeniveau. Doordat ze hoog liggen, zakt regenwater diep weg en is de
+        bovengrond droog en arm. In de schuin opgestuwde lagen zit soms leem, waardoor
         water plaatselijk juist blijft hangen en er natte plekken op de helling zitten.
       versterken:
         - "Kies soorten die droogte en armoede verdragen: zomereik, wintereik, ruwe berk, grove den, lijsterbes en hazelaar."
@@ -1578,7 +1634,7 @@ categorieen:
         - "Maak de overgang van bos naar open terrein geleidelijk met een struikenmantel en een kruidenzoom."
         - "Kies op natte plekken boven een leemlaag juist zachte berk en sporkehout."
         - "Laat oude, dikke bomen en dood hout staan; dat zijn op de stuwwal de rijkste plekken voor paddenstoelen, insecten en vogels."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Sw1); Geologie van Nederland (TNO-GDN), stuwwal"
 
     - id: smeltwaterafzetting
       match_exact: ["smeltwaterafzettingen, sandr"]
@@ -1597,7 +1653,7 @@ categorieen:
         - "Leg lange houtwallen of singels aan in de richting van het flauwe verhang, zodat het reliëf zichtbaar blijft."
         - "Houd de bodem bedekt met strooisel; op grof zand verdwijnt vocht anders erg snel."
         - "Bemest niet; deze grond is van nature schraal en dat hoort erbij."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: daluitspoelingswaaier
       match_exact: ["daluitspoelingswaaier"]
@@ -1617,7 +1673,7 @@ categorieen:
         - "Plant dwars op het verhang, zodat de beplanting afstromend water opvangt."
         - "Maak de vorm van de waaier zichtbaar met een houtwal of struweelrand langs de rand."
         - "Bemest niet; de schraalheid van deze zandige waaiers hoort bij het landschap."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: lossplateau
       match_exact: ["lossplateau"]
@@ -1625,19 +1681,20 @@ categorieen:
       titel: "Lössplateau"
       ontstaan: >-
         Dit is het hoge, vlakke deel van het Zuid-Limburgse heuvelland. De ondergrond
-        bestaat uit kalksteen en oude rivierafzettingen; daar bovenop ligt een dikke
-        laag löss, fijn stof dat tijdens de ijstijden over het kale land is aangewaaid.
-        Op het vlakke plateau is die lösslaag het dikst en het minst verstoord, want er
-        spoelt weinig weg. De grond is vruchtbaar en goed bewerkbaar en is daarom van
-        oudsher in gebruik als akkerland. Het plateau is open, met dorpen en
-        hoogstamboomgaarden aan de randen.
+        bestaat uit kalksteen uit het Krijt en oude rivierafzettingen van de Maas; daar
+        bovenop ligt een laag löss, fijn stof dat tijdens de ijstijden over het kale land
+        is aangewaaid en die plaatselijk tot wel vijftien meter dik is. Op het vlakke
+        plateau is die lösslaag het dikst en het minst verstoord, want er spoelt weinig
+        weg. De grond is vruchtbaar en goed bewerkbaar en is daarom van oudsher in
+        gebruik als akkerland. Het plateau is open, met dorpen en hoogstamboomgaarden
+        aan de randen.
       versterken:
         - "Houd het open akkerbeeld van het plateau in stand en concentreer beplanting bij het erf en langs wegen."
         - "Leg een bomenrij of laan langs de weg aan; dat past bij het open plateau met zijn lange zichtlijnen."
         - "Leg een hoogstamboomgaard aan aan de dorpsrand, met appel, peer, pruim en kers."
         - "Kies soorten van rijke lössgrond: haagbeuk, winterlinde, veldesdoorn, hazelaar en gele kornoelje."
         - "Leg brede kruidenrijke akkerranden aan; op het open plateau leveren die veel op voor akkervogels en insecten."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Lg1); natuurkennis.nl (OBN), Heuvellandschap; Geologie van Nederland (TNO-GDN), löss"
 
     - id: losshelling
       match_exact: ["losshelling"]
@@ -1648,16 +1705,17 @@ categorieen:
         De helling is bedekt met löss, dat tijdens de ijstijden als fijn stof is
         aangewaaid en later gedeeltelijk van hogerop naar beneden is gespoeld. Löss is
         vruchtbaar maar bijzonder erosiegevoelig: bij een felle bui slaat het oppervlak
-        dicht en stroomt de grond als modder de helling af. Boeren legden daarom graften
-        aan, begroeide steilrandjes dwars op de helling, en holle wegen ontstonden waar
-        karren zich in de zachte grond insneden.
+        dicht en stroomt de grond als modder de helling af. Op zulke hellingen liggen
+        graften: begroeide steilrandjes evenwijdig aan de hoogtelijnen, waarschijnlijk
+        aangelegd om erosie tegen te gaan. Holle wegen ontstonden doordat karren en vee
+        zich in de zachte grond insneden.
       versterken:
-        - "Plant altijd dwars op de helling; beplanting die het verhang volgt versnelt erosie juist."
-        - "Herstel of leg een graft aan: een strook struiken en bomen dwars op de helling die afspoelende grond opvangt."
+        - "Plant altijd evenwijdig aan de hoogtelijnen; beplanting die het verhang volgt versnelt erosie juist."
+        - "Herstel of leg een graft aan: een strook struiken en bomen evenwijdig aan de hoogtelijnen die afspoelende grond opvangt."
         - "Kies soorten van rijke lössgrond: haagbeuk, veldesdoorn, hazelaar, gele kornoelje, wollige sneeuwbal en eenstijlige meidoorn."
         - "Houd de bodem bedekt; kale löss is de belangrijkste oorzaak van modderstromen in deze streek."
         - "Laat de begroeiing op holle wegen en steilranden staan; die houdt de wanden bij elkaar."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Lg2); natuurkennis.nl (OBN), Heuvellandschap"
 
     - id: kalkhelling
       match_exact: ["kalkhelling"]
@@ -1665,19 +1723,21 @@ categorieen:
       titel: "Kalkhelling"
       ontstaan: >-
         Op deze helling ligt de kalksteen dicht onder het oppervlak of aan de dag. Die
-        kalk is miljoenen jaren geleden gevormd in een warme, ondiepe zee uit de resten
-        van schelpdieren en andere zeeorganismen. Doordat de Maas zich diep insneed en
-        de lösslaag van de steile hellingen afspoelde, kwam het kalkgesteente hier weer
-        aan de oppervlakte. De bodem is ondiep, kalkrijk, warm en snel droog. Dat is een
-        zeldzame combinatie in Nederland en levert een bijzondere plantenwereld op, zoals
-        kalkgraslanden met orchideeën.
+        kalk is in het Krijt, tientallen miljoenen jaren geleden, gevormd in een warme,
+        ondiepe zee uit de resten van schelpdieren en andere zeeorganismen. Doordat de
+        Maas zich diep insneed en de lösslaag van de steile hellingen afspoelde, kwam het
+        kalkgesteente hier weer aan de oppervlakte. De bodem is ondiep, kalkrijk, warm en
+        snel droog, met een hoge zuurgraad rond pH 7 tot 8. De open kalkgraslanden die
+        hier groeien zijn ontstaan door eeuwenlange begrazing met schapen zonder
+        bemesting; ze zijn zeldzaam en rijk aan bijzondere planten, waaronder orchideeën,
+        en aan insecten.
       versterken:
         - "Laat open kalkgrasland open. Bebossing van een kalkhelling doet de grootste natuurwaarde hier verdwijnen."
         - "Beperk beplanting tot de randen en tot struweel: gele kornoelje, wollige sneeuwbal, zuurbes, wegedoorn, weichselboom en eenstijlige meidoorn."
         - "Kies bomen die op ondiepe, kalkrijke grond passen: meelbes, elsbes en veldesdoorn."
-        - "Voer maaisel altijd af en bemest nooit; kalkgrasland is afhankelijk van verschraling."
+        - "Voer maaisel altijd af en bemest nooit; kalkgrasland is afhankelijk van verschraling en begrazing."
         - "Snoei struweel terug als het het grasland dreigt te overgroeien; open, warme, zonnige hellingen zijn hier het doel."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Lg3); natuurkennis.nl (OBN), H6210 Kalkgraslanden en Heuvellandschap"
 
     - id: zoetwatergetijdenafzetting
       match_exact: ["zoetwatergetijdenafzetting"]
@@ -1687,18 +1747,18 @@ categorieen:
         Hier werkte het getij, maar met zoet water. Zo ver landinwaarts bereikte het
         zeewater het gebied niet meer, terwijl de vloed het rivierwater wel twee keer
         per dag opstuwde. Daardoor stond het land regelmatig onder zoet water en bezonk
-        er slib. Zo ontstonden zoetwatergetijdengebieden met kreken, gorzen en
-        grienden. Het waterstandsverschil was klein maar constant, wat een landschap
-        opleverde dat altijd vochtig en zeer voedselrijk is. Veel van deze gebieden zijn
-        na de afsluiting van de zeearmen sterk veranderd doordat het getij grotendeels
-        verdween.
+        er slib. Zo ontstonden zoetwatergetijdengebieden met kreken, gorzen en grienden;
+        in de Biesbosch ging dat terug op de Sint-Elisabethsvloed van 1421. De dagelijkse
+        waterstandswisseling maakte het landschap altijd vochtig en zeer voedselrijk.
+        Door de Deltawerken is dat getijverschil teruggebracht tot enkele decimeters,
+        waardoor deze gebieden sterk zijn veranderd.
       versterken:
         - "Kies soorten die permanente vochtigheid en periodieke overstroming aankunnen: schietwilg, katwilg, amandelwilg, zwarte els en gelderse roos."
-        - "Griend is hier de meest kenmerkende vorm; wilgen worden om de één tot drie jaar afgezet."
+        - "Griend is hier de meest kenmerkende vorm; wilgen worden bij snijgriend elk jaar en bij hakgriend elke drie tot vijf jaar afgezet."
         - "Zet knotwilgen langs kreken en kaden; die horen bij dit landschap."
         - "Houd kreken en geulen open; de getijdenwerking die er nog is, is waardevol."
         - "Overleg met de waterbeheerder voordat je in buitendijks gebied plant."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Zk6); RCE, Panorama Landschap - Biesbosch; natuurkennis.nl (OBN), N17.05 Wilgengriend"
 
     - id: zoutwatergetijdenafzetting
       match_exact: ["zoutwatergetijdenafzetting"]
@@ -1718,46 +1778,46 @@ categorieen:
         - "Concentreer beplanting op het erf en langs de dijkvoet; buitendijks horen kwelder en slik open te blijven."
         - "Volg met beplanting het oude krekenpatroon of de kavelgrenzen in plaats van een rechte lijn dwars door het veld."
         - "Plant een gelaagde, dichte singel als windvang, met de laagste struiken aan de windzijde."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: overige_afzettingen
       match_exact: ["overige afzettingen"]
       match: ["overige afzetting"]
       titel: "Overige afzettingen"
       ontstaan: >-
-        Deze plek past niet in een van de vaste landschapstypen van de kaart. Het gaat
-        om afzettingen die plaatselijk voorkomen en die te klein of te bijzonder zijn om
-        apart te benoemen, bijvoorbeeld hellingpuin, plaatselijk grind of een lokale
-        leemlaag. Het landschapsverhaal is hier dus niet met zekerheid te geven. De
-        bodemsoort, de vochtklasse en de landvorm op deze plek zeggen meer dan dit
+        Deze plek ligt in het löss- en heuvellandschap van Zuid-Limburg, maar past niet
+        in een van de vaste eenheden van de kaart, zoals plateau, helling, droogdal of
+        terras. Het gaat om plaatselijke afzettingen die te klein of te afwijkend zijn om
+        apart te benoemen. Het landschapsverhaal is hier dus niet met zekerheid te geven.
+        De bodemsoort, de vochtklasse en de landvorm op deze plek zeggen meer dan dit
         kaartlabel.
       versterken:
         - "Kijk naar de bodemsoort en de vochtklasse van deze plek; die geven de beste aanwijzing voor de soortkeuze."
         - "Graaf een proefgat van ongeveer een halve meter diep om te zien wat er werkelijk in de ondergrond zit."
         - "Sluit met vorm en soortkeuze aan bij het landschap in de directe omgeving."
         - "Kies bij twijfel soorten met een brede tolerantie, zoals zomereik, eenstijlige meidoorn, hazelaar en vlier."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code Lg8, löss- en heuvellandschap)"
 
     - id: terp
       match_exact: ["terp"]
       match: ["terp", "wierde", "woonheuvel", "huisterp"]
       titel: "Terp of wierde"
       ontstaan: >-
-        Een terp is een kunstmatige woonheuvel. Voordat er dijken waren, overstroomde
-        het kweldergebied bij elke stormvloed. Mensen wierpen daarom vanaf ongeveer
-        tweeduizend jaar geleden heuvels op van mest, plaggen, huisafval en klei, en
-        bouwden daar hun boerderijen en dorpen op. Elke generatie hoogde de heuvel
-        verder op, waardoor sommige terpen meerdere meters boven het land uitkomen. Na
-        de bedijking waren ze niet meer nodig, maar veel dorpen liggen er nog steeds op.
-        De grond van een terp is rijk, humeus en goed doorlatend, en zit vol
-        archeologische resten.
+        Een terp of wierde is een kunstmatige woonheuvel. Voordat er dijken waren,
+        overstroomde het kweldergebied bij elke stormvloed. Mensen wierpen daarom vanaf
+        ongeveer 500 voor Christus heuvels op van mest, plaggen, huisafval en klei, en
+        bouwden daar hun boerderijen en dorpen op. Ze hoogden die heuvels steeds verder
+        op, tot ze omstreeks 1200 hun grootste hoogte bereikten; sommige komen meerdere
+        meters boven het land uit. Na de bedijking waren ze niet meer nodig, maar veel
+        dorpen liggen er nog steeds op. De grond van een terp is rijk, humeus en goed
+        doorlatend, en zit vol archeologische resten.
       versterken:
-        - "Graaf niet in de terp. De ophogingslagen zijn een archeologisch archief en meestal wettelijk beschermd."
+        - "Graaf niet in de terp. De ophogingslagen zijn een archeologisch archief; terpen gelden als gebieden met een grote kans op archeologische vondsten en hebben een beschermde status."
         - "Plant ondiep wortelende beplanting en vermijd diepe grondbewerking op de terp zelf."
         - "Kies soorten die op rijke, goed doorlatende grond passen: gewone esdoorn, veldesdoorn, eenstijlige meidoorn, vlier en zoete kers."
         - "Versterk de rand van de terp met een struweelhaag of een bomenkrans; dat maakt de ronde vorm zichtbaar."
         - "Houd het zicht op de terp vanuit het open land vrij; de heuvel in de vlakte is hier het beeld."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (code At); RCE, Terp (cultuurhistorisch beheer)"
 
     - id: water
       match_exact: ["water"]
@@ -1776,28 +1836,30 @@ categorieen:
         - "Zet knotwilgen langs de kant; die zijn eeuwenoud gebruik en leveren nestholtes op."
         - "Maai de oever gefaseerd, zodat er altijd een deel blijft staan voor insecten en vogels."
         - "Overleg met het waterschap over de onderhoudsstrook voordat je langs een watergang plant."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: es
       match_exact: ["es"]
       match: ["esdek", "oud bouwland", "enkeerd", "essen en kampen", "es"]
       titel: "Es of oud bouwland"
       ontstaan: >-
-        Dit is een oude akker die door mensen is opgehoogd. Boeren staken eeuwenlang
-        plaggen en heidezoden, gebruikten die als strooisel in de potstal en brachten
-        het mengsel van mest en plaggen op hun akkers. Zo groeide de akker langzaam
-        omhoog en ontstond een dikke, donkere bouwvoor van soms wel een meter dik.
-        Essen liggen bijna altijd op de hogere, droge delen van het zandlandschap, vlak
-        bij het dorp, en zijn vaak licht bol van vorm. De randen zijn nog te herkennen
-        aan een steilrandje met oude eiken of een houtwal eromheen.
+        Dit is een oude akker die door mensen is opgehoogd. Vanaf de middeleeuwen tot het
+        eind van de negentiende eeuw staken boeren plaggen en heidezoden, gebruikten die
+        als strooisel in de stal en brachten het mengsel van mest en plaggen op hun
+        akkers; vanaf ongeveer de achttiende eeuw gebeurde dat mengen in een speciale
+        potstal. Zo groeide de akker langzaam omhoog en ontstond een donker plaggendek
+        dat van dertig centimeter tot ruim een meter dik kan zijn. Essen liggen bijna
+        altijd op de hogere, droge delen van het zandlandschap, vlak bij het dorp, en
+        zijn vaak licht bol van vorm. De randen zijn nog te herkennen aan een steilrandje
+        met oude eiken of een houtwal eromheen.
       versterken:
         - "Houd het open middenveld van de es open; de waarde zit juist in het bolle, onbebouwde akkervlak."
         - "Versterk de rand: een houtwal, een eikenrij of beplanting op het steilrandje maakt de vorm weer zichtbaar."
         - "Kies soorten van de zandgrond: zomereik, ruwe berk, hazelaar, lijsterbes en sleedoorn."
         - "Leg langs de esrand een bloemrijke akkerrand of kruidenzoom van enkele meters breed aan."
         - "Plant geen bos midden op de es; dat wist het historische patroon uit."
-        - "Graaf niet af; het opgebrachte dek is een cultuurhistorisch en archeologisch archief."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+        - "Ploeg niet dieper dan gebruikelijk en graaf niet af; onder het opgebrachte dek zitten vaak archeologische resten."
+      bron: "BKNSN 2023 (codes Dz4 en Sw5); RCE, Oude akkercomplexen (cultuurhistorisch beheer)"
 
     - id: antropogeen_element
       match_exact: ["antropogeen element"]
@@ -1818,7 +1880,7 @@ categorieen:
         - "Kies soorten die veel verdragen: veldesdoorn, eenstijlige meidoorn, vlier, zomereik en fladderiep."
         - "Sluit met vorm en soortkeuze aan bij het omringende landschap, ook al is de ondergrond hier kunstmatig."
         - "Combineer beplanting met ruimte voor water: op verhard terrein is elke plek waar regenwater kan wegzakken winst."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
 
     - id: onbekend
       match_exact: []
@@ -1835,4 +1897,4 @@ categorieen:
         - "Kijk in de omgeving welke beplantingsvormen er van oudsher voorkomen: houtwallen, singels, hagen, boomgaarden of grienden."
         - "Kies bij twijfel inheemse soorten uit de streek; die passen vrijwel altijd."
         - "Graaf een proefgat om de bodem en de waterhuishouding ter plekke te beoordelen."
-      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland); eigen bewerking"
+      bron: "BKNSN 2023 (Basiskaart Natuurlijk Systeem Nederland, WENR/CAS); Geologie van Nederland (TNO-GDN)"
