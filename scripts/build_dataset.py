@@ -5,13 +5,25 @@
 # - Strikte exportkolommen, geen ruisvelden
 # - CSV als UTF‑8 met BOM (Excel toont “Löss” correct)
 # - Behoudt: Ellenberg LONG (M→F), SL2020 inheems (1a/1b/2a), TreeEbb merge
+#
+# Status: oude pipeline (Ellenberg-koppeling), bewaard voor hergebruik. De app draait
+# op data/treeebb_planten_allfields.csv; dit script vult out/plantwijs_full*.csv.
+#
+# Gebruik (vanuit de projectroot, met de venv actief):
+#   python scripts/build_dataset.py
+#
+# Locatie: <projectroot>/scripts/. Leest uit <projectroot>/data/ en schrijft naar
+# <projectroot>/out/; de projectroot wordt uit het bestandspad afgeleid, dus het
+# maakt niet uit vanuit welke map je het script aanroept.
 from __future__ import annotations
 import os, re, codecs
 from typing import Optional, Dict, Tuple
 import pandas as pd
 
-DATA_DIR = "data"
-OUT_DIR  = "out"
+# scripts/build_dataset.py ⇒ één niveau omhoog is de projectroot.
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+OUT_DIR  = os.path.join(BASE_DIR, "out")
 PATH_SOORTEN   = os.path.join(DATA_DIR, "verspreidingsatlas_planten.csv")
 PATH_ELLEN     = os.path.join(DATA_DIR, "ellenberg.xlsx")
 PATH_SL2020    = os.path.join(DATA_DIR, "standaardlijst2020.xlsx")
