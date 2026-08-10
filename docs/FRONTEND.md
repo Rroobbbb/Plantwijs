@@ -1,4 +1,6 @@
-# PlantWijs — Frontend-ontwerpbrief (WP3)
+# Beplantingswijzer — Frontend-ontwerpbrief (WP3)
+
+*Productnaam: Beplantingswijzer (voorheen PlantWijs); de technische pakketnaam `plantwijs` en de repo-naam blijven ongewijzigd.*
 
 Doelgroep: bewoners zonder voorkennis, NL-talig. Toon: uitnodigend, betrouwbaar, natuurlijk. Dit document is bindend voor WP3; API-contract in docs/API.md.
 
@@ -16,7 +18,7 @@ Doelgroep: bewoners zonder voorkennis, NL-talig. Toon: uitnodigend, betrouwbaar,
 ## Lay-out
 - **Desktop (≥900px)**: kaart links (~55%, sticky/vaste hoogte), adviespaneel rechts scrollbaar. Versleepbare splitter mag vervallen (simpeler > gimmick).
 - **Mobiel**: kaart bovenaan (~55vh), adviespaneel als bottom-sheet die na een klik omhoog schuift (drag-handle, snap: peek/half/vol). Geen dubbele legenda-elementen meer (het oude ontwerp had er twee).
-- Header: logo/naam "PlantWijs 🌿" + ondertitel "Beplantingsadvies op maat voor jouw plek" + themaknop.
+- Header: logo/naam "Beplantingswijzer" + ondertitel "Advies op maat voor jouw plek" + themaknop.
 
 ## Huisstijl
 - CSS custom properties, licht + donker thema (localStorage, default: systeemvoorkeur).
@@ -41,6 +43,6 @@ Doelgroep: bewoners zonder voorkennis, NL-talig. Toon: uitnodigend, betrouwbaar,
 - `/advies/geo` kan 1–10 s duren (eerste NSN-indexbouw nog langer): skeleton-loaders per sectie + statustekstjes ("Kaartbronnen raadplegen…"). Requests aborten bij nieuwe klik (AbortController).
 - Foutstaat per bron, nooit een leeg wit paneel; netwerkfout ⇒ vriendelijke melding + retry-knop.
 - Toegankelijkheid: aria-labels, focus-visible ringen, toetsenbord-bereikbare filters, prefers-reduced-motion respecteren, contrast AA.
-- SEO/meta: `<html lang="nl">`, title "PlantWijs — Beplantingsadvies op maat voor jouw plek", meta description, og-tags, favicon als inline-SVG-blaadje (data-URI), robots index.
+- SEO/meta: `<html lang="nl">`, title "Beplantingswijzer — beplantingsadvies op maat voor jouw plek", meta description, canonical naar https://beplantingswijzer.nl/, og-tags, favicon als inline-SVG-blaadje (data-URI), robots index.
 - Techniek: vanilla ES-modules (`static/js/`), één `static/css/app.css`, geen framework, geen build-step, geen externe fonts/CDN's behalve Leaflet en OSM-tiles.
 - Staat in URL: na klik `?lat=..&lon=..` (history.replaceState) zodat een locatie deelbaar is; bij laden met lat/lon direct advies ophalen.

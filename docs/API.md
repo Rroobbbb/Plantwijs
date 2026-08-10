@@ -1,4 +1,6 @@
-# PlantWijs API-contract (v4)
+# Beplantingswijzer API-contract (v4)
+
+*Productnaam: Beplantingswijzer (voorheen PlantWijs); de technische pakketnaam `plantwijs` en de repo-naam blijven ongewijzigd.*
 
 Alle endpoints zijn GET. Bestaande endpoints en hun parameters/velden blijven ongewijzigd; alles onder "NIEUW" is additief. Frontend (WP3) bouwt tegen dít contract; backend (WP1/2b/4) implementeert het exact.
 
@@ -53,7 +55,7 @@ Response: `{ "titel", "ontstaan", "versterken": [], "bron" }` of `404 {"error":"
 
 ## GET /advies/pdf  (NIEUW)
 Query: zelfde als /advies/geo, plus optioneel `licht`/`vocht`/`bodem`/`beplantingstype` filters.
-Response: `application/pdf` (attachment `plantwijs_rapport.pdf`). Zolang WP4 niet klaar is: `501 {"error":"pdf_nog_niet_beschikbaar"}`.
+Response: `application/pdf` (attachment `beplantingswijzer_rapport.pdf`). Zolang WP4 niet klaar is: `501 {"error":"pdf_nog_niet_beschikbaar"}`.
 
 ## GET /export/csv en /export/xlsx
 Ongewijzigd; zelfde query-params als /api/plants.

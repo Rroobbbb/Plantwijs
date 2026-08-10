@@ -34,7 +34,7 @@ def export_csv(
     buf = io.StringIO()
     df.to_csv(buf, index=False)
     buf.seek(0)
-    filename = "plantwijs_export.csv"
+    filename = "beplantingswijzer_export.csv"
     return StreamingResponse(iter([buf.getvalue()]),
                              media_type="text/csv",
                              headers={"Content-Disposition": f'attachment; filename="{filename}"'})
@@ -58,9 +58,9 @@ def export_xlsx(
     df = _filter_plants_df(q, inheems_only, toon_inheems, toon_ingeburgerd, toon_exoot, exclude_invasief, licht, vocht, bodem, beplantingstype, sort, desc)
     buf = io.BytesIO()
     with pd.ExcelWriter(buf, engine="openpyxl") as xw:
-        df.to_excel(xw, index=False, sheet_name="PlantWijs")
+        df.to_excel(xw, index=False, sheet_name="Beplantingswijzer")
     buf.seek(0)
-    filename = "plantwijs_export.xlsx"
+    filename = "beplantingswijzer_export.xlsx"
     return StreamingResponse(buf,
                              media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                              headers={"Content-Disposition": f'attachment; filename="{filename}"'})

@@ -13,9 +13,9 @@ from typing import List
 from pyproj import Transformer
 
 # ───────────────────── versie / app
-VERSION = "3.9.7"
+VERSION = "4.0.0"
 # Titel van de OpenAPI-spec en van /docs (zie main.create_app()).
-APP_TITLE = "PlantWijs API"
+APP_TITLE = "Beplantingswijzer API"
 
 # ───────────────────── paden
 # config.py staat in <project>/plantwijs/, dus twee niveaus omhoog is de projectmap.

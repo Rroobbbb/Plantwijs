@@ -76,8 +76,8 @@ from .pdok import (
 )
 
 # ───────────────────── constanten
-BESTANDSNAAM = "plantwijs_rapport.pdf"
-TITEL = "PlantWijs — Locatierapport"
+BESTANDSNAAM = "beplantingswijzer_rapport.pdf"
+TITEL = "Beplantingswijzer — Locatierapport"
 MAX_SOORTEN = 40
 
 # Huisstijl (zie static/css/app.css)
@@ -132,7 +132,7 @@ DISCLAIMER_AANVULLING = (
 
 # ───────────────────── kaart (OpenStreetMap-tiles)
 TILE_URL = "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-TILE_HEADERS = {"User-Agent": f"PlantWijs/{VERSION} (locatierapport)"}
+TILE_HEADERS = {"User-Agent": f"Beplantingswijzer/{VERSION} (locatierapport)"}
 TILE_TIMEOUT = 8
 KAART_ZOOM = 16
 KAART_PX = 512          # uitsnede in pixels (uit een 3×3 mozaïek van 768 px)
@@ -687,7 +687,7 @@ def _paginadecoratie(canv: rl_canvas.Canvas, doc, subtitel: str) -> None:
     canv.line(MARGE, A4[1] - MARGE + 6 * mm, A4[0] - MARGE, A4[1] - MARGE + 6 * mm)
     canv.setFont("Helvetica-Bold", 7.5)
     canv.setFillColor(C_GROEN)
-    canv.drawString(MARGE, A4[1] - MARGE + 8 * mm, "PlantWijs")
+    canv.drawString(MARGE, A4[1] - MARGE + 8 * mm, "Beplantingswijzer")
     canv.setFont("Helvetica", 7.5)
     canv.setFillColor(C_MUTED)
     canv.drawRightString(A4[0] - MARGE, A4[1] - MARGE + 8 * mm, "Locatierapport")
@@ -813,7 +813,7 @@ def maak_rapport(
     story.append(Spacer(1, 3))
     story.append(Paragraph(
         f"Deze tabel toont maximaal {MAX_SOORTEN} soorten. De volledige lijst staat op de "
-        "website van PlantWijs en is daar te downloaden via de CSV-export.",
+        "website van Beplantingswijzer en is daar te downloaden via de CSV-export.",
         s["klein_muted"]))
 
     # 8 ── voetwerk
@@ -832,10 +832,10 @@ def maak_rapport(
         buf, pagesize=A4,
         leftMargin=MARGE, rightMargin=MARGE,
         topMargin=MARGE, bottomMargin=MARGE,
-        title=TITEL, author="PlantWijs",
+        title=TITEL, author="Beplantingswijzer",
         subject=f"Locatierapport voor {coordinaten}",
     )
-    voettekst = f"PlantWijs — locatierapport {coordinaten} — {_datum_nl()}"
+    voettekst = f"Beplantingswijzer — locatierapport {coordinaten} — {_datum_nl()}"
 
     def _op_pagina(canv, doc_):
         _paginadecoratie(canv, doc_, voettekst)

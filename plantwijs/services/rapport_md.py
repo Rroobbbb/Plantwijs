@@ -288,8 +288,8 @@ def _sectie_soorten(data: Dict[str, Any], csv_url: str, max_soorten: int,
 
     if not rijen:
         regels += [
-            "Geen enkele soort uit de PlantWijs-lijst voldeed aan de combinatie van "
-            "bodem en vochtklasse van deze plek, in combinatie met de opgegeven "
+            "Geen enkele soort uit de Beplantingswijzer-lijst voldeed aan de combinatie "
+            "van bodem en vochtklasse van deze plek, in combinatie met de opgegeven "
             "filters. Zet de statusfilters ruimer of raadpleeg de volledige lijst.",
             "",
             _statuszin(statusfilters),
@@ -302,14 +302,14 @@ def _sectie_soorten(data: Dict[str, Any], csv_url: str, max_soorten: int,
     getoond = rijen[:max_soorten]
     if len(rijen) > len(getoond):
         inleiding = (
-            f"{len(rijen)} soorten uit de PlantWijs-lijst passen bij de bodem en de "
-            f"vochtklasse van deze plek. Hieronder de eerste {len(getoond)}; "
+            f"{len(rijen)} soorten uit de Beplantingswijzer-lijst passen bij de bodem "
+            f"en de vochtklasse van deze plek. Hieronder de eerste {len(getoond)}; "
             "de volledige lijst haal je op als CSV."
         )
     else:
         inleiding = (
-            f"{len(rijen)} soorten uit de PlantWijs-lijst passen bij de bodem en de "
-            "vochtklasse van deze plek."
+            f"{len(rijen)} soorten uit de Beplantingswijzer-lijst passen bij de bodem "
+            "en de vochtklasse van deze plek."
         )
     regels += [inleiding, "", _statuszin(statusfilters), ""]
 
@@ -340,7 +340,7 @@ def _sectie_bronnen(data: Dict[str, Any], basis_url: str, csv_url: str,
         regels += [""]
 
     regels += [
-        "De soortenlijst komt uit de PlantWijs-dataset (TreeEbb, aangevuld met de "
+        "De soortenlijst komt uit de Beplantingswijzer-dataset (TreeEbb, aangevuld met de "
         "Nederlandse namen en de status inheems/ingeburgerd/exoot uit de "
         "Standaardlijst 2020).",
         "",
@@ -359,7 +359,7 @@ def _sectie_bronnen(data: Dict[str, Any], basis_url: str, csv_url: str,
     if links:
         regels += ["Verder:", ""] + links + [""]
 
-    regels += ["Bij overname of citeren graag bronvermelding: PlantWijs.", ""]
+    regels += ["Bij overname of citeren graag bronvermelding: Beplantingswijzer.", ""]
     return regels
 
 
@@ -377,7 +377,7 @@ def rapport_markdown(
 
     Args:
         data: het dict dat `/advies/geo` als JSON zou teruggeven.
-        basis_url: origin van de server zonder slash, bijv. `https://plantwijs.nl`.
+        basis_url: origin van de server zonder slash, bijv. `https://beplantingswijzer.nl`.
         csv_url: link naar `/export/csv` met dezelfde filters.
         json_url: link naar ditzelfde advies in JSON.
         max_soorten: maximaal aantal rijen in de soortentabel.
@@ -388,7 +388,7 @@ def rapport_markdown(
     titel = _kop_titel(data)
 
     regels: List[str] = [
-        f"# PlantWijs-advies voor {titel}",
+        f"# Beplantingswijzer-advies voor {titel}",
         "",
         "Beplantingsadvies op maat voor één plek in Nederland: hoe dit landschap is "
         "ontstaan, wat de bodem en het grondwater hier doen, welke beplantingsvormen "

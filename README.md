@@ -1,6 +1,8 @@
-# PlantWijs
+# Beplantingswijzer
 
-PlantWijs geeft voor elke plek in Nederland een beplantingsadvies op maat. Je klikt op de kaart of
+*Productnaam: Beplantingswijzer (voorheen PlantWijs); de technische pakketnaam `plantwijs` en de repo-naam blijven ongewijzigd.*
+
+Beplantingswijzer geeft voor elke plek in Nederland een beplantingsadvies op maat. Je klikt op de kaart of
 vult een adres in, en de applicatie haalt bij PDOK het locatieprofiel op — fysisch-geografische
 regio, bodemtype, grondwatertrap en de daaruit afgeleide vochtklasse, maaiveldhoogte (AHN),
 geomorfologie en het natuurlijk systeem (BKNSN 2023). Dat profiel wordt gecombineerd met een
@@ -133,7 +135,7 @@ foutgedrag — staat in [`docs/API.md`](docs/API.md).
 
 ## AI-toegang
 
-PlantWijs is zo gebouwd dat een AI-agent of script het advies met één HTTP-GET kan lezen, zonder
+Beplantingswijzer is zo gebouwd dat een AI-agent of script het advies met één HTTP-GET kan lezen, zonder
 sleutel, account of MCP-server. `GET /llms.txt` beschrijft in gewoon tekstformaat wat de site doet en
 welke URL's je gebruikt, met voorbeelden. Zet je `&format=md` achter een `/advies/geo`-aanroep, dan
 komt het complete advies terug als Markdown-rapport (`text/markdown`) in plaats van JSON: profiel,

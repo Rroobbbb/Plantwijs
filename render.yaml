@@ -1,8 +1,8 @@
-# Render Blueprint voor PlantWijs — zie docs/DEPLOY.md voor de toelichting.
+# Render Blueprint voor Beplantingswijzer — zie docs/DEPLOY.md voor de toelichting.
 # Gebruik: Render → New → Blueprint → deze repo aanwijzen.
 services:
   - type: web
-    name: plantwijs
+    name: beplantingswijzer
     runtime: python
     plan: free
     region: frankfurt

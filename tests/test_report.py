@@ -129,7 +129,7 @@ def test_pdf_endpoint_geeft_pdf(client: TestClient, monkeypatch):
 
     assert r.status_code == 200
     assert r.headers["content-type"].startswith("application/pdf")
-    assert r.headers["content-disposition"] == 'attachment; filename="plantwijs_rapport.pdf"'
+    assert r.headers["content-disposition"] == 'attachment; filename="beplantingswijzer_rapport.pdf"'
     assert r.content.startswith(PDF_MAGIC)
     assert _is_geldige_pdf(r.content)
     assert len(r.content) > 20_000  # met kaart erin
@@ -141,7 +141,7 @@ def test_pdf_bevat_alle_secties(client: TestClient, monkeypatch):
     tekst = _pdf_tekst(client.get("/advies/pdf",
                                   params={"lat": 52.078, "lon": 5.89}).content)
 
-    for kop in ("PlantWijs — Locatierapport", "Jouw plek", "Jouw landschap",
+    for kop in ("Beplantingswijzer — Locatierapport", "Jouw plek", "Jouw landschap",
                 "Wortelruimte", "Wat kun jij doen", "Passende soorten",
                 "Over dit rapport", "Gebruikte bronnen"):
         assert kop in tekst, kop

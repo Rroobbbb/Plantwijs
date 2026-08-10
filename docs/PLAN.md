@@ -1,4 +1,6 @@
-# PlantWijs — Plan "compleet & werkbaar pakket" (aug 2026)
+# Beplantingswijzer — Plan "compleet & werkbaar pakket" (aug 2026)
+
+*Productnaam: Beplantingswijzer (voorheen PlantWijs); de technische pakketnaam `plantwijs` en de repo-naam blijven ongewijzigd.*
 
 ## Status (bijgewerkt 10 augustus 2026)
 

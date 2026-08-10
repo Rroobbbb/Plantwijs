@@ -1,6 +1,8 @@
-# PlantWijs deployen (Render)
+# Beplantingswijzer deployen (Render)
 
-PlantWijs is één web-service: een FastAPI-app die door uvicorn wordt gedraaid. Er is geen database,
+*Productnaam: Beplantingswijzer (voorheen PlantWijs); de technische pakketnaam `plantwijs` en de repo-naam blijven ongewijzigd.*
+
+Beplantingswijzer is één web-service: een FastAPI-app die door uvicorn wordt gedraaid. Er is geen database,
 geen achtergrondworker en geen build-step voor de frontend. Alles wat de app nodig heeft staat in de
 repo of wordt live bij PDOK opgehaald. Deze handleiding beschrijft Render, maar elk platform dat een
 Python-webservice kan draaien (Fly.io, Railway, een eigen VPS met systemd) werkt met dezelfde build-
@@ -123,7 +125,7 @@ een SQLite R-tree-index in de tijdelijke map van het systeem
 
 ## 7. Geheugen (512 MB op het gratis plan)
 
-Het gratis plan geeft 512 MB RAM. Daar past PlantWijs in, maar met beperkte marge:
+Het gratis plan geeft 512 MB RAM. Daar past Beplantingswijzer in, maar met beperkte marge:
 
 - De NSN-data wordt **nooit volledig in RAM geladen**; features worden per stuk uit de zip gelezen
   en in SQLite gezet, en lookups gaan via de on-disk index. Dat is precies waarom die index bestaat.
@@ -138,7 +140,7 @@ Het gratis plan geeft 512 MB RAM. Daar past PlantWijs in, maar met beperkte marg
 ## 8. Eigen domein en HTTPS
 
 1. Render → de service → Settings → Custom Domains → domein toevoegen (bijvoorbeeld
-   `plantwijs.nl` en `www.plantwijs.nl`).
+   `beplantingswijzer.nl` en `www.beplantingswijzer.nl`).
 2. Bij je DNS-provider de door Render getoonde records zetten: een `CNAME` voor `www` naar de
    `onrender.com`-hostnaam, en voor het kale domein een `ALIAS`/`ANAME` als je provider dat
    ondersteunt, anders de A-records die Render opgeeft.

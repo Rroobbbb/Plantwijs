@@ -21,7 +21,7 @@ def _read_html(path: str) -> str:
 def _html_response(path: str) -> HTMLResponse:
     if not os.path.exists(path):
         return HTMLResponse(
-            content="<!doctype html><meta charset=utf-8><title>PlantWijs</title>"
+            content="<!doctype html><meta charset=utf-8><title>Beplantingswijzer</title>"
                     "<p>Frontend-bestand niet gevonden.</p>",
             status_code=404,
             headers=dict(NO_STORE_HEADERS),

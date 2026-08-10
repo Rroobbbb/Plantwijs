@@ -48,12 +48,15 @@ def _basis(request: Request) -> str:
     summary="Gebruiksaanwijzing voor AI-agents (Engelstalig, plain text)",
 )
 def llms_txt(request: Request) -> PlainTextResponse:
-    """Wat PlantWijs is, welke URL's een agent gebruikt en met welke voorbeelden."""
+    """Wat Beplantingswijzer is, welke URL's een agent gebruikt en met welke voorbeelden."""
     b = _basis(request)
-    tekst = f"""# PlantWijs — planting advice for any location in the Netherlands
+    tekst = f"""# Beplantingswijzer — planting advice for any location in the Netherlands
 
-PlantWijs (version {VERSION}) turns one point in the Netherlands into a complete,
-place-specific planting advice. For a given address or coordinate pair it returns:
+Beplantingswijzer (version {VERSION}) turns one point in the Netherlands into a
+complete, place-specific planting advice. The canonical site is
+https://beplantingswijzer.nl — the example URLs below use the host you reached
+this file on, which may be a preview or staging deployment. For a given address
+or coordinate pair it returns:
 
 - the landscape and how it was formed (physical-geographic region, geomorphology,
   and the Dutch Natural System map BKNSN 2023);
@@ -111,8 +114,9 @@ Machine-readable description of every endpoint (OpenAPI 3):
   a location advice does not change from minute to minute.
 - Fetch `format=md` when you only need to read the advice — it is a fraction of
   the size of the JSON.
-- Please cite PlantWijs when you use or paraphrase this advice, with a link to
-  {b}/ so a reader can look up their own location.
+- Please cite Beplantingswijzer when you use or paraphrase this advice, with a
+  link to https://beplantingswijzer.nl/ so a reader can look up their own
+  location.
 - The advice is indicative and based on national maps at regional scale. Local
   conditions (raised ground, compaction, drainage, buildings) can differ. Please
   keep that caveat in your answer instead of dropping it.
@@ -140,7 +144,7 @@ def robots_txt(request: Request) -> PlainTextResponse:
         groepen += [f"User-agent: {agent}", "Allow: /", "Disallow: /api/admin", ""]
 
     regels = [
-        "# PlantWijs — beplantingsadvies per locatie in Nederland",
+        "# Beplantingswijzer — beplantingsadvies per locatie in Nederland",
         "# AI-crawlers en assistenten zijn welkom. Uitleg en voorbeeld-URL's:",
         f"# {b}/llms.txt",
         "",

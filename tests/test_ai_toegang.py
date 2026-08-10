@@ -24,7 +24,7 @@ from plantwijs.services import geocode  # noqa: E402
 from plantwijs.services.rapport_md import MAX_SOORTEN, rapport_markdown  # noqa: E402
 
 VERWACHTE_KOPPEN = (
-    "# PlantWijs-advies voor",
+    "# Beplantingswijzer-advies voor",
     "## Jouw plek",
     "## Jouw landschap",
     "## Wortelruimte",
@@ -212,7 +212,7 @@ def test_format_md_geeft_markdown_met_alle_secties(client: TestClient, monkeypat
 
     for kop in VERWACHTE_KOPPEN:
         assert kop in tekst, kop
-    assert tekst.startswith("# PlantWijs-advies voor Loenenseweg 1, 7361 GB Beekbergen")
+    assert tekst.startswith("# Beplantingswijzer-advies voor Loenenseweg 1, 7361 GB Beekbergen")
     # elke sectie heeft inhoud: na een kop komt nooit meteen de volgende kop
     koppen = [i for i, r in enumerate(tekst.splitlines()) if r.startswith("## ")]
     regels = tekst.splitlines()
@@ -249,7 +249,7 @@ def test_format_md_verwijst_naar_export_en_site(client: TestClient, monkeypatch)
     assert "http://testserver/export/csv" in tekst
     assert "http://testserver/llms.txt" in tekst
     assert "indicatief" in tekst.lower()  # disclaimer
-    assert "PlantWijs" in tekst
+    assert "Beplantingswijzer" in tekst
 
 
 def test_format_md_bevat_geen_none_of_null(client: TestClient, monkeypatch):
@@ -291,7 +291,7 @@ def test_md_zonder_statusparams_gebruikt_site_defaults(client: TestClient, monke
 
     # de md-lijst is daardoor korter dan de ongefilterde json-lijst
     json_aantal = len(client.get("/advies/geo", params=params).json()["advies"])
-    md_aantal = int(re.search(r"^(\d+) soorten uit de PlantWijs-lijst",
+    md_aantal = int(re.search(r"^(\d+) soorten uit de Beplantingswijzer-lijst",
                               tekst, re.M).group(1))
     assert 0 < md_aantal < json_aantal
 
@@ -329,7 +329,7 @@ def test_rapport_markdown_met_lege_data():
         assert kop in tekst, kop
     assert "None" not in tekst
     assert not re.search(r"\bnull\b", tekst, re.IGNORECASE)
-    assert tekst.startswith("# PlantWijs-advies voor deze locatie")
+    assert tekst.startswith("# Beplantingswijzer-advies voor deze locatie")
 
 
 # ───────────────────── /llms.txt, /robots.txt, /sitemap.xml
@@ -338,14 +338,14 @@ def test_llms_txt(client: TestClient):
     assert r.status_code == 200
     assert r.headers["content-type"] == "text/plain; charset=utf-8"
     t = r.text
-    assert "PlantWijs" in t
+    assert "Beplantingswijzer" in t
     assert "http://testserver/advies/geo?adres=" in t
     assert "http://testserver/advies/geo?lat=" in t
     assert "format=md" in t
     assert "http://testserver/api/plants?q=" in t
     assert "http://testserver/openapi.json" in t
     assert "WGS84" in t and "Netherlands" in t
-    assert "cite PlantWijs" in t
+    assert "cite Beplantingswijzer" in t
 
 
 def test_robots_txt(client: TestClient):
@@ -377,7 +377,7 @@ def test_openapi_metadata(client: TestClient):
     r = client.get("/openapi.json")
     assert r.status_code == 200
     spec = r.json()
-    assert spec["info"]["title"] == "PlantWijs API"
+    assert spec["info"]["title"] == "Beplantingswijzer API"
     assert "/llms.txt" in spec["info"]["description"]
     assert spec["info"]["version"]
 

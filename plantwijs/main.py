@@ -18,7 +18,7 @@ from .routers import seo as seo_router
 from .services.nsn import warm_nsn
 
 API_DESCRIPTION = (
-    "PlantWijs geeft voor elke plek in Nederland een beplantingsadvies op maat: het "
+    "Beplantingswijzer geeft voor elke plek in Nederland een beplantingsadvies op maat: het "
     "landschap en hoe het is ontstaan, de bodem, de grondwatertrap en de vochtklasse "
     "ter plaatse, de indicatieve bewortelbare diepte, passende beplantingsvormen zoals "
     "houtwal, heg of boomgaard, en een op die standplaats gefilterde lijst van 1644 "

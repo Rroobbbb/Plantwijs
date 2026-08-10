@@ -1,4 +1,4 @@
-"""Smoke-tests voor de PlantWijs-API.
+"""Smoke-tests voor de Beplantingswijzer-API.
 
 Geen netwerk nodig: alleen endpoints die op de lokale CSV / statics draaien.
 De TestClient wordt bewust NIET als context manager gebruikt, zodat de lifespan
@@ -80,7 +80,7 @@ def test_index_geeft_html(client: TestClient):
     r = client.get("/")
     assert r.status_code == 200
     assert r.headers["content-type"].startswith("text/html")
-    assert "PlantWijs" in r.text
+    assert "Beplantingswijzer" in r.text
 
 
 def test_legacy_geeft_html(client: TestClient):
