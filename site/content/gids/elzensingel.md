@@ -165,7 +165,7 @@ voor bijen en hommels. Gewone vogelkers (Prunus padus) en gelderse roos (Viburnu
 opulus) voegen bloei en bessen toe, en sporkehout (Frangula alnus) is een
 waardevolle waardplant voor vlinders.
 
-In de dataset van Beplantingswijzer staan 32 inheemse soorten die natte tot zeer
+In de dataset van Beplantingswijzer staan {{stat:inheems_nat}} inheemse soorten die natte tot zeer
 natte grond verdragen. Wil je de lijst afstemmen op jouw plek, gebruik dan de
 filters onder [de kaart](/).
 

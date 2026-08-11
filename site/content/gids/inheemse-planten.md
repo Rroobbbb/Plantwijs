@@ -11,7 +11,7 @@ publicatiedatum: 2026-09-15
 antwoord: >-
   Inheemse planten zijn soorten die hier van nature voorkomen, zonder dat de mens
   ze bracht. Ze staan in de Standaardlijst Nederlandse Flora. De soortenlijst van
-  Beplantingswijzer bevat 67 inheemse soorten, van zomereik en meidoorn tot
+  Beplantingswijzer bevat {{stat:inheems_totaal}} inheemse soorten, van zomereik en meidoorn tot
   zwarte els, sleedoorn en struikhei.
 faq:
   - vraag: Wat zijn inheemse planten?
@@ -81,7 +81,7 @@ kijken welke soorten daar horen, in plaats van andersom.
 Naast inheems bestaan er nog twee statussen die je vaak tegenkomt. Ingeburgerd betekent
 dat een soort van elders komt, maar zich hier inmiddels zelfstandig handhaaft. Een exoot
 komt uit een ander werelddeel en blijft meestal afhankelijk van aanplant. In de
-soortenlijst van Beplantingswijzer staan 67 soorten die in de Standaardlijst als inheems
+soortenlijst van Beplantingswijzer staan {{stat:inheems_totaal}} soorten die in de Standaardlijst als inheems
 te boek staan: bomen, struiken en een aantal bos- en bodemplanten. Dat "als inheems te
 boek staan" nét iets anders is dan "hier altijd al geweest", lees je hieronder.
 
@@ -200,7 +200,7 @@ groeien.
 | Struikhei | Calluna vulgaris | zand, veen | zeer droog tot droog | volle zon | 0,6–0,9 m | bijen, vlinders |
 | Klimop | Hedera helix | alle | droog tot nat | zon tot schaduw | 3–30 m | bijen, vlinders, vogels |
 
-Dit is een deel van de 67 inheemse soorten in de tool. Wil je de hele lijst zien en
+Dit is een deel van de {{stat:inheems_totaal}} inheemse soorten in de tool. Wil je de hele lijst zien en
 meteen filteren op wat bij jóuw grond en vocht past, gebruik dan de filters onder
 [de kaart](/). Ook zeldzamere inheemse soorten staan daarin, zoals de jeneverbes
 (Juniperus communis) van schrale zandgrond en de fladderiep (Ulmus laevis) van natte

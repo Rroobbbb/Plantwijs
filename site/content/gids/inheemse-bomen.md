@@ -135,7 +135,7 @@ licht de boom verdraagt en de uiteindelijke hoogte en breedte. In de kolom Grond
 | Hulst | Ilex aquifolium | zand, klei, leem | droog tot vochtig | zon tot schaduw | 5–10 m | 3–5 m |
 | Wilde appel | Malus sylvestris | zand, klei, leem | droog tot vochtig | volle zon | 3–10 m | 4–8 m |
 
-Deze bomen komen uit de 67 inheemse soorten in de tool; de struiken staan bij
+Deze bomen komen uit de {{stat:inheems_totaal}} inheemse soorten in de tool; de struiken staan bij
 [inheemse struiken](/gids/inheemse-struiken/). Wil je de lijst filteren op wat bij jouw
 grond en vocht past, gebruik dan de filters onder [de kaart](/).
 

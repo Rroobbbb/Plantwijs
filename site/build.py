@@ -27,6 +27,7 @@ Uitvoerstructuur:
 from __future__ import annotations
 
 import argparse
+import csv
 import datetime as dt
 import html
 import json
@@ -58,6 +59,10 @@ STATIC_DIR = ROOT / "static"
 REDIRECTS_FILE = ROOT / "_redirects"
 DEFAULT_OUT = ROOT / "_site"
 
+# Dataset met de soorten; bron voor de dynamische aantallen in de content (zie
+# bereken_stats). Ligt in <projectroot>/data/, één niveau boven site/.
+DATA_CSV = ROOT.parent / "data" / "treeebb_planten_allfields.csv"
+
 # De CSS staat op /site-static/ en niet op /static/: dat laatste pad hoort bij de
 # FastAPI-app achter de proxy (zie site/_redirects).
 STATIC_URL = "/site-static"
@@ -85,6 +90,9 @@ MAANDEN = (
 
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 TOKEN_RE = re.compile(r"\{\{\s*(\w+)\s*\}\}")
+# Content-token voor een berekend aantal, bv. {{stat:inheems_totaal}}. De dubbele
+# punt valt buiten TOKEN_RE (\w+), dus de template-render raakt deze tokens niet.
+STAT_TOKEN_RE = re.compile(r"\{\{\s*stat:([a-z0-9_]+)\s*\}\}")
 WOORD_RE = re.compile(r"[^\W\d_]+", re.UNICODE)
 COMMENTAAR_RE = re.compile(r"<!--.*?-->\s*", re.DOTALL)
 
@@ -224,6 +232,63 @@ def aantal_woorden(bron: str) -> int:
     return len(WOORD_RE.findall(bron))
 
 
+# ───────────────────────────── dynamische aantallen ─────────────────────────────
+
+# De canonisering spiegelt plantwijs/services/dataset.py (SOIL_SYNONYMS +
+# filter_standplaats): "alle grondsoorten" en zavel/(lichte|zware) klei tellen als
+# klei; vocht "nat"/"zeer nat" als natte grond. Zo tonen content en tool hetzelfde
+# aantal; verifieer bij een wijziging dat beide gelijk blijven.
+_KLEI_RE = re.compile(r"\b(?:zavel|klei)\b")
+_ALLE_GROND_RE = re.compile(r"\balle\s+grondsoorten\b")
+
+
+def bereken_stats() -> Dict[str, int]:
+    """Tel de afgeleide aantallen uit de dataset, zodat de content ze niet
+    hardcodeert. Ontbreekt de CSV, dan blijft de map leeg en stopt de build pas
+    als een pagina een stat-token gebruikt (zie vervang_stats)."""
+    if not DATA_CSV.is_file():
+        print("  let op: {} ontbreekt; {{stat:…}}-tokens kunnen niet worden ingevuld".format(DATA_CSV))
+        return {}
+
+    def heeft_klei(cel: str) -> bool:
+        for tok in re.split(r"[|/;,]+", cel or ""):
+            t = tok.strip().lower().replace("ö", "o")
+            if _ALLE_GROND_RE.search(t) or _KLEI_RE.search(t):
+                return True
+        return False
+
+    def is_nat(cel: str) -> bool:
+        tokens = {t.strip().lower() for t in re.split(r"[;/|]+", cel or "") if t.strip()}
+        return bool(tokens & {"nat", "zeer nat"})
+
+    stats = {"inheems_totaal": 0, "inheems_klei": 0, "inheems_nat": 0}
+    with DATA_CSV.open(encoding="utf-8-sig", newline="") as bestand:
+        for rij in csv.DictReader(bestand):
+            if (rij.get("status_nl") or "").strip().lower() != "inheems":
+                continue
+            stats["inheems_totaal"] += 1
+            if heeft_klei(rij.get("Standplaats > Grondsoort", "")):
+                stats["inheems_klei"] += 1
+            if is_nat(rij.get("Standplaats > Bodemvochtigheid", "")):
+                stats["inheems_nat"] += 1
+    return stats
+
+
+def vervang_stats(ruw: str, stats: Dict[str, int], herkomst: str) -> str:
+    """Vervang {{stat:sleutel}} door het berekende aantal. Een onbekende sleutel is
+    een fout, zodat een typefout niet als letterlijke tekst wordt gepubliceerd."""
+
+    def vervang(match: "re.Match[str]") -> str:
+        sleutel = match.group(1)
+        if sleutel not in stats:
+            raise BuildError(
+                "{}: onbekende of niet-berekende stat {{{{stat:{}}}}}".format(herkomst, sleutel)
+            )
+        return str(stats[sleutel])
+
+    return STAT_TOKEN_RE.sub(vervang, ruw)
+
+
 # ───────────────────────────── content lezen ─────────────────────────────
 
 
@@ -283,9 +348,10 @@ def lees_bronnen(waarde: Any, herkomst: str) -> List[Dict[str, str]]:
     return items
 
 
-def lees_pagina(pad: Path) -> Page:
+def lees_pagina(pad: Path, stats: Dict[str, int]) -> Page:
     rel = pad.relative_to(CONTENT_DIR).as_posix()
-    meta, body = split_frontmatter(pad.read_text(encoding="utf-8"), rel)
+    ruw = vervang_stats(pad.read_text(encoding="utf-8"), stats, rel)
+    meta, body = split_frontmatter(ruw, rel)
 
     verplicht = ("title", "description", "slug", "cluster", "status", "publicatiedatum")
     ontbreekt = [veld for veld in verplicht if not tekst(meta.get(veld))]
@@ -357,10 +423,10 @@ def lees_pagina(pad: Path) -> Page:
     return pagina
 
 
-def lees_alle_paginas() -> List[Page]:
+def lees_alle_paginas(stats: Dict[str, int]) -> List[Page]:
     if not CONTENT_DIR.is_dir():
         raise BuildError("Contentmap ontbreekt: {}".format(CONTENT_DIR))
-    paginas = [lees_pagina(pad) for pad in sorted(CONTENT_DIR.rglob("*.md"))]
+    paginas = [lees_pagina(pad, stats) for pad in sorted(CONTENT_DIR.rglob("*.md"))]
 
     gezien: Dict[str, str] = {}
     for pagina in paginas:
@@ -674,12 +740,15 @@ def build(uit: Path, vandaag: dt.date) -> int:
     gids_index = lees_template("gids-index.html")
     sitemap = lees_template("sitemap-content.xml")
 
-    paginas = lees_alle_paginas()
+    stats = bereken_stats()
+    paginas = lees_alle_paginas(stats)
 
     print("{} — statische sitebuild".format(SITE_NAAM))
     print("  bron     {}".format(CONTENT_DIR))
     print("  uitvoer  {}".format(uit))
     print("  datum    {}".format(vandaag.isoformat()))
+    if stats:
+        print("  aantallen {}".format(", ".join("{}={}".format(k, v) for k, v in stats.items())))
     print("")
 
     leeg_uitvoermap(uit)

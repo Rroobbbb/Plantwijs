@@ -171,7 +171,7 @@ ingesteld. Ze vragen weinig verzorging als ze eenmaal aanslaan en geven voedsel 
 nestgelegenheid aan insecten en vogels. Voor klei is een inheemse keuze daarom vaak de
 makkelijkste keuze.
 
-In onze data staan 66 inheemse soorten die op klei kunnen. Een paar betrouwbare groepen:
+In onze data staan {{stat:inheems_klei}} inheemse soorten die op klei kunnen. Een paar betrouwbare groepen:
 
 - **Voor gewone tot vochtige klei:** eenstijlige meidoorn (Crataegus monogyna), sleedoorn
   (Prunus spinosa), hazelaar (Corylus avellana), veldesdoorn (Acer campestre) en gewone
