@@ -6,8 +6,8 @@ description: >-
   halfschaduw. Lees hoe de zuurgraad de bloemkleur bepaalt en of klei kan.
 slug: hortensia-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-02
 antwoord: >-
   Een hortensia wil vochthoudende, humusrijke grond die niet uitdroogt, op een
   plek in halfschaduw. Langdurig natte voeten verdraagt de plant slecht. Bij de

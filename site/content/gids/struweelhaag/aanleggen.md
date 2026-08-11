@@ -6,8 +6,8 @@ description: >-
   je de plek beoordeelt, jong en streekeigen plantgoed kiest, plant en verzorgt.
 slug: aanleggen
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-16
 antwoord: >-
   Leg een struweelhaag aan in de rustperiode, van het najaar tot het vroege
   voorjaar. Gebruik bosplantsoen: jonge, streekeigen struiken met kale wortel.

@@ -6,8 +6,8 @@ description: >-
   en uiterlijk, en lees wanneer je welke haagvorm kiest.
 slug: vs-geschoren-heg
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-25
 antwoord: >-
   Een struweelhaag groeit vrij uit en mag bloeien en bessen dragen; je zet hem
   eens in de zes tot vijftien jaar terug. Een geschoren heg knip je jaarlijks

@@ -6,8 +6,8 @@ description: >-
   tot vijftien jaar afzetten, steeds een deel, buiten het broedseizoen.
 slug: snoeien
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-23
 antwoord: >-
   Een struweelhaag knip je niet elk jaar. Je zet hem periodiek terug als
   hakhout: eens in de zes tot vijftien jaar, en steeds maar een deel. Zo blijft

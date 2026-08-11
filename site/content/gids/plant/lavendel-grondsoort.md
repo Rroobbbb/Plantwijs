@@ -6,8 +6,8 @@ description: >-
   in de zon. Lees waarom, of het op klei kan, en hoe je jouw grond controleert.
 slug: lavendel-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-09
 antwoord: >-
   Lavendel wil droge, goed doorlatende, schrale en kalkhoudende grond op een
   zonnige plek. De plant komt uit het Middellandse Zeegebied en verdraagt geen

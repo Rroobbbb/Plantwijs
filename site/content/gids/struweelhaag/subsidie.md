@@ -6,8 +6,8 @@ description: >-
   ondersteuning. Lees hoe het stelsel werkt en waar je het navraagt.
 slug: subsidie
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-30
 antwoord: >-
   Voor de aanleg of het beheer van een struweelhaag als landschapselement bestaan
   soms ondersteuningsregelingen, bijvoorbeeld via agrarisch natuur- en

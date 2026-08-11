@@ -6,8 +6,8 @@ description: >-
   zo'n 3 planten per strekkende meter, enkele of dubbele rij, verspringend.
 slug: plantafstand
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-18
 antwoord: >-
   Reken voor een struweelhaag op ongeveer drie planten per strekkende meter, met de
   struiken om de 30 tot 50 centimeter uit elkaar in de rij. Voor een dichte,

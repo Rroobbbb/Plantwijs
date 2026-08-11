@@ -6,8 +6,8 @@ description: >-
   doorlatende grond in de zon. Lees waarom, en welke grond niet past.
 slug: vlinderstruik-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-16
 antwoord: >-
   De vlinderstruik stelt weinig eisen aan de grond. De struik groeit op vrijwel
   elke droge tot vochtige, goed doorlatende grond in de volle zon, van arm en

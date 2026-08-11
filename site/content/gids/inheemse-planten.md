@@ -6,8 +6,8 @@ description: >-
   en welke soorten bij jouw grond, licht en ruimte passen.
 slug: inheemse-planten
 cluster: Inheemse beplanting
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-08-17
 antwoord: >-
   Inheemse planten zijn soorten die hier van nature voorkomen, zonder dat de mens
   ze bracht. Ze staan in de Standaardlijst Nederlandse Flora. De soortenlijst van

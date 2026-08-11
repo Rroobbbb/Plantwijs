@@ -6,8 +6,8 @@ description: >-
   inheems of uitheems. Een keuzehulp die laat zien welke haag bij jouw grond past.
 slug: haag-kiezen
 cluster: Haag kiezen
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-08-31
 antwoord: >-
   Kies eerst het type haag: een strak geschoren heg of een vrij uitgroeiende
   haag. Kies daarna de soort. Inheemse soorten als haagbeuk (Carpinus betulus),

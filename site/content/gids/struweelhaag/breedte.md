@@ -6,8 +6,8 @@ description: >-
   hoog en ongeveer even breed. Lees welke ruimte je reserveert tot pad en erfgrens.
 slug: breedte
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-21
 antwoord: >-
   Een volgroeide struweelhaag wordt meestal twee tot vier meter hoog en ongeveer
   even breed. Een enkele rij blijft smaller, een dubbele rij met kruidenzoom wordt

@@ -6,8 +6,8 @@ description: >-
   halfschaduw. Lees waarom kalk gele bladeren geeft en wanneer een pot beter is.
 slug: camelia-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-07
 antwoord: >-
   Een camelia wil zure, humusrijke en vochthoudende grond die goed doorlaat, met
   een pH rond 5 tot 6, in halfschaduw en beschut. Op kalkrijke grond neemt de

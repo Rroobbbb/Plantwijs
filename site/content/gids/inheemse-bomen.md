@@ -6,8 +6,8 @@ description: >-
   zomereik tot wilde lijsterbes, met hun natuurlijke standplaats en formaat.
 slug: inheemse-bomen
 cluster: Inheemse beplanting
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-08-24
 antwoord: >-
   Inheemse bomen horen van nature in Nederland thuis. Kies op grond, licht en
   ruimte: zomereik en beuk op zand en leem, gewone es op klei, zwarte els en

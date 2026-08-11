@@ -6,8 +6,8 @@ description: >-
   soorten die de rijke, natte klei benutten, met een keuzehulp per plek.
 slug: planten-voor-kleigrond
 cluster: Grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-08-26
 antwoord: >-
   Op kleigrond gedijen bomen en struiken die het vocht en de voeding van klei
   benutten. Veilige keuzes zijn meidoorn (Crataegus monogyna), sleedoorn
@@ -171,7 +171,7 @@ ingesteld. Ze vragen weinig verzorging als ze eenmaal aanslaan en geven voedsel 
 nestgelegenheid aan insecten en vogels. Voor klei is een inheemse keuze daarom vaak de
 makkelijkste keuze.
 
-In onze data staan {{stat:inheems_klei}} inheemse soorten die op klei kunnen. Een paar betrouwbare groepen:
+Bijna alle inheemse bomen en struiken uit onze data verdragen klei — {{stat:inheems_klei}} van de {{stat:inheems_totaal}} soorten. Op klei gaat het er dus vooral om welke soort bij de vochtigheid past. Een paar betrouwbare groepen:
 
 - **Voor gewone tot vochtige klei:** eenstijlige meidoorn (Crataegus monogyna), sleedoorn
   (Prunus spinosa), hazelaar (Corylus avellana), veldesdoorn (Acer campestre) en gewone

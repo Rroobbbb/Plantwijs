@@ -6,8 +6,8 @@ description: >-
   in de volle zon. Lees waarom, of het op klei kan en hoe je je grond controleert.
 slug: dahlia-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-23
 antwoord: >-
   Een dahlia wil vruchtbare, humusrijke en goed doorlatende maar vochthoudende
   grond in de volle zon en is een zware eter. Op natte, zware klei kunnen de

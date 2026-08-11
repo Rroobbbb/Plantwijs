@@ -7,8 +7,8 @@ description: >-
   klei kan.
 slug: hibiscus-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-12
 antwoord: >-
   De tuinhibiscus (altheastruik, Hibiscus syriacus) wil een goed doorlatende,
   redelijk voedselrijke grond die niet langdurig nat is, op een warme, zonnige

@@ -6,8 +6,8 @@ description: >-
   het is, welke inheemse soorten erin passen, waar hij hoort en hoe je hem aanlegt.
 slug: elzensingel
 cluster: Landschapselementen
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-11
 antwoord: >-
   Een elzensingel is een smalle rij zwarte elzen (Alnus glutinosa) langs een
   sloot of perceelsgrens op natte grond. Het is de natte tegenhanger van de

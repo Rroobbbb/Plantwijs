@@ -7,8 +7,8 @@ description: >-
   uitblijven.
 slug: skimmia-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-14
 antwoord: >-
   Een skimmia wil humusrijke, vochthoudende maar goed doorlatende grond in
   halfschaduw tot schaduw, beschut. De plant groeit het best op neutrale tot

@@ -6,8 +6,8 @@ description: >-
   tot 5,5. Lees waarom kalk gele bladeren geeft en wanneer een pot beter is.
 slug: blauwe-bes-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-09
 antwoord: >-
   Een blauwe bes wil zure, humus- en veenrijke grond die vocht vasthoudt maar
   goed doorlaat, ongeveer pH 4 tot 5,5. De plant hoort tot de heidefamilie en

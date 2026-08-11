@@ -6,8 +6,8 @@ description: >-
   tot kalkhoudende grond in halfschaduw. Lees waarom, en of het op zand of klei kan.
 slug: helleborus-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-21
 antwoord: >-
   De helleborus wil humusrijke, vochthoudende maar goed doorlatende grond met een
   neutrale tot licht kalkhoudende (alkalische) zuurgraad, in halfschaduw tot

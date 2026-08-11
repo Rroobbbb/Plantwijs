@@ -6,8 +6,8 @@ description: >-
   Lees hoe je de Bodemkaart van Nederland gebruikt en welke planten erbij passen.
 slug: grondsoortenkaart
 cluster: Grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-07
 antwoord: >-
   Je grondsoort zoek je op met een grondsoortenkaart. De officiële is de
   Bodemkaart van Nederland (BRO), te bekijken via bodemdata.nl en PDOK. Vul op

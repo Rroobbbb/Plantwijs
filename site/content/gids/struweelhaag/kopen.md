@@ -6,8 +6,8 @@ description: >-
   wortel. Let op maat (60–100 cm), streekeigen herkomst en het aantal planten.
 slug: kopen
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-28
 antwoord: >-
   Voor een struweelhaag koop je meestal bosplantsoen: jonge, inheemse struiken
   met kale wortel, geleverd in de winterrust. Let bij het kopen op de maat (vaak

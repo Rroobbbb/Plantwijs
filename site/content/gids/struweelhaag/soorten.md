@@ -7,8 +7,8 @@ description: >-
   mengt.
 slug: soorten
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-14
 antwoord: >-
   In een struweelhaag horen inheemse struiken en kleine bomen met elk een eigen
   rol: doornstruiken als meidoorn en sleedoorn vormen de dichte, veekerende kern

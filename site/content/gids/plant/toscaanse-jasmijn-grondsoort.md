@@ -7,8 +7,8 @@ description: >-
   winterhardheid.
 slug: toscaanse-jasmijn-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-26
 antwoord: >-
   Toscaanse jasmijn (sterjasmijn) wil goed doorlatende, humusrijke en matig
   vochthoudende grond en verdraagt enige kalk. De plant komt uit Oost-Azië, is

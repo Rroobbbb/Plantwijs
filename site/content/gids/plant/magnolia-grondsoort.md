@@ -6,8 +6,8 @@ description: >-
   kunnen.
 slug: magnolia-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-05
 antwoord: >-
   Een magnolia wil humusrijke, vochthoudende maar goed doorlatende grond die
   niet uitdroogt en niet langdurig nat is, het liefst licht zuur tot neutraal.

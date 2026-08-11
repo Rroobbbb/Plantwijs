@@ -7,8 +7,8 @@ description: >-
   maakt.
 slug: kleigrond-verbeteren
 cluster: Grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-08-28
 antwoord: >-
   Kleigrond verbeter je door de structuur te versterken, niet door de grondsoort
   te veranderen. Breng elk jaar organische stof aan, zoals compost of goed

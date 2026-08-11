@@ -6,8 +6,8 @@ description: >-
   pot. Lees welke doorlatende, kalkhoudende potgrond past en of de volle grond kan.
 slug: oleander-grondsoort
 cluster: Plant en grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-10-19
 antwoord: >-
   De oleander is een niet-winterharde, mediterrane plant en staat in Nederland
   meestal in een pot. Gebruik goed doorlatende, kalkhoudende potgrond op een

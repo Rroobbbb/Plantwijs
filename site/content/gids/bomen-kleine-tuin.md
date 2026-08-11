@@ -6,8 +6,8 @@ description: >-
   en kroonbreedte per soort, en vormen die grote bomen klein houden.
 slug: bomen-kleine-tuin
 cluster: Boom kiezen
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-02
 antwoord: >-
   In een kleine tuin passen van nature kleine inheemse bomen tot ongeveer twaalf
   meter: veldesdoorn (Acer campestre), wilde lijsterbes (Sorbus aucuparia), hulst

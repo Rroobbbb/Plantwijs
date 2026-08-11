@@ -6,8 +6,8 @@ description: >-
   inheemse bomen en struiken van heide en berken-eikenbos, met keuzehulp per plek.
 slug: planten-voor-zandgrond
 cluster: Grondsoort
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-09-04
 antwoord: >-
   Op zandgrond groeien planten die tegen droogte en voedselarmoede kunnen.
   Betrouwbare inheemse keuzes zijn zomereik (Quercus robur), ruwe berk (Betula

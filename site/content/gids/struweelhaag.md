@@ -6,8 +6,8 @@ description: >-
   het is, welke soorten erin horen, hoe hoog hij wordt en waar hij past.
 slug: struweelhaag
 cluster: Struweelhaag
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-08-19
 antwoord: >-
   Een struweelhaag is een vrij uitgroeiende, gemengde haag van inheemse struiken
   zoals meidoorn, sleedoorn en hazelaar. Anders dan een geschoren heg mag hij

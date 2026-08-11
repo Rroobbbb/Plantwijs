@@ -6,8 +6,8 @@ description: >-
   (grond, vocht, licht) en hun waarde voor vogels, bijen en vlinders.
 slug: inheemse-struiken
 cluster: Inheemse beplanting
-status: geverifieerd
-publicatiedatum: 2026-09-15
+status: live
+publicatiedatum: 2026-08-21
 antwoord: >-
   Inheemse struiken zijn hier van nature voorkomende houtige gewassen zonder
   doorgaande hoofdstam, meestal meerstammig. Bekende soorten zijn meidoorn
