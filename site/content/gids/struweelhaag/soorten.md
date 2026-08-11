@@ -82,9 +82,8 @@ combineren, levert de haag het hele jaar voedsel en beschutting. Bekijk op
 ## De vier rollen in een struweelhaag
 
 De tabel ordent de soorten naar hun hoofdrol in de haag. Alle soorten komen uit de
-plantenlijst van Beplantingswijzer en staan te boek als inheems, op de twee wilde
-rozen onderaan na; die krijgen een aparte kanttekening. De hoogte en de dieren die op
-de soort afkomen, komen uit de dataset.
+plantenlijst van Beplantingswijzer en staan te boek als inheems. De hoogte en de dieren
+die op de soort afkomen, komen uit de dataset.
 
 | Soort | Wetenschappelijke naam | Rol in de haag | Hoogte | Waarde voor dieren |
 |---|---|---|---|---|
@@ -104,11 +103,10 @@ de soort afkomen, komen uit de dataset.
 | Hondsroos | Rosa canina | Doornstruik, dichte rand | 2–5 m | bijen, vlinders |
 | Egelantier | Rosa rubiginosa | Doornstruik, dichte rand | 2–3 m | bijen |
 
-Hondsroos (Rosa canina) en egelantier (Rosa rubiginosa) staan onderaan apart. Het
-Nederlands Soortenregister rekent beide tot de oorspronkelijk inheemse flora, maar in
-de plantenlijst van Beplantingswijzer zijn ze nog niet als inheems gemarkeerd. In de
-haag zijn ze op hun plek: hun stekels maken de rand ondoordringbaar en hun bottels —
-de rode vruchten — zijn wintervoedsel voor vogels.
+Hondsroos (Rosa canina) en egelantier (Rosa rubiginosa) sluiten de tabel af als
+doornstruiken. Het Nederlands Soortenregister rekent beide tot de oorspronkelijk
+inheemse flora. In de haag zijn ze op hun plek: hun stekels maken de rand
+ondoordringbaar en hun bottels — de rode vruchten — zijn wintervoedsel voor vogels.
 
 ### Doornstruiken: de veekerende ruggengraat
 

@@ -123,9 +123,12 @@ dat de struik op elke grondsoort kan groeien.
 | Gewone vlier | Sambucus nigra | zand, klei, leem | droog tot nat | zon, halfschaduw | 3–6 m | bijen |
 | Gelderse roos | Viburnum opulus | alle | vochtig tot nat | zon, halfschaduw | 3–5 m | bijen, vlinders, vogels |
 | Wilde liguster | Ligustrum vulgare | zand, klei, leem | droog tot nat | zon, halfschaduw | 2–5 m | bijen, vlinders |
+| Hondsroos | Rosa canina | zand, klei, leem | droog tot vochtig | zon, halfschaduw | 2–5 m | bijen, vlinders |
 | Sleedoorn | Prunus spinosa | zand, klei, leem | droog tot nat | zon, halfschaduw | 3–4 m | bijen, vlinders, vogels |
 | Rode kornoelje | Cornus sanguinea | zand, klei, leem | droog tot nat | zon, halfschaduw | 2–4 m | bijen, vlinders |
+| Egelantier | Rosa rubiginosa | zand, klei, leem | droog tot vochtig | zon, halfschaduw | 2–3 m | bijen |
 | Zuurbes | Berberis vulgaris | zand, klei, leem | droog | zon, halfschaduw | 1–3 m | bijen |
+| Duinroos | Rosa pimpinellifolia | alle | zeer droog tot vochtig | zon, halfschaduw | 1–2 m | bijen |
 | Bosroos | Rosa arvensis | zand, klei, leem | droog tot vochtig | zon, halfschaduw | 0,5–2 m | bijen, vlinders, vogels |
 
 Op de meeste grond doen sleedoorn, meidoorn, hazelaar en gewone vlier het goed;
@@ -145,8 +148,9 @@ Op arme, zure zandgrond en oude heide groeit struikhei (Calluna vulgaris), een l
 dwergstruik van 0,6 tot 0,9 meter die laat in de zomer bloeit en dan veel bijen
 trekt. In hetzelfde schrale zand hoort de jeneverbes (Juniperus communis), een van
 de weinige inheemse naaldstruiken. De gaspeldoorn (Ulex europaeus), een doornige
-struik met gele bloemen, staat vooral in de kuststreek; of de soort hier van
-oorsprong thuishoort, is niet zeker.
+struik met gele bloemen, staat vooral in de kuststreek. Het Nederlands
+Soortenregister rekent hem tot de oorspronkelijk inheemse flora, al is er discussie
+over of hij hier echt van nature thuishoort of ooit is ingevoerd.
 De rode bosbes (Vaccinium vitis-idaea) is een groenblijvende dwergstruik van amper
 een kwart meter hoog voor zure grond in de halfschaduw.
 

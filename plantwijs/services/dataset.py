@@ -28,6 +28,17 @@ _SL2020_NL_COL = "nederlandse naam"
 
 _SL_CACHE: Dict[str, Any] = {"map": None, "mtime": None, "path": None}
 
+# Handmatige Nederlandse namen voor soorten die in SL2020 alleen onder een
+# aggregaat- of synoniemnaam staan (zie SL2020_ALIASES in
+# scripts/scraper/verrijk_treeebb_met_sl2020.py). SL2020 kent hier alleen
+# groepsnamen ("Hondsrozen-groep"), dus zonder deze override zou de tool deze
+# inheemse soorten onder hun Latijnse naam tonen. Sleutel = _norm_naam(latijn).
+_NL_NAAM_OVERRIDES: Dict[str, str] = {
+    "rosa canina": "Hondsroos",
+    "rosa rubiginosa": "Egelantier",
+    "rosa pimpinellifolia": "Duinroos",
+}
+
 
 def _norm_col(c: object) -> str:
     """Normaliseer kolomnamen: lowercase + alle niet-letters/cijfers naar '_'"""
@@ -199,10 +210,12 @@ def _nl_naam_voor(latin: str, lookup: Dict[str, str]) -> tuple[str, str]:
         "Zomereik 'Fastigiata'" kan worden samengesteld. Leeg als er geen
         Nederlandse naam is.
     """
-    if not lookup:
-        return "", ""
     n = _norm_naam(latin)
     if not n:
+        return "", ""
+    if n in _NL_NAAM_OVERRIDES:
+        return _NL_NAAM_OVERRIDES[n], ""
+    if not lookup:
         return "", ""
     if n in lookup:
         return lookup[n], ""

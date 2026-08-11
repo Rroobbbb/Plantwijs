@@ -143,13 +143,14 @@ de kolom Grond betekent "alle" dat de soort op zand, klei, leem én veen kan gro
 | Wilde liguster | Ligustrum vulgare | 2–5 m | zand, klei, leem | droog tot nat | zon, halfschaduw | bijen, vlinders |
 | Sleedoorn | Prunus spinosa | 3–4 m | zand, klei, leem | droog tot nat | zon, halfschaduw | bijen, vlinders, vogels |
 | Rode kornoelje | Cornus sanguinea | 2–4 m | zand, klei, leem | droog tot nat | zon, halfschaduw | bijen, vlinders |
+| Hondsroos | Rosa canina | 2–5 m | zand, klei, leem | droog tot vochtig | zon, halfschaduw | bijen, vlinders |
+| Egelantier | Rosa rubiginosa | 2–3 m | zand, klei, leem | droog tot vochtig | zon, halfschaduw | bijen |
 
-Ook twee doornige wilde rozen horen goed thuis in een struweelhaag: hondsroos (Rosa
-canina) en egelantier (Rosa rubiginosa). Het Nederlands Soortenregister rekent beide
-tot de oorspronkelijk inheemse flora; in de plantenlijst van Beplantingswijzer zijn ze
-nog niet als inheems gemarkeerd, en daarom staan ze niet in de tabel hierboven. In de
-haag zelf zijn ze op hun plek: hun stekels maken de haag ondoordringbaar en hun bottels
-zijn wintervoedsel voor vogels. Meer soorten en hun standplaats staan bij
+Onderaan de tabel staan twee doornige wilde rozen die goed in een struweelhaag
+thuishoren: hondsroos (Rosa canina) en egelantier (Rosa rubiginosa). Het Nederlands
+Soortenregister rekent beide tot de oorspronkelijk inheemse flora. In de haag zijn ze
+op hun plek: hun stekels maken de haag ondoordringbaar en hun bottels zijn
+wintervoedsel voor vogels. Meer soorten en hun standplaats staan bij
 [inheemse struiken](/gids/inheemse-struiken/) en, per soort uitgewerkt, op
 [struweelhaag soorten](/gids/struweelhaag/soorten/).
 
